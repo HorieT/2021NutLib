@@ -26,9 +26,9 @@ private:
 			if(_move_type == MoveType::duty){
 				set_duty = _target_duty;
 				if(_encoder.get() == NULL){//別途エンコーダ読み出し
-					float rad = _encoder->GetRadAndReset() / (2f*static_cast<float>(M_PI));
+					float rad = _encoder->GetRadAndReset() / (2.0f*static_cast<float>(M_PI));
 					_now_rad += rad;
-					_now_rpm = rad * 60000f / _scheduler.GetPeriod();
+					_now_rpm = rad * 60000.0f / _scheduler.GetPeriod();
 				}
 			}
 			else{
@@ -37,9 +37,9 @@ private:
 					return;
 				}
 				//エンコーダ読み出し
-				float rad = _encoder->GetRadAndReset() / (2f*static_cast<float>(M_PI));
+				float rad = _encoder->GetRadAndReset() / (2.0f*static_cast<float>(M_PI));
 				_now_rad += rad;
-				_now_rpm = rad * 60000f / _scheduler.GetPeriod();
+				_now_rpm = rad * 60000.0f / _scheduler.GetPeriod();
 
 				if(_move_type == MoveType::rpm){
 					/*まだ*/
@@ -49,7 +49,7 @@ private:
 				}
 			}
 
-			__HAL_TIM_SetCompare(_htim, _channel, static_cast<uint16_t>((set_duty < 0f ? -set_duty : set_duty) * _htim->Instance->ARR));
+			__HAL_TIM_SetCompare(_htim, _channel, static_cast<uint16_t>((set_duty < 0.0f ? -set_duty : set_duty) * _htim->Instance->ARR));
 		}
 	}
 public:

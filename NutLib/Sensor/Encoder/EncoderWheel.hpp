@@ -15,7 +15,7 @@ private:
 	Coordinate<float> _position;
 
 public:
-	EncoderWheel(const std::shared_ptr<Encoder>& encoder, float diameter_mm, const Coordinate<float>& position = {0f})
+	EncoderWheel(const std::shared_ptr<Encoder>& encoder, float diameter_mm, Coordinate<float> position = Coordinate<float>{0.0f, 0.0f, 0.0f})
 	: _encoder(encoder), _diameter_mm(diameter_mm), _position(position){}
 
 	virtual ~EncoderWheel(){}

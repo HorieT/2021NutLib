@@ -22,27 +22,27 @@ protected:
 	TimeScheduler<void> _scheduler;
 
 	//セットパラメータ
-	std::array<float, 3> _rpm_pid{0f};
-	std::array<float, 3> _rad_pid{0f};
-	float _target_duty = 0f;//%単位
-	float _target_rpm = 0f;
-	float _target_rad = 0f;
+	std::array<float, 3> _rpm_pid{0.0f};
+	std::array<float, 3> _rad_pid{0.0f};
+	float _target_duty = 0.0f;//%単位
+	float _target_rpm = 0.0f;
+	float _target_rad = 0.0f;
 
 	//ゲットパラメータ
-	float _now_rpm = 0f;
-	float _now_rad = 0f;
+	float _now_rpm = 0.0f;
+	float _now_rad = 0.0f;
 
 
 	/*
 	 * 内部パラメータリセット
 	 */
 	virtual void ResetParam(){
-		_target_duty = 0f;//%単位
-		_target_rpm = 0f;
-		_target_rad = 0f;
+		_target_duty = 0.0f;//%単位
+		_target_rpm = 0.0f;
+		_target_rad = 0.0f;
 
-		_now_rpm = 0f;
-		_now_rad = 0f;
+		_now_rpm = 0.0f;
+		_now_rad = 0.0f;
 	}
 
 
