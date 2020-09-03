@@ -8,7 +8,6 @@
 #include "IMU.hpp"
 #include "../../TimeScheduler.hpp"
 #include <cstring>
-#include <numeric>
 
 namespace nut{
 class R13x0 : public IMU{
@@ -61,7 +60,9 @@ public:
 					for(uint8_t i = 0;i < GYRO_DATA_SIZE - 2;i++)
 						read_data[i] = tmp_buff[(j + i + 2) % GYRO_BUFF_SIZE];
 
-					uint8_t check_sum = static_cast<uint8_t>(std::accumulate(std::next(read_data.begin(), 1), std::next(read_data.end(), -3), 0));
+					uint8_t check_sum = 0;
+					for(auto it = std::next(read_data.begin(), 1), end = std::next(read_data.end(), -3); it != end;++it)
+						check_sum += *it;
 
 					if(read_data[12] == check_sum){
 						_scheduler.Reset();

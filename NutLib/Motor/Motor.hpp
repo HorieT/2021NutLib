@@ -6,6 +6,7 @@
 
 #include "../Global.hpp"
 #include "../TimeScheduler.hpp"
+#include "../PID.hpp"
 #include <array>
 
 namespace nut{
@@ -22,8 +23,8 @@ protected:
 	TimeScheduler<void> _scheduler;
 
 	//セットパラメータ
-	std::array<float, 3> _rpm_pid{0.0f};
-	std::array<float, 3> _rad_pid{0.0f};
+	PID<float> _rpm_pid;
+	PID<float> _rad_pid;
 	float _target_duty = 0.0f;//%単位
 	float _target_rpm = 0.0f;
 	float _target_rad = 0.0f;
@@ -33,14 +34,20 @@ protected:
 	float _now_rad = 0.0f;
 
 
+
 	/*
-	 * 内部パラメータリセット
+	 * タゲリセ
 	 */
-	virtual void ResetParam(){
+	virtual inline void ResetTarget(){
 		_target_duty = 0.0f;//%単位
 		_target_rpm = 0.0f;
 		_target_rad = 0.0f;
-
+	}
+	/*
+	 * 内部パラメータリセット
+	 */
+	virtual inline void ResetParam(){
+		ResetTarget();
 		_now_rpm = 0.0f;
 		_now_rad = 0.0f;
 	}
@@ -93,23 +100,14 @@ public:
 		return true;
 	}
 	virtual bool SetRPMPID(float kp, float ki, float kd) {
-		_rpm_pid = {kp, ki, kd};
-		return true;
-	}
-
-	virtual bool SetRPMPID(const std::array<float, 3>& param){
-		_rpm_pid = param;
+		_rpm_pid.SetGaine(kp, ki, kd);
 		return true;
 	}
 	virtual bool SetRadPID(float kp, float ki, float kd) {
-		_rad_pid = {kp, ki, kd};
+		_rad_pid.SetGaine(kp, ki, kd);
 		return true;
 	}
 
-	virtual bool SetRadPID(const std::array<float, 3>& param){
-		_rad_pid = param;
-		return true;
-	}
 	virtual bool ResetRadOrigin(float rad) = 0;
 
 	/*
@@ -124,11 +122,13 @@ public:
 	virtual float GetRad()const{
 		return _now_rad;
 	}
+	/*
 	virtual const std::array<float, 3>& GetRPMPID() const{
 		return _rpm_pid;
 	}
 	virtual const std::array<float, 3>& GetRadPID() const{
 		return _rad_pid;
 	}
+	*/
 };
 }

@@ -13,10 +13,10 @@ namespace nut{
 /*
  * ベースクラス
  */
-class TimeSchedulerBase : public std::enable_shared_from_this<TimeSchedulerBase>{
+class TimeSchedulerBase{
 private:
 	static inline volatile uint32_t _time = 0;
-	static inline std::vector<std::shared_ptr<TimeSchedulerBase>> _scheduler;
+	static inline std::vector<TimeSchedulerBase*> _scheduler;
 	//TimeCheck()がつっかえたとき用の補助タイマ
 	static inline TIM_HandleTypeDef* _auxiliary_timer = NULL;
 
@@ -35,7 +35,7 @@ protected:
 	void SetSchedule(){
 		if(_setting)return;
 		_setting = true;
-		_scheduler.push_back(shared_from_this());
+		_scheduler.push_back(this);
 		_start_time = _time;
 	}
 	virtual void Callback() = 0;
@@ -54,7 +54,7 @@ public:
 	virtual void Erase() final{
 		if(!_setting)return;
 		for(auto it = _scheduler.begin(), e = _scheduler.end();it != e;++it){
-			if(*it == shared_from_this()){
+			if(*it == this){
 				_setting = false;
 				_scheduler.erase(it);
 				break;
@@ -137,11 +137,11 @@ public:
 		argment = arg;
 		TimeSchedulerBase::SetSchedule();
 	}
-	void Set(Args arg) &&{
+	/*void Set(Args arg) &&{
 		argment = arg;
 		const_cast<bool&>(_one_time) = true;
 		TimeSchedulerBase::SetSchedule();
-	}
+	}*/
 
 private:
 	std::function<void(Args)> _callbuck_funk;
@@ -159,10 +159,10 @@ public:
 	virtual ~TimeScheduler() override{Erase();}
 
 	void Set() &{TimeSchedulerBase::SetSchedule();}
-	void Set() &&{
+	/*void Set() &&{
 		const_cast<bool&>(_one_time) = true;
 		TimeSchedulerBase::SetSchedule();
-	}
+	}*/
 private:
 	std::function<void(void)> _callbuck_funk;
 
@@ -173,11 +173,12 @@ private:
 /*
  * 関数遅延呼び出し
  */
+/*
 template<typename T>
 inline void DelayCall(std::function<void(T)>&& callback, T arg, uint32_t ms){
 	typename TimeScheduler<T>::TimeScheduler(std::move(callback), ms).Set(arg);
 }
 inline void DelayCall(std::function<void(void)>&& callback, uint32_t ms){
 	typename TimeScheduler<void>::TimeScheduler(std::move(callback), ms).Set();
-}
+}*/
 }

@@ -5,7 +5,6 @@
 #pragma once
 
 #include <NutLib/Global.hpp>
-#include <numeric>
 #include <array>
 
 namespace nut{

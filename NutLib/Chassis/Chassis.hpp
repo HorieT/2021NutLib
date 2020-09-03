@@ -1,13 +1,16 @@
 /*
  * 足回り基底クラス
  * とりあえず速度入力のみ
- * 自己位置と分離してるから相対座標入力のみ
+ * オドメータで速度補正をする
+ * 補正いらなければオドメータはnullで
  */
 #pragma once
 
 #include "../Global.hpp"
 #include "../Coordinate.hpp"
 #include "../TimeScheduler.hpp"
+#include "../Odmetry.hpp"
+#include <memory>
 
 namespace nut{
 class Chassis{
@@ -18,7 +21,10 @@ protected:
 		velocity
 	};
 	MoveType _move_type = MoveType::stop;
-	Coordinate<float> _target_velocity = {0f};
+	TimeScheduler<void> _scheduler;
+	std::shared_ptr<Odmetry> _odmetry;
+	Coordinate<float> _target_velocity = {0.0f};
+
 
 	/*
 	 * 速度からアクチュエータを操作する関数
@@ -27,7 +33,10 @@ protected:
 
 
 public:
-	Chassis(){}
+	Chassis(uint32_t period, std::shared_ptr<Odmetry> odmetry)
+		: _scheduler([this]{InputVelocity();}, period), _odmetry(odmetry){
+
+	}
 	virtual ~Chassis(){}
 
 

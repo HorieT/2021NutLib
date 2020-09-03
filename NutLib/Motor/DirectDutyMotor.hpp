@@ -71,8 +71,8 @@ public:
 	 * êßå‰äJén
 	 */
 	virtual bool Start() override{
-		_target_rpm = 0;
-		_move_type = MoveType::duty;
+		ResetTarget();
+		_move_type = MoveType::stop;
 		__HAL_TIM_SetCompare(_htim, _channel, 0);
 		HAL_TIM_PWM_Start(_htim, _channel);
 		_scheduler.Set();
@@ -109,26 +109,16 @@ public:
 	}
 	virtual bool SetRPMPID(float kp, float ki, float kd) override{
 		if(_encoder.get() == NULL)return false;
-		_rpm_pid = {kp, ki, kd};
+		_rpm_pid.SetGaine(kp, ki, kd);
 		return true;
 	}
 
-	virtual bool SetRPMPID(const std::array<float, 3>& param) override{
-		if(_encoder.get() == NULL)return false;
-		_rpm_pid = param;
-		return true;
-	}
 	virtual bool SetRadPID(float kp, float ki, float kd) override{
 		if(_encoder.get() == NULL)return false;
-		_rad_pid = {kp, ki, kd};
+		_rad_pid.SetGaine(kp, ki, kd);
 		return true;
 	}
 
-	virtual bool SetRadPID(const std::array<float, 3>& param) override{
-		if(_encoder.get() == NULL)return false;
-		_rad_pid = param;
-		return true;
-	}
 
 
 	virtual bool ResetRadOrigin(float rad) override{
