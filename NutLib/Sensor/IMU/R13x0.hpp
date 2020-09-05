@@ -1,8 +1,8 @@
 /*
- * R1370P,R1350Nのクラス（70Pの方が設定できる項目が少ない。スペックは多分同じ）
- * 設定送信に関してはまだ書いていない
- * 基底にIMUクラス
- * 使用UARTは115200bpsでCircularのDMAにすること
+ * R1370P,R1350N縺ｮ繧ｯ繝ｩ繧ｹ�ｼ�70P縺ｮ譁ｹ縺瑚ｨｭ螳壹〒縺阪ｋ鬆�逶ｮ縺悟ｰ代↑縺�縲ゅせ繝壹ャ繧ｯ縺ｯ螟壼�蜷後§�ｼ�
+ * 險ｭ螳夐�∽ｿ｡縺ｫ髢｢縺励※縺ｯ縺ｾ縺�譖ｸ縺�縺ｦ縺�縺ｪ縺�
+ * 蝓ｺ蠎輔↓IMU繧ｯ繝ｩ繧ｹ
+ * 菴ｿ逕ｨUART縺ｯ115200bps縺ｧCircular縺ｮDMA縺ｫ縺吶ｋ縺薙→
  */
 
 #include "IMU.hpp"
@@ -43,8 +43,8 @@ public:
 
 
 	/*
-	 * 受信関数
-	 *  HAL_UART_RxHalfCpltCallback()内で呼び出すこと
+	 * 蜿嶺ｿ｡髢｢謨ｰﾂ�
+	 *  HAL_UART_RxHalfCpltCallback()蜀�縺ｧ蜻ｼ縺ｳ蜃ｺ縺吶％縺ｨ
 	 */
 	virtual bool Receive(UART_HandleTypeDef* huart) final{
 		if(huart == _huart){
@@ -55,19 +55,19 @@ public:
 				if((tmp_buff[j] == 0xAA) &&
 						(tmp_buff[(j + 1) % GYRO_BUFF_SIZE] == 0x00) &&
 						(((j + ndtr_ptr) % GYRO_BUFF_SIZE) < GYRO_DATA_SIZE)){
-					std::array<uint8_t, GYRO_DATA_SIZE> read_data;
+					std::array<uint8_t, GYRO_DATA_SIZE - 2> read_data;
 
 					for(uint8_t i = 0;i < GYRO_DATA_SIZE - 2;i++)
 						read_data[i] = tmp_buff[(j + i + 2) % GYRO_BUFF_SIZE];
 
-					uint8_t check_sum = 0;
-					for(auto it = std::next(read_data.begin(), 1), end = std::next(read_data.end(), -3); it != end;++it)
+					volatile uint8_t check_sum = 0;
+					for(auto it = read_data.begin(), end = std::next(read_data.end(), -1); it != end;++it)
 						check_sum += *it;
 
 					if(read_data[12] == check_sum){
 						_scheduler.Reset();
 
-						[[maybe_unused]]int16_t angle, angle_vel, acc;//警告回避でunused付けてるけど必要一時変数
+						[[maybe_unused]]int16_t angle, angle_vel, acc;//隴ｦ蜻雁屓驕ｿ縺ｧunused莉倥￠縺ｦ繧九￠縺ｩ蠢�隕∽ｸ�譎ょ､画焚
 						memcpy(&angle, &read_data[1], 2);
 						memcpy(&angle_vel, &read_data[3], 2);
 						_global_angle.z() = - static_cast<float>(angle) * static_cast<float>(M_PI) / 18000.0f;

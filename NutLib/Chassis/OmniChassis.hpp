@@ -24,8 +24,8 @@ protected:
 	const bool _wheel_polarity;//ホイール極性
 
 	/*計算リソース*/
-	const float _wheel_length;
-	const std::array<std::array<float, 2>, T> _coefficient;
+	const float _wheel_length = 0;
+	std::array<std::array<float, 2>, T> _coefficient{{0.0f}};
 
 
 	virtual void InputVelocity() override{
@@ -34,14 +34,14 @@ protected:
 		//比較回数増えるけど三項演算子の方がいいかも？
 		if(_wheel_polarity){
 			uint8_t i = 0;
-			for(auto in : input){
+			for(auto& in : input){
 				in = _target_velocity.x * _coefficient[i][0] + _target_velocity.y * _coefficient[i][1] + rot_component;
 				++i;
 			}
 
 		}else{
 			uint8_t i = 0;
-			for(auto in : input){
+			for(auto& in : input){
 				in = -_target_velocity.x * _coefficient[i][0] - _target_velocity.y * _coefficient[i][1] - rot_component;
 				++i;
 			}
@@ -65,12 +65,12 @@ public:
 			bool wheel_polarity = true)
 				: Chassis(period, odmetry), _wheel(wheel), _wheel_position(first_wheel_position), _wheel_polarity(wheel_polarity)
 	{
-		const_cast<float&>(_wheel_length) = _wheel_position.Norm();
+		const_cast<float&>(_wheel_length) = _wheel_position.Norm() * 0.001;
 
 		uint8_t i = 0;
-		for(auto& c : const_cast<std::array<std::array<float, 2>, T>&>(_coefficient)){
-			c[0] = -sin(_wheel_position.theta() + static_cast<float>(M_PI) * 2.0f * static_cast<float>(i) / static_cast<float>(T));
-			c[1] = cos(_wheel_position.theta() + static_cast<float>(M_PI) * 2.0f * static_cast<float>(i)/ static_cast<float>(T));
+		for(auto& c : _coefficient){
+			c[0] = -std::cos(_wheel_position.theta + static_cast<float>(M_PI) * 2.0f * static_cast<float>(i) / static_cast<float>(T));
+			c[1] = -std::sin(_wheel_position.theta + static_cast<float>(M_PI) * 2.0f * static_cast<float>(i)/ static_cast<float>(T));
 			++i;
 		}
 	}

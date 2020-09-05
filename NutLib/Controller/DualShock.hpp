@@ -1,11 +1,9 @@
 /*
- * デュアルショック、SBDBTのクラス
+ * 繝�繝･繧｢繝ｫ繧ｷ繝ｧ繝�繧ｯ縲ヾBDBT縺ｮ繧ｯ繝ｩ繧ｹ
  *
- *まだ細部が確定していない
+ *縺ｾ縺�邏ｰ驛ｨ縺檎｢ｺ螳壹＠縺ｦ縺�縺ｪ縺�
  */
 #pragma once
-
-#if false
 
 #include "../Global.hpp"
 #include "../TimeScheduler.hpp"
@@ -15,6 +13,8 @@
 namespace nut{
 class DualShock{
 public:
+	using Button = uint32_t;
+	/*
 	enum class Button : uint16_t{
 		up 		= 0x0001,
 		down	= 0x0002,
@@ -39,29 +39,44 @@ public:
 		RX = 0x04,
 		RY = 0x08,
 	};
-
-	class ButtonData{
-
-	};
+*/
 
 
-	/*user座標値*/
+	/*user蠎ｧ讓吝�､*/
 	static constexpr int8_t USE_ANAROG_MAX =		63;
 	static constexpr int8_t USE_ANAROG_MIN =		-63;
 	static constexpr int8_t USE_ANAROG_CENTER =		0;
 
-	struct ButtonFlag{
-		Button button;
-		AnalogPad pad;
-	};
-	using ButtonData = std::array<uint8_t, 6>;
+	/*荳倶ｽ�*/
+	static constexpr Button PS3_UP =		0x0001;
+	static constexpr Button PS3_DOWN =		0x0002;
+	static constexpr Button PS3_RIGHT =		0x0004;
+	static constexpr Button PS3_LEFT =		0x0008;
+	static constexpr Button PS3_TRIANGLE =	0x0010;
+	static constexpr Button PS3_CROSS =		0x0020;
+	static constexpr Button PS3_CIRCLE =  	0x0040;
+	static constexpr Button PS3_START =		0x0080;
+	/*荳贋ｽ�*/
+	static constexpr Button PS3_SQUARE = 	0x0100;
+	static constexpr Button PS3_L1 =		0x0200;
+	static constexpr Button PS3_L2 =		0x0400;
+	static constexpr Button PS3_R1 = 		0x0800;
+	static constexpr Button PS3_R2 = 		0x1000;
+	static constexpr Button PS3_L3 =		0x2000;
+	static constexpr Button PS3_R3 =		0x4000;
+	static constexpr Button PS3_SELECT = 	0x8000;
+	//萓ｿ螳應ｸ翫�ｮ螳夂ｾｩ
+	static constexpr Button PS3_ANALOG_LX =		0x000F0000;
+	static constexpr Button PS3_ANALOG_LY = 	0x00F00000;
+	static constexpr Button PS3_ANALOG_RX =		0x0F000000;
+	static constexpr Button PS3_ANALOG_RY = 	0xF0000000;
 
 private:
 	static constexpr uint8_t SBDBT_DATA_SIZE = 8;
 	static constexpr uint8_t SBDBT_BUFF_SIZE = 16;
 	static constexpr uint8_t SBDBT_BUFF_SIZE_D = SBDBT_BUFF_SIZE - 1;
 
-	/*SBDBT受信値*/
+	/*SBDBT蜿嶺ｿ｡蛟､*/
 	static constexpr int8_t ANAROG_MAX =		127;
 	static constexpr int8_t ANAROG_MIN =		1;
 	static constexpr int8_t ANAROG_CENTER =		64;
@@ -74,17 +89,17 @@ private:
 	std::array<uint8_t, SBDBT_DATA_SIZE> _last_buttonn_data{0};
 	std::array<uint8_t, SBDBT_BUFF_SIZE> _buff{0};
 
-	/*コールバック関数*/
-	std::function<void(ButtonData)> _button_callback = nullptr;
+	/*繧ｳ繝ｼ繝ｫ繝舌ャ繧ｯ髢｢謨ｰ*/
+	std::function<void(Button)> _button_callback = nullptr;
 	std::function<void()> _timeout_callback;
 
 
 
-	//連続受信フラグ
+	//騾｣邯壼女菫｡繝輔Λ繧ｰ
 	bool _continue_flag = false;
 
 	/*
-	 * タイムアウト関数
+	 * 繧ｿ繧､繝�繧｢繧ｦ繝磯未謨ｰ
 	 */
 	void timeout(void){
 		_continue_flag = false;
@@ -110,7 +125,7 @@ public:
 
 
 	/*
-	 * 初期化
+	 * 蛻晄悄蛹�
 	 */
 	inline void Init(){
 		HAL_UART_Receive_DMA(_uart, _buff.data(), SBDBT_BUFF_SIZE);
@@ -119,8 +134,8 @@ public:
 
 
 	/*
-	 * 受信関数
-	 *  HAL_UART_RxHalfCpltCallback()内で呼び出すこと
+	 * 蜿嶺ｿ｡髢｢謨ｰﾂ�
+	 *  HAL_UART_RxHalfCpltCallback()蜀�縺ｧ蜻ｼ縺ｳ蜃ｺ縺吶％縺ｨ
 	 */
 	bool Receive(UART_HandleTypeDef *huart){
 		bool state = false;
@@ -129,14 +144,14 @@ public:
 			std::array<uint8_t, SBDBT_BUFF_SIZE> hold_buff(_buff);
 			uint32_t ndtr_ptr = _uart->hdmarx->Instance->NDTR;
 
-			//リングバッファ全探索
+			//繝ｪ繝ｳ繧ｰ繝舌ャ繝輔ぃ蜈ｨ謗｢邏｢
 			for(uint8_t j = 0;j < SBDBT_BUFF_SIZE;++j){
-				//ヘッダ探索
-				if((hold_buff[j] == 0x80) && (((j + ndtr_ptr) & SBDBT_BUFF_SIZE_D) < SBDBT_DATA_SIZE)){//受信中途データの場合はじく
+				//繝倥ャ繝�謗｢邏｢
+				if((hold_buff[j] == 0x80) && (((j + ndtr_ptr) & SBDBT_BUFF_SIZE_D) < SBDBT_DATA_SIZE)){//蜿嶺ｿ｡荳ｭ騾斐ョ繝ｼ繧ｿ縺ｮ蝣ｴ蜷医�ｯ縺倥￥
 					std::array<uint8_t, SBDBT_DATA_SIZE> data;
 					uint8_t check_sum = 0;
 
-					//バッファ移し
+					//繝舌ャ繝輔ぃ遘ｻ縺�
 					{
 						uint8_t i = 0;
 						for(auto& d : data){
@@ -149,18 +164,18 @@ public:
 						check_sum += *it;
 
 
-					//チェックサム確認
+					//繝√ぉ繝�繧ｯ繧ｵ繝�遒ｺ隱�
 					if((check_sum &  0x7F) == (data.at(7) & 0x7F)){
 						_buttonn_data = data;
 
-						if((_buttonn_data != _last_buttonn_data) && (_button_callback != nullptr)){//エッジ検出&NULLチェック
-							ButtonData edge_button;
-							edge_button.at(0) = _buttonn_data.at(1) ^ _last_buttonn_data.at(1);
-							edge_button.at(1) = _buttonn_data.at(2) ^ _last_buttonn_data.at(2);
-							edge_button.at(2) = (_buttonn_data[3] != _last_buttonn_data[3]) ? 0xFF : 0;
-							edge_button.at(3) = (_buttonn_data[4] != _last_buttonn_data[4]) ? 0xFF : 0;
-							edge_button.at(4) = (_buttonn_data[5] != _last_buttonn_data[5]) ? 0xFF : 0;
-							edge_button.at(5) = (_buttonn_data[6] != _last_buttonn_data[6]) ? 0xFF : 0;
+						if((_buttonn_data != _last_buttonn_data) && (_button_callback != nullptr)){//繧ｨ繝�繧ｸ讀懷�ｺ&NULL繝√ぉ繝�繧ｯ
+							Button edge_button =
+							(uint32_t)_buttonn_data.at(2) |
+							((uint32_t)_buttonn_data.at(1) << 8) |
+							((_buttonn_data.at(3) != _last_buttonn_data.at(3)) ? (0x0F << 16) : 0) |
+							((_buttonn_data.at(4) != _last_buttonn_data.at(4)) ? (0xF0 << 16) : 0) |
+							((_buttonn_data.at(5) != _last_buttonn_data.at(5)) ? (0x0F << 24) : 0) |
+							((_buttonn_data.at(6) != _last_buttonn_data.at(6)) ? (0xF0 << 24) : 0);
 
 							_continue_flag = true;
 							_button_callback(edge_button);
@@ -180,36 +195,43 @@ public:
 
 
 	/*
-	 * コントローラのボタン割り込み
+	 * 繧ｳ繝ｳ繝医Ο繝ｼ繝ｩ縺ｮ繝懊ち繝ｳ蜑ｲ繧願ｾｼ縺ｿ
 	 */
-	inline void set_sbdbt_Callback(std::function<void(ButtonData)>&& callback_func){
+	inline void set_sbdbt_Callback(std::function<void(Button)>&& callback_func){
 		_button_callback = callback_func;
 	}
 
 	/*
-	 * ゲッター
+	 * 繧ｲ繝�繧ｿ繝ｼ
 	 */
-	ButtonData GetButtonData(){
-		ButtonData button;
-		button.at(0) = _buttonn_data.at(1);
-		button.at(1) = _buttonn_data.at(2);
-	}
+	int8_t GetButtonData(Button button){
+		int8_t data = 0;
 
-
-	/*
-	 * ボタン読み出し
-	 */
-	static bool GetButton(ButtonData data, Button button) const{
-		uint16_t all_data;
-		memcpy(&all_data, &data[0], 2);
-
-		return all_data & (1 << static_cast<uint8_t>(button));
-	}
-	static int8_t GetAnalogPad(ButtonData data, AnalogPad analog_pad) const{
-		return data[2 + static_cast<uint8_t>(analog_pad)];
+		if(!(((button & 0xFFFF) != 0) && ((button & 0xFFFF0000) != 0)) && _continue_flag){
+			if(button & 0xFFFF){
+				data = ((((uint32_t)_buttonn_data.at(2) |((uint32_t)_buttonn_data.at(1) << 8)) & button) != 0);
+			}else if(button & 0xFFFF0000){
+				switch(button){
+				case PS3_ANALOG_LX:
+					data = _buttonn_data.at(3) - ANAROG_CENTER;
+					break;
+				case PS3_ANALOG_LY:
+					data = ANAROG_MAX + 1 - (int8_t)_buttonn_data.at(4) - ANAROG_CENTER;
+					break;
+				case PS3_ANALOG_RX:
+					data = _buttonn_data.at(5) - ANAROG_CENTER;
+					break;
+				case PS3_ANALOG_RY:
+					data = _buttonn_data.at(6) - ANAROG_CENTER;
+					break;
+				default:
+					break;
+				}
+			}
+		}
+		return data;
 	}
 };
 
 }
 
-#endif

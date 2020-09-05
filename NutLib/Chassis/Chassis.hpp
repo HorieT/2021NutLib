@@ -39,6 +39,9 @@ public:
 	}
 	virtual ~Chassis(){}
 
+	void Init(){
+		_scheduler.Set();
+	}
 
 	virtual bool SetVelocity(Coordinate<float> velocity){
 		_target_velocity = velocity;

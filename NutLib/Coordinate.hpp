@@ -29,6 +29,7 @@ struct Coordinate{
 		return *this;
 	}
 
+
 	/*
 	 * ベクトル取得関数
 	 * 第一引数:取得ベクトル
@@ -96,8 +97,8 @@ struct Coordinate{
 	/*
 	 * キャストのオーバーロード
 	 */
-	operator std::array<T, 3> (){return std::array<T, 3>(x, y, theta);}
-	operator std::initializer_list<T> (){return std::initializer_list<T>(x, y, theta);}
+	operator std::array<T, 3> ()const noexcept{return std::array<T, 3>(x, y, theta);}
+	operator std::initializer_list<T> ()const noexcept{return std::initializer_list<T>(x, y, theta);}
 
 
 	/*
@@ -146,6 +147,6 @@ constexpr nut::Coordinate<T> operator-(const nut::Coordinate<T>& l_operand, cons
 }
 template<typename T, typename U>
 constexpr nut::Coordinate<T> operator-(const U& l_operand, const nut::Coordinate<T>& r_operand){
-	return nut::Coordinate<T>(T{l_operand.x()}-r_operand.x, T{l_operand.y()}-r_operand.y, r_operand.direction_rad);
+	return nut::Coordinate<T>(T{l_operand.x}-r_operand.x, T{l_operand.y}-r_operand.y, r_operand.theta);
 }
 }

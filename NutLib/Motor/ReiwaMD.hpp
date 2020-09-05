@@ -80,7 +80,7 @@ protected:
 			SendData<float>(VoltageRef, 0.240f * _target_duty);
 			break;
 		case MoveType::rpm:
-			SendData<float>(SpeedRef, _target_rpm * 120.0f * M_PI);
+			SendData<float>(SpeedRef, _target_rpm * M_PI / 30.0f);
 			break;
 		case MoveType::rad:
 		case MoveType::stop:

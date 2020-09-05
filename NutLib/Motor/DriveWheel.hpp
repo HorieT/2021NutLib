@@ -20,10 +20,13 @@ public:
 	~DriveWheel(){}
 
 	void set_mps(float mps){
-		_motor->SetRPM(static_cast<int32_t>(mps * 60000.0f / (_diameter_mm * static_cast<float>(M_PI))));
+		_motor->SetRPM(static_cast<float>(mps * 60000.0f / (_diameter_mm * static_cast<float>(M_PI))));
 	}
 	float get_mps() const{
 		return static_cast<float>(_motor->GetRPM()) / 60.0f * _diameter_mm * static_cast<float>(M_PI);
+	}
+	const std::shared_ptr<Motor>& GetMotor() const{
+		return _motor;
 	}
 };
 }

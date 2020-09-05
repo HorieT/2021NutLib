@@ -44,7 +44,7 @@ private:
 		const Coordinate<float> last_pos = _position;
 		//åªç›à íuë„ì¸óp
 		Coordinate<float> now_position = _position;
-		now_position = _start_position.theta + _imu->GetGlobalAngle().z();
+		now_position.theta = _start_position.theta + _imu->GetGlobalAngle().z();
 		if(fabs(now_position.theta) > static_cast<float>(M_PI))//íPà â~Ç…é˚ÇﬂÇÈ
 			now_position.theta += (now_position.theta > 0.0f) ? -2.0f*static_cast<float>(M_PI) : 2.0f*static_cast<float>(M_PI);
 
