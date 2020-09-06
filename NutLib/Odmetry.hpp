@@ -1,6 +1,8 @@
-/*
- * ƒIƒhƒƒgƒŠƒNƒ‰ƒX
- * 2ƒGƒ“ƒR[ƒ_•ƒWƒƒƒCƒ‚Ì‚İ‚É‘Î‰
+/**
+ * @file Odmetry.hpp
+ * @brief ã‚ªãƒ‰ãƒ¡ãƒ¼ã‚¿
+ * @author Horie
+ * @date 2020/9
  */
 #pragma once
 
@@ -13,19 +15,24 @@
 #include <memory>
 
 namespace nut {
+
+/**
+ * @brief ã‚ªãƒ‰ãƒ¡ãƒ¼ã‚¿ã®ã‚¯ãƒ©ã‚¹<br>
+ * 			äºŒè¼ªã‚¨ãƒ³ã‚³ãƒ¼ãƒ€ã¨ä¸€ã¤ã®ã‚¸ãƒ£ã‚¤ãƒ­ã«å¯¾å¿œ
+ */
 class Odmetry{
 private:
 	TimeScheduler<void> _scheduler;
 	const std::shared_ptr<IMU> _imu;
-	std::array<const std::shared_ptr<EncoderWheel>, 2> _encoder;//wheel‚Ì•û‚ÍÀ‘Ì‚Å‚¢‚¢‚©‚àH
+	std::array<const std::shared_ptr<EncoderWheel>, 2> _encoder;
 
 	Coordinate<float> _start_position;
 	Coordinate<float> _position;
 	Coordinate<float> _velocity;
 
-	/*ŒvZƒŠƒ\[ƒX*/
-	std::array<float, 2> _encoder_radPos;//ˆÊ’uŠp
-	std::array<float, 2> _encoder_norm;//³‹K‰»‹——£
+	/*è¨ˆç®—ãƒªã‚½ãƒ¼ã‚¹*/
+	std::array<float, 2> _encoder_radPos;//ã‚¨ãƒ³ã‚³ãƒ¼ãƒ€åº§æ¨™è§’
+	std::array<float, 2> _encoder_norm;//ã‚¨ãƒ³ã‚³ãƒ¼ãƒ€åº§æ¨™ãƒãƒ«ãƒ 
 	float _sin_encoder_directiion_diff;
 	std::array<float, 2> _cos_encoder_direction;
 	std::array<float, 2> _sin_encoder_direction;
@@ -34,70 +41,86 @@ private:
 
 
 
+	/**
+	 * @brief å‘¨æœŸã”ã¨ã®åº§æ¨™è¨ˆç®—
+	 */
 	void CalcPos(){
-		//Še‘ª‹——Ö‚ÌÀŒø’l
+		//æ¸¬è·è¼ª
 		std::array<float, 2> distance {
 			_encoder.at(0)->GetDistanceAndReset(),
 			_encoder.at(1)->GetDistanceAndReset()
 		};
-		//‘O‰ñˆÊ’u
+		//å‰å›åº§æ¨™
 		const Coordinate<float> last_pos = _position;
-		//Œ»İˆÊ’u‘ã“ü—p
+		//ä»£å…¥æ™‚é–“å·®ç·©å’Œ
 		Coordinate<float> now_position = _position;
-		now_position.theta = _start_position.theta + _imu->GetGlobalAngle().z();
-		if(fabs(now_position.theta) > static_cast<float>(M_PI))//’PˆÊ‰~‚Éû‚ß‚é
-			now_position.theta += (now_position.theta > 0.0f) ? -2.0f*static_cast<float>(M_PI) : 2.0f*static_cast<float>(M_PI);
+		now_position.theta() = _start_position.theta() + _imu->GetGlobalAngle().z();
+		if(fabs(now_position.theta()) > static_cast<float>(M_PI))//piã‚ˆã‚Šå¤§ãã„è§’åº¦ã®ä¿®æ­£
+			now_position.theta() += (now_position.theta() > 0.0f) ? -2.0f*static_cast<float>(M_PI) : 2.0f*static_cast<float>(M_PI);
 
-		//’PˆÊŠÔ‘¬“x
+		//å›è»¢é‡
 		const float rot_vel = _imu->GetGlobalRot().z() * static_cast<float>(_scheduler.GetPeriod()) / 1000.0f;
 
-		//‘ª‹——ÖŠeX‚ÌƒxƒNƒgƒ‹
+		//ç§»å‹•é‡åº§æ¨™å¤‰æ›
 		std::array<Eigen::Vector2f, 2> distance_vec{
 			Eigen::Vector2f{distance.at(0) * _cos_encoder_direction.at(0), distance.at(0) * _sin_encoder_direction.at(0)},
 			Eigen::Vector2f{distance.at(1) * _cos_encoder_direction.at(1), distance.at(1) * _sin_encoder_direction.at(1)}};
 
 
 		for(uint8_t i = 0;i < 2;++i){
-			//ƒGƒ“ƒR[ƒ_‰ñ“]¬•ª
+			//å›è»¢ã«ã‚ˆã‚‹æ¸¬è·è¼ªã®åå·®
 			float rot_len = rot_vel * _encoder_norm.at(i);
 			Eigen::Vector2f calc_vec =
 					distance_vec.at(i) - Eigen::Vector2f(rot_len * -_sin_encoder_rad.at(i), rot_len * _cos_encoder_rad.at(i));
-			distance.at(i) = sqrtf(calc_vec.x() * calc_vec.x() + calc_vec.y() * calc_vec.y()) * cos(_encoder.at(i)->GetPosition().theta - atan2f(calc_vec.y(), calc_vec.x()));
+			distance.at(i) = sqrtf(calc_vec.x() * calc_vec.x() + calc_vec.y() * calc_vec.y()) * cos(_encoder.at(i)->GetPosition().theta() - atan2f(calc_vec.y(), calc_vec.x()));
 		}
-		now_position.x +=
-				(distance.at(0) * sin(_encoder.at(1)->GetPosition().theta + last_pos.theta) - distance.at(1) * sin(_encoder.at(0)->GetPosition().theta + last_pos.theta)) /
+		//ç§»å‹•å€¤ç©åˆ†
+		now_position.x() +=
+				(distance.at(0) * sin(_encoder.at(1)->GetPosition().theta() + last_pos.theta()) - distance.at(1) * sin(_encoder.at(0)->GetPosition().theta() + last_pos.theta())) /
 				(-_sin_encoder_directiion_diff);
-		now_position.y +=
-				(distance.at(0) * cos(_encoder.at(1)->GetPosition().theta + last_pos.theta) - distance.at(1) * cos(_encoder.at(0)->GetPosition().theta+ last_pos.theta)) /
+		now_position.y() +=
+				(distance.at(0) * cos(_encoder.at(1)->GetPosition().theta() + last_pos.theta()) - distance.at(1) * cos(_encoder.at(0)->GetPosition().theta()+ last_pos.theta())) /
 				(_sin_encoder_directiion_diff);
 
 
-		//‘ã“ü
+		//è¨ˆç®—å€¤
 		_position = now_position;
 		_velocity = (now_position - last_pos) / static_cast<float>(_scheduler.GetPeriod()) * 1000.0f;
 	}
 public:
+	/**
+	 * @brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+	 * @param[in] period è¨ˆç®—å‘¨æœŸ
+	 * @param[in] imu ã‚¸ãƒ£ã‚¤ãƒ­æŒã¡IMUã®shared_ptr
+	 * @param[in] enc1  æ¸¬è·è¼ªã®shared_ptr
+	 * @param[in] enc2  æ¸¬è·è¼ªã®shared_ptr
+	 * @param[in] start åˆæœŸä½ç½®
+	 */
 	Odmetry(uint32_t period, const std::shared_ptr<IMU>& imu, const std::shared_ptr<EncoderWheel>& enc1, const std::shared_ptr<EncoderWheel>& enc2, Coordinate<float> start) :
 		_scheduler([this]{CalcPos();}, period), _imu(imu), _encoder({enc1, enc2}), _start_position(start){
 
 		_position = _start_position;
 
-		//Še“r’†’lŒvZ
+		//è¨ˆç®—ãƒªã‚½ãƒ¼ã‚¹
 		for(uint8_t i = 0;i < 2;++i){
 			_encoder_radPos.at(i) = _encoder.at(i)->GetPosition().Angle();
 			_encoder_norm.at(i) = _encoder.at(i)->GetPosition().Norm();
-			_cos_encoder_direction.at(i) = cos(_encoder.at(i)->GetPosition().theta);
-			_sin_encoder_direction.at(i) = sin(_encoder.at(i)->GetPosition().theta);
+			_cos_encoder_direction.at(i) = cos(_encoder.at(i)->GetPosition().theta());
+			_sin_encoder_direction.at(i) = sin(_encoder.at(i)->GetPosition().theta());
 			_cos_encoder_rad.at(i) = cosf(_encoder_radPos.at(i));
 			_sin_encoder_rad.at(i) = sinf(_encoder_radPos.at(i));
-			_sin_encoder_directiion_diff = sin(_encoder.at(0)->GetPosition().theta - _encoder.at(1)->GetPosition().theta);
+			_sin_encoder_directiion_diff = sin(_encoder.at(0)->GetPosition().theta() - _encoder.at(1)->GetPosition().theta());
 		}
 	}
+	/**
+	 * @brief ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+	 */
 	virtual ~Odmetry(){}
 
 
-	/*
-	 * ‰Šú‰»
+	/**
+	 * @brief åˆæœŸåŒ–é–¢æ•°
+	 * @details ã‚»ãƒ³ã‚µé¡åŠã³å‘¨æœŸå‡¦ç†ã‚’åˆæœŸåŒ–ã—ã¾ã™
 	 */
 	void Init(){
 		_scheduler.Set();
@@ -106,18 +129,24 @@ public:
 		_encoder.at(1)->Init();
 	}
 
-	/*
-	 * getter
+	/**
+	 * @brief ç¾åœ¨ä½ç½®å–å¾—
+	 * @return ç¾åœ¨ä½ç½®
 	 */
 	const Coordinate<float>& GetPosition() const{
 		return _position;
 	}
+	/**
+	 * @brief ç¾åœ¨é€Ÿåº¦å–å¾—
+	 * @return ç¾åœ¨é€Ÿåº¦
+	 */
 	const Coordinate<float>& GetVelocity() const{
 		return _velocity;
 	}
 
-	/*
-	 * ˆÊ’uƒŠƒZ
+	/**
+	 * @briefã€€ä½ç½®ã®ãƒªã‚»ãƒƒãƒˆ
+	 * @param[in] position ãƒªã‚»ãƒƒãƒˆåº§æ¨™
 	 */
 	void ResetPosition(const Coordinate<float>& position){
 		_position = position;

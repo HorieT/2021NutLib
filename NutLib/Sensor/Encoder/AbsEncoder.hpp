@@ -1,5 +1,8 @@
-/*
- * ƒAƒuƒ\ƒŠƒ…[ƒgŒ^ƒGƒ“ƒR[ƒ_ƒNƒ‰ƒX
- * ‘½•ª‚±‚±‚©‚ç‚³‚ç‚É”h¶‚·‚é
+/**
+ * @file AbsEncoder.hpp
+ * @brief ã‚¢ãƒ–ã‚½ãƒªãƒ¥ãƒ¼ãƒˆåž‹ã‚¨ãƒ³ã‚³ãƒ¼ãƒ€åŸºåº•
+ * @author Horie
+ * @date 2020/9
+ * @attention ã¾ã ä½œæˆä¸­
  */
 #pragma once

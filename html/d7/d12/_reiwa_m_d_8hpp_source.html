@@ -1,0 +1,336 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>NutLib: NutLib/Motor/ReiwaMD.hpp ソースファイル</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">NutLib
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.20 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('d7/d12/_reiwa_m_d_8hpp_source.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">ReiwaMD.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d7/d12/_reiwa_m_d_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d4/dcd/_motor_8hpp.html">Motor.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;../CAN.hpp&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../dd/d51/namespacenut.html">nut</a>{</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="../../df/da1/classnut_1_1_reiwa_m_d.html">   20</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../df/da1/classnut_1_1_reiwa_m_d.html">ReiwaMD</a> : <span class="keyword">public</span> <a class="code" href="../../d5/da2/classnut_1_1_motor.html">Motor</a>{</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="../../df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2">   22</a></span>&#160;    <span class="keyword">typedef</span> <span class="keyword">enum</span>{</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="../../df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2a8315e08506974321c602dfce4a1f4867">   23</a></span>&#160;        <a class="code" href="../../df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2a8315e08506974321c602dfce4a1f4867">VoltageRef</a> = 0x00,</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="../../df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2a87fb4a8a072148066636553cea0183b2">   24</a></span>&#160;        <a class="code" href="../../df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2a87fb4a8a072148066636553cea0183b2">CurrentRef</a>,</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="../../df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2a9d7b8da099ca972153e16e64967433cc">   25</a></span>&#160;        <a class="code" href="../../df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2a9d7b8da099ca972153e16e64967433cc">SpeedRef</a>,</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="../../df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2a2fba98fd96ee8d06568836415a5593eb">   26</a></span>&#160;        <a class="code" href="../../df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2a2fba98fd96ee8d06568836415a5593eb">PositionRef</a>,</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="../../df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2a306035611947a2057431fd228a41ddfe">   27</a></span>&#160;        <a class="code" href="../../df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2a306035611947a2057431fd228a41ddfe">ZeroReturn</a>,</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="../../df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2ae560260eda30e21690a8209c7dbda71a">   28</a></span>&#160;        <a class="code" href="../../df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2ae560260eda30e21690a8209c7dbda71a">SetModeDisable</a>,</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="../../df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2adaa96bf10a8dacbea71063b56b20af42">   29</a></span>&#160;        <a class="code" href="../../df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2adaa96bf10a8dacbea71063b56b20af42">SetModeVoltage</a>,</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="../../df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2acccbfbd46155eb58d407a211271c4c99">   30</a></span>&#160;        <a class="code" href="../../df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2acccbfbd46155eb58d407a211271c4c99">SetModeSpeed</a>,</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="../../df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2aded0ce6b55063fb437bebfb42122e6c7">   31</a></span>&#160;        <a class="code" href="../../df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2aded0ce6b55063fb437bebfb42122e6c7">SetModePosition</a>,</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="../../df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2af41a6ddee11fe9499cf8663099f59a70">   32</a></span>&#160;        <a class="code" href="../../df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2af41a6ddee11fe9499cf8663099f59a70">ChangeEncoderInc</a>,</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="../../df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2a80177d941c39ed486d2bcbd671a0518a">   33</a></span>&#160;        <a class="code" href="../../df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2a80177d941c39ed486d2bcbd671a0518a">ChangeEncoderAbs</a>,</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="../../df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2aa19b55fc777494f56b7154d6e612047e">   34</a></span>&#160;        <a class="code" href="../../df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2aa19b55fc777494f56b7154d6e612047e">ResetIncEnc</a>,</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="../../df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2ae304b7669c47fbe623d6559eacd102e3">   35</a></span>&#160;        <a class="code" href="../../df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2ae304b7669c47fbe623d6559eacd102e3">ResetAbsEnc</a>,</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="../../df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2acbcf295e852c11babddf3fb64208246f">   36</a></span>&#160;        <a class="code" href="../../df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2acbcf295e852c11babddf3fb64208246f">SetModeCurrent</a>,</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="../../df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2aa17bd0bb558759684ddb21d8f9036fc7">   38</a></span>&#160;        <a class="code" href="../../df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2aa17bd0bb558759684ddb21d8f9036fc7">Motor_ReadStatus</a> = 0x10,</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }<a class="code" href="../../df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2">Motor_DataType_t</a>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keyword">const</span> std::shared_ptr&lt;CAN&gt; _can;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keyword">const</span> uint16_t _id;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    std::array&lt;uint8_t, 8&gt; _rx_data;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="../../df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2">Motor_DataType_t</a> _control_type = <a class="code" href="../../df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2ae560260eda30e21690a8209c7dbda71a">SetModeDisable</a>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">static</span> constexpr uint32_t  CAN_MOTOR_STDID_MASK = 0x0400U;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">static</span> constexpr uint32_t  CAN_MOTOR_STDID_FILTER = 0x0400U;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keyword">typedef</span> <span class="keyword">union</span>{<span class="comment">//union�ɂ��L���X�g�y�уr�b�g�t�B�[���h�̔z�u��C�̎d�l�Ŗ���`�Ȃ̂ł�߂悤�ˁI</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keyword">struct</span>{</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <a class="code" href="../../df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2">Motor_DataType_t</a> dataType   : 5;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="keywordtype">unsigned</span> channel            : 5;<span class="comment">//5+5���H�H�H�H�H�H�H�H�H�H</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keywordtype">unsigned</span> forMotor           : 1;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        };</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        uint16_t StdID;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }Motor_StdID_t;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="../../df/da1/classnut_1_1_reiwa_m_d.html#a8ebd4e3c997c4511b2e89a36e39015d9">   69</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../df/da1/classnut_1_1_reiwa_m_d.html#a8ebd4e3c997c4511b2e89a36e39015d9">SendData</a>(<a class="code" href="../../df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2">Motor_DataType_t</a> type, T data) {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        static_assert(<span class="keyword">sizeof</span>(T) &lt;= 8,<span class="stringliteral">&quot;Data size is over.&quot;</span>);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        std::array&lt;uint8_t, <span class="keyword">sizeof</span>(T)&gt; buff = {0};</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        Motor_StdID_t txStdID;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        txStdID.forMotor = 1;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        txStdID.channel = _id;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        txStdID.dataType = type;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        std::memcpy(buff.data(), &amp;data, <span class="keyword">sizeof</span>(T));</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        _can-&gt;Transmit&lt;<span class="keyword">sizeof</span>(T)&gt;(txStdID.StdID, buff);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="../../df/da1/classnut_1_1_reiwa_m_d.html#aad29ecc03b1e20118abd83e1b610824b">   87</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../df/da1/classnut_1_1_reiwa_m_d.html#aad29ecc03b1e20118abd83e1b610824b">ScheduleTask</a>()<span class="keyword"> override</span>{</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="../../d5/da2/classnut_1_1_motor.html#a07419fd0f0e964016084ab9b3605009b">_move_type</a> == <a class="code" href="../../d5/da2/classnut_1_1_motor.html#a21a5cd6931fdabe222955f11ae32571baef399b2d446bb37b7c32ad2cc1b6045b">MoveType::stop</a>)<span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordflow">switch</span>(<a class="code" href="../../d5/da2/classnut_1_1_motor.html#a07419fd0f0e964016084ab9b3605009b">_move_type</a>){</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="../../d5/da2/classnut_1_1_motor.html#a21a5cd6931fdabe222955f11ae32571baa1d033b84aab7171a82fe94afb710675">MoveType::duty</a>:</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            SendData&lt;float&gt;(<a class="code" href="../../df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2a8315e08506974321c602dfce4a1f4867">VoltageRef</a>, 0.240f * <a class="code" href="../../d5/da2/classnut_1_1_motor.html#a88a9ba06f74cfa8eeee81cf3d3bd119a">_target_duty</a>);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="../../d5/da2/classnut_1_1_motor.html#a21a5cd6931fdabe222955f11ae32571ba455385f5d8493917cb83541909b7cfa9">MoveType::rpm</a>:</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            SendData&lt;float&gt;(<a class="code" href="../../df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2a9d7b8da099ca972153e16e64967433cc">SpeedRef</a>, <a class="code" href="../../d5/da2/classnut_1_1_motor.html#addf2f56606325f5371ae373c58af0617">_target_rpm</a> * <a class="code" href="../../d2/d88/_global_8hpp.html#ae71449b1cc6e6250b91f539153a7a0d3">M_PI</a> / 30.0f);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="../../d5/da2/classnut_1_1_motor.html#a21a5cd6931fdabe222955f11ae32571ba340f7c2dcaedeae68e4a62c281c7350b">MoveType::rad</a>:</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="../../d5/da2/classnut_1_1_motor.html#a21a5cd6931fdabe222955f11ae32571baef399b2d446bb37b7c32ad2cc1b6045b">MoveType::stop</a>:</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        }</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    }</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="../../df/da1/classnut_1_1_reiwa_m_d.html#a8420336b8dd0216f3aa7d34c573ca314">  113</a></span>&#160;    <a class="code" href="../../df/da1/classnut_1_1_reiwa_m_d.html#a8420336b8dd0216f3aa7d34c573ca314">ReiwaMD</a>(uint32_t period, std::shared_ptr&lt;CAN&gt; can, uint16_t <span class="keywordtype">id</span>)</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        : <a class="code" href="../../d5/da2/classnut_1_1_motor.html">Motor</a>(period), _can(can), _id(id &amp; 0x1F){</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    }</div>
+<div class="line"><a name="l00120"></a><span class="lineno"><a class="line" href="../../df/da1/classnut_1_1_reiwa_m_d.html#a0c51e75191c62c5d694b19898104244b">  120</a></span>&#160;    <span class="keyword">virtual</span> <a class="code" href="../../df/da1/classnut_1_1_reiwa_m_d.html#a0c51e75191c62c5d694b19898104244b">~ReiwaMD</a>(){</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <a class="code" href="../../df/da1/classnut_1_1_reiwa_m_d.html#a15c344a43e782cb4cb26ccc482e774a7">Stop</a>();</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    }</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
+<div class="line"><a name="l00129"></a><span class="lineno"><a class="line" href="../../df/da1/classnut_1_1_reiwa_m_d.html#a7ac369682056c692a7df5f4825ea95a7">  129</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../df/da1/classnut_1_1_reiwa_m_d.html#a7ac369682056c692a7df5f4825ea95a7">Init</a>()<span class="keyword">override</span>{</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    }</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
+<div class="line"><a name="l00137"></a><span class="lineno"><a class="line" href="../../df/da1/classnut_1_1_reiwa_m_d.html#a32c6b67e93487f574e606eec8a97a6e7">  137</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="../../df/da1/classnut_1_1_reiwa_m_d.html#a32c6b67e93487f574e606eec8a97a6e7">Start</a>()<span class="keyword"> override</span>{</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <a class="code" href="../../d5/da2/classnut_1_1_motor.html#aab752ad27241d68413a18f0e3d268ec6">ResetTarget</a>();</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        <a class="code" href="../../d5/da2/classnut_1_1_motor.html#a88a9ba06f74cfa8eeee81cf3d3bd119a">_target_duty</a> = 0.0f;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        <a class="code" href="../../d5/da2/classnut_1_1_motor.html#a07419fd0f0e964016084ab9b3605009b">_move_type</a> = <a class="code" href="../../d5/da2/classnut_1_1_motor.html#a21a5cd6931fdabe222955f11ae32571baa1d033b84aab7171a82fe94afb710675">MoveType::duty</a>;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        <a class="code" href="../../d5/da2/classnut_1_1_motor.html#a3e7f0ef80cbc1fde3400dcfb83405de0">_scheduler</a>.<a class="code" href="../../db/de6/classnut_1_1_time_scheduler_3_01void_01_4.html#a01c1530d879d361ca439023538a83ddd">Set</a>();</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    }</div>
+<div class="line"><a name="l00147"></a><span class="lineno"><a class="line" href="../../df/da1/classnut_1_1_reiwa_m_d.html#a15c344a43e782cb4cb26ccc482e774a7">  147</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../df/da1/classnut_1_1_reiwa_m_d.html#a15c344a43e782cb4cb26ccc482e774a7">Stop</a>()<span class="keyword"> override</span>{</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <a class="code" href="../../d5/da2/classnut_1_1_motor.html#a07419fd0f0e964016084ab9b3605009b">_move_type</a> = <a class="code" href="../../d5/da2/classnut_1_1_motor.html#a21a5cd6931fdabe222955f11ae32571baef399b2d446bb37b7c32ad2cc1b6045b">MoveType::stop</a>;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <a class="code" href="../../df/da1/classnut_1_1_reiwa_m_d.html#a4209d3d2b8dedaa939277d24c447be5a">SendControlMode</a>(<a class="code" href="../../df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2ae560260eda30e21690a8209c7dbda71a">SetModeDisable</a>);</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <a class="code" href="../../d5/da2/classnut_1_1_motor.html#a3e7f0ef80cbc1fde3400dcfb83405de0">_scheduler</a>.<a class="code" href="../../d9/d00/classnut_1_1_time_scheduler_base.html#a1d0ecaefe7d5c5f1266a4021fba23d69">Erase</a>();</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        <a class="code" href="../../d5/da2/classnut_1_1_motor.html#a3ba6e0a3b25c9d3d0f1ae555acfd10fe">ResetParam</a>();</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    }</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
+<div class="line"><a name="l00161"></a><span class="lineno"><a class="line" href="../../df/da1/classnut_1_1_reiwa_m_d.html#a5e7015dc7a039d8f4fdb6c9911dab941">  161</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="../../df/da1/classnut_1_1_reiwa_m_d.html#a5e7015dc7a039d8f4fdb6c9911dab941">SetDuty</a>(<span class="keywordtype">float</span> duty)<span class="keyword"> override</span>{</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <span class="keywordflow">if</span>(std::fabs(duty) &gt; 100.0f)<span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        <span class="keywordflow">if</span>(_control_type != <a class="code" href="../../df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2adaa96bf10a8dacbea71063b56b20af42">SetModeVoltage</a>)<span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        <a class="code" href="../../d5/da2/classnut_1_1_motor.html#a88a9ba06f74cfa8eeee81cf3d3bd119a">_target_duty</a> = duty;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        <a class="code" href="../../d5/da2/classnut_1_1_motor.html#a07419fd0f0e964016084ab9b3605009b">_move_type</a> = <a class="code" href="../../d5/da2/classnut_1_1_motor.html#a21a5cd6931fdabe222955f11ae32571baa1d033b84aab7171a82fe94afb710675">MoveType::duty</a>;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    }</div>
+<div class="line"><a name="l00173"></a><span class="lineno"><a class="line" href="../../df/da1/classnut_1_1_reiwa_m_d.html#a98b651b80a784e9404cedcb84f606541">  173</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="../../df/da1/classnut_1_1_reiwa_m_d.html#a98b651b80a784e9404cedcb84f606541">SetRPM</a>(<span class="keywordtype">float</span> rpm)<span class="keyword"> override</span>{</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <span class="keywordflow">if</span>(_control_type != <a class="code" href="../../df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2acccbfbd46155eb58d407a211271c4c99">SetModeSpeed</a>)<span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        <a class="code" href="../../d5/da2/classnut_1_1_motor.html#addf2f56606325f5371ae373c58af0617">_target_rpm</a> = rpm;</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        <a class="code" href="../../d5/da2/classnut_1_1_motor.html#a07419fd0f0e964016084ab9b3605009b">_move_type</a> = <a class="code" href="../../d5/da2/classnut_1_1_motor.html#a21a5cd6931fdabe222955f11ae32571ba455385f5d8493917cb83541909b7cfa9">MoveType::rpm</a>;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    }</div>
+<div class="line"><a name="l00185"></a><span class="lineno"><a class="line" href="../../df/da1/classnut_1_1_reiwa_m_d.html#a5bf3dc213d50558a3fa3bbe7dde3cdb2">  185</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="../../df/da1/classnut_1_1_reiwa_m_d.html#a5bf3dc213d50558a3fa3bbe7dde3cdb2">SetRad</a>(<span class="keywordtype">float</span> rad, <span class="keywordtype">float</span> top_rpm)<span class="keyword">override</span>{</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        <span class="keywordflow">if</span>(_control_type != <a class="code" href="../../df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2aded0ce6b55063fb437bebfb42122e6c7">SetModePosition</a>)<span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        <a class="code" href="../../d5/da2/classnut_1_1_motor.html#a28cd6063de9f3c570b29b34c40569787">_target_rad</a> = rad;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        <a class="code" href="../../d5/da2/classnut_1_1_motor.html#addf2f56606325f5371ae373c58af0617">_target_rpm</a> = top_rpm;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        <a class="code" href="../../d5/da2/classnut_1_1_motor.html#a07419fd0f0e964016084ab9b3605009b">_move_type</a> = <a class="code" href="../../d5/da2/classnut_1_1_motor.html#a21a5cd6931fdabe222955f11ae32571ba340f7c2dcaedeae68e4a62c281c7350b">MoveType::rad</a>;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    }</div>
+<div class="line"><a name="l00200"></a><span class="lineno"><a class="line" href="../../df/da1/classnut_1_1_reiwa_m_d.html#a03b7de6e49e72e47ad57e16b17450d7d">  200</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="../../df/da1/classnut_1_1_reiwa_m_d.html#a03b7de6e49e72e47ad57e16b17450d7d">SetRPMPID</a>(<span class="keywordtype">float</span> kp, <span class="keywordtype">float</span> ki, <span class="keywordtype">float</span> kd)<span class="keyword"> override</span>{</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    }</div>
+<div class="line"><a name="l00211"></a><span class="lineno"><a class="line" href="../../df/da1/classnut_1_1_reiwa_m_d.html#aa5b2de060bbf9971615aa43e2d04d114">  211</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="../../df/da1/classnut_1_1_reiwa_m_d.html#aa5b2de060bbf9971615aa43e2d04d114">SetRadPID</a>(<span class="keywordtype">float</span> kp, <span class="keywordtype">float</span> ki, <span class="keywordtype">float</span> kd)<span class="keyword"> override</span>{</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    }</div>
+<div class="line"><a name="l00219"></a><span class="lineno"><a class="line" href="../../df/da1/classnut_1_1_reiwa_m_d.html#a39100c5ad64a7d4a5fdfe13fe78b6594">  219</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="../../df/da1/classnut_1_1_reiwa_m_d.html#a39100c5ad64a7d4a5fdfe13fe78b6594">ResetRadOrigin</a>(<span class="keywordtype">float</span> rad)<span class="keyword"> override</span>{</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160; </div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    }</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160; </div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160; </div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160; </div>
+<div class="line"><a name="l00231"></a><span class="lineno"><a class="line" href="../../df/da1/classnut_1_1_reiwa_m_d.html#a4209d3d2b8dedaa939277d24c447be5a">  231</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../df/da1/classnut_1_1_reiwa_m_d.html#a4209d3d2b8dedaa939277d24c447be5a">SendControlMode</a>(<a class="code" href="../../df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2">Motor_DataType_t</a> mode) {</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        <span class="keywordflow">if</span>(mode &gt;= <a class="code" href="../../df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2ae560260eda30e21690a8209c7dbda71a">SetModeDisable</a> &amp;&amp; mode &lt;= <a class="code" href="../../df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2aded0ce6b55063fb437bebfb42122e6c7">SetModePosition</a>){</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;            Motor_StdID_t txStdID;</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160; </div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;            txStdID.forMotor = 1;</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;            txStdID.channel = _id;</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;            txStdID.dataType = mode;</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160; </div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;            _control_type = mode;</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160; </div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;            <span class="keywordflow">switch</span>(_control_type){</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;            <span class="keywordflow">case</span> Motor_DataType_t::SetModeVoltage:</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;                <a class="code" href="../../d5/da2/classnut_1_1_motor.html#a07419fd0f0e964016084ab9b3605009b">_move_type</a> = <a class="code" href="../../d5/da2/classnut_1_1_motor.html#a21a5cd6931fdabe222955f11ae32571baa1d033b84aab7171a82fe94afb710675">MoveType::duty</a>;</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;            <span class="keywordflow">case</span> Motor_DataType_t::SetModeSpeed:</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;                <a class="code" href="../../d5/da2/classnut_1_1_motor.html#a07419fd0f0e964016084ab9b3605009b">_move_type</a> = <a class="code" href="../../d5/da2/classnut_1_1_motor.html#a21a5cd6931fdabe222955f11ae32571ba455385f5d8493917cb83541909b7cfa9">MoveType::rpm</a>;</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;            <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                <a class="code" href="../../d5/da2/classnut_1_1_motor.html#a07419fd0f0e964016084ab9b3605009b">_move_type</a> = <a class="code" href="../../d5/da2/classnut_1_1_motor.html#a21a5cd6931fdabe222955f11ae32571baef399b2d446bb37b7c32ad2cc1b6045b">MoveType::stop</a>;</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;            }</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160; </div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;            _can-&gt;Transmit(txStdID.StdID);</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        }</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160; </div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    }</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160; </div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160; </div>
+<div class="line"><a name="l00267"></a><span class="lineno"><a class="line" href="../../df/da1/classnut_1_1_reiwa_m_d.html#acdd0993d2234cf66f6e2e5db73196e95">  267</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../df/da1/classnut_1_1_reiwa_m_d.html#acdd0993d2234cf66f6e2e5db73196e95">ReadCanData</a>(CAN_HandleTypeDef* hcan, <span class="keyword">const</span> CAN_RxHeaderTypeDef&amp; RxHeader, <span class="keyword">const</span> std::array&lt;uint8_t, 8&gt; data){</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        <span class="keywordflow">if</span>(hcan == _can-&gt;GetHandle()){</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;            <span class="keywordflow">if</span>(RxHeader.RTR == CAN_RTR_DATA &amp;&amp;</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;                            ((RxHeader.StdId &amp; CAN_MOTOR_STDID_MASK) == (CAN_MOTOR_STDID_FILTER &amp; CAN_MOTOR_STDID_MASK))){</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;                _rx_data = data;</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;            }</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        }</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160; </div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    }</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;};</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;}</div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="aclassnut_1_1_motor_html_a07419fd0f0e964016084ab9b3605009b"><div class="ttname"><a href="../../d5/da2/classnut_1_1_motor.html#a07419fd0f0e964016084ab9b3605009b">nut::Motor::_move_type</a></div><div class="ttdeci">MoveType _move_type</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dcd/_motor_8hpp_source.html#l00029">Motor.hpp:29</a></div></div>
+<div class="ttc" id="aclassnut_1_1_motor_html_addf2f56606325f5371ae373c58af0617"><div class="ttname"><a href="../../d5/da2/classnut_1_1_motor.html#addf2f56606325f5371ae373c58af0617">nut::Motor::_target_rpm</a></div><div class="ttdeci">float _target_rpm</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dcd/_motor_8hpp_source.html#l00038">Motor.hpp:38</a></div></div>
+<div class="ttc" id="a_motor_8hpp_html"><div class="ttname"><a href="../../d4/dcd/_motor_8hpp.html">Motor.hpp</a></div><div class="ttdoc">モータ制御基底</div></div>
+<div class="ttc" id="aclassnut_1_1_motor_html_a28cd6063de9f3c570b29b34c40569787"><div class="ttname"><a href="../../d5/da2/classnut_1_1_motor.html#a28cd6063de9f3c570b29b34c40569787">nut::Motor::_target_rad</a></div><div class="ttdeci">float _target_rad</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dcd/_motor_8hpp_source.html#l00039">Motor.hpp:39</a></div></div>
+<div class="ttc" id="aclassnut_1_1_motor_html_a21a5cd6931fdabe222955f11ae32571baef399b2d446bb37b7c32ad2cc1b6045b"><div class="ttname"><a href="../../d5/da2/classnut_1_1_motor.html#a21a5cd6931fdabe222955f11ae32571baef399b2d446bb37b7c32ad2cc1b6045b">nut::Motor::MoveType::stop</a></div><div class="ttdeci">@ stop</div></div>
+<div class="ttc" id="aclassnut_1_1_time_scheduler_base_html_a1d0ecaefe7d5c5f1266a4021fba23d69"><div class="ttname"><a href="../../d9/d00/classnut_1_1_time_scheduler_base.html#a1d0ecaefe7d5c5f1266a4021fba23d69">nut::TimeSchedulerBase::Erase</a></div><div class="ttdeci">virtual void Erase() final</div><div class="ttdoc">スケジューラ削除</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d5c/_time_scheduler_8hpp_source.html#l00067">TimeScheduler.hpp:67</a></div></div>
+<div class="ttc" id="aclassnut_1_1_reiwa_m_d_html_af3c2f1bbd3aa46474756d1b9fe4a1bb2a306035611947a2057431fd228a41ddfe"><div class="ttname"><a href="../../df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2a306035611947a2057431fd228a41ddfe">nut::ReiwaMD::ZeroReturn</a></div><div class="ttdeci">@ ZeroReturn</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d12/_reiwa_m_d_8hpp_source.html#l00027">ReiwaMD.hpp:27</a></div></div>
+<div class="ttc" id="aclassnut_1_1_reiwa_m_d_html_a32c6b67e93487f574e606eec8a97a6e7"><div class="ttname"><a href="../../df/da1/classnut_1_1_reiwa_m_d.html#a32c6b67e93487f574e606eec8a97a6e7">nut::ReiwaMD::Start</a></div><div class="ttdeci">virtual bool Start() override</div><div class="ttdoc">制御スタート</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d12/_reiwa_m_d_8hpp_source.html#l00137">ReiwaMD.hpp:137</a></div></div>
+<div class="ttc" id="aclassnut_1_1_motor_html_a21a5cd6931fdabe222955f11ae32571baa1d033b84aab7171a82fe94afb710675"><div class="ttname"><a href="../../d5/da2/classnut_1_1_motor.html#a21a5cd6931fdabe222955f11ae32571baa1d033b84aab7171a82fe94afb710675">nut::Motor::MoveType::duty</a></div><div class="ttdeci">@ duty</div></div>
+<div class="ttc" id="aclassnut_1_1_reiwa_m_d_html_a8420336b8dd0216f3aa7d34c573ca314"><div class="ttname"><a href="../../df/da1/classnut_1_1_reiwa_m_d.html#a8420336b8dd0216f3aa7d34c573ca314">nut::ReiwaMD::ReiwaMD</a></div><div class="ttdeci">ReiwaMD(uint32_t period, std::shared_ptr&lt; CAN &gt; can, uint16_t id)</div><div class="ttdoc">コンストラク</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d12/_reiwa_m_d_8hpp_source.html#l00113">ReiwaMD.hpp:113</a></div></div>
+<div class="ttc" id="aclassnut_1_1_reiwa_m_d_html_a4209d3d2b8dedaa939277d24c447be5a"><div class="ttname"><a href="../../df/da1/classnut_1_1_reiwa_m_d.html#a4209d3d2b8dedaa939277d24c447be5a">nut::ReiwaMD::SendControlMode</a></div><div class="ttdeci">void SendControlMode(Motor_DataType_t mode)</div><div class="ttdoc">制御モード変更</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d12/_reiwa_m_d_8hpp_source.html#l00231">ReiwaMD.hpp:231</a></div></div>
+<div class="ttc" id="aclassnut_1_1_reiwa_m_d_html_a39100c5ad64a7d4a5fdfe13fe78b6594"><div class="ttname"><a href="../../df/da1/classnut_1_1_reiwa_m_d.html#a39100c5ad64a7d4a5fdfe13fe78b6594">nut::ReiwaMD::ResetRadOrigin</a></div><div class="ttdeci">virtual bool ResetRadOrigin(float rad) override</div><div class="ttdoc">角度原点リセット</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d12/_reiwa_m_d_8hpp_source.html#l00219">ReiwaMD.hpp:219</a></div></div>
+<div class="ttc" id="aclassnut_1_1_reiwa_m_d_html_af3c2f1bbd3aa46474756d1b9fe4a1bb2ae560260eda30e21690a8209c7dbda71a"><div class="ttname"><a href="../../df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2ae560260eda30e21690a8209c7dbda71a">nut::ReiwaMD::SetModeDisable</a></div><div class="ttdeci">@ SetModeDisable</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d12/_reiwa_m_d_8hpp_source.html#l00028">ReiwaMD.hpp:28</a></div></div>
+<div class="ttc" id="aclassnut_1_1_reiwa_m_d_html_a98b651b80a784e9404cedcb84f606541"><div class="ttname"><a href="../../df/da1/classnut_1_1_reiwa_m_d.html#a98b651b80a784e9404cedcb84f606541">nut::ReiwaMD::SetRPM</a></div><div class="ttdeci">virtual bool SetRPM(float rpm) override</div><div class="ttdoc">速度制御</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d12/_reiwa_m_d_8hpp_source.html#l00173">ReiwaMD.hpp:173</a></div></div>
+<div class="ttc" id="aclassnut_1_1_time_scheduler_3_01void_01_4_html_a01c1530d879d361ca439023538a83ddd"><div class="ttname"><a href="../../db/de6/classnut_1_1_time_scheduler_3_01void_01_4.html#a01c1530d879d361ca439023538a83ddd">nut::TimeScheduler&lt; void &gt;::Set</a></div><div class="ttdeci">void Set() &amp;</div><div class="ttdoc">スケジューラのセット</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d5c/_time_scheduler_8hpp_source.html#l00212">TimeScheduler.hpp:212</a></div></div>
+<div class="ttc" id="aclassnut_1_1_reiwa_m_d_html_af3c2f1bbd3aa46474756d1b9fe4a1bb2"><div class="ttname"><a href="../../df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2">nut::ReiwaMD::Motor_DataType_t</a></div><div class="ttdeci">Motor_DataType_t</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d12/_reiwa_m_d_8hpp_source.html#l00022">ReiwaMD.hpp:22</a></div></div>
+<div class="ttc" id="aclassnut_1_1_reiwa_m_d_html_aa5b2de060bbf9971615aa43e2d04d114"><div class="ttname"><a href="../../df/da1/classnut_1_1_reiwa_m_d.html#aa5b2de060bbf9971615aa43e2d04d114">nut::ReiwaMD::SetRadPID</a></div><div class="ttdeci">virtual bool SetRadPID(float kp, float ki, float kd) override</div><div class="ttdoc">角度制御ゲインセット</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d12/_reiwa_m_d_8hpp_source.html#l00211">ReiwaMD.hpp:211</a></div></div>
+<div class="ttc" id="aclassnut_1_1_reiwa_m_d_html_af3c2f1bbd3aa46474756d1b9fe4a1bb2aded0ce6b55063fb437bebfb42122e6c7"><div class="ttname"><a href="../../df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2aded0ce6b55063fb437bebfb42122e6c7">nut::ReiwaMD::SetModePosition</a></div><div class="ttdeci">@ SetModePosition</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d12/_reiwa_m_d_8hpp_source.html#l00031">ReiwaMD.hpp:31</a></div></div>
+<div class="ttc" id="aclassnut_1_1_reiwa_m_d_html_af3c2f1bbd3aa46474756d1b9fe4a1bb2a8315e08506974321c602dfce4a1f4867"><div class="ttname"><a href="../../df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2a8315e08506974321c602dfce4a1f4867">nut::ReiwaMD::VoltageRef</a></div><div class="ttdeci">@ VoltageRef</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d12/_reiwa_m_d_8hpp_source.html#l00023">ReiwaMD.hpp:23</a></div></div>
+<div class="ttc" id="anamespacenut_html"><div class="ttname"><a href="../../dd/d51/namespacenut.html">nut</a></div><div class="ttdoc">ライブラリの統括名前空間</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dba/_c_a_n_8hpp_source.html#l00014">CAN.hpp:14</a></div></div>
+<div class="ttc" id="aclassnut_1_1_reiwa_m_d_html_af3c2f1bbd3aa46474756d1b9fe4a1bb2a9d7b8da099ca972153e16e64967433cc"><div class="ttname"><a href="../../df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2a9d7b8da099ca972153e16e64967433cc">nut::ReiwaMD::SpeedRef</a></div><div class="ttdeci">@ SpeedRef</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d12/_reiwa_m_d_8hpp_source.html#l00025">ReiwaMD.hpp:25</a></div></div>
+<div class="ttc" id="aclassnut_1_1_reiwa_m_d_html_af3c2f1bbd3aa46474756d1b9fe4a1bb2aa17bd0bb558759684ddb21d8f9036fc7"><div class="ttname"><a href="../../df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2aa17bd0bb558759684ddb21d8f9036fc7">nut::ReiwaMD::Motor_ReadStatus</a></div><div class="ttdeci">@ Motor_ReadStatus</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d12/_reiwa_m_d_8hpp_source.html#l00038">ReiwaMD.hpp:38</a></div></div>
+<div class="ttc" id="aclassnut_1_1_reiwa_m_d_html"><div class="ttname"><a href="../../df/da1/classnut_1_1_reiwa_m_d.html">nut::ReiwaMD</a></div><div class="ttdoc">令和MDクラス</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d12/_reiwa_m_d_8hpp_source.html#l00020">ReiwaMD.hpp:20</a></div></div>
+<div class="ttc" id="aclassnut_1_1_reiwa_m_d_html_acdd0993d2234cf66f6e2e5db73196e95"><div class="ttname"><a href="../../df/da1/classnut_1_1_reiwa_m_d.html#acdd0993d2234cf66f6e2e5db73196e95">nut::ReiwaMD::ReadCanData</a></div><div class="ttdeci">bool ReadCanData(CAN_HandleTypeDef *hcan, const CAN_RxHeaderTypeDef &amp;RxHeader, const std::array&lt; uint8_t, 8 &gt; data)</div><div class="ttdoc">CAN受信関数</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d12/_reiwa_m_d_8hpp_source.html#l00267">ReiwaMD.hpp:267</a></div></div>
+<div class="ttc" id="aclassnut_1_1_reiwa_m_d_html_a7ac369682056c692a7df5f4825ea95a7"><div class="ttname"><a href="../../df/da1/classnut_1_1_reiwa_m_d.html#a7ac369682056c692a7df5f4825ea95a7">nut::ReiwaMD::Init</a></div><div class="ttdeci">virtual void Init() override</div><div class="ttdoc">初期化関数</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d12/_reiwa_m_d_8hpp_source.html#l00129">ReiwaMD.hpp:129</a></div></div>
+<div class="ttc" id="aclassnut_1_1_reiwa_m_d_html_af3c2f1bbd3aa46474756d1b9fe4a1bb2ae304b7669c47fbe623d6559eacd102e3"><div class="ttname"><a href="../../df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2ae304b7669c47fbe623d6559eacd102e3">nut::ReiwaMD::ResetAbsEnc</a></div><div class="ttdeci">@ ResetAbsEnc</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d12/_reiwa_m_d_8hpp_source.html#l00035">ReiwaMD.hpp:35</a></div></div>
+<div class="ttc" id="aclassnut_1_1_reiwa_m_d_html_a0c51e75191c62c5d694b19898104244b"><div class="ttname"><a href="../../df/da1/classnut_1_1_reiwa_m_d.html#a0c51e75191c62c5d694b19898104244b">nut::ReiwaMD::~ReiwaMD</a></div><div class="ttdeci">virtual ~ReiwaMD()</div><div class="ttdoc">デストラクタ</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d12/_reiwa_m_d_8hpp_source.html#l00120">ReiwaMD.hpp:120</a></div></div>
+<div class="ttc" id="aclassnut_1_1_reiwa_m_d_html_aad29ecc03b1e20118abd83e1b610824b"><div class="ttname"><a href="../../df/da1/classnut_1_1_reiwa_m_d.html#aad29ecc03b1e20118abd83e1b610824b">nut::ReiwaMD::ScheduleTask</a></div><div class="ttdeci">virtual void ScheduleTask() override</div><div class="ttdoc">周期コールバック関数</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d12/_reiwa_m_d_8hpp_source.html#l00087">ReiwaMD.hpp:87</a></div></div>
+<div class="ttc" id="aclassnut_1_1_reiwa_m_d_html_a5bf3dc213d50558a3fa3bbe7dde3cdb2"><div class="ttname"><a href="../../df/da1/classnut_1_1_reiwa_m_d.html#a5bf3dc213d50558a3fa3bbe7dde3cdb2">nut::ReiwaMD::SetRad</a></div><div class="ttdeci">virtual bool SetRad(float rad, float top_rpm) override</div><div class="ttdoc">角度制御</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d12/_reiwa_m_d_8hpp_source.html#l00185">ReiwaMD.hpp:185</a></div></div>
+<div class="ttc" id="aclassnut_1_1_motor_html_aab752ad27241d68413a18f0e3d268ec6"><div class="ttname"><a href="../../d5/da2/classnut_1_1_motor.html#aab752ad27241d68413a18f0e3d268ec6">nut::Motor::ResetTarget</a></div><div class="ttdeci">virtual void ResetTarget()</div><div class="ttdoc">目標値リセット</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dcd/_motor_8hpp_source.html#l00051">Motor.hpp:51</a></div></div>
+<div class="ttc" id="aclassnut_1_1_reiwa_m_d_html_a5e7015dc7a039d8f4fdb6c9911dab941"><div class="ttname"><a href="../../df/da1/classnut_1_1_reiwa_m_d.html#a5e7015dc7a039d8f4fdb6c9911dab941">nut::ReiwaMD::SetDuty</a></div><div class="ttdeci">virtual bool SetDuty(float duty) override</div><div class="ttdoc">Duty制御</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d12/_reiwa_m_d_8hpp_source.html#l00161">ReiwaMD.hpp:161</a></div></div>
+<div class="ttc" id="aclassnut_1_1_reiwa_m_d_html_a03b7de6e49e72e47ad57e16b17450d7d"><div class="ttname"><a href="../../df/da1/classnut_1_1_reiwa_m_d.html#a03b7de6e49e72e47ad57e16b17450d7d">nut::ReiwaMD::SetRPMPID</a></div><div class="ttdeci">virtual bool SetRPMPID(float kp, float ki, float kd) override</div><div class="ttdoc">速度制御ゲインセット</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d12/_reiwa_m_d_8hpp_source.html#l00200">ReiwaMD.hpp:200</a></div></div>
+<div class="ttc" id="aclassnut_1_1_reiwa_m_d_html_af3c2f1bbd3aa46474756d1b9fe4a1bb2aa19b55fc777494f56b7154d6e612047e"><div class="ttname"><a href="../../df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2aa19b55fc777494f56b7154d6e612047e">nut::ReiwaMD::ResetIncEnc</a></div><div class="ttdeci">@ ResetIncEnc</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d12/_reiwa_m_d_8hpp_source.html#l00034">ReiwaMD.hpp:34</a></div></div>
+<div class="ttc" id="aclassnut_1_1_reiwa_m_d_html_af3c2f1bbd3aa46474756d1b9fe4a1bb2acbcf295e852c11babddf3fb64208246f"><div class="ttname"><a href="../../df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2acbcf295e852c11babddf3fb64208246f">nut::ReiwaMD::SetModeCurrent</a></div><div class="ttdeci">@ SetModeCurrent</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d12/_reiwa_m_d_8hpp_source.html#l00036">ReiwaMD.hpp:36</a></div></div>
+<div class="ttc" id="aclassnut_1_1_reiwa_m_d_html_af3c2f1bbd3aa46474756d1b9fe4a1bb2a2fba98fd96ee8d06568836415a5593eb"><div class="ttname"><a href="../../df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2a2fba98fd96ee8d06568836415a5593eb">nut::ReiwaMD::PositionRef</a></div><div class="ttdeci">@ PositionRef</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d12/_reiwa_m_d_8hpp_source.html#l00026">ReiwaMD.hpp:26</a></div></div>
+<div class="ttc" id="aclassnut_1_1_reiwa_m_d_html_af3c2f1bbd3aa46474756d1b9fe4a1bb2adaa96bf10a8dacbea71063b56b20af42"><div class="ttname"><a href="../../df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2adaa96bf10a8dacbea71063b56b20af42">nut::ReiwaMD::SetModeVoltage</a></div><div class="ttdeci">@ SetModeVoltage</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d12/_reiwa_m_d_8hpp_source.html#l00029">ReiwaMD.hpp:29</a></div></div>
+<div class="ttc" id="aclassnut_1_1_reiwa_m_d_html_a8ebd4e3c997c4511b2e89a36e39015d9"><div class="ttname"><a href="../../df/da1/classnut_1_1_reiwa_m_d.html#a8ebd4e3c997c4511b2e89a36e39015d9">nut::ReiwaMD::SendData</a></div><div class="ttdeci">void SendData(Motor_DataType_t type, T data)</div><div class="ttdoc">CAN送信関数</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d12/_reiwa_m_d_8hpp_source.html#l00069">ReiwaMD.hpp:69</a></div></div>
+<div class="ttc" id="aclassnut_1_1_reiwa_m_d_html_af3c2f1bbd3aa46474756d1b9fe4a1bb2a87fb4a8a072148066636553cea0183b2"><div class="ttname"><a href="../../df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2a87fb4a8a072148066636553cea0183b2">nut::ReiwaMD::CurrentRef</a></div><div class="ttdeci">@ CurrentRef</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d12/_reiwa_m_d_8hpp_source.html#l00024">ReiwaMD.hpp:24</a></div></div>
+<div class="ttc" id="aclassnut_1_1_motor_html_a88a9ba06f74cfa8eeee81cf3d3bd119a"><div class="ttname"><a href="../../d5/da2/classnut_1_1_motor.html#a88a9ba06f74cfa8eeee81cf3d3bd119a">nut::Motor::_target_duty</a></div><div class="ttdeci">float _target_duty</div><div class="ttdoc">百分率</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dcd/_motor_8hpp_source.html#l00037">Motor.hpp:37</a></div></div>
+<div class="ttc" id="aclassnut_1_1_reiwa_m_d_html_a15c344a43e782cb4cb26ccc482e774a7"><div class="ttname"><a href="../../df/da1/classnut_1_1_reiwa_m_d.html#a15c344a43e782cb4cb26ccc482e774a7">nut::ReiwaMD::Stop</a></div><div class="ttdeci">virtual void Stop() override</div><div class="ttdoc">制御ストップ</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d12/_reiwa_m_d_8hpp_source.html#l00147">ReiwaMD.hpp:147</a></div></div>
+<div class="ttc" id="aclassnut_1_1_motor_html_a21a5cd6931fdabe222955f11ae32571ba340f7c2dcaedeae68e4a62c281c7350b"><div class="ttname"><a href="../../d5/da2/classnut_1_1_motor.html#a21a5cd6931fdabe222955f11ae32571ba340f7c2dcaedeae68e4a62c281c7350b">nut::Motor::MoveType::rad</a></div><div class="ttdeci">@ rad</div></div>
+<div class="ttc" id="aclassnut_1_1_motor_html_a3ba6e0a3b25c9d3d0f1ae555acfd10fe"><div class="ttname"><a href="../../d5/da2/classnut_1_1_motor.html#a3ba6e0a3b25c9d3d0f1ae555acfd10fe">nut::Motor::ResetParam</a></div><div class="ttdeci">virtual void ResetParam()</div><div class="ttdoc">パラメータ&amp;目標値リセット</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dcd/_motor_8hpp_source.html#l00059">Motor.hpp:59</a></div></div>
+<div class="ttc" id="aclassnut_1_1_motor_html"><div class="ttname"><a href="../../d5/da2/classnut_1_1_motor.html">nut::Motor</a></div><div class="ttdoc">モータ制御基底純粋仮想クラス</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dcd/_motor_8hpp_source.html#l00018">Motor.hpp:18</a></div></div>
+<div class="ttc" id="aclassnut_1_1_reiwa_m_d_html_af3c2f1bbd3aa46474756d1b9fe4a1bb2acccbfbd46155eb58d407a211271c4c99"><div class="ttname"><a href="../../df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2acccbfbd46155eb58d407a211271c4c99">nut::ReiwaMD::SetModeSpeed</a></div><div class="ttdeci">@ SetModeSpeed</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d12/_reiwa_m_d_8hpp_source.html#l00030">ReiwaMD.hpp:30</a></div></div>
+<div class="ttc" id="aclassnut_1_1_motor_html_a3e7f0ef80cbc1fde3400dcfb83405de0"><div class="ttname"><a href="../../d5/da2/classnut_1_1_motor.html#a3e7f0ef80cbc1fde3400dcfb83405de0">nut::Motor::_scheduler</a></div><div class="ttdeci">TimeScheduler&lt; void &gt; _scheduler</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dcd/_motor_8hpp_source.html#l00031">Motor.hpp:31</a></div></div>
+<div class="ttc" id="a_global_8hpp_html_ae71449b1cc6e6250b91f539153a7a0d3"><div class="ttname"><a href="../../d2/d88/_global_8hpp.html#ae71449b1cc6e6250b91f539153a7a0d3">M_PI</a></div><div class="ttdeci">#define M_PI</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d88/_global_8hpp_source.html#l00041">Global.hpp:41</a></div></div>
+<div class="ttc" id="aclassnut_1_1_reiwa_m_d_html_af3c2f1bbd3aa46474756d1b9fe4a1bb2af41a6ddee11fe9499cf8663099f59a70"><div class="ttname"><a href="../../df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2af41a6ddee11fe9499cf8663099f59a70">nut::ReiwaMD::ChangeEncoderInc</a></div><div class="ttdeci">@ ChangeEncoderInc</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d12/_reiwa_m_d_8hpp_source.html#l00032">ReiwaMD.hpp:32</a></div></div>
+<div class="ttc" id="aclassnut_1_1_reiwa_m_d_html_af3c2f1bbd3aa46474756d1b9fe4a1bb2a80177d941c39ed486d2bcbd671a0518a"><div class="ttname"><a href="../../df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2a80177d941c39ed486d2bcbd671a0518a">nut::ReiwaMD::ChangeEncoderAbs</a></div><div class="ttdeci">@ ChangeEncoderAbs</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d12/_reiwa_m_d_8hpp_source.html#l00033">ReiwaMD.hpp:33</a></div></div>
+<div class="ttc" id="aclassnut_1_1_motor_html_a21a5cd6931fdabe222955f11ae32571ba455385f5d8493917cb83541909b7cfa9"><div class="ttname"><a href="../../d5/da2/classnut_1_1_motor.html#a21a5cd6931fdabe222955f11ae32571ba455385f5d8493917cb83541909b7cfa9">nut::Motor::MoveType::rpm</a></div><div class="ttdeci">@ rpm</div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_8b1cfa3accea10fc5ecd39c63013c190.html">NutLib</a></li><li class="navelem"><a class="el" href="../../dir_292c5ded82e59d93da76ae0f1632d666.html">Motor</a></li><li class="navelem"><a class="el" href="../../d7/d12/_reiwa_m_d_8hpp.html">ReiwaMD.hpp</a></li>
+    <li class="footer">構築: <a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
+  </ul>
+</div>
+</body>
+</html>

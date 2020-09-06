@@ -1,5 +1,9 @@
-/*
- * buzzer‰¹‹KŠi§’è‘Ò‚¿
+/**
+ * @file Buzzer.hpp
+ * @brief ãƒ–ã‚¶ãƒ¼æ“ä½œ
+ * @author Horie
+ * @date 2020/9
+ * @attention ã¾ã ä½œæˆä¸­
  */
 #pragma once
 

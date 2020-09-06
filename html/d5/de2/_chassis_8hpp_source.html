@@ -1,0 +1,176 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>NutLib: NutLib/Chassis/Chassis.hpp ソースファイル</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">NutLib
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.20 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('d5/de2/_chassis_8hpp_source.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Chassis.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d5/de2/_chassis_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;../Global.hpp&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;../Coordinate.hpp&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;../TimeScheduler.hpp&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;../Odmetry.hpp&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../dd/d51/namespacenut.html">nut</a>{</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="../../d9/dc6/classnut_1_1_chassis.html">   19</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d9/dc6/classnut_1_1_chassis.html">Chassis</a>{</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="../../d9/dc6/classnut_1_1_chassis.html#a1fbcb0cadc3136c9fbc8ee619d1a0f98">   24</a></span>&#160;    <span class="keyword">enum class</span> <a class="code" href="../../d9/dc6/classnut_1_1_chassis.html#a1fbcb0cadc3136c9fbc8ee619d1a0f98">MoveType</a> : uint8_t{</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <a class="code" href="../../d9/dc6/classnut_1_1_chassis.html#a1fbcb0cadc3136c9fbc8ee619d1a0f98aef399b2d446bb37b7c32ad2cc1b6045b">stop</a> = 0U,</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <a class="code" href="../../d9/dc6/classnut_1_1_chassis.html#a1fbcb0cadc3136c9fbc8ee619d1a0f98aac1a453d0cdc1f19d9479ccfaa8b082c">velocity</a></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    };</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="../../d9/dc6/classnut_1_1_chassis.html#ae98040dd6274a94585c3b77645596c91">   28</a></span>&#160;    <a class="code" href="../../d9/dc6/classnut_1_1_chassis.html#a1fbcb0cadc3136c9fbc8ee619d1a0f98">MoveType</a> <a class="code" href="../../d9/dc6/classnut_1_1_chassis.html#ae98040dd6274a94585c3b77645596c91">_move_type</a> = <a class="code" href="../../d9/dc6/classnut_1_1_chassis.html#a1fbcb0cadc3136c9fbc8ee619d1a0f98aef399b2d446bb37b7c32ad2cc1b6045b">MoveType::stop</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="../../d9/dc6/classnut_1_1_chassis.html#affef51990647fae61b8c4e0fe9488de0">   29</a></span>&#160;    <a class="code" href="../../db/de6/classnut_1_1_time_scheduler_3_01void_01_4.html">TimeScheduler&lt;void&gt;</a> <a class="code" href="../../d9/dc6/classnut_1_1_chassis.html#affef51990647fae61b8c4e0fe9488de0">_scheduler</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="../../d9/dc6/classnut_1_1_chassis.html#a91cda6f2ffb71c1c70528d9d24ada87d">   30</a></span>&#160;    std::shared_ptr&lt;Odmetry&gt; <a class="code" href="../../d9/dc6/classnut_1_1_chassis.html#a91cda6f2ffb71c1c70528d9d24ada87d">_odmetry</a>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="../../d9/dc6/classnut_1_1_chassis.html#a4c8bfb0f3774f912f40823084b1f4b5a">   31</a></span>&#160;    <a class="code" href="../../d4/d08/classnut_1_1_coordinate.html">Coordinate&lt;float&gt;</a> <a class="code" href="../../d9/dc6/classnut_1_1_chassis.html#a4c8bfb0f3774f912f40823084b1f4b5a">_target_velocity</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="../../d9/dc6/classnut_1_1_chassis.html#a76ba6098169bfbb9950f525af6d0ab2e">   38</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d9/dc6/classnut_1_1_chassis.html#a76ba6098169bfbb9950f525af6d0ab2e">ScheduleTask</a>() = 0;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="../../d9/dc6/classnut_1_1_chassis.html#a066c67af9b00ed43b61b75d73f9cec46">   48</a></span>&#160;    <a class="code" href="../../d9/dc6/classnut_1_1_chassis.html#a066c67af9b00ed43b61b75d73f9cec46">Chassis</a>(uint32_t period, <span class="keyword">const</span> std::shared_ptr&lt;Odmetry&gt;&amp; odmetry)</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        : <a class="code" href="../../d9/dc6/classnut_1_1_chassis.html#affef51990647fae61b8c4e0fe9488de0">_scheduler</a>([this]{<a class="code" href="../../d9/dc6/classnut_1_1_chassis.html#a76ba6098169bfbb9950f525af6d0ab2e">ScheduleTask</a>();}, period), <a class="code" href="../../d9/dc6/classnut_1_1_chassis.html#a91cda6f2ffb71c1c70528d9d24ada87d">_odmetry</a>(odmetry){</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="../../d9/dc6/classnut_1_1_chassis.html#a709cc22845ce960d5c39f218464912c6">   55</a></span>&#160;    <span class="keyword">virtual</span> <a class="code" href="../../d9/dc6/classnut_1_1_chassis.html#a709cc22845ce960d5c39f218464912c6">~Chassis</a>(){</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="../../d9/dc6/classnut_1_1_chassis.html#a653aa9e412fc444fc58469e6c149adb8">   62</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d9/dc6/classnut_1_1_chassis.html#a653aa9e412fc444fc58469e6c149adb8">Init</a>(){</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <a class="code" href="../../d9/dc6/classnut_1_1_chassis.html#affef51990647fae61b8c4e0fe9488de0">_scheduler</a>.<a class="code" href="../../db/de6/classnut_1_1_time_scheduler_3_01void_01_4.html#a01c1530d879d361ca439023538a83ddd">Set</a>();</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="../../d9/dc6/classnut_1_1_chassis.html#adaf5ca6a18f690ce437b352750246326">   71</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="../../d9/dc6/classnut_1_1_chassis.html#adaf5ca6a18f690ce437b352750246326">SetVelocity</a>(<a class="code" href="../../d4/d08/classnut_1_1_coordinate.html">Coordinate&lt;float&gt;</a> velocity){</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <a class="code" href="../../d9/dc6/classnut_1_1_chassis.html#a4c8bfb0f3774f912f40823084b1f4b5a">_target_velocity</a> = velocity;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="../../d9/dc6/classnut_1_1_chassis.html#ad45e2bb2321ce5c968aeb0ebdf70fe38">   82</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="../../d9/dc6/classnut_1_1_chassis.html#ad45e2bb2321ce5c968aeb0ebdf70fe38">SetVelocity</a>(Eigen::Vector2f velocity_mps, <span class="keywordtype">float</span> rot_radps){</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <a class="code" href="../../d9/dc6/classnut_1_1_chassis.html#a4c8bfb0f3774f912f40823084b1f4b5a">_target_velocity</a>.<a class="code" href="../../d4/d08/classnut_1_1_coordinate.html#a43576eccd7c2ed11c252f9f95cd63611">x</a>() = velocity_mps.x();</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <a class="code" href="../../d9/dc6/classnut_1_1_chassis.html#a4c8bfb0f3774f912f40823084b1f4b5a">_target_velocity</a>.<a class="code" href="../../d4/d08/classnut_1_1_coordinate.html#a06cf225a0b3fda31a95a1965c03fb31d">y</a>() = velocity_mps.y();</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <a class="code" href="../../d9/dc6/classnut_1_1_chassis.html#a4c8bfb0f3774f912f40823084b1f4b5a">_target_velocity</a>.<a class="code" href="../../d4/d08/classnut_1_1_coordinate.html#a59da2be52edeac1200e5159b3b0e866f">theta</a>() = rot_radps;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    }</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="../../d9/dc6/classnut_1_1_chassis.html#ab32409c809c8f1dfefb7668bb7253f9d">   93</a></span>&#160;    <span class="keyword">virtual</span> <span class="keyword">const</span> <a class="code" href="../../d4/d08/classnut_1_1_coordinate.html">Coordinate&lt;float&gt;</a> <a class="code" href="../../d9/dc6/classnut_1_1_chassis.html#ab32409c809c8f1dfefb7668bb7253f9d">GetVelocity</a>()<span class="keyword"> const</span>{</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d9/dc6/classnut_1_1_chassis.html#a4c8bfb0f3774f912f40823084b1f4b5a">_target_velocity</a>;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;};</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;}</div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="aclassnut_1_1_chassis_html_affef51990647fae61b8c4e0fe9488de0"><div class="ttname"><a href="../../d9/dc6/classnut_1_1_chassis.html#affef51990647fae61b8c4e0fe9488de0">nut::Chassis::_scheduler</a></div><div class="ttdeci">TimeScheduler&lt; void &gt; _scheduler</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/de2/_chassis_8hpp_source.html#l00029">Chassis.hpp:29</a></div></div>
+<div class="ttc" id="aclassnut_1_1_chassis_html_ab32409c809c8f1dfefb7668bb7253f9d"><div class="ttname"><a href="../../d9/dc6/classnut_1_1_chassis.html#ab32409c809c8f1dfefb7668bb7253f9d">nut::Chassis::GetVelocity</a></div><div class="ttdeci">virtual const Coordinate&lt; float &gt; GetVelocity() const</div><div class="ttdoc">入力速度取得</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/de2/_chassis_8hpp_source.html#l00093">Chassis.hpp:93</a></div></div>
+<div class="ttc" id="aclassnut_1_1_chassis_html_ae98040dd6274a94585c3b77645596c91"><div class="ttname"><a href="../../d9/dc6/classnut_1_1_chassis.html#ae98040dd6274a94585c3b77645596c91">nut::Chassis::_move_type</a></div><div class="ttdeci">MoveType _move_type</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/de2/_chassis_8hpp_source.html#l00028">Chassis.hpp:28</a></div></div>
+<div class="ttc" id="aclassnut_1_1_time_scheduler_3_01void_01_4_html"><div class="ttname"><a href="../../db/de6/classnut_1_1_time_scheduler_3_01void_01_4.html">nut::TimeScheduler&lt; void &gt;</a></div><div class="ttdoc">タイムスケジューラクラスのvoid特殊化</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d5c/_time_scheduler_8hpp_source.html#l00196">TimeScheduler.hpp:196</a></div></div>
+<div class="ttc" id="aclassnut_1_1_chassis_html_a4c8bfb0f3774f912f40823084b1f4b5a"><div class="ttname"><a href="../../d9/dc6/classnut_1_1_chassis.html#a4c8bfb0f3774f912f40823084b1f4b5a">nut::Chassis::_target_velocity</a></div><div class="ttdeci">Coordinate&lt; float &gt; _target_velocity</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/de2/_chassis_8hpp_source.html#l00031">Chassis.hpp:31</a></div></div>
+<div class="ttc" id="aclassnut_1_1_coordinate_html_a06cf225a0b3fda31a95a1965c03fb31d"><div class="ttname"><a href="../../d4/d08/classnut_1_1_coordinate.html#a06cf225a0b3fda31a95a1965c03fb31d">nut::Coordinate::y</a></div><div class="ttdeci">constexpr const T &amp; y() const &amp;</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d40/_coordinate_8hpp_source.html#l00030">Coordinate.hpp:30</a></div></div>
+<div class="ttc" id="aclassnut_1_1_chassis_html_a653aa9e412fc444fc58469e6c149adb8"><div class="ttname"><a href="../../d9/dc6/classnut_1_1_chassis.html#a653aa9e412fc444fc58469e6c149adb8">nut::Chassis::Init</a></div><div class="ttdeci">void Init()</div><div class="ttdoc">初期化関数</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/de2/_chassis_8hpp_source.html#l00062">Chassis.hpp:62</a></div></div>
+<div class="ttc" id="aclassnut_1_1_time_scheduler_3_01void_01_4_html_a01c1530d879d361ca439023538a83ddd"><div class="ttname"><a href="../../db/de6/classnut_1_1_time_scheduler_3_01void_01_4.html#a01c1530d879d361ca439023538a83ddd">nut::TimeScheduler&lt; void &gt;::Set</a></div><div class="ttdeci">void Set() &amp;</div><div class="ttdoc">スケジューラのセット</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d5c/_time_scheduler_8hpp_source.html#l00212">TimeScheduler.hpp:212</a></div></div>
+<div class="ttc" id="aclassnut_1_1_chassis_html_a91cda6f2ffb71c1c70528d9d24ada87d"><div class="ttname"><a href="../../d9/dc6/classnut_1_1_chassis.html#a91cda6f2ffb71c1c70528d9d24ada87d">nut::Chassis::_odmetry</a></div><div class="ttdeci">std::shared_ptr&lt; Odmetry &gt; _odmetry</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/de2/_chassis_8hpp_source.html#l00030">Chassis.hpp:30</a></div></div>
+<div class="ttc" id="aclassnut_1_1_chassis_html_a1fbcb0cadc3136c9fbc8ee619d1a0f98"><div class="ttname"><a href="../../d9/dc6/classnut_1_1_chassis.html#a1fbcb0cadc3136c9fbc8ee619d1a0f98">nut::Chassis::MoveType</a></div><div class="ttdeci">MoveType</div><div class="ttdoc">動作タイプ</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/de2/_chassis_8hpp_source.html#l00024">Chassis.hpp:24</a></div></div>
+<div class="ttc" id="anamespacenut_html"><div class="ttname"><a href="../../dd/d51/namespacenut.html">nut</a></div><div class="ttdoc">ライブラリの統括名前空間</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dba/_c_a_n_8hpp_source.html#l00014">CAN.hpp:14</a></div></div>
+<div class="ttc" id="aclassnut_1_1_chassis_html_ad45e2bb2321ce5c968aeb0ebdf70fe38"><div class="ttname"><a href="../../d9/dc6/classnut_1_1_chassis.html#ad45e2bb2321ce5c968aeb0ebdf70fe38">nut::Chassis::SetVelocity</a></div><div class="ttdeci">virtual bool SetVelocity(Eigen::Vector2f velocity_mps, float rot_radps)</div><div class="ttdoc">速度入力</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/de2/_chassis_8hpp_source.html#l00082">Chassis.hpp:82</a></div></div>
+<div class="ttc" id="aclassnut_1_1_coordinate_html"><div class="ttname"><a href="../../d4/d08/classnut_1_1_coordinate.html">nut::Coordinate&lt; float &gt;</a></div></div>
+<div class="ttc" id="aclassnut_1_1_chassis_html_a709cc22845ce960d5c39f218464912c6"><div class="ttname"><a href="../../d9/dc6/classnut_1_1_chassis.html#a709cc22845ce960d5c39f218464912c6">nut::Chassis::~Chassis</a></div><div class="ttdeci">virtual ~Chassis()</div><div class="ttdoc">デストラクタ</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/de2/_chassis_8hpp_source.html#l00055">Chassis.hpp:55</a></div></div>
+<div class="ttc" id="aclassnut_1_1_chassis_html_a1fbcb0cadc3136c9fbc8ee619d1a0f98aac1a453d0cdc1f19d9479ccfaa8b082c"><div class="ttname"><a href="../../d9/dc6/classnut_1_1_chassis.html#a1fbcb0cadc3136c9fbc8ee619d1a0f98aac1a453d0cdc1f19d9479ccfaa8b082c">nut::Chassis::MoveType::velocity</a></div><div class="ttdeci">@ velocity</div><div class="ttdoc">速度入力</div></div>
+<div class="ttc" id="aclassnut_1_1_chassis_html_a1fbcb0cadc3136c9fbc8ee619d1a0f98aef399b2d446bb37b7c32ad2cc1b6045b"><div class="ttname"><a href="../../d9/dc6/classnut_1_1_chassis.html#a1fbcb0cadc3136c9fbc8ee619d1a0f98aef399b2d446bb37b7c32ad2cc1b6045b">nut::Chassis::MoveType::stop</a></div><div class="ttdeci">@ stop</div><div class="ttdoc">停止</div></div>
+<div class="ttc" id="aclassnut_1_1_coordinate_html_a59da2be52edeac1200e5159b3b0e866f"><div class="ttname"><a href="../../d4/d08/classnut_1_1_coordinate.html#a59da2be52edeac1200e5159b3b0e866f">nut::Coordinate::theta</a></div><div class="ttdeci">constexpr const T &amp; theta() const &amp;</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d40/_coordinate_8hpp_source.html#l00031">Coordinate.hpp:31</a></div></div>
+<div class="ttc" id="aclassnut_1_1_chassis_html_adaf5ca6a18f690ce437b352750246326"><div class="ttname"><a href="../../d9/dc6/classnut_1_1_chassis.html#adaf5ca6a18f690ce437b352750246326">nut::Chassis::SetVelocity</a></div><div class="ttdeci">virtual bool SetVelocity(Coordinate&lt; float &gt; velocity)</div><div class="ttdoc">速度入力</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/de2/_chassis_8hpp_source.html#l00071">Chassis.hpp:71</a></div></div>
+<div class="ttc" id="aclassnut_1_1_chassis_html"><div class="ttname"><a href="../../d9/dc6/classnut_1_1_chassis.html">nut::Chassis</a></div><div class="ttdoc">機体足回り基底純粋仮想クラス</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/de2/_chassis_8hpp_source.html#l00019">Chassis.hpp:19</a></div></div>
+<div class="ttc" id="aclassnut_1_1_chassis_html_a76ba6098169bfbb9950f525af6d0ab2e"><div class="ttname"><a href="../../d9/dc6/classnut_1_1_chassis.html#a76ba6098169bfbb9950f525af6d0ab2e">nut::Chassis::ScheduleTask</a></div><div class="ttdeci">virtual void ScheduleTask()=0</div><div class="ttdoc">周期コールバック関数</div></div>
+<div class="ttc" id="aclassnut_1_1_chassis_html_a066c67af9b00ed43b61b75d73f9cec46"><div class="ttname"><a href="../../d9/dc6/classnut_1_1_chassis.html#a066c67af9b00ed43b61b75d73f9cec46">nut::Chassis::Chassis</a></div><div class="ttdeci">Chassis(uint32_t period, const std::shared_ptr&lt; Odmetry &gt; &amp;odmetry)</div><div class="ttdoc">コンストラクタ</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/de2/_chassis_8hpp_source.html#l00048">Chassis.hpp:48</a></div></div>
+<div class="ttc" id="aclassnut_1_1_coordinate_html_a43576eccd7c2ed11c252f9f95cd63611"><div class="ttname"><a href="../../d4/d08/classnut_1_1_coordinate.html#a43576eccd7c2ed11c252f9f95cd63611">nut::Coordinate::x</a></div><div class="ttdeci">constexpr const T &amp; x() const &amp;</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d40/_coordinate_8hpp_source.html#l00029">Coordinate.hpp:29</a></div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_8b1cfa3accea10fc5ecd39c63013c190.html">NutLib</a></li><li class="navelem"><a class="el" href="../../dir_f675b4a47c10cd3a9277bd5eb227d2c8.html">Chassis</a></li><li class="navelem"><a class="el" href="../../d5/de2/_chassis_8hpp.html">Chassis.hpp</a></li>
+    <li class="footer">構築: <a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
+  </ul>
+</div>
+</body>
+</html>

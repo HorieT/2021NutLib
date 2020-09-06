@@ -1,6 +1,8 @@
-/*
- * ƒ[ƒ^ƒŠ[ƒGƒ“ƒR[ƒ_Šî’êƒNƒ‰ƒX
- * ƒ^ƒCƒ„A‚Ü‚½‚ÍƒMƒ„‚ÌƒTƒCƒY‚²‚Æ•ïŠ‡
+/**
+ * @file Encoder.hpp
+ * @brief ã‚¨ãƒ³ã‚³ãƒ¼ãƒ€åŸºåº•
+ * @author Horie
+ * @date 2020/9
  */
 #pragma once
 
@@ -8,35 +10,45 @@
 
 
 namespace nut{
+/**
+ * @brief ã‚¨ãƒ³ã‚³ãƒ¼ãƒ€åŸºåº•ç´”ç²‹ä»®æƒ³ã‚¯ãƒ©ã‚¹
+ */
 class Encoder{
 protected:
 	const uint32_t _resolution;
 
 public:
-	/*
-	 * ƒRƒ“ƒXƒgƒ‰ƒNƒ^AƒfƒXƒgƒ‰ƒNƒ^
+	/**
+	 * @brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+	 * @param resolution åˆ†è§£èƒ½
 	 */
 	Encoder(uint32_t resolution): _resolution(resolution){}
+	/**
+	 * @brief ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+	 */
 	virtual ~Encoder(){}
 
-	/*
-	 * ‰Šú‰»
+	/**
+	 * @brief åˆæœŸåŒ–
 	 */
 	virtual void Init() = 0;
 
 
-	/*
-	 * Šp“xƒŠƒZƒbƒg
+	/**
+	 * @brief ã‚«ã‚¦ãƒ³ãƒˆãƒªã‚»ãƒƒãƒˆ
 	 */
 	virtual void Reset() = 0;
 
-	/*
-	 * Šp“xæ“¾
+	/**
+	 * @brief è§’åº¦å–å¾—
+	 * @return è§’åº¦[rad]
 	 */
 	virtual float GetRad() const = 0;
-	/*
-	 * Šp“xæ“¾&ƒŠƒZƒbƒg
-	 * ƒCƒ“ƒNƒŠƒƒ“ƒgŒ^‚È‚ç‚±‚¿‚ç‚Ì•û‚ª‚æ‚è³Šm
+
+	/**
+	 * @brief è§’åº¦å–å¾—&ã‚«ã‚¦ãƒ³ãƒˆãƒªã‚»ãƒƒãƒˆ
+	 * @details å‘¨æœŸè§’åº¦å–å¾—ç²¾åº¦ã‚’ä¸Šã’ã‚‹ãŸã‚ã®ã‚‚ã®
+	 * @return è§’åº¦[rad]
 	 */
 	virtual float GetRadAndReset() = 0;
 };

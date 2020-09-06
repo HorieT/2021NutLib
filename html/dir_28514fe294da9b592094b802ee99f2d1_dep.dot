@@ -1,0 +1,9 @@
+digraph "NutLib/PowerSupply" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_8b1cfa3accea10fc5ecd39c63013c190 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="NutLib" fontname="Helvetica", fontsize="10", URL="dir_8b1cfa3accea10fc5ecd39c63013c190.html"]
+  dir_28514fe294da9b592094b802ee99f2d1 [shape=box, label="PowerSupply", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_28514fe294da9b592094b802ee99f2d1.html"];
+  }
+}

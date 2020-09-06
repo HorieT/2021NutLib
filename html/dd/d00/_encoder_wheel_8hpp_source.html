@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>NutLib: NutLib/Sensor/Encoder/EncoderWheel.hpp ソースファイル</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">NutLib
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.20 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('dd/d00/_encoder_wheel_8hpp_source.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">EncoderWheel.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../dd/d00/_encoder_wheel_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../de/d0c/_encoder_8hpp.html">Encoder.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;../../Coordinate.hpp&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../dd/d51/namespacenut.html">nut</a>{</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="../../de/dce/classnut_1_1_encoder_wheel.html">   17</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../de/dce/classnut_1_1_encoder_wheel.html">EncoderWheel</a>{</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    std::shared_ptr&lt;Encoder&gt; _encoder;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">float</span> _diameter_mm;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="../../d4/d08/classnut_1_1_coordinate.html">Coordinate&lt;float&gt;</a> _position;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="../../de/dce/classnut_1_1_encoder_wheel.html#abdb50f7b4b9f4312dc7838b2c8797ac5">   30</a></span>&#160;    <a class="code" href="../../de/dce/classnut_1_1_encoder_wheel.html#abdb50f7b4b9f4312dc7838b2c8797ac5">EncoderWheel</a>(<span class="keyword">const</span> std::shared_ptr&lt;Encoder&gt;&amp; encoder, <span class="keywordtype">float</span> diameter_mm, <a class="code" href="../../d4/d08/classnut_1_1_coordinate.html">Coordinate&lt;float&gt;</a> position = <a class="code" href="../../d4/d08/classnut_1_1_coordinate.html">Coordinate&lt;float&gt;</a>{0.0f, 0.0f, 0.0f})</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    : _encoder(encoder), _diameter_mm(diameter_mm), _position(position){</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    }</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="../../de/dce/classnut_1_1_encoder_wheel.html#aeb6681f8ebd4b8d64f73e2072942925c">   37</a></span>&#160;    <span class="keyword">virtual</span> <a class="code" href="../../de/dce/classnut_1_1_encoder_wheel.html#aeb6681f8ebd4b8d64f73e2072942925c">~EncoderWheel</a>(){}</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="../../de/dce/classnut_1_1_encoder_wheel.html#abc5768163569a38ad6aa68c3b430e3c1">   42</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../de/dce/classnut_1_1_encoder_wheel.html#abc5768163569a38ad6aa68c3b430e3c1">Init</a>(){</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        _encoder-&gt;Init();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="../../de/dce/classnut_1_1_encoder_wheel.html#a6c0f326934996189d5862920d1cf78d3">   51</a></span>&#160;    std::weak_ptr&lt;Encoder&gt; <a class="code" href="../../de/dce/classnut_1_1_encoder_wheel.html#a6c0f326934996189d5862920d1cf78d3">GetEncoder</a>()<span class="keyword"> const</span>{</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">return</span> _encoder;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="../../de/dce/classnut_1_1_encoder_wheel.html#a8d48a420d029cd955065d20d6c49c7f3">   58</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../de/dce/classnut_1_1_encoder_wheel.html#a8d48a420d029cd955065d20d6c49c7f3">Reset</a>(){</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        _encoder-&gt;Reset();</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="../../de/dce/classnut_1_1_encoder_wheel.html#af227da370e2203885e690f0753c02d85">   65</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="../../de/dce/classnut_1_1_encoder_wheel.html#af227da370e2203885e690f0753c02d85">GetRad</a>()<span class="keyword"> const</span>{</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordflow">return</span> _encoder-&gt;GetRad();</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="../../de/dce/classnut_1_1_encoder_wheel.html#a573b1dc8422eb988e4d9a3e5810a76bc">   73</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="../../de/dce/classnut_1_1_encoder_wheel.html#a573b1dc8422eb988e4d9a3e5810a76bc">GetRadAndReset</a>(){</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordflow">return</span> _encoder-&gt;GetRadAndReset();</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    }</div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="../../de/dce/classnut_1_1_encoder_wheel.html#a48323897d222c69acbf292c8ac833a41">   80</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="../../de/dce/classnut_1_1_encoder_wheel.html#a48323897d222c69acbf292c8ac833a41">GetDistance</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordflow">return</span> _encoder-&gt;GetRad() * _diameter_mm;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    }</div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="../../de/dce/classnut_1_1_encoder_wheel.html#aaef592c5203545da6dd0a23ea0e163d5">   88</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="../../de/dce/classnut_1_1_encoder_wheel.html#aaef592c5203545da6dd0a23ea0e163d5">GetDistanceAndReset</a>() {</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordflow">return</span> _encoder-&gt;GetRadAndReset() * _diameter_mm;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    }</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="../../de/dce/classnut_1_1_encoder_wheel.html#a16b5c1db641fb1668f89c7e3619c8875">   95</a></span>&#160;    <span class="keyword">const</span> <a class="code" href="../../d4/d08/classnut_1_1_coordinate.html">Coordinate&lt;float&gt;</a> <a class="code" href="../../de/dce/classnut_1_1_encoder_wheel.html#a16b5c1db641fb1668f89c7e3619c8875">GetPosition</a>()<span class="keyword"> const</span>{</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keywordflow">return</span> _position;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    }</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;};</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;}</div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="aclassnut_1_1_encoder_wheel_html_abdb50f7b4b9f4312dc7838b2c8797ac5"><div class="ttname"><a href="../../de/dce/classnut_1_1_encoder_wheel.html#abdb50f7b4b9f4312dc7838b2c8797ac5">nut::EncoderWheel::EncoderWheel</a></div><div class="ttdeci">EncoderWheel(const std::shared_ptr&lt; Encoder &gt; &amp;encoder, float diameter_mm, Coordinate&lt; float &gt; position=Coordinate&lt; float &gt;{0.0f, 0.0f, 0.0f})</div><div class="ttdoc">コンストラクタ</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d00/_encoder_wheel_8hpp_source.html#l00030">EncoderWheel.hpp:30</a></div></div>
+<div class="ttc" id="aclassnut_1_1_encoder_wheel_html_a573b1dc8422eb988e4d9a3e5810a76bc"><div class="ttname"><a href="../../de/dce/classnut_1_1_encoder_wheel.html#a573b1dc8422eb988e4d9a3e5810a76bc">nut::EncoderWheel::GetRadAndReset</a></div><div class="ttdeci">float GetRadAndReset()</div><div class="ttdoc">角度取得&amp;カウントリセット</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d00/_encoder_wheel_8hpp_source.html#l00073">EncoderWheel.hpp:73</a></div></div>
+<div class="ttc" id="anamespacenut_html"><div class="ttname"><a href="../../dd/d51/namespacenut.html">nut</a></div><div class="ttdoc">ライブラリの統括名前空間</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dba/_c_a_n_8hpp_source.html#l00014">CAN.hpp:14</a></div></div>
+<div class="ttc" id="aclassnut_1_1_encoder_wheel_html_a48323897d222c69acbf292c8ac833a41"><div class="ttname"><a href="../../de/dce/classnut_1_1_encoder_wheel.html#a48323897d222c69acbf292c8ac833a41">nut::EncoderWheel::GetDistance</a></div><div class="ttdeci">float GetDistance() const</div><div class="ttdoc">距離取得</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d00/_encoder_wheel_8hpp_source.html#l00080">EncoderWheel.hpp:80</a></div></div>
+<div class="ttc" id="aclassnut_1_1_coordinate_html"><div class="ttname"><a href="../../d4/d08/classnut_1_1_coordinate.html">nut::Coordinate&lt; float &gt;</a></div></div>
+<div class="ttc" id="aclassnut_1_1_encoder_wheel_html_af227da370e2203885e690f0753c02d85"><div class="ttname"><a href="../../de/dce/classnut_1_1_encoder_wheel.html#af227da370e2203885e690f0753c02d85">nut::EncoderWheel::GetRad</a></div><div class="ttdeci">float GetRad() const</div><div class="ttdoc">角度取得</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d00/_encoder_wheel_8hpp_source.html#l00065">EncoderWheel.hpp:65</a></div></div>
+<div class="ttc" id="aclassnut_1_1_encoder_wheel_html_aeb6681f8ebd4b8d64f73e2072942925c"><div class="ttname"><a href="../../de/dce/classnut_1_1_encoder_wheel.html#aeb6681f8ebd4b8d64f73e2072942925c">nut::EncoderWheel::~EncoderWheel</a></div><div class="ttdeci">virtual ~EncoderWheel()</div><div class="ttdoc">デストラクタ</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d00/_encoder_wheel_8hpp_source.html#l00037">EncoderWheel.hpp:37</a></div></div>
+<div class="ttc" id="aclassnut_1_1_encoder_wheel_html_aaef592c5203545da6dd0a23ea0e163d5"><div class="ttname"><a href="../../de/dce/classnut_1_1_encoder_wheel.html#aaef592c5203545da6dd0a23ea0e163d5">nut::EncoderWheel::GetDistanceAndReset</a></div><div class="ttdeci">float GetDistanceAndReset()</div><div class="ttdoc">距離取得&amp;カウントリセット</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d00/_encoder_wheel_8hpp_source.html#l00088">EncoderWheel.hpp:88</a></div></div>
+<div class="ttc" id="aclassnut_1_1_encoder_wheel_html_a16b5c1db641fb1668f89c7e3619c8875"><div class="ttname"><a href="../../de/dce/classnut_1_1_encoder_wheel.html#a16b5c1db641fb1668f89c7e3619c8875">nut::EncoderWheel::GetPosition</a></div><div class="ttdeci">const Coordinate&lt; float &gt; GetPosition() const</div><div class="ttdoc">位置取得</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d00/_encoder_wheel_8hpp_source.html#l00095">EncoderWheel.hpp:95</a></div></div>
+<div class="ttc" id="aclassnut_1_1_encoder_wheel_html_a6c0f326934996189d5862920d1cf78d3"><div class="ttname"><a href="../../de/dce/classnut_1_1_encoder_wheel.html#a6c0f326934996189d5862920d1cf78d3">nut::EncoderWheel::GetEncoder</a></div><div class="ttdeci">std::weak_ptr&lt; Encoder &gt; GetEncoder() const</div><div class="ttdoc">　エンコーダのインスタンス取得</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d00/_encoder_wheel_8hpp_source.html#l00051">EncoderWheel.hpp:51</a></div></div>
+<div class="ttc" id="aclassnut_1_1_encoder_wheel_html_a8d48a420d029cd955065d20d6c49c7f3"><div class="ttname"><a href="../../de/dce/classnut_1_1_encoder_wheel.html#a8d48a420d029cd955065d20d6c49c7f3">nut::EncoderWheel::Reset</a></div><div class="ttdeci">void Reset()</div><div class="ttdoc">　リセット</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d00/_encoder_wheel_8hpp_source.html#l00058">EncoderWheel.hpp:58</a></div></div>
+<div class="ttc" id="a_encoder_8hpp_html"><div class="ttname"><a href="../../de/d0c/_encoder_8hpp.html">Encoder.hpp</a></div><div class="ttdoc">エンコーダ基底</div></div>
+<div class="ttc" id="aclassnut_1_1_encoder_wheel_html"><div class="ttname"><a href="../../de/dce/classnut_1_1_encoder_wheel.html">nut::EncoderWheel</a></div><div class="ttdoc">外径付きエンコーダクラス</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d00/_encoder_wheel_8hpp_source.html#l00017">EncoderWheel.hpp:17</a></div></div>
+<div class="ttc" id="aclassnut_1_1_encoder_wheel_html_abc5768163569a38ad6aa68c3b430e3c1"><div class="ttname"><a href="../../de/dce/classnut_1_1_encoder_wheel.html#abc5768163569a38ad6aa68c3b430e3c1">nut::EncoderWheel::Init</a></div><div class="ttdeci">void Init()</div><div class="ttdoc">　初期化</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d00/_encoder_wheel_8hpp_source.html#l00042">EncoderWheel.hpp:42</a></div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_8b1cfa3accea10fc5ecd39c63013c190.html">NutLib</a></li><li class="navelem"><a class="el" href="../../dir_c2c735cbd9a0ae71a2beef0eda132d9d.html">Sensor</a></li><li class="navelem"><a class="el" href="../../dir_83288b329cf786cdacd506ac8df3162c.html">Encoder</a></li><li class="navelem"><a class="el" href="../../dd/d00/_encoder_wheel_8hpp.html">EncoderWheel.hpp</a></li>
+    <li class="footer">構築: <a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
+  </ul>
+</div>
+</body>
+</html>

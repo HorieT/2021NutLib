@@ -1,6 +1,9 @@
-/*
- * duty���̓^�C�v�̃��[�^�[�̃N���X
- * �G���R�[�_�Ȃ��ł��g����(�k���|����Ƃ���)
+/**
+ * @file DirectDutyMotor.hpp
+ * @brief Dutyモータ制御
+ * @author Horie
+ * @date 2020/9
+ * @attention まだ一部未実装です
  */
 #pragma once
 
@@ -8,16 +11,21 @@
 #include <memory>
 
 namespace nut{
+/**
+ * @brief Duty制御のモータクラス
+ */
 class DirectDutyMotor : public Motor{
 private:
-	TIM_HandleTypeDef* const _htim;//PWM
-	const uint32_t _channel;//PWM
+	TIM_HandleTypeDef* const _htim;//!< PWM
+	const uint32_t _channel;//!< PWM
 	GPIO_TypeDef* const _gpio_port;
 	const uint16_t _gpio_pin;
 	const std::shared_ptr<Encoder> _encoder;
 
 
-
+	/**
+	 * @brief 周期コールバック関数
+	 */
 	virtual void ScheduleTask() override{
 		if(_move_type == MoveType::stop){
 		}
@@ -25,27 +33,27 @@ private:
 			float set_duty;
 			if(_move_type == MoveType::duty){
 				set_duty = _target_duty;
-				if(_encoder.get() == NULL){//�ʓr�G���R�[�_�ǂݏo��
+				if(_encoder.get() == NULL){//エンコーダの使用状況
 					float rad = _encoder->GetRadAndReset() / (2.0f*static_cast<float>(M_PI));
 					_now_rad += rad;
 					_now_rpm = rad * 60000.0f / _scheduler.GetPeriod();
 				}
 			}
 			else{
-				if(_encoder.get() == NULL){//�G���R�[�_����
+				if(_encoder.get() == NULL){//
 					Stop();
 					return;
 				}
-				//�G���R�[�_�ǂݏo��
+				//
 				float rad = _encoder->GetRadAndReset() / (2.0f*static_cast<float>(M_PI));
 				_now_rad += rad;
 				_now_rpm = rad * 60000.0f / _scheduler.GetPeriod();
 
 				if(_move_type == MoveType::rpm){
-					/*�܂�*/
+					/*まだ*/
 				}
 				else{
-					/*�܂�*/
+					/*まだ*/
 				}
 			}
 
@@ -53,22 +61,32 @@ private:
 		}
 	}
 public:
+	/**
+	 * @brief コンストラク
+	 * @param[in] period 周期
+	 * @param[in] htim PWM出力タイマ
+	 * @param[in] channel PWM出力チャンネル
+	 * @param[in] port 回転極性ピンのポート
+	 * @param[in] pin 回転極性ピン
+	 * @param[in] encoder エンコーダのインスタンス
+	 * @details エンコーダを使わない場合はヌルポを入れてください
+	 */
 	DirectDutyMotor(uint32_t period, TIM_HandleTypeDef* htim, uint32_t channel, GPIO_TypeDef* port, uint16_t pin, const std::shared_ptr<Encoder>& encoder) :
 		Motor(period), _htim(htim),_channel(channel), _gpio_port(port), _gpio_pin(pin), _encoder(encoder){}
 	virtual ~DirectDutyMotor(){}
 
 
 
-	/*
-	 * ������
+	/**
+	 * @brief 初期化関数
 	 */
 	virtual void Init() {
 		_encoder->Init();
 	}
 
 
-	/*
-	 * ����J�n
+	/**
+	 * @brief 制御スタート
 	 */
 	virtual bool Start() override{
 		ResetTarget();
@@ -79,8 +97,8 @@ public:
 		return true;
 	}
 
-	/*
-	 * �����~
+	/**
+	 * @brief 制御ストップ
 	 */
 	virtual void Stop() override{
 		_move_type = MoveType::stop;
@@ -90,9 +108,10 @@ public:
 	}
 
 
-	/*
-	 * �Z�b�^�[
-	 * �G���R�[�_�̗L���Ɋւ���ύX
+	/**
+	 * @brief 速度制御
+	 * @param[in] rpm RPM
+	 * @return 速度制御可能かどうか
 	 */
 	virtual bool SetRPM(float rpm) override {
 		if(_encoder.get() == NULL)return false;
@@ -100,6 +119,12 @@ public:
 		_move_type = MoveType::rpm;
 		return true;
 	}
+	/**
+	 * @brief 角度制御
+	 * @param[in] rad 角度[rad]
+	 * @param[in] top_rpm 最大速度[rpm]
+	 * @return 角度制御可能かどうか
+	 */
 	virtual bool SetRad(float rad, float top_rpm) override{
 		if(_encoder.get() == NULL)return false;
 		_target_rad = rad;
@@ -107,12 +132,25 @@ public:
 		_move_type = MoveType::rad;
 		return true;
 	}
+	/**
+	 * @brief 速度制御ゲインセット
+	 * @param[in] kp Pゲイン
+	 * @param[in] ki Iゲイン
+	 * @param[in] kd Dゲイン
+	 * @return 速度PID可能かどうか
+	 */
 	virtual bool SetRPMPID(float kp, float ki, float kd) override{
 		if(_encoder.get() == NULL)return false;
 		_rpm_pid.SetGaine(kp, ki, kd);
 		return true;
 	}
-
+	/**
+	 * @brief 角度制御ゲインセット
+	 * @param[in] kp Pゲイン
+	 * @param[in] ki Iゲイン
+	 * @param[in] kd Dゲイン
+	 * @return 角度PID可能かどうか
+	 */
 	virtual bool SetRadPID(float kp, float ki, float kd) override{
 		if(_encoder.get() == NULL)return false;
 		_rad_pid.SetGaine(kp, ki, kd);
@@ -121,6 +159,10 @@ public:
 
 
 
+	/**
+	 * @brief 角度原点リセット
+	 * @return bool 角度原点リセット可能かどうか
+	 */
 	virtual bool ResetRadOrigin(float rad) override{
 		if(_move_type == MoveType::rad)return false;
 		_now_rad = rad;

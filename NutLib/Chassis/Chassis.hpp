@@ -1,8 +1,8 @@
-/*
- * ‘«‰ñ‚èŠî’êƒNƒ‰ƒX
- * ‚Æ‚è‚ ‚¦‚¸‘¬“x“ü—Í‚Ì‚İ
- * ƒIƒhƒ[ƒ^‚Å‘¬“x•â³‚ğ‚·‚é
- * •â³‚¢‚ç‚È‚¯‚ê‚ÎƒIƒhƒ[ƒ^‚Ínull‚Å
+/**
+ * @file Chassis.hpp
+ * @brief æ©Ÿä½“è¶³å›ã‚ŠåŸºå¹¹
+ * @author Horie
+ * @date 2020/9
  */
 #pragma once
 
@@ -13,47 +13,83 @@
 #include <memory>
 
 namespace nut{
+/**
+ * @brief æ©Ÿä½“è¶³å›ã‚ŠåŸºåº•ç´”ç²‹ä»®æƒ³ã‚¯ãƒ©ã‚¹
+ */
 class Chassis{
 protected:
-	//Šg’£‚É”õ‚¦‚Ä—ñ‹“
+	/**
+	 * @brief å‹•ä½œã‚¿ã‚¤ãƒ—
+	 */
 	enum class MoveType : uint8_t{
-		stop = 0U,
-		velocity
+		stop = 0U,//!< åœæ­¢
+		velocity//!< é€Ÿåº¦å…¥åŠ›
 	};
 	MoveType _move_type = MoveType::stop;
 	TimeScheduler<void> _scheduler;
 	std::shared_ptr<Odmetry> _odmetry;
-	Coordinate<float> _target_velocity = {0.0f};
+	Coordinate<float> _target_velocity;
 
 
-	/*
-	 * ‘¬“x‚©‚çƒAƒNƒ`ƒ…ƒG[ƒ^‚ğ‘€ì‚·‚éŠÖ”
+
+	/**
+	 * @brief å‘¨æœŸã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°
 	 */
-	virtual void InputVelocity() = 0;
+	virtual void ScheduleTask() = 0;
 
 
 public:
-	Chassis(uint32_t period, std::shared_ptr<Odmetry> odmetry)
-		: _scheduler([this]{InputVelocity();}, period), _odmetry(odmetry){
+	/**
+	 * @brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+	 * @param[in] period åˆ¶å¾¡å‘¨æœŸ
+	 * @param[in] odmetry ã‚ªãƒ‰ãƒ¡ãƒ¼ã‚¿ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹
+	 * @details ã‚ªãƒ‰ãƒ¡ãƒ¼ã‚¿ã‚’ä½¿ã‚ãªã„å ´åˆã¯ãƒŒãƒ«ãƒã‚’å…¥ã‚Œã¦ãã ã•ã„
+	 */
+	Chassis(uint32_t period, const std::shared_ptr<Odmetry>& odmetry)
+		: _scheduler([this]{ScheduleTask();}, period), _odmetry(odmetry){
 
 	}
-	virtual ~Chassis(){}
+	/**
+	 * @brief ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+	 */
+	virtual ~Chassis(){
 
+	}
+
+	/**
+	 * @brief åˆæœŸåŒ–é–¢æ•°
+	 */
 	void Init(){
 		_scheduler.Set();
 	}
 
+	/**
+	 * @brief é€Ÿåº¦å…¥åŠ›
+	 * @param[in] velocity é€Ÿåº¦[m/s],[rad/s]
+	 * @return é€Ÿåº¦å…¥åŠ›å¯èƒ½ã‹
+	 */
 	virtual bool SetVelocity(Coordinate<float> velocity){
 		_target_velocity = velocity;
 		return true;
 	}
+
+	/**
+	 * @brief é€Ÿåº¦å…¥åŠ›
+	 * @param[in] velocity_mps é€Ÿåº¦[m/s]
+	 * @param[in] rot_radps [rad/s]
+	 * @return é€Ÿåº¦å…¥åŠ›å¯èƒ½ã‹
+	 */
 	virtual bool SetVelocity(Eigen::Vector2f velocity_mps, float rot_radps){
-		_target_velocity.x = velocity_mps.x();
-		_target_velocity.y = velocity_mps.y();
-		_target_velocity.theta = rot_radps;
+		_target_velocity.x() = velocity_mps.x();
+		_target_velocity.y() = velocity_mps.y();
+		_target_velocity.theta() = rot_radps;
 		return true;
 	}
 
+	/**
+	 * @brief å…¥åŠ›é€Ÿåº¦å–å¾—
+	 * @return å…¥åŠ›é€Ÿåº¦[m/s]
+	 */
 	virtual const Coordinate<float> GetVelocity() const{
 		return _target_velocity;
 	}

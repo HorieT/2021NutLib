@@ -1,7 +1,10 @@
-/*
- * �S���C�u����������
- * ��{�f�o�b�O�p
- *
+/**
+ * @file AllLib.hpp
+ * @brief ライブラリの全ファイルをインクルードする<br>
+ * 主にデバッグ用
+ * @author Horie
+ * @date 2020/9
+ * @details 使用時はコンパイル後ファイルサイズに気をつけるように
  */
 #pragma once
 

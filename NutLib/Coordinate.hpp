@@ -1,6 +1,10 @@
-/*
- * À•WŒnƒNƒ‰ƒX
- *s—ñŒvZ‚ÍŠî–{“I‚ÉEigen‚Ås‚¤
+/**
+ * @file Coordinate.hpp
+ * @brief å¹³é¢åº§æ¨™
+ * @details Eigenã¨ã®äº’æ›æ€§ã‚ã‚Š
+ * @author Horie
+ * @date 2020/9
+ * @attention ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ãƒ¼ã‚¹ãŒå¤‰ã‚ã‚‹ã‚ˆã†ãªå¤§å¹…æ›´æ–°ã‚’è¡Œã†äºˆå®šãªã®ã§æ³¨æ„
  */
 #pragma once
 
@@ -8,114 +12,156 @@
 #include <array>
 
 namespace nut{
+/**
+ * @brief  å¹³é¢åº§æ¨™(x,y,theta)ã‚’è¡¨ã™ã‚¯ãƒ©ã‚¹
+ * @tparam T å†…éƒ¨ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã®æ•°å€¤å‹
+ * @attention TãŒæ•°å€¤å‹ã§ãªã‘ã‚Œã°ã‚¢ã‚µãƒ¼ãƒˆã‚’åãã¾ã™
+ */
 template<typename T>
-struct Coordinate{
+class Coordinate{
 	static_assert(std::is_arithmetic<T>::value, "Type is not arithmetic.");
-	T x;
-	T y;
-	T theta;//•ûŒüŠp
+private:
+	T _x;
+	T _y;
+	T _theta;
+public:
+	/*ã‚²ãƒƒã‚¿ãƒ¼*/
+	constexpr const T& x() const&{return _x;}
+	constexpr const T& y() const&{return _y;}
+	constexpr const T& theta() const&{return _theta;}
+	constexpr T& x() &{return _x;}
+	constexpr T& y() &{return _y;}
+	constexpr T& theta() &{return _theta;}
+	constexpr T x() const&&{return _x;}
+	constexpr T y() const&&{return _y;}
+	constexpr T theta() const&&{return _theta;}
 
-	/*
-	 * ƒRƒ“ƒXƒgƒ‰ƒNƒ^
-	 * ‘æˆêˆø”:XÀ•W,‘æ“ñˆø”:YÀ•W,‘æOˆø”:•ûŒüŠp
+
+
+	/**
+	 * @brief  ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	 */
-	constexpr Coordinate(T X = 0.0, T Y = 0.0, T Rad = 0.0) : x(X), y(Y), theta(Rad){}
-	//–¾¦“I‚ÈƒRƒs[ƒRƒ“ƒXƒgƒ‰ƒNƒ^(•K{)
-	constexpr Coordinate(const Coordinate<T>& copy) : x(copy.x), y(copy.y), theta(copy.theta){}
-	constexpr Coordinate& operator=(const Coordinate<T>& obj){
-		x = obj.x;
-		y = obj.y;
-		theta = obj.theta;
+	constexpr Coordinate() : _x(0.0), _y(0.0), _theta(0.0){}
+	/**
+	 * @brief  è¦ç´ åˆæœŸåŒ–ã®ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+	 * @param[in] x xåº§æ¨™
+	 * @param[in] y ï½™åº§æ¨™
+	 * @param[in] rad å›è»¢åº§æ¨™
+	 */
+	constexpr Coordinate(T x, T y , T rad = 0.0) : _x(x), _y(y), _theta(rad){}
+	/**
+	 * @brief  ã‚³ãƒ”ãƒ¼ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+	 * @param[in] copy ã‚³ãƒ”ãƒ¼å¯¾è±¡
+	 */
+	constexpr Coordinate(const Coordinate<T>& copy) : _x(copy.x()), _y(copy.y()), _theta(copy.theta()){
+	}
+	/**
+	 * @brief  ã‚³ãƒ”ãƒ¼ä»£å…¥
+	 * @param[in] copy ã‚³ãƒ”ãƒ¼å¯¾è±¡
+	 */
+	constexpr Coordinate& operator=(const Coordinate<T>& copy){
+		_x = copy.x();
+		_y = copy.y();
+		_theta = copy.theta();
 		return *this;
 	}
 
 
-	/*
-	 * ƒxƒNƒgƒ‹æ“¾ŠÖ”
-	 * ‘æˆêˆø”:æ“¾ƒxƒNƒgƒ‹
+
+
+	/**
+	 * @brief x,yã®å¹³é¢ãƒ™ã‚¯ãƒˆãƒ«ã‚’è¿”ã—ã¾ã™
+	 * @tparam V ãƒ™ã‚¯ãƒˆãƒ«å‹
+	 * @param[out] vector ãƒ™ã‚¯ãƒˆãƒ«
 	 */
 	template<class V>
 	constexpr void GetVector(V& vector) const{
-		vector.x() = x;
-		vector.y() = y;
+		vector.x() = _x;
+		vector.y() = _y;
 	}
-	/*
-	 * Œ´“_‚©‚ç‚Ì‹——£ZoŠÖ”
-	 * –ß‚è’l:‹——£
+	/**
+	 * @brief x,yãƒ™ã‚¯ãƒˆãƒ«ã®ãƒãƒ«ãƒ ã‚’è¿”ã—ã¾ã™
+	 * @return ãƒãƒ«ãƒ 
+	 * @details	TãŒdoubleã§ã‚ã‚Œã°doubleã€ãã‚Œä»¥å¤–ãªã‚‰floatãŒè¿”ã‚Šã¾ã™
 	 */
-	inline constexpr auto Norm() const -> decltype(x + 0.0f) {return sqrtf(powf(x, 2.0f) + powf(y, 2.0f));}//©“®¸Ši‚ÅƒTƒCƒY—}‚¦
+	inline constexpr auto Norm() const -> decltype(_x + 0.0f) {
+		return sqrtf(powf(_x, 2.0f) + powf(_y, 2.0f));
+	}
 
-	/*
-	 * ˆÊ’uƒxƒNƒgƒ‹‚ÌŒX‚«ZoŠÖ”
-	 * –ß‚è’l:Šp“x
+	/**
+	 * @brief x,yãƒ™ã‚¯ãƒˆãƒ«ã®è§’åº¦ã‚’è¿”ã—ã¾ã™
+	 * @return ãƒ™ã‚¯ãƒˆãƒ«è§’
+	 * @details	TãŒdoubleã§ã‚ã‚Œã°doubleã€ãã‚Œä»¥å¤–ãªã‚‰floatãŒè¿”ã‚Šã¾ã™
 	 */
-	constexpr auto Angle() const ->decltype(x + 0.0f) {return atan2f(y, x);}
+	constexpr auto Angle() const ->decltype(_x + 0.0f) {
+		return atan2f(_y, _x);
+	}
 
-	/*
-	 * Zp‰‰ZqƒI[ƒo[ƒ[ƒh
-	 * Eigen‚ÌVector‚Æ‚àˆê•”ŒİŠ·
-	 */
+	/*ç®—è¡“ä»£å…¥æ¼”ç®—å­ã®ã‚ªãƒ¼ãƒãƒ¼ãƒ­ãƒ¼ãƒ‰*/
 	constexpr Coordinate<T>& operator+=(const Coordinate<T>& r_operand){
-		x += r_operand.x;
-		y += r_operand.y;
-		theta += r_operand.theta;
+		_x += r_operand.x();
+		_y += r_operand.y();
+		_theta += r_operand.theta();
 		return *this;
 	}
 	template<typename V>
 	constexpr Coordinate<T>& operator+=(const V& r_operand){
-		x += static_cast<T>(r_operand.x());
-		y += static_cast<T>(r_operand.y());
+		_x += static_cast<T>(r_operand.x());
+		_y += static_cast<T>(r_operand.y());
 		return *this;
 	}
 	constexpr Coordinate<T>& operator-=(const Coordinate<T>& r_operand){
-		x -= r_operand.x;
-		y -= r_operand.y;
-		theta -= r_operand.theta;
+		_x -= r_operand.x();
+		_y -= r_operand.y();
+		_theta -= r_operand.theta();
 		return *this;
 	}
 	template<typename V>
 	constexpr Coordinate<T>& operator-=(const V& r_operand){
-		x -= static_cast<T>(r_operand.x());
-		y -= static_cast<T>(r_operand.y());
+		_x -= static_cast<T>(r_operand.x());
+		_y -= static_cast<T>(r_operand.y());
 		return *this;
 	}
 	template<typename V>
 	constexpr Coordinate<T>& operator*=(const V& r_operand){
-		x *= static_cast<T>(r_operand);
-		y *= static_cast<T>(r_operand);
-		theta *= static_cast<T>(r_operand);
+		_x *= static_cast<T>(r_operand);
+		_y *= static_cast<T>(r_operand);
+		_theta *= static_cast<T>(r_operand);
 		return *this;
 	}
 	template<typename V>
 	constexpr Coordinate<T>& operator/=(const V& r_operand){
-		x /= static_cast<T>(r_operand);
-		y /= static_cast<T>(r_operand);
-		theta /= static_cast<T>(r_operand);
+		_x /= static_cast<T>(r_operand);
+		_y /= static_cast<T>(r_operand);
+		_theta /= static_cast<T>(r_operand);
 		return *this;
 	}
 
-	/*
-	 * ƒLƒƒƒXƒg‚ÌƒI[ƒo[ƒ[ƒh
-	 */
-	operator std::array<T, 3> ()const noexcept{return std::array<T, 3>(x, y, theta);}
-	operator std::initializer_list<T> ()const noexcept{return std::initializer_list<T>(x, y, theta);}
+
+	/*ã‚­ãƒ£ã‚¹ãƒˆã®ã‚ªãƒ¼ãƒãƒ¼ãƒ­ãƒ¼ãƒ‰*/
+	explicit operator std::array<T, 3> ()const noexcept{return std::array<T, 3>(_x, _y, _theta);}
+	explicit operator std::initializer_list<T> ()const noexcept{return std::initializer_list<T>(_x, _y, _theta);}
 
 
-	/*
-	 * “Y‚¦š‚É‚æ‚é—v‘fƒAƒNƒZƒX
-	 */
-	constexpr const T& operator[](size_t index) const& {return *((&x) + index);}
-	constexpr T& operator[](size_t index) & {return *((&x) + index);}
-	constexpr T operator[](size_t index) const&& {return *((&x) + index);}
+	/*é…åˆ—è¦ç´ æ¼”ç®—å­ã®ã‚ªãƒ¼ãƒãƒ¼ãƒ­ãƒ¼ãƒ‰*/
+	constexpr const T& operator[](size_t index) const& {return *((&_x) + index);}
+	constexpr T& operator[](size_t index) & {return *((&_x) + index);}
+	constexpr T operator[](size_t index) const&& {return *((&_x) + index);}
 };
 
-/*double‚É‘Î‚·‚é“Áê‰»*/
+/**
+ * Coordinate<T>ã®doubleç‰¹æ®ŠåŒ–
+ */
 template<>
-constexpr auto Coordinate<double>::Norm() const ->decltype(x + 0.0f) {return sqrt(pow(x, 2.0) + pow(y, 2.0));}
+constexpr auto Coordinate<double>::Norm() const ->decltype(_x + 0.0f) {return sqrt(pow(_x, 2.0) + pow(_y, 2.0));}
+/**
+ * Coordinate<T>ã®doubleç‰¹æ®ŠåŒ–
+ */
 template<>
-constexpr auto Coordinate<double>::Angle() const ->decltype(x + 0.0f) {return atan2(y, x);}
+constexpr auto Coordinate<double>::Angle() const ->decltype(_x + 0.0f) {return atan2(_y, _x);}
 
-/*aZp‰‰ZqƒI[ƒo[ƒ[ƒh(å‚ÉEigen@VectorŒn)*/
+
+/*ç®—è¡“æ¼”ç®—å­ã®ã‚ªãƒ¼ãƒãƒ¼ãƒ­ãƒ¼ãƒ‰*/
 template<typename T>
 constexpr nut::Coordinate<T> operator+(const nut::Coordinate<T>& l_operand, const nut::Coordinate<T>& r_operand){
 	return nut::Coordinate<T>(l_operand) += r_operand;
@@ -147,6 +193,6 @@ constexpr nut::Coordinate<T> operator-(const nut::Coordinate<T>& l_operand, cons
 }
 template<typename T, typename U>
 constexpr nut::Coordinate<T> operator-(const U& l_operand, const nut::Coordinate<T>& r_operand){
-	return nut::Coordinate<T>(T{l_operand.x}-r_operand.x, T{l_operand.y}-r_operand.y, r_operand.theta);
+	return nut::Coordinate<T>(T{l_operand.x()}-r_operand.x(), T{l_operand.y()}-r_operand.y(), r_operand.theta());
 }
 }

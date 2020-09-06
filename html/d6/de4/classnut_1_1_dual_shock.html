@@ -1,0 +1,1073 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>NutLib: nut::DualShock クラス</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">NutLib
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.20 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('d6/de4/classnut_1_1_dual_shock.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">公開型</a> &#124;
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pub-static-attribs">静的公開変数類</a> &#124;
+<a href="../../dd/dfe/classnut_1_1_dual_shock-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">nut::DualShock クラス</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>DualshockをSBDBT5Vを通して受信するクラス  
+ <a href="../../d6/de4/classnut_1_1_dual_shock.html#details">[詳解]</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d8/d0b/_dual_shock_8hpp_source.html">DualShock.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+公開型</h2></td></tr>
+<tr class="memitem:a0442f05c9360aca776d0ff586f54396f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#a0442f05c9360aca776d0ff586f54396f">Button</a> = uint32_t</td></tr>
+<tr class="memdesc:a0442f05c9360aca776d0ff586f54396f"><td class="mdescLeft">&#160;</td><td class="mdescRight">ボタンの型エイリアス  <a href="../../d6/de4/classnut_1_1_dual_shock.html#a0442f05c9360aca776d0ff586f54396f">[詳解]</a><br /></td></tr>
+<tr class="separator:a0442f05c9360aca776d0ff586f54396f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:af1f9394130985a9494f5524e49115c95"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#af1f9394130985a9494f5524e49115c95">DualShock</a> (UART_HandleTypeDef *huart, std::function&lt; void()&gt; &amp;&amp;callback_func, uint32_t time)</td></tr>
+<tr class="memdesc:af1f9394130985a9494f5524e49115c95"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ  <a href="../../d6/de4/classnut_1_1_dual_shock.html#af1f9394130985a9494f5524e49115c95">[詳解]</a><br /></td></tr>
+<tr class="separator:af1f9394130985a9494f5524e49115c95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac549687f50947782e93da0cb5a1a4217"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#ac549687f50947782e93da0cb5a1a4217">~DualShock</a> ()</td></tr>
+<tr class="memdesc:ac549687f50947782e93da0cb5a1a4217"><td class="mdescLeft">&#160;</td><td class="mdescRight">デストラクタ  <a href="../../d6/de4/classnut_1_1_dual_shock.html#ac549687f50947782e93da0cb5a1a4217">[詳解]</a><br /></td></tr>
+<tr class="separator:ac549687f50947782e93da0cb5a1a4217"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af49ef1cb54dec89e2ef89a4ac64dd89c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#af49ef1cb54dec89e2ef89a4ac64dd89c">Init</a> ()</td></tr>
+<tr class="memdesc:af49ef1cb54dec89e2ef89a4ac64dd89c"><td class="mdescLeft">&#160;</td><td class="mdescRight">初期化関数  <a href="../../d6/de4/classnut_1_1_dual_shock.html#af49ef1cb54dec89e2ef89a4ac64dd89c">[詳解]</a><br /></td></tr>
+<tr class="separator:af49ef1cb54dec89e2ef89a4ac64dd89c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a563c9d5207d247f35b8d50c5b28ae382"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#a563c9d5207d247f35b8d50c5b28ae382">Receive</a> (UART_HandleTypeDef *huart)</td></tr>
+<tr class="memdesc:a563c9d5207d247f35b8d50c5b28ae382"><td class="mdescLeft">&#160;</td><td class="mdescRight">受信関数  <a href="../../d6/de4/classnut_1_1_dual_shock.html#a563c9d5207d247f35b8d50c5b28ae382">[詳解]</a><br /></td></tr>
+<tr class="separator:a563c9d5207d247f35b8d50c5b28ae382"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b456bb475056759693332e151920fbc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#a1b456bb475056759693332e151920fbc">SetButtonCallback</a> (std::function&lt; void(<a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#a0442f05c9360aca776d0ff586f54396f">Button</a>)&gt; &amp;&amp;callback_func)</td></tr>
+<tr class="memdesc:a1b456bb475056759693332e151920fbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Buttonエッジでのコールバック関数セット  <a href="../../d6/de4/classnut_1_1_dual_shock.html#a1b456bb475056759693332e151920fbc">[詳解]</a><br /></td></tr>
+<tr class="separator:a1b456bb475056759693332e151920fbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6f113b2faf57c1b395b3e30313d8119"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#ae6f113b2faf57c1b395b3e30313d8119">GetButtonData</a> (<a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#a0442f05c9360aca776d0ff586f54396f">Button</a> button)</td></tr>
+<tr class="memdesc:ae6f113b2faf57c1b395b3e30313d8119"><td class="mdescLeft">&#160;</td><td class="mdescRight">Buttonデータの取得  <a href="../../d6/de4/classnut_1_1_dual_shock.html#ae6f113b2faf57c1b395b3e30313d8119">[詳解]</a><br /></td></tr>
+<tr class="separator:ae6f113b2faf57c1b395b3e30313d8119"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+静的公開変数類</h2></td></tr>
+<tr class="memitem:a054836043cfb3204b16c6916b4e7ea1d"><td class="memItemLeft" align="right" valign="top">static constexpr int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#a054836043cfb3204b16c6916b4e7ea1d">USE_ANAROG_MAX</a> = 63</td></tr>
+<tr class="memdesc:a054836043cfb3204b16c6916b4e7ea1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">アナログパッド座標最大値  <a href="../../d6/de4/classnut_1_1_dual_shock.html#a054836043cfb3204b16c6916b4e7ea1d">[詳解]</a><br /></td></tr>
+<tr class="separator:a054836043cfb3204b16c6916b4e7ea1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52ac788052e226d9023155fc9d889676"><td class="memItemLeft" align="right" valign="top">static constexpr int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#a52ac788052e226d9023155fc9d889676">USE_ANAROG_MIN</a> = -63</td></tr>
+<tr class="memdesc:a52ac788052e226d9023155fc9d889676"><td class="mdescLeft">&#160;</td><td class="mdescRight">アナログパッド座標最小値  <a href="../../d6/de4/classnut_1_1_dual_shock.html#a52ac788052e226d9023155fc9d889676">[詳解]</a><br /></td></tr>
+<tr class="separator:a52ac788052e226d9023155fc9d889676"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b5b9c42f193f949a7a9f43cf29e7c17"><td class="memItemLeft" align="right" valign="top">static constexpr int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#a8b5b9c42f193f949a7a9f43cf29e7c17">USE_ANAROG_CENTER</a> = 0</td></tr>
+<tr class="memdesc:a8b5b9c42f193f949a7a9f43cf29e7c17"><td class="mdescLeft">&#160;</td><td class="mdescRight">アナログパッド座標中央値  <a href="../../d6/de4/classnut_1_1_dual_shock.html#a8b5b9c42f193f949a7a9f43cf29e7c17">[詳解]</a><br /></td></tr>
+<tr class="separator:a8b5b9c42f193f949a7a9f43cf29e7c17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9c71d865a43cc6b41943ef326b2c341"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#a0442f05c9360aca776d0ff586f54396f">Button</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#ae9c71d865a43cc6b41943ef326b2c341">PS3_UP</a> = 0x0001</td></tr>
+<tr class="memdesc:ae9c71d865a43cc6b41943ef326b2c341"><td class="mdescLeft">&#160;</td><td class="mdescRight">十字キー上  <a href="../../d6/de4/classnut_1_1_dual_shock.html#ae9c71d865a43cc6b41943ef326b2c341">[詳解]</a><br /></td></tr>
+<tr class="separator:ae9c71d865a43cc6b41943ef326b2c341"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a389a1bb7bdd540ea2a2ebbd57e6935cf"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#a0442f05c9360aca776d0ff586f54396f">Button</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#a389a1bb7bdd540ea2a2ebbd57e6935cf">PS3_DOWN</a> = 0x0002</td></tr>
+<tr class="memdesc:a389a1bb7bdd540ea2a2ebbd57e6935cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">十字キー下  <a href="../../d6/de4/classnut_1_1_dual_shock.html#a389a1bb7bdd540ea2a2ebbd57e6935cf">[詳解]</a><br /></td></tr>
+<tr class="separator:a389a1bb7bdd540ea2a2ebbd57e6935cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f1fb45ea2eb3f98824b3b61c0483bdb"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#a0442f05c9360aca776d0ff586f54396f">Button</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#a7f1fb45ea2eb3f98824b3b61c0483bdb">PS3_RIGHT</a> = 0x0004</td></tr>
+<tr class="memdesc:a7f1fb45ea2eb3f98824b3b61c0483bdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">十字キー右  <a href="../../d6/de4/classnut_1_1_dual_shock.html#a7f1fb45ea2eb3f98824b3b61c0483bdb">[詳解]</a><br /></td></tr>
+<tr class="separator:a7f1fb45ea2eb3f98824b3b61c0483bdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4d25b4e096430232389110be8ea1720"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#a0442f05c9360aca776d0ff586f54396f">Button</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#ae4d25b4e096430232389110be8ea1720">PS3_LEFT</a> = 0x0008</td></tr>
+<tr class="memdesc:ae4d25b4e096430232389110be8ea1720"><td class="mdescLeft">&#160;</td><td class="mdescRight">十字キー左  <a href="../../d6/de4/classnut_1_1_dual_shock.html#ae4d25b4e096430232389110be8ea1720">[詳解]</a><br /></td></tr>
+<tr class="separator:ae4d25b4e096430232389110be8ea1720"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4ff2a17297f65ff2d13923273011f9a"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#a0442f05c9360aca776d0ff586f54396f">Button</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#aa4ff2a17297f65ff2d13923273011f9a">PS3_TRIANGLE</a> = 0x0010</td></tr>
+<tr class="memdesc:aa4ff2a17297f65ff2d13923273011f9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">三角ボタン  <a href="../../d6/de4/classnut_1_1_dual_shock.html#aa4ff2a17297f65ff2d13923273011f9a">[詳解]</a><br /></td></tr>
+<tr class="separator:aa4ff2a17297f65ff2d13923273011f9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa421771f9886f3fed2b2fbe60f06cb7b"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#a0442f05c9360aca776d0ff586f54396f">Button</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#aa421771f9886f3fed2b2fbe60f06cb7b">PS3_CROSS</a> = 0x0020</td></tr>
+<tr class="memdesc:aa421771f9886f3fed2b2fbe60f06cb7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">バツボタン  <a href="../../d6/de4/classnut_1_1_dual_shock.html#aa421771f9886f3fed2b2fbe60f06cb7b">[詳解]</a><br /></td></tr>
+<tr class="separator:aa421771f9886f3fed2b2fbe60f06cb7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a166196c8a24c3575001e919262c7cb4e"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#a0442f05c9360aca776d0ff586f54396f">Button</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#a166196c8a24c3575001e919262c7cb4e">PS3_CIRCLE</a> = 0x0040</td></tr>
+<tr class="memdesc:a166196c8a24c3575001e919262c7cb4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">丸ボタン  <a href="../../d6/de4/classnut_1_1_dual_shock.html#a166196c8a24c3575001e919262c7cb4e">[詳解]</a><br /></td></tr>
+<tr class="separator:a166196c8a24c3575001e919262c7cb4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6eaed3c203220be08f063aafd3e9efa"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#a0442f05c9360aca776d0ff586f54396f">Button</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#ae6eaed3c203220be08f063aafd3e9efa">PS3_START</a> = 0x0080</td></tr>
+<tr class="memdesc:ae6eaed3c203220be08f063aafd3e9efa"><td class="mdescLeft">&#160;</td><td class="mdescRight">STARTボタン  <a href="../../d6/de4/classnut_1_1_dual_shock.html#ae6eaed3c203220be08f063aafd3e9efa">[詳解]</a><br /></td></tr>
+<tr class="separator:ae6eaed3c203220be08f063aafd3e9efa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94d7c0a5f164d4bdd370c3827e6f2beb"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#a0442f05c9360aca776d0ff586f54396f">Button</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#a94d7c0a5f164d4bdd370c3827e6f2beb">PS3_SQUARE</a> = 0x0100</td></tr>
+<tr class="memdesc:a94d7c0a5f164d4bdd370c3827e6f2beb"><td class="mdescLeft">&#160;</td><td class="mdescRight">四角ボタン  <a href="../../d6/de4/classnut_1_1_dual_shock.html#a94d7c0a5f164d4bdd370c3827e6f2beb">[詳解]</a><br /></td></tr>
+<tr class="separator:a94d7c0a5f164d4bdd370c3827e6f2beb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9da196045377fb129f32060c298c9e3e"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#a0442f05c9360aca776d0ff586f54396f">Button</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#a9da196045377fb129f32060c298c9e3e">PS3_L1</a> = 0x0200</td></tr>
+<tr class="memdesc:a9da196045377fb129f32060c298c9e3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">L1ボタン  <a href="../../d6/de4/classnut_1_1_dual_shock.html#a9da196045377fb129f32060c298c9e3e">[詳解]</a><br /></td></tr>
+<tr class="separator:a9da196045377fb129f32060c298c9e3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee5ccb96e2dea379ef33c08a1ead62be"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#a0442f05c9360aca776d0ff586f54396f">Button</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#aee5ccb96e2dea379ef33c08a1ead62be">PS3_L2</a> = 0x0400</td></tr>
+<tr class="memdesc:aee5ccb96e2dea379ef33c08a1ead62be"><td class="mdescLeft">&#160;</td><td class="mdescRight">L2ボタン  <a href="../../d6/de4/classnut_1_1_dual_shock.html#aee5ccb96e2dea379ef33c08a1ead62be">[詳解]</a><br /></td></tr>
+<tr class="separator:aee5ccb96e2dea379ef33c08a1ead62be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fd54591b17c3f409485c94d0393fd6e"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#a0442f05c9360aca776d0ff586f54396f">Button</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#a4fd54591b17c3f409485c94d0393fd6e">PS3_R1</a> = 0x0800</td></tr>
+<tr class="memdesc:a4fd54591b17c3f409485c94d0393fd6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">R1ボタン  <a href="../../d6/de4/classnut_1_1_dual_shock.html#a4fd54591b17c3f409485c94d0393fd6e">[詳解]</a><br /></td></tr>
+<tr class="separator:a4fd54591b17c3f409485c94d0393fd6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd3cd3574f31cf689772a2da1dfcaed1"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#a0442f05c9360aca776d0ff586f54396f">Button</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#acd3cd3574f31cf689772a2da1dfcaed1">PS3_R2</a> = 0x1000</td></tr>
+<tr class="memdesc:acd3cd3574f31cf689772a2da1dfcaed1"><td class="mdescLeft">&#160;</td><td class="mdescRight">R2ボタン  <a href="../../d6/de4/classnut_1_1_dual_shock.html#acd3cd3574f31cf689772a2da1dfcaed1">[詳解]</a><br /></td></tr>
+<tr class="separator:acd3cd3574f31cf689772a2da1dfcaed1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0966b858c69638dd771d2e006e240ee"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#a0442f05c9360aca776d0ff586f54396f">Button</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#ad0966b858c69638dd771d2e006e240ee">PS3_L3</a> = 0x2000</td></tr>
+<tr class="memdesc:ad0966b858c69638dd771d2e006e240ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3ボタン  <a href="../../d6/de4/classnut_1_1_dual_shock.html#ad0966b858c69638dd771d2e006e240ee">[詳解]</a><br /></td></tr>
+<tr class="separator:ad0966b858c69638dd771d2e006e240ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b6332c6b3b892fef3cf0da9a2983763"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#a0442f05c9360aca776d0ff586f54396f">Button</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#a7b6332c6b3b892fef3cf0da9a2983763">PS3_R3</a> = 0x4000</td></tr>
+<tr class="memdesc:a7b6332c6b3b892fef3cf0da9a2983763"><td class="mdescLeft">&#160;</td><td class="mdescRight">R3ボタン  <a href="../../d6/de4/classnut_1_1_dual_shock.html#a7b6332c6b3b892fef3cf0da9a2983763">[詳解]</a><br /></td></tr>
+<tr class="separator:a7b6332c6b3b892fef3cf0da9a2983763"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71759d930378bb46f2131f7021c557e0"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#a0442f05c9360aca776d0ff586f54396f">Button</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#a71759d930378bb46f2131f7021c557e0">PS3_SELECT</a> = 0x8000</td></tr>
+<tr class="memdesc:a71759d930378bb46f2131f7021c557e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">SELECTボタン  <a href="../../d6/de4/classnut_1_1_dual_shock.html#a71759d930378bb46f2131f7021c557e0">[詳解]</a><br /></td></tr>
+<tr class="separator:a71759d930378bb46f2131f7021c557e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a181a727e74157e0f6dbfd4206c1fa31d"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#a0442f05c9360aca776d0ff586f54396f">Button</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#a181a727e74157e0f6dbfd4206c1fa31d">PS3_ANALOG_LX</a> = 0x000F0000</td></tr>
+<tr class="memdesc:a181a727e74157e0f6dbfd4206c1fa31d"><td class="mdescLeft">&#160;</td><td class="mdescRight">アナログパッド左x座標  <a href="../../d6/de4/classnut_1_1_dual_shock.html#a181a727e74157e0f6dbfd4206c1fa31d">[詳解]</a><br /></td></tr>
+<tr class="separator:a181a727e74157e0f6dbfd4206c1fa31d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6628220213aed98b837621dce3ff04df"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#a0442f05c9360aca776d0ff586f54396f">Button</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#a6628220213aed98b837621dce3ff04df">PS3_ANALOG_LY</a> = 0x00F00000</td></tr>
+<tr class="memdesc:a6628220213aed98b837621dce3ff04df"><td class="mdescLeft">&#160;</td><td class="mdescRight">アナログパッド左y座標  <a href="../../d6/de4/classnut_1_1_dual_shock.html#a6628220213aed98b837621dce3ff04df">[詳解]</a><br /></td></tr>
+<tr class="separator:a6628220213aed98b837621dce3ff04df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acbc1c8bc8e1f678202afeee6d6d75cdf"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#a0442f05c9360aca776d0ff586f54396f">Button</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#acbc1c8bc8e1f678202afeee6d6d75cdf">PS3_ANALOG_RX</a> = 0x0F000000</td></tr>
+<tr class="memdesc:acbc1c8bc8e1f678202afeee6d6d75cdf"><td class="mdescLeft">&#160;</td><td class="mdescRight">アナログパッド右ｘ座標  <a href="../../d6/de4/classnut_1_1_dual_shock.html#acbc1c8bc8e1f678202afeee6d6d75cdf">[詳解]</a><br /></td></tr>
+<tr class="separator:acbc1c8bc8e1f678202afeee6d6d75cdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7152bed7e2b2e6e41e32512149f6309"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#a0442f05c9360aca776d0ff586f54396f">Button</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#ae7152bed7e2b2e6e41e32512149f6309">PS3_ANALOG_RY</a> = 0xF0000000</td></tr>
+<tr class="memdesc:ae7152bed7e2b2e6e41e32512149f6309"><td class="mdescLeft">&#160;</td><td class="mdescRight">アナログパッド右y座標  <a href="../../d6/de4/classnut_1_1_dual_shock.html#ae7152bed7e2b2e6e41e32512149f6309">[詳解]</a><br /></td></tr>
+<tr class="separator:ae7152bed7e2b2e6e41e32512149f6309"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>DualshockをSBDBT5Vを通して受信するクラス </p>
+
+<p class="definition"> <a class="el" href="../../d8/d0b/_dual_shock_8hpp_source.html">DualShock.hpp</a> の <a class="el" href="../../d8/d0b/_dual_shock_8hpp_source.html#l00019">19</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">型定義メンバ詳解</h2>
+<a id="a0442f05c9360aca776d0ff586f54396f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0442f05c9360aca776d0ff586f54396f">&#9670;&nbsp;</a></span>Button</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#a0442f05c9360aca776d0ff586f54396f">nut::DualShock::Button</a> =  uint32_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ボタンの型エイリアス </p>
+
+<p class="definition"> <a class="el" href="../../d8/d0b/_dual_shock_8hpp_source.html">DualShock.hpp</a> の <a class="el" href="../../d8/d0b/_dual_shock_8hpp_source.html#l00021">21</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">構築子と解体子</h2>
+<a id="af1f9394130985a9494f5524e49115c95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1f9394130985a9494f5524e49115c95">&#9670;&nbsp;</a></span>DualShock()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">nut::DualShock::DualShock </td>
+          <td>(</td>
+          <td class="paramtype">UART_HandleTypeDef *&#160;</td>
+          <td class="paramname"><em>huart</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::function&lt; void()&gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>callback_func</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>time</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>コンストラクタ </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">huart</td><td>uartハンドル  uartは事前に通信仕様通りの設定を行い、DMA設定でCircularにしてください </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">callback_func</td><td>タイムアウトコールバック関数 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">time</td><td>タイムアウト時間[ms] </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="../../d8/d0b/_dual_shock_8hpp_source.html">DualShock.hpp</a> の <a class="el" href="../../d8/d0b/_dual_shock_8hpp_source.html#l00132">132</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ac549687f50947782e93da0cb5a1a4217"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac549687f50947782e93da0cb5a1a4217">&#9670;&nbsp;</a></span>~DualShock()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual nut::DualShock::~DualShock </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>デストラクタ </p>
+
+<p class="definition"> <a class="el" href="../../d8/d0b/_dual_shock_8hpp_source.html">DualShock.hpp</a> の <a class="el" href="../../d8/d0b/_dual_shock_8hpp_source.html#l00139">139</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d6/de4/classnut_1_1_dual_shock_ac549687f50947782e93da0cb5a1a4217_cgraph.png" border="0" usemap="#ad6/de4/classnut_1_1_dual_shock_ac549687f50947782e93da0cb5a1a4217_cgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="ae6f113b2faf57c1b395b3e30313d8119"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6f113b2faf57c1b395b3e30313d8119">&#9670;&nbsp;</a></span>GetButtonData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int8_t nut::DualShock::GetButtonData </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#a0442f05c9360aca776d0ff586f54396f">Button</a>&#160;</td>
+          <td class="paramname"><em>button</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Buttonデータの取得 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">button</td><td>目的のボタン、またはアナログパッド  ボタンはor演算で複数指定できます </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>buttonがボタンであればbool値、アナログパッドであれば座標が返ります  複数ボタンが指定されていればそれらのand演算値が返ります </dd></dl>
+<dl class="section attention"><dt>注意</dt><dd>ボタンとアナログパッドを同時指定するとfalseが返ります </dd></dl>
+
+<p class="definition"> <a class="el" href="../../d8/d0b/_dual_shock_8hpp_source.html">DualShock.hpp</a> の <a class="el" href="../../d8/d0b/_dual_shock_8hpp_source.html#l00233">233</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="af49ef1cb54dec89e2ef89a4ac64dd89c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af49ef1cb54dec89e2ef89a4ac64dd89c">&#9670;&nbsp;</a></span>Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void nut::DualShock::Init </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>初期化関数 </p>
+
+<p class="definition"> <a class="el" href="../../d8/d0b/_dual_shock_8hpp_source.html">DualShock.hpp</a> の <a class="el" href="../../d8/d0b/_dual_shock_8hpp_source.html#l00148">148</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d6/de4/classnut_1_1_dual_shock_af49ef1cb54dec89e2ef89a4ac64dd89c_cgraph.png" border="0" usemap="#ad6/de4/classnut_1_1_dual_shock_af49ef1cb54dec89e2ef89a4ac64dd89c_cgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a563c9d5207d247f35b8d50c5b28ae382"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a563c9d5207d247f35b8d50c5b28ae382">&#9670;&nbsp;</a></span>Receive()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool nut::DualShock::Receive </td>
+          <td>(</td>
+          <td class="paramtype">UART_HandleTypeDef *&#160;</td>
+          <td class="paramname"><em>huart</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>受信関数 </p>
+<p>HAL_UART_RxHalfCpltCallback()内で呼び出してください </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">huart</td><td>uartハンドル </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>受信処理成功の可否 </dd></dl>
+
+<p class="definition"> <a class="el" href="../../d8/d0b/_dual_shock_8hpp_source.html">DualShock.hpp</a> の <a class="el" href="../../d8/d0b/_dual_shock_8hpp_source.html#l00160">160</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d6/de4/classnut_1_1_dual_shock_a563c9d5207d247f35b8d50c5b28ae382_cgraph.png" border="0" usemap="#ad6/de4/classnut_1_1_dual_shock_a563c9d5207d247f35b8d50c5b28ae382_cgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a1b456bb475056759693332e151920fbc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b456bb475056759693332e151920fbc">&#9670;&nbsp;</a></span>SetButtonCallback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void nut::DualShock::SetButtonCallback </td>
+          <td>(</td>
+          <td class="paramtype">std::function&lt; void(<a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#a0442f05c9360aca776d0ff586f54396f">Button</a>)&gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>callback_func</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Buttonエッジでのコールバック関数セット </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">callback_func</td><td>コールバック関数 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="../../d8/d0b/_dual_shock_8hpp_source.html">DualShock.hpp</a> の <a class="el" href="../../d8/d0b/_dual_shock_8hpp_source.html#l00221">221</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a181a727e74157e0f6dbfd4206c1fa31d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a181a727e74157e0f6dbfd4206c1fa31d">&#9670;&nbsp;</a></span>PS3_ANALOG_LX</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#a0442f05c9360aca776d0ff586f54396f">Button</a> nut::DualShock::PS3_ANALOG_LX = 0x000F0000</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>アナログパッド左x座標 </p>
+
+<p class="definition"> <a class="el" href="../../d8/d0b/_dual_shock_8hpp_source.html">DualShock.hpp</a> の <a class="el" href="../../d8/d0b/_dual_shock_8hpp_source.html#l00074">74</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a6628220213aed98b837621dce3ff04df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6628220213aed98b837621dce3ff04df">&#9670;&nbsp;</a></span>PS3_ANALOG_LY</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#a0442f05c9360aca776d0ff586f54396f">Button</a> nut::DualShock::PS3_ANALOG_LY = 0x00F00000</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>アナログパッド左y座標 </p>
+
+<p class="definition"> <a class="el" href="../../d8/d0b/_dual_shock_8hpp_source.html">DualShock.hpp</a> の <a class="el" href="../../d8/d0b/_dual_shock_8hpp_source.html#l00075">75</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="acbc1c8bc8e1f678202afeee6d6d75cdf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acbc1c8bc8e1f678202afeee6d6d75cdf">&#9670;&nbsp;</a></span>PS3_ANALOG_RX</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#a0442f05c9360aca776d0ff586f54396f">Button</a> nut::DualShock::PS3_ANALOG_RX = 0x0F000000</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>アナログパッド右ｘ座標 </p>
+
+<p class="definition"> <a class="el" href="../../d8/d0b/_dual_shock_8hpp_source.html">DualShock.hpp</a> の <a class="el" href="../../d8/d0b/_dual_shock_8hpp_source.html#l00076">76</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ae7152bed7e2b2e6e41e32512149f6309"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7152bed7e2b2e6e41e32512149f6309">&#9670;&nbsp;</a></span>PS3_ANALOG_RY</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#a0442f05c9360aca776d0ff586f54396f">Button</a> nut::DualShock::PS3_ANALOG_RY = 0xF0000000</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>アナログパッド右y座標 </p>
+
+<p class="definition"> <a class="el" href="../../d8/d0b/_dual_shock_8hpp_source.html">DualShock.hpp</a> の <a class="el" href="../../d8/d0b/_dual_shock_8hpp_source.html#l00077">77</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a166196c8a24c3575001e919262c7cb4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a166196c8a24c3575001e919262c7cb4e">&#9670;&nbsp;</a></span>PS3_CIRCLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#a0442f05c9360aca776d0ff586f54396f">Button</a> nut::DualShock::PS3_CIRCLE = 0x0040</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>丸ボタン </p>
+
+<p class="definition"> <a class="el" href="../../d8/d0b/_dual_shock_8hpp_source.html">DualShock.hpp</a> の <a class="el" href="../../d8/d0b/_dual_shock_8hpp_source.html#l00062">62</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aa421771f9886f3fed2b2fbe60f06cb7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa421771f9886f3fed2b2fbe60f06cb7b">&#9670;&nbsp;</a></span>PS3_CROSS</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#a0442f05c9360aca776d0ff586f54396f">Button</a> nut::DualShock::PS3_CROSS = 0x0020</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>バツボタン </p>
+
+<p class="definition"> <a class="el" href="../../d8/d0b/_dual_shock_8hpp_source.html">DualShock.hpp</a> の <a class="el" href="../../d8/d0b/_dual_shock_8hpp_source.html#l00061">61</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a389a1bb7bdd540ea2a2ebbd57e6935cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a389a1bb7bdd540ea2a2ebbd57e6935cf">&#9670;&nbsp;</a></span>PS3_DOWN</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#a0442f05c9360aca776d0ff586f54396f">Button</a> nut::DualShock::PS3_DOWN = 0x0002</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>十字キー下 </p>
+
+<p class="definition"> <a class="el" href="../../d8/d0b/_dual_shock_8hpp_source.html">DualShock.hpp</a> の <a class="el" href="../../d8/d0b/_dual_shock_8hpp_source.html#l00057">57</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a9da196045377fb129f32060c298c9e3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9da196045377fb129f32060c298c9e3e">&#9670;&nbsp;</a></span>PS3_L1</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#a0442f05c9360aca776d0ff586f54396f">Button</a> nut::DualShock::PS3_L1 = 0x0200</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>L1ボタン </p>
+
+<p class="definition"> <a class="el" href="../../d8/d0b/_dual_shock_8hpp_source.html">DualShock.hpp</a> の <a class="el" href="../../d8/d0b/_dual_shock_8hpp_source.html#l00066">66</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aee5ccb96e2dea379ef33c08a1ead62be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee5ccb96e2dea379ef33c08a1ead62be">&#9670;&nbsp;</a></span>PS3_L2</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#a0442f05c9360aca776d0ff586f54396f">Button</a> nut::DualShock::PS3_L2 = 0x0400</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>L2ボタン </p>
+
+<p class="definition"> <a class="el" href="../../d8/d0b/_dual_shock_8hpp_source.html">DualShock.hpp</a> の <a class="el" href="../../d8/d0b/_dual_shock_8hpp_source.html#l00067">67</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ad0966b858c69638dd771d2e006e240ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0966b858c69638dd771d2e006e240ee">&#9670;&nbsp;</a></span>PS3_L3</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#a0442f05c9360aca776d0ff586f54396f">Button</a> nut::DualShock::PS3_L3 = 0x2000</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>L3ボタン </p>
+
+<p class="definition"> <a class="el" href="../../d8/d0b/_dual_shock_8hpp_source.html">DualShock.hpp</a> の <a class="el" href="../../d8/d0b/_dual_shock_8hpp_source.html#l00070">70</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ae4d25b4e096430232389110be8ea1720"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4d25b4e096430232389110be8ea1720">&#9670;&nbsp;</a></span>PS3_LEFT</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#a0442f05c9360aca776d0ff586f54396f">Button</a> nut::DualShock::PS3_LEFT = 0x0008</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>十字キー左 </p>
+
+<p class="definition"> <a class="el" href="../../d8/d0b/_dual_shock_8hpp_source.html">DualShock.hpp</a> の <a class="el" href="../../d8/d0b/_dual_shock_8hpp_source.html#l00059">59</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a4fd54591b17c3f409485c94d0393fd6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fd54591b17c3f409485c94d0393fd6e">&#9670;&nbsp;</a></span>PS3_R1</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#a0442f05c9360aca776d0ff586f54396f">Button</a> nut::DualShock::PS3_R1 = 0x0800</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>R1ボタン </p>
+
+<p class="definition"> <a class="el" href="../../d8/d0b/_dual_shock_8hpp_source.html">DualShock.hpp</a> の <a class="el" href="../../d8/d0b/_dual_shock_8hpp_source.html#l00068">68</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="acd3cd3574f31cf689772a2da1dfcaed1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd3cd3574f31cf689772a2da1dfcaed1">&#9670;&nbsp;</a></span>PS3_R2</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#a0442f05c9360aca776d0ff586f54396f">Button</a> nut::DualShock::PS3_R2 = 0x1000</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>R2ボタン </p>
+
+<p class="definition"> <a class="el" href="../../d8/d0b/_dual_shock_8hpp_source.html">DualShock.hpp</a> の <a class="el" href="../../d8/d0b/_dual_shock_8hpp_source.html#l00069">69</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a7b6332c6b3b892fef3cf0da9a2983763"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b6332c6b3b892fef3cf0da9a2983763">&#9670;&nbsp;</a></span>PS3_R3</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#a0442f05c9360aca776d0ff586f54396f">Button</a> nut::DualShock::PS3_R3 = 0x4000</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>R3ボタン </p>
+
+<p class="definition"> <a class="el" href="../../d8/d0b/_dual_shock_8hpp_source.html">DualShock.hpp</a> の <a class="el" href="../../d8/d0b/_dual_shock_8hpp_source.html#l00071">71</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a7f1fb45ea2eb3f98824b3b61c0483bdb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f1fb45ea2eb3f98824b3b61c0483bdb">&#9670;&nbsp;</a></span>PS3_RIGHT</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#a0442f05c9360aca776d0ff586f54396f">Button</a> nut::DualShock::PS3_RIGHT = 0x0004</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>十字キー右 </p>
+
+<p class="definition"> <a class="el" href="../../d8/d0b/_dual_shock_8hpp_source.html">DualShock.hpp</a> の <a class="el" href="../../d8/d0b/_dual_shock_8hpp_source.html#l00058">58</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a71759d930378bb46f2131f7021c557e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71759d930378bb46f2131f7021c557e0">&#9670;&nbsp;</a></span>PS3_SELECT</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#a0442f05c9360aca776d0ff586f54396f">Button</a> nut::DualShock::PS3_SELECT = 0x8000</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>SELECTボタン </p>
+
+<p class="definition"> <a class="el" href="../../d8/d0b/_dual_shock_8hpp_source.html">DualShock.hpp</a> の <a class="el" href="../../d8/d0b/_dual_shock_8hpp_source.html#l00072">72</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a94d7c0a5f164d4bdd370c3827e6f2beb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94d7c0a5f164d4bdd370c3827e6f2beb">&#9670;&nbsp;</a></span>PS3_SQUARE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#a0442f05c9360aca776d0ff586f54396f">Button</a> nut::DualShock::PS3_SQUARE = 0x0100</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>四角ボタン </p>
+
+<p class="definition"> <a class="el" href="../../d8/d0b/_dual_shock_8hpp_source.html">DualShock.hpp</a> の <a class="el" href="../../d8/d0b/_dual_shock_8hpp_source.html#l00065">65</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ae6eaed3c203220be08f063aafd3e9efa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6eaed3c203220be08f063aafd3e9efa">&#9670;&nbsp;</a></span>PS3_START</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#a0442f05c9360aca776d0ff586f54396f">Button</a> nut::DualShock::PS3_START = 0x0080</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>STARTボタン </p>
+
+<p class="definition"> <a class="el" href="../../d8/d0b/_dual_shock_8hpp_source.html">DualShock.hpp</a> の <a class="el" href="../../d8/d0b/_dual_shock_8hpp_source.html#l00063">63</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aa4ff2a17297f65ff2d13923273011f9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4ff2a17297f65ff2d13923273011f9a">&#9670;&nbsp;</a></span>PS3_TRIANGLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#a0442f05c9360aca776d0ff586f54396f">Button</a> nut::DualShock::PS3_TRIANGLE = 0x0010</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>三角ボタン </p>
+
+<p class="definition"> <a class="el" href="../../d8/d0b/_dual_shock_8hpp_source.html">DualShock.hpp</a> の <a class="el" href="../../d8/d0b/_dual_shock_8hpp_source.html#l00060">60</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ae9c71d865a43cc6b41943ef326b2c341"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9c71d865a43cc6b41943ef326b2c341">&#9670;&nbsp;</a></span>PS3_UP</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html#a0442f05c9360aca776d0ff586f54396f">Button</a> nut::DualShock::PS3_UP = 0x0001</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>十字キー上 </p>
+
+<p class="definition"> <a class="el" href="../../d8/d0b/_dual_shock_8hpp_source.html">DualShock.hpp</a> の <a class="el" href="../../d8/d0b/_dual_shock_8hpp_source.html#l00056">56</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a8b5b9c42f193f949a7a9f43cf29e7c17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b5b9c42f193f949a7a9f43cf29e7c17">&#9670;&nbsp;</a></span>USE_ANAROG_CENTER</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr int8_t nut::DualShock::USE_ANAROG_CENTER = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>アナログパッド座標中央値 </p>
+
+<p class="definition"> <a class="el" href="../../d8/d0b/_dual_shock_8hpp_source.html">DualShock.hpp</a> の <a class="el" href="../../d8/d0b/_dual_shock_8hpp_source.html#l00053">53</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a054836043cfb3204b16c6916b4e7ea1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a054836043cfb3204b16c6916b4e7ea1d">&#9670;&nbsp;</a></span>USE_ANAROG_MAX</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr int8_t nut::DualShock::USE_ANAROG_MAX = 63</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>アナログパッド座標最大値 </p>
+
+<p class="definition"> <a class="el" href="../../d8/d0b/_dual_shock_8hpp_source.html">DualShock.hpp</a> の <a class="el" href="../../d8/d0b/_dual_shock_8hpp_source.html#l00051">51</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a52ac788052e226d9023155fc9d889676"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52ac788052e226d9023155fc9d889676">&#9670;&nbsp;</a></span>USE_ANAROG_MIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr int8_t nut::DualShock::USE_ANAROG_MIN = -63</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>アナログパッド座標最小値 </p>
+
+<p class="definition"> <a class="el" href="../../d8/d0b/_dual_shock_8hpp_source.html">DualShock.hpp</a> の <a class="el" href="../../d8/d0b/_dual_shock_8hpp_source.html#l00052">52</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li>NutLib/Controller/<a class="el" href="../../d8/d0b/_dual_shock_8hpp_source.html">DualShock.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dd/d51/namespacenut.html">nut</a></li><li class="navelem"><a class="el" href="../../d6/de4/classnut_1_1_dual_shock.html">DualShock</a></li>
+    <li class="footer">構築: <a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
+  </ul>
+</div>
+</body>
+</html>

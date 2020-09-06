@@ -1,0 +1,35 @@
+var classnut_1_1_reiwa_m_d =
+[
+    [ "Motor_DataType_t", "df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2", [
+      [ "VoltageRef", "df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2a8315e08506974321c602dfce4a1f4867", null ],
+      [ "CurrentRef", "df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2a87fb4a8a072148066636553cea0183b2", null ],
+      [ "SpeedRef", "df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2a9d7b8da099ca972153e16e64967433cc", null ],
+      [ "PositionRef", "df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2a2fba98fd96ee8d06568836415a5593eb", null ],
+      [ "ZeroReturn", "df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2a306035611947a2057431fd228a41ddfe", null ],
+      [ "SetModeDisable", "df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2ae560260eda30e21690a8209c7dbda71a", null ],
+      [ "SetModeVoltage", "df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2adaa96bf10a8dacbea71063b56b20af42", null ],
+      [ "SetModeSpeed", "df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2acccbfbd46155eb58d407a211271c4c99", null ],
+      [ "SetModePosition", "df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2aded0ce6b55063fb437bebfb42122e6c7", null ],
+      [ "ChangeEncoderInc", "df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2af41a6ddee11fe9499cf8663099f59a70", null ],
+      [ "ChangeEncoderAbs", "df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2a80177d941c39ed486d2bcbd671a0518a", null ],
+      [ "ResetIncEnc", "df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2aa19b55fc777494f56b7154d6e612047e", null ],
+      [ "ResetAbsEnc", "df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2ae304b7669c47fbe623d6559eacd102e3", null ],
+      [ "SetModeCurrent", "df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2acbcf295e852c11babddf3fb64208246f", null ],
+      [ "Motor_ReadStatus", "df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2aa17bd0bb558759684ddb21d8f9036fc7", null ]
+    ] ],
+    [ "ReiwaMD", "df/da1/classnut_1_1_reiwa_m_d.html#a8420336b8dd0216f3aa7d34c573ca314", null ],
+    [ "~ReiwaMD", "df/da1/classnut_1_1_reiwa_m_d.html#a0c51e75191c62c5d694b19898104244b", null ],
+    [ "Init", "df/da1/classnut_1_1_reiwa_m_d.html#a7ac369682056c692a7df5f4825ea95a7", null ],
+    [ "ReadCanData", "df/da1/classnut_1_1_reiwa_m_d.html#acdd0993d2234cf66f6e2e5db73196e95", null ],
+    [ "ResetRadOrigin", "df/da1/classnut_1_1_reiwa_m_d.html#a39100c5ad64a7d4a5fdfe13fe78b6594", null ],
+    [ "ScheduleTask", "df/da1/classnut_1_1_reiwa_m_d.html#aad29ecc03b1e20118abd83e1b610824b", null ],
+    [ "SendControlMode", "df/da1/classnut_1_1_reiwa_m_d.html#a4209d3d2b8dedaa939277d24c447be5a", null ],
+    [ "SendData", "df/da1/classnut_1_1_reiwa_m_d.html#a8ebd4e3c997c4511b2e89a36e39015d9", null ],
+    [ "SetDuty", "df/da1/classnut_1_1_reiwa_m_d.html#a5e7015dc7a039d8f4fdb6c9911dab941", null ],
+    [ "SetRad", "df/da1/classnut_1_1_reiwa_m_d.html#a5bf3dc213d50558a3fa3bbe7dde3cdb2", null ],
+    [ "SetRadPID", "df/da1/classnut_1_1_reiwa_m_d.html#aa5b2de060bbf9971615aa43e2d04d114", null ],
+    [ "SetRPM", "df/da1/classnut_1_1_reiwa_m_d.html#a98b651b80a784e9404cedcb84f606541", null ],
+    [ "SetRPMPID", "df/da1/classnut_1_1_reiwa_m_d.html#a03b7de6e49e72e47ad57e16b17450d7d", null ],
+    [ "Start", "df/da1/classnut_1_1_reiwa_m_d.html#a32c6b67e93487f574e606eec8a97a6e7", null ],
+    [ "Stop", "df/da1/classnut_1_1_reiwa_m_d.html#a15c344a43e782cb4cb26ccc482e774a7", null ]
+];

@@ -1,0 +1,1107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>NutLib: nut::Motor クラス</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">NutLib
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.20 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('d5/da2/classnut_1_1_motor.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pro-types">限定公開型</a> &#124;
+<a href="#pro-methods">限定公開メンバ関数</a> &#124;
+<a href="#pro-attribs">限定公開変数類</a> &#124;
+<a href="../../d5/d54/classnut_1_1_motor-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">nut::Motor クラス<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>モータ制御基底純粋仮想クラス  
+ <a href="../../d5/da2/classnut_1_1_motor.html#details">[詳解]</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a>&gt;</code></p>
+<div class="dynheader">
+nut::Motor の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/d92/classnut_1_1_motor__inherit__graph.png" border="0" usemap="#anut_1_1_motor_inherit__map" alt="Inheritance graph"/></div>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">凡例</a>]</span></center></div>
+<div class="dynheader">
+nut::Motor 連携図</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/dc1/classnut_1_1_motor__coll__graph.png" border="0" usemap="#anut_1_1_motor_coll__map" alt="Collaboration graph"/></div>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">凡例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:af7a835ef2c4874e42a9da064d264564a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/da2/classnut_1_1_motor.html#af7a835ef2c4874e42a9da064d264564a">Motor</a> (uint32_t period)</td></tr>
+<tr class="memdesc:af7a835ef2c4874e42a9da064d264564a"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ  <a href="../../d5/da2/classnut_1_1_motor.html#af7a835ef2c4874e42a9da064d264564a">[詳解]</a><br /></td></tr>
+<tr class="separator:af7a835ef2c4874e42a9da064d264564a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad50ce902fa81e61e8eb8adb72926c11d"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/da2/classnut_1_1_motor.html#ad50ce902fa81e61e8eb8adb72926c11d">~Motor</a> ()</td></tr>
+<tr class="memdesc:ad50ce902fa81e61e8eb8adb72926c11d"><td class="mdescLeft">&#160;</td><td class="mdescRight">デストラクタ  <a href="../../d5/da2/classnut_1_1_motor.html#ad50ce902fa81e61e8eb8adb72926c11d">[詳解]</a><br /></td></tr>
+<tr class="separator:ad50ce902fa81e61e8eb8adb72926c11d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a976b06f9387d90b6172b3d48d7f8a071"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/da2/classnut_1_1_motor.html#a976b06f9387d90b6172b3d48d7f8a071">Init</a> ()=0</td></tr>
+<tr class="memdesc:a976b06f9387d90b6172b3d48d7f8a071"><td class="mdescLeft">&#160;</td><td class="mdescRight">初期化関数  <a href="../../d5/da2/classnut_1_1_motor.html#a976b06f9387d90b6172b3d48d7f8a071">[詳解]</a><br /></td></tr>
+<tr class="separator:a976b06f9387d90b6172b3d48d7f8a071"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeacc0951b8ff1966bc6542e655f94d04"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/da2/classnut_1_1_motor.html#aeacc0951b8ff1966bc6542e655f94d04">Start</a> ()=0</td></tr>
+<tr class="memdesc:aeacc0951b8ff1966bc6542e655f94d04"><td class="mdescLeft">&#160;</td><td class="mdescRight">制御スタート  <a href="../../d5/da2/classnut_1_1_motor.html#aeacc0951b8ff1966bc6542e655f94d04">[詳解]</a><br /></td></tr>
+<tr class="separator:aeacc0951b8ff1966bc6542e655f94d04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13f7a160817185060384a98203618e9e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/da2/classnut_1_1_motor.html#a13f7a160817185060384a98203618e9e">Stop</a> ()=0</td></tr>
+<tr class="memdesc:a13f7a160817185060384a98203618e9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">制御ストップ  <a href="../../d5/da2/classnut_1_1_motor.html#a13f7a160817185060384a98203618e9e">[詳解]</a><br /></td></tr>
+<tr class="separator:a13f7a160817185060384a98203618e9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab9f209d8b734936827a1ed842f5e453"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/da2/classnut_1_1_motor.html#aab9f209d8b734936827a1ed842f5e453">SetDuty</a> (float duty)</td></tr>
+<tr class="memdesc:aab9f209d8b734936827a1ed842f5e453"><td class="mdescLeft">&#160;</td><td class="mdescRight">Duty制御  <a href="../../d5/da2/classnut_1_1_motor.html#aab9f209d8b734936827a1ed842f5e453">[詳解]</a><br /></td></tr>
+<tr class="separator:aab9f209d8b734936827a1ed842f5e453"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40659cbabbc9ab21ad9f1e1b2e3d4f43"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/da2/classnut_1_1_motor.html#a40659cbabbc9ab21ad9f1e1b2e3d4f43">SetRPM</a> (float rpm)</td></tr>
+<tr class="memdesc:a40659cbabbc9ab21ad9f1e1b2e3d4f43"><td class="mdescLeft">&#160;</td><td class="mdescRight">速度制御  <a href="../../d5/da2/classnut_1_1_motor.html#a40659cbabbc9ab21ad9f1e1b2e3d4f43">[詳解]</a><br /></td></tr>
+<tr class="separator:a40659cbabbc9ab21ad9f1e1b2e3d4f43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4980667675241bd8e7150a6b9bedcf5"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/da2/classnut_1_1_motor.html#af4980667675241bd8e7150a6b9bedcf5">SetRad</a> (float rad, float top_rpm)</td></tr>
+<tr class="memdesc:af4980667675241bd8e7150a6b9bedcf5"><td class="mdescLeft">&#160;</td><td class="mdescRight">角度制御  <a href="../../d5/da2/classnut_1_1_motor.html#af4980667675241bd8e7150a6b9bedcf5">[詳解]</a><br /></td></tr>
+<tr class="separator:af4980667675241bd8e7150a6b9bedcf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6454bcb8cd9c8c0d6032ac23757d92a"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/da2/classnut_1_1_motor.html#af6454bcb8cd9c8c0d6032ac23757d92a">SetRPMPID</a> (float kp, float ki, float kd)</td></tr>
+<tr class="memdesc:af6454bcb8cd9c8c0d6032ac23757d92a"><td class="mdescLeft">&#160;</td><td class="mdescRight">速度制御ゲインセット  <a href="../../d5/da2/classnut_1_1_motor.html#af6454bcb8cd9c8c0d6032ac23757d92a">[詳解]</a><br /></td></tr>
+<tr class="separator:af6454bcb8cd9c8c0d6032ac23757d92a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af545b6d07c1c1b242ef871e0facd48a1"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/da2/classnut_1_1_motor.html#af545b6d07c1c1b242ef871e0facd48a1">SetRadPID</a> (float kp, float ki, float kd)</td></tr>
+<tr class="memdesc:af545b6d07c1c1b242ef871e0facd48a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">角度制御ゲインセット  <a href="../../d5/da2/classnut_1_1_motor.html#af545b6d07c1c1b242ef871e0facd48a1">[詳解]</a><br /></td></tr>
+<tr class="separator:af545b6d07c1c1b242ef871e0facd48a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6be8dbb11e874e4a6710c9bae2063459"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/da2/classnut_1_1_motor.html#a6be8dbb11e874e4a6710c9bae2063459">ResetRadOrigin</a> (float rad)=0</td></tr>
+<tr class="memdesc:a6be8dbb11e874e4a6710c9bae2063459"><td class="mdescLeft">&#160;</td><td class="mdescRight">角度原点リセット  <a href="../../d5/da2/classnut_1_1_motor.html#a6be8dbb11e874e4a6710c9bae2063459">[詳解]</a><br /></td></tr>
+<tr class="separator:a6be8dbb11e874e4a6710c9bae2063459"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a193bdb485d032cb416401de2f3dc4d11"><td class="memItemLeft" align="right" valign="top">virtual float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/da2/classnut_1_1_motor.html#a193bdb485d032cb416401de2f3dc4d11">GetDuty</a> () const</td></tr>
+<tr class="memdesc:a193bdb485d032cb416401de2f3dc4d11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Duty取得  <a href="../../d5/da2/classnut_1_1_motor.html#a193bdb485d032cb416401de2f3dc4d11">[詳解]</a><br /></td></tr>
+<tr class="separator:a193bdb485d032cb416401de2f3dc4d11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7b38e0c9575eaea4b5613deafe9fdf7"><td class="memItemLeft" align="right" valign="top">virtual float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/da2/classnut_1_1_motor.html#aa7b38e0c9575eaea4b5613deafe9fdf7">GetRPM</a> () const</td></tr>
+<tr class="memdesc:aa7b38e0c9575eaea4b5613deafe9fdf7"><td class="mdescLeft">&#160;</td><td class="mdescRight">速度取得  <a href="../../d5/da2/classnut_1_1_motor.html#aa7b38e0c9575eaea4b5613deafe9fdf7">[詳解]</a><br /></td></tr>
+<tr class="separator:aa7b38e0c9575eaea4b5613deafe9fdf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a530192b5f425768a4982994a100d5fc3"><td class="memItemLeft" align="right" valign="top">virtual float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/da2/classnut_1_1_motor.html#a530192b5f425768a4982994a100d5fc3">GetRad</a> () const</td></tr>
+<tr class="memdesc:a530192b5f425768a4982994a100d5fc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">角度取得  <a href="../../d5/da2/classnut_1_1_motor.html#a530192b5f425768a4982994a100d5fc3">[詳解]</a><br /></td></tr>
+<tr class="separator:a530192b5f425768a4982994a100d5fc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-types"></a>
+限定公開型</h2></td></tr>
+<tr class="memitem:a21a5cd6931fdabe222955f11ae32571b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/da2/classnut_1_1_motor.html#a21a5cd6931fdabe222955f11ae32571b">MoveType</a> : uint8_t { <a class="el" href="../../d5/da2/classnut_1_1_motor.html#a21a5cd6931fdabe222955f11ae32571baef399b2d446bb37b7c32ad2cc1b6045b">MoveType::stop</a> = 0U, 
+<a class="el" href="../../d5/da2/classnut_1_1_motor.html#a21a5cd6931fdabe222955f11ae32571baa1d033b84aab7171a82fe94afb710675">MoveType::duty</a>, 
+<a class="el" href="../../d5/da2/classnut_1_1_motor.html#a21a5cd6931fdabe222955f11ae32571ba455385f5d8493917cb83541909b7cfa9">MoveType::rpm</a>, 
+<a class="el" href="../../d5/da2/classnut_1_1_motor.html#a21a5cd6931fdabe222955f11ae32571ba340f7c2dcaedeae68e4a62c281c7350b">MoveType::rad</a>
+ }</td></tr>
+<tr class="memdesc:a21a5cd6931fdabe222955f11ae32571b"><td class="mdescLeft">&#160;</td><td class="mdescRight">モータ制御モード  <a href="../../d5/da2/classnut_1_1_motor.html#a21a5cd6931fdabe222955f11ae32571b">[詳解]</a><br /></td></tr>
+<tr class="separator:a21a5cd6931fdabe222955f11ae32571b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+限定公開メンバ関数</h2></td></tr>
+<tr class="memitem:aab752ad27241d68413a18f0e3d268ec6"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/da2/classnut_1_1_motor.html#aab752ad27241d68413a18f0e3d268ec6">ResetTarget</a> ()</td></tr>
+<tr class="memdesc:aab752ad27241d68413a18f0e3d268ec6"><td class="mdescLeft">&#160;</td><td class="mdescRight">目標値リセット  <a href="../../d5/da2/classnut_1_1_motor.html#aab752ad27241d68413a18f0e3d268ec6">[詳解]</a><br /></td></tr>
+<tr class="separator:aab752ad27241d68413a18f0e3d268ec6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ba6e0a3b25c9d3d0f1ae555acfd10fe"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/da2/classnut_1_1_motor.html#a3ba6e0a3b25c9d3d0f1ae555acfd10fe">ResetParam</a> ()</td></tr>
+<tr class="memdesc:a3ba6e0a3b25c9d3d0f1ae555acfd10fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">パラメータ&amp;目標値リセット  <a href="../../d5/da2/classnut_1_1_motor.html#a3ba6e0a3b25c9d3d0f1ae555acfd10fe">[詳解]</a><br /></td></tr>
+<tr class="separator:a3ba6e0a3b25c9d3d0f1ae555acfd10fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f2eb46239419ad81f3755cc6100901a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/da2/classnut_1_1_motor.html#a0f2eb46239419ad81f3755cc6100901a">ScheduleTask</a> ()=0</td></tr>
+<tr class="memdesc:a0f2eb46239419ad81f3755cc6100901a"><td class="mdescLeft">&#160;</td><td class="mdescRight">周期コールバック関数  <a href="../../d5/da2/classnut_1_1_motor.html#a0f2eb46239419ad81f3755cc6100901a">[詳解]</a><br /></td></tr>
+<tr class="separator:a0f2eb46239419ad81f3755cc6100901a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+限定公開変数類</h2></td></tr>
+<tr class="memitem:a07419fd0f0e964016084ab9b3605009b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d5/da2/classnut_1_1_motor.html#a21a5cd6931fdabe222955f11ae32571b">MoveType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/da2/classnut_1_1_motor.html#a07419fd0f0e964016084ab9b3605009b">_move_type</a> = <a class="el" href="../../d5/da2/classnut_1_1_motor.html#a21a5cd6931fdabe222955f11ae32571baef399b2d446bb37b7c32ad2cc1b6045b">MoveType::stop</a></td></tr>
+<tr class="separator:a07419fd0f0e964016084ab9b3605009b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e7f0ef80cbc1fde3400dcfb83405de0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/dff/classnut_1_1_time_scheduler.html">TimeScheduler</a>&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/da2/classnut_1_1_motor.html#a3e7f0ef80cbc1fde3400dcfb83405de0">_scheduler</a></td></tr>
+<tr class="separator:a3e7f0ef80cbc1fde3400dcfb83405de0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cbc3d0118b17f113c6aeb3bd9d6ae29"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d5/d5c/classnut_1_1_p_i_d.html">PID</a>&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/da2/classnut_1_1_motor.html#a0cbc3d0118b17f113c6aeb3bd9d6ae29">_rpm_pid</a></td></tr>
+<tr class="separator:a0cbc3d0118b17f113c6aeb3bd9d6ae29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc183eb4e959c6701c6c30fab128a755"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d5/d5c/classnut_1_1_p_i_d.html">PID</a>&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/da2/classnut_1_1_motor.html#acc183eb4e959c6701c6c30fab128a755">_rad_pid</a></td></tr>
+<tr class="separator:acc183eb4e959c6701c6c30fab128a755"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88a9ba06f74cfa8eeee81cf3d3bd119a"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/da2/classnut_1_1_motor.html#a88a9ba06f74cfa8eeee81cf3d3bd119a">_target_duty</a> = 0.0f</td></tr>
+<tr class="memdesc:a88a9ba06f74cfa8eeee81cf3d3bd119a"><td class="mdescLeft">&#160;</td><td class="mdescRight">百分率  <a href="../../d5/da2/classnut_1_1_motor.html#a88a9ba06f74cfa8eeee81cf3d3bd119a">[詳解]</a><br /></td></tr>
+<tr class="separator:a88a9ba06f74cfa8eeee81cf3d3bd119a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:addf2f56606325f5371ae373c58af0617"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/da2/classnut_1_1_motor.html#addf2f56606325f5371ae373c58af0617">_target_rpm</a> = 0.0f</td></tr>
+<tr class="separator:addf2f56606325f5371ae373c58af0617"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28cd6063de9f3c570b29b34c40569787"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/da2/classnut_1_1_motor.html#a28cd6063de9f3c570b29b34c40569787">_target_rad</a> = 0.0f</td></tr>
+<tr class="separator:a28cd6063de9f3c570b29b34c40569787"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c1a6825ad6afb26d5d4d507cf056283"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/da2/classnut_1_1_motor.html#a0c1a6825ad6afb26d5d4d507cf056283">_now_rpm</a> = 0.0f</td></tr>
+<tr class="separator:a0c1a6825ad6afb26d5d4d507cf056283"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c02b8ce13247ece4f50cc037b39bf8f"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/da2/classnut_1_1_motor.html#a6c02b8ce13247ece4f50cc037b39bf8f">_now_rad</a> = 0.0f</td></tr>
+<tr class="separator:a6c02b8ce13247ece4f50cc037b39bf8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>モータ制御基底純粋仮想クラス </p>
+
+<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00018">18</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">列挙型メンバ詳解</h2>
+<a id="a21a5cd6931fdabe222955f11ae32571b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21a5cd6931fdabe222955f11ae32571b">&#9670;&nbsp;</a></span>MoveType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="../../d5/da2/classnut_1_1_motor.html#a21a5cd6931fdabe222955f11ae32571b">nut::Motor::MoveType</a> : uint8_t</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>モータ制御モード </p>
+<table class="fieldtable">
+<tr><th colspan="2">列挙値</th></tr><tr><td class="fieldname"><a id="a21a5cd6931fdabe222955f11ae32571baef399b2d446bb37b7c32ad2cc1b6045b"></a>stop&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a21a5cd6931fdabe222955f11ae32571baa1d033b84aab7171a82fe94afb710675"></a>duty&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a21a5cd6931fdabe222955f11ae32571ba455385f5d8493917cb83541909b7cfa9"></a>rpm&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a21a5cd6931fdabe222955f11ae32571ba340f7c2dcaedeae68e4a62c281c7350b"></a>rad&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00023">23</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">構築子と解体子</h2>
+<a id="af7a835ef2c4874e42a9da064d264564a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7a835ef2c4874e42a9da064d264564a">&#9670;&nbsp;</a></span>Motor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">nut::Motor::Motor </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>period</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>コンストラクタ </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">period</td><td>制御周期[ms] </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00075">75</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d5/da2/classnut_1_1_motor_af7a835ef2c4874e42a9da064d264564a_cgraph.png" border="0" usemap="#ad5/da2/classnut_1_1_motor_af7a835ef2c4874e42a9da064d264564a_cgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="ad50ce902fa81e61e8eb8adb72926c11d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad50ce902fa81e61e8eb8adb72926c11d">&#9670;&nbsp;</a></span>~Motor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual nut::Motor::~Motor </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>デストラクタ </p>
+
+<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00081">81</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a193bdb485d032cb416401de2f3dc4d11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a193bdb485d032cb416401de2f3dc4d11">&#9670;&nbsp;</a></span>GetDuty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual float nut::Motor::GetDuty </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Duty取得 </p>
+<dl class="section return"><dt>戻り値</dt><dd>Duty比(百分率) </dd></dl>
+
+<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00168">168</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a530192b5f425768a4982994a100d5fc3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a530192b5f425768a4982994a100d5fc3">&#9670;&nbsp;</a></span>GetRad()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual float nut::Motor::GetRad </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>角度取得 </p>
+<dl class="section return"><dt>戻り値</dt><dd>Rad </dd></dl>
+
+<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00182">182</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aa7b38e0c9575eaea4b5613deafe9fdf7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7b38e0c9575eaea4b5613deafe9fdf7">&#9670;&nbsp;</a></span>GetRPM()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual float nut::Motor::GetRPM </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>速度取得 </p>
+<dl class="section return"><dt>戻り値</dt><dd>RPM </dd></dl>
+
+<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00175">175</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a976b06f9387d90b6172b3d48d7f8a071"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a976b06f9387d90b6172b3d48d7f8a071">&#9670;&nbsp;</a></span>Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void nut::Motor::Init </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>初期化関数 </p>
+
+<p><a class="el" href="../../df/da1/classnut_1_1_reiwa_m_d.html#a7ac369682056c692a7df5f4825ea95a7">nut::ReiwaMD</a>, <a class="el" href="../../db/d01/classnut_1_1_direct_duty_motor.html#a9a99437c28b6cf822491538ce2b21a90">nut::DirectDutyMotor</a>で実装されています。</p>
+
+</div>
+</div>
+<a id="a3ba6e0a3b25c9d3d0f1ae555acfd10fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ba6e0a3b25c9d3d0f1ae555acfd10fe">&#9670;&nbsp;</a></span>ResetParam()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void nut::Motor::ResetParam </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>パラメータ&amp;目標値リセット </p>
+
+<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00059">59</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d5/da2/classnut_1_1_motor_a3ba6e0a3b25c9d3d0f1ae555acfd10fe_cgraph.png" border="0" usemap="#ad5/da2/classnut_1_1_motor_a3ba6e0a3b25c9d3d0f1ae555acfd10fe_cgraph" alt=""/></div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d5/da2/classnut_1_1_motor_a3ba6e0a3b25c9d3d0f1ae555acfd10fe_icgraph.png" border="0" usemap="#ad5/da2/classnut_1_1_motor_a3ba6e0a3b25c9d3d0f1ae555acfd10fe_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a6be8dbb11e874e4a6710c9bae2063459"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6be8dbb11e874e4a6710c9bae2063459">&#9670;&nbsp;</a></span>ResetRadOrigin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool nut::Motor::ResetRadOrigin </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>rad</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>角度原点リセット </p>
+<dl class="section return"><dt>戻り値</dt><dd>角度原点リセット可能かどうか </dd></dl>
+
+<p><a class="el" href="../../df/da1/classnut_1_1_reiwa_m_d.html#a39100c5ad64a7d4a5fdfe13fe78b6594">nut::ReiwaMD</a>, <a class="el" href="../../db/d01/classnut_1_1_direct_duty_motor.html#ae03abe769a82cec49f161eb2cb530727">nut::DirectDutyMotor</a>で実装されています。</p>
+
+</div>
+</div>
+<a id="aab752ad27241d68413a18f0e3d268ec6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab752ad27241d68413a18f0e3d268ec6">&#9670;&nbsp;</a></span>ResetTarget()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void nut::Motor::ResetTarget </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>目標値リセット </p>
+
+<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00051">51</a> 行目に定義があります。</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d5/da2/classnut_1_1_motor_aab752ad27241d68413a18f0e3d268ec6_icgraph.png" border="0" usemap="#ad5/da2/classnut_1_1_motor_aab752ad27241d68413a18f0e3d268ec6_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a0f2eb46239419ad81f3755cc6100901a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f2eb46239419ad81f3755cc6100901a">&#9670;&nbsp;</a></span>ScheduleTask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void nut::Motor::ScheduleTask </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>周期コールバック関数 </p>
+
+<p><a class="el" href="../../df/da1/classnut_1_1_reiwa_m_d.html#aad29ecc03b1e20118abd83e1b610824b">nut::ReiwaMD</a>で実装されています。</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d5/da2/classnut_1_1_motor_a0f2eb46239419ad81f3755cc6100901a_icgraph.png" border="0" usemap="#ad5/da2/classnut_1_1_motor_a0f2eb46239419ad81f3755cc6100901a_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="aab9f209d8b734936827a1ed842f5e453"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab9f209d8b734936827a1ed842f5e453">&#9670;&nbsp;</a></span>SetDuty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool nut::Motor::SetDuty </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>duty</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Duty制御 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">duty</td><td>百分率 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>Duty制御可能かどうか </dd></dl>
+
+<p><a class="el" href="../../df/da1/classnut_1_1_reiwa_m_d.html#a5e7015dc7a039d8f4fdb6c9911dab941">nut::ReiwaMD</a>で再実装されています。</p>
+
+<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00107">107</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="af4980667675241bd8e7150a6b9bedcf5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4980667675241bd8e7150a6b9bedcf5">&#9670;&nbsp;</a></span>SetRad()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool nut::Motor::SetRad </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>rad</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>top_rpm</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>角度制御 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">rad</td><td>角度[rad] </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">top_rpm</td><td>最大速度[rpm] </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>角度制御可能かどうか </dd></dl>
+
+<p><a class="el" href="../../df/da1/classnut_1_1_reiwa_m_d.html#a5bf3dc213d50558a3fa3bbe7dde3cdb2">nut::ReiwaMD</a>, <a class="el" href="../../db/d01/classnut_1_1_direct_duty_motor.html#a7b9b5c65f160c2e587dfad993b401cfd">nut::DirectDutyMotor</a>で再実装されています。</p>
+
+<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00129">129</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="af545b6d07c1c1b242ef871e0facd48a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af545b6d07c1c1b242ef871e0facd48a1">&#9670;&nbsp;</a></span>SetRadPID()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool nut::Motor::SetRadPID </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>kp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>ki</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>kd</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>角度制御ゲインセット </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">kp</td><td>Pゲイン </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ki</td><td>Iゲイン </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">kd</td><td>Dゲイン </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>角度PID可能かどうか </dd></dl>
+
+<p><a class="el" href="../../df/da1/classnut_1_1_reiwa_m_d.html#aa5b2de060bbf9971615aa43e2d04d114">nut::ReiwaMD</a>, <a class="el" href="../../db/d01/classnut_1_1_direct_duty_motor.html#a9b82d2cc5f79137d7f7b0646323c5017">nut::DirectDutyMotor</a>で再実装されています。</p>
+
+<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00153">153</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d5/da2/classnut_1_1_motor_af545b6d07c1c1b242ef871e0facd48a1_cgraph.png" border="0" usemap="#ad5/da2/classnut_1_1_motor_af545b6d07c1c1b242ef871e0facd48a1_cgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a40659cbabbc9ab21ad9f1e1b2e3d4f43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40659cbabbc9ab21ad9f1e1b2e3d4f43">&#9670;&nbsp;</a></span>SetRPM()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool nut::Motor::SetRPM </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>rpm</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>速度制御 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">rpm</td><td>RPM </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>速度制御可能かどうか </dd></dl>
+
+<p><a class="el" href="../../df/da1/classnut_1_1_reiwa_m_d.html#a98b651b80a784e9404cedcb84f606541">nut::ReiwaMD</a>, <a class="el" href="../../db/d01/classnut_1_1_direct_duty_motor.html#ac3438813b1ac97b351764422c002a9a1">nut::DirectDutyMotor</a>で再実装されています。</p>
+
+<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00118">118</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="af6454bcb8cd9c8c0d6032ac23757d92a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6454bcb8cd9c8c0d6032ac23757d92a">&#9670;&nbsp;</a></span>SetRPMPID()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool nut::Motor::SetRPMPID </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>kp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>ki</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>kd</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>速度制御ゲインセット </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">kp</td><td>Pゲイン </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ki</td><td>Iゲイン </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">kd</td><td>Dゲイン </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>速度PID可能かどうか </dd></dl>
+
+<p><a class="el" href="../../df/da1/classnut_1_1_reiwa_m_d.html#a03b7de6e49e72e47ad57e16b17450d7d">nut::ReiwaMD</a>, <a class="el" href="../../db/d01/classnut_1_1_direct_duty_motor.html#ae000b3c6f4682c5f8a94aa39cfdfa369">nut::DirectDutyMotor</a>で再実装されています。</p>
+
+<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00142">142</a> 行目に定義があります。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d5/da2/classnut_1_1_motor_af6454bcb8cd9c8c0d6032ac23757d92a_cgraph.png" border="0" usemap="#ad5/da2/classnut_1_1_motor_af6454bcb8cd9c8c0d6032ac23757d92a_cgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="aeacc0951b8ff1966bc6542e655f94d04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeacc0951b8ff1966bc6542e655f94d04">&#9670;&nbsp;</a></span>Start()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool nut::Motor::Start </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>制御スタート </p>
+
+<p><a class="el" href="../../df/da1/classnut_1_1_reiwa_m_d.html#a32c6b67e93487f574e606eec8a97a6e7">nut::ReiwaMD</a>, <a class="el" href="../../db/d01/classnut_1_1_direct_duty_motor.html#a43f58efac3d741ac93c401fd6606a223">nut::DirectDutyMotor</a>で実装されています。</p>
+
+</div>
+</div>
+<a id="a13f7a160817185060384a98203618e9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13f7a160817185060384a98203618e9e">&#9670;&nbsp;</a></span>Stop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void nut::Motor::Stop </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>制御ストップ </p>
+
+<p><a class="el" href="../../df/da1/classnut_1_1_reiwa_m_d.html#a15c344a43e782cb4cb26ccc482e774a7">nut::ReiwaMD</a>, <a class="el" href="../../db/d01/classnut_1_1_direct_duty_motor.html#a7c5f0cf4b651a30f47f04b946c45e2c2">nut::DirectDutyMotor</a>で実装されています。</p>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a07419fd0f0e964016084ab9b3605009b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07419fd0f0e964016084ab9b3605009b">&#9670;&nbsp;</a></span>_move_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d5/da2/classnut_1_1_motor.html#a21a5cd6931fdabe222955f11ae32571b">MoveType</a> nut::Motor::_move_type = <a class="el" href="../../d5/da2/classnut_1_1_motor.html#a21a5cd6931fdabe222955f11ae32571baef399b2d446bb37b7c32ad2cc1b6045b">MoveType::stop</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00029">29</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a6c02b8ce13247ece4f50cc037b39bf8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c02b8ce13247ece4f50cc037b39bf8f">&#9670;&nbsp;</a></span>_now_rad</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float nut::Motor::_now_rad = 0.0f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00044">44</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a0c1a6825ad6afb26d5d4d507cf056283"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c1a6825ad6afb26d5d4d507cf056283">&#9670;&nbsp;</a></span>_now_rpm</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float nut::Motor::_now_rpm = 0.0f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00043">43</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="acc183eb4e959c6701c6c30fab128a755"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc183eb4e959c6701c6c30fab128a755">&#9670;&nbsp;</a></span>_rad_pid</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d5/d5c/classnut_1_1_p_i_d.html">PID</a>&lt;float&gt; nut::Motor::_rad_pid</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00035">35</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a0cbc3d0118b17f113c6aeb3bd9d6ae29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0cbc3d0118b17f113c6aeb3bd9d6ae29">&#9670;&nbsp;</a></span>_rpm_pid</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d5/d5c/classnut_1_1_p_i_d.html">PID</a>&lt;float&gt; nut::Motor::_rpm_pid</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00034">34</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a3e7f0ef80cbc1fde3400dcfb83405de0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e7f0ef80cbc1fde3400dcfb83405de0">&#9670;&nbsp;</a></span>_scheduler</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d0/dff/classnut_1_1_time_scheduler.html">TimeScheduler</a>&lt;void&gt; nut::Motor::_scheduler</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00031">31</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a88a9ba06f74cfa8eeee81cf3d3bd119a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88a9ba06f74cfa8eeee81cf3d3bd119a">&#9670;&nbsp;</a></span>_target_duty</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float nut::Motor::_target_duty = 0.0f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>百分率 </p>
+
+<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00037">37</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a28cd6063de9f3c570b29b34c40569787"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28cd6063de9f3c570b29b34c40569787">&#9670;&nbsp;</a></span>_target_rad</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float nut::Motor::_target_rad = 0.0f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00039">39</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="addf2f56606325f5371ae373c58af0617"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#addf2f56606325f5371ae373c58af0617">&#9670;&nbsp;</a></span>_target_rpm</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float nut::Motor::_target_rpm = 0.0f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00038">38</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li>NutLib/Motor/<a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dd/d51/namespacenut.html">nut</a></li><li class="navelem"><a class="el" href="../../d5/da2/classnut_1_1_motor.html">Motor</a></li>
+    <li class="footer">構築: <a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
+  </ul>
+</div>
+</body>
+</html>

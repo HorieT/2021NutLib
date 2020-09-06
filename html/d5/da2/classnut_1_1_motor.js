@@ -1,0 +1,35 @@
+var classnut_1_1_motor =
+[
+    [ "MoveType", "d5/da2/classnut_1_1_motor.html#a21a5cd6931fdabe222955f11ae32571b", [
+      [ "stop", "d5/da2/classnut_1_1_motor.html#a21a5cd6931fdabe222955f11ae32571baef399b2d446bb37b7c32ad2cc1b6045b", null ],
+      [ "duty", "d5/da2/classnut_1_1_motor.html#a21a5cd6931fdabe222955f11ae32571baa1d033b84aab7171a82fe94afb710675", null ],
+      [ "rpm", "d5/da2/classnut_1_1_motor.html#a21a5cd6931fdabe222955f11ae32571ba455385f5d8493917cb83541909b7cfa9", null ],
+      [ "rad", "d5/da2/classnut_1_1_motor.html#a21a5cd6931fdabe222955f11ae32571ba340f7c2dcaedeae68e4a62c281c7350b", null ]
+    ] ],
+    [ "Motor", "d5/da2/classnut_1_1_motor.html#af7a835ef2c4874e42a9da064d264564a", null ],
+    [ "~Motor", "d5/da2/classnut_1_1_motor.html#ad50ce902fa81e61e8eb8adb72926c11d", null ],
+    [ "GetDuty", "d5/da2/classnut_1_1_motor.html#a193bdb485d032cb416401de2f3dc4d11", null ],
+    [ "GetRad", "d5/da2/classnut_1_1_motor.html#a530192b5f425768a4982994a100d5fc3", null ],
+    [ "GetRPM", "d5/da2/classnut_1_1_motor.html#aa7b38e0c9575eaea4b5613deafe9fdf7", null ],
+    [ "Init", "d5/da2/classnut_1_1_motor.html#a976b06f9387d90b6172b3d48d7f8a071", null ],
+    [ "ResetParam", "d5/da2/classnut_1_1_motor.html#a3ba6e0a3b25c9d3d0f1ae555acfd10fe", null ],
+    [ "ResetRadOrigin", "d5/da2/classnut_1_1_motor.html#a6be8dbb11e874e4a6710c9bae2063459", null ],
+    [ "ResetTarget", "d5/da2/classnut_1_1_motor.html#aab752ad27241d68413a18f0e3d268ec6", null ],
+    [ "ScheduleTask", "d5/da2/classnut_1_1_motor.html#a0f2eb46239419ad81f3755cc6100901a", null ],
+    [ "SetDuty", "d5/da2/classnut_1_1_motor.html#aab9f209d8b734936827a1ed842f5e453", null ],
+    [ "SetRad", "d5/da2/classnut_1_1_motor.html#af4980667675241bd8e7150a6b9bedcf5", null ],
+    [ "SetRadPID", "d5/da2/classnut_1_1_motor.html#af545b6d07c1c1b242ef871e0facd48a1", null ],
+    [ "SetRPM", "d5/da2/classnut_1_1_motor.html#a40659cbabbc9ab21ad9f1e1b2e3d4f43", null ],
+    [ "SetRPMPID", "d5/da2/classnut_1_1_motor.html#af6454bcb8cd9c8c0d6032ac23757d92a", null ],
+    [ "Start", "d5/da2/classnut_1_1_motor.html#aeacc0951b8ff1966bc6542e655f94d04", null ],
+    [ "Stop", "d5/da2/classnut_1_1_motor.html#a13f7a160817185060384a98203618e9e", null ],
+    [ "_move_type", "d5/da2/classnut_1_1_motor.html#a07419fd0f0e964016084ab9b3605009b", null ],
+    [ "_now_rad", "d5/da2/classnut_1_1_motor.html#a6c02b8ce13247ece4f50cc037b39bf8f", null ],
+    [ "_now_rpm", "d5/da2/classnut_1_1_motor.html#a0c1a6825ad6afb26d5d4d507cf056283", null ],
+    [ "_rad_pid", "d5/da2/classnut_1_1_motor.html#acc183eb4e959c6701c6c30fab128a755", null ],
+    [ "_rpm_pid", "d5/da2/classnut_1_1_motor.html#a0cbc3d0118b17f113c6aeb3bd9d6ae29", null ],
+    [ "_scheduler", "d5/da2/classnut_1_1_motor.html#a3e7f0ef80cbc1fde3400dcfb83405de0", null ],
+    [ "_target_duty", "d5/da2/classnut_1_1_motor.html#a88a9ba06f74cfa8eeee81cf3d3bd119a", null ],
+    [ "_target_rad", "d5/da2/classnut_1_1_motor.html#a28cd6063de9f3c570b29b34c40569787", null ],
+    [ "_target_rpm", "d5/da2/classnut_1_1_motor.html#addf2f56606325f5371ae373c58af0617", null ]
+];

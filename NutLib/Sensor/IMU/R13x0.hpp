@@ -1,15 +1,17 @@
-/*
- * R1370P,R1350N縺ｮ繧ｯ繝ｩ繧ｹ�ｼ�70P縺ｮ譁ｹ縺瑚ｨｭ螳壹〒縺阪ｋ鬆�逶ｮ縺悟ｰ代↑縺�縲ゅせ繝壹ャ繧ｯ縺ｯ螟壼�蜷後§�ｼ�
- * 險ｭ螳夐�∽ｿ｡縺ｫ髢｢縺励※縺ｯ縺ｾ縺�譖ｸ縺�縺ｦ縺�縺ｪ縺�
- * 蝓ｺ蠎輔↓IMU繧ｯ繝ｩ繧ｹ
- * 菴ｿ逕ｨUART縺ｯ115200bps縺ｧCircular縺ｮDMA縺ｫ縺吶ｋ縺薙→
+/**
+ * @file IMU.hpp
+ * @brief R1370P,R1350N共通
+ * @author Horie
+ * @date 2020/9
  */
-
 #include "IMU.hpp"
 #include "../../TimeScheduler.hpp"
 #include <cstring>
 
 namespace nut{
+/**
+ * @brief R1370P,R1350N共通クラス
+ */
 class R13x0 : public IMU{
 private:
 	static constexpr uint8_t GYRO_DATA_SIZE = 15;
@@ -21,30 +23,50 @@ private:
 	std::array<uint8_t, GYRO_BUFF_SIZE> _buff;
 	UART_HandleTypeDef* const _huart;
 
+	/**
+	 * @brief タイムアウト関数
+	 */
 	void Timeout(){
 		_sensor_acc = {0.0f, 0.0f, 0.0f};
 		_sensor_rot = {0.0f, 0.0f, 0.0f};
 		_global_acc = {0.0f, 0.0f, 0.0f};
 		_global_rot = {0.0f, 0.0f, 0.0f};
-		_global_angle = {0.0f, 0.0f, 0.0f};
+		//_global_angle = {0.0f, 0.0f, 0.0f};
 	}
 public:
+	/**
+	 * @brief コンストラクタ
+	 * @param[in] huart uartハンドル
+	 * @details uartは事前に通信仕様通りの設定を行い、DMA設定でCircularにしてください
+	 */
 	R13x0(UART_HandleTypeDef* huart) : _scheduler([this]{Timeout();}, TIMEOUT_TIME), _huart(huart){}
+	/**
+	 * @brief デストラクタ
+	 */
 	virtual ~R13x0(){_scheduler.Erase();}
 
+
+	/**
+	 * @brief 初期化関数
+	 */
 	virtual void Init() override final{
 		HAL_UART_Receive_DMA(_huart, _buff.data(), GYRO_BUFF_SIZE);
 		_scheduler.Set();
 	}
+	/**
+	 * @brief リセット
+	 */
 	virtual void Reset() override final{
 		Timeout();
 		_scheduler.Reset();
 	}
 
 
-	/*
-	 * 蜿嶺ｿ｡髢｢謨ｰﾂ�
-	 *  HAL_UART_RxHalfCpltCallback()蜀�縺ｧ蜻ｼ縺ｳ蜃ｺ縺吶％縺ｨ
+	/**
+	 * @brief 受信関数
+	 * @details HAL_UART_RxHalfCpltCallback()内で呼び出してください
+	 * @param[in] huart uartハンドル
+	 * @return 受信処理成功の可否
 	 */
 	virtual bool Receive(UART_HandleTypeDef* huart) final{
 		if(huart == _huart){

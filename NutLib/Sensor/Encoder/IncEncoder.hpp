@@ -1,5 +1,8 @@
-/*
- * ƒCƒ“ƒNƒŠƒƒ“ƒ^ƒ‹Œ^ƒGƒ“ƒR[ƒ_ƒNƒ‰ƒX
+/**
+ * @file IncEncoder.hpp
+ * @brief ã‚¤ãƒ³ã‚¯ãƒªãƒ¡ãƒ³ã‚¿ãƒ«å‹ã‚¨ãƒ³ã‚³ãƒ¼ãƒ€
+ * @author Horie
+ * @date 2020/9
  */
 #pragma once
 
@@ -7,12 +10,19 @@
 #include <cstring>
 
 namespace nut{
+/**
+ * @brief ã‚¤ãƒ³ã‚¯ãƒªãƒ¡ãƒ³ã‚¿ãƒ«å‹ã‚¨ãƒ³ã‚³ãƒ¼ãƒ€ã‚¯ãƒ©ã‚¹
+ */
 class IncEncoder : public Encoder{
 private:
 	TIM_HandleTypeDef* const _htim;
 
 
-
+	/**
+	 * @brief ã‚«ã‚¦ãƒ³ãƒˆã‚’è§’åº¦ã¸æ›ç®—
+	 * @param[in] count ã‚«ã‚¦ãƒ³ãƒˆ
+	 * @return è§’åº¦[rad]
+	 */
 	float ConvertRad(uint32_t count) const{
 		//32bit counter
 		if(_htim->Instance->ARR == 0xFFFFFFFF){
@@ -26,7 +36,7 @@ private:
 			std::memcpy(&signedCount, &count, 2);
 			return static_cast<float>(signedCount) * static_cast<float>(M_PI) / static_cast<float>(_resolution);
 		}
-		//—áŠO“I‚ÈƒŠƒ[ƒhƒŒƒWƒXƒ^ˆ—
+		//ä¾‹å¤–çš„ãªã‚«ã‚¦ãƒ³ã‚¿
 		else{
 			int32_t signedCount = (count > (_htim->Instance->ARR / 2U)) ?
 					static_cast<int32_t>(count - _htim->Instance->ARR) : static_cast<int32_t>(count);
@@ -35,15 +45,22 @@ private:
 	}
 
 public:
-	/*
-	 * ƒRƒ“ƒXƒgƒ‰ƒNƒ^AƒfƒXƒgƒ‰ƒNƒ^
+	/**
+	 * @brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+	 * @param tim ã‚¿ã‚¤ãƒã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹
+	 * @param resolution åˆ†è§£èƒ½
 	 */
 	IncEncoder(TIM_HandleTypeDef* tim, uint32_t resolution):
-		Encoder(resolution),_htim(tim){}
+		Encoder(resolution),_htim(tim){
+
+	}
+	/**
+	 * @brief ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+	 */
 	virtual ~IncEncoder(){HAL_TIM_Encoder_Stop(_htim, TIM_CHANNEL_ALL);}
 
-	/*
-	 * ‰Šú‰»
+	/**
+	 * @brief åˆæœŸåŒ–
 	 */
 	virtual void Init() override{
 		_htim->Instance->CNT = 0;
@@ -52,22 +69,25 @@ public:
 
 
 
-	/*
-	 * Šp“xƒŠƒZƒbƒg
+	/**
+	 * @brief ãƒªã‚»ãƒƒãƒˆ
 	 */
 	virtual void Reset() override{
 		_htim->Instance->CNT = 0;
 	}
 
-	/*
-	 * Šp“xæ“¾
+	/**
+	 * @brief è§’åº¦å–å¾—
+	 * @return è§’åº¦[rad]
 	 */
 	virtual float GetRad() const override {
 		uint32_t count = _htim->Instance->CNT;
 		return ConvertRad(count);
 	}
-	/*
-	 * Šp“xæ“¾&ƒŠƒZƒbƒg
+	/**
+	 * @brief è§’åº¦å–å¾—&ã‚«ã‚¦ãƒ³ãƒˆãƒªã‚»ãƒƒãƒˆ
+	 * @details å‘¨æœŸè§’åº¦å–å¾—ç²¾åº¦ã‚’ä¸Šã’ã‚‹ãŸã‚ã®ã‚‚ã®
+	 * @return è§’åº¦[rad]
 	 */
 	virtual float GetRadAndReset() override{
 		uint32_t count = _htim->Instance->CNT;
