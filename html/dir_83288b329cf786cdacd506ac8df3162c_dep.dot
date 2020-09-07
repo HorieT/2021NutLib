@@ -1,9 +1,0 @@
-digraph "NutLib/Sensor/Encoder" {
-  compound=true
-  node [ fontsize="10", fontname="Helvetica"];
-  edge [ labelfontsize="10", labelfontname="Helvetica"];
-  subgraph clusterdir_c2c735cbd9a0ae71a2beef0eda132d9d {
-    graph [ bgcolor="#ddddee", pencolor="black", label="Sensor" fontname="Helvetica", fontsize="10", URL="dir_c2c735cbd9a0ae71a2beef0eda132d9d.html"]
-  dir_83288b329cf786cdacd506ac8df3162c [shape=box, label="Encoder", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_83288b329cf786cdacd506ac8df3162c.html"];
-  }
-}

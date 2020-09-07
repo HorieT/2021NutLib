@@ -1,9 +1,0 @@
-digraph "NutLib/Sensor/IMU" {
-  compound=true
-  node [ fontsize="10", fontname="Helvetica"];
-  edge [ labelfontsize="10", labelfontname="Helvetica"];
-  subgraph clusterdir_c2c735cbd9a0ae71a2beef0eda132d9d {
-    graph [ bgcolor="#ddddee", pencolor="black", label="Sensor" fontname="Helvetica", fontsize="10", URL="dir_c2c735cbd9a0ae71a2beef0eda132d9d.html"]
-  dir_7e4c6f31462e95b666a5dd7652920e46 [shape=box, label="IMU", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_7e4c6f31462e95b666a5dd7652920e46.html"];
-  }
-}
