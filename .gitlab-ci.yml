@@ -6,6 +6,6 @@ pages:
   - echo 'Nothing to do...'
   artifacts:
     paths:
-    - html
+    - public
   only:
   - master
