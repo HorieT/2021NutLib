@@ -31,7 +31,7 @@ Eigenについても同様です。
 使用にあたって`nut::TimeSchedulerBase::TimeCheck()`は必ず呼び出してください。
 また各通信による受信処理を行うもの(コントローラやセンサ等)は各受信メンバ関数をユーザーが割り込み関数内に記述してください。
 
-コードの詳しいことは2021NutLib_UseSampleを参照するか、リファレンスを確認してください。
+コードの詳しいことは2021NutLib_UseSampleを参照するか、[リファレンス](https://robopro_nut.gitlab.io/2021nutlib/index.html)を確認してください。
 
 
 ### 注意
