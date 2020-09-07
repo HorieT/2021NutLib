@@ -1,5 +1,5 @@
 /**
- * @file IMU.hpp
+ * @file R13x0.hpp
  * @brief R1370P,R1350N共通
  * @author Horie
  * @date 2020/9

@@ -118,7 +118,7 @@ digraph "NutLib/AllLib.hpp"
   Node32 [label="Sensor/Encoder/AbsEncoder.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/ddf/_abs_encoder_8hpp.html",tooltip="アブソリュート型エンコーダ基底"];
   Node1 -> Node17 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node1 -> Node33 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node33 [label="Sensor/IMU/R13x0.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dd/df1/_r13x0_8hpp.html",tooltip=" "];
+  Node33 [label="Sensor/IMU/R13x0.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dd/df1/_r13x0_8hpp.html",tooltip="R1370P,R1350N共通"];
   Node33 -> Node17 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node33 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node33 -> Node31 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];

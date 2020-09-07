@@ -16,6 +16,11 @@
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -28,6 +33,21 @@
    <div id="projectname">NutLib
    </div>
   </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.svg"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -39,16 +59,6 @@
 var searchBox = new SearchBox("searchBox", "../../search",false,'検索');
 /* @license-end */
 </script>
-<script type="text/javascript" src="../../menudata.js"></script>
-<script type="text/javascript" src="../../menu.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(function() {
-  initMenu('../../',true,false,'search.php','検索');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */</script>
-<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -97,8 +107,12 @@ $(document).ready(function(){initNavTree('db/d8d/classnut_1_1_i_m_u.html','../..
 <div class="dynheader">
 nut::IMU の継承関係図</div>
 <div class="dyncontent">
-<div class="center"><img src="../../da/d58/classnut_1_1_i_m_u__inherit__graph.png" border="0" usemap="#anut_1_1_i_m_u_inherit__map" alt="Inheritance graph"/></div>
-<center><span class="legend">[<a target="top" href="../../graph_legend.html">凡例</a>]</span></center></div>
+ <div class="center">
+  <img src="../../db/d8d/classnut_1_1_i_m_u.png" usemap="#nut::IMU_map" alt=""/>
+  <map id="nut::IMU_map" name="nut::IMU_map">
+<area href="../../dc/d33/classnut_1_1_r13x0.html" title="R1370P,R1350N共通クラス" alt="nut::R13x0" shape="rect" coords="0,56,70,80"/>
+  </map>
+</div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 公開メンバ関数</h2></td></tr>
