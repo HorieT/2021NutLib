@@ -7,7 +7,7 @@
 2021学ロボ用に開発しているSTM32マイコン対象のヘッダオンリーライブラリです。
 gcc version 7.2.1(GNU Tools for Arm Embedded Processors 7-2017-q4-major)を使用して開発しています。
 c++17ビルド環境であれば使えます(多分)。
-その他esa参照
+その他[esa参照](https://nagaokaroboconproject.esa.io/posts/61)
 
 # 依存関係
 
@@ -19,7 +19,7 @@ c++17ビルド環境であれば使えます(多分)。
 まずcubeMXなりcubeIDEなりでプロジェクトを生成してください。
 この時ピンアサインやAFの設定は各ユーザーが行ってください。
 
-生成したらプロジェクトをc++に設定変更してください(esa参照)。
+生成したらプロジェクトをc++に設定変更してください([esa参照](https://nagaokaroboconproject.esa.io/posts/62))。
 その後このリポジトリのNutLibをプロジェクトのインクルードファイル下にコピーするか,
 ビルド設定でNutLibまでインクルードパスを通してください。
 Eigenについても同様です。
@@ -31,7 +31,7 @@ Eigenについても同様です。
 使用にあたって`nut::TimeSchedulerBase::TimeCheck()`は必ず呼び出してください。
 また各通信による受信処理を行うもの(コントローラやセンサ等)は各受信メンバ関数をユーザーが割り込み関数内に記述してください。
 
-コードの詳しいことは2021NutLib_UseSampleを参照するか、[リファレンス](https://robopro_nut.gitlab.io/2021nutlib/index.html)を確認してください。
+コードの詳しいことは[2021NutLib_UseSample](https://gitlab.com/robopro_nut/2021nhkrobocon/2021nutlib_usesample)を参照するか、[リファレンス](https://robopro_nut.gitlab.io/2021nhkrobocon/2021nutlib/index.html)を確認してください。
 
 
 ### 注意
