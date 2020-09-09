@@ -8,7 +8,7 @@
  */
 #pragma once
 
-#include <NutLib/Global.hpp>
+#include "Global.hpp"
 #include <functional>
 #include <vector>
 #include <memory>

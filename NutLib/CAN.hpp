@@ -6,7 +6,7 @@
  */
 #pragma once
 
-#include <NutLib/Global.hpp>
+#include "Global.hpp"
 #include <array>
 #include <vector>
 

@@ -1,5 +1,9 @@
 var searchData=
 [
-  ['velocity_200',['velocity',['../d9/dc6/classnut_1_1_chassis.html#a1fbcb0cadc3136c9fbc8ee619d1a0f98aac1a453d0cdc1f19d9479ccfaa8b082c',1,'nut::Chassis']]],
-  ['voltageref_201',['VoltageRef',['../df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2a8315e08506974321c602dfce4a1f4867',1,'nut::ReiwaMD']]]
+  ['unit_221',['Unit',['../db/dcb/classnut_1_1unit_1_1_unit.html',1,'nut::unit::Unit&lt; T, U, P &gt;'],['../db/dcb/classnut_1_1unit_1_1_unit.html#af4283ee01dee50cf9811bcd13adedc28',1,'nut::unit::Unit::Unit()']]],
+  ['unit_2ehpp_222',['Unit.hpp',['../d2/d6d/_unit_8hpp.html',1,'']]],
+  ['unitcore_2ehpp_223',['UnitCore.hpp',['../da/d92/_unit_core_8hpp.html',1,'']]],
+  ['use_5fanarog_5fcenter_224',['USE_ANAROG_CENTER',['../d6/de4/classnut_1_1_dual_shock.html#a8b5b9c42f193f949a7a9f43cf29e7c17',1,'nut::DualShock']]],
+  ['use_5fanarog_5fmax_225',['USE_ANAROG_MAX',['../d6/de4/classnut_1_1_dual_shock.html#a054836043cfb3204b16c6916b4e7ea1d',1,'nut::DualShock']]],
+  ['use_5fanarog_5fmin_226',['USE_ANAROG_MIN',['../d6/de4/classnut_1_1_dual_shock.html#a52ac788052e226d9023155fc9d889676',1,'nut::DualShock']]]
 ];

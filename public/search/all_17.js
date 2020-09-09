@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['zeroreturn_205',['ZeroReturn',['../df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2a306035611947a2057431fd228a41ddfe',1,'nut::ReiwaMD']]]
+  ['y_231',['y',['../d4/d08/classnut_1_1_coordinate.html#a06cf225a0b3fda31a95a1965c03fb31d',1,'nut::Coordinate::y() const &amp;'],['../d4/d08/classnut_1_1_coordinate.html#af36721338e235aab32d08152f8609c01',1,'nut::Coordinate::y() &amp;'],['../d4/d08/classnut_1_1_coordinate.html#a84d3004d37c670d143998e458c874745',1,'nut::Coordinate::y() const &amp;&amp;']]]
 ];

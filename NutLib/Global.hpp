@@ -24,8 +24,8 @@ extern "C"{
 //Eigen代数計算ライブラリ
 #include "Eigen/Core"
 
-/*
- *STL
+/**
+ * STL
  *c++20以降であれば_USE_MATH_DEFINES及びM_PIの定義を消し<numbers>に変更
  */
 /**
@@ -38,7 +38,7 @@ extern "C"{
 
 #ifdef M_PI
 #else
-#define M_PI 3.14159265358979323846
+#define M_PI 3.14159265358979323846//!< ビルド環境によってcmathマクロが機能しない場合の定義
 #endif
 
 
@@ -47,5 +47,8 @@ extern "C"{
  * @brief ライブラリの統括名前空間
  */
 namespace nut{
+
+/*Metafunction*/
+
 
 }

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>NutLib: NutLib/Unit.hpp ファイル</title>
+<title>NutLib: NutLib/Unit/Unit.hpp ファイル</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -91,18 +91,151 @@ $(document).ready(function(){initNavTree('d2/d6d/_unit_8hpp.html','../../'); ini
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#nested-classes">クラス</a> &#124;
+<a href="#namespaces">名前空間</a> &#124;
+<a href="#enum-members">列挙型</a> &#124;
+<a href="#func-members">関数</a>  </div>
   <div class="headertitle">
 <div class="title">Unit.hpp ファイル</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>単位系  
+<p>単位系接頭辞  
 <a href="#details">[詳解]</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="../../d2/d88/_global_8hpp_source.html">Global.hpp</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="../../d2/d88/_global_8hpp_source.html">../Global.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d7/d55/_prefix_8hpp_source.html">Prefix.hpp</a>&quot;</code><br />
+<code>#include &lt;ratio&gt;</code><br />
 </div>
 <p><a href="../../d2/d6d/_unit_8hpp_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+クラス</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dcb/classnut_1_1unit_1_1_unit.html">nut::unit::Unit&lt; T, U, P &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">単位系クラス  <a href="../../db/dcb/classnut_1_1unit_1_1_unit.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
+名前空間</h2></td></tr>
+<tr class="memitem:dd/d51/namespacenut"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d51/namespacenut.html">nut</a></td></tr>
+<tr class="memdesc:dd/d51/namespacenut"><td class="mdescLeft">&#160;</td><td class="mdescRight">ライブラリの統括名前空間 <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:da/dc9/namespacenut_1_1unit"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dc9/namespacenut_1_1unit.html">nut::unit</a></td></tr>
+<tr class="memdesc:da/dc9/namespacenut_1_1unit"><td class="mdescLeft">&#160;</td><td class="mdescRight">単位系名前空間 <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+列挙型</h2></td></tr>
+<tr class="memitem:a71c65554a8697cd990496eec57068896"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dc9/namespacenut_1_1unit.html#a71c65554a8697cd990496eec57068896">nut::unit::Type</a> : uint16_t { <br />
+&#160;&#160;<a class="el" href="../../da/dc9/namespacenut_1_1unit.html#a71c65554a8697cd990496eec57068896aa9f0e61a137d86aa9db53465e0801612">nut::unit::Type::second</a> = 0U, 
+<a class="el" href="../../da/dc9/namespacenut_1_1unit.html#a71c65554a8697cd990496eec57068896a0a7d55be9d12a369a6a8da0fb517fba4">nut::unit::Type::minute</a>, 
+<a class="el" href="../../da/dc9/namespacenut_1_1unit.html#a71c65554a8697cd990496eec57068896a558ddfdd3620c111fe112b4671b77c6d">nut::unit::Type::meter</a>, 
+<a class="el" href="../../da/dc9/namespacenut_1_1unit.html#a71c65554a8697cd990496eec57068896a2fb79ab9685ea3b8e82385daca76a390">nut::unit::Type::radian</a>, 
+<br />
+&#160;&#160;<a class="el" href="../../da/dc9/namespacenut_1_1unit.html#a71c65554a8697cd990496eec57068896a8cb58278ef95eb98682cdc86e48bf7aa">nut::unit::Type::degre</a>, 
+<a class="el" href="../../da/dc9/namespacenut_1_1unit.html#a71c65554a8697cd990496eec57068896ac5bc23dc24c013b95c88cf3aa7ab4e17">nut::unit::Type::gram</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:a71c65554a8697cd990496eec57068896"><td class="mdescLeft">&#160;</td><td class="mdescRight">単位  <a href="../../da/dc9/namespacenut_1_1unit.html#a71c65554a8697cd990496eec57068896">[詳解]</a><br /></td></tr>
+<tr class="separator:a71c65554a8697cd990496eec57068896"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:abd4611dc5b95be188a9975375d566670"><td class="memTemplParams" colspan="2">template&lt;typename T1 , typename T2 , Type U, class P &gt; </td></tr>
+<tr class="memitem:abd4611dc5b95be188a9975375d566670"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/dc9/namespacenut_1_1unit.html#abd4611dc5b95be188a9975375d566670">nut::unit::operator&lt;</a> (const Unit&lt; T1, U, P &gt; &amp;l_operand, const T2 &amp;r_operand) -&gt; typename std::enable_if_t&lt; std::is_arithmetic_v&lt; T2 &gt;, bool &gt;</td></tr>
+<tr class="memdesc:abd4611dc5b95be188a9975375d566670"><td class="mdescLeft">&#160;</td><td class="mdescRight">数値型との比較  <a href="../../da/dc9/namespacenut_1_1unit.html#abd4611dc5b95be188a9975375d566670">[詳解]</a><br /></td></tr>
+<tr class="separator:abd4611dc5b95be188a9975375d566670"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca7766ba0932fb943e1417d30ee36f39"><td class="memTemplParams" colspan="2">template&lt;typename T1 , typename T2 , Type U, class P &gt; </td></tr>
+<tr class="memitem:aca7766ba0932fb943e1417d30ee36f39"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/dc9/namespacenut_1_1unit.html#aca7766ba0932fb943e1417d30ee36f39">nut::unit::operator&gt;</a> (const Unit&lt; T1, U, P &gt; &amp;l_operand, const T2 &amp;r_operand) -&gt; typename std::enable_if_t&lt; std::is_arithmetic_v&lt; T2 &gt;, bool &gt;</td></tr>
+<tr class="memdesc:aca7766ba0932fb943e1417d30ee36f39"><td class="mdescLeft">&#160;</td><td class="mdescRight">数値型との比較  <a href="../../da/dc9/namespacenut_1_1unit.html#aca7766ba0932fb943e1417d30ee36f39">[詳解]</a><br /></td></tr>
+<tr class="separator:aca7766ba0932fb943e1417d30ee36f39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1dee29ec19f1c979526cf458f460f32b"><td class="memTemplParams" colspan="2">template&lt;typename T1 , typename T2 , Type U, class P &gt; </td></tr>
+<tr class="memitem:a1dee29ec19f1c979526cf458f460f32b"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/dc9/namespacenut_1_1unit.html#a1dee29ec19f1c979526cf458f460f32b">nut::unit::operator&lt;=</a> (const Unit&lt; T1, U, P &gt; &amp;l_operand, const T2 &amp;r_operand) -&gt; typename std::enable_if_t&lt; std::is_arithmetic_v&lt; T2 &gt;, bool &gt;</td></tr>
+<tr class="memdesc:a1dee29ec19f1c979526cf458f460f32b"><td class="mdescLeft">&#160;</td><td class="mdescRight">数値型との比較  <a href="../../da/dc9/namespacenut_1_1unit.html#a1dee29ec19f1c979526cf458f460f32b">[詳解]</a><br /></td></tr>
+<tr class="separator:a1dee29ec19f1c979526cf458f460f32b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca75896858fce9c84afd9e0617a6fb63"><td class="memTemplParams" colspan="2">template&lt;typename T1 , typename T2 , Type U, class P &gt; </td></tr>
+<tr class="memitem:aca75896858fce9c84afd9e0617a6fb63"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/dc9/namespacenut_1_1unit.html#aca75896858fce9c84afd9e0617a6fb63">nut::unit::operator&gt;=</a> (const Unit&lt; T1, U, P &gt; &amp;l_operand, const T2 &amp;r_operand) -&gt; typename std::enable_if_t&lt; std::is_arithmetic_v&lt; T2 &gt;, bool &gt;</td></tr>
+<tr class="memdesc:aca75896858fce9c84afd9e0617a6fb63"><td class="mdescLeft">&#160;</td><td class="mdescRight">数値型との比較  <a href="../../da/dc9/namespacenut_1_1unit.html#aca75896858fce9c84afd9e0617a6fb63">[詳解]</a><br /></td></tr>
+<tr class="separator:aca75896858fce9c84afd9e0617a6fb63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ac3d1632500d947198e46a3fd64a136"><td class="memTemplParams" colspan="2">template&lt;typename T1 , typename T2 , Type U, class P &gt; </td></tr>
+<tr class="memitem:a9ac3d1632500d947198e46a3fd64a136"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/dc9/namespacenut_1_1unit.html#a9ac3d1632500d947198e46a3fd64a136">nut::unit::operator==</a> (const Unit&lt; T1, U, P &gt; &amp;l_operand, const T2 &amp;r_operand) -&gt; typename std::enable_if_t&lt; std::is_arithmetic_v&lt; T2 &gt;, bool &gt;</td></tr>
+<tr class="memdesc:a9ac3d1632500d947198e46a3fd64a136"><td class="mdescLeft">&#160;</td><td class="mdescRight">数値型との比較  <a href="../../da/dc9/namespacenut_1_1unit.html#a9ac3d1632500d947198e46a3fd64a136">[詳解]</a><br /></td></tr>
+<tr class="separator:a9ac3d1632500d947198e46a3fd64a136"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a187ad370316ea482426955895dd4c490"><td class="memTemplParams" colspan="2">template&lt;typename T1 , typename T2 , Type U, class P &gt; </td></tr>
+<tr class="memitem:a187ad370316ea482426955895dd4c490"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/dc9/namespacenut_1_1unit.html#a187ad370316ea482426955895dd4c490">nut::unit::operator!=</a> (const Unit&lt; T1, U, P &gt; &amp;l_operand, const T2 &amp;r_operand) -&gt; typename std::enable_if_t&lt; std::is_arithmetic_v&lt; T2 &gt;, bool &gt;</td></tr>
+<tr class="memdesc:a187ad370316ea482426955895dd4c490"><td class="mdescLeft">&#160;</td><td class="mdescRight">数値型との比較  <a href="../../da/dc9/namespacenut_1_1unit.html#a187ad370316ea482426955895dd4c490">[詳解]</a><br /></td></tr>
+<tr class="separator:a187ad370316ea482426955895dd4c490"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab385978c0de375f84533ae03430a94fb"><td class="memTemplParams" colspan="2">template&lt;typename T1 , typename T2 , Type U, class P &gt; </td></tr>
+<tr class="memitem:ab385978c0de375f84533ae03430a94fb"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/dc9/namespacenut_1_1unit.html#ab385978c0de375f84533ae03430a94fb">nut::unit::operator+</a> (const Unit&lt; T1, U, P &gt; &amp;l_operand, const T2 &amp;r_operand) -&gt; typename std::enable_if_t&lt; std::is_arithmetic_v&lt; T2 &gt;, Unit&lt; T1, U, P &gt;&gt;</td></tr>
+<tr class="memdesc:ab385978c0de375f84533ae03430a94fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">数値型との演算  <a href="../../da/dc9/namespacenut_1_1unit.html#ab385978c0de375f84533ae03430a94fb">[詳解]</a><br /></td></tr>
+<tr class="separator:ab385978c0de375f84533ae03430a94fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb44025e1bd540cc95e076797f2de520"><td class="memTemplParams" colspan="2">template&lt;typename T1 , typename T2 , Type U, class P &gt; </td></tr>
+<tr class="memitem:aeb44025e1bd540cc95e076797f2de520"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/dc9/namespacenut_1_1unit.html#aeb44025e1bd540cc95e076797f2de520">nut::unit::operator-</a> (const Unit&lt; T1, U, P &gt; &amp;l_operand, const T2 &amp;r_operand) -&gt; typename std::enable_if_t&lt; std::is_arithmetic_v&lt; T2 &gt;, Unit&lt; T1, U, P &gt;&gt;</td></tr>
+<tr class="memdesc:aeb44025e1bd540cc95e076797f2de520"><td class="mdescLeft">&#160;</td><td class="mdescRight">数値型との演算  <a href="../../da/dc9/namespacenut_1_1unit.html#aeb44025e1bd540cc95e076797f2de520">[詳解]</a><br /></td></tr>
+<tr class="separator:aeb44025e1bd540cc95e076797f2de520"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3097ef381b6889c3d08d35c2b4e9e698"><td class="memTemplParams" colspan="2">template&lt;typename T1 , typename T2 , Type U, class P &gt; </td></tr>
+<tr class="memitem:a3097ef381b6889c3d08d35c2b4e9e698"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/dc9/namespacenut_1_1unit.html#a3097ef381b6889c3d08d35c2b4e9e698">nut::unit::operator*</a> (const Unit&lt; T1, U, P &gt; &amp;l_operand, const T2 &amp;r_operand) -&gt; typename std::enable_if_t&lt; std::is_arithmetic_v&lt; T2 &gt;, Unit&lt; T1, U, P &gt;&gt;</td></tr>
+<tr class="memdesc:a3097ef381b6889c3d08d35c2b4e9e698"><td class="mdescLeft">&#160;</td><td class="mdescRight">数値型との演算  <a href="../../da/dc9/namespacenut_1_1unit.html#a3097ef381b6889c3d08d35c2b4e9e698">[詳解]</a><br /></td></tr>
+<tr class="separator:a3097ef381b6889c3d08d35c2b4e9e698"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83a150655e73c001530c1c6efef0a1c6"><td class="memTemplParams" colspan="2">template&lt;typename T1 , typename T2 , Type U, class P &gt; </td></tr>
+<tr class="memitem:a83a150655e73c001530c1c6efef0a1c6"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/dc9/namespacenut_1_1unit.html#a83a150655e73c001530c1c6efef0a1c6">nut::unit::operator/</a> (const Unit&lt; T1, U, P &gt; &amp;l_operand, const T2 &amp;r_operand) -&gt; typename std::enable_if_t&lt; std::is_arithmetic_v&lt; T2 &gt;, Unit&lt; T1, U, P &gt;&gt;</td></tr>
+<tr class="memdesc:a83a150655e73c001530c1c6efef0a1c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">数値型との演算  <a href="../../da/dc9/namespacenut_1_1unit.html#a83a150655e73c001530c1c6efef0a1c6">[詳解]</a><br /></td></tr>
+<tr class="separator:a83a150655e73c001530c1c6efef0a1c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa70f3e5628ca09973c4d6373eecb0113"><td class="memTemplParams" colspan="2">template&lt;typename T1 , typename T2 , Type U, class P &gt; </td></tr>
+<tr class="memitem:aa70f3e5628ca09973c4d6373eecb0113"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/dc9/namespacenut_1_1unit.html#aa70f3e5628ca09973c4d6373eecb0113">nut::unit::operator+</a> (const T1 &amp;l_operand, const Unit&lt; T2, U, P &gt; &amp;r_operand) -&gt; typename std::enable_if_t&lt; std::is_arithmetic_v&lt; T1 &gt;, Unit&lt; T2, U, P &gt;&gt;</td></tr>
+<tr class="memdesc:aa70f3e5628ca09973c4d6373eecb0113"><td class="mdescLeft">&#160;</td><td class="mdescRight">数値型との演算  <a href="../../da/dc9/namespacenut_1_1unit.html#aa70f3e5628ca09973c4d6373eecb0113">[詳解]</a><br /></td></tr>
+<tr class="separator:aa70f3e5628ca09973c4d6373eecb0113"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e83946cb4832cc80ff031dc6083b7ad"><td class="memTemplParams" colspan="2">template&lt;typename T1 , typename T2 , Type U, class P &gt; </td></tr>
+<tr class="memitem:a0e83946cb4832cc80ff031dc6083b7ad"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/dc9/namespacenut_1_1unit.html#a0e83946cb4832cc80ff031dc6083b7ad">nut::unit::operator-</a> (const T1 &amp;l_operand, const Unit&lt; T2, U, P &gt; &amp;r_operand) -&gt; typename std::enable_if_t&lt; std::is_arithmetic_v&lt; T1 &gt;, Unit&lt; T2, U, P &gt;&gt;</td></tr>
+<tr class="memdesc:a0e83946cb4832cc80ff031dc6083b7ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">数値型との演算  <a href="../../da/dc9/namespacenut_1_1unit.html#a0e83946cb4832cc80ff031dc6083b7ad">[詳解]</a><br /></td></tr>
+<tr class="separator:a0e83946cb4832cc80ff031dc6083b7ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab83fd6f2d86280904ec5ffaf7f04d5e0"><td class="memTemplParams" colspan="2">template&lt;typename T1 , typename T2 , Type U, class P &gt; </td></tr>
+<tr class="memitem:ab83fd6f2d86280904ec5ffaf7f04d5e0"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/dc9/namespacenut_1_1unit.html#ab83fd6f2d86280904ec5ffaf7f04d5e0">nut::unit::operator*</a> (const T1 &amp;l_operand, const Unit&lt; T2, U, P &gt; &amp;r_operand) -&gt; typename std::enable_if_t&lt; std::is_arithmetic_v&lt; T1 &gt;, Unit&lt; T2, U, P &gt;&gt;</td></tr>
+<tr class="memdesc:ab83fd6f2d86280904ec5ffaf7f04d5e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">数値型との演算  <a href="../../da/dc9/namespacenut_1_1unit.html#ab83fd6f2d86280904ec5ffaf7f04d5e0">[詳解]</a><br /></td></tr>
+<tr class="separator:ab83fd6f2d86280904ec5ffaf7f04d5e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a828d5c67fce24cc91d0b8c67f465bdfa"><td class="memTemplParams" colspan="2">template&lt;typename T1 , typename T2 , Type U, class P &gt; </td></tr>
+<tr class="memitem:a828d5c67fce24cc91d0b8c67f465bdfa"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/dc9/namespacenut_1_1unit.html#a828d5c67fce24cc91d0b8c67f465bdfa">nut::unit::operator/</a> (const T1 &amp;l_operand, const Unit&lt; T2, U, P &gt; &amp;r_operand) -&gt; typename std::enable_if_t&lt; std::is_arithmetic_v&lt; T1 &gt;, Unit&lt; T2, U, P &gt;&gt;</td></tr>
+<tr class="memdesc:a828d5c67fce24cc91d0b8c67f465bdfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">数値型との演算  <a href="../../da/dc9/namespacenut_1_1unit.html#a828d5c67fce24cc91d0b8c67f465bdfa">[詳解]</a><br /></td></tr>
+<tr class="separator:a828d5c67fce24cc91d0b8c67f465bdfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12f016ccf5e7fccfcc3f5a99e0f8b44b"><td class="memTemplParams" colspan="2">template&lt;typename T1 , typename T2 , Type U, class P1 , class P2 &gt; </td></tr>
+<tr class="memitem:a12f016ccf5e7fccfcc3f5a99e0f8b44b"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/dc9/namespacenut_1_1unit.html#a12f016ccf5e7fccfcc3f5a99e0f8b44b">nut::unit::operator&lt;</a> (const Unit&lt; T1, U, P1 &gt; &amp;l_operand, const Unit&lt; T2, U, P2 &gt; &amp;r_operand)</td></tr>
+<tr class="memdesc:a12f016ccf5e7fccfcc3f5a99e0f8b44b"><td class="mdescLeft">&#160;</td><td class="mdescRight">同一単位系の比較  <a href="../../da/dc9/namespacenut_1_1unit.html#a12f016ccf5e7fccfcc3f5a99e0f8b44b">[詳解]</a><br /></td></tr>
+<tr class="separator:a12f016ccf5e7fccfcc3f5a99e0f8b44b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8510763665880032831aae336e56006"><td class="memTemplParams" colspan="2">template&lt;typename T1 , typename T2 , Type U, class P1 , class P2 &gt; </td></tr>
+<tr class="memitem:ac8510763665880032831aae336e56006"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/dc9/namespacenut_1_1unit.html#ac8510763665880032831aae336e56006">nut::unit::operator&gt;</a> (const Unit&lt; T1, U, P1 &gt; &amp;l_operand, const Unit&lt; T2, U, P2 &gt; &amp;r_operand)</td></tr>
+<tr class="memdesc:ac8510763665880032831aae336e56006"><td class="mdescLeft">&#160;</td><td class="mdescRight">同一単位系の比較  <a href="../../da/dc9/namespacenut_1_1unit.html#ac8510763665880032831aae336e56006">[詳解]</a><br /></td></tr>
+<tr class="separator:ac8510763665880032831aae336e56006"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23174e443b0f01d0f49cae57a0acdc53"><td class="memTemplParams" colspan="2">template&lt;typename T1 , typename T2 , Type U, class P1 , class P2 &gt; </td></tr>
+<tr class="memitem:a23174e443b0f01d0f49cae57a0acdc53"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/dc9/namespacenut_1_1unit.html#a23174e443b0f01d0f49cae57a0acdc53">nut::unit::operator&lt;=</a> (const Unit&lt; T1, U, P1 &gt; &amp;l_operand, const Unit&lt; T2, U, P2 &gt; &amp;r_operand)</td></tr>
+<tr class="memdesc:a23174e443b0f01d0f49cae57a0acdc53"><td class="mdescLeft">&#160;</td><td class="mdescRight">同一単位系の比較  <a href="../../da/dc9/namespacenut_1_1unit.html#a23174e443b0f01d0f49cae57a0acdc53">[詳解]</a><br /></td></tr>
+<tr class="separator:a23174e443b0f01d0f49cae57a0acdc53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a260f1698b17e4275857203ee2dff73ad"><td class="memTemplParams" colspan="2">template&lt;typename T1 , typename T2 , Type U, class P1 , class P2 &gt; </td></tr>
+<tr class="memitem:a260f1698b17e4275857203ee2dff73ad"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/dc9/namespacenut_1_1unit.html#a260f1698b17e4275857203ee2dff73ad">nut::unit::operator&gt;=</a> (const Unit&lt; T1, U, P1 &gt; &amp;l_operand, const Unit&lt; T2, U, P2 &gt; &amp;r_operand)</td></tr>
+<tr class="memdesc:a260f1698b17e4275857203ee2dff73ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">同一単位系の比較  <a href="../../da/dc9/namespacenut_1_1unit.html#a260f1698b17e4275857203ee2dff73ad">[詳解]</a><br /></td></tr>
+<tr class="separator:a260f1698b17e4275857203ee2dff73ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1269e88d3443b55edb5d482d0303d4b"><td class="memTemplParams" colspan="2">template&lt;typename T1 , typename T2 , Type U, class P1 , class P2 &gt; </td></tr>
+<tr class="memitem:ab1269e88d3443b55edb5d482d0303d4b"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/dc9/namespacenut_1_1unit.html#ab1269e88d3443b55edb5d482d0303d4b">nut::unit::operator==</a> (const Unit&lt; T1, U, P1 &gt; &amp;l_operand, const Unit&lt; T2, U, P2 &gt; &amp;r_operand)</td></tr>
+<tr class="memdesc:ab1269e88d3443b55edb5d482d0303d4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">同一単位系の比較  <a href="../../da/dc9/namespacenut_1_1unit.html#ab1269e88d3443b55edb5d482d0303d4b">[詳解]</a><br /></td></tr>
+<tr class="separator:ab1269e88d3443b55edb5d482d0303d4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3eb23bfa058aecc9c1f9bf9112ebef9c"><td class="memTemplParams" colspan="2">template&lt;typename T1 , typename T2 , Type U, class P1 , class P2 &gt; </td></tr>
+<tr class="memitem:a3eb23bfa058aecc9c1f9bf9112ebef9c"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/dc9/namespacenut_1_1unit.html#a3eb23bfa058aecc9c1f9bf9112ebef9c">nut::unit::operator!=</a> (const Unit&lt; T1, U, P1 &gt; &amp;l_operand, const Unit&lt; T2, U, P2 &gt; &amp;r_operand)</td></tr>
+<tr class="memdesc:a3eb23bfa058aecc9c1f9bf9112ebef9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">同一単位系の比較  <a href="../../da/dc9/namespacenut_1_1unit.html#a3eb23bfa058aecc9c1f9bf9112ebef9c">[詳解]</a><br /></td></tr>
+<tr class="separator:a3eb23bfa058aecc9c1f9bf9112ebef9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c8e61ab922c704b930559732f99ff2c"><td class="memTemplParams" colspan="2">template&lt;typename T1 , typename T2 , Type U, class P &gt; </td></tr>
+<tr class="memitem:a9c8e61ab922c704b930559732f99ff2c"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/dc9/namespacenut_1_1unit.html#a9c8e61ab922c704b930559732f99ff2c">nut::unit::operator+</a> (const Unit&lt; T1, U, P &gt; &amp;l_operand, const Unit&lt; T2, U, P &gt; &amp;r_operand) -&gt; Unit&lt; decltype(T1(0)+T2(0)), U, P &gt;</td></tr>
+<tr class="memdesc:a9c8e61ab922c704b930559732f99ff2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">同一単位系の演算  <a href="../../da/dc9/namespacenut_1_1unit.html#a9c8e61ab922c704b930559732f99ff2c">[詳解]</a><br /></td></tr>
+<tr class="separator:a9c8e61ab922c704b930559732f99ff2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a347ac6c826ac7c5ef1116826cab05881"><td class="memTemplParams" colspan="2">template&lt;typename T1 , typename T2 , Type U, class P &gt; </td></tr>
+<tr class="memitem:a347ac6c826ac7c5ef1116826cab05881"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/dc9/namespacenut_1_1unit.html#a347ac6c826ac7c5ef1116826cab05881">nut::unit::operator-</a> (const Unit&lt; T1, U, P &gt; &amp;l_operand, const Unit&lt; T2, U, P &gt; &amp;r_operand) -&gt; Unit&lt; decltype(T1(0)+T2(0)), U, P &gt;</td></tr>
+<tr class="memdesc:a347ac6c826ac7c5ef1116826cab05881"><td class="mdescLeft">&#160;</td><td class="mdescRight">同一単位系の演算  <a href="../../da/dc9/namespacenut_1_1unit.html#a347ac6c826ac7c5ef1116826cab05881">[詳解]</a><br /></td></tr>
+<tr class="separator:a347ac6c826ac7c5ef1116826cab05881"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
-<div class="textblock"><p>単位系 </p>
+<div class="textblock"><p>単位系接頭辞 </p>
+<p>単位系</p>
+<p>conceptが使えない&amp;ratioだとサイズが大きすぎることの回避<br  />
+ c++20ならおとなしくconceptを使おう！ </p><dl class="section author"><dt>著者</dt><dd>Horie </dd></dl>
+<dl class="section date"><dt>日付</dt><dd>2020/9</dd></dl>
 <dl class="section author"><dt>著者</dt><dd>Horie </dd></dl>
 <dl class="section date"><dt>日付</dt><dd>2020/9 </dd></dl>
 <dl class="section attention"><dt>注意</dt><dd>まだ作成中 </dd></dl>
@@ -113,7 +246,7 @@ $(document).ready(function(){initNavTree('d2/d6d/_unit_8hpp.html','../../'); ini
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_8b1cfa3accea10fc5ecd39c63013c190.html">NutLib</a></li><li class="navelem"><a class="el" href="../../d2/d6d/_unit_8hpp.html">Unit.hpp</a></li>
+    <li class="navelem"><a class="el" href="../../dir_8b1cfa3accea10fc5ecd39c63013c190.html">NutLib</a></li><li class="navelem"><a class="el" href="../../dir_7379a48f3a2436e538b5d7fc9965eaba.html">Unit</a></li><li class="navelem"><a class="el" href="../../d2/d6d/_unit_8hpp.html">Unit.hpp</a></li>
     <li class="footer">構築: <a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
   </ul>
 </div>

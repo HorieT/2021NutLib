@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['x_203',['x',['../d4/d08/classnut_1_1_coordinate.html#a43576eccd7c2ed11c252f9f95cd63611',1,'nut::Coordinate::x() const &amp;'],['../d4/d08/classnut_1_1_coordinate.html#a425b1f368d20d00bf57672fbc161a87c',1,'nut::Coordinate::x() &amp;'],['../d4/d08/classnut_1_1_coordinate.html#a8f0618f0e83433926123513fbce5210d',1,'nut::Coordinate::x() const &amp;&amp;']]]
+  ['write_229',['Write',['../d8/d41/namespacenut_1_1flash.html#a03166e359f41822b50c338d9f6cb8d04',1,'nut::flash::Write(uint32_t sector, uint32_t address, void *data, uint32_t size)'],['../d8/d41/namespacenut_1_1flash.html#abddd5e514a84d82676beb41480a67483',1,'nut::flash::Write(uint32_t sector, uint32_t address, std::array&lt; uint8_t, N &gt; data)'],['../d8/d41/namespacenut_1_1flash.html#a1a04681cde3924d3925c8dc486d8a6be',1,'nut::flash::Write(uint32_t sector, uint32_t address, T *data)']]]
 ];

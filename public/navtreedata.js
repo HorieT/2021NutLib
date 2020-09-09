@@ -38,7 +38,9 @@ var NAVTREE =
       [ "名前空間一覧", "namespaces.html", "namespaces_dup" ],
       [ "名前空間メンバ", "namespacemembers.html", [
         [ "全て", "namespacemembers.html", null ],
-        [ "関数", "namespacemembers_func.html", null ]
+        [ "関数", "namespacemembers_func.html", null ],
+        [ "型定義", "namespacemembers_type.html", null ],
+        [ "列挙型", "namespacemembers_enum.html", null ]
       ] ]
     ] ],
     [ "クラス", "annotated.html", [
@@ -67,7 +69,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"dc/d33/classnut_1_1_r13x0.html#ae44f30192ed37ef39bfa74bf027c1132"
+"d9/dc6/classnut_1_1_chassis.html#ad45e2bb2321ce5c968aeb0ebdf70fe38"
 ];
 
 var SYNCONMSG = 'クリックで同期表示が無効になります';

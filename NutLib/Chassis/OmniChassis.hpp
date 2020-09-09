@@ -60,7 +60,7 @@ protected:
 		{
 			uint8_t i = 0;
 			for(auto& w : _wheel){
-				w->set_mps(input[i]);
+				w->SetMps(input[i]);
 				++i;
 			}
 		}

@@ -23,8 +23,12 @@ var hierarchy =
     [ "nut::Odmetry", "d6/dcf/classnut_1_1_odmetry.html", null ],
     [ "nut::PID< T >", "d5/d5c/classnut_1_1_p_i_d.html", null ],
     [ "nut::PID< float >", "d5/d5c/classnut_1_1_p_i_d.html", null ],
+    [ "nut::unit::PrefixBase", "d1/dcc/classnut_1_1unit_1_1_prefix_base.html", [
+      [ "nut::unit::Prefix< N, D >", "d2/d58/classnut_1_1unit_1_1_prefix.html", null ]
+    ] ],
     [ "nut::TimeSchedulerBase", "d9/d00/classnut_1_1_time_scheduler_base.html", [
       [ "nut::TimeScheduler< Args >", "d0/dff/classnut_1_1_time_scheduler.html", null ],
       [ "nut::TimeScheduler< void >", "db/de6/classnut_1_1_time_scheduler_3_01void_01_4.html", null ]
-    ] ]
+    ] ],
+    [ "nut::unit::Unit< T, U, P >", "db/dcb/classnut_1_1unit_1_1_unit.html", null ]
 ];

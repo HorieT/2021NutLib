@@ -7,12 +7,11 @@
 #pragma once
 
 #include "Global.hpp"
-#include <type_traits>
 
 namespace nut{
 /**
  * @brief PID制御器クラス
- * @tparam T ゲイン及び入出力値の方
+ * @tparam T ゲイン及び入出力値の型
  * @attention Tが数値型でなければアサートを吐きます
  */
 template<typename T>
@@ -23,13 +22,11 @@ private:
 	std::array<T, 3> _deviation = {0.0f, 0.0f, 0.0f};//!< 偏差
 
 protected:
-	/*ゲイン*/
 	T _P_gain;//!< Pゲイン
 	T _I_gain;//!< Iゲイン
 	T _D_gain;//!< Dゲイン
 
 	T _limit;//!< 操作量上限値(絶対値)
-
 
 public:
 	/**

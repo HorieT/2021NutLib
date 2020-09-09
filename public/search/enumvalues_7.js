@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['zeroreturn_468',['ZeroReturn',['../df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2a306035611947a2057431fd228a41ddfe',1,'nut::ReiwaMD']]]
+  ['velocity_525',['velocity',['../d9/dc6/classnut_1_1_chassis.html#a1fbcb0cadc3136c9fbc8ee619d1a0f98aac1a453d0cdc1f19d9479ccfaa8b082c',1,'nut::Chassis']]],
+  ['voltageref_526',['VoltageRef',['../df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2a8315e08506974321c602dfce4a1f4867',1,'nut::ReiwaMD']]]
 ];

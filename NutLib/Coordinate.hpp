@@ -8,7 +8,7 @@
  */
 #pragma once
 
-#include <NutLib/Global.hpp>
+#include "Global.hpp"
 #include <array>
 
 namespace nut{
@@ -25,7 +25,6 @@ private:
 	T _y;
 	T _theta;
 public:
-	/*ゲッター*/
 	constexpr const T& x() const&{return _x;}
 	constexpr const T& y() const&{return _y;}
 	constexpr const T& theta() const&{return _theta;}
@@ -97,7 +96,7 @@ public:
 		return atan2f(_y, _x);
 	}
 
-	/*算術代入演算子のオーバーロード*/
+	/*Compound Assignmentのオーバーロード*/
 	constexpr Coordinate<T>& operator+=(const Coordinate<T>& r_operand){
 		_x += r_operand.x();
 		_y += r_operand.y();
@@ -138,12 +137,12 @@ public:
 	}
 
 
-	/*キャストのオーバーロード*/
+	/*Castのオーバーロード*/
 	explicit operator std::array<T, 3> ()const noexcept{return std::array<T, 3>(_x, _y, _theta);}
 	explicit operator std::initializer_list<T> ()const noexcept{return std::initializer_list<T>(_x, _y, _theta);}
 
 
-	/*配列要素演算子のオーバーロード*/
+	/*Array Subscriptのオーバーロード*/
 	constexpr const T& operator[](size_t index) const& {return *((&_x) + index);}
 	constexpr T& operator[](size_t index) & {return *((&_x) + index);}
 	constexpr T operator[](size_t index) const&& {return *((&_x) + index);}
@@ -161,7 +160,7 @@ template<>
 constexpr auto Coordinate<double>::Angle() const ->decltype(_x + 0.0f) {return atan2(_y, _x);}
 
 
-/*算術演算子のオーバーロード*/
+/*Arithmeticのオーバーロード*/
 template<typename T>
 constexpr nut::Coordinate<T> operator+(const nut::Coordinate<T>& l_operand, const nut::Coordinate<T>& r_operand){
 	return nut::Coordinate<T>(l_operand) += r_operand;
