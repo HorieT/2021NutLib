@@ -1,6 +1,6 @@
 # 2021NutLib
 
-2021学ロボ用 STM32ライブラリ
+2021学ロボ用 STM32ライブラリ (更新)
 
 # 概要
 
@@ -31,7 +31,7 @@ Eigenについても同様です。
 使用にあたって`nut::TimeSchedulerBase::TimeCheck()`は必ず呼び出してください。
 また各通信による受信処理を行うもの(コントローラやセンサ等)は各受信メンバ関数をユーザーが割り込み関数内に記述してください。
 
-コードの詳しいことは[2021NutLib_UseSample](https://gitlab.com/robopro_nut/2021nhkrobocon/2021nutlib_usesample)を参照するか、[リファレンス](https://robopro_nut.gitlab.io/2021nhkrobocon/2021nutlib/index.html)を確認してください。
+コードの詳しいことは[2021NutLib_UseSample](https://gitlab.com/robopro_nut/2021nhkrobocon/2021nutlib_usesample)を参照するか、[リファレンス](https://robopro_nut.gitlab.io/2021nhkrobocon/2021nutlib/index.html)を確認してください。(ローカルではpublic/index.html)
 
 
 ### 注意

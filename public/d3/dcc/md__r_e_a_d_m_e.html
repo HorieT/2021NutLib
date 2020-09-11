@@ -95,7 +95,7 @@ $(document).ready(function(){initNavTree('d3/dcc/md__r_e_a_d_m_e.html','../../')
 <div class="title">2021NutLib </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>2021学ロボ用 STM32ライブラリ</p>
+<div class="textblock"><p>2021学ロボ用 STM32ライブラリ (更新)</p>
 <h1><a class="anchor" id="autotoc_md1"></a>
 概要</h1>
 <p>2021学ロボ用に開発しているSTM32マイコン対象のヘッダオンリーライブラリです。 gcc version 7.2.1(GNU Tools for Arm Embedded Processors 7-2017-q4-major)を使用して開発しています。 c++17ビルド環境であれば使えます(多分)。 その他<a href="https://nagaokaroboconproject.esa.io/posts/61">esa参照</a></p>
@@ -113,7 +113,7 @@ $(document).ready(function(){initNavTree('d3/dcc/md__r_e_a_d_m_e.html','../../')
 コーディング</h2>
 <p>各インスタンスの生成はユーザーが行ってください。</p>
 <p>使用にあたって<code><a class="el" href="../../d9/d00/classnut_1_1_time_scheduler_base.html#a26ef0b67f545d580e7aece9bab88160a" title="スケジューラ時刻チェック  HAL_SYSTICK_Callback()内で呼び出してください">nut::TimeSchedulerBase::TimeCheck()</a></code>は必ず呼び出してください。 また各通信による受信処理を行うもの(コントローラやセンサ等)は各受信メンバ関数をユーザーが割り込み関数内に記述してください。</p>
-<p>コードの詳しいことは<a href="https://gitlab.com/robopro_nut/2021nhkrobocon/2021nutlib_usesample">2021NutLib_UseSample</a>を参照するか、<a href="https://robopro_nut.gitlab.io/2021nhkrobocon/2021nutlib/index.html">リファレンス</a>を確認してください。</p>
+<p>コードの詳しいことは<a href="https://gitlab.com/robopro_nut/2021nhkrobocon/2021nutlib_usesample">2021NutLib_UseSample</a>を参照するか、<a href="https://robopro_nut.gitlab.io/2021nhkrobocon/2021nutlib/index.html">リファレンス</a>を確認してください。(ローカルではpublic/index.html)</p>
 <h3><a class="anchor" id="autotoc_md5"></a>
 注意</h3>
 <p>gcc version 7以前のコンパイラを使用する場合,c++17ビルドオプション(-std=c++17 または -std=c++1z)を追加してください。コンパイルが通りません。</p>
