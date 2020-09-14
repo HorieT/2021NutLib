@@ -1,6 +1,6 @@
 var hierarchy =
 [
-    [ "nut::CAN", "d7/d7d/classnut_1_1_c_a_n.html", null ],
+    [ "nut::CANWrapper", "dc/d4f/classnut_1_1_c_a_n_wrapper.html", null ],
     [ "nut::Chassis", "d9/dc6/classnut_1_1_chassis.html", [
       [ "nut::OmniChassis< N >", "df/dd5/classnut_1_1_omni_chassis.html", null ]
     ] ],

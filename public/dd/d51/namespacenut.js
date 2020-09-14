@@ -1,7 +1,7 @@
 var namespacenut =
 [
     [ "unit", "da/dc9/namespacenut_1_1unit.html", "da/dc9/namespacenut_1_1unit" ],
-    [ "CAN", "d7/d7d/classnut_1_1_c_a_n.html", "d7/d7d/classnut_1_1_c_a_n" ],
+    [ "CANWrapper", "dc/d4f/classnut_1_1_c_a_n_wrapper.html", "dc/d4f/classnut_1_1_c_a_n_wrapper" ],
     [ "Chassis", "d9/dc6/classnut_1_1_chassis.html", "d9/dc6/classnut_1_1_chassis" ],
     [ "Coordinate", "d4/d08/classnut_1_1_coordinate.html", "d4/d08/classnut_1_1_coordinate" ],
     [ "DirectDutyMotor", "db/d01/classnut_1_1_direct_duty_motor.html", "db/d01/classnut_1_1_direct_duty_motor" ],

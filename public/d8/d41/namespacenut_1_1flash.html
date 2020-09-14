@@ -114,34 +114,78 @@ $(document).ready(function(){initNavTree('d8/d41/namespacenut_1_1flash.html','..
 <tr class="memitem:a3550d3d586e8100d5fd702c1460654f7"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d8/d41/namespacenut_1_1flash.html#a3550d3d586e8100d5fd702c1460654f7">Read</a> (uint32_t address, T *data)</td></tr>
 <tr class="memdesc:a3550d3d586e8100d5fd702c1460654f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">フラッシュ読み取り  <a href="../../d8/d41/namespacenut_1_1flash.html#a3550d3d586e8100d5fd702c1460654f7">[詳解]</a><br /></td></tr>
 <tr class="separator:a3550d3d586e8100d5fd702c1460654f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a489249dad1d6377681201b4a68e21b22"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d41/namespacenut_1_1flash.html#a489249dad1d6377681201b4a68e21b22">Erase</a> (uint32_t sector)</td></tr>
-<tr class="memdesc:a489249dad1d6377681201b4a68e21b22"><td class="mdescLeft">&#160;</td><td class="mdescRight">1セクタのフラッシュ消去  <a href="../../d8/d41/namespacenut_1_1flash.html#a489249dad1d6377681201b4a68e21b22">[詳解]</a><br /></td></tr>
-<tr class="separator:a489249dad1d6377681201b4a68e21b22"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a03166e359f41822b50c338d9f6cb8d04"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d41/namespacenut_1_1flash.html#a03166e359f41822b50c338d9f6cb8d04">Write</a> (uint32_t sector, uint32_t address, void *data, uint32_t size)</td></tr>
-<tr class="memdesc:a03166e359f41822b50c338d9f6cb8d04"><td class="mdescLeft">&#160;</td><td class="mdescRight">フラッシュ書き込み  <a href="../../d8/d41/namespacenut_1_1flash.html#a03166e359f41822b50c338d9f6cb8d04">[詳解]</a><br /></td></tr>
-<tr class="separator:a03166e359f41822b50c338d9f6cb8d04"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abddd5e514a84d82676beb41480a67483"><td class="memTemplParams" colspan="2">template&lt;uint32_t N&gt; </td></tr>
-<tr class="memitem:abddd5e514a84d82676beb41480a67483"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d8/d41/namespacenut_1_1flash.html#abddd5e514a84d82676beb41480a67483">Write</a> (uint32_t sector, uint32_t address, std::array&lt; uint8_t, N &gt; data)</td></tr>
-<tr class="memdesc:abddd5e514a84d82676beb41480a67483"><td class="mdescLeft">&#160;</td><td class="mdescRight">フラッシュ書き込み  <a href="../../d8/d41/namespacenut_1_1flash.html#abddd5e514a84d82676beb41480a67483">[詳解]</a><br /></td></tr>
-<tr class="separator:abddd5e514a84d82676beb41480a67483"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a04681cde3924d3925c8dc486d8a6be"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a1a04681cde3924d3925c8dc486d8a6be"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d8/d41/namespacenut_1_1flash.html#a1a04681cde3924d3925c8dc486d8a6be">Write</a> (uint32_t sector, uint32_t address, T *data)</td></tr>
-<tr class="memdesc:a1a04681cde3924d3925c8dc486d8a6be"><td class="mdescLeft">&#160;</td><td class="mdescRight">フラッシュ書き込み  <a href="../../d8/d41/namespacenut_1_1flash.html#a1a04681cde3924d3925c8dc486d8a6be">[詳解]</a><br /></td></tr>
-<tr class="separator:a1a04681cde3924d3925c8dc486d8a6be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af81fa35fc73897653b4d95a480b88f37"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d41/namespacenut_1_1flash.html#af81fa35fc73897653b4d95a480b88f37">EraseSector</a> (uint32_t sector)</td></tr>
+<tr class="memdesc:af81fa35fc73897653b4d95a480b88f37"><td class="mdescLeft">&#160;</td><td class="mdescRight">1セクタのフラッシュ消去  <a href="../../d8/d41/namespacenut_1_1flash.html#af81fa35fc73897653b4d95a480b88f37">[詳解]</a><br /></td></tr>
+<tr class="separator:af81fa35fc73897653b4d95a480b88f37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2612b28e31acde27af51f4a54fed5638"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d41/namespacenut_1_1flash.html#a2612b28e31acde27af51f4a54fed5638">ErasePage</a> (uint32_t address)</td></tr>
+<tr class="memdesc:a2612b28e31acde27af51f4a54fed5638"><td class="mdescLeft">&#160;</td><td class="mdescRight">1ページのフラッシュ消去  <a href="../../d8/d41/namespacenut_1_1flash.html#a2612b28e31acde27af51f4a54fed5638">[詳解]</a><br /></td></tr>
+<tr class="separator:a2612b28e31acde27af51f4a54fed5638"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa392b7de3d8a47b5ee110ab6f56f89a0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d41/namespacenut_1_1flash.html#aa392b7de3d8a47b5ee110ab6f56f89a0">WriteSector</a> (uint32_t sector, uint32_t address, void *data, uint32_t size)</td></tr>
+<tr class="memdesc:aa392b7de3d8a47b5ee110ab6f56f89a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">フラッシュセクタ書き込み  <a href="../../d8/d41/namespacenut_1_1flash.html#aa392b7de3d8a47b5ee110ab6f56f89a0">[詳解]</a><br /></td></tr>
+<tr class="separator:aa392b7de3d8a47b5ee110ab6f56f89a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad465a61c971220d734f864d41068fd2"><td class="memTemplParams" colspan="2">template&lt;uint32_t N&gt; </td></tr>
+<tr class="memitem:aad465a61c971220d734f864d41068fd2"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d8/d41/namespacenut_1_1flash.html#aad465a61c971220d734f864d41068fd2">WriteSector</a> (uint32_t sector, uint32_t address, std::array&lt; uint8_t, N &gt; data)</td></tr>
+<tr class="memdesc:aad465a61c971220d734f864d41068fd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">フラッシュセクタ書き込み  <a href="../../d8/d41/namespacenut_1_1flash.html#aad465a61c971220d734f864d41068fd2">[詳解]</a><br /></td></tr>
+<tr class="separator:aad465a61c971220d734f864d41068fd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b604ef0e18d71eb0e3e38c433fe40e1"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a2b604ef0e18d71eb0e3e38c433fe40e1"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d8/d41/namespacenut_1_1flash.html#a2b604ef0e18d71eb0e3e38c433fe40e1">WriteSector</a> (uint32_t sector, uint32_t address, T *data)</td></tr>
+<tr class="memdesc:a2b604ef0e18d71eb0e3e38c433fe40e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">フラッシュセクタ書き込み  <a href="../../d8/d41/namespacenut_1_1flash.html#a2b604ef0e18d71eb0e3e38c433fe40e1">[詳解]</a><br /></td></tr>
+<tr class="separator:a2b604ef0e18d71eb0e3e38c433fe40e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a146f53b8f8f1bdd6088724634101487c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d41/namespacenut_1_1flash.html#a146f53b8f8f1bdd6088724634101487c">WritePage</a> (uint32_t address, void *data, uint32_t size)</td></tr>
+<tr class="memdesc:a146f53b8f8f1bdd6088724634101487c"><td class="mdescLeft">&#160;</td><td class="mdescRight">フラッシュページ書き込み  <a href="../../d8/d41/namespacenut_1_1flash.html#a146f53b8f8f1bdd6088724634101487c">[詳解]</a><br /></td></tr>
+<tr class="separator:a146f53b8f8f1bdd6088724634101487c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32c0c9eca6282db60957384a540251dc"><td class="memTemplParams" colspan="2">template&lt;uint32_t N&gt; </td></tr>
+<tr class="memitem:a32c0c9eca6282db60957384a540251dc"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d8/d41/namespacenut_1_1flash.html#a32c0c9eca6282db60957384a540251dc">WritePage</a> (uint32_t address, std::array&lt; uint8_t, N &gt; data)</td></tr>
+<tr class="memdesc:a32c0c9eca6282db60957384a540251dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">フラッシュページ書き込み  <a href="../../d8/d41/namespacenut_1_1flash.html#a32c0c9eca6282db60957384a540251dc">[詳解]</a><br /></td></tr>
+<tr class="separator:a32c0c9eca6282db60957384a540251dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc1d8fdc58cf334ec01c0da6a7cb9e91"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:adc1d8fdc58cf334ec01c0da6a7cb9e91"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d8/d41/namespacenut_1_1flash.html#adc1d8fdc58cf334ec01c0da6a7cb9e91">WritePage</a> (uint32_t address, T *data)</td></tr>
+<tr class="memdesc:adc1d8fdc58cf334ec01c0da6a7cb9e91"><td class="mdescLeft">&#160;</td><td class="mdescRight">フラッシュページ書き込み  <a href="../../d8/d41/namespacenut_1_1flash.html#adc1d8fdc58cf334ec01c0da6a7cb9e91">[詳解]</a><br /></td></tr>
+<tr class="separator:adc1d8fdc58cf334ec01c0da6a7cb9e91"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock"><p>Flash操作関数群 </p>
 <dl class="section attention"><dt>注意</dt><dd>フラッシュメモリ領域サイズ、及びフラッシュ操作時間に注意！<br  />
- マイコン電源電圧を2.7~3.6Vにしてください </dd></dl>
+ マイコン電源電圧を2.7~3.6Vにしてください<br  />
+ STM32マイコンのフラッシュ書き換え最低保証回数は1万回です。 </dd></dl>
 </div><h2 class="groupheader">関数詳解</h2>
-<a id="a489249dad1d6377681201b4a68e21b22"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a489249dad1d6377681201b4a68e21b22">&#9670;&nbsp;</a></span>Erase()</h2>
+<a id="a2612b28e31acde27af51f4a54fed5638"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2612b28e31acde27af51f4a54fed5638">&#9670;&nbsp;</a></span>ErasePage()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void nut::flash::Erase </td>
+          <td class="memname">bool nut::flash::ErasePage </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>address</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>1ページのフラッシュ消去 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">address</td><td>消去ページアドレス </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>消去成功か </dd></dl>
+
+<p class="definition"> <a class="el" href="../../d7/d2b/_flash_8hpp_source.html">Flash.hpp</a> の <a class="el" href="../../d7/d2b/_flash_8hpp_source.html#l00079">79</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="af81fa35fc73897653b4d95a480b88f37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af81fa35fc73897653b4d95a480b88f37">&#9670;&nbsp;</a></span>EraseSector()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool nut::flash::EraseSector </td>
           <td>(</td>
           <td class="paramtype">uint32_t&#160;</td>
           <td class="paramname"><em>sector</em></td><td>)</td>
@@ -157,8 +201,9 @@ $(document).ready(function(){initNavTree('d8/d41/namespacenut_1_1flash.html','..
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>戻り値</dt><dd>消去成功か </dd></dl>
 
-<p class="definition"> <a class="el" href="../../d7/d2b/_flash_8hpp_source.html">Flash.hpp</a> の <a class="el" href="../../d7/d2b/_flash_8hpp_source.html#l00056">56</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d7/d2b/_flash_8hpp_source.html">Flash.hpp</a> の <a class="el" href="../../d7/d2b/_flash_8hpp_source.html#l00058">58</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -213,7 +258,7 @@ template&lt;uint32_t N&gt; </div>
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="../../d7/d2b/_flash_8hpp_source.html">Flash.hpp</a> の <a class="el" href="../../d7/d2b/_flash_8hpp_source.html#l00037">37</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d7/d2b/_flash_8hpp_source.html">Flash.hpp</a> の <a class="el" href="../../d7/d2b/_flash_8hpp_source.html#l00038">38</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -268,7 +313,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="../../d7/d2b/_flash_8hpp_source.html">Flash.hpp</a> の <a class="el" href="../../d7/d2b/_flash_8hpp_source.html#l00047">47</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d7/d2b/_flash_8hpp_source.html">Flash.hpp</a> の <a class="el" href="../../d7/d2b/_flash_8hpp_source.html#l00048">48</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -322,12 +367,12 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="../../d7/d2b/_flash_8hpp_source.html">Flash.hpp</a> の <a class="el" href="../../d7/d2b/_flash_8hpp_source.html#l00027">27</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d7/d2b/_flash_8hpp_source.html">Flash.hpp</a> の <a class="el" href="../../d7/d2b/_flash_8hpp_source.html#l00028">28</a> 行目に定義があります。</p>
 
 </div>
 </div>
-<a id="abddd5e514a84d82676beb41480a67483"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abddd5e514a84d82676beb41480a67483">&#9670;&nbsp;</a></span>Write() <span class="overload">[1/3]</span></h2>
+<a id="a32c0c9eca6282db60957384a540251dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32c0c9eca6282db60957384a540251dc">&#9670;&nbsp;</a></span>WritePage() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -335,7 +380,156 @@ template&lt;typename T &gt; </div>
 template&lt;uint32_t N&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void nut::flash::Write </td>
+          <td class="memname">bool nut::flash::WritePage </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>address</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::array&lt; uint8_t, N &gt;&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>フラッシュページ書き込み </p>
+<dl class="tparams"><dt>テンプレート引数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">N</td><td>書き込みデータサイズ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">address</td><td>書き込みページアドレス </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>書き込みデータ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>書き込み成功か </dd></dl>
+<dl class="section attention"><dt>注意</dt><dd>データがページをまたがないか注意してください<br  />
+ 同一ページの情報は全て消えます </dd></dl>
+
+<p class="definition"> <a class="el" href="../../d7/d2b/_flash_8hpp_source.html">Flash.hpp</a> の <a class="el" href="../../d7/d2b/_flash_8hpp_source.html#l00183">183</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="adc1d8fdc58cf334ec01c0da6a7cb9e91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc1d8fdc58cf334ec01c0da6a7cb9e91">&#9670;&nbsp;</a></span>WritePage() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool nut::flash::WritePage </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>address</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T *&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>フラッシュページ書き込み </p>
+<dl class="tparams"><dt>テンプレート引数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>書き込みデータ型 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">address</td><td>書き込みページアドレス </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>書き込みデータ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>書き込み成功か </dd></dl>
+<dl class="section attention"><dt>注意</dt><dd>データがページをまたがないか注意してください<br  />
+ 同一ページの情報は全て消えます </dd></dl>
+
+<p class="definition"> <a class="el" href="../../d7/d2b/_flash_8hpp_source.html">Flash.hpp</a> の <a class="el" href="../../d7/d2b/_flash_8hpp_source.html#l00196">196</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a146f53b8f8f1bdd6088724634101487c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a146f53b8f8f1bdd6088724634101487c">&#9670;&nbsp;</a></span>WritePage() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool nut::flash::WritePage </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>address</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>フラッシュページ書き込み </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">address</td><td>書き込みページアドレス </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>書き込みデータ </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">size</td><td>書き込みデータサイズ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>書き込み成功か </dd></dl>
+<dl class="section attention"><dt>注意</dt><dd>データがページをまたがないか注意してください<br  />
+ 同一ページの情報は全て消えます </dd></dl>
+
+<p class="definition"> <a class="el" href="../../d7/d2b/_flash_8hpp_source.html">Flash.hpp</a> の <a class="el" href="../../d7/d2b/_flash_8hpp_source.html#l00158">158</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aad465a61c971220d734f864d41068fd2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad465a61c971220d734f864d41068fd2">&#9670;&nbsp;</a></span>WriteSector() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;uint32_t N&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool nut::flash::WriteSector </td>
           <td>(</td>
           <td class="paramtype">uint32_t&#160;</td>
           <td class="paramname"><em>sector</em>, </td>
@@ -360,7 +554,7 @@ template&lt;uint32_t N&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>フラッシュ書き込み </p>
+<p>フラッシュセクタ書き込み </p>
 <dl class="tparams"><dt>テンプレート引数</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">N</td><td>書き込みデータサイズ </td></tr>
@@ -375,15 +569,16 @@ template&lt;uint32_t N&gt; </div>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>戻り値</dt><dd>書き込み成功か </dd></dl>
 <dl class="section attention"><dt>注意</dt><dd>セクタとアドレスが合致しているか、データがセクタをまたがないか注意してください<br  />
  同一セクタの情報は全て消えます </dd></dl>
 
-<p class="definition"> <a class="el" href="../../d7/d2b/_flash_8hpp_source.html">Flash.hpp</a> の <a class="el" href="../../d7/d2b/_flash_8hpp_source.html#l00099">99</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d7/d2b/_flash_8hpp_source.html">Flash.hpp</a> の <a class="el" href="../../d7/d2b/_flash_8hpp_source.html#l00130">130</a> 行目に定義があります。</p>
 
 </div>
 </div>
-<a id="a1a04681cde3924d3925c8dc486d8a6be"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1a04681cde3924d3925c8dc486d8a6be">&#9670;&nbsp;</a></span>Write() <span class="overload">[2/3]</span></h2>
+<a id="a2b604ef0e18d71eb0e3e38c433fe40e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b604ef0e18d71eb0e3e38c433fe40e1">&#9670;&nbsp;</a></span>WriteSector() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -391,7 +586,7 @@ template&lt;uint32_t N&gt; </div>
 template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void nut::flash::Write </td>
+          <td class="memname">bool nut::flash::WriteSector </td>
           <td>(</td>
           <td class="paramtype">uint32_t&#160;</td>
           <td class="paramname"><em>sector</em>, </td>
@@ -416,7 +611,7 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>フラッシュ書き込み </p>
+<p>フラッシュセクタ書き込み </p>
 <dl class="tparams"><dt>テンプレート引数</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">T</td><td>書き込みデータ型 </td></tr>
@@ -431,21 +626,22 @@ template&lt;typename T &gt; </div>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>戻り値</dt><dd>書き込み成功か </dd></dl>
 <dl class="section attention"><dt>注意</dt><dd>セクタとアドレスが合致しているか、データがセクタをまたがないか注意してください<br  />
  同一セクタの情報は全て消えます </dd></dl>
 
-<p class="definition"> <a class="el" href="../../d7/d2b/_flash_8hpp_source.html">Flash.hpp</a> の <a class="el" href="../../d7/d2b/_flash_8hpp_source.html#l00112">112</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d7/d2b/_flash_8hpp_source.html">Flash.hpp</a> の <a class="el" href="../../d7/d2b/_flash_8hpp_source.html#l00144">144</a> 行目に定義があります。</p>
 
 </div>
 </div>
-<a id="a03166e359f41822b50c338d9f6cb8d04"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a03166e359f41822b50c338d9f6cb8d04">&#9670;&nbsp;</a></span>Write() <span class="overload">[3/3]</span></h2>
+<a id="aa392b7de3d8a47b5ee110ab6f56f89a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa392b7de3d8a47b5ee110ab6f56f89a0">&#9670;&nbsp;</a></span>WriteSector() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void nut::flash::Write </td>
+          <td class="memname">bool nut::flash::WriteSector </td>
           <td>(</td>
           <td class="paramtype">uint32_t&#160;</td>
           <td class="paramname"><em>sector</em>, </td>
@@ -476,7 +672,7 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>フラッシュ書き込み </p>
+<p>フラッシュセクタ書き込み </p>
 <dl class="params"><dt>引数</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">sector</td><td>書き込みセクタ </td></tr>
@@ -486,10 +682,11 @@ template&lt;typename T &gt; </div>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>戻り値</dt><dd>書き込み成功か </dd></dl>
 <dl class="section attention"><dt>注意</dt><dd>セクタとアドレスが合致しているか、データがセクタをまたがないか注意してください<br  />
  同一セクタの情報は全て消えます </dd></dl>
 
-<p class="definition"> <a class="el" href="../../d7/d2b/_flash_8hpp_source.html">Flash.hpp</a> の <a class="el" href="../../d7/d2b/_flash_8hpp_source.html#l00078">78</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d7/d2b/_flash_8hpp_source.html">Flash.hpp</a> の <a class="el" href="../../d7/d2b/_flash_8hpp_source.html#l00104">104</a> 行目に定義があります。</p>
 
 </div>
 </div>

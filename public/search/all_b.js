@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['kilo_98',['kilo',['../da/dc9/namespacenut_1_1unit.html#af650c50f32b1a28cba904ef33d5bf793',1,'nut::unit']]]
+  ['kilo_100',['kilo',['../da/dc9/namespacenut_1_1unit.html#af650c50f32b1a28cba904ef33d5bf793',1,'nut::unit']]]
 ];

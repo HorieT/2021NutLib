@@ -10,6 +10,7 @@
 
 
 /*global*/
+#include "NutLib/CANWrapper.hpp"
 #include "Global.hpp"
 
 /*General library*/
@@ -19,7 +20,6 @@
 #include "Odmetry.hpp"
 
 /*STM32 Peripheral*/
-#include "CAN.hpp"
 #include "Flash.hpp"
 
 /*Chassis*/

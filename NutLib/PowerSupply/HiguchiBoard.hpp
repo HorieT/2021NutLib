@@ -8,9 +8,9 @@
  */
 #pragma once
 
+#include <NutLib/CANWrapper.hpp>
 #include "../Global.hpp"
 #include "../TimeScheduler.hpp"
-#include "../CAN.hpp"
 #include <memory>
 
 namespace nut{
@@ -40,7 +40,7 @@ private:
 
 	TimeScheduler<void> _scheduler;
 	uint8_t _id;
-	std::shared_ptr<CAN> _can;
+	std::shared_ptr<CANWrapper> _can;
 	bool _swich_on = false;//!< 書き込み
 	bool _swich_state = false;//!< 読み取り
 
@@ -65,7 +65,7 @@ public:
 	 * @param[in] id 2bit基板id
 	 * @param[in] can canのヘルパインスタンス
 	 */
-	HiguchiBoard(uint32_t period, uint8_t id,const std::shared_ptr<CAN>& can)
+	HiguchiBoard(uint32_t period, uint8_t id,const std::shared_ptr<CANWrapper>& can)
 		: _scheduler([this]{SendState();}, period), _id(id & 0x03), _can(can){
 
 	}

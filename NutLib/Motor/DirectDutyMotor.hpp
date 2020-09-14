@@ -8,6 +8,7 @@
 #pragma once
 
 #include "Motor.hpp"
+#include "../Sensor/Encoder/Encoder.hpp"
 #include <memory>
 
 namespace nut{
@@ -57,7 +58,7 @@ private:
 				}
 			}
 
-			__HAL_TIM_SetCompare(_htim, _channel, static_cast<uint16_t>((set_duty < 0.0f ? -set_duty : set_duty) * _htim->Instance->ARR));
+			__HAL_TIM_SET_COMPARE(_htim, _channel, static_cast<uint16_t>((set_duty < 0.0f ? -set_duty : set_duty) * _htim->Instance->ARR));
 		}
 	}
 public:
@@ -91,7 +92,7 @@ public:
 	virtual bool Start() override{
 		ResetTarget();
 		_move_type = MoveType::stop;
-		__HAL_TIM_SetCompare(_htim, _channel, 0);
+		__HAL_TIM_SET_COMPARE(_htim, _channel, 0);
 		HAL_TIM_PWM_Start(_htim, _channel);
 		_scheduler.Set();
 		return true;

@@ -12,10 +12,14 @@
  * 使用マイコンのバリエーションが増えるたびに書き足してください
  */
 extern "C"{
-#ifdef STM32F407xx
-#include "stm32f4xx_hal.h"
-#elif defined STM32F042x6
+#if defined STM32F042x6
 #include "stm32f0xx_hal.h"
+#elif defined STM32F103xB
+#include "stm32f1xx_hal.h"
+#elif defined STM32F303x8
+#include "stm32f3xx_hal.h"
+#elif defined STM32F407xx
+#include "stm32f4xx_hal.h"
 #elif defined STM32F767xx
 #include "stm32f7xx_hal.h"
 #endif

@@ -15,7 +15,8 @@ namespace nut{
 /**
  * @brief Flash操作関数群
  * @attention フラッシュメモリ領域サイズ、及びフラッシュ操作時間に注意！<br>
- * マイコン電源電圧を2.7~3.6Vにしてください
+ * マイコン電源電圧を2.7~3.6Vにしてください<br>
+ * STM32マイコンのフラッシュ書き換え最低保証回数は1万回です。
  */
 namespace flash{
 	/**
@@ -52,65 +53,148 @@ namespace flash{
 	/**
 	 * @brief 1セクタのフラッシュ消去
 	 * @param[in] sector 消去セクタ
+	 * @return 消去成功か
 	 */
-	void Erase(uint32_t sector){
+	bool EraseSector(uint32_t sector){
+#ifdef FLASH_TYPEERASE_SECTORS
 		FLASH_EraseInitTypeDef erase;
-		erase.TypeErase = FLASH_TYPEERASE_SECTORS;	// セクタ毎
-		erase.Sector = sector;		       			// セクタ指定
-		erase.NbSectors = 1;						// 1セクタ
+		erase.TypeErase = FLASH_TYPEERASE_SECTORS;	// sector毎
+		erase.Sector = sector;		       			// sector指定
+		erase.NbSectors = 1;						// 1sector
 		erase.VoltageRange = FLASH_VOLTAGE_RANGE_3;	// set voltage range (2.7 to 3.6V)
 
 		uint32_t pageError = 0;
 
-		HAL_FLASHEx_Erase(&erase, &pageError);	// erase sector
+		return HAL_FLASHEx_Erase(&erase, &pageError) == HAL_OK;	// erase sector
+#else
+		return false;
+#endif
 	}
 
+	/**
+	 * @brief 1ページのフラッシュ消去
+	 * @param[in] address 消去ページアドレス
+	 * @return 消去成功か
+	 */
+	bool ErasePage(uint32_t address){
+#ifdef FLASH_TYPEERASE_PAGES
+		FLASH_EraseInitTypeDef erase;
+		erase.TypeErase = FLASH_TYPEERASE_PAGES;
+		erase.PageAddress =　address;
+		erase.NbPages = 1;
+
+		uint32_t pageError = 0;
+
+		return HAL_FLASHEx_Erase(&erase, &pageError) == HAL_OK;	// erase sector
+#else
+		return false;
+#endif
+	}
 
 	/**
-	 * @brief フラッシュ書き込み
+	 * @brief フラッシュセクタ書き込み
 	 * @param[in] sector 書き込みセクタ
 	 * @param[in] address 書き込み先頭アドレス
 	 * @param[in] data 書き込みデータ
 	 * @param[in] size 書き込みデータサイズ
+	 * @return 書き込み成功か
 	 * @attention セクタとアドレスが合致しているか、データがセクタをまたがないか注意してください<br>
 	 * 			同一セクタの情報は全て消えます
 	 */
-	void Write(uint32_t sector, uint32_t address, void* data, uint32_t size){
-
+	bool WriteSector(uint32_t sector, uint32_t address, void* data, uint32_t size){
+#ifdef FLASH_TYPEERASE_SECTORS
 		HAL_FLASH_Unlock();		// unlock flash
-		Erase(sector);			// erase sector
+		EraseSector(sector);			// erase sector
 
 		for ( uint32_t i = 0; i < size; ++i){
 			HAL_FLASH_Program(FLASH_TYPEPROGRAM_BYTE, address + i, static_cast<uint8_t*>(data)[i]); // write byte
 		}
 
 		HAL_FLASH_Lock();		// lock flash
+		return true;
+#else
+		return false;
+#endif
 	}
 	/**
-	 * @brief フラッシュ書き込み
+	 * @brief フラッシュセクタ書き込み
 	 * @tparam N 書き込みデータサイズ
 	 * @param[in] sector 書き込みセクタ
 	 * @param[in] address 書き込み先頭アドレス
 	 * @param[in] data 書き込みデータ
+	 * @return 書き込み成功か
 	 * @attention セクタとアドレスが合致しているか、データがセクタをまたがないか注意してください<br>
 	 * 			同一セクタの情報は全て消えます
 	 */
 	template<uint32_t N>
-	void Write(uint32_t sector, uint32_t address, std::array<uint8_t, N> data){
-		Write(sector, address, data.data(), N);
+	bool WriteSector(uint32_t sector, uint32_t address, std::array<uint8_t, N> data){
+		return WriteSector(sector, address, data.data(), N);
 	}
 	/**
-	 * @brief フラッシュ書き込み
+	 * @brief フラッシュセクタ書き込み
 	 * @tparam T 書き込みデータ型
 	 * @param[in] sector 書き込みセクタ
 	 * @param[in] address 書き込み先頭アドレス
 	 * @param[in] data 書き込みデータ
+	 * @return 書き込み成功か
 	 * @attention セクタとアドレスが合致しているか、データがセクタをまたがないか注意してください<br>
 	 * 			同一セクタの情報は全て消えます
 	 */
 	template<typename T>
-	void Write(uint32_t sector, uint32_t address, T* data){
-		Write(sector, address, data, sizeof(T));
+	bool WriteSector(uint32_t sector, uint32_t address, T* data){
+		return WriteSector(sector, address, data, sizeof(T));
+	}
+
+
+	/**
+	 * @brief フラッシュページ書き込み
+	 * @param[in] address 書き込みページアドレス
+	 * @param[in] data 書き込みデータ
+	 * @param[in] size 書き込みデータサイズ
+	 * @return 書き込み成功か
+	 * @attention データがページをまたがないか注意してください<br>
+	 * 			同一ページの情報は全て消えます
+	 */
+	bool WritePage(uint32_t address, void* data, uint32_t size){
+#ifdef FLASH_TYPEERASE_PAGES
+		HAL_FLASH_Unlock();		// unlock flash
+		ErasePage(address);			// erase sector
+
+		for ( uint32_t i = 0; i < size / 2 + size % 2; ++i){
+			HAL_FLASH_Program(FLASH_TYPEPROGRAM_HALFWORD, address + i, static_cast<uint16_t*>(data)[i]); // write byte
+		}
+
+		HAL_FLASH_Lock();		// lock flash
+		return true;
+#else
+		return false;
+#endif
+	}
+	/**
+	 * @brief フラッシュページ書き込み
+	 * @tparam N 書き込みデータサイズ
+	 * @param[in] address 書き込みページアドレス
+	 * @param[in] data 書き込みデータ
+	 * @return 書き込み成功か
+	 * @attention データがページをまたがないか注意してください<br>
+	 * 			同一ページの情報は全て消えます
+	 */
+	template<uint32_t N>
+	bool WritePage(uint32_t address, std::array<uint8_t, N> data){
+		return WritePage(address, data.data(), N);
+	}
+	/**
+	 * @brief フラッシュページ書き込み
+	 * @tparam T 書き込みデータ型
+	 * @param[in] address 書き込みページアドレス
+	 * @param[in] data 書き込みデータ
+	 * @return 書き込み成功か
+	 * @attention データがページをまたがないか注意してください<br>
+	 * 			同一ページの情報は全て消えます
+	 */
+	template<typename T>
+	bool WritePage(uint32_t address, T* data){
+		return WritePage(address, data, sizeof(T));
 	}
 }
 }

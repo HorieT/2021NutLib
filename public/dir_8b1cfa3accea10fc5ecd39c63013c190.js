@@ -8,8 +8,8 @@ var dir_8b1cfa3accea10fc5ecd39c63013c190 =
     [ "Sensor", "dir_c2c735cbd9a0ae71a2beef0eda132d9d.html", "dir_c2c735cbd9a0ae71a2beef0eda132d9d" ],
     [ "Unit", "dir_7379a48f3a2436e538b5d7fc9965eaba.html", "dir_7379a48f3a2436e538b5d7fc9965eaba" ],
     [ "AllLib.hpp", "db/d03/_all_lib_8hpp.html", null ],
-    [ "CAN.hpp", "d4/dba/_c_a_n_8hpp.html", [
-      [ "CAN", "d7/d7d/classnut_1_1_c_a_n.html", "d7/d7d/classnut_1_1_c_a_n" ]
+    [ "CANWrapper.hpp", "d6/d16/_c_a_n_wrapper_8hpp.html", [
+      [ "CANWrapper", "dc/d4f/classnut_1_1_c_a_n_wrapper.html", "dc/d4f/classnut_1_1_c_a_n_wrapper" ]
     ] ],
     [ "Coordinate.hpp", "df/d40/_coordinate_8hpp.html", "df/d40/_coordinate_8hpp" ],
     [ "Flash.hpp", "d7/d2b/_flash_8hpp.html", "d7/d2b/_flash_8hpp" ],

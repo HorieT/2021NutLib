@@ -17,7 +17,7 @@ var classnut_1_1_reiwa_m_d =
       [ "SetModeCurrent", "df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2acbcf295e852c11babddf3fb64208246f", null ],
       [ "Motor_ReadStatus", "df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2aa17bd0bb558759684ddb21d8f9036fc7", null ]
     ] ],
-    [ "ReiwaMD", "df/da1/classnut_1_1_reiwa_m_d.html#a8420336b8dd0216f3aa7d34c573ca314", null ],
+    [ "ReiwaMD", "df/da1/classnut_1_1_reiwa_m_d.html#a868fd9d038866bcd1f4483d03214bcdf", null ],
     [ "~ReiwaMD", "df/da1/classnut_1_1_reiwa_m_d.html#a0c51e75191c62c5d694b19898104244b", null ],
     [ "Init", "df/da1/classnut_1_1_reiwa_m_d.html#a7ac369682056c692a7df5f4825ea95a7", null ],
     [ "ReadCanData", "df/da1/classnut_1_1_reiwa_m_d.html#acdd0993d2234cf66f6e2e5db73196e95", null ],

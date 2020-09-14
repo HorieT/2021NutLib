@@ -8,8 +8,8 @@
  */
 #pragma once
 
+#include <NutLib/CANWrapper.hpp>
 #include "Motor.hpp"
-#include "../CAN.hpp"
 #include <memory>
 
 namespace nut{
@@ -41,7 +41,7 @@ public:
 
 
 private:
-	const std::shared_ptr<CAN> _can;
+	const std::shared_ptr<CANWrapper> _can;
 	const uint16_t _id;
 	std::array<uint8_t, 8> _rx_data;
 	Motor_DataType_t _control_type = SetModeDisable;
@@ -110,7 +110,7 @@ public:
 	 * @param[in] can canのヘルパインスタンス
 	 * @param[in] id 5bitのモータid
 	 */
-	ReiwaMD(uint32_t period, std::shared_ptr<CAN> can, uint16_t id)
+	ReiwaMD(uint32_t period, std::shared_ptr<CANWrapper> can, uint16_t id)
 		: Motor(period), _can(can), _id(id & 0x1F){
 
 	}

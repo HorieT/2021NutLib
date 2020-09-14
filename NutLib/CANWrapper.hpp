@@ -1,5 +1,5 @@
 /**
- * @file CAN.hpp
+ * @file CANWrapper.hpp
  * @brief CANのヘルパ
  * @author Horie
  * @date 2020/9
@@ -16,7 +16,7 @@ namespace nut{
  * @brief CANのヘルパクラス<br>
  * 現時点で最新のHALでのCANにしか対応していない
  */
-class CAN{
+class CANWrapper{
 private:
 	CAN_HandleTypeDef* const _hcan;
 
@@ -24,8 +24,8 @@ public:
 	/*
 	 * @param[in] hcan CANハンドル
 	 */
-	CAN(CAN_HandleTypeDef* hcan) : _hcan(hcan){}
-	~CAN(){}
+	CANWrapper(CAN_HandleTypeDef* hcan) : _hcan(hcan){}
+	~CANWrapper(){}
 
 	/**
 	 * @brief フィルタを32bitマスクモードで設定します
@@ -34,8 +34,8 @@ public:
 	 * @param[in] bank フィルタバンク
 	 * @param[in] id 11bit ID
 	 * @param[in] id_mask 11bit IDマスク
-	 * @param[in] data_onry データフレームのみ
-	 * @param[in] remote_onry リモートフレームのみ
+	 * @param[in] data_only データフレームのみ
+	 * @param[in] remote_only リモートフレームのみ
 	 * @param[in] fifo FIFOx
 	 */
 	bool SetFilterMask(
