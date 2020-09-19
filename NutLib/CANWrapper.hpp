@@ -53,7 +53,7 @@ public:
 		filter.FilterMode = CAN_FILTERMODE_IDMASK;
 		filter.FilterScale = CAN_FILTERSCALE_32BIT;
 		filter.FilterIdHigh = id << 5;
-		filter.FilterIdLow = 0b0100 | remote_only << 1;
+		filter.FilterIdLow = remote_only << 1;
 		filter.FilterMaskIdHigh = id_mask << 5;
 		filter.FilterMaskIdLow = 0b0100 | ((data_only || remote_only) << 1);
 		filter.FilterFIFOAssignment = fifo;

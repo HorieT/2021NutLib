@@ -22,6 +22,7 @@ private:
 	GPIO_TypeDef* const _gpio_port;
 	const uint16_t _gpio_pin;
 	const std::shared_ptr<Encoder> _encoder;
+	float _encoder_ratio = 1.0;
 
 
 	/**
@@ -34,33 +35,44 @@ private:
 			float set_duty;
 			if(_move_type == MoveType::duty){
 				set_duty = _target_duty;
-				if(_encoder.get() == NULL){//エンコーダの使用状況
-					float rad = _encoder->GetRadAndReset() / (2.0f*static_cast<float>(M_PI));
+				//get radian
+				if(_encoder.get() != nullptr){
+					float rad = _encoder->GetRadAndReset() / (2.0f*static_cast<float>(M_PI)) * _encoder_ratio;
 					_now_rad += rad;
 					_now_rpm = rad * 60000.0f / _scheduler.GetPeriod();
 				}
 			}
 			else{
-				if(_encoder.get() == NULL){//
+				if(_encoder.get() == nullptr){//no encoder
 					Stop();
 					return;
 				}
-				//
-				float rad = _encoder->GetRadAndReset() / (2.0f*static_cast<float>(M_PI));
+				//get radian
+				float rad = _encoder->GetRadAndReset() / (2.0f*static_cast<float>(M_PI)) * _encoder_ratio;
 				_now_rad += rad;
 				_now_rpm = rad * 60000.0f / _scheduler.GetPeriod();
 
 				if(_move_type == MoveType::rpm){
-					/*まだ*/
+					/*control speed*/
+					set_duty = _rpm_pid.Calculate(_target_rpm - _now_rpm, _scheduler.GetPeriod());
+					if(std::fabs(set_duty) > 100.0){
+						set_duty = set_duty > 0.0 ? 100.0 : -100.0;
+					}
+
 				}
 				else{
-					/*まだ*/
+					/* not yet!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+					Stop();
+					return;
+					/******************************************/
 				}
 			}
 
-			__HAL_TIM_SET_COMPARE(_htim, _channel, static_cast<uint16_t>((set_duty < 0.0f ? -set_duty : set_duty) * _htim->Instance->ARR));
+			__HAL_TIM_SET_COMPARE(_htim, _channel, static_cast<uint16_t>(std::fabs(set_duty) /100.0 * _htim->Instance->ARR));
+			if(set_duty != 0.0f)HAL_GPIO_WritePin(_gpio_port, _gpio_pin, (set_duty > 0.0) ? GPIO_PIN_RESET : GPIO_PIN_SET);
 		}
 	}
+
 public:
 	/**
 	 * @brief コンストラク
@@ -72,8 +84,8 @@ public:
 	 * @param[in] encoder エンコーダのインスタンス
 	 * @details エンコーダを使わない場合はヌルポを入れてください
 	 */
-	DirectDutyMotor(uint32_t period, TIM_HandleTypeDef* htim, uint32_t channel, GPIO_TypeDef* port, uint16_t pin, const std::shared_ptr<Encoder>& encoder) :
-		Motor(period), _htim(htim),_channel(channel), _gpio_port(port), _gpio_pin(pin), _encoder(encoder){}
+	DirectDutyMotor(uint32_t period, TIM_HandleTypeDef* htim, uint32_t channel, GPIO_TypeDef* port, uint16_t pin, const std::shared_ptr<Encoder>& encoder, float encoder_ratio = 1.0) :
+		Motor(period), _htim(htim),_channel(channel), _gpio_port(port), _gpio_pin(pin), _encoder(encoder), _encoder_ratio(encoder_ratio){}
 	virtual ~DirectDutyMotor(){}
 
 
@@ -168,6 +180,11 @@ public:
 		if(_move_type == MoveType::rad)return false;
 		_now_rad = rad;
 		return true;
+	}
+
+
+	TIM_HandleTypeDef* GetPWMTimer() const{
+		return _htim;
 	}
 };
 }

@@ -173,7 +173,12 @@ public:
 	 * @param arg コールバック関数の引数
 	 */
 	void Set(Args arg) &{
-		argment = arg;
+		if constexpr(std::is_lvalue_reference_v<Args>){
+			argment = &arg;
+		}
+		else{
+			argment = new Args(arg);
+		}
 		TimeSchedulerBase::SetSchedule();
 	}
 	/*void Set(Args arg) &&{
@@ -184,9 +189,9 @@ public:
 
 private:
 	std::function<void(Args)> _callbuck_funk;//!< コールバック関数
-	Args argment = static_cast<Args>(0);//!< コールバック関数の引数
+	typename std::remove_reference<Args>::type *argment = nullptr;//!< コールバック関数の引数
 
-	void Callback() override{_callbuck_funk(argment);}//!< コールバック関数呼び出し
+	void Callback() override{_callbuck_funk(*argment);}//!< コールバック関数呼び出し
 };
 
 /**

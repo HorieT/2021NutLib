@@ -80,8 +80,9 @@ namespace flash{
 #ifdef FLASH_TYPEERASE_PAGES
 		FLASH_EraseInitTypeDef erase;
 		erase.TypeErase = FLASH_TYPEERASE_PAGES;
-		erase.PageAddress =　address;
+		erase.PageAddress = address;
 		erase.NbPages = 1;
+
 
 		uint32_t pageError = 0;
 
