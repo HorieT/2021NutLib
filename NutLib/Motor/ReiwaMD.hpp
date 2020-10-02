@@ -8,7 +8,7 @@
  */
 #pragma once
 
-#include <NutLib/CANWrapper.hpp>
+#include "../CANWrapper.hpp"
 #include "Motor.hpp"
 #include <memory>
 
@@ -90,8 +90,8 @@ protected:
 		case MoveType::duty:
 			SendData<float>(VoltageRef, 0.240f * _target_duty);
 			break;
-		case MoveType::rpm:
-			SendData<float>(SpeedRef, _target_rpm * M_PI / 30.0f);
+		case MoveType::radps:
+			SendData<float>(SpeedRef, _target_radps);
 			break;
 		case MoveType::rad:
 		case MoveType::stop:
@@ -170,10 +170,10 @@ public:
 	 * @param[in] rpm RPM
 	 * @return 速度制御可能かどうか
 	 */
-	virtual bool SetRPM(float rpm) override{
+	virtual bool SetRadps(float radps) override{
 		if(_control_type != SetModeSpeed)return false;
-		_target_rpm = rpm;
-		_move_type = MoveType::rpm;
+		_target_radps = radps;
+		_move_type = MoveType::radps;
 		return true;
 	}
 	/**
@@ -182,13 +182,16 @@ public:
 	 * @param[in] top_rpm 最大速度[rpm]
 	 * @return 角度制御可能かどうか
 	 */
-	virtual bool SetRad(float rad, float top_rpm)override{
+	virtual bool SetRad(float rad, float top_radps)override{
 		if(_control_type != SetModePosition)return false;
 		_target_rad = rad;
-		_target_rpm = top_rpm;
+		_target_radps = top_radps;
 		_move_type = MoveType::rad;
 		return true;
 	}
+
+
+
 	/**
 	 * @brief 速度制御ゲインセット
 	 * @details ゲインセットできません
@@ -197,7 +200,7 @@ public:
 	 * @param[in] kd Dゲイン
 	 * @return false
 	 */
-	virtual bool SetRPMPID(float kp, float ki, float kd) override{
+	virtual bool SetRadpsPID(float kp, float ki, float kd, float op_limit = infinityf(), float i_limit = infinityf()) override{
 		return false;
 	}
 	/**
@@ -208,7 +211,7 @@ public:
 	 * @param[in] kd Dゲイン
 	 * @return false
 	 */
-	virtual bool SetRadPID(float kp, float ki, float kd) override{
+	virtual bool SetRadPID(float kp, float ki, float kd, float op_limit = infinityf(), float i_limit = infinityf()) override{
 		return false;
 	}
 	/**
@@ -243,7 +246,7 @@ public:
 				_move_type = MoveType::duty;
 				break;
 			case Motor_DataType_t::SetModeSpeed:
-				_move_type = MoveType::rpm;
+				_move_type = MoveType::radps;
 				break;
 			default:
 				_move_type = MoveType::stop;

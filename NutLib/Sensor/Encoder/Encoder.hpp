@@ -43,7 +43,7 @@ public:
 	 * @brief 角度取得
 	 * @return 角度[rad]
 	 */
-	virtual float GetRad() const = 0;
+	virtual float GetRad() = 0;
 
 	/**
 	 * @brief 角度取得&カウントリセット

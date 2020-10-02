@@ -23,7 +23,7 @@ protected:
 	enum class MoveType : uint8_t{
 		stop = 0U,
 		duty,
-		rpm,
+		radps,
 		rad
 	};
 	MoveType _move_type = MoveType::stop;
@@ -31,17 +31,19 @@ protected:
 	TimeScheduler<void> _scheduler;
 
 	//パラメータ
-	PID<float> _rpm_pid;
+	PID<float> _radps_pid;
 	PID<float> _rad_pid;
+	PID<float> _current_pid;
 	//目標値
 	float _target_duty = 0.0f;//!< 百分率
-	float _target_rpm = 0.0f;
+	float _target_radps = 0.0f;
 	float _target_rad = 0.0f;
 
 
 	//現在値
-	float _now_rpm = 0.0f;
-	float _now_rad = 0.0f;
+	float _now_radps = 0.0f;
+	float _now_rad = 0.0f;;
+	float _now_current = 0.0f;
 
 
 
@@ -49,8 +51,8 @@ protected:
 	 * @brief 目標値リセット
 	 */
 	virtual inline void ResetTarget(){
-		_target_duty = 0.0f;//%�P��
-		_target_rpm = 0.0f;
+		_target_duty = 0.0f;
+		_target_radps = 0.0f;
 		_target_rad = 0.0f;
 	}
 	/**
@@ -58,7 +60,10 @@ protected:
 	 */
 	virtual inline void ResetParam(){
 		ResetTarget();
-		_now_rpm = 0.0f;
+		_radps_pid.Reset();
+		_rad_pid.Reset();
+		_current_pid.Reset();
+		_now_radps = 0.0f;
 		_now_rad = 0.0f;
 	}
 
@@ -115,9 +120,9 @@ public:
 	 * @param[in] rpm RPM
 	 * @return 速度制御可能かどうか
 	 */
-	virtual bool SetRPM(float rpm) {
-		_target_rpm = rpm;
-		_move_type = MoveType::rpm;
+	virtual bool SetRadps(float radps) {
+		_target_radps = radps;
+		_move_type = MoveType::radps;
 		return true;
 	}
 	/**
@@ -126,12 +131,15 @@ public:
 	 * @param[in] top_rpm 最大速度[rpm]
 	 * @return 角度制御可能かどうか
 	 */
-	virtual bool SetRad(float rad, float top_rpm){
+	virtual bool SetRad(float rad, float top_radps){
 		_target_rad = rad;
-		_target_rpm = top_rpm;
+		_target_radps = top_radps;
 		_move_type = MoveType::rad;
 		return true;
 	}
+
+
+
 	/**
 	 * @brief 速度制御ゲインセット
 	 * @param[in] kp Pゲイン
@@ -139,8 +147,11 @@ public:
 	 * @param[in] kd Dゲイン
 	 * @return 速度PID可能かどうか
 	 */
-	virtual bool SetRPMPID(float kp, float ki, float kd) {
-		_rpm_pid.SetGaine(kp, ki, kd);
+	virtual bool SetRadpsPID(float kp, float ki, float kd, float op_limit = infinityf(), float i_limit = infinityf()) {
+		if(_move_type != MoveType::stop)return false;
+		_radps_pid.SetGaine(kp, ki, kd);
+		_radps_pid.SetLimit(op_limit);
+		_radps_pid.SetLimitI(i_limit);
 		return true;
 	}
 	/**
@@ -150,10 +161,15 @@ public:
 	 * @param[in] kd Dゲイン
 	 * @return 角度PID可能かどうか
 	 */
-	virtual bool SetRadPID(float kp, float ki, float kd) {
+	virtual bool SetRadPID(float kp, float ki, float kd, float op_limit = infinityf(), float i_limit = infinityf()) {
+		if(_move_type != MoveType::stop)return false;
 		_rad_pid.SetGaine(kp, ki, kd);
+		_rad_pid.SetLimit(op_limit);
+		_rad_pid.SetLimitI(i_limit);
 		return true;
 	}
+
+
 
 	/**
 	 * @brief 角度原点リセット
@@ -172,8 +188,8 @@ public:
 	 * @brief 速度取得
 	 * @return RPM
 	 */
-	virtual float GetRPM() const{
-		return _now_rpm;
+	virtual float GetRadps() const{
+		return _now_radps;
 	}
 	/**
 	 * @brief 角度取得
