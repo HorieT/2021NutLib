@@ -82,9 +82,9 @@ private:
 	static constexpr uint8_t SBDBT_BUFF_SIZE_D = SBDBT_BUFF_SIZE - 1;//!< SBDBT5V電文バッファサイズ-1
 
 	/*SBDBTのアナログパッド値*/
-	static constexpr int8_t ANAROG_MAX =		127;
-	static constexpr int8_t ANAROG_MIN =		1;
-	static constexpr int8_t ANAROG_CENTER =		64;
+	static constexpr int16_t ANAROG_MAX =		127;
+	static constexpr int16_t ANAROG_MIN =		1;
+	static constexpr int16_t ANAROG_CENTER =		64;
 
 
 	UART_HandleTypeDef* const _uart;
@@ -242,7 +242,7 @@ public:
 					data = _buttonn_data.at(3) - ANAROG_CENTER;
 					break;
 				case PS3_ANALOG_LY:
-					data = ANAROG_MAX + 1 - (int8_t)_buttonn_data.at(4) - ANAROG_CENTER;
+					data = ANAROG_MAX + 1 - static_cast<int16_t>(_buttonn_data.at(4)) - ANAROG_CENTER;
 					break;
 				case PS3_ANALOG_RX:
 					data = _buttonn_data.at(5) - ANAROG_CENTER;
@@ -255,7 +255,7 @@ public:
 				}
 			}
 		}
-		return data;
+		return static_cast<int8_t>(data);
 	}
 };
 
