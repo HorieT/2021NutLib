@@ -5,6 +5,7 @@
 #pragma once
 
 #include "Global.hpp"
+#include <type_traits>
 
 namespace nut{
 
@@ -148,6 +149,19 @@ static constexpr uint8_t MakeDeviceType(Device device){
 }
 static constexpr uint8_t MakeDeviceID(Device device, uint8_t num){
 	return (static_cast<uint8_t>(device) << (DEVICE_TYPE_SHIFT - DEVICE_NUM_SHIFT)) | num ;
+}
+template<typename T>
+static constexpr auto MakeCANID(uint8_t device_id, T data_type)
+	-> typename std::enable_if_t<std::is_enum_v<T>, uint16_t>{
+	return (static_cast<uint16_t>(device_id) << DEVICE_NUM_SHIFT) | static_cast<uint8_t>(data_type);
+}
+static constexpr uint16_t MakeCANID(uint8_t device_id, uint8_t data_type){
+	return (static_cast<uint16_t>(device_id) << DEVICE_NUM_SHIFT) | data_type;
+}
+template<typename T>
+static constexpr auto MakeCANID(Device device, uint8_t num, T data_type)
+-> typename std::enable_if_t<std::is_enum_v<T>, uint16_t>{
+	return (static_cast<uint16_t>(device) << DEVICE_TYPE_SHIFT) | (num << DEVICE_NUM_SHIFT) | static_cast<uint8_t>(data_type);
 }
 static constexpr uint16_t MakeCANID(Device device, uint8_t num, uint8_t data_type){
 	return (static_cast<uint16_t>(device) << DEVICE_TYPE_SHIFT) | (num << DEVICE_NUM_SHIFT) | data_type;

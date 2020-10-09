@@ -257,6 +257,10 @@ public:
 		}
 		return static_cast<int8_t>(data);
 	}
+
+	std::array<uint8_t, SBDBT_DATA_SIZE> GetData(){
+		return _buttonn_data;
+	}
 };
 
 }

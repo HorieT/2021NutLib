@@ -125,14 +125,12 @@ public:
 	constexpr Coordinate<T>& operator*=(const V& r_operand){
 		_x *= static_cast<T>(r_operand);
 		_y *= static_cast<T>(r_operand);
-		_theta *= static_cast<T>(r_operand);
 		return *this;
 	}
 	template<typename V>
 	constexpr Coordinate<T>& operator/=(const V& r_operand){
 		_x /= static_cast<T>(r_operand);
 		_y /= static_cast<T>(r_operand);
-		_theta /= static_cast<T>(r_operand);
 		return *this;
 	}
 
