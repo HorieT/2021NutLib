@@ -47,7 +47,8 @@ enum class Power : uint8_t{
 enum class Error : uint8_t{
 };
 enum class General : uint8_t{
-	init = 0x0,
+	wakeUp= 0x0,
+	uninit
 };
 }
 
@@ -67,6 +68,10 @@ enum class DataType : uint8_t{
 namespace micom{
 enum class DataType : uint8_t{
 	controlMode = 0x0,
+	xSpead,
+	ySpead,
+	thetaSpead,
+	steering,
 };
 
 enum class ControlMode : uint8_t{
@@ -74,6 +79,10 @@ enum class ControlMode : uint8_t{
 	debug = 0x01,
 	sequence = 0x02,
 	emergency = 0x80
+};
+enum class Steering : uint8_t{
+	origin = 0x00,
+	lock = 0x01,
 };
 }
 
@@ -99,7 +108,6 @@ enum class DataType : uint8_t{
 /* special operation */
 enum class SpecialOperation :uint8_t{
 	singleStart = 0x01,
-	//steerStart = 0x02,
 	stop = 0x80,
 	//writeFlash = 0xFF,
 };
@@ -110,18 +118,19 @@ enum class ParamsInput : uint8_t{
 	velocityD = 0x03,
 	velocityLimit = 0x04,
 	velocityILimit = 0x05,
-	radianP = 0x11,
-	radianI = 0x12,
-	radianD = 0x13,
-	radianLimit = 0x14,
-	radianILimit = 0x15,
-	currentP = 0x21,
-	currentI = 0x22,
-	currentD = 0x23,
-	currentLimit = 0x24,
-	currentILimit = 0x24,
-	encoderResolusion = 0x30,
-	encoderMode = 0x3F,
+	radianP = 0x06,
+	radianI = 0x07,
+	radianD = 0x08,
+	radianLimit = 0x09,
+	radianILimit = 0x0A,
+	currentP = 0x0B,
+	currentI = 0x0C,
+	currentD = 0x0D,
+	currentLimit = 0x0E,
+	currentILimit = 0x0F,
+	encoderResolusion = 0x10,
+	encoderMode = 0x11,
+	overCurrentLimit = 0x12,
 };
 /* encoder mode */
 enum class EncoderMode :uint8_t{
@@ -165,6 +174,11 @@ static constexpr auto MakeCANID(Device device, uint8_t num, T data_type)
 }
 static constexpr uint16_t MakeCANID(Device device, uint8_t num, uint8_t data_type){
 	return (static_cast<uint16_t>(device) << DEVICE_TYPE_SHIFT) | (num << DEVICE_NUM_SHIFT) | data_type;
+}
+template<typename T>
+static constexpr auto MakeCANID(Device device, can_protocol::all::NotificationType data_type, T data)
+-> typename std::enable_if_t<std::is_enum_v<T>, uint16_t>{
+	return (static_cast<uint16_t>(device) << DEVICE_TYPE_SHIFT) | (static_cast<uint8_t>(data_type) << DEVICE_NUM_SHIFT) | static_cast<uint8_t>(data);
 }
 static constexpr Device GetDeviceType(uint16_t id){
 	return static_cast<Device>((id & DEVICE_TYPE_MSK) >> DEVICE_TYPE_SHIFT);

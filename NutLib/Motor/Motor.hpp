@@ -41,8 +41,9 @@ protected:
 
 
 	//現在値
+	float _now_duty = 0.0f;
 	float _now_radps = 0.0f;
-	float _now_rad = 0.0f;;
+	float _now_rad = 0.0f;
 	float _now_current = 0.0f;
 
 
@@ -63,8 +64,8 @@ protected:
 		_radps_pid.Reset();
 		_rad_pid.Reset();
 		_current_pid.Reset();
-		_now_radps = 0.0f;
-		_now_rad = 0.0f;
+		//_now_radps = 0.0f;
+		//_now_rad = 0.0f;
 	}
 
 
@@ -110,6 +111,7 @@ public:
 	 * @return Duty制御可能かどうか
 	 */
 	virtual bool SetDuty(float duty) {
+		if(_move_type == MoveType::stop) return false;
 		if(std::fabs(duty) > 100.0f)return false;
 		_target_duty = duty;
 		_move_type = MoveType::duty;
@@ -121,6 +123,7 @@ public:
 	 * @return 速度制御可能かどうか
 	 */
 	virtual bool SetRadps(float radps) {
+		if(_move_type == MoveType::stop) return false;
 		_target_radps = radps;
 		_move_type = MoveType::radps;
 		return true;
@@ -132,6 +135,7 @@ public:
 	 * @return 角度制御可能かどうか
 	 */
 	virtual bool SetRad(float rad, float top_radps){
+		if(_move_type == MoveType::stop) return false;
 		_target_rad = rad;
 		_target_radps = top_radps;
 		_move_type = MoveType::rad;
@@ -182,7 +186,7 @@ public:
 	 * @return Duty比(百分率)
 	 */
 	virtual float GetDuty() const{
-		return _target_duty;
+		return _now_duty;
 	}
 	/**
 	 * @brief 速度取得
@@ -199,6 +203,13 @@ public:
 		return _now_rad;
 	}
 
+	/**
+	 * @brief 角度取得
+	 * @return Rad
+	 */
+	virtual float GetTagRad()const{
+		return _target_rad;
+	}
 	/*
 	virtual const std::array<float, 3>& GetRPMPID() const{
 		return _rpm_pid;
