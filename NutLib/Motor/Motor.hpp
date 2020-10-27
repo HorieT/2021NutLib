@@ -24,26 +24,36 @@ protected:
 		stop = 0U,
 		duty,
 		radps,
-		rad
+		radMulti,
+		radSingle,
+		radSinglePolarity,
+		radpsCurrent,
+		radMultiCurrent,
+		radSingleCurrent,
+		radSinglePolarityCurrent,
 	};
 	MoveType _move_type = MoveType::stop;
 
+	//Period control
 	TimeScheduler<void> _scheduler;
 
-	//パラメータ
+	//Controller
 	PID<float> _radps_pid;
 	PID<float> _rad_pid;
 	PID<float> _current_pid;
-	//目標値
-	float _target_duty = 0.0f;//!< 百分率
+
+	//Target value
+	float _target_duty = 0.0f;//Percentage
 	float _target_radps = 0.0f;
-	float _target_rad = 0.0f;
+	float _target_rad = 0.0f;//Multi-turn abs
+	float _target_current = 0.0f;
+	bool _turn_polarity = true;
 
 
-	//現在値
-	float _now_duty = 0.0f;
+	//Present value
+	float _now_duty = 0.0f;//Percentage
 	float _now_radps = 0.0f;
-	float _now_rad = 0.0f;
+	float _now_rad = 0.0f;//Multi-turn abs
 	float _now_current = 0.0f;
 
 
@@ -55,11 +65,13 @@ protected:
 		_target_duty = 0.0f;
 		_target_radps = 0.0f;
 		_target_rad = 0.0f;
+		_target_current = 0.0f;
 	}
 	/**
 	 * @brief パラメータ&目標値リセット
 	 */
 	virtual inline void ResetParam(){
+		_move_type = MoveType::stop;
 		ResetTarget();
 		_radps_pid.Reset();
 		_rad_pid.Reset();
@@ -129,19 +141,64 @@ public:
 		return true;
 	}
 	/**
-	 * @brief 角度制御
+	 * @brief 多回転角度制御
 	 * @param[in] rad 角度[rad]
-	 * @param[in] top_rpm 最大速度[rpm]
 	 * @return 角度制御可能かどうか
 	 */
-	virtual bool SetRad(float rad, float top_radps){
+	virtual bool SetRadMulti(float rad){
 		if(_move_type == MoveType::stop) return false;
 		_target_rad = rad;
-		_target_radps = top_radps;
-		_move_type = MoveType::rad;
+		_move_type = MoveType::radMulti;
 		return true;
 	}
 
+	/**
+	 * @brief 単回転角度制御
+	 * @details 近い方向に回転します
+	 * @param[in] rad 角度[rad]
+	 * @details M_PI ~ -M_PIまで
+	 * @return 角度制御可能かどうか
+	 */
+	virtual bool SetRadSingle(float rad){
+		if(_move_type == MoveType::stop) return false;
+		if(std::fabs(rad) > static_cast<float>(M_PI))return false;
+
+		float rad_diff = std::fmod(rad - _now_rad, M_PI*2.0);
+		if(std::abs(rad_diff) > M_PI)//over rad
+			rad_diff = (rad_diff < 0 ? -M_PI : M_PI) - rad_diff;
+
+		_target_rad = _now_rad + rad_diff;
+		_move_type = MoveType::radSingle;
+		return true;
+	}
+
+
+	/**
+	 * @brief 単回転角度制御
+	 * @details 指示極性方向に回転します.
+	 * @param[in] rad 角度[rad]
+	 * @param[in] polarity 極性
+	 * @details trueなら正,falsなら負です
+	 * @return 角度制御可能かどうか
+	 */
+	virtual bool SetRadSingle(float rad, bool polarity){
+		if(_move_type == MoveType::stop) return false;
+		if(std::fabs(rad) > static_cast<float>(M_PI))return false;
+
+		/* not yet!!!!! */
+/*
+		float rad_diff = std::fmod(rad - _now_rad, M_PI*2.0);
+		if(std::abs(rad_diff) > M_PI)//over rad
+			rad_diff = (rad_diff < 0 ? -M_PI : M_PI) - rad_diff;
+
+		_target_rad = _now_rad + rad_diff;
+		_move_type = MoveType::radSinglePolarity;
+		_turn_polarity = ???//
+		return true;
+		*/
+
+		return false;
+	}
 
 
 	/**

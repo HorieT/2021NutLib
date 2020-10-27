@@ -41,7 +41,15 @@ protected:
 		std::memcpy(&send_data[2], &data, 4);
 		SendData(can_protocol::motor::DataType::controlInput, send_data);
 	}
+	void SendControl(can_protocol::motor::ControlInput input, float data, bool pol){
+			std::array<uint8_t, 7> send_data;
 
+			send_data[0] = _user_id;
+			send_data[1] = static_cast<uint8_t>(input);
+			std::memcpy(&send_data[2], &data, 4);
+			send_data[6] = pol;
+			SendData(can_protocol::motor::DataType::controlInput, send_data);
+		}
 
 	/**
 	 * @brief 周期コールバック関数
@@ -55,8 +63,14 @@ protected:
 		case MoveType::radps:
 			SendControl(can_protocol::motor::ControlInput::radps, _target_radps);
 			break;
-		case MoveType::rad:
-			SendControl(can_protocol::motor::ControlInput::rad, _target_rad);
+		case MoveType::radMulti:
+			SendControl(can_protocol::motor::ControlInput::radMulti, _target_rad);
+			break;
+		case MoveType::radSingle:
+			SendControl(can_protocol::motor::ControlInput::radSingle, _target_rad);
+			break;
+		case MoveType::radSinglePolarity:
+			SendControl(can_protocol::motor::ControlInput::radSinglePolarity, _target_rad, _turn_polarity);
 			break;
 		case MoveType::stop:
 		default:
@@ -114,6 +128,10 @@ public:
 	virtual void Stop() override{
 		_move_type = MoveType::stop;
 		_scheduler.Erase();
+		SendData<2>(
+				can_protocol::motor::DataType::specialOperation,
+				std::array<uint8_t, 2>{_user_id, static_cast<uint8_t>(can_protocol::motor::SpecialOperation::stop)}
+		);
 		ResetParam();
 	}
 

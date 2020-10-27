@@ -93,7 +93,6 @@ protected:
 		case MoveType::radps:
 			SendData<float>(SpeedRef, _target_radps);
 			break;
-		case MoveType::rad:
 		case MoveType::stop:
 		default:
 			return;
@@ -176,20 +175,69 @@ public:
 		_move_type = MoveType::radps;
 		return true;
 	}
+
+
 	/**
-	 * @brief 角度制御
+	 * @brief 多回転角度制御
 	 * @param[in] rad 角度[rad]
-	 * @param[in] top_rpm 最大速度[rpm]
 	 * @return 角度制御可能かどうか
 	 */
-	virtual bool SetRad(float rad, float top_radps)override{
+	virtual bool SetRadMulti(float rad){
 		if(_control_type != SetModePosition)return false;
+		if(_move_type == MoveType::stop) return false;
 		_target_rad = rad;
-		_target_radps = top_radps;
-		_move_type = MoveType::rad;
+		_move_type = MoveType::radMulti;
 		return true;
 	}
 
+	/**
+	 * @brief 単回転角度制御
+	 * @details 近い方向に回転します
+	 * @param[in] rad 角度[rad]
+	 * @details M_PI ~ -M_PIまで
+	 * @return 角度制御可能かどうか
+	 */
+	virtual bool SetRadSingle(float rad){
+		if(_control_type != SetModePosition)return false;
+		if(_move_type == MoveType::stop) return false;
+		if(std::fabs(rad) > static_cast<float>(M_PI))return false;
+
+		float rad_diff = std::fmod(rad - _now_rad, M_PI*2.0);
+		if(std::abs(rad_diff) > M_PI)//over rad
+			rad_diff = (rad_diff < 0 ? -M_PI : M_PI) - rad_diff;
+
+		_target_rad = _now_rad + rad_diff;
+		_move_type = MoveType::radSingle;
+		return true;
+	}
+
+
+	/**
+	 * @brief 単回転角度制御
+	 * @details 指示極性方向に回転します.
+	 * @param[in] rad 角度[rad]
+	 * @param[in] polarity 極性
+	 * @details trueなら正,falsなら負です
+	 * @return 角度制御可能かどうか
+	 */
+	virtual bool SetRadSingle(float rad, bool polarity){
+		if(_control_type != SetModePosition)return false;
+		if(_move_type == MoveType::stop) return false;
+		if(std::fabs(rad) > static_cast<float>(M_PI))return false;
+
+		/* not yet!!!!! */
+/*
+		float rad_diff = std::fmod(rad - _now_rad, M_PI*2.0);
+		if(std::abs(rad_diff) > M_PI)//over rad
+			rad_diff = (rad_diff < 0 ? -M_PI : M_PI) - rad_diff;
+
+		_target_rad = _now_rad + rad_diff;
+		_move_type = MoveType::rad;
+		return true;
+		*/
+
+		return false;
+	}
 
 
 	/**

@@ -54,8 +54,9 @@ enum class General : uint8_t{
 
 
 
-/* uniq board */
+/* unique board */
 
+/* power board */
 namespace power{
 enum class DataType : uint8_t{
 	fetState = 0x0,
@@ -65,6 +66,7 @@ enum class DataType : uint8_t{
 }
 
 
+/* micon */
 namespace micom{
 enum class DataType : uint8_t{
 	controlMode = 0x0,
@@ -73,29 +75,29 @@ enum class DataType : uint8_t{
 	thetaSpead,
 	steering,
 };
-
 enum class ControlMode : uint8_t{
-	init = 0x00,
-	debug = 0x01,
-	sequence = 0x02,
-	emergency = 0x80
+	init 		= 0x00,
+	debug 		= 0x01,
+	sequence 	= 0x02,
+	emergency 	= 0x80
 };
 enum class Steering : uint8_t{
-	origin = 0x00,
-	lock = 0x01,
+	origin 	= 0x00,
+	lock 	= 0x01,
 };
 }
 
 /* pc */
 namespace pc{
 enum class DataType : uint8_t{
-	error = 0x0,
-	xPos = 0x1,
-	yPos = 0x2,
-	thetaPos = 0x3,
-	controller = 0x8
+	error 		= 0x0,
+	xPos 		= 0x1,
+	yPos 		= 0x2,
+	thetaPos 	= 0x3,
+	controller 	= 0x8
 };
 }
+
 
 /* motorDriver */
 namespace motor{
@@ -103,34 +105,42 @@ namespace motor{
 enum class DataType : uint8_t{
 	specialOperation = 0x00,
 	paramsInput,
-	controlInput
+	controlInput,
+	steerControlInput
 };
 /* special operation */
 enum class SpecialOperation :uint8_t{
-	singleStart = 0x01,
-	stop = 0x80,
+	singleStart 			= 0x00,
+	singleStartCurrent		= 0x01,
+	steerStart 				= 0x02,
+	steerStartCurrent 		= 0x03,
+	singleStartDebug 		= 0x10,
+	singleStartCurrentDebug = 0x11,
+	steerStartDebug 		= 0x12,
+	steerStartDebugCurrent	= 0x13,
+	stop 					= 0x80,
 	//writeFlash = 0xFF,
 };
 /* paramas */
 enum class ParamsInput : uint8_t{
-	velocityP = 0x01,
-	velocityI = 0x02,
-	velocityD = 0x03,
-	velocityLimit = 0x04,
-	velocityILimit = 0x05,
-	radianP = 0x06,
-	radianI = 0x07,
-	radianD = 0x08,
-	radianLimit = 0x09,
-	radianILimit = 0x0A,
-	currentP = 0x0B,
-	currentI = 0x0C,
-	currentD = 0x0D,
-	currentLimit = 0x0E,
-	currentILimit = 0x0F,
-	encoderResolusion = 0x10,
-	encoderMode = 0x11,
-	overCurrentLimit = 0x12,
+	velocityP 			= 0x01,
+	velocityI 			= 0x02,
+	velocityD 			= 0x03,
+	velocityLimit 		= 0x04,
+	velocityILimit 		= 0x05,
+	radianP 			= 0x06,
+	radianI 			= 0x07,
+	radianD 			= 0x08,
+	radianLimit 		= 0x09,
+	radianILimit 		= 0x0A,
+	currentP 			= 0x0B,
+	currentI 			= 0x0C,
+	currentD 			= 0x0D,
+	currentLimit 		= 0x0E,
+	currentILimit 		= 0x0F,
+	encoderResolusion 	= 0x10,
+	encoderMode 		= 0x11,
+	overCurrentLimit 	= 0x12,
 };
 /* encoder mode */
 enum class EncoderMode :uint8_t{
@@ -139,12 +149,15 @@ enum class EncoderMode :uint8_t{
 };
 /* control */
 enum class ControlInput{
-	duty = 0x00,
-	radps = 0x01,
-	rad = 0x02,
-	//current = 0x03
+	duty 						= 0x00,
+	radps 						= 0x01,
+	radMulti					= 0x02,
+	radSingle					= 0x03,
+	radSinglePolarity			= 0x04,
+	steer						= 0xF0
 };
 }
+
 
 /* solenoidValve */
 namespace sv{

@@ -6,7 +6,9 @@
 #include "../Global.hpp"
 #include "Chassis.hpp"
 #include "../Motor/DriveWheel.hpp"
+#include "../Motor/MD2021Steer.hpp"
 #include <array>
+#include <limits>
 #include <Eigen/Geometry>
 
 namespace nut{
@@ -14,7 +16,7 @@ namespace nut{
  *
  */
 template<uint8_t N>
-class SteerChassis : public Chassis{
+class SteerChassisSp : public Chassis{
 public:
 	enum class MoveMode : uint8_t{
 		nomal = 0,
@@ -26,8 +28,9 @@ public:
 private:
 	static constexpr float RAD_DIFF_LIM = M_PI / 2.0;
 
-	const std::array<std::shared_ptr<DriveWheel>, N> _wheel;//!< 駆動輪
-	const std::array<std::shared_ptr<Motor>, N> _steering;//<! 操舵
+	const std::array<std::shared_ptr<MD2021Steer>, N> _steering;
+	const std::array<Coordinate<float>, N> _wheel_position;//!< 駆動輪位置
+	const float _diameter_mm;
 
 
 	const std::array<const float, N> _wheel_cos = {0.0};
@@ -41,6 +44,13 @@ private:
 	virtual void ScheduleTask() override{
 		std::array<Eigen::Vector2f, N> input;
 
+		if(_mode == MoveMode::reset){
+			for(auto& st : _steering){
+				st->SetMove(0.0, std::numeric_limits<float>::quiet_NaN());
+			}
+			return;
+		}
+
 		//move
 		if((_target_velocity.x() != 0.0) || (_target_velocity.y() != 0.0) || (_target_velocity.theta() != 0.0)){
 			uint8_t i = 0;
@@ -50,84 +60,62 @@ private:
 					in <<
 							_target_velocity.x() - _wheel_length[i] * _target_velocity.theta() * _wheel_sin[i],
 							_target_velocity.y() + _wheel_length[i] * _target_velocity.theta() * _wheel_cos[i];
-					in = Eigen::Rotation2Df(-_wheel[i]->GetPos().theta()) * in;
+					in = Eigen::Rotation2Df(-_wheel_position[i].theta()) * in;
 					++i;
 				}
 			}
 
 
 			i = 0;
-			for(auto& w : _wheel){
+			for(auto& st : _steering){
 				int8_t coff = 1;
 				float rad =
 						(_mode == MoveMode::reset) ? 0.0
-								: ((_mode == MoveMode::steerBreaking) ? ((w->GetPos().Angle() > 0) ? w->GetPos().Angle() - M_PI / 2.0 : w->GetPos().Angle() + M_PI / 2.0)
+								: ((_mode == MoveMode::steerBreaking) ? _wheel_position[i].Angle()
 										: std::atan2(input[i].y(), input[i].x()));
 
 
-				if(_mode == MoveMode::nomal || _mode == MoveMode::steerOnry){
-					float rad_diff = std::fmod(rad - _steering[i]->GetTagRad(), M_PI * 2.0);
-
-
-					if(std::abs(rad_diff) > RAD_DIFF_LIM){//over rad
-						//coff = -1;
-						rad_diff = (M_PI * (rad_diff < 0 ? 1.0 : -1.0)) + std::fmod(rad_diff, M_PI);
-
-					}
-
-
-					rad = _steering[i]->GetTagRad() + rad_diff;
-				}
-
 				/* input */
-				if(_mode == MoveMode::nomal)w->SetMps(coff * input[i].norm());
-				else w->SetMps(0.0);
-
-				_steering[i]->SetRadSingle(rad, 10.0);
+				st->SetMove(_mode == MoveMode::nomal ? coff * input[i].norm() * 2000.0f / _diameter_mm : 0.0, rad);
 				++i;
 			}
 			return;
 		}
 		else {// no move
-
-			uint8_t i = 0;
-			for(auto& w : _wheel){
-				w->GetMotor()->SetDuty(0.0);
-				_steering[i]->SetDuty(0.0);
-				++i;
-			}
 		}
 	}
 
 
 public:
-	SteerChassis(
+	SteerChassisSp(
 		uint32_t period,
 		const std::shared_ptr<Odmetry>& odmetry,
-		std::array<std::shared_ptr<DriveWheel>, N> wheel,
-		std::array<std::shared_ptr<Motor>, N> steering)
+		std::array<std::shared_ptr<MD2021Steer>, N> steer,
+		std::array<Coordinate<float>, N> steer_pos,
+		float diameter_mm)
 			: Chassis(period, odmetry),
-			  _wheel(wheel),
-			  _steering(steering){
+			  _steering(steer),
+			  _wheel_position(steer_pos),
+			  _diameter_mm(diameter_mm){
 
 		uint8_t i = 0;
 		for(auto& w_cos : const_cast<std::array<const float, N>&>(_wheel_cos)){
-			const_cast<float&>(w_cos) = std::cos(_wheel[i]->GetPos().Angle());
+			const_cast<float&>(w_cos) = std::cos(_wheel_position[i].Angle());
 			++i;
 		}
 		i = 0;
 		for(auto& w_sin : const_cast<std::array<const float, N>&>(_wheel_sin)){
-			const_cast<float&>(w_sin) = std::sin(_wheel[i]->GetPos().Angle());
+			const_cast<float&>(w_sin) = std::sin(_wheel_position[i].Angle());
 			++i;
 		}
 		i = 0;
 		for(auto& w_length : const_cast<std::array<const float, N>&>(_wheel_length)){
-			const_cast<float&>(w_length) = _wheel[i]->GetPos().Norm();
+			const_cast<float&>(w_length) = _wheel_position[i].Norm();
 			++i;
 		}
 	}
 
-	virtual ~SteerChassis(){
+	virtual ~SteerChassisSp(){
 
 	}
 

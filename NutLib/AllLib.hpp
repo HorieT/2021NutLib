@@ -26,6 +26,7 @@
 #include "Chassis/Chassis.hpp"
 #include "Chassis/OmniChassis.hpp"
 #include "Chassis/SteerChassis.hpp"
+#include "Chassis/SteerChassisSp.hpp"
 
 /*Controller*/
 #include "Controller/DualShock.hpp"
@@ -35,6 +36,7 @@
 #include "Motor/DirectDutyMotor.hpp"
 #include "Motor/ReiwaMD.hpp"
 #include "Motor/MD2021.hpp"
+#include "Motor/MD2021Steer.hpp"
 
 /*PowerSupply*/
 #include "PowerSupply/HiguchiBoard.hpp"
