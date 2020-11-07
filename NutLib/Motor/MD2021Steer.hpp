@@ -76,13 +76,16 @@ public:
 	/**
 	 * @brief 制御スタート
 	 */
-	virtual bool Start() {
+	virtual bool Start(bool current_control = false) {
 		_target_norm = 0.0f;
 		_target_rad = 0.0f;
-		SendData<2>(
-				can_protocol::motor::DataType::specialOperation,
-				std::array<uint8_t, 2>{_user_id, static_cast<uint8_t>(can_protocol::motor::SpecialOperation::steerStart)}
-		);
+		std::array<uint8_t, 2> data{
+			_user_id,
+			static_cast<uint8_t>(current_control ?
+					can_protocol::motor::SpecialOperation::steerStartCurrent :
+					can_protocol::motor::SpecialOperation::steerStart)
+		};
+		SendData<2>(can_protocol::motor::DataType::specialOperation, data);
 
 		_scheduler.Set();
 		return true;

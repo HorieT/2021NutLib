@@ -132,33 +132,11 @@ public:
 				can_protocol::motor::DataType::specialOperation,
 				std::array<uint8_t, 2>{_user_id, static_cast<uint8_t>(can_protocol::motor::SpecialOperation::stop)}
 		);
-		ResetParam();
+		ResetController();
 	}
 
 
 
-	/**
-	 * @brief 速度制御ゲインセット
-	 * @details 未実装です
-	 * @param[in] kp Pゲイン
-	 * @param[in] ki Iゲイン
-	 * @param[in] kd Dゲイン
-	 * @return false
-	 */
-	virtual bool SetRadpsPID(float kp, float ki, float kd, float op_limit = infinityf(), float i_limit = infinityf())  override{
-		return false;
-	}
-	/**
-	 * @brief 角度制御ゲインセット
-	 * @details 未実装です
-	 * @param[in] kp Pゲイン
-	 * @param[in] ki Iゲイン
-	 * @param[in] kd Dゲイン
-	 * @return false
-	 */
-	virtual bool SetRadPID(float kp, float ki, float kd, float op_limit = infinityf(), float i_limit = infinityf()) override{
-		return false;
-	}
 	/**
 	 * @brief 角度原点リセット
 	 * @details 未実装です

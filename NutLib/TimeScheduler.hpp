@@ -3,8 +3,8 @@
  * @brief 時間制御
  * @details systickベース
  * @author Horie
- * @date 2020/9
- * @attention 使用時は関数の実行時間に注意
+ * @date 2020/10
+ * @attention <font color='red'>Callback関数の実行時間は1ms以下にしてください<\font>
  */
 #pragma once
 
@@ -83,7 +83,7 @@ public:
 	 * @brief スケジューラ周期取得
 	 * @return スケジューラ周期[ms]
 	 */
-	virtual inline uint32_t GetPeriod() final{return _period;}
+	virtual inline uint32_t GetPeriod() const final{return _period;}
 
 
 	/**

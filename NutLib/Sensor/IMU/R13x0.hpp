@@ -18,6 +18,7 @@ private:
 	static constexpr uint8_t GYRO_BUFF_SIZE = GYRO_DATA_SIZE * 2;
 	static constexpr uint8_t GYRO_BUFF_SIZE_D = GYRO_BUFF_SIZE - 1;
 	static constexpr uint32_t TIMEOUT_TIME = 25;
+	static constexpr std::array<uint8_t, 13> RESET_COMMAND{'$', 'M', 'I', 'B', ',', 'R', 'E', 'S', 'E', 'T', '*', '8', '7'};
 
 	TimeScheduler<void> _scheduler;
 	std::array<uint8_t, GYRO_BUFF_SIZE> _buff;
@@ -55,9 +56,11 @@ public:
 	}
 	/**
 	 * @brief リセット
+	 * @details モージュールリセットするのでマシンを静止させてください
 	 */
 	virtual void Reset() override final{
 		Timeout();
+		HAL_UART_Transmit_IT(_huart, const_cast<uint8_t*>(RESET_COMMAND.data()), RESET_COMMAND.size());
 		_scheduler.Reset();
 	}
 

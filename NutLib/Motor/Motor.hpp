@@ -8,8 +8,9 @@
 
 #include "../Global.hpp"
 #include "../TimeScheduler.hpp"
-#include "../PID.hpp"
+#include "../ControlSystem/PID/VecPID.hpp"
 #include <array>
+#include <memory>
 
 namespace nut{
 /**
@@ -27,10 +28,7 @@ protected:
 		radMulti,
 		radSingle,
 		radSinglePolarity,
-		radpsCurrent,
-		radMultiCurrent,
-		radSingleCurrent,
-		radSinglePolarityCurrent,
+		currnet = 0x80,//special　expansion
 	};
 	MoveType _move_type = MoveType::stop;
 
@@ -38,9 +36,9 @@ protected:
 	TimeScheduler<void> _scheduler;
 
 	//Controller
-	PID<float> _radps_pid;
-	PID<float> _rad_pid;
-	PID<float> _current_pid;
+	std::unique_ptr<PIDBase<float>> _radps_pid{new VecPID<float>()};
+	std::unique_ptr<PIDBase<float>> _rad_pid{new VecPID<float>()};
+	std::unique_ptr<PIDBase<float>> _current_pid{new VecPID<float>()};
 
 	//Target value
 	float _target_duty = 0.0f;//Percentage
@@ -70,14 +68,11 @@ protected:
 	/**
 	 * @brief パラメータ&目標値リセット
 	 */
-	virtual inline void ResetParam(){
-		_move_type = MoveType::stop;
-		ResetTarget();
-		_radps_pid.Reset();
-		_rad_pid.Reset();
-		_current_pid.Reset();
-		//_now_radps = 0.0f;
-		//_now_rad = 0.0f;
+	virtual inline void ResetController(){
+		if(_move_type == MoveType::stop) return;
+		_radps_pid->Reset();
+		_rad_pid->Reset();
+		_current_pid->Reset();
 	}
 
 
@@ -151,7 +146,6 @@ public:
 		_move_type = MoveType::radMulti;
 		return true;
 	}
-
 	/**
 	 * @brief 単回転角度制御
 	 * @details 近い方向に回転します
@@ -161,18 +155,16 @@ public:
 	 */
 	virtual bool SetRadSingle(float rad){
 		if(_move_type == MoveType::stop) return false;
-		if(std::fabs(rad) > static_cast<float>(M_PI))return false;
+		if(std::fabs(rad) > M_PI_f)return false;
 
-		float rad_diff = std::fmod(rad - _now_rad, M_PI*2.0);
-		if(std::abs(rad_diff) > M_PI)//over rad
-			rad_diff = (rad_diff < 0 ? -M_PI : M_PI) - rad_diff;
+		float rad_diff = std::fmod(rad - _now_rad, M_2PI_f);
+		if(std::abs(rad_diff) > M_PI_f)//over rad
+			rad_diff = (rad_diff < 0.0f ? M_2PI_f : -M_2PI_f) + rad_diff;
 
 		_target_rad = _now_rad + rad_diff;
 		_move_type = MoveType::radSingle;
 		return true;
 	}
-
-
 	/**
 	 * @brief 単回転角度制御
 	 * @details 指示極性方向に回転します.
@@ -199,44 +191,100 @@ public:
 
 		return false;
 	}
-
-
 	/**
-	 * @brief 速度制御ゲインセット
-	 * @param[in] kp Pゲイン
-	 * @param[in] ki Iゲイン
-	 * @param[in] kd Dゲイン
-	 * @return 速度PID可能かどうか
+	 * @brief 電流制御
+	 * @param[in] currnet 電流[A]
+	 * @return 電流制御可能かどうか
 	 */
-	virtual bool SetRadpsPID(float kp, float ki, float kd, float op_limit = infinityf(), float i_limit = infinityf()) {
-		if(_move_type != MoveType::stop)return false;
-		_radps_pid.SetGaine(kp, ki, kd);
-		_radps_pid.SetLimit(op_limit);
-		_radps_pid.SetLimitI(i_limit);
-		return true;
-	}
-	/**
-	 * @brief 角度制御ゲインセット
-	 * @param[in] kp Pゲイン
-	 * @param[in] ki Iゲイン
-	 * @param[in] kd Dゲイン
-	 * @return 角度PID可能かどうか
-	 */
-	virtual bool SetRadPID(float kp, float ki, float kd, float op_limit = infinityf(), float i_limit = infinityf()) {
-		if(_move_type != MoveType::stop)return false;
-		_rad_pid.SetGaine(kp, ki, kd);
-		_rad_pid.SetLimit(op_limit);
-		_rad_pid.SetLimitI(i_limit);
+	virtual bool SetCurrent(float currnet){
+		if(_move_type == MoveType::stop) return false;
+		_target_current = currnet;
+		_move_type = MoveType::currnet;
 		return true;
 	}
 
 
+	/* setter */
 
 	/**
 	 * @brief 角度原点リセット
+	 * @details 現在角を書き換えます
+	 * @param[in] rad 書き換え角度
 	 * @return 角度原点リセット可能かどうか
 	 */
-	virtual bool ResetRadOrigin(float rad) = 0;
+	virtual bool ResetRadOrigin(float rad) {
+		if(_move_type != MoveType::stop)return false;
+		_now_rad = rad;
+		return true;
+	}
+
+
+	/**
+	 * @brief 角速度PID制御器セット
+	 * @param[in] controller PID制御器
+	 * @return セットの可否
+	 */
+	virtual bool SetRadpsPID(std::unique_ptr<PIDBase<float>>&& controller){
+		if(_move_type != MoveType::stop || !controller)return false;
+		_radps_pid = std::move(controller);
+		return true;
+	}
+	/**
+	 * @brief 角度PID制御器セット
+	 * @param[in] controller PID制御器
+	 * @return セットの可否
+	 */
+	virtual bool SetRadPID(std::unique_ptr<PIDBase<float>>&& controller){
+		if(_move_type != MoveType::stop || !controller)return false;
+		_rad_pid = std::move(controller);
+		return true;
+	}
+	/**
+	 * @brief 電流PID制御器セット
+	 * @param[in] controller PID制御器
+	 * @return セットの可否
+	 */
+	virtual bool SetCurrentPID(std::unique_ptr<PIDBase<float>>&& controller){
+		if(_move_type != MoveType::stop || !controller)return false;
+		_current_pid = std::move(controller);
+		return true;
+	}
+
+
+	/* getter */
+
+	/**
+	 * @brief 角速度PID制御器取得
+	 * @return 制御器生ポインタ
+	 * @details Stop()していない場合はヌルポ
+	 */
+	virtual PIDBase<float>* GetRadpsPID(){
+		if(_move_type != MoveType::stop)return nullptr;
+		return _radps_pid.get();
+	}
+	/**
+	 * @brief 角度PID制御器取得
+	 * @return 制御器生ポインタ
+	 * @details Stop()していない場合はヌルポ
+	 */
+	virtual PIDBase<float>* GetRadPID(){
+		if(_move_type != MoveType::stop)return nullptr;
+		return _rad_pid.get();
+	}
+	/**
+	 * @brief 電流PID制御器取得
+	 * @return 制御器生ポインタ
+	 * @details Stop()していない場合はヌルポ
+	 */
+	virtual PIDBase<float>* GetCurrentPID(){
+		if(_move_type != MoveType::stop)return nullptr;
+		return _current_pid.get();
+	}
+
+
+
+
+
 
 	/**
 	 * @brief Duty取得
@@ -247,7 +295,7 @@ public:
 	}
 	/**
 	 * @brief 速度取得
-	 * @return RPM
+	 * @return rad/s
 	 */
 	virtual float GetRadps() const{
 		return _now_radps;
@@ -259,21 +307,33 @@ public:
 	virtual float GetRad()const{
 		return _now_rad;
 	}
-
 	/**
-	 * @brief 角度取得
+	 * @brief 現在電流値取得
+	 * @return [A]
+	 */
+	virtual float GetCurrent()const{
+		return _now_current;
+	}
+	/**
+	 * @brief 目標速度取得
+	 * @return rad/s
+	 */
+	virtual float GetTagRadps() const{
+		return _target_radps;
+	}
+	/**
+	 * @brief 目標角度取得
 	 * @return Rad
 	 */
 	virtual float GetTagRad()const{
 		return _target_rad;
 	}
-	/*
-	virtual const std::array<float, 3>& GetRPMPID() const{
-		return _rpm_pid;
+	/**
+	 * @brief 目標電流値取得
+	 * @return [A]
+	 */
+	virtual float GetTagCurrent()const{
+		return _target_current;
 	}
-	virtual const std::array<float, 3>& GetRadPID() const{
-		return _rad_pid;
-	}
-	*/
 };
 }

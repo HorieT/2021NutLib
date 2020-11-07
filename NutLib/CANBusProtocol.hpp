@@ -94,6 +94,9 @@ enum class DataType : uint8_t{
 	xPos 		= 0x1,
 	yPos 		= 0x2,
 	thetaPos 	= 0x3,
+	xSpeed 		= 0x4,
+	ySpeed 		= 0x5,
+	thetaSpeed 	= 0x6,
 	controller 	= 0x8
 };
 }
@@ -121,7 +124,7 @@ enum class SpecialOperation :uint8_t{
 	stop 					= 0x80,
 	//writeFlash = 0xFF,
 };
-/* paramas */
+/* paramas *//*
 enum class ParamsInput : uint8_t{
 	velocityP 			= 0x01,
 	velocityI 			= 0x02,
@@ -141,12 +144,12 @@ enum class ParamsInput : uint8_t{
 	encoderResolusion 	= 0x10,
 	encoderMode 		= 0x11,
 	overCurrentLimit 	= 0x12,
-};
-/* encoder mode */
+};*/
+/* encoder mode *//*
 enum class EncoderMode :uint8_t{
 	Inc = 0x00,
 	Abs
-};
+};*/
 /* control */
 enum class ControlInput{
 	duty 						= 0x00,
@@ -154,6 +157,7 @@ enum class ControlInput{
 	radMulti					= 0x02,
 	radSingle					= 0x03,
 	radSinglePolarity			= 0x04,
+	current						= 0x80,
 	steer						= 0xF0
 };
 }
