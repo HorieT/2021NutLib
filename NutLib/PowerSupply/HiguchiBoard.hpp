@@ -8,7 +8,7 @@
  */
 #pragma once
 
-#include <NutLib/CANWrapper.hpp>
+#include "../CANWrapper.hpp"
 #include "../Global.hpp"
 #include "../TimeScheduler.hpp"
 #include <memory>

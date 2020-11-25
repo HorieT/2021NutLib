@@ -9,6 +9,7 @@
 #pragma once
 
 #include "../Global.hpp"
+#include <numeric>
 
 namespace nut{
 namespace unit{

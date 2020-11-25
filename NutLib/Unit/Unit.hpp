@@ -25,7 +25,9 @@ enum class Type : uint16_t{
 	meter,//!< メートル
 	radian,//!< rad
 	degre,//!< deg
-	gram//!< グラム
+	gram,//!< グラム
+	ampere,//!< アンペア
+	volt,//!< ボルト
 };
 
 
@@ -61,8 +63,18 @@ public:
 		return static_cast<A>(_value);
 	}
 
-
-
+	/**
+	 * @brief 符号演算子
+	 */
+	constexpr Unit<T, U, P> operator+() const{
+		return +_value;
+	}
+	/**
+	 * @brief 符号演算子
+	 */
+	constexpr Unit<T, U, P> operator-() const{
+		return -_value;
+	}
 
 	/**
 	 * @brief 同一単位系の代入
@@ -246,7 +258,7 @@ constexpr auto operator!=(const Unit<T1, U, P>& l_operand, const T2& r_operand) 
  */
 template<typename T1, typename T2, Type U, class P>
 constexpr auto operator+(const Unit<T1, U, P>& l_operand, const T2& r_operand) -> typename std::enable_if_t<std::is_arithmetic_v<T2>, Unit<T1, U, P>>{
-	return l_operand += r_operand;
+	return Unit<T1, U, P>(l_operand) += r_operand;
 }
 /**
  * @brief 数値型との演算
@@ -258,7 +270,7 @@ constexpr auto operator+(const Unit<T1, U, P>& l_operand, const T2& r_operand) -
  */
 template<typename T1, typename T2, Type U, class P>
 constexpr auto operator-(const Unit<T1, U, P>& l_operand, const T2& r_operand) -> typename std::enable_if_t<std::is_arithmetic_v<T2>, Unit<T1, U, P>>{
-	return l_operand -= r_operand;
+	return Unit<T1, U, P>(l_operand) -= r_operand;
 }
 /**
  * @brief 数値型との演算
@@ -270,7 +282,7 @@ constexpr auto operator-(const Unit<T1, U, P>& l_operand, const T2& r_operand) -
  */
 template<typename T1, typename T2, Type U, class P>
 constexpr auto operator*(const Unit<T1, U, P>& l_operand, const T2& r_operand) -> typename std::enable_if_t<std::is_arithmetic_v<T2>, Unit<T1, U, P>>{
-	return l_operand *= r_operand;
+	return Unit<T1, U, P>(l_operand) *= r_operand;
 }
 /**
  * @brief 数値型との演算
@@ -282,7 +294,7 @@ constexpr auto operator*(const Unit<T1, U, P>& l_operand, const T2& r_operand) -
  */
 template<typename T1, typename T2, Type U, class P>
 constexpr auto operator/(const Unit<T1, U, P>& l_operand, const T2& r_operand) -> typename std::enable_if_t<std::is_arithmetic_v<T2>, Unit<T1, U, P>>{
-	return l_operand /= r_operand;
+	return Unit<T1, U, P>(l_operand) /= r_operand;
 }
 /**
  * @brief 数値型との演算
@@ -426,7 +438,7 @@ constexpr bool operator!=(const Unit<T1, U, P1>& l_operand, const Unit<T2, U, P2
  */
 template<typename T1, typename T2, Type U, class P>
 constexpr auto operator+(const Unit<T1, U, P>& l_operand, const Unit<T2, U, P>& r_operand) -> Unit<decltype(T1(0) + T2(0)), U, P>{
-	return Unit<T2, U, P>(l_operand + static_cast<T2>(r_operand));
+	return l_operand + static_cast<T2>(r_operand);
 }
 /**
  * @brief 同一単位系の演算
@@ -439,7 +451,7 @@ constexpr auto operator+(const Unit<T1, U, P>& l_operand, const Unit<T2, U, P>& 
  */
 template<typename T1, typename T2, Type U, class P>
 constexpr auto operator-(const Unit<T1, U, P>& l_operand, const Unit<T2, U, P>& r_operand) -> Unit<decltype(T1(0) + T2(0)), U, P>{
-	return Unit<T2, U, P>(l_operand - static_cast<T2>(r_operand));
+	return l_operand - static_cast<T2>(r_operand);
 }
 }
 }

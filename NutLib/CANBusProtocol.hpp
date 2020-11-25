@@ -96,8 +96,9 @@ enum class DataType : uint8_t{
 	thetaPos 	= 0x3,
 	xSpeed 		= 0x4,
 	ySpeed 		= 0x5,
-	thetaSpeed 	= 0x6,
-	controller 	= 0x8
+	xAcc 		= 0x6,
+	yAcc 		= 0x7,
+	uniqe 	= 0x8
 };
 }
 
@@ -113,18 +114,22 @@ enum class DataType : uint8_t{
 };
 /* special operation */
 enum class SpecialOperation :uint8_t{
-	singleStart 			= 0x00,
-	singleStartCurrent		= 0x01,
-	steerStart 				= 0x02,
-	steerStartCurrent 		= 0x03,
-	singleStartDebug 		= 0x10,
-	singleStartCurrentDebug = 0x11,
-	steerStartDebug 		= 0x12,
-	steerStartDebugCurrent	= 0x13,
+	singleStartInc 			= 0x00,
+	singleStartIncCurrent	= 0x01,
+	singleStartAbs 			= 0x02,
+	singleStartAbsCurrent	= 0x03,
+	steerStart 				= 0x04,
+	steerStartCurrent 		= 0x05,
+	singleStartIncDebug 		= 0x10,
+	singleStartIncCurrentDebug 	= 0x11,
+	singleStartAbsDebug 		= 0x12,
+	singleStartAbsCurrentDebug	= 0x13,
+	steerStartDebug 			= 0x14,
+	steerStartDebugCurrent		= 0x15,
 	stop 					= 0x80,
 	//writeFlash = 0xFF,
 };
-/* paramas *//*
+/* paramas */
 enum class ParamsInput : uint8_t{
 	velocityP 			= 0x01,
 	velocityI 			= 0x02,
@@ -142,14 +147,8 @@ enum class ParamsInput : uint8_t{
 	currentLimit 		= 0x0E,
 	currentILimit 		= 0x0F,
 	encoderResolusion 	= 0x10,
-	encoderMode 		= 0x11,
-	overCurrentLimit 	= 0x12,
-};*/
-/* encoder mode *//*
-enum class EncoderMode :uint8_t{
-	Inc = 0x00,
-	Abs
-};*/
+	overCurrentLimit 	= 0x11,
+};
 /* control */
 enum class ControlInput{
 	duty 						= 0x00,
@@ -165,7 +164,15 @@ enum class ControlInput{
 
 /* solenoidValve */
 namespace sv{
-
+enum class DataType : uint8_t{
+	specialOperation = 0x00,
+	valveState,
+	valveSetAdd,
+	valveSetOr,
+};
+/*special operation*/
+enum class SpecialOperation :uint8_t{
+};
 }
 
 

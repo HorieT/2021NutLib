@@ -25,6 +25,11 @@ extern "C"{
 #endif
 }
 
+#ifndef UNUSE_NUTLIB_CALLBACKS
+//!< HAL default callback function をライブラリに移譲します
+#define USE_NUTLIB_CALLBACKS
+#endif
+
 //Eigen代数計算ライブラリ
 #include "Eigen/Core"
 
@@ -68,7 +73,11 @@ constexpr float M_PI_2_f 	= static_cast<float>(M_PI / 2.0);
  */
 namespace nut{
 
-/*Metafunction*/
+#ifdef USE_NUTLIB_CALLBACKS//あたまわるわる
+static constexpr bool USE_NUTLIB_CALLBACKS_FLAG = true;
+#else
+static constexpr bool USE_NUTLIB_CALLBACKS_FLAG = false;
+#endif
 
 
 }

@@ -10,20 +10,22 @@
 #include <Eigen/Geometry>
 
 namespace nut{
+namespace SteerOpration{
+enum class MoveMode : uint8_t{
+	nomal = 0,
+	reset,
+	steerOnry,
+	steerBreaking
+};
+}
+
 /**
  *
  */
 template<uint8_t N>
 class SteerChassis : public Chassis{
-public:
-	enum class MoveMode : uint8_t{
-		nomal = 0,
-		reset,
-		steerOnry,
-		steerBreaking
-	};
-
 private:
+	using MoveMode = SteerOpration::MoveMode;
 	static constexpr float RAD_DIFF_LIM = M_PI / 2.0;
 
 	const std::array<std::shared_ptr<DriveWheel>, N> _wheel;//!< 駆動輪
@@ -34,7 +36,7 @@ private:
 	const std::array<const float, N> _wheel_sin = {0.0};
 	const std::array<const float, N> _wheel_length = {0.0};
 
-	MoveMode _mode = MoveMode::nomal;
+	SteerOpration::MoveMode _mode = MoveMode::nomal;
 	/**
 	 * @brief 周期コールバック関数
 	 */

@@ -13,6 +13,12 @@
 #include <vector>
 #include <memory>
 
+/* nutlib での割込み定義 */
+#ifdef USE_NUTLIB_CALLBACKS
+#include "HALCallbacks/HALCallbacks.hpp"
+#endif
+
+
 namespace nut{
 /**
  * @brief  時間制御基底純粋仮想クラス
@@ -22,7 +28,9 @@ private:
 	static inline volatile uint32_t _time = 0;
 	static inline std::vector<TimeSchedulerBase*> _scheduler;
 
+#ifdef HAL_TIM_MODULE_ENABLED
 	static inline TIM_HandleTypeDef* _auxiliary_timer = nullptr;
+#endif
 
 	uint32_t _start_time = 0;
 	uint32_t _period;
@@ -88,12 +96,13 @@ public:
 
 	/**
 	 * @brief スケジューラ時刻チェック<br>
-	 * 	HAL_SYSTICK_Callback()内で呼び出してください
+	 * 	USE_NUTLIB_CALLBACKSが無効の場合、HAL_SYSTICK_Callback()内で呼び出してください
 	 * @details cubeでSYSTICK割り込みを1ms周期設定(デフォルト)で許可してください
 	 * @attention 最近のHALはHAL_SYSTICK_Callback()が呼び出しされなくなったのでScr下のit.cにあるSysTick_Handler()内でHAL_SYSTICK_IRQHandler()の呼び出しをすること<br>
 	 * 		詳しくはサンプル閲覧推奨
 	 */
 	static void TimeCheck(){
+#ifdef HAL_TIM_MODULE_ENABLED
 		if(_auxiliary_timer == NULL){
 			IncTime();
 		}
@@ -101,6 +110,9 @@ public:
 			_time += _auxiliary_timer->Instance->CNT;
 			_auxiliary_timer->Instance->CNT = 0;
 		}
+#else
+		IncTime();
+#endif
 
 		for(auto t : _scheduler){
 			if((_time - t->_start_time) >= t->_period){
@@ -112,6 +124,7 @@ public:
 	}
 
 
+#ifdef HAL_TIM_MODULE_ENABLED
 	/**
 	 * @brief スケジューラ補助タイマ追加
 	 * @details スケジューラが渋滞した際の補助に使われるタイマの設定
@@ -130,6 +143,8 @@ public:
 		HAL_TIM_Base_Stop(_auxiliary_timer);
 		_auxiliary_timer = NULL;
 	}
+#endif
+
 	/**
 	 * @brief　delay関数
 	 * @details 他のスケジューラを阻害しない
@@ -237,4 +252,16 @@ inline void DelayCall(std::function<void(T)>&& callback, T arg, uint32_t ms){
 inline void DelayCall(std::function<void(void)>&& callback, uint32_t ms){
 	typename TimeScheduler<void>::TimeScheduler(std::move(callback), ms).Set();
 }*/
+
+
 }
+
+
+
+/* NUT callback */
+#ifdef USE_NUTLIB_CALLBACKS
+namespace nut::callback{
+/*@brief  SysTickのコールバッククラス */
+static inline HALCallback<void> Systick;
+}
+#endif
