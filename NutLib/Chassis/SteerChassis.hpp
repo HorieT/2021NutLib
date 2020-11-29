@@ -140,6 +140,7 @@ public:
 	/**
 	 * @brief 速度入力
 	 * @param[in] velocity 速度[m/s],[rad/s]
+	 * @param[in] mode 動作モード
 	 * @return 速度入力可能か
 	 */
 	virtual bool SetVelocity(Coordinate<float> velocity, MoveMode mode){
@@ -152,6 +153,7 @@ public:
 	 * @brief 速度入力
 	 * @param[in] velocity_mps 速度[m/s]
 	 * @param[in] rot_radps [rad/s]
+	 * @param[in] mode 動作モード
 	 * @return 速度入力可能か
 	 */
 	virtual bool SetVelocity(Eigen::Vector2f velocity_mps, float rot_radps, MoveMode mode){

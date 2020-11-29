@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>NutLib: NutLib/ControlSystem/PID/VecPID.hpp ソースファイル</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">NutLib
+   </div>
+  </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.svg"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.20 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'検索');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('de/d8f/_vec_p_i_d_8hpp_source.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">VecPID.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../de/d8f/_vec_p_i_d_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d5/d2c/_p_i_d_base_8hpp.html">PIDBase.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../dd/d51/namespacenut.html">nut</a>{</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="../../d2/d44/classnut_1_1_vec_p_i_d.html">   14</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d2/d44/classnut_1_1_vec_p_i_d.html">VecPID</a> : <span class="keyword">public</span> <a class="code" href="../../df/ddb/classnut_1_1_p_i_d_base.html">PIDBase</a>&lt;T&gt;{</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="../../d2/d44/classnut_1_1_vec_p_i_d.html#ac7d9dd1a37472a39f8cf3f5682526367">   16</a></span>&#160;    T <a class="code" href="../../d2/d44/classnut_1_1_vec_p_i_d.html#ac7d9dd1a37472a39f8cf3f5682526367">_output_value</a> = 0.0;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="../../d2/d44/classnut_1_1_vec_p_i_d.html#a1c964663bf9ddb0dc97106655d0b9e0a">   19</a></span>&#160;    <a class="code" href="../../d2/d44/classnut_1_1_vec_p_i_d.html#a1c964663bf9ddb0dc97106655d0b9e0a">VecPID</a>(T P_gain = 0.0, T I_gain = 0.0, T D_gain = 0.0):</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="../../df/ddb/classnut_1_1_p_i_d_base.html">PIDBase</a>&lt;T&gt;(P_gain, I_gain, D_gain){</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    }</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="../../d2/d44/classnut_1_1_vec_p_i_d.html#a6c57d1e1d2ef7237698f910ca99b150c">   23</a></span>&#160;    <span class="keyword">virtual</span> <a class="code" href="../../d2/d44/classnut_1_1_vec_p_i_d.html#a6c57d1e1d2ef7237698f910ca99b150c">~VecPID</a>(){</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    }</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="../../d2/d44/classnut_1_1_vec_p_i_d.html#afc0ba87153f6d72534064d0c8d1ec7f6">   34</a></span>&#160;    <span class="keyword">virtual</span> T <a class="code" href="../../d2/d44/classnut_1_1_vec_p_i_d.html#afc0ba87153f6d72534064d0c8d1ec7f6">Calculate</a>(T input, uint32_t ms)<span class="keyword"> override</span>{</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <a class="code" href="../../df/ddb/classnut_1_1_p_i_d_base.html">PIDBase&lt;T&gt;::_deviation</a>[2] = <a class="code" href="../../df/ddb/classnut_1_1_p_i_d_base.html">PIDBase&lt;T&gt;::_deviation</a>[1];</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <a class="code" href="../../df/ddb/classnut_1_1_p_i_d_base.html">PIDBase&lt;T&gt;::_deviation</a>[1] = <a class="code" href="../../df/ddb/classnut_1_1_p_i_d_base.html">PIDBase&lt;T&gt;::_deviation</a>[0];</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <a class="code" href="../../df/ddb/classnut_1_1_p_i_d_base.html">PIDBase&lt;T&gt;::_deviation</a>[0] = input;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <a class="code" href="../../d2/d44/classnut_1_1_vec_p_i_d.html#ac7d9dd1a37472a39f8cf3f5682526367">_output_value</a> += <a class="code" href="../../df/ddb/classnut_1_1_p_i_d_base.html#ad45db98c42c240f9779fbe2643127f69">PIDBase&lt;T&gt;::P</a>() * (</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                <a class="code" href="../../df/ddb/classnut_1_1_p_i_d_base.html">PIDBase&lt;T&gt;::_deviation</a>[0] - <a class="code" href="../../df/ddb/classnut_1_1_p_i_d_base.html">PIDBase&lt;T&gt;::_deviation</a>[1] +</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                <a class="code" href="../../df/ddb/classnut_1_1_p_i_d_base.html#a44f20be21fad8f302c77f56265635684">PIDBase&lt;T&gt;::I</a>() * <span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span>(ms) * 0.001 * <a class="code" href="../../df/ddb/classnut_1_1_p_i_d_base.html">PIDBase&lt;T&gt;::_deviation</a>[0] +</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                <a class="code" href="../../df/ddb/classnut_1_1_p_i_d_base.html">PIDBase&lt;T&gt;::D</a>() / <span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span>(ms) * 1000. * (<a class="code" href="../../df/ddb/classnut_1_1_p_i_d_base.html">PIDBase&lt;T&gt;::_deviation</a>[0] - 2.0 * <a class="code" href="../../df/ddb/classnut_1_1_p_i_d_base.html">PIDBase&lt;T&gt;::_deviation</a>[1] + <a class="code" href="../../df/ddb/classnut_1_1_p_i_d_base.html">PIDBase&lt;T&gt;::_deviation</a>[2]));</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordflow">if</span>(std::abs(<a class="code" href="../../d2/d44/classnut_1_1_vec_p_i_d.html#ac7d9dd1a37472a39f8cf3f5682526367">_output_value</a>) &gt; <a class="code" href="../../df/ddb/classnut_1_1_p_i_d_base.html">PIDBase&lt;T&gt;::_limit</a>)</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <a class="code" href="../../d2/d44/classnut_1_1_vec_p_i_d.html#ac7d9dd1a37472a39f8cf3f5682526367">_output_value</a> = (<a class="code" href="../../d2/d44/classnut_1_1_vec_p_i_d.html#ac7d9dd1a37472a39f8cf3f5682526367">_output_value</a> &gt; 0) ? <a class="code" href="../../df/ddb/classnut_1_1_p_i_d_base.html">PIDBase&lt;T&gt;::_limit</a> : -<a class="code" href="../../df/ddb/classnut_1_1_p_i_d_base.html">PIDBase&lt;T&gt;::_limit</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d2/d44/classnut_1_1_vec_p_i_d.html#ac7d9dd1a37472a39f8cf3f5682526367">_output_value</a>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="../../d2/d44/classnut_1_1_vec_p_i_d.html#afef934ac8c1169dc5c702bffb0f80c1e">   51</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d2/d44/classnut_1_1_vec_p_i_d.html#afef934ac8c1169dc5c702bffb0f80c1e">Reset</a>()<span class="keyword"> override</span>{</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <a class="code" href="../../df/ddb/classnut_1_1_p_i_d_base.html">PIDBase&lt;T&gt;::_deviation</a> = {0.0};</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <a class="code" href="../../d2/d44/classnut_1_1_vec_p_i_d.html#ac7d9dd1a37472a39f8cf3f5682526367">_output_value</a> = 0.0;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;};</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="aclassnut_1_1_p_i_d_base_html"><div class="ttname"><a href="../../df/ddb/classnut_1_1_p_i_d_base.html">nut::PIDBase</a></div><div class="ttdoc">PID制御器クラス</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d2c/_p_i_d_base_8hpp_source.html#l00019">PIDBase.hpp:19</a></div></div>
+<div class="ttc" id="aclassnut_1_1_vec_p_i_d_html_afc0ba87153f6d72534064d0c8d1ec7f6"><div class="ttname"><a href="../../d2/d44/classnut_1_1_vec_p_i_d.html#afc0ba87153f6d72534064d0c8d1ec7f6">nut::VecPID::Calculate</a></div><div class="ttdeci">virtual T Calculate(T input, uint32_t ms) override</div><div class="ttdoc">フィードバック計算</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d8f/_vec_p_i_d_8hpp_source.html#l00034">VecPID.hpp:34</a></div></div>
+<div class="ttc" id="aclassnut_1_1_vec_p_i_d_html_afef934ac8c1169dc5c702bffb0f80c1e"><div class="ttname"><a href="../../d2/d44/classnut_1_1_vec_p_i_d.html#afef934ac8c1169dc5c702bffb0f80c1e">nut::VecPID::Reset</a></div><div class="ttdeci">virtual void Reset() override</div><div class="ttdoc">操作量リセット</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d8f/_vec_p_i_d_8hpp_source.html#l00051">VecPID.hpp:51</a></div></div>
+<div class="ttc" id="anamespacenut_html"><div class="ttname"><a href="../../dd/d51/namespacenut.html">nut</a></div><div class="ttdoc">CANバスの通信仕様</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/dbd/_c_a_n_bus_protocol_8hpp_source.html#l00010">CANBusProtocol.hpp:10</a></div></div>
+<div class="ttc" id="aclassnut_1_1_vec_p_i_d_html_ac7d9dd1a37472a39f8cf3f5682526367"><div class="ttname"><a href="../../d2/d44/classnut_1_1_vec_p_i_d.html#ac7d9dd1a37472a39f8cf3f5682526367">nut::VecPID::_output_value</a></div><div class="ttdeci">T _output_value</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d8f/_vec_p_i_d_8hpp_source.html#l00016">VecPID.hpp:16</a></div></div>
+<div class="ttc" id="aclassnut_1_1_vec_p_i_d_html"><div class="ttname"><a href="../../d2/d44/classnut_1_1_vec_p_i_d.html">nut::VecPID</a></div><div class="ttdef"><b>Definition:</b> <a href="../../de/d8f/_vec_p_i_d_8hpp_source.html#l00014">VecPID.hpp:14</a></div></div>
+<div class="ttc" id="aclassnut_1_1_p_i_d_base_html_a44f20be21fad8f302c77f56265635684"><div class="ttname"><a href="../../df/ddb/classnut_1_1_p_i_d_base.html#a44f20be21fad8f302c77f56265635684">nut::PIDBase::I</a></div><div class="ttdeci">virtual const T &amp; I() const &amp;final</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d2c/_p_i_d_base_8hpp_source.html#l00086">PIDBase.hpp:86</a></div></div>
+<div class="ttc" id="aclassnut_1_1_vec_p_i_d_html_a1c964663bf9ddb0dc97106655d0b9e0a"><div class="ttname"><a href="../../d2/d44/classnut_1_1_vec_p_i_d.html#a1c964663bf9ddb0dc97106655d0b9e0a">nut::VecPID::VecPID</a></div><div class="ttdeci">VecPID(T P_gain=0.0, T I_gain=0.0, T D_gain=0.0)</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d8f/_vec_p_i_d_8hpp_source.html#l00019">VecPID.hpp:19</a></div></div>
+<div class="ttc" id="a_p_i_d_base_8hpp_html"><div class="ttname"><a href="../../d5/d2c/_p_i_d_base_8hpp.html">PIDBase.hpp</a></div></div>
+<div class="ttc" id="aclassnut_1_1_vec_p_i_d_html_a6c57d1e1d2ef7237698f910ca99b150c"><div class="ttname"><a href="../../d2/d44/classnut_1_1_vec_p_i_d.html#a6c57d1e1d2ef7237698f910ca99b150c">nut::VecPID::~VecPID</a></div><div class="ttdeci">virtual ~VecPID()</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d8f/_vec_p_i_d_8hpp_source.html#l00023">VecPID.hpp:23</a></div></div>
+<div class="ttc" id="aclassnut_1_1_p_i_d_base_html_ad45db98c42c240f9779fbe2643127f69"><div class="ttname"><a href="../../df/ddb/classnut_1_1_p_i_d_base.html#ad45db98c42c240f9779fbe2643127f69">nut::PIDBase::P</a></div><div class="ttdeci">virtual const T &amp; P() const &amp;final</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d2c/_p_i_d_base_8hpp_source.html#l00085">PIDBase.hpp:85</a></div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_8b1cfa3accea10fc5ecd39c63013c190.html">NutLib</a></li><li class="navelem"><a class="el" href="../../dir_63dbf4c33d1d3000acb3ae6cb6b3c647.html">ControlSystem</a></li><li class="navelem"><a class="el" href="../../dir_58af29b222a2a90a6548f81717f5bcb8.html">PID</a></li><li class="navelem"><a class="el" href="../../de/d8f/_vec_p_i_d_8hpp.html">VecPID.hpp</a></li>
+    <li class="footer">構築: <a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -16,11 +16,15 @@ namespace nut{
  */
 class MD2021Steer : public SteerDriver{
 private:
+	using CANRxIt = CANWrapper::RxExCallbackIt;
 
 	const std::shared_ptr<CANWrapper> _can;
 	const uint8_t _steer_id;
 	const uint8_t _user_id;
 	std::array<uint8_t, 8> _rx_data;
+
+	const uint8_t _can_fifo;
+	CANRxIt _can_callback;
 
 protected:
 	/**
@@ -66,7 +70,9 @@ public:
 	 * @brief コンストラク
 	 * @param[in] period 周期
 	 * @param[in] can canのヘルパインスタンス
-	 * @param[in] id 5bitのモータid
+	 * @param[in] use_fifo CANの使用FIFO（0 or 1）
+	 * @param[in] steer_id MDのID
+	 * @param[in] user_id 自分のID
 	 */
 	MD2021Steer(uint32_t period, std::shared_ptr<CANWrapper> can, uint8_t use_fifo, uint8_t steer_id, uint8_t user_id)
 		: SteerDriver(period), _can(can), _steer_id(steer_id), _user_id(user_id){
@@ -77,10 +83,29 @@ public:
 	 * @brief デストラクタ
 	 */
 	virtual ~MD2021Steer(){
-		Stop();
+		Deinit();
 	}
 
 
+	/**
+	 * @brief 初期化関数
+	 */
+	virtual void Init()override{
+		if(_is_init)return;
+		_is_init = true;
+		if(_can_fifo == 0)_can_callback = _can->FIFO0ReceiveCallback().AddExclusiveCallback(5, [this](CANWrapper::RxDataType rx_data){return ReadCanData(rx_data);});
+		else _can_callback = _can->FIFO1ReceiveCallback().AddExclusiveCallback(5, [this](CANWrapper::RxDataType rx_data){return ReadCanData(rx_data);});
+	}
+	/**
+	 * @brief 非初期化関数
+	 */
+	virtual void Deinit()override{
+		if(!_is_init)return;
+		Stop();
+		_is_init = false;
+		if(_can_fifo == 0)_can->FIFO0ReceiveCallback().EraseExclusiveCallback(_can_callback);
+		else _can_callback = _can->FIFO1ReceiveCallback().EraseExclusiveCallback(_can_callback);
+	}
 
 
 	/**
@@ -109,14 +134,6 @@ public:
 				can_protocol::motor::DataType::specialOperation,
 				std::array<uint8_t, 2>{_user_id, static_cast<uint8_t>(can_protocol::motor::SpecialOperation::stop)}
 		);
-	}
-
-
-	virtual bool SetMove(float norm, float rad){
-		_target_norm = norm;
-		_target_rad = rad;
-
-		return true;
 	}
 };
 }

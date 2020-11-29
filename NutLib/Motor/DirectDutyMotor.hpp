@@ -41,7 +41,7 @@ protected:
 						((rad - last_rad < -M_PI_f) ? rad - last_rad + M_2PI_f : rad - last_rad);
 			rad_div *= _encoder_ratio;
 			last_rad = rad;
-			_now_radps = rad_div * 1000.0f / _scheduler.GetPeriod();
+			_now_radps = rad_div * 1000.0f / static_cast<float>(_scheduler.GetPeriod());
 			_now_rad +=  rad_div;
 		}
 
@@ -66,16 +66,16 @@ protected:
 				switch(_move_type){
 				/*control speed*/
 				case MoveType::radps:
-					_now_duty = _radps_pid->Calculate(_target_radps - _now_radps, _scheduler.GetPeriod());
-					_radps_pid->Calculate(0.0f, _scheduler.GetPeriod());
+					_now_duty = _radps_pid->Calculate(_target_radps - _now_radps, static_cast<uint32_t>(_scheduler.GetPeriod()));
+					_radps_pid->Calculate(0.0f, static_cast<uint32_t>(_scheduler.GetPeriod()));
 					break;
 
 				/*control rad*/
 				case MoveType::radMulti:
 				case MoveType::radSingle:
 				case MoveType::radSinglePolarity:
-					_target_radps = _rad_pid->Calculate(_target_rad - _now_rad,  _scheduler.GetPeriod());
-					_now_duty = _radps_pid->Calculate(_target_radps - _now_radps, _scheduler.GetPeriod());
+					_target_radps = _rad_pid->Calculate(_target_rad - _now_rad,  static_cast<uint32_t>(_scheduler.GetPeriod()));
+					_now_duty = _radps_pid->Calculate(_target_radps - _now_radps, static_cast<uint32_t>(_scheduler.GetPeriod()));
 					break;
 
 				default:
@@ -101,19 +101,20 @@ public:
 	 * @param[in] pin 回転極性ピン
 	 * @param[in] encoder エンコーダのインスタンス
 	 * @details エンコーダを使わない場合はヌルポを入れてください
+	 * @param[in] encoder_ratio エンコーダ一回転に対する実効回転数の比
 	 */
 	DirectDutyMotor(
-			uint32_t period,
+			MilliSecond<uint32_t> period,
 			TIM_HandleTypeDef* htim,
 			uint32_t channel,
 			GPIO_TypeDef* port,
 			uint16_t pin,
-			const std::shared_ptr<Encoder>& encoder,
+			std::shared_ptr<Encoder> encoder,
 			float encoder_ratio = 1.0) :
 		Motor(period), _htim(htim),_channel(channel), _gpio_port(port), _gpio_pin(pin), _encoder(encoder), _encoder_ratio(encoder_ratio){
-		_radps_pid->SetLimit(100.0f);//duty limit
+		_radps_pid->SetLimit(99.0f);//duty limit
 	}
-	virtual ~DirectDutyMotor(){}
+	virtual ~DirectDutyMotor(){Deinit();}
 
 
 
@@ -121,8 +122,20 @@ public:
 	 * @brief 初期化関数
 	 */
 	virtual void Init() override{
+		if(_is_init)return;
+		_is_init = true;
 		_encoder->Init();
 		_scheduler.Set();
+	}
+	/**
+	 * @brief 非初期化関数
+	 */
+	virtual void Deinit() override{
+		if(!_is_init)return;
+		Stop();
+		_is_init = false;
+		_encoder->Deinit();
+		_scheduler.Erase();
 	}
 	/**
 	 * @brief 制御スタート
@@ -160,7 +173,7 @@ public:
 
 	/**
 	 * @brief 速度制御
-	 * @param[in] rpm RPM
+	 * @param[in] radps rad/s
 	 * @return 速度制御可能かどうか
 	 */
 	virtual bool SetRadps(float radps) override {

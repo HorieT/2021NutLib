@@ -112,7 +112,7 @@ $(document).ready(function(){initNavTree('d3/dcc/md__r_e_a_d_m_e.html','../../')
 <h2><a class="anchor" id="autotoc_md4"></a>
 コーディング</h2>
 <p>各インスタンスの生成はユーザーが行ってください。</p>
-<p>使用にあたって<code><a class="el" href="../../d9/d00/classnut_1_1_time_scheduler_base.html#a26ef0b67f545d580e7aece9bab88160a" title="スケジューラ時刻チェック  HAL_SYSTICK_Callback()内で呼び出してください">nut::TimeSchedulerBase::TimeCheck()</a></code>は必ず呼び出してください。 また各通信による受信処理を行うもの(コントローラやセンサ等)は各受信メンバ関数をユーザーが割り込み関数内に記述してください。</p>
+<p>使用にあたって<code><a class="el" href="../../d9/d00/classnut_1_1_time_scheduler_base.html#a26ef0b67f545d580e7aece9bab88160a" title="スケジューラ時刻チェック  USE_NUTLIB_CALLBACKSが無効の場合、HAL_SYSTICK_Callback()内で呼び出してください">nut::TimeSchedulerBase::TimeCheck()</a></code>は必ず呼び出してください。 また各通信による受信処理を行うもの(コントローラやセンサ等)は各受信メンバ関数をユーザーが割り込み関数内に記述してください。</p>
 <p>コードの詳しいことは<a href="https://gitlab.com/robopro_nut/2021nhkrobocon/2021nutlib_usesample">2021NutLib_UseSample</a>を参照するか、<a href="https://robopro_nut.gitlab.io/2021nhkrobocon/2021nutlib/index.html">リファレンス</a>を確認してください。(ローカルではpublic/index.html)</p>
 <h3><a class="anchor" id="autotoc_md5"></a>
 注意</h3>

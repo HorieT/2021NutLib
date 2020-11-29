@@ -3,7 +3,6 @@
  * @brief アブソリュート型エンコーダ基底
  * @author Horie
  * @date 2020/9
- * @attention まだ作成中
  */
 #pragma once
 
@@ -13,6 +12,11 @@
 #include <array>
 
 namespace nut{
+/**
+ * @brief アブソリュート型エンコーダクラス
+ * @attention というのは偽りで現状AMT20系列専用クラス.
+ * そのうちちゃんと派生させます(誰かやって)
+ */
 class AbsEncoder : public Encoder{
 private:
 	UART_HandleTypeDef* const _huart;
@@ -39,9 +43,19 @@ public:
 	 * @brief 初期化
 	 */
 	virtual void Init() override{
+		if(_is_init)return;
+		_is_init = true;
 		_scheduler.Set();
 	}
 
+	/**
+	 * @brief 初期化
+	 */
+	virtual void Deinit() override{
+		if(!_is_init)return;
+		_is_init = false;
+		_scheduler.Erase();
+	}
 
 	/**
 	 * @brief カウントリセット
@@ -73,6 +87,9 @@ public:
 	}
 
 
+	/**
+	 * @brief 角度読み出しリクエスト
+	 */
 	void Reqest(){
 		uint8_t addr = 0x54;
 		HAL_UART_AbortReceive(_huart);

@@ -3,7 +3,6 @@
  * @brief 電流制御モータ
  * @author Horie
  * @date 2020/10
- * @attention _schedulerを使用しません。
  */
 #pragma once
 
@@ -12,6 +11,7 @@
 namespace nut{
 /**
  * @brief 電流制御のモータクラス
+ * @attention _schedulerを使用しません。
  */
 class CurrentControlMotor : public DirectDutyMotor{
 private:
@@ -30,7 +30,7 @@ private:
 						((rad - last_rad < -M_PI_f) ? rad - last_rad + M_2PI_f : rad - last_rad);
 			rad_div *= _encoder_ratio;
 			last_rad = rad;
-			_now_radps = rad_div * 1000.0f / _scheduler.GetPeriod();
+			_now_radps = rad_div * 1000.0f / static_cast<float>(_scheduler.GetPeriod());
 			_now_rad +=  rad_div;
 		}
 
@@ -90,29 +90,28 @@ private:
 public:
 	/**
 	 * @brief コンストラク
-	 * @param[in] period PWM周期[s]
-	 * @param[in] current_buff_size 電流ADCバッファサイズ
+	 * @param[in] period 電流入力周期[ms]
 	 * @param[in] htim PWM出力タイマ
 	 * @param[in] channel PWM出力チャンネル
 	 * @param[in] port 回転極性ピンのポート
 	 * @param[in] pin 回転極性ピン
 	 * @param[in] encoder エンコーダのインスタンス
 	 * @details エンコーダを使わない場合はヌルポを入れてください
+	 * @param[in] encoder_ratio エンコーダ一回転に対する実効回転数の比
 	 */
 	CurrentControlMotor(
-			float period,
-			uint16_t current_buff_size,
+			MilliSecond<float> period,
 			TIM_HandleTypeDef* htim,
 			uint32_t channel,
 			GPIO_TypeDef* port,
 			uint16_t pin,
-			const std::shared_ptr<Encoder>& encoder,
+			std::shared_ptr<Encoder> encoder,
 			float encoder_ratio = 1.0) :
 		DirectDutyMotor(0xFFFFFFFF, htim, channel, port, pin, encoder, encoder_ratio){
-		_radps_pid->SetLimit(100.0f);//duty limit
-		_controll_period_ms = period * current_buff_size / 2.0f * 1000.0;
+		_radps_pid->SetLimit(99.0f);//duty limit
+		_controll_period_ms = static_cast<float>(period);
 	}
-	virtual ~CurrentControlMotor(){}
+	virtual ~CurrentControlMotor(){Deinit();}
 
 
 
@@ -120,7 +119,18 @@ public:
 	 * @brief 初期化関数
 	 */
 	virtual void Init() override{
+		if(_is_init)return;
+		_is_init = true;
 		_encoder->Init();
+	}
+	/**
+	 * @brief 非初期化関数
+	 */
+	virtual void Deinit() override{
+		if(!_is_init)return;
+		Stop();
+		_is_init = false;
+		_encoder->Deinit();
 	}
 
 
@@ -163,9 +173,11 @@ public:
 
 	/**
 	 * @brief 電流取得割込み呼び出し関数
-	 * @details HAL_ADC_ConvHalfCpltCallback()で呼び出してください
+	 * @details コンストラクタに入力した周期で呼び出してください
+	 * @param[in] current 現在の電流[A]
 	 */
 	virtual bool CurrentEXTI(float current){
+		if(!_is_init)return false;
 		_now_current = current;
 		ScheduleTask();
 		return true;

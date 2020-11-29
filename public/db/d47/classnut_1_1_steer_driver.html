@@ -1,0 +1,549 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>NutLib: nut::SteerDriver クラス</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">NutLib
+   </div>
+  </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.svg"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.20 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'検索');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('db/d47/classnut_1_1_steer_driver.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pro-methods">限定公開メンバ関数</a> &#124;
+<a href="#pro-attribs">限定公開変数類</a> &#124;
+<a href="../../d1/d29/classnut_1_1_steer_driver-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">nut::SteerDriver クラス<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="../../d7/dae/_steer_driver_8hpp_source.html">SteerDriver.hpp</a>&gt;</code></p>
+<div class="dynheader">
+nut::SteerDriver の継承関係図</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="../../db/d47/classnut_1_1_steer_driver.png" usemap="#nut::SteerDriver_map" alt=""/>
+  <map id="nut::SteerDriver_map" name="nut::SteerDriver_map">
+<area href="../../d9/deb/classnut_1_1_m_d2021_steer.html" title="MD2021 Steer専用クラス" alt="nut::MD2021Steer" shape="rect" coords="0,56,113,80"/>
+  </map>
+</div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a9e333d4e775feeb7bb05e2a59c725cea"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d47/classnut_1_1_steer_driver.html#a9e333d4e775feeb7bb05e2a59c725cea">SteerDriver</a> (uint32_t period)</td></tr>
+<tr class="memdesc:a9e333d4e775feeb7bb05e2a59c725cea"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラク  <a href="../../db/d47/classnut_1_1_steer_driver.html#a9e333d4e775feeb7bb05e2a59c725cea">[詳解]</a><br /></td></tr>
+<tr class="separator:a9e333d4e775feeb7bb05e2a59c725cea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f14db6aa08c553b7b9b1e4ddb5c6fb7"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d47/classnut_1_1_steer_driver.html#a4f14db6aa08c553b7b9b1e4ddb5c6fb7">~SteerDriver</a> ()</td></tr>
+<tr class="memdesc:a4f14db6aa08c553b7b9b1e4ddb5c6fb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">デストラクタ  <a href="../../db/d47/classnut_1_1_steer_driver.html#a4f14db6aa08c553b7b9b1e4ddb5c6fb7">[詳解]</a><br /></td></tr>
+<tr class="separator:a4f14db6aa08c553b7b9b1e4ddb5c6fb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7feb6cf14dd634ede061441215adccc6"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d47/classnut_1_1_steer_driver.html#a7feb6cf14dd634ede061441215adccc6">Init</a> ()=0</td></tr>
+<tr class="memdesc:a7feb6cf14dd634ede061441215adccc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">初期化関数  <a href="../../db/d47/classnut_1_1_steer_driver.html#a7feb6cf14dd634ede061441215adccc6">[詳解]</a><br /></td></tr>
+<tr class="separator:a7feb6cf14dd634ede061441215adccc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8187ee9d7cf32bcfd14de1691af54417"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d47/classnut_1_1_steer_driver.html#a8187ee9d7cf32bcfd14de1691af54417">Deinit</a> ()=0</td></tr>
+<tr class="memdesc:a8187ee9d7cf32bcfd14de1691af54417"><td class="mdescLeft">&#160;</td><td class="mdescRight">非初期化関数  <a href="../../db/d47/classnut_1_1_steer_driver.html#a8187ee9d7cf32bcfd14de1691af54417">[詳解]</a><br /></td></tr>
+<tr class="separator:a8187ee9d7cf32bcfd14de1691af54417"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a726924ab75def1a4dd50fcc262b2f8e6"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d47/classnut_1_1_steer_driver.html#a726924ab75def1a4dd50fcc262b2f8e6">Start</a> (bool current_control=false)=0</td></tr>
+<tr class="memdesc:a726924ab75def1a4dd50fcc262b2f8e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">制御スタート  <a href="../../db/d47/classnut_1_1_steer_driver.html#a726924ab75def1a4dd50fcc262b2f8e6">[詳解]</a><br /></td></tr>
+<tr class="separator:a726924ab75def1a4dd50fcc262b2f8e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaad7905527203e46394633981a104a89"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d47/classnut_1_1_steer_driver.html#aaad7905527203e46394633981a104a89">Stop</a> ()=0</td></tr>
+<tr class="memdesc:aaad7905527203e46394633981a104a89"><td class="mdescLeft">&#160;</td><td class="mdescRight">制御ストップ  <a href="../../db/d47/classnut_1_1_steer_driver.html#aaad7905527203e46394633981a104a89">[詳解]</a><br /></td></tr>
+<tr class="separator:aaad7905527203e46394633981a104a89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa100855065d6e31c04c56f76a6e49f8"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d47/classnut_1_1_steer_driver.html#afa100855065d6e31c04c56f76a6e49f8">SetMove</a> (float norm, float rad)</td></tr>
+<tr class="separator:afa100855065d6e31c04c56f76a6e49f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e7e05f7afe1a64d3e76185f06fd2d2e"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d47/classnut_1_1_steer_driver.html#a6e7e05f7afe1a64d3e76185f06fd2d2e">SetMove</a> (float norm)</td></tr>
+<tr class="separator:a6e7e05f7afe1a64d3e76185f06fd2d2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+限定公開メンバ関数</h2></td></tr>
+<tr class="memitem:a9c6d13ad3fb63c809cb27b068a986523"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d47/classnut_1_1_steer_driver.html#a9c6d13ad3fb63c809cb27b068a986523">ScheduleTask</a> ()=0</td></tr>
+<tr class="memdesc:a9c6d13ad3fb63c809cb27b068a986523"><td class="mdescLeft">&#160;</td><td class="mdescRight">周期コールバック関数  <a href="../../db/d47/classnut_1_1_steer_driver.html#a9c6d13ad3fb63c809cb27b068a986523">[詳解]</a><br /></td></tr>
+<tr class="separator:a9c6d13ad3fb63c809cb27b068a986523"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+限定公開変数類</h2></td></tr>
+<tr class="memitem:a25c905d02450270271801704602ed557"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/dff/classnut_1_1_time_scheduler.html">TimeScheduler</a>&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d47/classnut_1_1_steer_driver.html#a25c905d02450270271801704602ed557">_scheduler</a></td></tr>
+<tr class="separator:a25c905d02450270271801704602ed557"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a622da1a91a1a614fdaba9e212dd6028e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d47/classnut_1_1_steer_driver.html#a622da1a91a1a614fdaba9e212dd6028e">_is_init</a> = false</td></tr>
+<tr class="separator:a622da1a91a1a614fdaba9e212dd6028e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59d39ca3ec59a114402ee7b9340c44a1"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d47/classnut_1_1_steer_driver.html#a59d39ca3ec59a114402ee7b9340c44a1">_target_norm</a> = 0.0f</td></tr>
+<tr class="separator:a59d39ca3ec59a114402ee7b9340c44a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d24ccf400c1638f078abce9d354440e"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d47/classnut_1_1_steer_driver.html#a4d24ccf400c1638f078abce9d354440e">_target_rad</a> = 0.0f</td></tr>
+<tr class="separator:a4d24ccf400c1638f078abce9d354440e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock">
+<p class="definition"> <a class="el" href="../../d7/dae/_steer_driver_8hpp_source.html">SteerDriver.hpp</a> の <a class="el" href="../../d7/dae/_steer_driver_8hpp_source.html#l00020">20</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a id="a9e333d4e775feeb7bb05e2a59c725cea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e333d4e775feeb7bb05e2a59c725cea">&#9670;&nbsp;</a></span>SteerDriver()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">nut::SteerDriver::SteerDriver </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>period</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>コンストラク </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">period</td><td>周期 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="../../d7/dae/_steer_driver_8hpp_source.html">SteerDriver.hpp</a> の <a class="el" href="../../d7/dae/_steer_driver_8hpp_source.html#l00044">44</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a4f14db6aa08c553b7b9b1e4ddb5c6fb7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f14db6aa08c553b7b9b1e4ddb5c6fb7">&#9670;&nbsp;</a></span>~SteerDriver()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual nut::SteerDriver::~SteerDriver </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>デストラクタ </p>
+
+<p class="definition"> <a class="el" href="../../d7/dae/_steer_driver_8hpp_source.html">SteerDriver.hpp</a> の <a class="el" href="../../d7/dae/_steer_driver_8hpp_source.html#l00051">51</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a8187ee9d7cf32bcfd14de1691af54417"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8187ee9d7cf32bcfd14de1691af54417">&#9670;&nbsp;</a></span>Deinit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void nut::SteerDriver::Deinit </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>非初期化関数 </p>
+
+<p><a class="el" href="../../d9/deb/classnut_1_1_m_d2021_steer.html#a7f1a86953a8c4e3e7581e08ad8d88ab4">nut::MD2021Steer</a>で実装されています。</p>
+
+</div>
+</div>
+<a id="a7feb6cf14dd634ede061441215adccc6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7feb6cf14dd634ede061441215adccc6">&#9670;&nbsp;</a></span>Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void nut::SteerDriver::Init </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>初期化関数 </p>
+
+<p><a class="el" href="../../d9/deb/classnut_1_1_m_d2021_steer.html#a5a8594346490fe9bc5e79aa19034ac8e">nut::MD2021Steer</a>で実装されています。</p>
+
+</div>
+</div>
+<a id="a9c6d13ad3fb63c809cb27b068a986523"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c6d13ad3fb63c809cb27b068a986523">&#9670;&nbsp;</a></span>ScheduleTask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void nut::SteerDriver::ScheduleTask </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>周期コールバック関数 </p>
+
+<p><a class="el" href="../../d9/deb/classnut_1_1_m_d2021_steer.html#a84a127a887b5856d0de2771cd1a4cb85">nut::MD2021Steer</a>で実装されています。</p>
+
+</div>
+</div>
+<a id="a6e7e05f7afe1a64d3e76185f06fd2d2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e7e05f7afe1a64d3e76185f06fd2d2e">&#9670;&nbsp;</a></span>SetMove() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool nut::SteerDriver::SetMove </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>norm</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d7/dae/_steer_driver_8hpp_source.html">SteerDriver.hpp</a> の <a class="el" href="../../d7/dae/_steer_driver_8hpp_source.html#l00092">92</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="afa100855065d6e31c04c56f76a6e49f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa100855065d6e31c04c56f76a6e49f8">&#9670;&nbsp;</a></span>SetMove() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool nut::SteerDriver::SetMove </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>norm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>rad</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d7/dae/_steer_driver_8hpp_source.html">SteerDriver.hpp</a> の <a class="el" href="../../d7/dae/_steer_driver_8hpp_source.html#l00082">82</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a726924ab75def1a4dd50fcc262b2f8e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a726924ab75def1a4dd50fcc262b2f8e6">&#9670;&nbsp;</a></span>Start()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool nut::SteerDriver::Start </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>current_control</em> = <code>false</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>制御スタート </p>
+
+<p><a class="el" href="../../d9/deb/classnut_1_1_m_d2021_steer.html#ae9b35fc71d5e405656551286093da878">nut::MD2021Steer</a>で実装されています。</p>
+
+</div>
+</div>
+<a id="aaad7905527203e46394633981a104a89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaad7905527203e46394633981a104a89">&#9670;&nbsp;</a></span>Stop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void nut::SteerDriver::Stop </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>制御ストップ </p>
+
+<p><a class="el" href="../../d9/deb/classnut_1_1_m_d2021_steer.html#a527fc49ae61a7dd1a8baabd37004b299">nut::MD2021Steer</a>で実装されています。</p>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a622da1a91a1a614fdaba9e212dd6028e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a622da1a91a1a614fdaba9e212dd6028e">&#9670;&nbsp;</a></span>_is_init</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool nut::SteerDriver::_is_init = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d7/dae/_steer_driver_8hpp_source.html">SteerDriver.hpp</a> の <a class="el" href="../../d7/dae/_steer_driver_8hpp_source.html#l00026">26</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a25c905d02450270271801704602ed557"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25c905d02450270271801704602ed557">&#9670;&nbsp;</a></span>_scheduler</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d0/dff/classnut_1_1_time_scheduler.html">TimeScheduler</a>&lt;void&gt; nut::SteerDriver::_scheduler</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d7/dae/_steer_driver_8hpp_source.html">SteerDriver.hpp</a> の <a class="el" href="../../d7/dae/_steer_driver_8hpp_source.html#l00023">23</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a59d39ca3ec59a114402ee7b9340c44a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59d39ca3ec59a114402ee7b9340c44a1">&#9670;&nbsp;</a></span>_target_norm</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float nut::SteerDriver::_target_norm = 0.0f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d7/dae/_steer_driver_8hpp_source.html">SteerDriver.hpp</a> の <a class="el" href="../../d7/dae/_steer_driver_8hpp_source.html#l00030">30</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a4d24ccf400c1638f078abce9d354440e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d24ccf400c1638f078abce9d354440e">&#9670;&nbsp;</a></span>_target_rad</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float nut::SteerDriver::_target_rad = 0.0f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d7/dae/_steer_driver_8hpp_source.html">SteerDriver.hpp</a> の <a class="el" href="../../d7/dae/_steer_driver_8hpp_source.html#l00031">31</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li>NutLib/Motor/<a class="el" href="../../d7/dae/_steer_driver_8hpp_source.html">SteerDriver.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dd/d51/namespacenut.html">nut</a></li><li class="navelem"><a class="el" href="../../db/d47/classnut_1_1_steer_driver.html">SteerDriver</a></li>
+    <li class="footer">構築: <a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -32,7 +32,6 @@ public:
 	 * @param[in] P_gain Pゲイン
 	 * @param[in] I_gain Iゲイン
 	 * @param[in] D_gain Dゲイン
-	 * @param[in] limit 操作量上限値(絶対値)
 	 */
 	PIDBase(T P_gain = 0.0, T I_gain = 0.0, T D_gain = 0.0)
 		:Controller<T, 1, 1>(), _P_gain(P_gain), _I_gain(I_gain), _D_gain(D_gain){}
@@ -54,7 +53,7 @@ public:
 
 	/**
 	 * @brief フィードバック計算
-	 * @param[in] deviation 偏差
+	 * @param[in] input 入力
 	 * @param[in] ms 前回計算時からの経過時間
 	 * @return 操作量
 	 */

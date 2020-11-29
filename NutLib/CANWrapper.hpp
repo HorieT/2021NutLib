@@ -33,6 +33,9 @@ public:
 		std::array<uint8_t, 8> data;
 	};
 
+	using RxCallbackIt = HALCallback<RxDataType>::CallbackIterator;
+	using RxExCallbackIt = HALCallback<RxDataType>::ExCallbackIterator;
+
 private:
 	using TxCallbackIt = decltype(callback::CAN_TxMailboxComplete)::CallbackIterator;
 	using Rx0CallbackIt = decltype(callback::CAN_RxFifo0MsgPending)::ExCallbackIterator;

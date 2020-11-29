@@ -13,6 +13,7 @@ namespace nut{
 
 /**
  * @brief RS485インターフェースクラス
+ * @attention 未完成！！！！！
  *
  */
 class RS485{
@@ -57,10 +58,10 @@ private:
 public:
 	/**
 	 * @brief コンストラクタ
-	 * @pram[in] huart UARTハンドル
-	 * @pram[in] gpio RS485 enableピンのIOポート
-	 * @pram[in] gpio RS485 enableピンのIOピン
-	 * @pram[in] htim 通信調停用1MHzタイマ
+	 * @param[in] huart UARTハンドル
+	 * @param[in] port RS485 enableピンのIOポート
+	 * @param[in] pin RS485 enableピンのIOピン
+	 * @param[in] htim 通信調停用1MHzタイマ
 	 * @details カウント周期(リロード周期ではない)を1usに設定してください
 	 */
 	RS485(UART_HandleTypeDef* huart, GPIO_TypeDef* port, uint16_t pin, TIM_HandleTypeDef* htim)

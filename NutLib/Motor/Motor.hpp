@@ -54,6 +54,8 @@ protected:
 	float _now_rad = 0.0f;//Multi-turn abs
 	float _now_current = 0.0f;
 
+	bool _is_init;
+
 
 
 	/**
@@ -85,7 +87,7 @@ public:
 	 * @brief コンストラクタ
 	 * @param[in] period 制御周期[ms]
 	 */
-	Motor(uint32_t period) : _scheduler([this]{ScheduleTask();}, period){
+	Motor(MilliSecond<uint32_t> period) : _scheduler([this]{ScheduleTask();}, period){
 
 	}
 	/**
@@ -98,6 +100,10 @@ public:
 	 * @brief 初期化関数
 	 */
 	virtual void Init() = 0;
+	/**
+	 * @brief 非初期化関数
+	 */
+	virtual void Deinit() = 0;
 
 
 	/**
@@ -126,7 +132,7 @@ public:
 	}
 	/**
 	 * @brief 速度制御
-	 * @param[in] rpm RPM
+	 * @param[in] radps rad/s
 	 * @return 速度制御可能かどうか
 	 */
 	virtual bool SetRadps(float radps) {

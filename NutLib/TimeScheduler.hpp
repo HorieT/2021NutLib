@@ -9,6 +9,7 @@
 #pragma once
 
 #include "Global.hpp"
+#include "Unit/UnitCore.hpp"
 #include <functional>
 #include <vector>
 #include <memory>
@@ -25,19 +26,19 @@ namespace nut{
  */
 class TimeSchedulerBase{
 private:
-	static inline volatile uint32_t _time = 0;
+	static inline volatile uint32_t _time = 0;//volatileで最適化除外お行うため組み込み型
 	static inline std::vector<TimeSchedulerBase*> _scheduler;
 
 #ifdef HAL_TIM_MODULE_ENABLED
 	static inline TIM_HandleTypeDef* _auxiliary_timer = nullptr;
 #endif
 
-	uint32_t _start_time = 0;
-	uint32_t _period;
+	MilliSecond<uint32_t> _start_time = 0;
+	MilliSecond<uint32_t> _period;
 	bool _setting = false;
 
 
-	static inline void IncTime(){_time++;}
+	static inline void IncTime(){_time += 1;}
 
 protected:
 	const bool _one_time;//!< 一時オブジェクト用
@@ -62,7 +63,7 @@ public:
 	 * @brief コンストラクタ
 	 * @param[in] ms スケジューラ周期
 	 */
-	TimeSchedulerBase(uint32_t ms) : _period(ms), _one_time(false){}
+	TimeSchedulerBase(MilliSecond<uint32_t> ms) : _period(ms), _one_time(false){}
 
 	/**
 	 * @brief デストラクタ
@@ -91,7 +92,7 @@ public:
 	 * @brief スケジューラ周期取得
 	 * @return スケジューラ周期[ms]
 	 */
-	virtual inline uint32_t GetPeriod() const final{return _period;}
+	virtual inline MilliSecond<uint32_t> GetPeriod() const final{return _period;}
 
 
 	/**
@@ -152,16 +153,16 @@ public:
 	 * 		プログラムがロックされます
 	 */
 	[[deprecated("It may adversely affect the control system of 'sysClock'.")]]
-	static void Delay(uint32_t ms){
-		volatile uint32_t end = _time + ms;
-		while(TimeSchedulerBase::GetTime() <= end);//最適化の阻害
+	static void Delay(MilliSecond<uint32_t> ms){
+		volatile const uint32_t end = _time + static_cast<uint32_t>(ms);
+		while(_time <= end);//最適化の阻害
 	}
 
 	/**
 	 * @brief　現在時刻取得
 	 * @return 現在時刻[ms]
 	 */
-	volatile static uint32_t GetTime(){return _time;}
+	static MilliSecond<uint32_t> GetTime(){return _time;}
 };
 
 
@@ -177,7 +178,7 @@ public:
 	 * @param[in] func コールバック関数
 	 * @param[in] ms コールバック周期
 	 */
-	TimeScheduler(std::function<void(Args)>&& func, uint32_t ms) : TimeSchedulerBase(ms), _callbuck_funk(func){}
+	TimeScheduler(std::function<void(Args)>&& func, MilliSecond<uint32_t> ms) : TimeSchedulerBase(ms), _callbuck_funk(func){}
 	/**
 	 * @brief デストラクタ
 	 */
@@ -220,7 +221,7 @@ public:
 	 * @param[in] func コールバック関数
 	 * @param[in] ms コールバック周期
 	 */
-	TimeScheduler(std::function<void(void)>&& func, uint32_t ms) : TimeSchedulerBase(ms), _callbuck_funk(func){}
+	TimeScheduler(std::function<void(void)>&& func, MilliSecond<uint32_t> ms) : TimeSchedulerBase(ms), _callbuck_funk(func){}
 	/**
 	 * @brief デストラクタ
 	 */
@@ -262,6 +263,6 @@ inline void DelayCall(std::function<void(void)>&& callback, uint32_t ms){
 #ifdef USE_NUTLIB_CALLBACKS
 namespace nut::callback{
 /*@brief  SysTickのコールバッククラス */
-static inline HALCallback<void> Systick;
+inline HALCallback<void> Systick;
 }
 #endif

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['higuchiboard_266',['HiguchiBoard',['../de/d8a/classnut_1_1_higuchi_board.html',1,'nut']]]
+  ['encoder_514',['Encoder',['../df/d9b/classnut_1_1_encoder.html',1,'nut']]],
+  ['encoderwheel_515',['EncoderWheel',['../de/dce/classnut_1_1_encoder_wheel.html',1,'nut']]]
 ];

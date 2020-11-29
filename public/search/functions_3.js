@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['delay_322',['Delay',['../d9/d00/classnut_1_1_time_scheduler_base.html#a74653af5e69408033f844439e59520f1',1,'nut::TimeSchedulerBase']]],
-  ['directdutymotor_323',['DirectDutyMotor',['../db/d01/classnut_1_1_direct_duty_motor.html#a29445ae5563fbffe717d8cd55db6f585',1,'nut::DirectDutyMotor']]],
-  ['drivewheel_324',['DriveWheel',['../dc/d39/classnut_1_1_drive_wheel.html#aa32acf9ddeb53d2ac0a19f55cb0568eb',1,'nut::DriveWheel']]],
-  ['dualshock_325',['DualShock',['../d6/de4/classnut_1_1_dual_shock.html#af1f9394130985a9494f5524e49115c95',1,'nut::DualShock']]]
+  ['encoder_620',['Encoder',['../df/d9b/classnut_1_1_encoder.html#a9c0f73a212f4a4645bae19724f455ff8',1,'nut::Encoder']]],
+  ['encoderwheel_621',['EncoderWheel',['../de/dce/classnut_1_1_encoder_wheel.html#abdb50f7b4b9f4312dc7838b2c8797ac5',1,'nut::EncoderWheel']]],
+  ['erase_622',['Erase',['../d9/d00/classnut_1_1_time_scheduler_base.html#a1d0ecaefe7d5c5f1266a4021fba23d69',1,'nut::TimeSchedulerBase']]],
+  ['erasepage_623',['ErasePage',['../d8/d41/namespacenut_1_1flash.html#a2612b28e31acde27af51f4a54fed5638',1,'nut::flash']]],
+  ['erasesector_624',['EraseSector',['../d8/d41/namespacenut_1_1flash.html#af81fa35fc73897653b4d95a480b88f37',1,'nut::flash']]]
 ];

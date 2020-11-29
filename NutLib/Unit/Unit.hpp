@@ -50,6 +50,50 @@ private:
 
 public:
 	constexpr Unit(T value = 0) : _value(value){}
+	/**
+	 * @brief 同一単位系の代入構築
+	 * @tparam TR 右オペランドの数値型
+	 * @tparam PR 右オペランドの接頭辞
+	 * @return this
+	 */
+	template<typename TR, class PR>
+	constexpr Unit(const Unit<TR, U, PR>& r_operand){
+		_value = static_cast<T>((static_cast<TR>(r_operand) * P::den * PR::num) / (P::num * PR::den));
+	}
+	/**
+	 * @brief 同一単位系の代入構築
+	 * @tparam TR 右オペランドの数値型
+	 * @tparam PR 右オペランドの接頭辞
+	 * @return this
+	 */
+	template<typename TR, class PR>
+	constexpr Unit(Unit<TR, U, PR>&& r_operand){
+		_value = static_cast<T>((static_cast<TR>(r_operand) * P::den * PR::num) / (P::num * PR::den));
+	}
+
+	/**
+	 * @brief 同一単位系の代入
+	 * @tparam TR 右オペランドの数値型
+	 * @tparam PR 右オペランドの接頭辞
+	 * @return this
+	 */
+	template<typename TR, class PR>
+	constexpr Unit<T, U, P>& operator=(const Unit<TR, U, PR>& r_operand) &{
+		_value = static_cast<T>((static_cast<TR>(r_operand) * P::den * PR::num) / (P::num * PR::den));
+		return *this;
+	}
+	/**
+	 * @brief 同一単位系の代入
+	 * @tparam TR 右オペランドの数値型
+	 * @tparam PR 右オペランドの接頭辞
+	 * @return this
+	 */
+	template<typename TR, class PR>
+	constexpr Unit<T, U, P>& operator=(Unit<TR, U, PR>&& r_operand) & noexcept{
+		_value = static_cast<T>((static_cast<TR>(r_operand) * P::den * PR::num) / (P::num * PR::den));
+		return *this;
+	}
+
 
 
 	/**
@@ -74,29 +118,6 @@ public:
 	 */
 	constexpr Unit<T, U, P> operator-() const{
 		return -_value;
-	}
-
-	/**
-	 * @brief 同一単位系の代入
-	 * @tparam TR 右オペランドの数値型
-	 * @tparam PR 右オペランドの接頭辞
-	 * @return this
-	 */
-	template<typename TR, class PR>
-	constexpr Unit<T, U, P>& operator=(const Unit<TR, U, PR>& r_operand) &{
-		_value = static_cast<T>((static_cast<TR>(r_operand) * P::den * PR::num) / (P::num * PR::den));
-		return *this;
-	}
-	/**
-	 * @brief 同一単位系の代入
-	 * @tparam TR 右オペランドの数値型
-	 * @tparam PR 右オペランドの接頭辞
-	 * @return this
-	 */
-	template<typename TR, class PR>
-	constexpr Unit<T, U, P>& operator=(Unit<TR, U, PR>&& r_operand) & noexcept{
-		_value = static_cast<T>((static_cast<TR>(r_operand) * P::den * PR::num) / (P::num * PR::den));
-		return *this;
 	}
 
 

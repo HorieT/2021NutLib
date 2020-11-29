@@ -129,6 +129,12 @@ public:
 	virtual void Init()override{
 	}
 
+	/**
+	 * @brief 非初期化関数
+	 * @details ダミー関数です
+	 */
+	virtual void Deinit()override{
+	}
 
 	/**
 	 * @brief 制御スタート
@@ -167,7 +173,7 @@ public:
 	}
 	/**
 	 * @brief 速度制御
-	 * @param[in] rpm RPM
+	 * @param[in] radps rad/s
 	 * @return 速度制御可能かどうか
 	 */
 	virtual bool SetRadps(float radps) override{

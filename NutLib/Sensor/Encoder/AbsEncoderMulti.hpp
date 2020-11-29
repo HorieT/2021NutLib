@@ -13,6 +13,9 @@
 #include <array>
 
 namespace nut{
+/*
+ * @attention まだ作成中
+ */
 class AbsEncoderMulti : public Encoder{
 private:
 	UART_HandleTypeDef* const _huart;
@@ -43,9 +46,19 @@ public:
 	 * @brief 初期化
 	 */
 	virtual void Init() override{
+		if(_is_init)return;
+		_is_init = true;
 		_scheduler.Set();
 	}
 
+	/**
+	 * @brief 初期化
+	 */
+	virtual void Deinit() override{
+		if(!_is_init)return;
+		_is_init = false;
+		_scheduler.Erase();
+	}
 
 	/**
 	 * @brief カウントリセット

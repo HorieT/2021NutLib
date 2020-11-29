@@ -1,4 +1,8 @@
 var searchData=
 [
-  ['motor_358',['Motor',['../d5/da2/classnut_1_1_motor.html#af7a835ef2c4874e42a9da064d264564a',1,'nut::Motor']]]
+  ['makecanid_668',['MakeCANID',['../d4/db2/namespacenut_1_1can__protocol.html#a58cc76324c52ec953d7699f31457baa9',1,'nut::can_protocol::MakeCANID(uint8_t device_id, T data_type) -&gt; typename std::enable_if_t&lt; std::is_enum_v&lt; T &gt;, uint16_t &gt;'],['../d4/db2/namespacenut_1_1can__protocol.html#a268c2bc0b64e75615dd5f247233f5d3a',1,'nut::can_protocol::MakeCANID(uint8_t device_id, uint8_t data_type)'],['../d4/db2/namespacenut_1_1can__protocol.html#ac34b5543a8ba577a1ae13a16085b7168',1,'nut::can_protocol::MakeCANID(Device device, uint8_t num, T data_type) -&gt; typename std::enable_if_t&lt; std::is_enum_v&lt; T &gt;, uint16_t &gt;'],['../d4/db2/namespacenut_1_1can__protocol.html#a6c6252927f1453287b786f5cc0318b27',1,'nut::can_protocol::MakeCANID(Device device, uint8_t num, uint8_t data_type)'],['../d4/db2/namespacenut_1_1can__protocol.html#a37903048835bcd7500cc2a6284728c3f',1,'nut::can_protocol::MakeCANID(Device device, can_protocol::all::NotificationType data_type, T data) -&gt; typename std::enable_if_t&lt; std::is_enum_v&lt; T &gt;, uint16_t &gt;']]],
+  ['makedeviceid_669',['MakeDeviceID',['../d4/db2/namespacenut_1_1can__protocol.html#ab9d182ae4b58b3259481136dc0bc0d44',1,'nut::can_protocol::MakeDeviceID(Device device)'],['../d4/db2/namespacenut_1_1can__protocol.html#a88cee8b351f567feebd34e2f9295633d',1,'nut::can_protocol::MakeDeviceID(Device device, uint8_t num)']]],
+  ['md2021_670',['MD2021',['../d0/d4a/classnut_1_1_m_d2021.html#ae9b10a8fd56a471e6a0a578f9d817b15',1,'nut::MD2021']]],
+  ['md2021steer_671',['MD2021Steer',['../d9/deb/classnut_1_1_m_d2021_steer.html#afb355ab8d7abb45c44e1127305e7ff18',1,'nut::MD2021Steer']]],
+  ['motor_672',['Motor',['../d5/da2/classnut_1_1_motor.html#ae871e90018c8d25402fb91139fb5ed72',1,'nut::Motor']]]
 ];

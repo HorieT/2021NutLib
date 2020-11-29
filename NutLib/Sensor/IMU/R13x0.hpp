@@ -134,6 +134,18 @@ public:
 	 * @brief 初期化関数
 	 */
 	virtual void Init() override final{
+		if(_is_init)return;
+		_is_init = true;
+		HAL_UART_AbortReceive(_huart);
+		HAL_UART_Receive_DMA(_huart, _buff.data(), GYRO_BUFF_SIZE);
+		_scheduler.Set();
+	}
+	/**
+	 * @brief 非初期化関数
+	 */
+	virtual void Deinit() override final{
+		if(!_is_init)return;
+		_is_init = false;
 		HAL_UART_AbortReceive(_huart);
 		HAL_UART_Receive_DMA(_huart, _buff.data(), GYRO_BUFF_SIZE);
 		_scheduler.Set();
@@ -151,7 +163,7 @@ public:
 
 	/**
 	 * @brief 受信コールバック関数のリセット
-	 * @pram[in] func コールバック関数
+	 * @param[in] func コールバック関数
 	 */
 	virtual void ResetReceiveCallback(std::function<void(void)> func) final{
 		_receive_callback = func;

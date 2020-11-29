@@ -20,11 +20,15 @@ public:
 		absEncCurrent,
 	};
 private:
+	using CANRxIt = CANWrapper::RxExCallbackIt;
+
 	const std::shared_ptr<CANWrapper> _can;
 	const uint8_t _motor_id;
 	const uint8_t _user_id;
 	std::array<uint8_t, 8> _rx_data;
 
+	const uint8_t _can_fifo;
+	CANRxIt _can_callback;
 	Mode _mode = Mode::incEnc;
 	bool _is_debug = false;
 
@@ -101,6 +105,9 @@ protected:
 		return false;
 	}
 
+	/*
+	 * @brief 変換メンバ関数
+	 */
 	can_protocol::motor::SpecialOperation ConvertOpration(Mode mode, bool debug = false){
 		switch(mode){
 		case Mode::incEnc:
@@ -123,26 +130,39 @@ public:
 	 * @brief コンストラク
 	 * @param[in] period 周期
 	 * @param[in] can canのヘルパインスタンス
-	 * @param[in] id 5bitのモータid
+	 * @param[in] use_fifo CANの使用FIFO（0 or 1）
+	 * @param[in] motor_id モータのID
+	 * @param[in] user_id 自分のID
 	 */
 	MD2021(uint32_t period, std::shared_ptr<CANWrapper> can, uint8_t use_fifo, uint8_t motor_id, uint8_t user_id)
-		: Motor(period), _can(can), _motor_id(motor_id), _user_id(user_id){
-		if(use_fifo == 0)_can->FIFO0ReceiveCallback().AddExclusiveCallback(5, [this](CANWrapper::RxDataType rx_data){return ReadCanData(rx_data);});
-		else _can->FIFO1ReceiveCallback().AddExclusiveCallback(5, [this](CANWrapper::RxDataType rx_data){return ReadCanData(rx_data);});
+		: Motor(period), _can(can), _motor_id(motor_id), _user_id(user_id), _can_fifo(use_fifo){
 	}
 	/**
 	 * @brief デストラクタ
 	 */
 	virtual ~MD2021(){
-		Stop();
+		Deinit();
 	}
 
 
 	/**
 	 * @brief 初期化関数
-	 * @details ダミー関数です
 	 */
 	virtual void Init()override{
+		if(_is_init)return;
+		_is_init = true;
+		if(_can_fifo == 0)_can_callback = _can->FIFO0ReceiveCallback().AddExclusiveCallback(5, [this](CANWrapper::RxDataType rx_data){return ReadCanData(rx_data);});
+		else _can_callback = _can->FIFO1ReceiveCallback().AddExclusiveCallback(5, [this](CANWrapper::RxDataType rx_data){return ReadCanData(rx_data);});
+	}
+	/**
+	 * @brief 非初期化関数
+	 */
+	virtual void Deinit()override{
+		if(!_is_init)return;
+		Stop();
+		_is_init = false;
+		if(_can_fifo == 0)_can->FIFO0ReceiveCallback().EraseExclusiveCallback(_can_callback);
+		else _can_callback = _can->FIFO1ReceiveCallback().EraseExclusiveCallback(_can_callback);
 	}
 
 

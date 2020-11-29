@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['meter_518',['meter',['../da/dc9/namespacenut_1_1unit.html#a71c65554a8697cd990496eec57068896a558ddfdd3620c111fe112b4671b77c6d',1,'nut::unit']]],
-  ['minute_519',['minute',['../da/dc9/namespacenut_1_1unit.html#a71c65554a8697cd990496eec57068896a0a7d55be9d12a369a6a8da0fb517fba4',1,'nut::unit']]],
-  ['motor_5freadstatus_520',['Motor_ReadStatus',['../df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2aa17bd0bb558759684ddb21d8f9036fc7',1,'nut::ReiwaMD']]]
+  ['emergency_942',['emergency',['../d3/d8d/namespacenut_1_1can__protocol_1_1micom.html#a54ab8a12421163fb6f49b7eb2ebbfa68ab65d50673fb197078c78f3a448a958bf',1,'nut::can_protocol::micom']]],
+  ['emergencyrelease_943',['emergencyRelease',['../d1/db3/namespacenut_1_1can__protocol_1_1all.html#a3cb6645656a5fe9f5a358f94e3b72124a00cf591f469dd21498a4ac5186cba1a7',1,'nut::can_protocol::all']]],
+  ['emergencystop_944',['emergencyStop',['../d1/db3/namespacenut_1_1can__protocol_1_1all.html#a3cb6645656a5fe9f5a358f94e3b72124af295dcb7afd6ae61d4d7e5f99d9bf71a',1,'nut::can_protocol::all']]],
+  ['encoderresolusion_945',['encoderResolusion',['../dd/df5/namespacenut_1_1can__protocol_1_1motor.html#a6536007e70dc526c5808ba5b358a8d11ae0613c1b8730825de5352262d7e1b6e9',1,'nut::can_protocol::motor']]],
+  ['error_946',['error',['../d1/db3/namespacenut_1_1can__protocol_1_1all.html#adad5d76e61c2a8308c850a46eb9fbd09acb5e100e5a9a3e7f6d1fd97512215282',1,'nut::can_protocol::all::error()'],['../da/dd6/namespacenut_1_1can__protocol_1_1pc.html#ae4491dee7b163e95d69c270b0994f83aacb5e100e5a9a3e7f6d1fd97512215282',1,'nut::can_protocol::pc::error()']]]
 ];

@@ -94,19 +94,27 @@ $(document).ready(function(){initNavTree('dd/d51/namespacenut.html','../../'); i
   <div class="summary">
 <a href="#namespaces">名前空間</a> &#124;
 <a href="#nested-classes">クラス</a> &#124;
-<a href="#func-members">関数</a>  </div>
+<a href="#typedef-members">型定義</a> &#124;
+<a href="#func-members">関数</a> &#124;
+<a href="#var-members">変数</a>  </div>
   <div class="headertitle">
 <div class="title">nut 名前空間</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>ライブラリの統括名前空間  
+<p>CANバスの通信仕様  
 <a href="../../dd/d51/namespacenut.html#details">[詳解]</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 名前空間</h2></td></tr>
+<tr class="memitem:d6/d10/namespacenut_1_1callback"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d10/namespacenut_1_1callback.html">callback</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:d4/db2/namespacenut_1_1can__protocol"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/db2/namespacenut_1_1can__protocol.html">can_protocol</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:d8/d41/namespacenut_1_1flash"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d41/namespacenut_1_1flash.html">flash</a></td></tr>
 <tr class="memdesc:d8/d41/namespacenut_1_1flash"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flash操作関数群 <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:d8/d98/namespacenut_1_1_steer_opration"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d98/namespacenut_1_1_steer_opration.html">SteerOpration</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:da/dc9/namespacenut_1_1unit"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dc9/namespacenut_1_1unit.html">unit</a></td></tr>
 <tr class="memdesc:da/dc9/namespacenut_1_1unit"><td class="mdescLeft">&#160;</td><td class="mdescRight">単位系名前空間 <br /></td></tr>
@@ -114,6 +122,11 @@ $(document).ready(function(){initNavTree('dd/d51/namespacenut.html','../../'); i
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 クラス</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d0f/classnut_1_1_abs_encoder.html">AbsEncoder</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">アブソリュート型エンコーダクラス  <a href="../../d3/d0f/classnut_1_1_abs_encoder.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d21/classnut_1_1_abs_encoder_multi.html">AbsEncoderMulti</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d4f/classnut_1_1_c_a_n_wrapper.html">CANWrapper</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">CANのヘルパクラス<br  />
  現時点で最新のHALでのCANにしか対応していない  <a href="../../dc/d4f/classnut_1_1_c_a_n_wrapper.html#details">[詳解]</a><br /></td></tr>
@@ -121,8 +134,23 @@ $(document).ready(function(){initNavTree('dd/d51/namespacenut.html','../../'); i
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dc6/classnut_1_1_chassis.html">Chassis</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">機体足回り基底純粋仮想クラス  <a href="../../d9/dc6/classnut_1_1_chassis.html#details">[詳解]</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d69/classnut_1_1_controller.html">Controller</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">制御系の基底クラス  <a href="../../d6/d69/classnut_1_1_controller.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d42/classnut_1_1_controller_3_01_t_00_011_00_011_01_4.html">Controller&lt; T, 1, 1 &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">制御系の基底クラス(1入力1出力特殊化)  <a href="../../d2/d42/classnut_1_1_controller_3_01_t_00_011_00_011_01_4.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d64/classnut_1_1_controller_3_01_t_00_011_00_01_output_01_4.html">Controller&lt; T, 1, Output &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">制御系の基底クラス(1入力特殊化)  <a href="../../d6/d64/classnut_1_1_controller_3_01_t_00_011_00_01_output_01_4.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dd9/classnut_1_1_controller_3_01_t_00_01_input_00_011_01_4.html">Controller&lt; T, Input, 1 &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">制御系の基底クラス(1出力特殊化)  <a href="../../db/dd9/classnut_1_1_controller_3_01_t_00_01_input_00_011_01_4.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d08/classnut_1_1_coordinate.html">Coordinate</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">平面座標(x,y,theta)を表すクラス  <a href="../../d4/d08/classnut_1_1_coordinate.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dfa/classnut_1_1_current_control_motor.html">CurrentControlMotor</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">電流制御のモータクラス  <a href="../../d4/dfa/classnut_1_1_current_control_motor.html#details">[詳解]</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d01/classnut_1_1_direct_duty_motor.html">DirectDutyMotor</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Duty制御のモータクラス  <a href="../../db/d01/classnut_1_1_direct_duty_motor.html#details">[詳解]</a><br /></td></tr>
@@ -148,6 +176,11 @@ $(document).ready(function(){initNavTree('dd/d51/namespacenut.html','../../'); i
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/de6/classnut_1_1_inc_encoder.html">IncEncoder</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">インクリメンタル型エンコーダクラス  <a href="../../dd/de6/classnut_1_1_inc_encoder.html#details">[詳解]</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d4a/classnut_1_1_m_d2021.html">MD2021</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/deb/classnut_1_1_m_d2021_steer.html">MD2021Steer</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d0/d4a/classnut_1_1_m_d2021.html">MD2021</a> Steer専用クラス  <a href="../../d9/deb/classnut_1_1_m_d2021_steer.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/da2/classnut_1_1_motor.html">Motor</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">モータ制御基底純粋仮想クラス  <a href="../../d5/da2/classnut_1_1_motor.html#details">[詳解]</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -158,14 +191,28 @@ $(document).ready(function(){initNavTree('dd/d51/namespacenut.html','../../'); i
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dd5/classnut_1_1_omni_chassis.html">OmniChassis</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">オムニ足回りクラス  <a href="../../df/dd5/classnut_1_1_omni_chassis.html#details">[詳解]</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d5c/classnut_1_1_p_i_d.html">PID</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">PID制御器クラス  <a href="../../d5/d5c/classnut_1_1_p_i_d.html#details">[詳解]</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/ddb/classnut_1_1_p_i_d_base.html">PIDBase</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">PID制御器クラス  <a href="../../df/ddb/classnut_1_1_p_i_d_base.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d7c/classnut_1_1_pos_p_i_d.html">PosPID</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/db1/classnut_1_1_power_supply2021.html">PowerSupply2021</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">2021gakurobo用電源制御基板  <a href="../../df/db1/classnut_1_1_power_supply2021.html#details">[詳解]</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d33/classnut_1_1_r13x0.html">R13x0</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">R1370P,R1350N共通クラス  <a href="../../dc/d33/classnut_1_1_r13x0.html#details">[詳解]</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/da1/classnut_1_1_reiwa_m_d.html">ReiwaMD</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">令和MDクラス  <a href="../../df/da1/classnut_1_1_reiwa_m_d.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/da0/classnut_1_1_r_s485.html">RS485</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">RS485インターフェースクラス  <a href="../../de/da0/classnut_1_1_r_s485.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d79/classnut_1_1_steer_chassis.html">SteerChassis</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d6b/classnut_1_1_steer_chassis_sp.html">SteerChassisSp</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d47/classnut_1_1_steer_driver.html">SteerDriver</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dff/classnut_1_1_time_scheduler.html">TimeScheduler</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">タイムスケジューラクラス  <a href="../../d0/dff/classnut_1_1_time_scheduler.html#details">[詳解]</a><br /></td></tr>
@@ -176,9 +223,64 @@ $(document).ready(function(){initNavTree('dd/d51/namespacenut.html','../../'); i
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d00/classnut_1_1_time_scheduler_base.html">TimeSchedulerBase</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">時間制御基底純粋仮想クラス  <a href="../../d9/d00/classnut_1_1_time_scheduler_base.html#details">[詳解]</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d44/classnut_1_1_vec_p_i_d.html">VecPID</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+型定義</h2></td></tr>
+<tr class="memitem:a63f2e3e171a06b5a3e78d43e83c3237c"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a63f2e3e171a06b5a3e78d43e83c3237c"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d51/namespacenut.html#a63f2e3e171a06b5a3e78d43e83c3237c">Second</a> = <a class="el" href="../../db/dcb/classnut_1_1unit_1_1_unit.html">unit::Unit</a>&lt; T, nut::unit::Type::second &gt;</td></tr>
+<tr class="separator:a63f2e3e171a06b5a3e78d43e83c3237c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabd23ff06314def2ae227f45a4ad9f25"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:aabd23ff06314def2ae227f45a4ad9f25"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d51/namespacenut.html#aabd23ff06314def2ae227f45a4ad9f25">MilliSecond</a> = <a class="el" href="../../db/dcb/classnut_1_1unit_1_1_unit.html">unit::Unit</a>&lt; T, nut::unit::Type::second, <a class="el" href="../../da/dc9/namespacenut_1_1unit.html#aed3e95aa24bac4d20f7883d1d39d5284">unit::milli</a> &gt;</td></tr>
+<tr class="separator:aabd23ff06314def2ae227f45a4ad9f25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afda717c57a8aa19e9a1b3c0a55e5f306"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:afda717c57a8aa19e9a1b3c0a55e5f306"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d51/namespacenut.html#afda717c57a8aa19e9a1b3c0a55e5f306">MicroSecond</a> = <a class="el" href="../../db/dcb/classnut_1_1unit_1_1_unit.html">unit::Unit</a>&lt; T, nut::unit::Type::second, <a class="el" href="../../da/dc9/namespacenut_1_1unit.html#a2801d61321e79fcf467f8fa85c2b4913">unit::micro</a> &gt;</td></tr>
+<tr class="separator:afda717c57a8aa19e9a1b3c0a55e5f306"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a032da99c146499e5b33061513f6532cc"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a032da99c146499e5b33061513f6532cc"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d51/namespacenut.html#a032da99c146499e5b33061513f6532cc">Meter</a> = <a class="el" href="../../db/dcb/classnut_1_1unit_1_1_unit.html">unit::Unit</a>&lt; T, nut::unit::Type::meter &gt;</td></tr>
+<tr class="separator:a032da99c146499e5b33061513f6532cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7907718d5a9ac08deb982156a81d2116"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a7907718d5a9ac08deb982156a81d2116"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d51/namespacenut.html#a7907718d5a9ac08deb982156a81d2116">MilliMeter</a> = <a class="el" href="../../db/dcb/classnut_1_1unit_1_1_unit.html">unit::Unit</a>&lt; T, nut::unit::Type::meter, <a class="el" href="../../da/dc9/namespacenut_1_1unit.html#aed3e95aa24bac4d20f7883d1d39d5284">unit::milli</a> &gt;</td></tr>
+<tr class="separator:a7907718d5a9ac08deb982156a81d2116"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b92da49df4ce1181a607e1661cdb5a8"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a0b92da49df4ce1181a607e1661cdb5a8"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d51/namespacenut.html#a0b92da49df4ce1181a607e1661cdb5a8">Gram</a> = <a class="el" href="../../db/dcb/classnut_1_1unit_1_1_unit.html">unit::Unit</a>&lt; T, nut::unit::Type::gram &gt;</td></tr>
+<tr class="separator:a0b92da49df4ce1181a607e1661cdb5a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1ca031c64afcc5fda6a8732dd283d0c"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:af1ca031c64afcc5fda6a8732dd283d0c"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d51/namespacenut.html#af1ca031c64afcc5fda6a8732dd283d0c">MilliGram</a> = <a class="el" href="../../db/dcb/classnut_1_1unit_1_1_unit.html">unit::Unit</a>&lt; T, nut::unit::Type::gram, <a class="el" href="../../da/dc9/namespacenut_1_1unit.html#aed3e95aa24bac4d20f7883d1d39d5284">unit::milli</a> &gt;</td></tr>
+<tr class="separator:af1ca031c64afcc5fda6a8732dd283d0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b646c16fbaa9a54cdf2bcc868fe339c"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a9b646c16fbaa9a54cdf2bcc868fe339c"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d51/namespacenut.html#a9b646c16fbaa9a54cdf2bcc868fe339c">KiloGram</a> = <a class="el" href="../../db/dcb/classnut_1_1unit_1_1_unit.html">unit::Unit</a>&lt; T, nut::unit::Type::gram, <a class="el" href="../../da/dc9/namespacenut_1_1unit.html#af650c50f32b1a28cba904ef33d5bf793">unit::kilo</a> &gt;</td></tr>
+<tr class="separator:a9b646c16fbaa9a54cdf2bcc868fe339c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a993126a6f9b8dabe5dd13a4d7df37bb9"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a993126a6f9b8dabe5dd13a4d7df37bb9"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d51/namespacenut.html#a993126a6f9b8dabe5dd13a4d7df37bb9">Radian</a> = <a class="el" href="../../db/dcb/classnut_1_1unit_1_1_unit.html">unit::Unit</a>&lt; T, <a class="el" href="../../da/dc9/namespacenut_1_1unit.html#a71c65554a8697cd990496eec57068896a2fb79ab9685ea3b8e82385daca76a390">nut::unit::Type::radian</a> &gt;</td></tr>
+<tr class="separator:a993126a6f9b8dabe5dd13a4d7df37bb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a13666eedb8b5d4dfc36ea2b86ccd20"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a3a13666eedb8b5d4dfc36ea2b86ccd20"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d51/namespacenut.html#a3a13666eedb8b5d4dfc36ea2b86ccd20">Degre</a> = <a class="el" href="../../db/dcb/classnut_1_1unit_1_1_unit.html">unit::Unit</a>&lt; T, nut::unit::Type::degre &gt;</td></tr>
+<tr class="separator:a3a13666eedb8b5d4dfc36ea2b86ccd20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7099efd6d799638b81d7a8b3c669b90"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ae7099efd6d799638b81d7a8b3c669b90"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d51/namespacenut.html#ae7099efd6d799638b81d7a8b3c669b90">Ampere</a> = <a class="el" href="../../db/dcb/classnut_1_1unit_1_1_unit.html">unit::Unit</a>&lt; T, nut::unit::Type::ampere &gt;</td></tr>
+<tr class="separator:ae7099efd6d799638b81d7a8b3c669b90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a1384045c97157c6b50618cd182015f"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a8a1384045c97157c6b50618cd182015f"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d51/namespacenut.html#a8a1384045c97157c6b50618cd182015f">MilliAmpere</a> = <a class="el" href="../../db/dcb/classnut_1_1unit_1_1_unit.html">unit::Unit</a>&lt; T, nut::unit::Type::ampere, <a class="el" href="../../da/dc9/namespacenut_1_1unit.html#aed3e95aa24bac4d20f7883d1d39d5284">unit::milli</a> &gt;</td></tr>
+<tr class="separator:a8a1384045c97157c6b50618cd182015f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c6629d69a9f9812f005edb717f02ddc"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a2c6629d69a9f9812f005edb717f02ddc"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d51/namespacenut.html#a2c6629d69a9f9812f005edb717f02ddc">Volt</a> = <a class="el" href="../../db/dcb/classnut_1_1unit_1_1_unit.html">unit::Unit</a>&lt; T, <a class="el" href="../../da/dc9/namespacenut_1_1unit.html#a71c65554a8697cd990496eec57068896aa9f0e61a137d86aa9db53465e0801612">nut::unit::Type::volt</a> &gt;</td></tr>
+<tr class="separator:a2c6629d69a9f9812f005edb717f02ddc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0d71dea8fadb5d6641d989787e0e580"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:af0d71dea8fadb5d6641d989787e0e580"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d51/namespacenut.html#af0d71dea8fadb5d6641d989787e0e580">MilliVolt</a> = <a class="el" href="../../db/dcb/classnut_1_1unit_1_1_unit.html">unit::Unit</a>&lt; T, <a class="el" href="../../da/dc9/namespacenut_1_1unit.html#a71c65554a8697cd990496eec57068896aa9f0e61a137d86aa9db53465e0801612">nut::unit::Type::volt</a>, <a class="el" href="../../da/dc9/namespacenut_1_1unit.html#aed3e95aa24bac4d20f7883d1d39d5284">unit::milli</a> &gt;</td></tr>
+<tr class="separator:af0d71dea8fadb5d6641d989787e0e580"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 関数</h2></td></tr>
+<tr class="memitem:afe3ea7a9f71e0ca779aef47d016ca802"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d51/namespacenut.html#afe3ea7a9f71e0ca779aef47d016ca802">operator&lt;</a> (const <a class="el" href="../../d9/dd8/structnut_1_1_c_a_n_wrapper_1_1_tx_data_type.html">CANWrapper::TxDataType</a> &amp;a, const <a class="el" href="../../d9/dd8/structnut_1_1_c_a_n_wrapper_1_1_tx_data_type.html">CANWrapper::TxDataType</a> &amp;b) noexcept</td></tr>
+<tr class="separator:afe3ea7a9f71e0ca779aef47d016ca802"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf325e6f1045a58067cf92c6b19c3555"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d51/namespacenut.html#adf325e6f1045a58067cf92c6b19c3555">operator&gt;</a> (const <a class="el" href="../../d9/dd8/structnut_1_1_c_a_n_wrapper_1_1_tx_data_type.html">CANWrapper::TxDataType</a> &amp;a, const <a class="el" href="../../d9/dd8/structnut_1_1_c_a_n_wrapper_1_1_tx_data_type.html">CANWrapper::TxDataType</a> &amp;b) noexcept</td></tr>
+<tr class="separator:adf325e6f1045a58067cf92c6b19c3555"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4e386638988375bba02f42152ebdb3f"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d51/namespacenut.html#ae4e386638988375bba02f42152ebdb3f">operator&lt;=</a> (const <a class="el" href="../../d9/dd8/structnut_1_1_c_a_n_wrapper_1_1_tx_data_type.html">CANWrapper::TxDataType</a> &amp;a, const <a class="el" href="../../d9/dd8/structnut_1_1_c_a_n_wrapper_1_1_tx_data_type.html">CANWrapper::TxDataType</a> &amp;b) noexcept</td></tr>
+<tr class="separator:ae4e386638988375bba02f42152ebdb3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd5dd1429345c2daa90802cb7ba266be"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d51/namespacenut.html#acd5dd1429345c2daa90802cb7ba266be">operator&gt;=</a> (const <a class="el" href="../../d9/dd8/structnut_1_1_c_a_n_wrapper_1_1_tx_data_type.html">CANWrapper::TxDataType</a> &amp;a, const <a class="el" href="../../d9/dd8/structnut_1_1_c_a_n_wrapper_1_1_tx_data_type.html">CANWrapper::TxDataType</a> &amp;b) noexcept</td></tr>
+<tr class="separator:acd5dd1429345c2daa90802cb7ba266be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a38b850da6c4b6e54d995398a47400bf0"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a38b850da6c4b6e54d995398a47400bf0"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="../../d4/d08/classnut_1_1_coordinate.html">nut::Coordinate</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d51/namespacenut.html#a38b850da6c4b6e54d995398a47400bf0">operator+</a> (const <a class="el" href="../../d4/d08/classnut_1_1_coordinate.html">nut::Coordinate</a>&lt; T &gt; &amp;l_operand, const <a class="el" href="../../d4/d08/classnut_1_1_coordinate.html">nut::Coordinate</a>&lt; T &gt; &amp;r_operand)</td></tr>
 <tr class="separator:a38b850da6c4b6e54d995398a47400bf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -203,10 +305,273 @@ $(document).ready(function(){initNavTree('dd/d51/namespacenut.html','../../'); i
 <tr class="memitem:ac324be5e1727793785184189527ea51d"><td class="memTemplParams" colspan="2">template&lt;typename T , typename U &gt; </td></tr>
 <tr class="memitem:ac324be5e1727793785184189527ea51d"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="../../d4/d08/classnut_1_1_coordinate.html">nut::Coordinate</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d51/namespacenut.html#ac324be5e1727793785184189527ea51d">operator-</a> (const U &amp;l_operand, const <a class="el" href="../../d4/d08/classnut_1_1_coordinate.html">nut::Coordinate</a>&lt; T &gt; &amp;r_operand)</td></tr>
 <tr class="separator:ac324be5e1727793785184189527ea51d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+変数</h2></td></tr>
+<tr class="memitem:ab449a1023ef05c07b040b6e4d1e2dafa"><td class="memItemLeft" align="right" valign="top">static constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d51/namespacenut.html#ab449a1023ef05c07b040b6e4d1e2dafa">USE_NUTLIB_CALLBACKS_FLAG</a> = true</td></tr>
+<tr class="separator:ab449a1023ef05c07b040b6e4d1e2dafa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
-<div class="textblock"><p>ライブラリの統括名前空間 </p>
-</div><h2 class="groupheader">関数詳解</h2>
+<div class="textblock"><p>CANバスの通信仕様 </p>
+<p>ステアドライバノード</p>
+<p>2021モータードライバ</p>
+<p>ライブラリの統括名前空間</p>
+<p>学ロボ2021での仕様、esa参照</p>
+<p>まだ！！！！！！！！！！！！！！！！！！！！ </p>
+</div><h2 class="groupheader">型定義詳解</h2>
+<a id="ae7099efd6d799638b81d7a8b3c669b90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7099efd6d799638b81d7a8b3c669b90">&#9670;&nbsp;</a></span>Ampere</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../dd/d51/namespacenut.html#ae7099efd6d799638b81d7a8b3c669b90">nut::Ampere</a> = typedef <a class="el" href="../../db/dcb/classnut_1_1unit_1_1_unit.html">unit::Unit</a>&lt;T, nut::unit::Type::ampere&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../da/d92/_unit_core_8hpp_source.html">UnitCore.hpp</a> の <a class="el" href="../../da/d92/_unit_core_8hpp_source.html#l00040">40</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a3a13666eedb8b5d4dfc36ea2b86ccd20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a13666eedb8b5d4dfc36ea2b86ccd20">&#9670;&nbsp;</a></span>Degre</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../dd/d51/namespacenut.html#a3a13666eedb8b5d4dfc36ea2b86ccd20">nut::Degre</a> = typedef <a class="el" href="../../db/dcb/classnut_1_1unit_1_1_unit.html">unit::Unit</a>&lt;T, nut::unit::Type::degre&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../da/d92/_unit_core_8hpp_source.html">UnitCore.hpp</a> の <a class="el" href="../../da/d92/_unit_core_8hpp_source.html#l00037">37</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a0b92da49df4ce1181a607e1661cdb5a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b92da49df4ce1181a607e1661cdb5a8">&#9670;&nbsp;</a></span>Gram</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../dd/d51/namespacenut.html#a0b92da49df4ce1181a607e1661cdb5a8">nut::Gram</a> = typedef <a class="el" href="../../db/dcb/classnut_1_1unit_1_1_unit.html">unit::Unit</a>&lt;T, nut::unit::Type::gram&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../da/d92/_unit_core_8hpp_source.html">UnitCore.hpp</a> の <a class="el" href="../../da/d92/_unit_core_8hpp_source.html#l00026">26</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a9b646c16fbaa9a54cdf2bcc868fe339c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b646c16fbaa9a54cdf2bcc868fe339c">&#9670;&nbsp;</a></span>KiloGram</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../dd/d51/namespacenut.html#a9b646c16fbaa9a54cdf2bcc868fe339c">nut::KiloGram</a> = typedef <a class="el" href="../../db/dcb/classnut_1_1unit_1_1_unit.html">unit::Unit</a>&lt;T, nut::unit::Type::gram, <a class="el" href="../../da/dc9/namespacenut_1_1unit.html#af650c50f32b1a28cba904ef33d5bf793">unit::kilo</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../da/d92/_unit_core_8hpp_source.html">UnitCore.hpp</a> の <a class="el" href="../../da/d92/_unit_core_8hpp_source.html#l00030">30</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a032da99c146499e5b33061513f6532cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a032da99c146499e5b33061513f6532cc">&#9670;&nbsp;</a></span>Meter</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../dd/d51/namespacenut.html#a032da99c146499e5b33061513f6532cc">nut::Meter</a> = typedef <a class="el" href="../../db/dcb/classnut_1_1unit_1_1_unit.html">unit::Unit</a>&lt;T, nut::unit::Type::meter&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../da/d92/_unit_core_8hpp_source.html">UnitCore.hpp</a> の <a class="el" href="../../da/d92/_unit_core_8hpp_source.html#l00020">20</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="afda717c57a8aa19e9a1b3c0a55e5f306"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afda717c57a8aa19e9a1b3c0a55e5f306">&#9670;&nbsp;</a></span>MicroSecond</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../dd/d51/namespacenut.html#afda717c57a8aa19e9a1b3c0a55e5f306">nut::MicroSecond</a> = typedef <a class="el" href="../../db/dcb/classnut_1_1unit_1_1_unit.html">unit::Unit</a>&lt;T, nut::unit::Type::second, <a class="el" href="../../da/dc9/namespacenut_1_1unit.html#a2801d61321e79fcf467f8fa85c2b4913">unit::micro</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../da/d92/_unit_core_8hpp_source.html">UnitCore.hpp</a> の <a class="el" href="../../da/d92/_unit_core_8hpp_source.html#l00017">17</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a8a1384045c97157c6b50618cd182015f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a1384045c97157c6b50618cd182015f">&#9670;&nbsp;</a></span>MilliAmpere</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../dd/d51/namespacenut.html#a8a1384045c97157c6b50618cd182015f">nut::MilliAmpere</a> = typedef <a class="el" href="../../db/dcb/classnut_1_1unit_1_1_unit.html">unit::Unit</a>&lt;T, nut::unit::Type::ampere, <a class="el" href="../../da/dc9/namespacenut_1_1unit.html#aed3e95aa24bac4d20f7883d1d39d5284">unit::milli</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../da/d92/_unit_core_8hpp_source.html">UnitCore.hpp</a> の <a class="el" href="../../da/d92/_unit_core_8hpp_source.html#l00042">42</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="af1ca031c64afcc5fda6a8732dd283d0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1ca031c64afcc5fda6a8732dd283d0c">&#9670;&nbsp;</a></span>MilliGram</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../dd/d51/namespacenut.html#af1ca031c64afcc5fda6a8732dd283d0c">nut::MilliGram</a> = typedef <a class="el" href="../../db/dcb/classnut_1_1unit_1_1_unit.html">unit::Unit</a>&lt;T, nut::unit::Type::gram, <a class="el" href="../../da/dc9/namespacenut_1_1unit.html#aed3e95aa24bac4d20f7883d1d39d5284">unit::milli</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../da/d92/_unit_core_8hpp_source.html">UnitCore.hpp</a> の <a class="el" href="../../da/d92/_unit_core_8hpp_source.html#l00028">28</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a7907718d5a9ac08deb982156a81d2116"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7907718d5a9ac08deb982156a81d2116">&#9670;&nbsp;</a></span>MilliMeter</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../dd/d51/namespacenut.html#a7907718d5a9ac08deb982156a81d2116">nut::MilliMeter</a> = typedef <a class="el" href="../../db/dcb/classnut_1_1unit_1_1_unit.html">unit::Unit</a>&lt;T, nut::unit::Type::meter, <a class="el" href="../../da/dc9/namespacenut_1_1unit.html#aed3e95aa24bac4d20f7883d1d39d5284">unit::milli</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../da/d92/_unit_core_8hpp_source.html">UnitCore.hpp</a> の <a class="el" href="../../da/d92/_unit_core_8hpp_source.html#l00022">22</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aabd23ff06314def2ae227f45a4ad9f25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabd23ff06314def2ae227f45a4ad9f25">&#9670;&nbsp;</a></span>MilliSecond</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../dd/d51/namespacenut.html#aabd23ff06314def2ae227f45a4ad9f25">nut::MilliSecond</a> = typedef <a class="el" href="../../db/dcb/classnut_1_1unit_1_1_unit.html">unit::Unit</a>&lt;T, nut::unit::Type::second, <a class="el" href="../../da/dc9/namespacenut_1_1unit.html#aed3e95aa24bac4d20f7883d1d39d5284">unit::milli</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../da/d92/_unit_core_8hpp_source.html">UnitCore.hpp</a> の <a class="el" href="../../da/d92/_unit_core_8hpp_source.html#l00015">15</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="af0d71dea8fadb5d6641d989787e0e580"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0d71dea8fadb5d6641d989787e0e580">&#9670;&nbsp;</a></span>MilliVolt</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../dd/d51/namespacenut.html#af0d71dea8fadb5d6641d989787e0e580">nut::MilliVolt</a> = typedef <a class="el" href="../../db/dcb/classnut_1_1unit_1_1_unit.html">unit::Unit</a>&lt;T, <a class="el" href="../../da/dc9/namespacenut_1_1unit.html#a71c65554a8697cd990496eec57068896aa9f0e61a137d86aa9db53465e0801612">nut::unit::Type::volt</a>, <a class="el" href="../../da/dc9/namespacenut_1_1unit.html#aed3e95aa24bac4d20f7883d1d39d5284">unit::milli</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../da/d92/_unit_core_8hpp_source.html">UnitCore.hpp</a> の <a class="el" href="../../da/d92/_unit_core_8hpp_source.html#l00047">47</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a993126a6f9b8dabe5dd13a4d7df37bb9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a993126a6f9b8dabe5dd13a4d7df37bb9">&#9670;&nbsp;</a></span>Radian</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../dd/d51/namespacenut.html#a993126a6f9b8dabe5dd13a4d7df37bb9">nut::Radian</a> = typedef <a class="el" href="../../db/dcb/classnut_1_1unit_1_1_unit.html">unit::Unit</a>&lt;T, <a class="el" href="../../da/dc9/namespacenut_1_1unit.html#a71c65554a8697cd990496eec57068896a2fb79ab9685ea3b8e82385daca76a390">nut::unit::Type::radian</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../da/d92/_unit_core_8hpp_source.html">UnitCore.hpp</a> の <a class="el" href="../../da/d92/_unit_core_8hpp_source.html#l00034">34</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a63f2e3e171a06b5a3e78d43e83c3237c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63f2e3e171a06b5a3e78d43e83c3237c">&#9670;&nbsp;</a></span>Second</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../dd/d51/namespacenut.html#a63f2e3e171a06b5a3e78d43e83c3237c">nut::Second</a> = typedef <a class="el" href="../../db/dcb/classnut_1_1unit_1_1_unit.html">unit::Unit</a>&lt;T, nut::unit::Type::second&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../da/d92/_unit_core_8hpp_source.html">UnitCore.hpp</a> の <a class="el" href="../../da/d92/_unit_core_8hpp_source.html#l00013">13</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a2c6629d69a9f9812f005edb717f02ddc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c6629d69a9f9812f005edb717f02ddc">&#9670;&nbsp;</a></span>Volt</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../dd/d51/namespacenut.html#a2c6629d69a9f9812f005edb717f02ddc">nut::Volt</a> = typedef <a class="el" href="../../db/dcb/classnut_1_1unit_1_1_unit.html">unit::Unit</a>&lt;T, <a class="el" href="../../da/dc9/namespacenut_1_1unit.html#a71c65554a8697cd990496eec57068896aa9f0e61a137d86aa9db53465e0801612">nut::unit::Type::volt</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../da/d92/_unit_core_8hpp_source.html">UnitCore.hpp</a> の <a class="el" href="../../da/d92/_unit_core_8hpp_source.html#l00045">45</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
 <a id="ae5534c51d8643e291ed2c157354e29b1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae5534c51d8643e291ed2c157354e29b1">&#9670;&nbsp;</a></span>operator*()</h2>
 
@@ -243,7 +608,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="../../df/d40/_coordinate_8hpp_source.html">Coordinate.hpp</a> の <a class="el" href="../../df/d40/_coordinate_8hpp_source.html#l00173">173</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../df/d40/_coordinate_8hpp_source.html">Coordinate.hpp</a> の <a class="el" href="../../df/d40/_coordinate_8hpp_source.html#l00171">171</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -283,7 +648,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="../../df/d40/_coordinate_8hpp_source.html">Coordinate.hpp</a> の <a class="el" href="../../df/d40/_coordinate_8hpp_source.html#l00165">165</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../df/d40/_coordinate_8hpp_source.html">Coordinate.hpp</a> の <a class="el" href="../../df/d40/_coordinate_8hpp_source.html#l00163">163</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -323,7 +688,7 @@ template&lt;typename T , typename U &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="../../df/d40/_coordinate_8hpp_source.html">Coordinate.hpp</a> の <a class="el" href="../../df/d40/_coordinate_8hpp_source.html#l00182">182</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../df/d40/_coordinate_8hpp_source.html">Coordinate.hpp</a> の <a class="el" href="../../df/d40/_coordinate_8hpp_source.html#l00180">180</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -363,7 +728,7 @@ template&lt;typename T , typename U &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="../../df/d40/_coordinate_8hpp_source.html">Coordinate.hpp</a> の <a class="el" href="../../df/d40/_coordinate_8hpp_source.html#l00186">186</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../df/d40/_coordinate_8hpp_source.html">Coordinate.hpp</a> の <a class="el" href="../../df/d40/_coordinate_8hpp_source.html#l00184">184</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -403,7 +768,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="../../df/d40/_coordinate_8hpp_source.html">Coordinate.hpp</a> の <a class="el" href="../../df/d40/_coordinate_8hpp_source.html#l00169">169</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../df/d40/_coordinate_8hpp_source.html">Coordinate.hpp</a> の <a class="el" href="../../df/d40/_coordinate_8hpp_source.html#l00167">167</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -443,7 +808,7 @@ template&lt;typename T , typename U &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="../../df/d40/_coordinate_8hpp_source.html">Coordinate.hpp</a> の <a class="el" href="../../df/d40/_coordinate_8hpp_source.html#l00190">190</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../df/d40/_coordinate_8hpp_source.html">Coordinate.hpp</a> の <a class="el" href="../../df/d40/_coordinate_8hpp_source.html#l00188">188</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -483,7 +848,7 @@ template&lt;typename T , typename U &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="../../df/d40/_coordinate_8hpp_source.html">Coordinate.hpp</a> の <a class="el" href="../../df/d40/_coordinate_8hpp_source.html#l00194">194</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../df/d40/_coordinate_8hpp_source.html">Coordinate.hpp</a> の <a class="el" href="../../df/d40/_coordinate_8hpp_source.html#l00192">192</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -523,7 +888,184 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="../../df/d40/_coordinate_8hpp_source.html">Coordinate.hpp</a> の <a class="el" href="../../df/d40/_coordinate_8hpp_source.html#l00177">177</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../df/d40/_coordinate_8hpp_source.html">Coordinate.hpp</a> の <a class="el" href="../../df/d40/_coordinate_8hpp_source.html#l00175">175</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="afe3ea7a9f71e0ca779aef47d016ca802"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe3ea7a9f71e0ca779aef47d016ca802">&#9670;&nbsp;</a></span>operator&lt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr bool nut::operator&lt; </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d9/dd8/structnut_1_1_c_a_n_wrapper_1_1_tx_data_type.html">CANWrapper::TxDataType</a> &amp;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d9/dd8/structnut_1_1_c_a_n_wrapper_1_1_tx_data_type.html">CANWrapper::TxDataType</a> &amp;&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html">CANWrapper.hpp</a> の <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html#l00327">327</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ae4e386638988375bba02f42152ebdb3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4e386638988375bba02f42152ebdb3f">&#9670;&nbsp;</a></span>operator&lt;=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr bool nut::operator&lt;= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d9/dd8/structnut_1_1_c_a_n_wrapper_1_1_tx_data_type.html">CANWrapper::TxDataType</a> &amp;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d9/dd8/structnut_1_1_c_a_n_wrapper_1_1_tx_data_type.html">CANWrapper::TxDataType</a> &amp;&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html">CANWrapper.hpp</a> の <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html#l00329">329</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="adf325e6f1045a58067cf92c6b19c3555"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf325e6f1045a58067cf92c6b19c3555">&#9670;&nbsp;</a></span>operator&gt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr bool nut::operator&gt; </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d9/dd8/structnut_1_1_c_a_n_wrapper_1_1_tx_data_type.html">CANWrapper::TxDataType</a> &amp;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d9/dd8/structnut_1_1_c_a_n_wrapper_1_1_tx_data_type.html">CANWrapper::TxDataType</a> &amp;&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html">CANWrapper.hpp</a> の <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html#l00328">328</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="acd5dd1429345c2daa90802cb7ba266be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd5dd1429345c2daa90802cb7ba266be">&#9670;&nbsp;</a></span>operator&gt;=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr bool nut::operator&gt;= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d9/dd8/structnut_1_1_c_a_n_wrapper_1_1_tx_data_type.html">CANWrapper::TxDataType</a> &amp;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d9/dd8/structnut_1_1_c_a_n_wrapper_1_1_tx_data_type.html">CANWrapper::TxDataType</a> &amp;&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html">CANWrapper.hpp</a> の <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html#l00330">330</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">変数詳解</h2>
+<a id="ab449a1023ef05c07b040b6e4d1e2dafa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab449a1023ef05c07b040b6e4d1e2dafa">&#9670;&nbsp;</a></span>USE_NUTLIB_CALLBACKS_FLAG</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr bool nut::USE_NUTLIB_CALLBACKS_FLAG = true</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d2/d88/_global_8hpp_source.html">Global.hpp</a> の <a class="el" href="../../d2/d88/_global_8hpp_source.html#l00077">77</a> 行目に定義があります。</p>
 
 </div>
 </div>

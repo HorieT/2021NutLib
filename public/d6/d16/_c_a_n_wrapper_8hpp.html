@@ -93,7 +93,8 @@ $(document).ready(function(){initNavTree('d6/d16/_c_a_n_wrapper_8hpp.html','../.
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">クラス</a> &#124;
-<a href="#namespaces">名前空間</a>  </div>
+<a href="#namespaces">名前空間</a> &#124;
+<a href="#func-members">関数</a>  </div>
   <div class="headertitle">
 <div class="title">CANWrapper.hpp ファイル</div>  </div>
 </div><!--header-->
@@ -102,8 +103,10 @@ $(document).ready(function(){initNavTree('d6/d16/_c_a_n_wrapper_8hpp.html','../.
 <p>CANのヘルパ  
 <a href="#details">[詳解]</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="../../d2/d88/_global_8hpp_source.html">Global.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d4/dba/_c_a_n_8hpp_source.html">HALCallbacks/CAN.hpp</a>&quot;</code><br />
 <code>#include &lt;array&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
+<code>#include &lt;queue&gt;</code><br />
 </div>
 <p><a href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html">[ソースコード]</a></p>
 <table class="memberdecls">
@@ -113,12 +116,27 @@ $(document).ready(function(){initNavTree('d6/d16/_c_a_n_wrapper_8hpp.html','../.
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">CANのヘルパクラス<br  />
  現時点で最新のHALでのCANにしか対応していない  <a href="../../dc/d4f/classnut_1_1_c_a_n_wrapper.html#details">[詳解]</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dd8/structnut_1_1_c_a_n_wrapper_1_1_tx_data_type.html">nut::CANWrapper::TxDataType</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da1/structnut_1_1_c_a_n_wrapper_1_1_rx_data_type.html">nut::CANWrapper::RxDataType</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 名前空間</h2></td></tr>
 <tr class="memitem:dd/d51/namespacenut"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d51/namespacenut.html">nut</a></td></tr>
-<tr class="memdesc:dd/d51/namespacenut"><td class="mdescLeft">&#160;</td><td class="mdescRight">ライブラリの統括名前空間 <br /></td></tr>
+<tr class="memdesc:dd/d51/namespacenut"><td class="mdescLeft">&#160;</td><td class="mdescRight">CANバスの通信仕様 <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:afe3ea7a9f71e0ca779aef47d016ca802"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d51/namespacenut.html#afe3ea7a9f71e0ca779aef47d016ca802">nut::operator&lt;</a> (const CANWrapper::TxDataType &amp;a, const CANWrapper::TxDataType &amp;b) noexcept</td></tr>
+<tr class="separator:afe3ea7a9f71e0ca779aef47d016ca802"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf325e6f1045a58067cf92c6b19c3555"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d51/namespacenut.html#adf325e6f1045a58067cf92c6b19c3555">nut::operator&gt;</a> (const CANWrapper::TxDataType &amp;a, const CANWrapper::TxDataType &amp;b) noexcept</td></tr>
+<tr class="separator:adf325e6f1045a58067cf92c6b19c3555"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4e386638988375bba02f42152ebdb3f"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d51/namespacenut.html#ae4e386638988375bba02f42152ebdb3f">nut::operator&lt;=</a> (const CANWrapper::TxDataType &amp;a, const CANWrapper::TxDataType &amp;b) noexcept</td></tr>
+<tr class="separator:ae4e386638988375bba02f42152ebdb3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd5dd1429345c2daa90802cb7ba266be"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d51/namespacenut.html#acd5dd1429345c2daa90802cb7ba266be">nut::operator&gt;=</a> (const CANWrapper::TxDataType &amp;a, const CANWrapper::TxDataType &amp;b) noexcept</td></tr>
+<tr class="separator:acd5dd1429345c2daa90802cb7ba266be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock"><p>CANのヘルパ </p>

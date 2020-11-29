@@ -22,6 +22,8 @@ protected:
 	Eigen::Vector3f _global_rot = {0.0, 0.0, 0.0};//!< role,pitch,yawの角速度(グローバル座標)
 	Eigen::Vector3f _global_angle = {0.0, 0.0, 0.0};//!< role,pitch,yawの角度(グローバル座標)
 
+	bool _is_init = false;
+
 public:
 	/**
 	 * @brief コンストラクタ
@@ -37,6 +39,10 @@ public:
 	 * @brief 初期化関数
 	 */
 	virtual void Init() = 0;
+	/**
+	 * @brief 非初期化関数
+	 */
+	virtual void DeInit() = 0;
 
 	/**
 	 * @brief IMUリセット

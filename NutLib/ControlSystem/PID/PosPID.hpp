@@ -30,7 +30,7 @@ public:
 
 	/**
 	 * @brief フィードバック計算
-	 * @param[in] deviation 偏差
+	 * @param[in] input 偏差
 	 * @param[in] ms 前回計算時からの経過時間
 	 * @return 操作量
 	 */
