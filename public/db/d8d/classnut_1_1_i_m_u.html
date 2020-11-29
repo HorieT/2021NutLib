@@ -125,6 +125,9 @@ nut::IMU の継承関係図</div>
 <tr class="memitem:a61dbc208f9fb0d7525929a74bb48f1c9"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d8d/classnut_1_1_i_m_u.html#a61dbc208f9fb0d7525929a74bb48f1c9">Init</a> ()=0</td></tr>
 <tr class="memdesc:a61dbc208f9fb0d7525929a74bb48f1c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">初期化関数  <a href="../../db/d8d/classnut_1_1_i_m_u.html#a61dbc208f9fb0d7525929a74bb48f1c9">[詳解]</a><br /></td></tr>
 <tr class="separator:a61dbc208f9fb0d7525929a74bb48f1c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a626461630d4ca5a7376b8179302fbbc2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d8d/classnut_1_1_i_m_u.html#a626461630d4ca5a7376b8179302fbbc2">DeInit</a> ()=0</td></tr>
+<tr class="memdesc:a626461630d4ca5a7376b8179302fbbc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">非初期化関数  <a href="../../db/d8d/classnut_1_1_i_m_u.html#a626461630d4ca5a7376b8179302fbbc2">[詳解]</a><br /></td></tr>
+<tr class="separator:a626461630d4ca5a7376b8179302fbbc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a29b72d72334f69d97cb8c5b1522ca0ab"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d8d/classnut_1_1_i_m_u.html#a29b72d72334f69d97cb8c5b1522ca0ab">Reset</a> ()=0</td></tr>
 <tr class="memdesc:a29b72d72334f69d97cb8c5b1522ca0ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">IMUリセット  <a href="../../db/d8d/classnut_1_1_i_m_u.html#a29b72d72334f69d97cb8c5b1522ca0ab">[詳解]</a><br /></td></tr>
 <tr class="separator:a29b72d72334f69d97cb8c5b1522ca0ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -156,6 +159,8 @@ nut::IMU の継承関係図</div>
 <tr class="memitem:ab3fa89cd6d918129e899ccd6b3a54ce5"><td class="memItemLeft" align="right" valign="top">Eigen::Vector3f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d8d/classnut_1_1_i_m_u.html#ab3fa89cd6d918129e899ccd6b3a54ce5">_global_angle</a> = {0.0, 0.0, 0.0}</td></tr>
 <tr class="memdesc:ab3fa89cd6d918129e899ccd6b3a54ce5"><td class="mdescLeft">&#160;</td><td class="mdescRight">role,pitch,yawの角度(グローバル座標)  <a href="../../db/d8d/classnut_1_1_i_m_u.html#ab3fa89cd6d918129e899ccd6b3a54ce5">[詳解]</a><br /></td></tr>
 <tr class="separator:ab3fa89cd6d918129e899ccd6b3a54ce5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43905a0ee530c7de7d9b51e35e705a37"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d8d/classnut_1_1_i_m_u.html#a43905a0ee530c7de7d9b51e35e705a37">_is_init</a> = false</td></tr>
+<tr class="separator:a43905a0ee530c7de7d9b51e35e705a37"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock"><p>IMU基底純粋仮想クラス </p>
@@ -189,7 +194,7 @@ nut::IMU の継承関係図</div>
 
 <p>コンストラクタ </p>
 
-<p class="definition"> <a class="el" href="../../d7/d3d/_i_m_u_8hpp_source.html">IMU.hpp</a> の <a class="el" href="../../d7/d3d/_i_m_u_8hpp_source.html#l00029">29</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d7/d3d/_i_m_u_8hpp_source.html">IMU.hpp</a> の <a class="el" href="../../d7/d3d/_i_m_u_8hpp_source.html#l00031">31</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -218,11 +223,38 @@ nut::IMU の継承関係図</div>
 
 <p>デストラクタ </p>
 
-<p class="definition"> <a class="el" href="../../d7/d3d/_i_m_u_8hpp_source.html">IMU.hpp</a> の <a class="el" href="../../d7/d3d/_i_m_u_8hpp_source.html#l00033">33</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d7/d3d/_i_m_u_8hpp_source.html">IMU.hpp</a> の <a class="el" href="../../d7/d3d/_i_m_u_8hpp_source.html#l00035">35</a> 行目に定義があります。</p>
 
 </div>
 </div>
 <h2 class="groupheader">関数詳解</h2>
+<a id="a626461630d4ca5a7376b8179302fbbc2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a626461630d4ca5a7376b8179302fbbc2">&#9670;&nbsp;</a></span>DeInit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void nut::IMU::DeInit </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>非初期化関数 </p>
+
+</div>
+</div>
 <a id="a980eacd06b56731386aaa84e6565bccd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a980eacd06b56731386aaa84e6565bccd">&#9670;&nbsp;</a></span>GetGlobalAcc()</h2>
 
@@ -247,7 +279,7 @@ nut::IMU の継承関係図</div>
 </div><div class="memdoc">
 <p>getter[m/s^2] </p>
 
-<p class="definition"> <a class="el" href="../../d7/d3d/_i_m_u_8hpp_source.html">IMU.hpp</a> の <a class="el" href="../../d7/d3d/_i_m_u_8hpp_source.html#l00062">62</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d7/d3d/_i_m_u_8hpp_source.html">IMU.hpp</a> の <a class="el" href="../../d7/d3d/_i_m_u_8hpp_source.html#l00068">68</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -275,7 +307,7 @@ nut::IMU の継承関係図</div>
 </div><div class="memdoc">
 <p>getter[rad] </p>
 
-<p class="definition"> <a class="el" href="../../d7/d3d/_i_m_u_8hpp_source.html">IMU.hpp</a> の <a class="el" href="../../d7/d3d/_i_m_u_8hpp_source.html#l00074">74</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d7/d3d/_i_m_u_8hpp_source.html">IMU.hpp</a> の <a class="el" href="../../d7/d3d/_i_m_u_8hpp_source.html#l00080">80</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -303,7 +335,7 @@ nut::IMU の継承関係図</div>
 </div><div class="memdoc">
 <p>getter[rad/s] </p>
 
-<p class="definition"> <a class="el" href="../../d7/d3d/_i_m_u_8hpp_source.html">IMU.hpp</a> の <a class="el" href="../../d7/d3d/_i_m_u_8hpp_source.html#l00068">68</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d7/d3d/_i_m_u_8hpp_source.html">IMU.hpp</a> の <a class="el" href="../../d7/d3d/_i_m_u_8hpp_source.html#l00074">74</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -331,7 +363,7 @@ nut::IMU の継承関係図</div>
 </div><div class="memdoc">
 <p>getter[m/s^2] </p>
 
-<p class="definition"> <a class="el" href="../../d7/d3d/_i_m_u_8hpp_source.html">IMU.hpp</a> の <a class="el" href="../../d7/d3d/_i_m_u_8hpp_source.html#l00050">50</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d7/d3d/_i_m_u_8hpp_source.html">IMU.hpp</a> の <a class="el" href="../../d7/d3d/_i_m_u_8hpp_source.html#l00056">56</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -359,7 +391,7 @@ nut::IMU の継承関係図</div>
 </div><div class="memdoc">
 <p>getter[rad/s] </p>
 
-<p class="definition"> <a class="el" href="../../d7/d3d/_i_m_u_8hpp_source.html">IMU.hpp</a> の <a class="el" href="../../d7/d3d/_i_m_u_8hpp_source.html#l00056">56</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d7/d3d/_i_m_u_8hpp_source.html">IMU.hpp</a> の <a class="el" href="../../d7/d3d/_i_m_u_8hpp_source.html#l00062">62</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -497,6 +529,30 @@ nut::IMU の継承関係図</div>
 <p>role,pitch,yawの角速度(グローバル座標) </p>
 
 <p class="definition"> <a class="el" href="../../d7/d3d/_i_m_u_8hpp_source.html">IMU.hpp</a> の <a class="el" href="../../d7/d3d/_i_m_u_8hpp_source.html#l00022">22</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a43905a0ee530c7de7d9b51e35e705a37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43905a0ee530c7de7d9b51e35e705a37">&#9670;&nbsp;</a></span>_is_init</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool nut::IMU::_is_init = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d7/d3d/_i_m_u_8hpp_source.html">IMU.hpp</a> の <a class="el" href="../../d7/d3d/_i_m_u_8hpp_source.html#l00025">25</a> 行目に定義があります。</p>
 
 </div>
 </div>

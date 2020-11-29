@@ -2,8 +2,7 @@
  * @file DirectDutyMotor.hpp
  * @brief Dutyモータ制御
  * @author Horie
- * @date 2020/9
- * @attention まだ一部未実装です
+ * @date 2020/10
  */
 #pragma once
 
@@ -16,14 +15,18 @@ namespace nut{
  * @brief Duty制御のモータクラス
  */
 class DirectDutyMotor : public Motor{
-private:
-	TIM_HandleTypeDef* const _htim;//!< PWM
-	const uint32_t _channel;//!< PWM
+protected:
+	/* Component */
+	TIM_HandleTypeDef* const _htim;// PWM
+	const uint32_t _channel;// PWM
 	GPIO_TypeDef* const _gpio_port;
 	const uint16_t _gpio_pin;
 	const std::shared_ptr<Encoder> _encoder;
 	float _encoder_ratio = 1.0;
-	float last_rad = 0.0;
+
+	/* for calculation */
+	float last_rad = 0.0f;
+
 
 
 	/**
@@ -31,55 +34,60 @@ private:
 	 */
 	virtual void ScheduleTask() override{
 		//get radian
-		if(_encoder.get() != nullptr){
+		if(_encoder){
 			float rad = _encoder->GetRad();
-			float rad_div = (rad - last_rad > M_PI) ?
-						rad - last_rad - M_PI*2.0 :
-						((rad - last_rad < -M_PI) ? rad - last_rad + M_PI*2.0 : rad - last_rad);
+			float rad_div = (rad - last_rad > M_PI_f) ?
+						rad - last_rad - M_2PI_f:
+						((rad - last_rad < -M_PI_f) ? rad - last_rad + M_2PI_f : rad - last_rad);
+			rad_div *= _encoder_ratio;
 			last_rad = rad;
-			_now_radps = rad_div * 1000.0f / _scheduler.GetPeriod();
+			_now_radps = rad_div * 1000.0f / static_cast<float>(_scheduler.GetPeriod());
 			_now_rad +=  rad_div;
 		}
 
 
 		if(_move_type == MoveType::stop){
 			_now_duty = 0;
-			ResetParam();
-			_rad_pid.Calculate(0, _scheduler.GetPeriod());
-			_radps_pid.Calculate(0, _scheduler.GetPeriod());
+			ResetTarget();
+			ResetController();
 			__HAL_TIM_SET_COMPARE(_htim, _channel, 0);
 		}
 		else{
 			if(_move_type == MoveType::duty){
-				_radps_pid.Reset();
+				ResetController();
 				_now_duty = _target_duty;
 			}
 			else{
-				if(_encoder.get() == nullptr){//no encoder
+				if(_encoder){//no encoder
 					Stop();
 					return;
 				}
 
-				if(_move_type == MoveType::radps){
-					/*control speed*/
-					_now_duty = _radps_pid.Calculate(_target_radps - _now_radps, _scheduler.GetPeriod());
-					_radps_pid.Calculate(0, _scheduler.GetPeriod());
-				}
-				else if(_move_type == MoveType::radMulti || _move_type == MoveType::radSingle || _move_type == MoveType::radSinglePolarity){
-					_target_radps = _rad_pid.Calculate(_target_rad - _now_rad,  _scheduler.GetPeriod());
-					_now_duty = _radps_pid.Calculate(_target_radps - _now_radps, _scheduler.GetPeriod());
-				}
-				else{
+				switch(_move_type){
+				/*control speed*/
+				case MoveType::radps:
+					_now_duty = _radps_pid->Calculate(_target_radps - _now_radps, static_cast<uint32_t>(_scheduler.GetPeriod()));
+					_radps_pid->Calculate(0.0f, static_cast<uint32_t>(_scheduler.GetPeriod()));
+					break;
+
+				/*control rad*/
+				case MoveType::radMulti:
+				case MoveType::radSingle:
+				case MoveType::radSinglePolarity:
+					_target_radps = _rad_pid->Calculate(_target_rad - _now_rad,  static_cast<uint32_t>(_scheduler.GetPeriod()));
+					_now_duty = _radps_pid->Calculate(_target_radps - _now_radps, static_cast<uint32_t>(_scheduler.GetPeriod()));
+					break;
+
+				default:
 					/* not yet!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
 					Stop();
 					return;
-					/******************************************/
 				}
 			}
 
 			/* set duty */
-			__HAL_TIM_SET_COMPARE(_htim, _channel, static_cast<uint16_t>(std::fabs(_now_duty) / 100.0 * _htim->Instance->ARR));
-			if(_now_duty != 0.0f)HAL_GPIO_WritePin(_gpio_port, _gpio_pin, (_now_duty > 0.0) ? GPIO_PIN_RESET : GPIO_PIN_SET);
+			__HAL_TIM_SET_COMPARE(_htim, _channel, static_cast<uint32_t>(std::fabs(_now_duty) / 100.0f * _htim->Instance->ARR));
+			if(_now_duty != 0.0f)HAL_GPIO_WritePin(_gpio_port, _gpio_pin, (_now_duty > 0.0f) ? GPIO_PIN_RESET : GPIO_PIN_SET);
 		}
 	}
 
@@ -93,30 +101,42 @@ public:
 	 * @param[in] pin 回転極性ピン
 	 * @param[in] encoder エンコーダのインスタンス
 	 * @details エンコーダを使わない場合はヌルポを入れてください
+	 * @param[in] encoder_ratio エンコーダ一回転に対する実効回転数の比
 	 */
-	DirectDutyMotor(uint32_t period, TIM_HandleTypeDef* htim, uint32_t channel, GPIO_TypeDef* port, uint16_t pin, const std::shared_ptr<Encoder>& encoder, float encoder_ratio = 1.0) :
+	DirectDutyMotor(
+			MilliSecond<uint32_t> period,
+			TIM_HandleTypeDef* htim,
+			uint32_t channel,
+			GPIO_TypeDef* port,
+			uint16_t pin,
+			std::shared_ptr<Encoder> encoder,
+			float encoder_ratio = 1.0) :
 		Motor(period), _htim(htim),_channel(channel), _gpio_port(port), _gpio_pin(pin), _encoder(encoder), _encoder_ratio(encoder_ratio){
-		_radps_pid.SetLimit(100.0);//duty limit
+		_radps_pid->SetLimit(99.0f);//duty limit
 	}
-	virtual ~DirectDutyMotor(){}
+	virtual ~DirectDutyMotor(){Deinit();}
 
 
 
 	/**
 	 * @brief 初期化関数
 	 */
-	virtual void Init() {
+	virtual void Init() override{
+		if(_is_init)return;
+		_is_init = true;
 		_encoder->Init();
 		_scheduler.Set();
 	}
-
-	bool ChangeEncoder(){
-		if(_move_type != MoveType::stop)return false;
-
-		/* not yet  */
-		return false;
+	/**
+	 * @brief 非初期化関数
+	 */
+	virtual void Deinit() override{
+		if(!_is_init)return;
+		Stop();
+		_is_init = false;
+		_encoder->Deinit();
+		_scheduler.Erase();
 	}
-
 	/**
 	 * @brief 制御スタート
 	 */
@@ -127,44 +147,52 @@ public:
 		HAL_TIM_PWM_Start(_htim, _channel);
 		return true;
 	}
-
 	/**
 	 * @brief 制御ストップ
 	 */
 	virtual void Stop() override{
 		_move_type = MoveType::stop;
-		ResetParam();
+		ResetController();
 		__HAL_TIM_SET_COMPARE(_htim, _channel, 0);
 		HAL_TIM_PWM_Stop(_htim, _channel);
 	}
 
+	/*
+	 * @brief エンコーダ変更
+	 * @details これ要る？？？
+	 */
+	bool ChangeEncoder(){
+		if(_move_type != MoveType::stop)return false;
+
+		/* not yet  */
+		return false;
+	}
+
+
+	/* control set */
 
 	/**
 	 * @brief 速度制御
-	 * @param[in] rpm RPM
+	 * @param[in] radps rad/s
 	 * @return 速度制御可能かどうか
 	 */
 	virtual bool SetRadps(float radps) override {
-		if(_encoder.get() == NULL)return false;
-		if(_move_type == MoveType::stop) return false;
+		if(_move_type == MoveType::stop || _encoder) return false;
 		_target_radps = radps;
 		_move_type = MoveType::radps;
 		return true;
 	}
-
 	/**
 	 * @brief 多回転角度制御
 	 * @param[in] rad 角度[rad]
 	 * @return 角度制御可能かどうか
 	 */
-	virtual bool SetRadMulti(float rad){
-		if(_encoder.get() == NULL)return false;
-		if(_move_type == MoveType::stop) return false;
+	virtual bool SetRadMulti(float rad) override{
+		if(_move_type == MoveType::stop || _encoder) return false;
 		_target_rad = rad;
 		_move_type = MoveType::radMulti;
 		return true;
 	}
-
 	/**
 	 * @brief 単回転角度制御
 	 * @details 近い方向に回転します
@@ -172,22 +200,19 @@ public:
 	 * @details M_PI ~ -M_PIまで
 	 * @return 角度制御可能かどうか
 	 */
-	virtual bool SetRadSingle(float rad){
-		if(_encoder.get() == NULL)return false;
-		if(_move_type == MoveType::stop) return false;
-		if(std::fabs(rad) > static_cast<float>(M_PI))return false;
+	virtual bool SetRadSingle(float rad) override{
+		if(_move_type == MoveType::stop || _encoder) return false;
+		if(std::fabs(rad) > M_PI_f)return false;
 
-		float rad_diff = std::fmod(rad - _now_rad, M_PI*2.0);
-		if(std::fabs(rad_diff) >= static_cast<float>(M_PI)){//over rad
-			rad_diff = (rad_diff < 0 ? M_PI*2.0 : -M_PI*2.0) + rad_diff;
+		float rad_diff = std::fmod(rad - _now_rad, M_2PI_f);
+		if(std::fabs(rad_diff) >= M_PI_f){//over rad
+			rad_diff = (rad_diff < 0 ? M_2PI_f : -M_2PI_f) + rad_diff;
 		}
 
 		_target_rad = _now_rad + rad_diff;
 		_move_type = MoveType::radSingle;
 		return true;
 	}
-
-
 	/**
 	 * @brief 単回転角度制御
 	 * @details 指示極性方向に回転します.
@@ -196,9 +221,8 @@ public:
 	 * @details trueなら正,falsなら負です
 	 * @return 角度制御可能かどうか
 	 */
-	virtual bool SetRadSingle(float rad, bool polarity){
-		if(_encoder.get() == NULL)return false;
-		if(_move_type == MoveType::stop) return false;
+	virtual bool SetRadSingle(float rad, bool polarity) override{
+		if(_move_type == MoveType::stop || _encoder) return false;
 		if(std::fabs(rad) > static_cast<float>(M_PI))return false;
 
 		/* not yet!!!!! */
@@ -214,54 +238,39 @@ public:
 
 		return false;
 	}
-
-
-
 	/**
-	 * @brief 速度制御ゲインセット
-	 * @param[in] kp Pゲイン
-	 * @param[in] ki Iゲイン
-	 * @param[in] kd Dゲイン
-	 * @return 速度PID可能かどうか
+	 * @brief 電流制御
+	 * @param[in] currnet 電流[A]
+	 * @return 電流制御可能かどうか
 	 */
-	virtual bool SetRadpsPID(float kp, float ki, float kd, float op_limit = infinityf(), float i_limit = infinityf()) override{
-		if(_move_type != MoveType::stop)return false;
-		if(_encoder.get() == NULL)return false;
-		_radps_pid.SetGaine(kp, ki, kd);
-		_radps_pid.SetLimit(op_limit);
-		_radps_pid.SetLimitI(i_limit);
-		return true;
-	}
-	/**
-	 * @brief 角度制御ゲインセット
-	 * @param[in] kp Pゲイン
-	 * @param[in] ki Iゲイン
-	 * @param[in] kd Dゲイン
-	 * @return 角度PID可能かどうか
-	 */
-	virtual bool SetRadPID(float kp, float ki, float kd, float op_limit = infinityf(), float i_limit = infinityf()) override{
-		if(_move_type != MoveType::stop)return false;
-		if(_encoder.get() == NULL)return false;
-		_rad_pid.SetGaine(kp, ki, kd);
-		_rad_pid.SetLimit(op_limit);
-		_rad_pid.SetLimitI(i_limit);
-		return true;
+	virtual bool SetCurrent(float currnet) override{
+		return false;
 	}
 
 
+
+
+	/* setter */
 
 	/**
 	 * @brief 角度原点リセット
+	 * @details 現在角を書き換えます
+	 * @param[in] rad 書き換え角度
 	 * @return bool 角度原点リセット可能かどうか
 	 */
 	virtual bool ResetRadOrigin(float rad) override{
-		if(_move_type != MoveType::stop)return false;
-		if(_encoder.get() == NULL)return false;
+		if(_move_type != MoveType::stop || _encoder)return false;
 		_now_rad = rad;
 		return true;
 	}
 
 
+	/* getter */
+
+	/*
+	 * @brief PWMタイマ取得
+	 * @return PWMタイマ
+	 */
 	TIM_HandleTypeDef* GetPWMTimer() const{
 		return _htim;
 	}

@@ -18,7 +18,7 @@ namespace nut{
 class DriveWheel{
 protected:
 	const std::shared_ptr<Motor> _motor;
-	float _diameter_mm;
+	const float _diameter_mm;
 	const Coordinate<float> _position;
 
 
@@ -27,6 +27,7 @@ public:
 	 * @brief コンストラクタ
 	 * @param[in] motor モーターインスタンス
 	 * @param[in] diameter_mm タイヤ直径[mm]
+	 * @param[in] position タイヤ位置[mm]
 	 */
 	DriveWheel(const std::shared_ptr<Motor>& motor, float diameter_mm, 	Coordinate<float> position = Coordinate<float>())
 		: _motor(motor), _diameter_mm(diameter_mm), _position(position){

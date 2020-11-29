@@ -19,6 +19,7 @@ var classnut_1_1_reiwa_m_d =
     ] ],
     [ "ReiwaMD", "df/da1/classnut_1_1_reiwa_m_d.html#a868fd9d038866bcd1f4483d03214bcdf", null ],
     [ "~ReiwaMD", "df/da1/classnut_1_1_reiwa_m_d.html#a0c51e75191c62c5d694b19898104244b", null ],
+    [ "Deinit", "df/da1/classnut_1_1_reiwa_m_d.html#a3c1c2f97ab62afa3c6d412666036098f", null ],
     [ "Init", "df/da1/classnut_1_1_reiwa_m_d.html#a7ac369682056c692a7df5f4825ea95a7", null ],
     [ "ReadCanData", "df/da1/classnut_1_1_reiwa_m_d.html#acdd0993d2234cf66f6e2e5db73196e95", null ],
     [ "ResetRadOrigin", "df/da1/classnut_1_1_reiwa_m_d.html#a39100c5ad64a7d4a5fdfe13fe78b6594", null ],
@@ -26,10 +27,10 @@ var classnut_1_1_reiwa_m_d =
     [ "SendControlMode", "df/da1/classnut_1_1_reiwa_m_d.html#a4209d3d2b8dedaa939277d24c447be5a", null ],
     [ "SendData", "df/da1/classnut_1_1_reiwa_m_d.html#a8ebd4e3c997c4511b2e89a36e39015d9", null ],
     [ "SetDuty", "df/da1/classnut_1_1_reiwa_m_d.html#a5e7015dc7a039d8f4fdb6c9911dab941", null ],
-    [ "SetRad", "df/da1/classnut_1_1_reiwa_m_d.html#a5bf3dc213d50558a3fa3bbe7dde3cdb2", null ],
-    [ "SetRadPID", "df/da1/classnut_1_1_reiwa_m_d.html#aa5b2de060bbf9971615aa43e2d04d114", null ],
-    [ "SetRPM", "df/da1/classnut_1_1_reiwa_m_d.html#a98b651b80a784e9404cedcb84f606541", null ],
-    [ "SetRPMPID", "df/da1/classnut_1_1_reiwa_m_d.html#a03b7de6e49e72e47ad57e16b17450d7d", null ],
+    [ "SetRadMulti", "df/da1/classnut_1_1_reiwa_m_d.html#a14e6ace9c1401477dc94db57a8cdcb20", null ],
+    [ "SetRadps", "df/da1/classnut_1_1_reiwa_m_d.html#a9a931fb345820b871594bdab35628805", null ],
+    [ "SetRadSingle", "df/da1/classnut_1_1_reiwa_m_d.html#aa2b143308f00dffa73733943a1a029bb", null ],
+    [ "SetRadSingle", "df/da1/classnut_1_1_reiwa_m_d.html#a2d134b09df7527be717efec6829d6507", null ],
     [ "Start", "df/da1/classnut_1_1_reiwa_m_d.html#a32c6b67e93487f574e606eec8a97a6e7", null ],
     [ "Stop", "df/da1/classnut_1_1_reiwa_m_d.html#a15c344a43e782cb4cb26ccc482e774a7", null ]
 ];

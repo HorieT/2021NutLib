@@ -64,8 +64,19 @@ public:
 	 * @brief 初期化
 	 */
 	virtual void Init() override{
+		if(_is_init)return;
+		_is_init = true;
 		_htim->Instance->CNT = 0;
 		HAL_TIM_Encoder_Start(_htim, TIM_CHANNEL_ALL);
+	}
+	/**
+	 * @brief 初期化
+	 */
+	virtual void Deinit() override{
+		if(!_is_init)return;
+		_is_init = false;
+		_htim->Instance->CNT = 0;
+		HAL_TIM_Encoder_Stop(_htim, TIM_CHANNEL_ALL);
 	}
 
 

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['centi_504',['centi',['../da/dc9/namespacenut_1_1unit.html#ad24db021c4d3db12da094f7712094e73',1,'nut::unit']]]
+  ['button_884',['Button',['../d6/de4/classnut_1_1_dual_shock.html#a0442f05c9360aca776d0ff586f54396f',1,'nut::DualShock']]]
 ];

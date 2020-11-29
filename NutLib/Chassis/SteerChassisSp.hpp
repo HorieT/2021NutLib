@@ -4,9 +4,8 @@
 #pragma once
 
 #include "../Global.hpp"
-#include "Chassis.hpp"
-#include "../Motor/DriveWheel.hpp"
-#include "../Motor/MD2021Steer.hpp"
+#include "SteerChassis.hpp"
+#include "../Motor/SteerDriver.hpp"
 #include <array>
 #include <limits>
 #include <Eigen/Geometry>
@@ -17,18 +16,11 @@ namespace nut{
  */
 template<uint8_t N>
 class SteerChassisSp : public Chassis{
-public:
-	enum class MoveMode : uint8_t{
-		nomal = 0,
-		reset,
-		steerOnry,
-		steerBreaking
-	};
-
 private:
+	using MoveMode = SteerOpration::MoveMode;
 	static constexpr float RAD_DIFF_LIM = M_PI / 2.0;
 
-	const std::array<std::shared_ptr<MD2021Steer>, N> _steering;
+	const std::array<std::shared_ptr<SteerDriver>, N> _steering;
 	const std::array<Coordinate<float>, N> _wheel_position;//!< 駆動輪位置
 	const float _diameter_mm;
 
@@ -90,7 +82,7 @@ public:
 	SteerChassisSp(
 		uint32_t period,
 		const std::shared_ptr<Odmetry>& odmetry,
-		std::array<std::shared_ptr<MD2021Steer>, N> steer,
+		std::array<std::shared_ptr<SteerDriver>, N> steer,
 		std::array<Coordinate<float>, N> steer_pos,
 		float diameter_mm)
 			: Chassis(period, odmetry),
@@ -126,6 +118,7 @@ public:
 	/**
 	 * @brief 速度入力
 	 * @param[in] velocity 速度[m/s],[rad/s]
+	 * @param[in] mode 動作モード
 	 * @return 速度入力可能か
 	 */
 	virtual bool SetVelocity(Coordinate<float> velocity, MoveMode mode){
@@ -138,6 +131,7 @@ public:
 	 * @brief 速度入力
 	 * @param[in] velocity_mps 速度[m/s]
 	 * @param[in] rot_radps [rad/s]
+	 * @param[in] mode 動作モード
 	 * @return 速度入力可能か
 	 */
 	virtual bool SetVelocity(Eigen::Vector2f velocity_mps, float rot_radps, MoveMode mode){

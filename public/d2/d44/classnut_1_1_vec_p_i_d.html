@@ -1,0 +1,397 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>NutLib: nut::VecPID&lt; T &gt; クラステンプレート</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">NutLib
+   </div>
+  </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.svg"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.20 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'検索');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('d2/d44/classnut_1_1_vec_p_i_d.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pro-attribs">限定公開変数類</a> &#124;
+<a href="../../d5/d59/classnut_1_1_vec_p_i_d-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">nut::VecPID&lt; T &gt; クラステンプレート</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="../../de/d8f/_vec_p_i_d_8hpp_source.html">VecPID.hpp</a>&gt;</code></p>
+<div class="dynheader">
+nut::VecPID&lt; T &gt; の継承関係図</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="../../d2/d44/classnut_1_1_vec_p_i_d.png" usemap="#nut::VecPID_3C_20T_20_3E_map" alt=""/>
+  <map id="nut::VecPID_3C_20T_20_3E_map" name="nut::VecPID_3C_20T_20_3E_map">
+<area href="../../df/ddb/classnut_1_1_p_i_d_base.html" title="PID制御器クラス" alt="nut::PIDBase&lt; T &gt;" shape="rect" coords="0,56,154,80"/>
+<area href="../../d2/d42/classnut_1_1_controller_3_01_t_00_011_00_011_01_4.html" title="制御系の基底クラス(1入力1出力特殊化)" alt="nut::Controller&lt; T, 1, 1 &gt;" shape="rect" coords="0,0,154,24"/>
+  </map>
+</div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a1c964663bf9ddb0dc97106655d0b9e0a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d44/classnut_1_1_vec_p_i_d.html#a1c964663bf9ddb0dc97106655d0b9e0a">VecPID</a> (T P_gain=0.0, T I_gain=0.0, T D_gain=0.0)</td></tr>
+<tr class="separator:a1c964663bf9ddb0dc97106655d0b9e0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c57d1e1d2ef7237698f910ca99b150c"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d44/classnut_1_1_vec_p_i_d.html#a6c57d1e1d2ef7237698f910ca99b150c">~VecPID</a> ()</td></tr>
+<tr class="separator:a6c57d1e1d2ef7237698f910ca99b150c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc0ba87153f6d72534064d0c8d1ec7f6"><td class="memItemLeft" align="right" valign="top">virtual T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d44/classnut_1_1_vec_p_i_d.html#afc0ba87153f6d72534064d0c8d1ec7f6">Calculate</a> (T input, uint32_t ms) override</td></tr>
+<tr class="memdesc:afc0ba87153f6d72534064d0c8d1ec7f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">フィードバック計算  <a href="../../d2/d44/classnut_1_1_vec_p_i_d.html#afc0ba87153f6d72534064d0c8d1ec7f6">[詳解]</a><br /></td></tr>
+<tr class="separator:afc0ba87153f6d72534064d0c8d1ec7f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afef934ac8c1169dc5c702bffb0f80c1e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d44/classnut_1_1_vec_p_i_d.html#afef934ac8c1169dc5c702bffb0f80c1e">Reset</a> () override</td></tr>
+<tr class="memdesc:afef934ac8c1169dc5c702bffb0f80c1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">操作量リセット  <a href="../../d2/d44/classnut_1_1_vec_p_i_d.html#afef934ac8c1169dc5c702bffb0f80c1e">[詳解]</a><br /></td></tr>
+<tr class="separator:afef934ac8c1169dc5c702bffb0f80c1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classnut_1_1_p_i_d_base"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classnut_1_1_p_i_d_base')"><img src="../../closed.png" alt="-"/>&#160;基底クラス <a class="el" href="../../df/ddb/classnut_1_1_p_i_d_base.html">nut::PIDBase&lt; T &gt;</a> に属する継承公開メンバ関数</td></tr>
+<tr class="memitem:a8fb39b81b6d79d4573c983f4bc62fe0b inherit pub_methods_classnut_1_1_p_i_d_base"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/ddb/classnut_1_1_p_i_d_base.html#a8fb39b81b6d79d4573c983f4bc62fe0b">PIDBase</a> (T P_gain=0.0, T I_gain=0.0, T D_gain=0.0)</td></tr>
+<tr class="memdesc:a8fb39b81b6d79d4573c983f4bc62fe0b inherit pub_methods_classnut_1_1_p_i_d_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ  <a href="../../df/ddb/classnut_1_1_p_i_d_base.html#a8fb39b81b6d79d4573c983f4bc62fe0b">[詳解]</a><br /></td></tr>
+<tr class="separator:a8fb39b81b6d79d4573c983f4bc62fe0b inherit pub_methods_classnut_1_1_p_i_d_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8fc1a4e2c227310065b8e19dc5cca12 inherit pub_methods_classnut_1_1_p_i_d_base"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/ddb/classnut_1_1_p_i_d_base.html#ae8fc1a4e2c227310065b8e19dc5cca12">PIDBase</a> (const <a class="el" href="../../df/ddb/classnut_1_1_p_i_d_base.html">PIDBase</a>&lt; T &gt; &amp;pid)=delete</td></tr>
+<tr class="separator:ae8fc1a4e2c227310065b8e19dc5cca12 inherit pub_methods_classnut_1_1_p_i_d_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a168e8ee9446756d5621f39c86b3eebeb inherit pub_methods_classnut_1_1_p_i_d_base"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../df/ddb/classnut_1_1_p_i_d_base.html">PIDBase</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/ddb/classnut_1_1_p_i_d_base.html#a168e8ee9446756d5621f39c86b3eebeb">operator=</a> (const <a class="el" href="../../df/ddb/classnut_1_1_p_i_d_base.html">PIDBase</a>&lt; T &gt; &amp;pid)=delete</td></tr>
+<tr class="separator:a168e8ee9446756d5621f39c86b3eebeb inherit pub_methods_classnut_1_1_p_i_d_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4706380d28550dcd3316816661d0e93d inherit pub_methods_classnut_1_1_p_i_d_base"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/ddb/classnut_1_1_p_i_d_base.html#a4706380d28550dcd3316816661d0e93d">~PIDBase</a> ()</td></tr>
+<tr class="memdesc:a4706380d28550dcd3316816661d0e93d inherit pub_methods_classnut_1_1_p_i_d_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">デストラクタ  <a href="../../df/ddb/classnut_1_1_p_i_d_base.html#a4706380d28550dcd3316816661d0e93d">[詳解]</a><br /></td></tr>
+<tr class="separator:a4706380d28550dcd3316816661d0e93d inherit pub_methods_classnut_1_1_p_i_d_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade72b427d23f6a4bdb2d5099040df104 inherit pub_methods_classnut_1_1_p_i_d_base"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/ddb/classnut_1_1_p_i_d_base.html#ade72b427d23f6a4bdb2d5099040df104">SetGaine</a> (T P_gain=0.0, T I_gain=0.0, T D_gain=0.0) final</td></tr>
+<tr class="memdesc:ade72b427d23f6a4bdb2d5099040df104 inherit pub_methods_classnut_1_1_p_i_d_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">ゲインの設定  <a href="../../df/ddb/classnut_1_1_p_i_d_base.html#ade72b427d23f6a4bdb2d5099040df104">[詳解]</a><br /></td></tr>
+<tr class="separator:ade72b427d23f6a4bdb2d5099040df104 inherit pub_methods_classnut_1_1_p_i_d_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad45db98c42c240f9779fbe2643127f69 inherit pub_methods_classnut_1_1_p_i_d_base"><td class="memItemLeft" align="right" valign="top">virtual const T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/ddb/classnut_1_1_p_i_d_base.html#ad45db98c42c240f9779fbe2643127f69">P</a> () const &amp;final</td></tr>
+<tr class="separator:ad45db98c42c240f9779fbe2643127f69 inherit pub_methods_classnut_1_1_p_i_d_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44f20be21fad8f302c77f56265635684 inherit pub_methods_classnut_1_1_p_i_d_base"><td class="memItemLeft" align="right" valign="top">virtual const T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/ddb/classnut_1_1_p_i_d_base.html#a44f20be21fad8f302c77f56265635684">I</a> () const &amp;final</td></tr>
+<tr class="separator:a44f20be21fad8f302c77f56265635684 inherit pub_methods_classnut_1_1_p_i_d_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93a69143571e42dc51ef86b7e9f6dd1a inherit pub_methods_classnut_1_1_p_i_d_base"><td class="memItemLeft" align="right" valign="top">virtual const T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/ddb/classnut_1_1_p_i_d_base.html#a93a69143571e42dc51ef86b7e9f6dd1a">D</a> () const &amp;final</td></tr>
+<tr class="separator:a93a69143571e42dc51ef86b7e9f6dd1a inherit pub_methods_classnut_1_1_p_i_d_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c1ba64ed699b6541bbbdeeac1ba3009 inherit pub_methods_classnut_1_1_p_i_d_base"><td class="memItemLeft" align="right" valign="top">virtual T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/ddb/classnut_1_1_p_i_d_base.html#a8c1ba64ed699b6541bbbdeeac1ba3009">P</a> () const &amp;&amp;final</td></tr>
+<tr class="separator:a8c1ba64ed699b6541bbbdeeac1ba3009 inherit pub_methods_classnut_1_1_p_i_d_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01f199e3102bd8a3dc4d8114c20ee120 inherit pub_methods_classnut_1_1_p_i_d_base"><td class="memItemLeft" align="right" valign="top">virtual T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/ddb/classnut_1_1_p_i_d_base.html#a01f199e3102bd8a3dc4d8114c20ee120">I</a> () const &amp;&amp;final</td></tr>
+<tr class="separator:a01f199e3102bd8a3dc4d8114c20ee120 inherit pub_methods_classnut_1_1_p_i_d_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a62cbeff129a12ea53305524c77b965 inherit pub_methods_classnut_1_1_p_i_d_base"><td class="memItemLeft" align="right" valign="top">virtual T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/ddb/classnut_1_1_p_i_d_base.html#a0a62cbeff129a12ea53305524c77b965">D</a> () const &amp;&amp;final</td></tr>
+<tr class="separator:a0a62cbeff129a12ea53305524c77b965 inherit pub_methods_classnut_1_1_p_i_d_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e349027eb33a8ea01888f66bf540283 inherit pub_methods_classnut_1_1_p_i_d_base"><td class="memItemLeft" align="right" valign="top">virtual T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/ddb/classnut_1_1_p_i_d_base.html#a3e349027eb33a8ea01888f66bf540283">P</a> () &amp;final</td></tr>
+<tr class="separator:a3e349027eb33a8ea01888f66bf540283 inherit pub_methods_classnut_1_1_p_i_d_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab725fe3c8774b3ab06a9c0b6ae56a5b6 inherit pub_methods_classnut_1_1_p_i_d_base"><td class="memItemLeft" align="right" valign="top">virtual T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/ddb/classnut_1_1_p_i_d_base.html#ab725fe3c8774b3ab06a9c0b6ae56a5b6">I</a> () &amp;final</td></tr>
+<tr class="separator:ab725fe3c8774b3ab06a9c0b6ae56a5b6 inherit pub_methods_classnut_1_1_p_i_d_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae5135c825801b5d130e1b350f45c652 inherit pub_methods_classnut_1_1_p_i_d_base"><td class="memItemLeft" align="right" valign="top">virtual T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/ddb/classnut_1_1_p_i_d_base.html#aae5135c825801b5d130e1b350f45c652">D</a> () &amp;final</td></tr>
+<tr class="separator:aae5135c825801b5d130e1b350f45c652 inherit pub_methods_classnut_1_1_p_i_d_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classnut_1_1_controller_3_01_t_00_011_00_011_01_4"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classnut_1_1_controller_3_01_t_00_011_00_011_01_4')"><img src="../../closed.png" alt="-"/>&#160;基底クラス <a class="el" href="../../d2/d42/classnut_1_1_controller_3_01_t_00_011_00_011_01_4.html">nut::Controller&lt; T, 1, 1 &gt;</a> に属する継承公開メンバ関数</td></tr>
+<tr class="memitem:af02a2910668872a746959ee24c5cdef7 inherit pub_methods_classnut_1_1_controller_3_01_t_00_011_00_011_01_4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d42/classnut_1_1_controller_3_01_t_00_011_00_011_01_4.html#af02a2910668872a746959ee24c5cdef7">Controller</a> ()</td></tr>
+<tr class="separator:af02a2910668872a746959ee24c5cdef7 inherit pub_methods_classnut_1_1_controller_3_01_t_00_011_00_011_01_4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a388d361d4d64ae362cb7923d21609b88 inherit pub_methods_classnut_1_1_controller_3_01_t_00_011_00_011_01_4"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d42/classnut_1_1_controller_3_01_t_00_011_00_011_01_4.html#a388d361d4d64ae362cb7923d21609b88">~Controller</a> ()</td></tr>
+<tr class="separator:a388d361d4d64ae362cb7923d21609b88 inherit pub_methods_classnut_1_1_controller_3_01_t_00_011_00_011_01_4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e47b239c63d6b72a769e9640b5c36cc inherit pub_methods_classnut_1_1_controller_3_01_t_00_011_00_011_01_4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d42/classnut_1_1_controller_3_01_t_00_011_00_011_01_4.html#a5e47b239c63d6b72a769e9640b5c36cc">SetLimit</a> (T limit)</td></tr>
+<tr class="memdesc:a5e47b239c63d6b72a769e9640b5c36cc inherit pub_methods_classnut_1_1_controller_3_01_t_00_011_00_011_01_4"><td class="mdescLeft">&#160;</td><td class="mdescRight">操作量上限の設定  <a href="../../d2/d42/classnut_1_1_controller_3_01_t_00_011_00_011_01_4.html#a5e47b239c63d6b72a769e9640b5c36cc">[詳解]</a><br /></td></tr>
+<tr class="separator:a5e47b239c63d6b72a769e9640b5c36cc inherit pub_methods_classnut_1_1_controller_3_01_t_00_011_00_011_01_4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+限定公開変数類</h2></td></tr>
+<tr class="memitem:ac7d9dd1a37472a39f8cf3f5682526367"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d44/classnut_1_1_vec_p_i_d.html#ac7d9dd1a37472a39f8cf3f5682526367">_output_value</a> = 0.0</td></tr>
+<tr class="separator:ac7d9dd1a37472a39f8cf3f5682526367"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_classnut_1_1_p_i_d_base"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classnut_1_1_p_i_d_base')"><img src="../../closed.png" alt="-"/>&#160;基底クラス <a class="el" href="../../df/ddb/classnut_1_1_p_i_d_base.html">nut::PIDBase&lt; T &gt;</a> に属する継承限定公開変数類</td></tr>
+<tr class="memitem:a01830fafc04d5bde18932910012d8adc inherit pro_attribs_classnut_1_1_p_i_d_base"><td class="memItemLeft" align="right" valign="top">std::array&lt; T, 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/ddb/classnut_1_1_p_i_d_base.html#a01830fafc04d5bde18932910012d8adc">_deviation</a> = {0.0}</td></tr>
+<tr class="separator:a01830fafc04d5bde18932910012d8adc inherit pro_attribs_classnut_1_1_p_i_d_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2511ffc9872ea8c9a1cb61f7e372c111 inherit pro_attribs_classnut_1_1_p_i_d_base"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/ddb/classnut_1_1_p_i_d_base.html#a2511ffc9872ea8c9a1cb61f7e372c111">_P_gain</a></td></tr>
+<tr class="memdesc:a2511ffc9872ea8c9a1cb61f7e372c111 inherit pro_attribs_classnut_1_1_p_i_d_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pゲイン  <a href="../../df/ddb/classnut_1_1_p_i_d_base.html#a2511ffc9872ea8c9a1cb61f7e372c111">[詳解]</a><br /></td></tr>
+<tr class="separator:a2511ffc9872ea8c9a1cb61f7e372c111 inherit pro_attribs_classnut_1_1_p_i_d_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3f7c5ea0a97bea0419388283e40a451 inherit pro_attribs_classnut_1_1_p_i_d_base"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/ddb/classnut_1_1_p_i_d_base.html#ae3f7c5ea0a97bea0419388283e40a451">_I_gain</a></td></tr>
+<tr class="memdesc:ae3f7c5ea0a97bea0419388283e40a451 inherit pro_attribs_classnut_1_1_p_i_d_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iゲイン  <a href="../../df/ddb/classnut_1_1_p_i_d_base.html#ae3f7c5ea0a97bea0419388283e40a451">[詳解]</a><br /></td></tr>
+<tr class="separator:ae3f7c5ea0a97bea0419388283e40a451 inherit pro_attribs_classnut_1_1_p_i_d_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5b3cdc8fa66d8fc18206266e6fd5d13 inherit pro_attribs_classnut_1_1_p_i_d_base"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/ddb/classnut_1_1_p_i_d_base.html#ac5b3cdc8fa66d8fc18206266e6fd5d13">_D_gain</a></td></tr>
+<tr class="memdesc:ac5b3cdc8fa66d8fc18206266e6fd5d13 inherit pro_attribs_classnut_1_1_p_i_d_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dゲイン  <a href="../../df/ddb/classnut_1_1_p_i_d_base.html#ac5b3cdc8fa66d8fc18206266e6fd5d13">[詳解]</a><br /></td></tr>
+<tr class="separator:ac5b3cdc8fa66d8fc18206266e6fd5d13 inherit pro_attribs_classnut_1_1_p_i_d_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_classnut_1_1_controller_3_01_t_00_011_00_011_01_4"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classnut_1_1_controller_3_01_t_00_011_00_011_01_4')"><img src="../../closed.png" alt="-"/>&#160;基底クラス <a class="el" href="../../d2/d42/classnut_1_1_controller_3_01_t_00_011_00_011_01_4.html">nut::Controller&lt; T, 1, 1 &gt;</a> に属する継承限定公開変数類</td></tr>
+<tr class="memitem:a7080ec8ab359c67e1fff1a293f385ed9 inherit pro_attribs_classnut_1_1_controller_3_01_t_00_011_00_011_01_4"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d42/classnut_1_1_controller_3_01_t_00_011_00_011_01_4.html#a7080ec8ab359c67e1fff1a293f385ed9">_limit</a> = std::numeric_limits&lt;T&gt;::infinity()</td></tr>
+<tr class="memdesc:a7080ec8ab359c67e1fff1a293f385ed9 inherit pro_attribs_classnut_1_1_controller_3_01_t_00_011_00_011_01_4"><td class="mdescLeft">&#160;</td><td class="mdescRight">操作量上限値(絶対値):  <a href="../../d2/d42/classnut_1_1_controller_3_01_t_00_011_00_011_01_4.html#a7080ec8ab359c67e1fff1a293f385ed9">[詳解]</a><br /></td></tr>
+<tr class="separator:a7080ec8ab359c67e1fff1a293f385ed9 inherit pro_attribs_classnut_1_1_controller_3_01_t_00_011_00_011_01_4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><h3>template&lt;typename T&gt;<br />
+class nut::VecPID&lt; T &gt;</h3>
+
+
+<p class="definition"> <a class="el" href="../../de/d8f/_vec_p_i_d_8hpp_source.html">VecPID.hpp</a> の <a class="el" href="../../de/d8f/_vec_p_i_d_8hpp_source.html#l00014">14</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a id="a1c964663bf9ddb0dc97106655d0b9e0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c964663bf9ddb0dc97106655d0b9e0a">&#9670;&nbsp;</a></span>VecPID()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d44/classnut_1_1_vec_p_i_d.html">nut::VecPID</a>&lt; T &gt;::<a class="el" href="../../d2/d44/classnut_1_1_vec_p_i_d.html">VecPID</a> </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>P_gain</em> = <code>0.0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>I_gain</em> = <code>0.0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>D_gain</em> = <code>0.0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../de/d8f/_vec_p_i_d_8hpp_source.html">VecPID.hpp</a> の <a class="el" href="../../de/d8f/_vec_p_i_d_8hpp_source.html#l00019">19</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a6c57d1e1d2ef7237698f910ca99b150c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c57d1e1d2ef7237698f910ca99b150c">&#9670;&nbsp;</a></span>~VecPID()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="../../d2/d44/classnut_1_1_vec_p_i_d.html">nut::VecPID</a>&lt; T &gt;::~<a class="el" href="../../d2/d44/classnut_1_1_vec_p_i_d.html">VecPID</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../de/d8f/_vec_p_i_d_8hpp_source.html">VecPID.hpp</a> の <a class="el" href="../../de/d8f/_vec_p_i_d_8hpp_source.html#l00023">23</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="afc0ba87153f6d72534064d0c8d1ec7f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc0ba87153f6d72534064d0c8d1ec7f6">&#9670;&nbsp;</a></span>Calculate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual T <a class="el" href="../../d2/d44/classnut_1_1_vec_p_i_d.html">nut::VecPID</a>&lt; T &gt;::Calculate </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>ms</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>フィードバック計算 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">input</td><td>偏差 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ms</td><td>前回計算時からの経過時間 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>操作量 </dd></dl>
+
+<p><a class="el" href="../../df/ddb/classnut_1_1_p_i_d_base.html#a0f6710fc408fd91bd3e7984e19ef51e8">nut::PIDBase&lt; T &gt;</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="../../de/d8f/_vec_p_i_d_8hpp_source.html">VecPID.hpp</a> の <a class="el" href="../../de/d8f/_vec_p_i_d_8hpp_source.html#l00034">34</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="afef934ac8c1169dc5c702bffb0f80c1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afef934ac8c1169dc5c702bffb0f80c1e">&#9670;&nbsp;</a></span>Reset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="../../d2/d44/classnut_1_1_vec_p_i_d.html">nut::VecPID</a>&lt; T &gt;::Reset </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>操作量リセット </p>
+
+<p><a class="el" href="../../df/ddb/classnut_1_1_p_i_d_base.html#afc201286851a8aee04b9782d2fca518c">nut::PIDBase&lt; T &gt;</a>を再実装しています。</p>
+
+<p class="definition"> <a class="el" href="../../de/d8f/_vec_p_i_d_8hpp_source.html">VecPID.hpp</a> の <a class="el" href="../../de/d8f/_vec_p_i_d_8hpp_source.html#l00051">51</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="ac7d9dd1a37472a39f8cf3f5682526367"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7d9dd1a37472a39f8cf3f5682526367">&#9670;&nbsp;</a></span>_output_value</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T <a class="el" href="../../d2/d44/classnut_1_1_vec_p_i_d.html">nut::VecPID</a>&lt; T &gt;::_output_value = 0.0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../de/d8f/_vec_p_i_d_8hpp_source.html">VecPID.hpp</a> の <a class="el" href="../../de/d8f/_vec_p_i_d_8hpp_source.html#l00016">16</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li>NutLib/ControlSystem/PID/<a class="el" href="../../de/d8f/_vec_p_i_d_8hpp_source.html">VecPID.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dd/d51/namespacenut.html">nut</a></li><li class="navelem"><a class="el" href="../../d2/d44/classnut_1_1_vec_p_i_d.html">VecPID</a></li>
+    <li class="footer">構築: <a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
+  </ul>
+</div>
+</body>
+</html>

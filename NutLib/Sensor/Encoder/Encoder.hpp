@@ -16,6 +16,7 @@ namespace nut{
 class Encoder{
 protected:
 	const uint32_t _resolution;
+	bool _is_init = false;
 
 public:
 	/**
@@ -32,6 +33,10 @@ public:
 	 * @brief 初期化
 	 */
 	virtual void Init() = 0;
+	/**
+	 * @brief 非初期化
+	 */
+	virtual void Deinit() = 0;
 
 
 	/**

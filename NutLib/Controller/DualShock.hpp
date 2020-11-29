@@ -2,15 +2,18 @@
  * @file DualShock.hpp
  * @brief DualshockをSBDBT5Vを通して受信する
  * @author Horie
- * @date 2020/9
- * @attention インターフェースが変わるような大幅更新を行う予定なので注意
+ * @date 2020/10
  */
 #pragma once
 
 #include "../Global.hpp"
 #include "../TimeScheduler.hpp"
+#include "../HALCallbacks/UART.hpp"
 #include <memory>
 #include <numeric>
+
+
+
 
 namespace nut{
 /**
@@ -84,7 +87,10 @@ private:
 	/*SBDBTのアナログパッド値*/
 	static constexpr int16_t ANAROG_MAX =		127;
 	static constexpr int16_t ANAROG_MIN =		1;
-	static constexpr int16_t ANAROG_CENTER =		64;
+	static constexpr int16_t ANAROG_CENTER =	64;
+
+
+	static constexpr int8_t UART_PRIORITY =	5;//コールバックの優先度
 
 
 	UART_HandleTypeDef* const _uart;
@@ -95,8 +101,9 @@ private:
 	std::array<uint8_t, SBDBT_BUFF_SIZE> _buff{0};
 
 	/*コールバック関数*/
-	std::function<void(Button)> _button_callback = nullptr;
+	std::function<void(Button)> _button_callback;
 	std::function<void()> _timeout_callback;
+	std::function<void()> _receive_callback;
 
 
 
@@ -120,40 +127,8 @@ private:
 		if(_timeout_callback != nullptr)_timeout_callback();
 	}
 
-
-public:
-	/**
-	 * @brief コンストラクタ
-	 * @param[in] huart uartハンドル
-	 * @details uartは事前に通信仕様通りの設定を行い、DMA設定でCircularにしてください
-	 * @param[in] callback_func タイムアウトコールバック関数
-	 * @param[in] time タイムアウト時間[ms]
-	 */
-	DualShock(UART_HandleTypeDef* huart, std::function<void()>&& callback_func, uint32_t time)
-		: _uart(huart), _schduler([this]{timeout();}, time), _timeout_callback(callback_func){
-
-	}
-	/**
-	 * @brief デストラクタ
-	 */
-	virtual	~DualShock(){
-		_schduler.Erase();
-	}
-
-
-
-	/**
-	 * @brief 初期化関数
-	 */
-	inline void Init(){
-		HAL_UART_Receive_DMA(_uart, _buff.data(), SBDBT_BUFF_SIZE);
-		_schduler.Set();
-	}
-
-
 	/**
 	 * @brief 受信関数
-	 * @details HAL_UART_RxHalfCpltCallback()内で呼び出してください
 	 * @param[in] huart uartハンドル
 	 * @return 受信処理成功の可否
 	 */
@@ -188,7 +163,7 @@ public:
 					if((check_sum &  0x7F) == (data.at(7) & 0x7F)){
 						_buttonn_data = data;
 
-						if((_buttonn_data != _last_buttonn_data) && (_button_callback != nullptr)){//エッジ検出
+						if((_buttonn_data != _last_buttonn_data) && (_button_callback)){//エッジ検出
 							Button edge_button =
 							(uint32_t)_buttonn_data.at(2) |
 							((uint32_t)_buttonn_data.at(1) << 8) |
@@ -205,6 +180,7 @@ public:
 						_last_buttonn_data = _buttonn_data;
 						state = true;
 						_schduler.Reset();
+						if(_receive_callback)_receive_callback();
 						break;
 					}
 				}
@@ -214,12 +190,53 @@ public:
 	}
 
 
+
+public:
+	/**
+	 * @brief コンストラクタ
+	 * @param[in] huart uartハンドル
+	 * @details uartは事前に通信仕様通りの設定を行い、DMA設定でCircularにしてください
+	 * @param[in] callback_func タイムアウトコールバック関数
+	 * @param[in] time タイムアウト時間[ms]
+	 */
+	DualShock(UART_HandleTypeDef* huart, std::function<void()>&& callback_func, uint32_t time)
+		: _uart(huart), _schduler([this]{timeout();}, time), _timeout_callback(callback_func)
+	{
+		callback::UART_RxHalfComplete.AddExclusiveCallback(UART_PRIORITY, [this](UART_HandleTypeDef* huart){return Receive(huart);});
+	}
+	/**
+	 * @brief デストラクタ
+	 */
+	virtual	~DualShock(){
+		_schduler.Erase();
+	}
+
+
+
+	/**
+	 * @brief 初期化関数
+	 */
+	inline void Init(){
+		HAL_UART_AbortReceive(_uart);
+		HAL_UART_Receive_DMA(_uart, _buff.data(), SBDBT_BUFF_SIZE);
+		_schduler.Set();
+	}
+
+
+
 	/**
 	 * @brief Buttonエッジでのコールバック関数セット
 	 * @param[in] callback_func コールバック関数
 	 */
 	inline void SetButtonCallback(std::function<void(Button)>&& callback_func){
 		_button_callback = callback_func;
+	}
+	/**
+	 * @brief 受信コールバック関数セット
+	 * @param[in] callback_func コールバック関数
+	 */
+	inline void SetReceiveCallback(std::function<void()>&& callback_func){
+		_receive_callback = callback_func;
 	}
 
 	/**

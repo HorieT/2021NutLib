@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['y_427',['y',['../d4/d08/classnut_1_1_coordinate.html#a06cf225a0b3fda31a95a1965c03fb31d',1,'nut::Coordinate::y() const &amp;'],['../d4/d08/classnut_1_1_coordinate.html#af36721338e235aab32d08152f8609c01',1,'nut::Coordinate::y() &amp;'],['../d4/d08/classnut_1_1_coordinate.html#a84d3004d37c670d143998e458c874745',1,'nut::Coordinate::y() const &amp;&amp;']]]
+  ['x_761',['x',['../d4/d08/classnut_1_1_coordinate.html#a43576eccd7c2ed11c252f9f95cd63611',1,'nut::Coordinate::x() const &amp;'],['../d4/d08/classnut_1_1_coordinate.html#a425b1f368d20d00bf57672fbc161a87c',1,'nut::Coordinate::x() &amp;'],['../d4/d08/classnut_1_1_coordinate.html#a8f0618f0e83433926123513fbce5210d',1,'nut::Coordinate::x() const &amp;&amp;']]]
 ];

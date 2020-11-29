@@ -3,7 +3,7 @@
  * @brief 令和MD
  * @details 過去ライブラリの移植
  * @author Horie
- * @date 2020/9
+ * @date 2020/10
  * @attention そのまま移植しているのでコーディングルールを逸脱しています
  */
 #pragma once
@@ -109,6 +109,7 @@ public:
 	 * @param[in] can canのヘルパインスタンス
 	 * @param[in] id 5bitのモータid
 	 */
+	[[deprecated("Stability is not guaranteed as it is a port of past libraries.")]]
 	ReiwaMD(uint32_t period, std::shared_ptr<CANWrapper> can, uint16_t id)
 		: Motor(period), _can(can), _id(id & 0x1F){
 
@@ -128,6 +129,12 @@ public:
 	virtual void Init()override{
 	}
 
+	/**
+	 * @brief 非初期化関数
+	 * @details ダミー関数です
+	 */
+	virtual void Deinit()override{
+	}
 
 	/**
 	 * @brief 制御スタート
@@ -147,7 +154,7 @@ public:
 		_move_type = MoveType::stop;
 		SendControlMode(SetModeDisable);
 		_scheduler.Erase();
-		ResetParam();
+		ResetController();
 	}
 
 
@@ -166,7 +173,7 @@ public:
 	}
 	/**
 	 * @brief 速度制御
-	 * @param[in] rpm RPM
+	 * @param[in] radps rad/s
 	 * @return 速度制御可能かどうか
 	 */
 	virtual bool SetRadps(float radps) override{
@@ -240,28 +247,6 @@ public:
 	}
 
 
-	/**
-	 * @brief 速度制御ゲインセット
-	 * @details ゲインセットできません
-	 * @param[in] kp Pゲイン
-	 * @param[in] ki Iゲイン
-	 * @param[in] kd Dゲイン
-	 * @return false
-	 */
-	virtual bool SetRadpsPID(float kp, float ki, float kd, float op_limit = infinityf(), float i_limit = infinityf()) override{
-		return false;
-	}
-	/**
-	 * @brief 角度制御ゲインセット
-	 * @details ゲインセットできません
-	 * @param[in] kp Pゲイン
-	 * @param[in] ki Iゲイン
-	 * @param[in] kd Dゲイン
-	 * @return false
-	 */
-	virtual bool SetRadPID(float kp, float ki, float kd, float op_limit = infinityf(), float i_limit = infinityf()) override{
-		return false;
-	}
 	/**
 	 * @brief 角度原点リセット
 	 * @details 未実装です

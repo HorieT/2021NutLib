@@ -1,0 +1,435 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>NutLib: nut::RS485 クラス</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">NutLib
+   </div>
+  </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.svg"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.20 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'検索');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('de/da0/classnut_1_1_r_s485.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">クラス</a> &#124;
+<a href="#pub-types">公開型</a> &#124;
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="../../d9/d20/classnut_1_1_r_s485-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">nut::RS485 クラス</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>RS485インターフェースクラス  
+ <a href="../../de/da0/classnut_1_1_r_s485.html#details">[詳解]</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d1/d54/_r_s485_8hpp_source.html">RS485.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+公開型</h2></td></tr>
+<tr class="memitem:aaa7e4e1c1cc08e56a76e822eaa468b25"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/da0/classnut_1_1_r_s485.html#aaa7e4e1c1cc08e56a76e822eaa468b25">Callback</a> = std::function&lt; void(std::vector&lt; uint8_t &gt;)&gt;</td></tr>
+<tr class="separator:aaa7e4e1c1cc08e56a76e822eaa468b25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a49145e1ec33a96998f12248b0af73bdc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/da0/classnut_1_1_r_s485.html#a49145e1ec33a96998f12248b0af73bdc">RS485</a> (UART_HandleTypeDef *huart, GPIO_TypeDef *port, uint16_t pin, TIM_HandleTypeDef *htim)</td></tr>
+<tr class="memdesc:a49145e1ec33a96998f12248b0af73bdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ  <a href="../../de/da0/classnut_1_1_r_s485.html#a49145e1ec33a96998f12248b0af73bdc">[詳解]</a><br /></td></tr>
+<tr class="separator:a49145e1ec33a96998f12248b0af73bdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a156ec9f78a916d844f005d719c2ff8eb"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/da0/classnut_1_1_r_s485.html#a156ec9f78a916d844f005d719c2ff8eb">~RS485</a> ()</td></tr>
+<tr class="memdesc:a156ec9f78a916d844f005d719c2ff8eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">デストラクタ  <a href="../../de/da0/classnut_1_1_r_s485.html#a156ec9f78a916d844f005d719c2ff8eb">[詳解]</a><br /></td></tr>
+<tr class="separator:a156ec9f78a916d844f005d719c2ff8eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8dda058eb7306ea520730d089bac2ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/da0/classnut_1_1_r_s485.html#ae8dda058eb7306ea520730d089bac2ed">SetCallback</a> (<a class="el" href="../../de/da0/classnut_1_1_r_s485.html#aaa7e4e1c1cc08e56a76e822eaa468b25">Callback</a> callback, uint8_t priority)</td></tr>
+<tr class="memdesc:ae8dda058eb7306ea520730d089bac2ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">受信コールバック関数のセット  <a href="../../de/da0/classnut_1_1_r_s485.html#ae8dda058eb7306ea520730d089bac2ed">[詳解]</a><br /></td></tr>
+<tr class="separator:ae8dda058eb7306ea520730d089bac2ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31dd35dd38bf1e1d5fd0cee02317fd5a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/da0/classnut_1_1_r_s485.html#a31dd35dd38bf1e1d5fd0cee02317fd5a">TransmitData</a> (std::vector&lt; uint8_t &gt; data)</td></tr>
+<tr class="separator:a31dd35dd38bf1e1d5fd0cee02317fd5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a392df717f9cf00ceb8b22c1fb758e2fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/da0/classnut_1_1_r_s485.html#a392df717f9cf00ceb8b22c1fb758e2fe">TransmitRequest</a> (std::vector&lt; uint8_t &gt; request_data, size_t receive_size, <a class="el" href="../../de/da0/classnut_1_1_r_s485.html#aaa7e4e1c1cc08e56a76e822eaa468b25">Callback</a> callback, uint16_t timeout_us)</td></tr>
+<tr class="separator:a392df717f9cf00ceb8b22c1fb758e2fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7f3218e631f4d3b15e703da718b67c4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/da0/classnut_1_1_r_s485.html#ad7f3218e631f4d3b15e703da718b67c4">Receiver</a> (UART_HandleTypeDef *huart)</td></tr>
+<tr class="separator:ad7f3218e631f4d3b15e703da718b67c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2dd24a96138ac74a82aaa610476e258e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/da0/classnut_1_1_r_s485.html#a2dd24a96138ac74a82aaa610476e258e">TimeoutCheck</a> (TIM_HandleTypeDef *htim)</td></tr>
+<tr class="separator:a2dd24a96138ac74a82aaa610476e258e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>RS485インターフェースクラス </p>
+<dl class="section attention"><dt>注意</dt><dd>未完成！！！！！ </dd></dl>
+
+<p class="definition"> <a class="el" href="../../d1/d54/_r_s485_8hpp_source.html">RS485.hpp</a> の <a class="el" href="../../d1/d54/_r_s485_8hpp_source.html#l00019">19</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">型定義メンバ詳解</h2>
+<a id="aaa7e4e1c1cc08e56a76e822eaa468b25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa7e4e1c1cc08e56a76e822eaa468b25">&#9670;&nbsp;</a></span>Callback</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../de/da0/classnut_1_1_r_s485.html#aaa7e4e1c1cc08e56a76e822eaa468b25">nut::RS485::Callback</a> =  std::function&lt;void(std::vector&lt;uint8_t&gt;)&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d1/d54/_r_s485_8hpp_source.html">RS485.hpp</a> の <a class="el" href="../../d1/d54/_r_s485_8hpp_source.html#l00021">21</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">構築子と解体子</h2>
+<a id="a49145e1ec33a96998f12248b0af73bdc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49145e1ec33a96998f12248b0af73bdc">&#9670;&nbsp;</a></span>RS485()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">nut::RS485::RS485 </td>
+          <td>(</td>
+          <td class="paramtype">UART_HandleTypeDef *&#160;</td>
+          <td class="paramname"><em>huart</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GPIO_TypeDef *&#160;</td>
+          <td class="paramname"><em>port</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>pin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">TIM_HandleTypeDef *&#160;</td>
+          <td class="paramname"><em>htim</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>コンストラクタ </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">huart</td><td>UARTハンドル </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">port</td><td><a class="el" href="../../de/da0/classnut_1_1_r_s485.html" title="RS485インターフェースクラス">RS485</a> enableピンのIOポート </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pin</td><td><a class="el" href="../../de/da0/classnut_1_1_r_s485.html" title="RS485インターフェースクラス">RS485</a> enableピンのIOピン </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">htim</td><td>通信調停用1MHzタイマ  カウント周期(リロード周期ではない)を1usに設定してください </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="../../d1/d54/_r_s485_8hpp_source.html">RS485.hpp</a> の <a class="el" href="../../d1/d54/_r_s485_8hpp_source.html#l00067">67</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a156ec9f78a916d844f005d719c2ff8eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a156ec9f78a916d844f005d719c2ff8eb">&#9670;&nbsp;</a></span>~RS485()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual nut::RS485::~RS485 </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>デストラクタ </p>
+
+<p class="definition"> <a class="el" href="../../d1/d54/_r_s485_8hpp_source.html">RS485.hpp</a> の <a class="el" href="../../d1/d54/_r_s485_8hpp_source.html#l00074">74</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="ad7f3218e631f4d3b15e703da718b67c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7f3218e631f4d3b15e703da718b67c4">&#9670;&nbsp;</a></span>Receiver()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool nut::RS485::Receiver </td>
+          <td>(</td>
+          <td class="paramtype">UART_HandleTypeDef *&#160;</td>
+          <td class="paramname"><em>huart</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d1/d54/_r_s485_8hpp_source.html">RS485.hpp</a> の <a class="el" href="../../d1/d54/_r_s485_8hpp_source.html#l00111">111</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ae8dda058eb7306ea520730d089bac2ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8dda058eb7306ea520730d089bac2ed">&#9670;&nbsp;</a></span>SetCallback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void nut::RS485::SetCallback </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/da0/classnut_1_1_r_s485.html#aaa7e4e1c1cc08e56a76e822eaa468b25">Callback</a>&#160;</td>
+          <td class="paramname"><em>callback</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>priority</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>受信コールバック関数のセット </p>
+
+<p class="definition"> <a class="el" href="../../d1/d54/_r_s485_8hpp_source.html">RS485.hpp</a> の <a class="el" href="../../d1/d54/_r_s485_8hpp_source.html#l00082">82</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a2dd24a96138ac74a82aaa610476e258e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2dd24a96138ac74a82aaa610476e258e">&#9670;&nbsp;</a></span>TimeoutCheck()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool nut::RS485::TimeoutCheck </td>
+          <td>(</td>
+          <td class="paramtype">TIM_HandleTypeDef *&#160;</td>
+          <td class="paramname"><em>htim</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d1/d54/_r_s485_8hpp_source.html">RS485.hpp</a> の <a class="el" href="../../d1/d54/_r_s485_8hpp_source.html#l00118">118</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a31dd35dd38bf1e1d5fd0cee02317fd5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31dd35dd38bf1e1d5fd0cee02317fd5a">&#9670;&nbsp;</a></span>TransmitData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void nut::RS485::TransmitData </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; uint8_t &gt;&#160;</td>
+          <td class="paramname"><em>data</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d1/d54/_r_s485_8hpp_source.html">RS485.hpp</a> の <a class="el" href="../../d1/d54/_r_s485_8hpp_source.html#l00086">86</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a392df717f9cf00ceb8b22c1fb758e2fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a392df717f9cf00ceb8b22c1fb758e2fe">&#9670;&nbsp;</a></span>TransmitRequest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void nut::RS485::TransmitRequest </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; uint8_t &gt;&#160;</td>
+          <td class="paramname"><em>request_data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>receive_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../de/da0/classnut_1_1_r_s485.html#aaa7e4e1c1cc08e56a76e822eaa468b25">Callback</a>&#160;</td>
+          <td class="paramname"><em>callback</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>timeout_us</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d1/d54/_r_s485_8hpp_source.html">RS485.hpp</a> の <a class="el" href="../../d1/d54/_r_s485_8hpp_source.html#l00090">90</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li>NutLib/<a class="el" href="../../d1/d54/_r_s485_8hpp_source.html">RS485.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dd/d51/namespacenut.html">nut</a></li><li class="navelem"><a class="el" href="../../de/da0/classnut_1_1_r_s485.html">RS485</a></li>
+    <li class="footer">構築: <a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
+  </ul>
+</div>
+</body>
+</html>

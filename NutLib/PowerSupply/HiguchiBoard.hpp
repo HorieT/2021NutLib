@@ -3,12 +3,12 @@
  * @brief 電源制御基板"樋口"
  * @details 過去ライブラリの移植
  * @author Horie
- * @date 2020/9
+ * @date 2020/10
  * @attention そのまま移植しているのでコーディングルールを逸脱しています
  */
 #pragma once
 
-#include <NutLib/CANWrapper.hpp>
+#include "../CANWrapper.hpp"
 #include "../Global.hpp"
 #include "../TimeScheduler.hpp"
 #include <memory>
@@ -65,6 +65,7 @@ public:
 	 * @param[in] id 2bit基板id
 	 * @param[in] can canのヘルパインスタンス
 	 */
+	[[deprecated("Stability is not guaranteed as it is a port of past libraries.")]]
 	HiguchiBoard(uint32_t period, uint8_t id,const std::shared_ptr<CANWrapper>& can)
 		: _scheduler([this]{SendState();}, period), _id(id & 0x03), _can(can){
 

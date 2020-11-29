@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['changeencoderabs_512',['ChangeEncoderAbs',['../df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2a80177d941c39ed486d2bcbd671a0518a',1,'nut::ReiwaMD']]],
-  ['changeencoderinc_513',['ChangeEncoderInc',['../df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2af41a6ddee11fe9499cf8663099f59a70',1,'nut::ReiwaMD']]],
-  ['currentref_514',['CurrentRef',['../df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2a87fb4a8a072148066636553cea0183b2',1,'nut::ReiwaMD']]]
+  ['absenc_922',['absEnc',['../d0/d4a/classnut_1_1_m_d2021.html#a5abb9d9aeaf08f3b3c3cb46aa87ddd83ad89375c6cfd71bf90a85e05c9ae88898',1,'nut::MD2021']]],
+  ['absenccurrent_923',['absEncCurrent',['../d0/d4a/classnut_1_1_m_d2021.html#a5abb9d9aeaf08f3b3c3cb46aa87ddd83aefb471b63ff000ae3105b6b9bf7312e4',1,'nut::MD2021']]],
+  ['allnode_924',['allNode',['../d4/db2/namespacenut_1_1can__protocol.html#a81d11237e130e2bb55ce3201eacf5375a81898fbfdc20875560e7765d51e85a87',1,'nut::can_protocol']]],
+  ['ampere_925',['ampere',['../da/dc9/namespacenut_1_1unit.html#a71c65554a8697cd990496eec57068896abe5f56592b3d8bea4580c016970b02a3',1,'nut::unit']]]
 ];

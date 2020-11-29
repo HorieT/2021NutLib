@@ -1,6 +1,7 @@
 # 2021NutLib
 
-2021学ロボ用 STM32ライブラリ (更新)
+2021学ロボ用 STM32ライブラリ
+(執筆：堀江智陽 and more...の予定？？？)
 
 # 概要
 
@@ -21,18 +22,41 @@ c++17ビルド環境であれば使えます(多分)。
 
 生成したらプロジェクトをc++に設定変更してください([esa参照](https://nagaokaroboconproject.esa.io/posts/62))。
 その後このリポジトリのNutLibをプロジェクトのインクルードファイル下にコピーするか,
-ビルド設定でNutLibまでインクルードパスを通してください。
+~~ビルド設定でNutLibまでインクルードパスを通してください。~~
+__仕様変更(20/11/29)__
+必ずコピー配置してください。リンカオブジェクトエラーします。
+
 Eigenについても同様です。
 
 ## コーディング
 
 各インスタンスの生成はユーザーが行ってください。
 
-使用にあたって`nut::TimeSchedulerBase::TimeCheck()`は必ず呼び出してください。
-また各通信による受信処理を行うもの(コントローラやセンサ等)は各受信メンバ関数をユーザーが割り込み関数内に記述してください。
+~~使用にあたって`nut::TimeSchedulerBase::TimeCheck()`は必ず呼び出してください。~~
+~~また各通信による受信処理を行うもの(コントローラやセンサ等)は各受信メンバ関数をユーザーが割り込み関数内に記述してください。~~
 
-コードの詳しいことは[2021NutLib_UseSample](https://gitlab.com/robopro_nut/2021nhkrobocon/2021nutlib_usesample)を参照するか、[リファレンス](https://robopro_nut.gitlab.io/2021nhkrobocon/2021nutlib/index.html)を確認してください。(ローカルではpublic/index.html)
+__仕様変更(20/11/29)__
+使用頻度の高いorライブラリ標準で使用するコールバックハンドラはNutLib側で吸収しました。
+`HALCallback`フォルダ下に実体が定義されています。
+ユーザがコールバック関数内に関数記述したい場合はインライン定義された`HALCallback<T>`オブジェクトに`AddCallback()`または`AddExCallback()`してください。また戻り値イテレータを使用して関数の削除が可能です。
 
+使用例
+
+``` c++
+/* HAL_UART_RxHalfCpltCallback()が呼ばれるたびに最優先でPA0ピンの出力をトグルする */
+nut::callback::UART_RxHalfComplete.AddCallback(0, [](UART_HandleTypeDef *huart){HAL_GPIO_TogglePin(GPIOA, GPIO_Pin_0);});
+```
+
+またどうしてもNutLib側で吸収されたコールバック関数を自己記述したい場合は`#define UNUSE_NUTLIB_CALLBACKS`してください.
+この時、`HALCallback`フォルダ下の実装のように`HALCallback<T>::ReadCallbacks()`を記述しないとライブラリは完全に動作しません。
+
+
+コードの詳しいことは ~~[2021NutLib_UseSample](https://gitlab.com/robopro_nut/2021nhkrobocon/2021nutlib_usesample)を参照するか、~~ [リファレンス](https://robopro_nut.gitlab.io/2021nhkrobocon/2021nutlib/index.html)を確認してください。(ローカルではpublic/index.html)
+
+新しく使用方法サンプルを書きます(そのうち)
+それかその他最新ファームウェアを参考にしてください。
+
+また要望があれば堀江がサンプルコードを書きます
 
 ### 注意
 

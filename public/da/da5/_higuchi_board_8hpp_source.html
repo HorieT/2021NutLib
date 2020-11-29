@@ -98,7 +98,7 @@ $(document).ready(function(){initNavTree('da/da5/_higuchi_board_8hpp_source.html
 <a href="../../da/da5/_higuchi_board_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../d6/d16/_c_a_n_wrapper_8hpp.html">NutLib/CANWrapper.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;../CANWrapper.hpp&quot;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;../Global.hpp&quot;</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;../TimeScheduler.hpp&quot;</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
@@ -142,68 +142,68 @@ $(document).ready(function(){initNavTree('da/da5/_higuchi_board_8hpp_source.html
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="../../de/d8a/classnut_1_1_higuchi_board.html#a55f6579d6ad0f6eb018fa2dad6809b12">   68</a></span>&#160;    <a class="code" href="../../de/d8a/classnut_1_1_higuchi_board.html#a55f6579d6ad0f6eb018fa2dad6809b12">HiguchiBoard</a>(uint32_t period, uint8_t <span class="keywordtype">id</span>,<span class="keyword">const</span> std::shared_ptr&lt;CANWrapper&gt;&amp; can)</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        : _scheduler([this]{SendState();}, period), _id(<span class="keywordtype">id</span> &amp; 0x03), _can(can){</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
-<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="../../de/d8a/classnut_1_1_higuchi_board.html#a9c00ecb5fb1ead4646e93522678dad75">   75</a></span>&#160;    <a class="code" href="../../de/d8a/classnut_1_1_higuchi_board.html#a9c00ecb5fb1ead4646e93522678dad75">~HiguchiBoard</a>(){</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        _scheduler.<a class="code" href="../../d9/d00/classnut_1_1_time_scheduler_base.html#a1d0ecaefe7d5c5f1266a4021fba23d69">Erase</a>();</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    }</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    [[deprecated(<span class="stringliteral">&quot;Stability is not guaranteed as it is a port of past libraries.&quot;</span>)]]</div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="../../de/d8a/classnut_1_1_higuchi_board.html#a55f6579d6ad0f6eb018fa2dad6809b12">   69</a></span>&#160;    <a class="code" href="../../de/d8a/classnut_1_1_higuchi_board.html#a55f6579d6ad0f6eb018fa2dad6809b12">HiguchiBoard</a>(uint32_t period, uint8_t <span class="keywordtype">id</span>,<span class="keyword">const</span> std::shared_ptr&lt;CANWrapper&gt;&amp; can)</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        : _scheduler([this]{SendState();}, period), _id(<span class="keywordtype">id</span> &amp; 0x03), _can(can){</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    }</div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="../../de/d8a/classnut_1_1_higuchi_board.html#a9c00ecb5fb1ead4646e93522678dad75">   76</a></span>&#160;    <a class="code" href="../../de/d8a/classnut_1_1_higuchi_board.html#a9c00ecb5fb1ead4646e93522678dad75">~HiguchiBoard</a>(){</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        _scheduler.<a class="code" href="../../d9/d00/classnut_1_1_time_scheduler_base.html#a1d0ecaefe7d5c5f1266a4021fba23d69">Erase</a>();</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="../../de/d8a/classnut_1_1_higuchi_board.html#ac05616c3bccd7411718691ab20ea1975">   83</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../de/d8a/classnut_1_1_higuchi_board.html#ac05616c3bccd7411718691ab20ea1975">SwichOn</a>(){</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        _scheduler.<a class="code" href="../../db/de6/classnut_1_1_time_scheduler_3_01void_01_4.html#a01c1530d879d361ca439023538a83ddd">Set</a>();</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        _swich_on = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="../../de/d8a/classnut_1_1_higuchi_board.html#ac05616c3bccd7411718691ab20ea1975">   84</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../de/d8a/classnut_1_1_higuchi_board.html#ac05616c3bccd7411718691ab20ea1975">SwichOn</a>(){</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        _scheduler.<a class="code" href="../../db/de6/classnut_1_1_time_scheduler_3_01void_01_4.html#a01c1530d879d361ca439023538a83ddd">Set</a>();</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        _swich_on = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    }</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="../../de/d8a/classnut_1_1_higuchi_board.html#a941cdf94debde9b737b9e1e4448326ca">   92</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../de/d8a/classnut_1_1_higuchi_board.html#a941cdf94debde9b737b9e1e4448326ca">SwichOff</a>(){</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        _scheduler.<a class="code" href="../../d9/d00/classnut_1_1_time_scheduler_base.html#a1d0ecaefe7d5c5f1266a4021fba23d69">Erase</a>();</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        _swich_on = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="../../de/d8a/classnut_1_1_higuchi_board.html#a7b227c23744e2583a909dc7a1ba2c6ae">  100</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../de/d8a/classnut_1_1_higuchi_board.html#a7b227c23744e2583a909dc7a1ba2c6ae">ReadSwichState</a>(){</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        PS_StdID_t txStdID;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        txStdID.forMotor = 0;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        txStdID.boardType = 0x00;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        txStdID.boardChannel = _id;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        txStdID.dataType = PS_ReadStatus;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        _can-&gt;TransmitRemote(txStdID.StdID);</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    }</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
-<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="../../de/d8a/classnut_1_1_higuchi_board.html#a3c77c7b1934a2dc07c2a49f795bc0a9a">  118</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../de/d8a/classnut_1_1_higuchi_board.html#a3c77c7b1934a2dc07c2a49f795bc0a9a">ReadCanData</a>(CAN_HandleTypeDef* hcan, <span class="keyword">const</span> CAN_RxHeaderTypeDef&amp; RxHeader, <span class="keyword">const</span> std::array&lt;uint8_t, 8&gt; data){</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <span class="keywordflow">if</span>(hcan == _can-&gt;GetHandle()){</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            PS_StdID_t txStdID;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            txStdID.forMotor = 0;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            txStdID.boardType = 0x00;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            txStdID.boardChannel = _id;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            txStdID.dataType = PS_ReadStatus;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            <span class="keywordflow">if</span>(RxHeader.RTR == CAN_RTR_DATA &amp;&amp;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                    RxHeader.StdId  == txStdID.StdID){</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                _swich_state = <span class="keyword">static_cast&lt;</span><span class="keywordtype">bool</span><span class="keyword">&gt;</span>(data[0]);</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            }</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        }</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    }</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;};</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;}</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="../../de/d8a/classnut_1_1_higuchi_board.html#a941cdf94debde9b737b9e1e4448326ca">   93</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../de/d8a/classnut_1_1_higuchi_board.html#a941cdf94debde9b737b9e1e4448326ca">SwichOff</a>(){</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        _scheduler.<a class="code" href="../../d9/d00/classnut_1_1_time_scheduler_base.html#a1d0ecaefe7d5c5f1266a4021fba23d69">Erase</a>();</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        _swich_on = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    }</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="../../de/d8a/classnut_1_1_higuchi_board.html#a7b227c23744e2583a909dc7a1ba2c6ae">  101</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../de/d8a/classnut_1_1_higuchi_board.html#a7b227c23744e2583a909dc7a1ba2c6ae">ReadSwichState</a>(){</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        PS_StdID_t txStdID;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        txStdID.forMotor = 0;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        txStdID.boardType = 0x00;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        txStdID.boardChannel = _id;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        txStdID.dataType = PS_ReadStatus;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        _can-&gt;TransmitRemote(txStdID.StdID);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    }</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="../../de/d8a/classnut_1_1_higuchi_board.html#a3c77c7b1934a2dc07c2a49f795bc0a9a">  119</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../de/d8a/classnut_1_1_higuchi_board.html#a3c77c7b1934a2dc07c2a49f795bc0a9a">ReadCanData</a>(CAN_HandleTypeDef* hcan, <span class="keyword">const</span> CAN_RxHeaderTypeDef&amp; RxHeader, <span class="keyword">const</span> std::array&lt;uint8_t, 8&gt; data){</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="keywordflow">if</span>(hcan == _can-&gt;GetHandle()){</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            PS_StdID_t txStdID;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            txStdID.forMotor = 0;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            txStdID.boardType = 0x00;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            txStdID.boardChannel = _id;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            txStdID.dataType = PS_ReadStatus;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            <span class="keywordflow">if</span>(RxHeader.RTR == CAN_RTR_DATA &amp;&amp;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                    RxHeader.StdId  == txStdID.StdID){</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                _swich_state = <span class="keyword">static_cast&lt;</span><span class="keywordtype">bool</span><span class="keyword">&gt;</span>(data[0]);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            }</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        }</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    }</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;};</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassnut_1_1_higuchi_board_html"><div class="ttname"><a href="../../de/d8a/classnut_1_1_higuchi_board.html">nut::HiguchiBoard</a></div><div class="ttdoc">電源制御基板&quot;樋口&quot;クラス</div><div class="ttdef"><b>Definition:</b> <a href="../../da/da5/_higuchi_board_8hpp_source.html#l00021">HiguchiBoard.hpp:21</a></div></div>
-<div class="ttc" id="aclassnut_1_1_time_scheduler_base_html_a1d0ecaefe7d5c5f1266a4021fba23d69"><div class="ttname"><a href="../../d9/d00/classnut_1_1_time_scheduler_base.html#a1d0ecaefe7d5c5f1266a4021fba23d69">nut::TimeSchedulerBase::Erase</a></div><div class="ttdeci">virtual void Erase() final</div><div class="ttdoc">スケジューラ削除</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d5c/_time_scheduler_8hpp_source.html#l00067">TimeScheduler.hpp:67</a></div></div>
-<div class="ttc" id="aclassnut_1_1_time_scheduler_3_01void_01_4_html"><div class="ttname"><a href="../../db/de6/classnut_1_1_time_scheduler_3_01void_01_4.html">nut::TimeScheduler&lt; void &gt;</a></div><div class="ttdoc">タイムスケジューラクラスのvoid特殊化</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d5c/_time_scheduler_8hpp_source.html#l00196">TimeScheduler.hpp:196</a></div></div>
-<div class="ttc" id="aclassnut_1_1_higuchi_board_html_a7b227c23744e2583a909dc7a1ba2c6ae"><div class="ttname"><a href="../../de/d8a/classnut_1_1_higuchi_board.html#a7b227c23744e2583a909dc7a1ba2c6ae">nut::HiguchiBoard::ReadSwichState</a></div><div class="ttdeci">void ReadSwichState()</div><div class="ttdoc">スイッチ読み取り要求</div><div class="ttdef"><b>Definition:</b> <a href="../../da/da5/_higuchi_board_8hpp_source.html#l00100">HiguchiBoard.hpp:100</a></div></div>
-<div class="ttc" id="aclassnut_1_1_higuchi_board_html_ac05616c3bccd7411718691ab20ea1975"><div class="ttname"><a href="../../de/d8a/classnut_1_1_higuchi_board.html#ac05616c3bccd7411718691ab20ea1975">nut::HiguchiBoard::SwichOn</a></div><div class="ttdeci">void SwichOn()</div><div class="ttdoc">電源スイッチオン</div><div class="ttdef"><b>Definition:</b> <a href="../../da/da5/_higuchi_board_8hpp_source.html#l00083">HiguchiBoard.hpp:83</a></div></div>
-<div class="ttc" id="aclassnut_1_1_time_scheduler_3_01void_01_4_html_a01c1530d879d361ca439023538a83ddd"><div class="ttname"><a href="../../db/de6/classnut_1_1_time_scheduler_3_01void_01_4.html#a01c1530d879d361ca439023538a83ddd">nut::TimeScheduler&lt; void &gt;::Set</a></div><div class="ttdeci">void Set() &amp;</div><div class="ttdoc">スケジューラのセット</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d5c/_time_scheduler_8hpp_source.html#l00212">TimeScheduler.hpp:212</a></div></div>
-<div class="ttc" id="a_c_a_n_wrapper_8hpp_html"><div class="ttname"><a href="../../d6/d16/_c_a_n_wrapper_8hpp.html">CANWrapper.hpp</a></div><div class="ttdoc">CANのヘルパ</div></div>
-<div class="ttc" id="anamespacenut_html"><div class="ttname"><a href="../../dd/d51/namespacenut.html">nut</a></div><div class="ttdoc">ライブラリの統括名前空間</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html#l00014">CANWrapper.hpp:14</a></div></div>
-<div class="ttc" id="aclassnut_1_1_higuchi_board_html_a3c77c7b1934a2dc07c2a49f795bc0a9a"><div class="ttname"><a href="../../de/d8a/classnut_1_1_higuchi_board.html#a3c77c7b1934a2dc07c2a49f795bc0a9a">nut::HiguchiBoard::ReadCanData</a></div><div class="ttdeci">bool ReadCanData(CAN_HandleTypeDef *hcan, const CAN_RxHeaderTypeDef &amp;RxHeader, const std::array&lt; uint8_t, 8 &gt; data)</div><div class="ttdoc">CAN受信関数</div><div class="ttdef"><b>Definition:</b> <a href="../../da/da5/_higuchi_board_8hpp_source.html#l00118">HiguchiBoard.hpp:118</a></div></div>
-<div class="ttc" id="aclassnut_1_1_higuchi_board_html_a9c00ecb5fb1ead4646e93522678dad75"><div class="ttname"><a href="../../de/d8a/classnut_1_1_higuchi_board.html#a9c00ecb5fb1ead4646e93522678dad75">nut::HiguchiBoard::~HiguchiBoard</a></div><div class="ttdeci">~HiguchiBoard()</div><div class="ttdoc">デストラクタ</div><div class="ttdef"><b>Definition:</b> <a href="../../da/da5/_higuchi_board_8hpp_source.html#l00075">HiguchiBoard.hpp:75</a></div></div>
-<div class="ttc" id="aclassnut_1_1_higuchi_board_html_a941cdf94debde9b737b9e1e4448326ca"><div class="ttname"><a href="../../de/d8a/classnut_1_1_higuchi_board.html#a941cdf94debde9b737b9e1e4448326ca">nut::HiguchiBoard::SwichOff</a></div><div class="ttdeci">void SwichOff()</div><div class="ttdoc">電源スイッチオフ</div><div class="ttdef"><b>Definition:</b> <a href="../../da/da5/_higuchi_board_8hpp_source.html#l00092">HiguchiBoard.hpp:92</a></div></div>
-<div class="ttc" id="aclassnut_1_1_higuchi_board_html_a55f6579d6ad0f6eb018fa2dad6809b12"><div class="ttname"><a href="../../de/d8a/classnut_1_1_higuchi_board.html#a55f6579d6ad0f6eb018fa2dad6809b12">nut::HiguchiBoard::HiguchiBoard</a></div><div class="ttdeci">HiguchiBoard(uint32_t period, uint8_t id, const std::shared_ptr&lt; CANWrapper &gt; &amp;can)</div><div class="ttdoc">コンストラクタ</div><div class="ttdef"><b>Definition:</b> <a href="../../da/da5/_higuchi_board_8hpp_source.html#l00068">HiguchiBoard.hpp:68</a></div></div>
+<div class="ttc" id="aclassnut_1_1_time_scheduler_base_html_a1d0ecaefe7d5c5f1266a4021fba23d69"><div class="ttname"><a href="../../d9/d00/classnut_1_1_time_scheduler_base.html#a1d0ecaefe7d5c5f1266a4021fba23d69">nut::TimeSchedulerBase::Erase</a></div><div class="ttdeci">virtual void Erase() final</div><div class="ttdoc">スケジューラ削除</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d5c/_time_scheduler_8hpp_source.html#l00076">TimeScheduler.hpp:76</a></div></div>
+<div class="ttc" id="aclassnut_1_1_time_scheduler_3_01void_01_4_html"><div class="ttname"><a href="../../db/de6/classnut_1_1_time_scheduler_3_01void_01_4.html">nut::TimeScheduler&lt; void &gt;</a></div><div class="ttdoc">タイムスケジューラクラスのvoid特殊化</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d5c/_time_scheduler_8hpp_source.html#l00217">TimeScheduler.hpp:217</a></div></div>
+<div class="ttc" id="aclassnut_1_1_higuchi_board_html_a7b227c23744e2583a909dc7a1ba2c6ae"><div class="ttname"><a href="../../de/d8a/classnut_1_1_higuchi_board.html#a7b227c23744e2583a909dc7a1ba2c6ae">nut::HiguchiBoard::ReadSwichState</a></div><div class="ttdeci">void ReadSwichState()</div><div class="ttdoc">スイッチ読み取り要求</div><div class="ttdef"><b>Definition:</b> <a href="../../da/da5/_higuchi_board_8hpp_source.html#l00101">HiguchiBoard.hpp:101</a></div></div>
+<div class="ttc" id="aclassnut_1_1_higuchi_board_html_ac05616c3bccd7411718691ab20ea1975"><div class="ttname"><a href="../../de/d8a/classnut_1_1_higuchi_board.html#ac05616c3bccd7411718691ab20ea1975">nut::HiguchiBoard::SwichOn</a></div><div class="ttdeci">void SwichOn()</div><div class="ttdoc">電源スイッチオン</div><div class="ttdef"><b>Definition:</b> <a href="../../da/da5/_higuchi_board_8hpp_source.html#l00084">HiguchiBoard.hpp:84</a></div></div>
+<div class="ttc" id="aclassnut_1_1_time_scheduler_3_01void_01_4_html_a01c1530d879d361ca439023538a83ddd"><div class="ttname"><a href="../../db/de6/classnut_1_1_time_scheduler_3_01void_01_4.html#a01c1530d879d361ca439023538a83ddd">nut::TimeScheduler&lt; void &gt;::Set</a></div><div class="ttdeci">void Set() &amp;</div><div class="ttdoc">スケジューラのセット</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d5c/_time_scheduler_8hpp_source.html#l00233">TimeScheduler.hpp:233</a></div></div>
+<div class="ttc" id="anamespacenut_html"><div class="ttname"><a href="../../dd/d51/namespacenut.html">nut</a></div><div class="ttdoc">CANバスの通信仕様</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/dbd/_c_a_n_bus_protocol_8hpp_source.html#l00010">CANBusProtocol.hpp:10</a></div></div>
+<div class="ttc" id="aclassnut_1_1_higuchi_board_html_a3c77c7b1934a2dc07c2a49f795bc0a9a"><div class="ttname"><a href="../../de/d8a/classnut_1_1_higuchi_board.html#a3c77c7b1934a2dc07c2a49f795bc0a9a">nut::HiguchiBoard::ReadCanData</a></div><div class="ttdeci">bool ReadCanData(CAN_HandleTypeDef *hcan, const CAN_RxHeaderTypeDef &amp;RxHeader, const std::array&lt; uint8_t, 8 &gt; data)</div><div class="ttdoc">CAN受信関数</div><div class="ttdef"><b>Definition:</b> <a href="../../da/da5/_higuchi_board_8hpp_source.html#l00119">HiguchiBoard.hpp:119</a></div></div>
+<div class="ttc" id="aclassnut_1_1_higuchi_board_html_a9c00ecb5fb1ead4646e93522678dad75"><div class="ttname"><a href="../../de/d8a/classnut_1_1_higuchi_board.html#a9c00ecb5fb1ead4646e93522678dad75">nut::HiguchiBoard::~HiguchiBoard</a></div><div class="ttdeci">~HiguchiBoard()</div><div class="ttdoc">デストラクタ</div><div class="ttdef"><b>Definition:</b> <a href="../../da/da5/_higuchi_board_8hpp_source.html#l00076">HiguchiBoard.hpp:76</a></div></div>
+<div class="ttc" id="aclassnut_1_1_higuchi_board_html_a941cdf94debde9b737b9e1e4448326ca"><div class="ttname"><a href="../../de/d8a/classnut_1_1_higuchi_board.html#a941cdf94debde9b737b9e1e4448326ca">nut::HiguchiBoard::SwichOff</a></div><div class="ttdeci">void SwichOff()</div><div class="ttdoc">電源スイッチオフ</div><div class="ttdef"><b>Definition:</b> <a href="../../da/da5/_higuchi_board_8hpp_source.html#l00093">HiguchiBoard.hpp:93</a></div></div>
+<div class="ttc" id="aclassnut_1_1_higuchi_board_html_a55f6579d6ad0f6eb018fa2dad6809b12"><div class="ttname"><a href="../../de/d8a/classnut_1_1_higuchi_board.html#a55f6579d6ad0f6eb018fa2dad6809b12">nut::HiguchiBoard::HiguchiBoard</a></div><div class="ttdeci">HiguchiBoard(uint32_t period, uint8_t id, const std::shared_ptr&lt; CANWrapper &gt; &amp;can)</div><div class="ttdoc">コンストラクタ</div><div class="ttdef"><b>Definition:</b> <a href="../../da/da5/_higuchi_board_8hpp_source.html#l00069">HiguchiBoard.hpp:69</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

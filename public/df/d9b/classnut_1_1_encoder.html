@@ -110,7 +110,9 @@ nut::Encoder の継承関係図</div>
  <div class="center">
   <img src="../../df/d9b/classnut_1_1_encoder.png" usemap="#nut::Encoder_map" alt=""/>
   <map id="nut::Encoder_map" name="nut::Encoder_map">
-<area href="../../dd/de6/classnut_1_1_inc_encoder.html" title="インクリメンタル型エンコーダクラス" alt="nut::IncEncoder" shape="rect" coords="0,56,100,80"/>
+<area href="../../d3/d0f/classnut_1_1_abs_encoder.html" title="アブソリュート型エンコーダクラス" alt="nut::AbsEncoder" shape="rect" coords="0,56,132,80"/>
+<area href="../../d0/d21/classnut_1_1_abs_encoder_multi.html" alt="nut::AbsEncoderMulti" shape="rect" coords="142,56,274,80"/>
+<area href="../../dd/de6/classnut_1_1_inc_encoder.html" title="インクリメンタル型エンコーダクラス" alt="nut::IncEncoder" shape="rect" coords="284,56,416,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -125,12 +127,15 @@ nut::Encoder の継承関係図</div>
 <tr class="memitem:a871c21cb5b8d495618a4d60d3dea23da"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d9b/classnut_1_1_encoder.html#a871c21cb5b8d495618a4d60d3dea23da">Init</a> ()=0</td></tr>
 <tr class="memdesc:a871c21cb5b8d495618a4d60d3dea23da"><td class="mdescLeft">&#160;</td><td class="mdescRight">初期化  <a href="../../df/d9b/classnut_1_1_encoder.html#a871c21cb5b8d495618a4d60d3dea23da">[詳解]</a><br /></td></tr>
 <tr class="separator:a871c21cb5b8d495618a4d60d3dea23da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3e2b65b8315b4ef0351b7efc27c5123"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d9b/classnut_1_1_encoder.html#ab3e2b65b8315b4ef0351b7efc27c5123">Deinit</a> ()=0</td></tr>
+<tr class="memdesc:ab3e2b65b8315b4ef0351b7efc27c5123"><td class="mdescLeft">&#160;</td><td class="mdescRight">非初期化  <a href="../../df/d9b/classnut_1_1_encoder.html#ab3e2b65b8315b4ef0351b7efc27c5123">[詳解]</a><br /></td></tr>
+<tr class="separator:ab3e2b65b8315b4ef0351b7efc27c5123"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7974081481bdff387c83f8b79d30f379"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d9b/classnut_1_1_encoder.html#a7974081481bdff387c83f8b79d30f379">Reset</a> ()=0</td></tr>
 <tr class="memdesc:a7974081481bdff387c83f8b79d30f379"><td class="mdescLeft">&#160;</td><td class="mdescRight">カウントリセット  <a href="../../df/d9b/classnut_1_1_encoder.html#a7974081481bdff387c83f8b79d30f379">[詳解]</a><br /></td></tr>
 <tr class="separator:a7974081481bdff387c83f8b79d30f379"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00b560fcbec6a2f45c4e515bcb3e251b"><td class="memItemLeft" align="right" valign="top">virtual float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d9b/classnut_1_1_encoder.html#a00b560fcbec6a2f45c4e515bcb3e251b">GetRad</a> () const =0</td></tr>
-<tr class="memdesc:a00b560fcbec6a2f45c4e515bcb3e251b"><td class="mdescLeft">&#160;</td><td class="mdescRight">角度取得  <a href="../../df/d9b/classnut_1_1_encoder.html#a00b560fcbec6a2f45c4e515bcb3e251b">[詳解]</a><br /></td></tr>
-<tr class="separator:a00b560fcbec6a2f45c4e515bcb3e251b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3002eeef7bb035ac46635a7d4ce5397e"><td class="memItemLeft" align="right" valign="top">virtual float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d9b/classnut_1_1_encoder.html#a3002eeef7bb035ac46635a7d4ce5397e">GetRad</a> ()=0</td></tr>
+<tr class="memdesc:a3002eeef7bb035ac46635a7d4ce5397e"><td class="mdescLeft">&#160;</td><td class="mdescRight">角度取得  <a href="../../df/d9b/classnut_1_1_encoder.html#a3002eeef7bb035ac46635a7d4ce5397e">[詳解]</a><br /></td></tr>
+<tr class="separator:a3002eeef7bb035ac46635a7d4ce5397e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a746b8e1a6fd227867bbe0537dc96b58b"><td class="memItemLeft" align="right" valign="top">virtual float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d9b/classnut_1_1_encoder.html#a746b8e1a6fd227867bbe0537dc96b58b">GetRadAndReset</a> ()=0</td></tr>
 <tr class="memdesc:a746b8e1a6fd227867bbe0537dc96b58b"><td class="mdescLeft">&#160;</td><td class="mdescRight">角度取得&amp;カウントリセット  <a href="../../df/d9b/classnut_1_1_encoder.html#a746b8e1a6fd227867bbe0537dc96b58b">[詳解]</a><br /></td></tr>
 <tr class="separator:a746b8e1a6fd227867bbe0537dc96b58b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -139,6 +144,8 @@ nut::Encoder の継承関係図</div>
 限定公開変数類</h2></td></tr>
 <tr class="memitem:aa112a08c6cbb7361e744d25204f8b584"><td class="memItemLeft" align="right" valign="top">const uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d9b/classnut_1_1_encoder.html#aa112a08c6cbb7361e744d25204f8b584">_resolution</a></td></tr>
 <tr class="separator:aa112a08c6cbb7361e744d25204f8b584"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4215259d653f25dca6de0845407a3b8a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d9b/classnut_1_1_encoder.html#a4215259d653f25dca6de0845407a3b8a">_is_init</a> = false</td></tr>
+<tr class="separator:a4215259d653f25dca6de0845407a3b8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock"><p>エンコーダ基底純粋仮想クラス </p>
@@ -177,7 +184,7 @@ nut::Encoder の継承関係図</div>
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="../../de/d0c/_encoder_8hpp_source.html">Encoder.hpp</a> の <a class="el" href="../../de/d0c/_encoder_8hpp_source.html#l00025">25</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../de/d0c/_encoder_8hpp_source.html">Encoder.hpp</a> の <a class="el" href="../../de/d0c/_encoder_8hpp_source.html#l00026">26</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -206,13 +213,42 @@ nut::Encoder の継承関係図</div>
 
 <p>デストラクタ </p>
 
-<p class="definition"> <a class="el" href="../../de/d0c/_encoder_8hpp_source.html">Encoder.hpp</a> の <a class="el" href="../../de/d0c/_encoder_8hpp_source.html#l00029">29</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../de/d0c/_encoder_8hpp_source.html">Encoder.hpp</a> の <a class="el" href="../../de/d0c/_encoder_8hpp_source.html#l00030">30</a> 行目に定義があります。</p>
 
 </div>
 </div>
 <h2 class="groupheader">関数詳解</h2>
-<a id="a00b560fcbec6a2f45c4e515bcb3e251b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a00b560fcbec6a2f45c4e515bcb3e251b">&#9670;&nbsp;</a></span>GetRad()</h2>
+<a id="ab3e2b65b8315b4ef0351b7efc27c5123"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3e2b65b8315b4ef0351b7efc27c5123">&#9670;&nbsp;</a></span>Deinit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void nut::Encoder::Deinit </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>非初期化 </p>
+
+<p><a class="el" href="../../dd/de6/classnut_1_1_inc_encoder.html#a58845f6a306296bff21ced7f4006d6fb">nut::IncEncoder</a>, <a class="el" href="../../d0/d21/classnut_1_1_abs_encoder_multi.html#a0f826aa789cda67780651c39c07dc252">nut::AbsEncoderMulti</a>, <a class="el" href="../../d3/d0f/classnut_1_1_abs_encoder.html#ab6ba78cba4c302d0c7a5ea39c97e8bd0">nut::AbsEncoder</a>で実装されています。</p>
+
+</div>
+</div>
+<a id="a3002eeef7bb035ac46635a7d4ce5397e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3002eeef7bb035ac46635a7d4ce5397e">&#9670;&nbsp;</a></span>GetRad()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -224,7 +260,7 @@ nut::Encoder の継承関係図</div>
           <td class="memname">virtual float nut::Encoder::GetRad </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td> const</td>
+          <td></td>
         </tr>
       </table>
   </td>
@@ -237,7 +273,7 @@ nut::Encoder の継承関係図</div>
 <p>角度取得 </p>
 <dl class="section return"><dt>戻り値</dt><dd>角度[rad] </dd></dl>
 
-<p><a class="el" href="../../dd/de6/classnut_1_1_inc_encoder.html#ac3ac6079cf0149b7d90e922be02e01f8">nut::IncEncoder</a>で実装されています。</p>
+<p><a class="el" href="../../dd/de6/classnut_1_1_inc_encoder.html#a6ba21d339cc8ca50b7006456b8b85d99">nut::IncEncoder</a>, <a class="el" href="../../d0/d21/classnut_1_1_abs_encoder_multi.html#ad1de5ed78d239da7455ce2f38e092dca">nut::AbsEncoderMulti</a>, <a class="el" href="../../d3/d0f/classnut_1_1_abs_encoder.html#a4faae189d0980e5e702939d9a14cbd77">nut::AbsEncoder</a>で実装されています。</p>
 
 </div>
 </div>
@@ -267,7 +303,7 @@ nut::Encoder の継承関係図</div>
 <p>角度取得&amp;カウントリセット </p>
 <p>周期角度取得精度を上げるためのもの </p><dl class="section return"><dt>戻り値</dt><dd>角度[rad] </dd></dl>
 
-<p><a class="el" href="../../dd/de6/classnut_1_1_inc_encoder.html#aebe99dbf33b3f1d8122902685de7639b">nut::IncEncoder</a>で実装されています。</p>
+<p><a class="el" href="../../dd/de6/classnut_1_1_inc_encoder.html#aebe99dbf33b3f1d8122902685de7639b">nut::IncEncoder</a>, <a class="el" href="../../d0/d21/classnut_1_1_abs_encoder_multi.html#a89657e2f02ac8195e6e295038473bda9">nut::AbsEncoderMulti</a>, <a class="el" href="../../d3/d0f/classnut_1_1_abs_encoder.html#aa567d70fe1857b2acd94f283f7964381">nut::AbsEncoder</a>で実装されています。</p>
 
 </div>
 </div>
@@ -296,7 +332,7 @@ nut::Encoder の継承関係図</div>
 
 <p>初期化 </p>
 
-<p><a class="el" href="../../dd/de6/classnut_1_1_inc_encoder.html#a73339748995597d28d1002206dbc9e5d">nut::IncEncoder</a>で実装されています。</p>
+<p><a class="el" href="../../dd/de6/classnut_1_1_inc_encoder.html#a73339748995597d28d1002206dbc9e5d">nut::IncEncoder</a>, <a class="el" href="../../d0/d21/classnut_1_1_abs_encoder_multi.html#ad478db7f3526f9196fb152ec6bf02ef0">nut::AbsEncoderMulti</a>, <a class="el" href="../../d3/d0f/classnut_1_1_abs_encoder.html#a03739031950ac331885efd15ebf80beb">nut::AbsEncoder</a>で実装されています。</p>
 
 </div>
 </div>
@@ -325,11 +361,35 @@ nut::Encoder の継承関係図</div>
 
 <p>カウントリセット </p>
 
-<p><a class="el" href="../../dd/de6/classnut_1_1_inc_encoder.html#af3baae731b0fd19e97cce7d9e71c6e48">nut::IncEncoder</a>で実装されています。</p>
+<p><a class="el" href="../../dd/de6/classnut_1_1_inc_encoder.html#af3baae731b0fd19e97cce7d9e71c6e48">nut::IncEncoder</a>, <a class="el" href="../../d0/d21/classnut_1_1_abs_encoder_multi.html#a92ac6fb808bab3c7b6e04cf03018e926">nut::AbsEncoderMulti</a>, <a class="el" href="../../d3/d0f/classnut_1_1_abs_encoder.html#acb5942bc5c78c7c2498ef25194b6d54f">nut::AbsEncoder</a>で実装されています。</p>
 
 </div>
 </div>
 <h2 class="groupheader">メンバ詳解</h2>
+<a id="a4215259d653f25dca6de0845407a3b8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4215259d653f25dca6de0845407a3b8a">&#9670;&nbsp;</a></span>_is_init</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool nut::Encoder::_is_init = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../de/d0c/_encoder_8hpp_source.html">Encoder.hpp</a> の <a class="el" href="../../de/d0c/_encoder_8hpp_source.html#l00019">19</a> 行目に定義があります。</p>
+
+</div>
+</div>
 <a id="aa112a08c6cbb7361e744d25204f8b584"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa112a08c6cbb7361e744d25204f8b584">&#9670;&nbsp;</a></span>_resolution</h2>
 

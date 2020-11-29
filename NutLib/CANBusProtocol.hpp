@@ -17,7 +17,7 @@ static constexpr uint16_t DEVICE_NUM_SHIFT = 4;
 static constexpr uint16_t DEVICE_ID_MSK = DEVICE_TYPE_MSK | DEVICE_NUM_MSK;
 static constexpr uint16_t DATA_MSK = 0x00F;
 
-
+//<! @brief デバイス型
 enum class Device : uint8_t{
 	allNode = 0x0U,
 	powerSupplay,
@@ -94,7 +94,11 @@ enum class DataType : uint8_t{
 	xPos 		= 0x1,
 	yPos 		= 0x2,
 	thetaPos 	= 0x3,
-	controller 	= 0x8
+	xSpeed 		= 0x4,
+	ySpeed 		= 0x5,
+	xAcc 		= 0x6,
+	yAcc 		= 0x7,
+	uniqe 	= 0x8
 };
 }
 
@@ -110,14 +114,18 @@ enum class DataType : uint8_t{
 };
 /* special operation */
 enum class SpecialOperation :uint8_t{
-	singleStart 			= 0x00,
-	singleStartCurrent		= 0x01,
-	steerStart 				= 0x02,
-	steerStartCurrent 		= 0x03,
-	singleStartDebug 		= 0x10,
-	singleStartCurrentDebug = 0x11,
-	steerStartDebug 		= 0x12,
-	steerStartDebugCurrent	= 0x13,
+	singleStartInc 			= 0x00,
+	singleStartIncCurrent	= 0x01,
+	singleStartAbs 			= 0x02,
+	singleStartAbsCurrent	= 0x03,
+	steerStart 				= 0x04,
+	steerStartCurrent 		= 0x05,
+	singleStartIncDebug 		= 0x10,
+	singleStartIncCurrentDebug 	= 0x11,
+	singleStartAbsDebug 		= 0x12,
+	singleStartAbsCurrentDebug	= 0x13,
+	steerStartDebug 			= 0x14,
+	steerStartDebugCurrent		= 0x15,
 	stop 					= 0x80,
 	//writeFlash = 0xFF,
 };
@@ -139,13 +147,7 @@ enum class ParamsInput : uint8_t{
 	currentLimit 		= 0x0E,
 	currentILimit 		= 0x0F,
 	encoderResolusion 	= 0x10,
-	encoderMode 		= 0x11,
-	overCurrentLimit 	= 0x12,
-};
-/* encoder mode */
-enum class EncoderMode :uint8_t{
-	Inc = 0x00,
-	Abs
+	overCurrentLimit 	= 0x11,
 };
 /* control */
 enum class ControlInput{
@@ -154,6 +156,7 @@ enum class ControlInput{
 	radMulti					= 0x02,
 	radSingle					= 0x03,
 	radSinglePolarity			= 0x04,
+	current						= 0x80,
 	steer						= 0xF0
 };
 }
@@ -161,44 +164,111 @@ enum class ControlInput{
 
 /* solenoidValve */
 namespace sv{
-
+enum class DataType : uint8_t{
+	specialOperation = 0x00,
+	valveState,
+	valveSetAdd,
+	valveSetOr,
+};
+/*special operation*/
+enum class SpecialOperation :uint8_t{
+};
 }
 
 
 /* functions */
-static constexpr uint8_t MakeDeviceType(Device device){
+/*
+ * @brief デバイスID変換
+ * @param[in] device デバイス型
+ * @return デバイスID
+ */
+static constexpr uint8_t MakeDeviceID(Device device){
 	return static_cast<uint8_t>(device) << (DEVICE_TYPE_SHIFT - DEVICE_NUM_SHIFT);
 }
+/*
+ * @brief デバイスID変換
+ * @param[in] device デバイス型
+ * @param[in] num デバイスナンバー
+ * @return デバイスID
+ */
 static constexpr uint8_t MakeDeviceID(Device device, uint8_t num){
 	return (static_cast<uint8_t>(device) << (DEVICE_TYPE_SHIFT - DEVICE_NUM_SHIFT)) | num ;
 }
+/*
+ * @brief CAN ID変換
+ * @param[in] device_id デバイスID
+ * @param[in] data_type データ型
+ * @return CAN ID
+ */
 template<typename T>
 static constexpr auto MakeCANID(uint8_t device_id, T data_type)
 	-> typename std::enable_if_t<std::is_enum_v<T>, uint16_t>{
 	return (static_cast<uint16_t>(device_id) << DEVICE_NUM_SHIFT) | static_cast<uint8_t>(data_type);
 }
+/*
+ * @brief CAN ID変換
+ * @param[in] device_id デバイスID
+ * @param[in] data_type データ型
+ * @return CAN ID
+ */
 static constexpr uint16_t MakeCANID(uint8_t device_id, uint8_t data_type){
 	return (static_cast<uint16_t>(device_id) << DEVICE_NUM_SHIFT) | data_type;
 }
+/*
+ * @brief CAN ID変換
+ * @param[in] device デバイス型
+ * @param[in] num デバイスナンバー
+ * @param[in] data_type データ型
+ * @return CAN ID
+ */
 template<typename T>
 static constexpr auto MakeCANID(Device device, uint8_t num, T data_type)
 -> typename std::enable_if_t<std::is_enum_v<T>, uint16_t>{
 	return (static_cast<uint16_t>(device) << DEVICE_TYPE_SHIFT) | (num << DEVICE_NUM_SHIFT) | static_cast<uint8_t>(data_type);
 }
+/*
+ * @brief CAN ID変換
+ * @param[in] device デバイス型
+ * @param[in] num デバイスナンバー
+ * @param[in] data_type データ型
+ * @return CAN ID
+ */
 static constexpr uint16_t MakeCANID(Device device, uint8_t num, uint8_t data_type){
 	return (static_cast<uint16_t>(device) << DEVICE_TYPE_SHIFT) | (num << DEVICE_NUM_SHIFT) | data_type;
 }
+/*
+ * @brief CAN ID変換(全体通知)
+ * @param[in] device デバイス型
+ * @param[in] data_type 通知型
+ * @param[in] data 通知データ
+ * @return CAN ID
+ */
 template<typename T>
 static constexpr auto MakeCANID(Device device, can_protocol::all::NotificationType data_type, T data)
 -> typename std::enable_if_t<std::is_enum_v<T>, uint16_t>{
 	return (static_cast<uint16_t>(device) << DEVICE_TYPE_SHIFT) | (static_cast<uint8_t>(data_type) << DEVICE_NUM_SHIFT) | static_cast<uint8_t>(data);
 }
+/*
+ * @brief デバイス型取得
+ * @param[in] id CAN ID
+ * @return デバイス型
+ */
 static constexpr Device GetDeviceType(uint16_t id){
 	return static_cast<Device>((id & DEVICE_TYPE_MSK) >> DEVICE_TYPE_SHIFT);
 }
+/*
+ * @brief デバイスID取得
+ * @param[in] id CAN ID
+ * @return デバイスID
+ */
 static constexpr uint8_t GetDeviceID(uint16_t id){
 	return static_cast<uint8_t>((id & DEVICE_ID_MSK) >> DEVICE_NUM_SHIFT);
 }
+/*
+ * @brief データ型取得
+ * @param[in] id CAN ID
+ * @return データ型
+ */
 static constexpr uint8_t GetDataType(uint16_t id){
 	return static_cast<uint8_t>(id & DATA_MSK);
 }
