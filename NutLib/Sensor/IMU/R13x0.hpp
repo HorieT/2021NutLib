@@ -7,6 +7,7 @@
 #include "IMU.hpp"
 #include "../../TimeScheduler.hpp"
 #include "../../HALCallbacks/UART.hpp"
+#include "Eigen/Geometry"
 #include <cstring>
 
 
@@ -17,6 +18,8 @@ namespace nut{
  */
 class R13x0 : public IMU{
 private:
+	using RxCallbackIt = decltype(callback::UART_RxHalfComplete)::ExCallbackIterator;
+
 	static constexpr uint8_t GYRO_DATA_SIZE = 15;
 	static constexpr uint8_t GYRO_BUFF_SIZE = GYRO_DATA_SIZE * 2;
 	static constexpr uint8_t GYRO_BUFF_SIZE_D = GYRO_BUFF_SIZE - 1;
@@ -29,6 +32,8 @@ private:
 	std::array<uint8_t, GYRO_BUFF_SIZE> _buff;
 	UART_HandleTypeDef* const _huart;
 	std::function<void(void)> _receive_callback;
+
+	RxCallbackIt _rx_it;
 
 	bool _init_flag = false;
 	float _roll_offset = 0.0f;
@@ -122,7 +127,6 @@ public:
 	 * @details uartは事前に通信仕様通りの設定を行い、DMA設定でCircularにしてください
 	 */
 	R13x0(UART_HandleTypeDef* huart) : _scheduler([this]{Timeout();}, TIMEOUT_TIME), _huart(huart){
-		callback::UART_RxHalfComplete.AddExclusiveCallback(UART_PRIORITY, [this](UART_HandleTypeDef* huart){return Receive(huart);});
 	}
 	/**
 	 * @brief デストラクタ
@@ -136,6 +140,7 @@ public:
 	virtual void Init() override final{
 		if(_is_init)return;
 		_is_init = true;
+		_rx_it = callback::UART_RxHalfComplete.AddExclusiveCallback(UART_PRIORITY, [this](UART_HandleTypeDef* huart){return Receive(huart);});
 		HAL_UART_AbortReceive(_huart);
 		HAL_UART_Receive_DMA(_huart, _buff.data(), GYRO_BUFF_SIZE);
 		_scheduler.Set();
@@ -147,8 +152,8 @@ public:
 		if(!_is_init)return;
 		_is_init = false;
 		HAL_UART_AbortReceive(_huart);
-		HAL_UART_Receive_DMA(_huart, _buff.data(), GYRO_BUFF_SIZE);
-		_scheduler.Set();
+		callback::UART_RxHalfComplete.EraseExclusiveCallback(_rx_it);
+		_scheduler.Erase();
 	}
 	/**
 	 * @brief リセット

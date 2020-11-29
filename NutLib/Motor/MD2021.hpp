@@ -162,7 +162,7 @@ public:
 		Stop();
 		_is_init = false;
 		if(_can_fifo == 0)_can->FIFO0ReceiveCallback().EraseExclusiveCallback(_can_callback);
-		else _can_callback = _can->FIFO1ReceiveCallback().EraseExclusiveCallback(_can_callback);
+		else _can->FIFO1ReceiveCallback().EraseExclusiveCallback(_can_callback);
 	}
 
 

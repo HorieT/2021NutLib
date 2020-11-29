@@ -25,6 +25,8 @@ var hierarchy =
       [ "nut::IncEncoder", "dd/de6/classnut_1_1_inc_encoder.html", null ]
     ] ],
     [ "nut::EncoderWheel", "de/dce/classnut_1_1_encoder_wheel.html", null ],
+    [ "nut::HALCallback< Args >", "d5/d40/classnut_1_1_h_a_l_callback.html", null ],
+    [ "nut::HALCallback< void >", "dc/df6/classnut_1_1_h_a_l_callback_3_01void_01_4.html", null ],
     [ "nut::HiguchiBoard", "de/d8a/classnut_1_1_higuchi_board.html", null ],
     [ "nut::IMU", "db/d8d/classnut_1_1_i_m_u.html", [
       [ "nut::R13x0", "dc/d33/classnut_1_1_r13x0.html", null ]

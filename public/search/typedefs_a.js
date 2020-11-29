@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['volt_905',['Volt',['../dd/d51/namespacenut.html#a2c6629d69a9f9812f005edb717f02ddc',1,'nut']]]
+  ['type_997',['type',['../d2/d58/classnut_1_1unit_1_1_prefix.html#acb5048734681ef0879ed0d94d8d73682',1,'nut::unit::Prefix']]]
 ];

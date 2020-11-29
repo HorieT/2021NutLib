@@ -1,4 +1,4 @@
-/*
+/**
  * @file HALCallbacks.hpp
  * @brief コールバック関数ラッパクラス
  * @author Horie
@@ -15,12 +15,10 @@
 #include <map>
 
 namespace nut{
-/*
+/**
  * @brief コールバック関数ラッパクラス
- * @author Horie
+ * @tparam Args コールバック関数オブジェクト引数
  * @details copy&move禁止
- * @date 2020/10
- * @tparm Args コールバック関数オブジェクト引数
  */
 template<typename... Args>
 class HALCallback{
@@ -45,7 +43,7 @@ public:
 	HALCallback(HALCallback<Args...>&& ) = delete;
 	HALCallback& operator=(HALCallback<Args...>&& ) = delete;
 
-	/*
+	/**
 	 * @brief コールバック関数オブジェクト追加
 	 * @param[in] priority 優先度
 	 * @param[in] callback コールバック関数オブジェクト
@@ -54,7 +52,7 @@ public:
 	CallbackIterator AddCallback(uint8_t priority, std::function<Function_type> callback){
 		return _callbacks.emplace(priority, callback);
 	}
-	/*
+	/**
 	 * @brief 排他的コールバック関数オブジェクト追加
 	 * @details 排他的コールバックは優先順に呼び出され、trueを返した時点で以降の排他的コールバックの呼び出しをせずに終了します。
 	 * @param[in] priority 優先度
@@ -64,21 +62,21 @@ public:
 	ExCallbackIterator AddExclusiveCallback(uint8_t priority, std::function<ExFunction_type> callback){
 		return _exclusive_callbacks.emplace(priority, callback);
 	}
-	/*
+	/**
 	 * @brief コールバック関数オブジェクト削除
-	 * @param[in] it　削除対象のイテレータ
+	 * @param[in] it 削除対象のイテレータ
 	 */
 	void EraseCallback(CallbackIterator it){
 		_callbacks.erase(it);
 	}
-	/*
+	/**
 	 * @brief コールバック関数オブジェクト削除
-	 * @param[in] it　削除対象のイテレータ
+	 * @param[in] it 削除対象のイテレータ
 	 */
 	void EraseExclusiveCallback(ExCallbackIterator it){
 		_exclusive_callbacks.erase(it);
 	}
-	/*
+	/**
 	 * @brief コールバック関数オブジェクト呼び出し
 	 * @details 通常のコールバックを一通り呼び出した後に排他的コールバックを呼び出します。
 	 */
@@ -93,11 +91,9 @@ public:
 };
 
 
-/*
+/**
  * @brief コールバック関数ラッパクラスのvoid特殊化
- * @author Horie
  * @details copy&move禁止
- * @date 2020/10
  */
 template<>
 class HALCallback<void>{
@@ -120,7 +116,7 @@ public:
 	HALCallback(HALCallback<void>&& ) = delete;
 	HALCallback& operator=(HALCallback<void>&& ) = delete;
 
-	/*
+	/**
 	 * @brief コールバック関数オブジェクト追加
 	 * @param[in] priority 優先度
 	 * @param[in] callback コールバック関数オブジェクト
@@ -129,7 +125,7 @@ public:
 	CallbackIterator AddCallback(uint8_t priority, std::function<void(void)> callback){
 		return _callbacks.emplace(priority, callback);
 	}
-	/*
+	/**
 	 * @brief 排他的コールバック関数オブジェクト追加
 	 * @details 排他的コールバックは優先順に呼び出され、trueを返した時点で以降の排他的コールバックの呼び出しをせずに終了します。
 	 * @param[in] priority 優先度
@@ -139,22 +135,22 @@ public:
 	ExCallbackIterator AddExclusiveCallback(uint8_t priority, std::function<bool(void)> callback){
 		return _exclusive_callbacks.emplace(priority, callback);
 	}
-	/*
+	/**
 	 * @brief コールバック関数オブジェクト削除
-	 * @param[in] it　削除対象のイテレータ
+	 * @param[in] it 削除対象のイテレータ
 	 */
 	void EraseCallback(CallbackIterator it){
 		_callbacks.erase(it);
 	}
-	/*
+	/**
 	 * @brief コールバック関数オブジェクト削除
-	 * @param[in] it　削除対象のイテレータ
+	 * @param[in] it 削除対象のイテレータ
 	 */
 	void EraseExclusiveCallback(ExCallbackIterator it){
 		_exclusive_callbacks.erase(it);
 	}
 
-	/*
+	/**
 	 * @brief コールバック関数オブジェクト呼び出し
 	 * @details 通常のコールバックを一通り呼び出した後に排他的コールバックを呼び出します。
 	 */

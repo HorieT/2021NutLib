@@ -75,9 +75,7 @@ public:
 	 * @param[in] user_id 自分のID
 	 */
 	MD2021Steer(uint32_t period, std::shared_ptr<CANWrapper> can, uint8_t use_fifo, uint8_t steer_id, uint8_t user_id)
-		: SteerDriver(period), _can(can), _steer_id(steer_id), _user_id(user_id){
-		if(use_fifo == 0)_can->FIFO0ReceiveCallback().AddExclusiveCallback(5, [this](CANWrapper::RxDataType rx_data){return ReadCanData(rx_data);});
-		else _can->FIFO1ReceiveCallback().AddExclusiveCallback(5, [this](CANWrapper::RxDataType rx_data){return ReadCanData(rx_data);});
+		: SteerDriver(period), _can(can), _steer_id(steer_id), _user_id(user_id),  _can_fifo(use_fifo){
 	}
 	/**
 	 * @brief デストラクタ
@@ -104,7 +102,7 @@ public:
 		Stop();
 		_is_init = false;
 		if(_can_fifo == 0)_can->FIFO0ReceiveCallback().EraseExclusiveCallback(_can_callback);
-		else _can_callback = _can->FIFO1ReceiveCallback().EraseExclusiveCallback(_can_callback);
+		else _can->FIFO1ReceiveCallback().EraseExclusiveCallback(_can_callback);
 	}
 
 

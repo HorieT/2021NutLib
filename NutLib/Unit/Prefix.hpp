@@ -40,7 +40,7 @@ class Prefix : public PrefixBase{
 public:
 	static constexpr uint32_t num = N / std::gcd(static_cast<int64_t>(N), static_cast<int64_t>(D));//!< 分子 std::ratioとの互換
 	static constexpr uint32_t den = D / std::gcd(static_cast<int64_t>(N), static_cast<int64_t>(D));//!< 分母 std::ratioとの互換
-	static constexpr float RATIO = num / den;//<! 比
+	static constexpr float RATIO = static_cast<float>(num) / static_cast<float>(den);//<! 比
 	using type = Prefix<num, den>;
 };
 

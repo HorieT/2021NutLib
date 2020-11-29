@@ -1,0 +1,650 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>NutLib: nut::HALCallback&lt; Args &gt; クラステンプレート</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">NutLib
+   </div>
+  </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.svg"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.20 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'検索');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('d5/d40/classnut_1_1_h_a_l_callback.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">公開型</a> &#124;
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pro-attribs">限定公開変数類</a> &#124;
+<a href="../../d6/dd3/classnut_1_1_h_a_l_callback-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">nut::HALCallback&lt; Args &gt; クラステンプレート</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>コールバック関数ラッパクラス  
+ <a href="../../d5/d40/classnut_1_1_h_a_l_callback.html#details">[詳解]</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d3/dff/_h_a_l_callbacks_8hpp_source.html">HALCallbacks.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+公開型</h2></td></tr>
+<tr class="memitem:a69a0d27e80153e549bc2cb5bd8768917"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d40/classnut_1_1_h_a_l_callback.html#a69a0d27e80153e549bc2cb5bd8768917">CallbackIterator</a> = typename CallbackList::iterator</td></tr>
+<tr class="separator:a69a0d27e80153e549bc2cb5bd8768917"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed2a6cc1fef25257d8ee9790666f707b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d40/classnut_1_1_h_a_l_callback.html#aed2a6cc1fef25257d8ee9790666f707b">ExCallbackIterator</a> = typename ExCallbackList::iterator</td></tr>
+<tr class="separator:aed2a6cc1fef25257d8ee9790666f707b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a008bbd65a8b49592121ce3ff48f2bf97"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d40/classnut_1_1_h_a_l_callback.html#a008bbd65a8b49592121ce3ff48f2bf97">HALCallback</a> ()</td></tr>
+<tr class="separator:a008bbd65a8b49592121ce3ff48f2bf97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae79796c51e1e1809ad6635c792c19f37"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d40/classnut_1_1_h_a_l_callback.html#ae79796c51e1e1809ad6635c792c19f37">~HALCallback</a> ()</td></tr>
+<tr class="separator:ae79796c51e1e1809ad6635c792c19f37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4aa532d1b80d0ee261df304645ce7730"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d40/classnut_1_1_h_a_l_callback.html#a4aa532d1b80d0ee261df304645ce7730">HALCallback</a> (const <a class="el" href="../../d5/d40/classnut_1_1_h_a_l_callback.html">HALCallback</a>&lt; Args... &gt; &amp;)=delete</td></tr>
+<tr class="separator:a4aa532d1b80d0ee261df304645ce7730"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5512bfa9f52f62e6a77dbe5bfce1514"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d5/d40/classnut_1_1_h_a_l_callback.html">HALCallback</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d40/classnut_1_1_h_a_l_callback.html#ab5512bfa9f52f62e6a77dbe5bfce1514">operator=</a> (const <a class="el" href="../../d5/d40/classnut_1_1_h_a_l_callback.html">HALCallback</a>&lt; Args... &gt; &amp;)=delete</td></tr>
+<tr class="separator:ab5512bfa9f52f62e6a77dbe5bfce1514"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac263503cc373246d8b4ea6c17464da8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d40/classnut_1_1_h_a_l_callback.html#aac263503cc373246d8b4ea6c17464da8">HALCallback</a> (<a class="el" href="../../d5/d40/classnut_1_1_h_a_l_callback.html">HALCallback</a>&lt; Args... &gt; &amp;&amp;)=delete</td></tr>
+<tr class="separator:aac263503cc373246d8b4ea6c17464da8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a2043db6a93ff814b35a9d90eb80a43"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d5/d40/classnut_1_1_h_a_l_callback.html">HALCallback</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d40/classnut_1_1_h_a_l_callback.html#a7a2043db6a93ff814b35a9d90eb80a43">operator=</a> (<a class="el" href="../../d5/d40/classnut_1_1_h_a_l_callback.html">HALCallback</a>&lt; Args... &gt; &amp;&amp;)=delete</td></tr>
+<tr class="separator:a7a2043db6a93ff814b35a9d90eb80a43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10c92e34fb59646eae03b8f0cc522ed9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d5/d40/classnut_1_1_h_a_l_callback.html#a69a0d27e80153e549bc2cb5bd8768917">CallbackIterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d40/classnut_1_1_h_a_l_callback.html#a10c92e34fb59646eae03b8f0cc522ed9">AddCallback</a> (uint8_t priority, std::function&lt; Function_type &gt; callback)</td></tr>
+<tr class="memdesc:a10c92e34fb59646eae03b8f0cc522ed9"><td class="mdescLeft">&#160;</td><td class="mdescRight">コールバック関数オブジェクト追加  <a href="../../d5/d40/classnut_1_1_h_a_l_callback.html#a10c92e34fb59646eae03b8f0cc522ed9">[詳解]</a><br /></td></tr>
+<tr class="separator:a10c92e34fb59646eae03b8f0cc522ed9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab662621cc000acd437043398e17d9e03"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d5/d40/classnut_1_1_h_a_l_callback.html#aed2a6cc1fef25257d8ee9790666f707b">ExCallbackIterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d40/classnut_1_1_h_a_l_callback.html#ab662621cc000acd437043398e17d9e03">AddExclusiveCallback</a> (uint8_t priority, std::function&lt; ExFunction_type &gt; callback)</td></tr>
+<tr class="memdesc:ab662621cc000acd437043398e17d9e03"><td class="mdescLeft">&#160;</td><td class="mdescRight">排他的コールバック関数オブジェクト追加  <a href="../../d5/d40/classnut_1_1_h_a_l_callback.html#ab662621cc000acd437043398e17d9e03">[詳解]</a><br /></td></tr>
+<tr class="separator:ab662621cc000acd437043398e17d9e03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a584d1ecffde6b270796c7b8277343ebe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d40/classnut_1_1_h_a_l_callback.html#a584d1ecffde6b270796c7b8277343ebe">EraseCallback</a> (<a class="el" href="../../d5/d40/classnut_1_1_h_a_l_callback.html#a69a0d27e80153e549bc2cb5bd8768917">CallbackIterator</a> it)</td></tr>
+<tr class="memdesc:a584d1ecffde6b270796c7b8277343ebe"><td class="mdescLeft">&#160;</td><td class="mdescRight">コールバック関数オブジェクト削除  <a href="../../d5/d40/classnut_1_1_h_a_l_callback.html#a584d1ecffde6b270796c7b8277343ebe">[詳解]</a><br /></td></tr>
+<tr class="separator:a584d1ecffde6b270796c7b8277343ebe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb3279776e5135d61b50a9529c11fa3f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d40/classnut_1_1_h_a_l_callback.html#aeb3279776e5135d61b50a9529c11fa3f">EraseExclusiveCallback</a> (<a class="el" href="../../d5/d40/classnut_1_1_h_a_l_callback.html#aed2a6cc1fef25257d8ee9790666f707b">ExCallbackIterator</a> it)</td></tr>
+<tr class="memdesc:aeb3279776e5135d61b50a9529c11fa3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">コールバック関数オブジェクト削除  <a href="../../d5/d40/classnut_1_1_h_a_l_callback.html#aeb3279776e5135d61b50a9529c11fa3f">[詳解]</a><br /></td></tr>
+<tr class="separator:aeb3279776e5135d61b50a9529c11fa3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af721de4cd2b9bd69a2fe7cb442715e92"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d40/classnut_1_1_h_a_l_callback.html#af721de4cd2b9bd69a2fe7cb442715e92">ReadCallbacks</a> (Args ...arg)</td></tr>
+<tr class="memdesc:af721de4cd2b9bd69a2fe7cb442715e92"><td class="mdescLeft">&#160;</td><td class="mdescRight">コールバック関数オブジェクト呼び出し  <a href="../../d5/d40/classnut_1_1_h_a_l_callback.html#af721de4cd2b9bd69a2fe7cb442715e92">[詳解]</a><br /></td></tr>
+<tr class="separator:af721de4cd2b9bd69a2fe7cb442715e92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+限定公開変数類</h2></td></tr>
+<tr class="memitem:a29c6db26db811212f0cf5f8686273d0d"><td class="memItemLeft" align="right" valign="top">CallbackList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d40/classnut_1_1_h_a_l_callback.html#a29c6db26db811212f0cf5f8686273d0d">_callbacks</a></td></tr>
+<tr class="separator:a29c6db26db811212f0cf5f8686273d0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1e2cf877c082d05bcf4e923302a28aa"><td class="memItemLeft" align="right" valign="top">ExCallbackList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d40/classnut_1_1_h_a_l_callback.html#af1e2cf877c082d05bcf4e923302a28aa">_exclusive_callbacks</a></td></tr>
+<tr class="separator:af1e2cf877c082d05bcf4e923302a28aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><h3>template&lt;typename... Args&gt;<br />
+class nut::HALCallback&lt; Args &gt;</h3>
+
+<p>コールバック関数ラッパクラス </p>
+<dl class="tparams"><dt>テンプレート引数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Args</td><td>コールバック関数オブジェクト引数  copy&amp;move禁止 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="../../d3/dff/_h_a_l_callbacks_8hpp_source.html">HALCallbacks.hpp</a> の <a class="el" href="../../d3/dff/_h_a_l_callbacks_8hpp_source.html#l00024">24</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">型定義メンバ詳解</h2>
+<a id="a69a0d27e80153e549bc2cb5bd8768917"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69a0d27e80153e549bc2cb5bd8768917">&#9670;&nbsp;</a></span>CallbackIterator</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename... Args&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../d5/d40/classnut_1_1_h_a_l_callback.html">nut::HALCallback</a>&lt; Args &gt;::<a class="el" href="../../d5/d40/classnut_1_1_h_a_l_callback.html#a69a0d27e80153e549bc2cb5bd8768917">CallbackIterator</a> =  typename CallbackList::iterator</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d3/dff/_h_a_l_callbacks_8hpp_source.html">HALCallbacks.hpp</a> の <a class="el" href="../../d3/dff/_h_a_l_callbacks_8hpp_source.html#l00035">35</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aed2a6cc1fef25257d8ee9790666f707b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed2a6cc1fef25257d8ee9790666f707b">&#9670;&nbsp;</a></span>ExCallbackIterator</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename... Args&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../d5/d40/classnut_1_1_h_a_l_callback.html">nut::HALCallback</a>&lt; Args &gt;::<a class="el" href="../../d5/d40/classnut_1_1_h_a_l_callback.html#aed2a6cc1fef25257d8ee9790666f707b">ExCallbackIterator</a> =  typename ExCallbackList::iterator</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d3/dff/_h_a_l_callbacks_8hpp_source.html">HALCallbacks.hpp</a> の <a class="el" href="../../d3/dff/_h_a_l_callbacks_8hpp_source.html#l00036">36</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">構築子と解体子</h2>
+<a id="a008bbd65a8b49592121ce3ff48f2bf97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a008bbd65a8b49592121ce3ff48f2bf97">&#9670;&nbsp;</a></span>HALCallback() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d5/d40/classnut_1_1_h_a_l_callback.html">nut::HALCallback</a>&lt; Args &gt;::<a class="el" href="../../d5/d40/classnut_1_1_h_a_l_callback.html">HALCallback</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d3/dff/_h_a_l_callbacks_8hpp_source.html">HALCallbacks.hpp</a> の <a class="el" href="../../d3/dff/_h_a_l_callbacks_8hpp_source.html#l00037">37</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ae79796c51e1e1809ad6635c792c19f37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae79796c51e1e1809ad6635c792c19f37">&#9670;&nbsp;</a></span>~HALCallback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="../../d5/d40/classnut_1_1_h_a_l_callback.html">nut::HALCallback</a>&lt; Args &gt;::~<a class="el" href="../../d5/d40/classnut_1_1_h_a_l_callback.html">HALCallback</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d3/dff/_h_a_l_callbacks_8hpp_source.html">HALCallbacks.hpp</a> の <a class="el" href="../../d3/dff/_h_a_l_callbacks_8hpp_source.html#l00038">38</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a4aa532d1b80d0ee261df304645ce7730"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4aa532d1b80d0ee261df304645ce7730">&#9670;&nbsp;</a></span>HALCallback() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d5/d40/classnut_1_1_h_a_l_callback.html">nut::HALCallback</a>&lt; Args &gt;::<a class="el" href="../../d5/d40/classnut_1_1_h_a_l_callback.html">HALCallback</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d5/d40/classnut_1_1_h_a_l_callback.html">HALCallback</a>&lt; Args... &gt; &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aac263503cc373246d8b4ea6c17464da8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac263503cc373246d8b4ea6c17464da8">&#9670;&nbsp;</a></span>HALCallback() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d5/d40/classnut_1_1_h_a_l_callback.html">nut::HALCallback</a>&lt; Args &gt;::<a class="el" href="../../d5/d40/classnut_1_1_h_a_l_callback.html">HALCallback</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d5/d40/classnut_1_1_h_a_l_callback.html">HALCallback</a>&lt; Args... &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a10c92e34fb59646eae03b8f0cc522ed9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10c92e34fb59646eae03b8f0cc522ed9">&#9670;&nbsp;</a></span>AddCallback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d5/d40/classnut_1_1_h_a_l_callback.html#a69a0d27e80153e549bc2cb5bd8768917">CallbackIterator</a> <a class="el" href="../../d5/d40/classnut_1_1_h_a_l_callback.html">nut::HALCallback</a>&lt; Args &gt;::AddCallback </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>priority</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::function&lt; Function_type &gt;&#160;</td>
+          <td class="paramname"><em>callback</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>コールバック関数オブジェクト追加 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">priority</td><td>優先度 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>コールバック関数オブジェクト </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>構築されたイテレータ </dd></dl>
+
+<p class="definition"> <a class="el" href="../../d3/dff/_h_a_l_callbacks_8hpp_source.html">HALCallbacks.hpp</a> の <a class="el" href="../../d3/dff/_h_a_l_callbacks_8hpp_source.html#l00052">52</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ab662621cc000acd437043398e17d9e03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab662621cc000acd437043398e17d9e03">&#9670;&nbsp;</a></span>AddExclusiveCallback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d5/d40/classnut_1_1_h_a_l_callback.html#aed2a6cc1fef25257d8ee9790666f707b">ExCallbackIterator</a> <a class="el" href="../../d5/d40/classnut_1_1_h_a_l_callback.html">nut::HALCallback</a>&lt; Args &gt;::AddExclusiveCallback </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>priority</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::function&lt; ExFunction_type &gt;&#160;</td>
+          <td class="paramname"><em>callback</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>排他的コールバック関数オブジェクト追加 </p>
+<p>排他的コールバックは優先順に呼び出され、trueを返した時点で以降の排他的コールバックの呼び出しをせずに終了します。 </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">priority</td><td>優先度 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>排他的コールバック関数オブジェクト </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>構築されたイテレータ </dd></dl>
+
+<p class="definition"> <a class="el" href="../../d3/dff/_h_a_l_callbacks_8hpp_source.html">HALCallbacks.hpp</a> の <a class="el" href="../../d3/dff/_h_a_l_callbacks_8hpp_source.html#l00062">62</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a584d1ecffde6b270796c7b8277343ebe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a584d1ecffde6b270796c7b8277343ebe">&#9670;&nbsp;</a></span>EraseCallback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="../../d5/d40/classnut_1_1_h_a_l_callback.html">nut::HALCallback</a>&lt; Args &gt;::EraseCallback </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d5/d40/classnut_1_1_h_a_l_callback.html#a69a0d27e80153e549bc2cb5bd8768917">CallbackIterator</a>&#160;</td>
+          <td class="paramname"><em>it</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>コールバック関数オブジェクト削除 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">it</td><td>削除対象のイテレータ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="../../d3/dff/_h_a_l_callbacks_8hpp_source.html">HALCallbacks.hpp</a> の <a class="el" href="../../d3/dff/_h_a_l_callbacks_8hpp_source.html#l00069">69</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aeb3279776e5135d61b50a9529c11fa3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb3279776e5135d61b50a9529c11fa3f">&#9670;&nbsp;</a></span>EraseExclusiveCallback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="../../d5/d40/classnut_1_1_h_a_l_callback.html">nut::HALCallback</a>&lt; Args &gt;::EraseExclusiveCallback </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d5/d40/classnut_1_1_h_a_l_callback.html#aed2a6cc1fef25257d8ee9790666f707b">ExCallbackIterator</a>&#160;</td>
+          <td class="paramname"><em>it</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>コールバック関数オブジェクト削除 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">it</td><td>削除対象のイテレータ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="../../d3/dff/_h_a_l_callbacks_8hpp_source.html">HALCallbacks.hpp</a> の <a class="el" href="../../d3/dff/_h_a_l_callbacks_8hpp_source.html#l00076">76</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ab5512bfa9f52f62e6a77dbe5bfce1514"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5512bfa9f52f62e6a77dbe5bfce1514">&#9670;&nbsp;</a></span>operator=() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d5/d40/classnut_1_1_h_a_l_callback.html">HALCallback</a>&amp; <a class="el" href="../../d5/d40/classnut_1_1_h_a_l_callback.html">nut::HALCallback</a>&lt; Args &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d5/d40/classnut_1_1_h_a_l_callback.html">HALCallback</a>&lt; Args... &gt; &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7a2043db6a93ff814b35a9d90eb80a43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a2043db6a93ff814b35a9d90eb80a43">&#9670;&nbsp;</a></span>operator=() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d5/d40/classnut_1_1_h_a_l_callback.html">HALCallback</a>&amp; <a class="el" href="../../d5/d40/classnut_1_1_h_a_l_callback.html">nut::HALCallback</a>&lt; Args &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d5/d40/classnut_1_1_h_a_l_callback.html">HALCallback</a>&lt; Args... &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af721de4cd2b9bd69a2fe7cb442715e92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af721de4cd2b9bd69a2fe7cb442715e92">&#9670;&nbsp;</a></span>ReadCallbacks()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="../../d5/d40/classnut_1_1_h_a_l_callback.html">nut::HALCallback</a>&lt; Args &gt;::ReadCallbacks </td>
+          <td>(</td>
+          <td class="paramtype">Args ...&#160;</td>
+          <td class="paramname"><em>arg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>コールバック関数オブジェクト呼び出し </p>
+<p>通常のコールバックを一通り呼び出した後に排他的コールバックを呼び出します。 </p>
+
+<p class="definition"> <a class="el" href="../../d3/dff/_h_a_l_callbacks_8hpp_source.html">HALCallbacks.hpp</a> の <a class="el" href="../../d3/dff/_h_a_l_callbacks_8hpp_source.html#l00083">83</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a29c6db26db811212f0cf5f8686273d0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29c6db26db811212f0cf5f8686273d0d">&#9670;&nbsp;</a></span>_callbacks</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">CallbackList <a class="el" href="../../d5/d40/classnut_1_1_h_a_l_callback.html">nut::HALCallback</a>&lt; Args &gt;::_callbacks</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d3/dff/_h_a_l_callbacks_8hpp_source.html">HALCallbacks.hpp</a> の <a class="el" href="../../d3/dff/_h_a_l_callbacks_8hpp_source.html#l00031">31</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="af1e2cf877c082d05bcf4e923302a28aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1e2cf877c082d05bcf4e923302a28aa">&#9670;&nbsp;</a></span>_exclusive_callbacks</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ExCallbackList <a class="el" href="../../d5/d40/classnut_1_1_h_a_l_callback.html">nut::HALCallback</a>&lt; Args &gt;::_exclusive_callbacks</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d3/dff/_h_a_l_callbacks_8hpp_source.html">HALCallbacks.hpp</a> の <a class="el" href="../../d3/dff/_h_a_l_callbacks_8hpp_source.html#l00032">32</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li>NutLib/HALCallbacks/<a class="el" href="../../d3/dff/_h_a_l_callbacks_8hpp_source.html">HALCallbacks.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dd/d51/namespacenut.html">nut</a></li><li class="navelem"><a class="el" href="../../d5/d40/classnut_1_1_h_a_l_callback.html">HALCallback</a></li>
+    <li class="footer">構築: <a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
+  </ul>
+</div>
+</body>
+</html>

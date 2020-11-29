@@ -17,6 +17,8 @@ var namespacenut =
     [ "DualShock", "d6/de4/classnut_1_1_dual_shock.html", "d6/de4/classnut_1_1_dual_shock" ],
     [ "Encoder", "df/d9b/classnut_1_1_encoder.html", "df/d9b/classnut_1_1_encoder" ],
     [ "EncoderWheel", "de/dce/classnut_1_1_encoder_wheel.html", "de/dce/classnut_1_1_encoder_wheel" ],
+    [ "HALCallback", "d5/d40/classnut_1_1_h_a_l_callback.html", "d5/d40/classnut_1_1_h_a_l_callback" ],
+    [ "HALCallback< void >", "dc/df6/classnut_1_1_h_a_l_callback_3_01void_01_4.html", "dc/df6/classnut_1_1_h_a_l_callback_3_01void_01_4" ],
     [ "HiguchiBoard", "de/d8a/classnut_1_1_higuchi_board.html", "de/d8a/classnut_1_1_higuchi_board" ],
     [ "IMU", "db/d8d/classnut_1_1_i_m_u.html", "db/d8d/classnut_1_1_i_m_u" ],
     [ "IncEncoder", "dd/de6/classnut_1_1_inc_encoder.html", "dd/de6/classnut_1_1_inc_encoder" ],

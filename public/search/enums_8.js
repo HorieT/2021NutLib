@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['type_921',['Type',['../da/dc9/namespacenut_1_1unit.html#a71c65554a8697cd990496eec57068896',1,'nut::unit']]]
+  ['type_1014',['Type',['../da/dc9/namespacenut_1_1unit.html#a71c65554a8697cd990496eec57068896',1,'nut::unit']]]
 ];

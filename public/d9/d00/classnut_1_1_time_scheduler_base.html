@@ -141,6 +141,12 @@ nut::TimeSchedulerBase の継承関係図</div>
 <tr class="memdesc:a26ef0b67f545d580e7aece9bab88160a"><td class="mdescLeft">&#160;</td><td class="mdescRight">スケジューラ時刻チェック<br  />
  USE_NUTLIB_CALLBACKSが無効の場合、HAL_SYSTICK_Callback()内で呼び出してください  <a href="../../d9/d00/classnut_1_1_time_scheduler_base.html#a26ef0b67f545d580e7aece9bab88160a">[詳解]</a><br /></td></tr>
 <tr class="separator:a26ef0b67f545d580e7aece9bab88160a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c0bdd2a565a3a8b0494fb32d49309bd"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d00/classnut_1_1_time_scheduler_base.html#a0c0bdd2a565a3a8b0494fb32d49309bd">SetAuxiliaryTimer</a> (TIM_HandleTypeDef *timer)</td></tr>
+<tr class="memdesc:a0c0bdd2a565a3a8b0494fb32d49309bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">スケジューラ補助タイマ追加  <a href="../../d9/d00/classnut_1_1_time_scheduler_base.html#a0c0bdd2a565a3a8b0494fb32d49309bd">[詳解]</a><br /></td></tr>
+<tr class="separator:a0c0bdd2a565a3a8b0494fb32d49309bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e286d1a176f1e8634017f253ab14301"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d00/classnut_1_1_time_scheduler_base.html#a6e286d1a176f1e8634017f253ab14301">EraseAuxiliaryTimer</a> ()</td></tr>
+<tr class="memdesc:a6e286d1a176f1e8634017f253ab14301"><td class="mdescLeft">&#160;</td><td class="mdescRight">スケジューラ補助タイマ削除  <a href="../../d9/d00/classnut_1_1_time_scheduler_base.html#a6e286d1a176f1e8634017f253ab14301">[詳解]</a><br /></td></tr>
+<tr class="separator:a6e286d1a176f1e8634017f253ab14301"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e1c9926b801b622b1c88c2933292bfc"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d00/classnut_1_1_time_scheduler_base.html#a3e1c9926b801b622b1c88c2933292bfc">Delay</a> (<a class="el" href="../../dd/d51/namespacenut.html#aabd23ff06314def2ae227f45a4ad9f25">MilliSecond</a>&lt; uint32_t &gt; ms)</td></tr>
 <tr class="memdesc:a3e1c9926b801b622b1c88c2933292bfc"><td class="mdescLeft">&#160;</td><td class="mdescRight">　delay関数  <a href="../../d9/d00/classnut_1_1_time_scheduler_base.html#a3e1c9926b801b622b1c88c2933292bfc">[詳解]</a><br /></td></tr>
 <tr class="separator:a3e1c9926b801b622b1c88c2933292bfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -322,6 +328,36 @@ nut::TimeSchedulerBase の継承関係図</div>
 
 </div>
 </div>
+<a id="a6e286d1a176f1e8634017f253ab14301"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e286d1a176f1e8634017f253ab14301">&#9670;&nbsp;</a></span>EraseAuxiliaryTimer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void nut::TimeSchedulerBase::EraseAuxiliaryTimer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>スケジューラ補助タイマ削除 </p>
+<p>スケジューラが渋滞した際の補助に使われるタイマの削除 </p>
+
+<p class="definition"> <a class="el" href="../../dd/d5c/_time_scheduler_8hpp_source.html">TimeScheduler.hpp</a> の <a class="el" href="../../dd/d5c/_time_scheduler_8hpp_source.html#l00143">143</a> 行目に定義があります。</p>
+
+</div>
+</div>
 <a id="ac2f33cb548ef53672bea894ade476416"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac2f33cb548ef53672bea894ade476416">&#9670;&nbsp;</a></span>GetPeriod()</h2>
 
@@ -408,6 +444,42 @@ nut::TimeSchedulerBase の継承関係図</div>
 <p>スケジューラ周期リセット </p>
 
 <p class="definition"> <a class="el" href="../../dd/d5c/_time_scheduler_8hpp_source.html">TimeScheduler.hpp</a> の <a class="el" href="../../dd/d5c/_time_scheduler_8hpp_source.html#l00089">89</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a0c0bdd2a565a3a8b0494fb32d49309bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c0bdd2a565a3a8b0494fb32d49309bd">&#9670;&nbsp;</a></span>SetAuxiliaryTimer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void nut::TimeSchedulerBase::SetAuxiliaryTimer </td>
+          <td>(</td>
+          <td class="paramtype">TIM_HandleTypeDef *&#160;</td>
+          <td class="paramname"><em>timer</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>スケジューラ補助タイマ追加 </p>
+<p>スケジューラが渋滞した際の補助に使われるタイマの設定 </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">timer</td><td>補助タイマハンドル </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="../../dd/d5c/_time_scheduler_8hpp_source.html">TimeScheduler.hpp</a> の <a class="el" href="../../dd/d5c/_time_scheduler_8hpp_source.html#l00134">134</a> 行目に定義があります。</p>
 
 </div>
 </div>

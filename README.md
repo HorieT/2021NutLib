@@ -37,8 +37,8 @@ Eigenについても同様です。
 
 __仕様変更(20/11/29)__
 使用頻度の高いorライブラリ標準で使用するコールバックハンドラはNutLib側で吸収しました。
-`HALCallback`フォルダ下に実体が定義されています。
-ユーザがコールバック関数内に関数記述したい場合はインライン定義された`HALCallback<T>`オブジェクトに`AddCallback()`または`AddExCallback()`してください。また戻り値イテレータを使用して関数の削除が可能です。
+`HALCallback`フォルダ下に実体が定義されています。リファレンスでは`nut::callback`名前空間を参照してください。
+ユーザがコールバック関数内に関数記述したい場合はインライン定義された`nut::HALCallback`オブジェクトに`nut::HALCallback::AddCallback()`または`nut::HALCallback::AddExclusiveCallback()`してください。また戻り値イテレータを使用して関数の削除が可能です。
 
 使用例
 
@@ -48,7 +48,7 @@ nut::callback::UART_RxHalfComplete.AddCallback(0, [](UART_HandleTypeDef *huart){
 ```
 
 またどうしてもNutLib側で吸収されたコールバック関数を自己記述したい場合は`#define UNUSE_NUTLIB_CALLBACKS`してください.
-この時、`HALCallback`フォルダ下の実装のように`HALCallback<T>::ReadCallbacks()`を記述しないとライブラリは完全に動作しません。
+この時、`HALCallback`フォルダ下の実装のように`nut::HALCallback::ReadCallbacks()`を記述しないとライブラリは完全に動作しません。
 
 
 コードの詳しいことは ~~[2021NutLib_UseSample](https://gitlab.com/robopro_nut/2021nhkrobocon/2021nutlib_usesample)を参照するか、~~ [リファレンス](https://robopro_nut.gitlab.io/2021nhkrobocon/2021nutlib/index.html)を確認してください。(ローカルではpublic/index.html)
@@ -62,4 +62,4 @@ nut::callback::UART_RxHalfComplete.AddCallback(0, [](UART_HandleTypeDef *huart){
 
 gcc version 7以前のコンパイラを使用する場合,c++17ビルドオプション(-std=c++17 または -std=c++1z)を追加してください。コンパイルが通りません。
 
-NutLibをプロジェクトのインクルードファイル下にコピーしてプロジェクトフォルダに含めると、エディタがエラーメッセージを吐くことがありますが特に問題ありません。コンパイルは通ります。
+NutLibをプロジェクトのインクルードファイル下にコピーしてプロジェクトフォルダに含めると、エディタがエラーメッセージを吐くことがありますが特に問題ありません。コンパイルは通ります。そういうときはIndex->Rebuiltをしてみましょう。

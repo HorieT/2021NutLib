@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['type_904',['type',['../d2/d58/classnut_1_1unit_1_1_prefix.html#acb5048734681ef0879ed0d94d8d73682',1,'nut::unit::Prefix']]]
+  ['second_996',['Second',['../dd/d51/namespacenut.html#a63f2e3e171a06b5a3e78d43e83c3237c',1,'nut']]]
 ];

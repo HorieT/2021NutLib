@@ -42,7 +42,7 @@ public:
 	/**
 	 * @brief 非初期化関数
 	 */
-	virtual void DeInit() = 0;
+	virtual void Deinit() = 0;
 
 	/**
 	 * @brief IMUリセット

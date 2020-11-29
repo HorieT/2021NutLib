@@ -1,3 +1,9 @@
+/*
+ * @file CoreInterruption.hpp
+ * @brief Coreの割込み記述
+ * @author Horie
+ * @date 2020/11
+ */
 #include "../Global.hpp"
 #include "../TimeScheduler.hpp"
 
@@ -9,6 +15,7 @@
 extern __IO uint32_t uwTick;//<! HALのデフォルト変数
 extern HAL_TickFreqTypeDef uwTickFreq;//<! HALのデフォルト変数
 */
+
 /*
  * @brief HALのデフォルトコールバック関数
  */

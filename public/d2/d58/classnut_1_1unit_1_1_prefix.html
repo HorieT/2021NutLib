@@ -127,7 +127,7 @@ nut::unit::Prefix&lt; N, D &gt; の継承関係図</div>
 <tr class="memitem:ae02bad16659350f5257f2b2be7ac73e4"><td class="memItemLeft" align="right" valign="top">static constexpr uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d58/classnut_1_1unit_1_1_prefix.html#ae02bad16659350f5257f2b2be7ac73e4">den</a> = D / std::gcd(static_cast&lt;int64_t&gt;(N), static_cast&lt;int64_t&gt;(D))</td></tr>
 <tr class="memdesc:ae02bad16659350f5257f2b2be7ac73e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">分母 std::ratioとの互換  <a href="../../d2/d58/classnut_1_1unit_1_1_prefix.html#ae02bad16659350f5257f2b2be7ac73e4">[詳解]</a><br /></td></tr>
 <tr class="separator:ae02bad16659350f5257f2b2be7ac73e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af100776df38b0b76d3eea24293b499a5"><td class="memItemLeft" align="right" valign="top">static constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d58/classnut_1_1unit_1_1_prefix.html#af100776df38b0b76d3eea24293b499a5">RATIO</a> = <a class="el" href="../../d2/d58/classnut_1_1unit_1_1_prefix.html#aa39722f1a81b8d3ff127136df446cc69">num</a> / <a class="el" href="../../d2/d58/classnut_1_1unit_1_1_prefix.html#ae02bad16659350f5257f2b2be7ac73e4">den</a></td></tr>
+<tr class="memitem:af100776df38b0b76d3eea24293b499a5"><td class="memItemLeft" align="right" valign="top">static constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d58/classnut_1_1unit_1_1_prefix.html#af100776df38b0b76d3eea24293b499a5">RATIO</a> = static_cast&lt;float&gt;(<a class="el" href="../../d2/d58/classnut_1_1unit_1_1_prefix.html#aa39722f1a81b8d3ff127136df446cc69">num</a>) / static_cast&lt;float&gt;(<a class="el" href="../../d2/d58/classnut_1_1unit_1_1_prefix.html#ae02bad16659350f5257f2b2be7ac73e4">den</a>)</td></tr>
 <tr class="separator:af100776df38b0b76d3eea24293b499a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
@@ -242,7 +242,7 @@ template&lt;uint32_t N, uint32_t D&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr float <a class="el" href="../../d2/d58/classnut_1_1unit_1_1_prefix.html">nut::unit::Prefix</a>&lt; N, D &gt;::RATIO = <a class="el" href="../../d2/d58/classnut_1_1unit_1_1_prefix.html#aa39722f1a81b8d3ff127136df446cc69">num</a> / <a class="el" href="../../d2/d58/classnut_1_1unit_1_1_prefix.html#ae02bad16659350f5257f2b2be7ac73e4">den</a></td>
+          <td class="memname">constexpr float <a class="el" href="../../d2/d58/classnut_1_1unit_1_1_prefix.html">nut::unit::Prefix</a>&lt; N, D &gt;::RATIO = static_cast&lt;float&gt;(<a class="el" href="../../d2/d58/classnut_1_1unit_1_1_prefix.html#aa39722f1a81b8d3ff127136df446cc69">num</a>) / static_cast&lt;float&gt;(<a class="el" href="../../d2/d58/classnut_1_1unit_1_1_prefix.html#ae02bad16659350f5257f2b2be7ac73e4">den</a>)</td>
         </tr>
       </table>
   </td>

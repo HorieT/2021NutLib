@@ -2,7 +2,7 @@ var classnut_1_1_i_m_u =
 [
     [ "IMU", "db/d8d/classnut_1_1_i_m_u.html#a2f9ee4033ffdc3826e5bdb1ed28cc82e", null ],
     [ "~IMU", "db/d8d/classnut_1_1_i_m_u.html#a29bd0fed4ce4ca98a966cc3562a7f8fc", null ],
-    [ "DeInit", "db/d8d/classnut_1_1_i_m_u.html#a626461630d4ca5a7376b8179302fbbc2", null ],
+    [ "Deinit", "db/d8d/classnut_1_1_i_m_u.html#abc2240ca7970b6e02239e4a4e95030d7", null ],
     [ "GetGlobalAcc", "db/d8d/classnut_1_1_i_m_u.html#a980eacd06b56731386aaa84e6565bccd", null ],
     [ "GetGlobalAngle", "db/d8d/classnut_1_1_i_m_u.html#ab916aefc8f07ec6e20bfad6dd409ddcd", null ],
     [ "GetGlobalRot", "db/d8d/classnut_1_1_i_m_u.html#a2119e94848f1d0951ddcb8f828ca0a17", null ],

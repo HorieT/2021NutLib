@@ -1,4 +1,4 @@
-/*
+/**
  * @brief 割込み実装部
  */
 #include "../Global.hpp"
