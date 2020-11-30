@@ -32,16 +32,17 @@ public:
 	 * @return 操作量
 	 */
 	virtual T Calculate(T input, uint32_t ms) override{
-		PIDBase<T>::_deviation[2] = PIDBase<T>::_deviation[1];
-		PIDBase<T>::_deviation[1] = PIDBase<T>::_deviation[0];
-		PIDBase<T>::_deviation[0] = input;
-		_output_value += PIDBase<T>::P() * (
-				PIDBase<T>::_deviation[0] - PIDBase<T>::_deviation[1] +
-				PIDBase<T>::I() * static_cast<T>(ms) * 0.001 * PIDBase<T>::_deviation[0] +
-				PIDBase<T>::D() / static_cast<T>(ms) * 1000. * (PIDBase<T>::_deviation[0] - 2.0 * PIDBase<T>::_deviation[1] + PIDBase<T>::_deviation[2]));
+		this->_deviation[2] = this->_deviation[1];
+		this->_deviation[1] = this->_deviation[0];
+		this->_deviation[0] = input;
+
+		_output_value += this->_P_gain * (
+				this->_deviation[0] - PIDBase<T>::_deviation[1] +
+				this->_I_gain * static_cast<T>(ms) * 0.001 * this->_deviation[0] +
+				this->_D_gain / static_cast<T>(ms) * 1000. * (this->_deviation[0] - 2.0 * this->_deviation[1] + this->_deviation[2]));
 
 		if(std::abs(_output_value) > PIDBase<T>::_limit)
-			_output_value = (_output_value > 0) ? PIDBase<T>::_limit : -PIDBase<T>::_limit;
+			_output_value = (_output_value > 0) ? this->_limit : -this->_limit;
 		return _output_value;
 	}
 
@@ -49,7 +50,7 @@ public:
 	 * @brief 操作量リセット
 	 */
 	virtual void Reset() override{
-		PIDBase<T>::_deviation = {0.0};
+		this->_deviation = {0.0};
 		_output_value = 0.0;
 	}
 };

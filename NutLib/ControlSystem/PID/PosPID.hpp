@@ -37,9 +37,9 @@ public:
 	virtual T Calculate(T input, uint32_t ms) override{
 		PIDBase<T>::_deviation[1] = PIDBase<T>::_deviation[0];
 		PIDBase<T>::_deviation[0] = input;
-		T P_value = PIDBase<T>::P() * PIDBase<T>::_deviation[0];
-		_I_stack += PIDBase<T>::I() * static_cast<T>(ms) * (PIDBase<T>::_deviation[0] + PIDBase<T>::_deviation[1]) * 0.5 * 0.001;//sに直す
-		T D_value = PIDBase<T>::D() / static_cast<T>(ms) * (PIDBase<T>::_deviation[0] - PIDBase<T>::_deviation[1]) * 1000.0;//sに直す
+		T P_value = this->_P_gain * PIDBase<T>::_deviation[0];
+		_I_stack += this->_I_gain * static_cast<T>(ms) * (PIDBase<T>::_deviation[0] + PIDBase<T>::_deviation[1]) * 0.5 * 0.001;//sに直す
+		T D_value = this->_D_gain / static_cast<T>(ms) * (PIDBase<T>::_deviation[0] - PIDBase<T>::_deviation[1]) * 1000.0;//sに直す
 		if(!std::isinf(_I_limit)){
 			if(_I_stack > _I_limit)_I_stack = _I_limit;
 			else if(_I_stack < -_I_limit)_I_stack = -_I_limit;
@@ -55,11 +55,11 @@ public:
 	 * @brief 操作量リセット
 	 */
 	virtual void Reset() override{
-		PIDBase<T>::_deviation = {0.0};
+		this->_deviation = {0.0};
 		_I_stack = static_cast<T>(0);
 	}
 
-	virtual void SetLimitI(T limit) final{
+	void SetLimitI(T limit){
 		Reset();
 		_I_limit = limit;
 	}

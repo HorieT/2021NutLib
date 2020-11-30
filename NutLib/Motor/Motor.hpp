@@ -54,7 +54,7 @@ protected:
 	float _now_rad = 0.0f;//Multi-turn abs
 	float _now_current = 0.0f;
 
-	bool _is_init;
+	bool _is_init = false;
 
 
 

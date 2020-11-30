@@ -9,6 +9,7 @@
 #include "Motor.hpp"
 #include "../Sensor/Encoder/Encoder.hpp"
 #include <memory>
+#include <limits>
 
 namespace nut{
 /**
@@ -25,7 +26,7 @@ protected:
 	float _encoder_ratio = 1.0;
 
 	/* for calculation */
-	float last_rad = 0.0f;
+	float last_rad = std::numeric_limits<float>::quiet_NaN();
 
 
 
@@ -36,12 +37,20 @@ protected:
 		//get radian
 		if(_encoder){
 			float rad = _encoder->GetRad();
-			float rad_div = (rad - last_rad > M_PI_f) ?
+			float rad_div = 0;
+			rad_div *= _encoder_ratio;
+			if(!std::isnan(last_rad)){
+				rad_div = (rad - last_rad > M_PI_f) ?
 						rad - last_rad - M_2PI_f:
 						((rad - last_rad < -M_PI_f) ? rad - last_rad + M_2PI_f : rad - last_rad);
-			rad_div *= _encoder_ratio;
+				rad_div *= _encoder_ratio;
+				_now_radps = rad_div * 1000.0f / static_cast<float>(_scheduler.GetPeriod());
+			}else{
+				rad_div = (rad> M_PI_f) ?
+						rad - M_2PI_f:
+						((rad < -M_PI_f) ? rad + M_2PI_f : rad);
+			}
 			last_rad = rad;
-			_now_radps = rad_div * 1000.0f / static_cast<float>(_scheduler.GetPeriod());
 			_now_rad +=  rad_div;
 		}
 
@@ -58,7 +67,7 @@ protected:
 				_now_duty = _target_duty;
 			}
 			else{
-				if(_encoder){//no encoder
+				if(!_encoder){//no encoder
 					Stop();
 					return;
 				}
@@ -67,7 +76,7 @@ protected:
 				/*control speed*/
 				case MoveType::radps:
 					_now_duty = _radps_pid->Calculate(_target_radps - _now_radps, static_cast<uint32_t>(_scheduler.GetPeriod()));
-					_radps_pid->Calculate(0.0f, static_cast<uint32_t>(_scheduler.GetPeriod()));
+					_rad_pid->Calculate(0.0f, static_cast<uint32_t>(_scheduler.GetPeriod()));
 					break;
 
 				/*control rad*/
@@ -126,6 +135,8 @@ public:
 		_is_init = true;
 		_encoder->Init();
 		_scheduler.Set();
+		__HAL_TIM_SET_COMPARE(_htim, _channel, 0);
+		HAL_TIM_PWM_Start(_htim, _channel);
 	}
 	/**
 	 * @brief 非初期化関数
@@ -136,6 +147,8 @@ public:
 		_is_init = false;
 		_encoder->Deinit();
 		_scheduler.Erase();
+		__HAL_TIM_SET_COMPARE(_htim, _channel, 0);
+		HAL_TIM_PWM_Stop(_htim, _channel);
 	}
 	/**
 	 * @brief 制御スタート
@@ -144,7 +157,6 @@ public:
 		ResetTarget();
 		_move_type = MoveType::duty;
 		__HAL_TIM_SET_COMPARE(_htim, _channel, 0);
-		HAL_TIM_PWM_Start(_htim, _channel);
 		return true;
 	}
 	/**
@@ -153,8 +165,8 @@ public:
 	virtual void Stop() override{
 		_move_type = MoveType::stop;
 		ResetController();
+		ResetTarget();
 		__HAL_TIM_SET_COMPARE(_htim, _channel, 0);
-		HAL_TIM_PWM_Stop(_htim, _channel);
 	}
 
 	/*
@@ -177,7 +189,7 @@ public:
 	 * @return 速度制御可能かどうか
 	 */
 	virtual bool SetRadps(float radps) override {
-		if(_move_type == MoveType::stop || _encoder) return false;
+		if(_move_type == MoveType::stop || !_encoder) return false;
 		_target_radps = radps;
 		_move_type = MoveType::radps;
 		return true;
@@ -188,7 +200,7 @@ public:
 	 * @return 角度制御可能かどうか
 	 */
 	virtual bool SetRadMulti(float rad) override{
-		if(_move_type == MoveType::stop || _encoder) return false;
+		if(_move_type == MoveType::stop || !_encoder) return false;
 		_target_rad = rad;
 		_move_type = MoveType::radMulti;
 		return true;
@@ -201,7 +213,7 @@ public:
 	 * @return 角度制御可能かどうか
 	 */
 	virtual bool SetRadSingle(float rad) override{
-		if(_move_type == MoveType::stop || _encoder) return false;
+		if(_move_type == MoveType::stop || !_encoder) return false;
 		if(std::fabs(rad) > M_PI_f)return false;
 
 		float rad_diff = std::fmod(rad - _now_rad, M_2PI_f);
@@ -222,7 +234,7 @@ public:
 	 * @return 角度制御可能かどうか
 	 */
 	virtual bool SetRadSingle(float rad, bool polarity) override{
-		if(_move_type == MoveType::stop || _encoder) return false;
+		if(_move_type == MoveType::stop || !_encoder) return false;
 		if(std::fabs(rad) > static_cast<float>(M_PI))return false;
 
 		/* not yet!!!!! */
@@ -259,7 +271,7 @@ public:
 	 * @return bool 角度原点リセット可能かどうか
 	 */
 	virtual bool ResetRadOrigin(float rad) override{
-		if(_move_type != MoveType::stop || _encoder)return false;
+		if(_move_type != MoveType::stop || !_encoder)return false;
 		_now_rad = rad;
 		return true;
 	}

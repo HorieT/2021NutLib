@@ -1,6 +1,5 @@
 var NAVTREEINDEX1 =
 {
-"d5/d6b/classnut_1_1_steer_chassis_sp.html#ac99e340e83cdef984f3f9e7e1483b4b4":[2,0,0,34,0],
 "d5/da2/classnut_1_1_motor.html":[2,0,0,24],
 "d5/da2/classnut_1_1_motor.html#a07419fd0f0e964016084ab9b3605009b":[2,0,0,24,32],
 "d5/da2/classnut_1_1_motor.html#a097393bddd50dd35481c29af3b038763":[2,0,0,24,31],
@@ -249,5 +248,6 @@ var NAVTREEINDEX1 =
 "d7/dbd/_c_a_n_bus_protocol_8hpp.html#ad1f07de735117d905354ea397cb2f057a43b5c9175984c071f30b873fdce0a000":[3,0,0,10,0,5],
 "d7/dbd/_c_a_n_bus_protocol_8hpp.html#ad1f07de735117d905354ea397cb2f057a55e2b971e3f427b5bb9e25427e4886e9":[3,0,0,10,0,3],
 "d7/dbd/_c_a_n_bus_protocol_8hpp.html#ad1f07de735117d905354ea397cb2f057a78f07136b202513cf64db444ab164e8d":[3,0,0,10,0,1],
-"d7/dbd/_c_a_n_bus_protocol_8hpp.html#ad1f07de735117d905354ea397cb2f057aa1d033b84aab7171a82fe94afb710675":[3,0,0,10,0,0]
+"d7/dbd/_c_a_n_bus_protocol_8hpp.html#ad1f07de735117d905354ea397cb2f057aa1d033b84aab7171a82fe94afb710675":[3,0,0,10,0,0],
+"d7/dbd/_c_a_n_bus_protocol_8hpp.html#ad1f07de735117d905354ea397cb2f057ac4e49bd816b656c783198855c46c169a":[3,0,0,10,0,4]
 };

@@ -7,7 +7,6 @@
 #include "IMU.hpp"
 #include "../../TimeScheduler.hpp"
 #include "../../HALCallbacks/UART.hpp"
-#include "Eigen/Geometry"
 #include <cstring>
 
 

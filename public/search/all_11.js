@@ -18,7 +18,7 @@ var searchData=
   ['readcandata_363',['ReadCanData',['../d0/d4a/classnut_1_1_m_d2021.html#acdc4246ba8538b085465c20b29a9bf06',1,'nut::MD2021::ReadCanData()'],['../d9/deb/classnut_1_1_m_d2021_steer.html#a9a215dd2c6575bb8c8033293ce49bc14',1,'nut::MD2021Steer::ReadCanData()'],['../df/da1/classnut_1_1_reiwa_m_d.html#acdd0993d2234cf66f6e2e5db73196e95',1,'nut::ReiwaMD::ReadCanData()'],['../de/d8a/classnut_1_1_higuchi_board.html#a3c77c7b1934a2dc07c2a49f795bc0a9a',1,'nut::HiguchiBoard::ReadCanData()']]],
   ['readme_2emd_364',['README.md',['../d9/dd6/_r_e_a_d_m_e_8md.html',1,'']]],
   ['readswichstate_365',['ReadSwichState',['../de/d8a/classnut_1_1_higuchi_board.html#a7b227c23744e2583a909dc7a1ba2c6ae',1,'nut::HiguchiBoard']]],
-  ['receive_366',['Receive',['../d3/d0f/classnut_1_1_abs_encoder.html#a3cf1d7639073066c4d556e8cd63a1f4c',1,'nut::AbsEncoder::Receive()'],['../d0/d21/classnut_1_1_abs_encoder_multi.html#a40f832de2145999abe560af4a78e357e',1,'nut::AbsEncoderMulti::Receive()']]],
+  ['receive_366',['Receive',['../d0/d21/classnut_1_1_abs_encoder_multi.html#a40f832de2145999abe560af4a78e357e',1,'nut::AbsEncoderMulti']]],
   ['receiver_367',['Receiver',['../de/da0/classnut_1_1_r_s485.html#ad7f3218e631f4d3b15e703da718b67c4',1,'nut::RS485']]],
   ['reiwamd_368',['ReiwaMD',['../df/da1/classnut_1_1_reiwa_m_d.html',1,'nut::ReiwaMD'],['../df/da1/classnut_1_1_reiwa_m_d.html#a868fd9d038866bcd1f4483d03214bcdf',1,'nut::ReiwaMD::ReiwaMD()']]],
   ['reiwamd_2ehpp_369',['ReiwaMD.hpp',['../d7/d12/_reiwa_m_d_8hpp.html',1,'']]],

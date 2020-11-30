@@ -20,7 +20,7 @@ class PIDBase : public Controller<T, 1, 1>{
 	static_assert(std::is_floating_point_v<T>, "Type is not floating point.");
 
 protected:
-	std::array<T, 3> _deviation = {0.0};
+	std::array<T, 3> _deviation = {0.0, 0.0, 0.0};
 
 	T _P_gain;//!< Pゲイン
 	T _I_gain;//!< Iゲイン
@@ -82,21 +82,21 @@ public:
 	}
 
 
-	virtual const T& P() const& final{return _P_gain;}
-	virtual const T& I() const& final{return _I_gain;}
-	virtual const T& D() const& final{return _D_gain;}
-	virtual T P() const&& final{return _P_gain;}
-	virtual T I() const&& final{return _I_gain;}
-	virtual T D() const&& final{return _D_gain;}
-	virtual T& P() & final{
+	const T& P() const& {return _P_gain;}
+	const T& I() const& {return _I_gain;}
+	const T& D() const& {return _D_gain;}
+	T P() const&& {return _P_gain;}
+	T I() const&& {return _I_gain;}
+	T D() const&& {return _D_gain;}
+	T& P() & {
 		Reset();
 		return _P_gain;
 	}
-	virtual T& I() & final{
+	T& I() & {
 		Reset();
 		return _I_gain;
 	}
-	virtual T& D() & final{
+	T& D() & {
 		Reset();
 		return _D_gain;
 	}

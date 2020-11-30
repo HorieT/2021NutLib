@@ -234,7 +234,7 @@ nut::DirectDutyMotor の継承関係図</div>
 <tr class="separator:ac26c173f9115c15f13e70fdba3822bda"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1062b2518b5e1c3f51d93bbd6a99a5fa"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d01/classnut_1_1_direct_duty_motor.html#a1062b2518b5e1c3f51d93bbd6a99a5fa">_encoder_ratio</a> = 1.0</td></tr>
 <tr class="separator:a1062b2518b5e1c3f51d93bbd6a99a5fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a46b93decc586b6b1b2af979ade153489"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d01/classnut_1_1_direct_duty_motor.html#a46b93decc586b6b1b2af979ade153489">last_rad</a> = 0.0f</td></tr>
+<tr class="memitem:a46b93decc586b6b1b2af979ade153489"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d01/classnut_1_1_direct_duty_motor.html#a46b93decc586b6b1b2af979ade153489">last_rad</a> = std::numeric_limits&lt;float&gt;::quiet_NaN()</td></tr>
 <tr class="separator:a46b93decc586b6b1b2af979ade153489"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classnut_1_1_motor"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classnut_1_1_motor')"><img src="../../closed.png" alt="-"/>&#160;基底クラス <a class="el" href="../../d5/da2/classnut_1_1_motor.html">nut::Motor</a> に属する継承限定公開変数類</td></tr>
 <tr class="memitem:a07419fd0f0e964016084ab9b3605009b inherit pro_attribs_classnut_1_1_motor"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d5/da2/classnut_1_1_motor.html#a21a5cd6931fdabe222955f11ae32571b">MoveType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/da2/classnut_1_1_motor.html#a07419fd0f0e964016084ab9b3605009b">_move_type</a> = <a class="el" href="../../d5/da2/classnut_1_1_motor.html#a21a5cd6931fdabe222955f11ae32571baef399b2d446bb37b7c32ad2cc1b6045b">MoveType::stop</a></td></tr>
@@ -265,7 +265,7 @@ nut::DirectDutyMotor の継承関係図</div>
 <tr class="separator:a6c02b8ce13247ece4f50cc037b39bf8f inherit pro_attribs_classnut_1_1_motor"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af72fbd3805053318bd6f752c943d1b17 inherit pro_attribs_classnut_1_1_motor"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/da2/classnut_1_1_motor.html#af72fbd3805053318bd6f752c943d1b17">_now_current</a> = 0.0f</td></tr>
 <tr class="separator:af72fbd3805053318bd6f752c943d1b17 inherit pro_attribs_classnut_1_1_motor"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a097393bddd50dd35481c29af3b038763 inherit pro_attribs_classnut_1_1_motor"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/da2/classnut_1_1_motor.html#a097393bddd50dd35481c29af3b038763">_is_init</a></td></tr>
+<tr class="memitem:a097393bddd50dd35481c29af3b038763 inherit pro_attribs_classnut_1_1_motor"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/da2/classnut_1_1_motor.html#a097393bddd50dd35481c29af3b038763">_is_init</a> = false</td></tr>
 <tr class="separator:a097393bddd50dd35481c29af3b038763 inherit pro_attribs_classnut_1_1_motor"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
@@ -288,7 +288,7 @@ nut::DirectDutyMotor の継承関係図</div>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock"><p>Duty制御のモータクラス </p>
 
-<p class="definition"> <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html">DirectDutyMotor.hpp</a> の <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html#l00017">17</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html">DirectDutyMotor.hpp</a> の <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html#l00018">18</a> 行目に定義があります。</p>
 </div><h2 class="groupheader">構築子と解体子</h2>
 <a id="a6c62f59842692d62a9b8e34efaefa40c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6c62f59842692d62a9b8e34efaefa40c">&#9670;&nbsp;</a></span>DirectDutyMotor()</h2>
@@ -368,7 +368,7 @@ nut::DirectDutyMotor の継承関係図</div>
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html">DirectDutyMotor.hpp</a> の <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html#l00106">106</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html">DirectDutyMotor.hpp</a> の <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html#l00115">115</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -395,7 +395,7 @@ nut::DirectDutyMotor の継承関係図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html">DirectDutyMotor.hpp</a> の <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html#l00117">117</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html">DirectDutyMotor.hpp</a> の <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html#l00126">126</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -423,7 +423,7 @@ nut::DirectDutyMotor の継承関係図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html">DirectDutyMotor.hpp</a> の <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html#l00164">164</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html">DirectDutyMotor.hpp</a> の <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html#l00176">176</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -456,7 +456,7 @@ nut::DirectDutyMotor の継承関係図</div>
 
 <p><a class="el" href="../../d4/dfa/classnut_1_1_current_control_motor.html#acb7a0d0edb0891286e6d5535f6dc301c">nut::CurrentControlMotor</a>で再実装されています。</p>
 
-<p class="definition"> <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html">DirectDutyMotor.hpp</a> の <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html#l00133">133</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html">DirectDutyMotor.hpp</a> の <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html#l00144">144</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -483,7 +483,7 @@ nut::DirectDutyMotor の継承関係図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html">DirectDutyMotor.hpp</a> の <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html#l00274">274</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html">DirectDutyMotor.hpp</a> の <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html#l00286">286</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -516,7 +516,7 @@ nut::DirectDutyMotor の継承関係図</div>
 
 <p><a class="el" href="../../d4/dfa/classnut_1_1_current_control_motor.html#abfd5b4cdf6278376abe1fe27baf7f3f7">nut::CurrentControlMotor</a>で再実装されています。</p>
 
-<p class="definition"> <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html">DirectDutyMotor.hpp</a> の <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html#l00124">124</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html">DirectDutyMotor.hpp</a> の <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html#l00133">133</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -555,7 +555,7 @@ nut::DirectDutyMotor の継承関係図</div>
 
 <p><a class="el" href="../../d5/da2/classnut_1_1_motor.html#ae63dc9d41e62c100163077b845c3a34c">nut::Motor</a>を再実装しています。</p>
 
-<p class="definition"> <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html">DirectDutyMotor.hpp</a> の <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html#l00261">261</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html">DirectDutyMotor.hpp</a> の <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html#l00273">273</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -586,7 +586,7 @@ nut::DirectDutyMotor の継承関係図</div>
 
 <p><a class="el" href="../../d5/da2/classnut_1_1_motor.html#a0f2eb46239419ad81f3755cc6100901a">nut::Motor</a>を実装しています。</p>
 
-<p class="definition"> <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html">DirectDutyMotor.hpp</a> の <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html#l00035">35</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html">DirectDutyMotor.hpp</a> の <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html#l00036">36</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -627,7 +627,7 @@ nut::DirectDutyMotor の継承関係図</div>
 
 <p><a class="el" href="../../d4/dfa/classnut_1_1_current_control_motor.html#aa8fe60d6e40cbc7e78b3406152883630">nut::CurrentControlMotor</a>で再実装されています。</p>
 
-<p class="definition"> <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html">DirectDutyMotor.hpp</a> の <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html#l00246">246</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html">DirectDutyMotor.hpp</a> の <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html#l00258">258</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -666,7 +666,7 @@ nut::DirectDutyMotor の継承関係図</div>
 
 <p><a class="el" href="../../d5/da2/classnut_1_1_motor.html#a28f51f707f796f0931de422739f1b90e">nut::Motor</a>を再実装しています。</p>
 
-<p class="definition"> <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html">DirectDutyMotor.hpp</a> の <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html#l00190">190</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html">DirectDutyMotor.hpp</a> の <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html#l00202">202</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -705,7 +705,7 @@ nut::DirectDutyMotor の継承関係図</div>
 
 <p><a class="el" href="../../d5/da2/classnut_1_1_motor.html#a46382be4a3b1ff394df13d8ecf7d5e2e">nut::Motor</a>を再実装しています。</p>
 
-<p class="definition"> <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html">DirectDutyMotor.hpp</a> の <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html#l00179">179</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html">DirectDutyMotor.hpp</a> の <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html#l00191">191</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -744,7 +744,7 @@ nut::DirectDutyMotor の継承関係図</div>
 
 <p><a class="el" href="../../d5/da2/classnut_1_1_motor.html#aee044058d1a422edf0fdf19268544ca0">nut::Motor</a>を再実装しています。</p>
 
-<p class="definition"> <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html">DirectDutyMotor.hpp</a> の <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html#l00203">203</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html">DirectDutyMotor.hpp</a> の <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html#l00215">215</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -794,7 +794,7 @@ nut::DirectDutyMotor の継承関係図</div>
 
 <p><a class="el" href="../../d5/da2/classnut_1_1_motor.html#a111a9d612704e0d5ce74b454ac6b0367">nut::Motor</a>を再実装しています。</p>
 
-<p class="definition"> <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html">DirectDutyMotor.hpp</a> の <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html#l00224">224</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html">DirectDutyMotor.hpp</a> の <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html#l00236">236</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -827,7 +827,7 @@ nut::DirectDutyMotor の継承関係図</div>
 
 <p><a class="el" href="../../d4/dfa/classnut_1_1_current_control_motor.html#a85574f9bbee1bd9d11273349fa597dc3">nut::CurrentControlMotor</a>で再実装されています。</p>
 
-<p class="definition"> <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html">DirectDutyMotor.hpp</a> の <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html#l00143">143</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html">DirectDutyMotor.hpp</a> の <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html#l00156">156</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -860,7 +860,7 @@ nut::DirectDutyMotor の継承関係図</div>
 
 <p><a class="el" href="../../d4/dfa/classnut_1_1_current_control_motor.html#aff1f938fda89298c5bf8c6f976a8a38b">nut::CurrentControlMotor</a>で再実装されています。</p>
 
-<p class="definition"> <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html">DirectDutyMotor.hpp</a> の <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html#l00153">153</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html">DirectDutyMotor.hpp</a> の <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html#l00165">165</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -885,7 +885,7 @@ nut::DirectDutyMotor の継承関係図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html">DirectDutyMotor.hpp</a> の <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html#l00021">21</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html">DirectDutyMotor.hpp</a> の <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html#l00022">22</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -909,7 +909,7 @@ nut::DirectDutyMotor の継承関係図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html">DirectDutyMotor.hpp</a> の <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html#l00024">24</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html">DirectDutyMotor.hpp</a> の <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html#l00025">25</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -933,7 +933,7 @@ nut::DirectDutyMotor の継承関係図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html">DirectDutyMotor.hpp</a> の <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html#l00025">25</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html">DirectDutyMotor.hpp</a> の <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html#l00026">26</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -957,7 +957,7 @@ nut::DirectDutyMotor の継承関係図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html">DirectDutyMotor.hpp</a> の <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html#l00023">23</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html">DirectDutyMotor.hpp</a> の <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html#l00024">24</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -981,7 +981,7 @@ nut::DirectDutyMotor の継承関係図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html">DirectDutyMotor.hpp</a> の <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html#l00022">22</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html">DirectDutyMotor.hpp</a> の <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html#l00023">23</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -1005,7 +1005,7 @@ nut::DirectDutyMotor の継承関係図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html">DirectDutyMotor.hpp</a> の <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html#l00020">20</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html">DirectDutyMotor.hpp</a> の <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html#l00021">21</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -1019,7 +1019,7 @@ nut::DirectDutyMotor の継承関係図</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">float nut::DirectDutyMotor::last_rad = 0.0f</td>
+          <td class="memname">float nut::DirectDutyMotor::last_rad = std::numeric_limits&lt;float&gt;::quiet_NaN()</td>
         </tr>
       </table>
   </td>
@@ -1029,7 +1029,7 @@ nut::DirectDutyMotor の継承関係図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html">DirectDutyMotor.hpp</a> の <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html#l00028">28</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html">DirectDutyMotor.hpp</a> の <a class="el" href="../../d8/d7d/_direct_duty_motor_8hpp_source.html#l00029">29</a> 行目に定義があります。</p>
 
 </div>
 </div>

@@ -25,12 +25,20 @@ private:
 		//get radian
 		if(_encoder){
 			float rad = _encoder->GetRad();
-			float rad_div = (rad - last_rad > M_PI_f) ?
+			float rad_div = 0;
+			rad_div *= _encoder_ratio;
+			if(!std::isnan(last_rad)){
+				rad_div = (rad - last_rad > M_PI_f) ?
 						rad - last_rad - M_2PI_f:
 						((rad - last_rad < -M_PI_f) ? rad - last_rad + M_2PI_f : rad - last_rad);
-			rad_div *= _encoder_ratio;
+				rad_div *= _encoder_ratio;
+				_now_radps = rad_div * 1000.0f / static_cast<float>(_scheduler.GetPeriod());
+			}else{
+				rad_div = (rad> M_PI_f) ?
+						rad - M_2PI_f:
+						((rad < -M_PI_f) ? rad + M_2PI_f : rad);
+			}
 			last_rad = rad;
-			_now_radps = rad_div * 1000.0f / static_cast<float>(_scheduler.GetPeriod());
 			_now_rad +=  rad_div;
 		}
 
@@ -51,7 +59,7 @@ private:
 					_rad_pid->Reset();
 				}
 				else{
-					if(_encoder){//no encoder
+					if(!_encoder){//no encoder
 						Stop();
 						return;
 					}
@@ -122,6 +130,8 @@ public:
 		if(_is_init)return;
 		_is_init = true;
 		_encoder->Init();
+		__HAL_TIM_SET_COMPARE(_htim, _channel, 0);
+		HAL_TIM_PWM_Start(_htim, _channel);
 	}
 	/**
 	 * @brief 非初期化関数
@@ -131,6 +141,8 @@ public:
 		Stop();
 		_is_init = false;
 		_encoder->Deinit();
+		__HAL_TIM_SET_COMPARE(_htim, _channel, 0);
+		HAL_TIM_PWM_Stop(_htim, _channel);
 	}
 
 
@@ -141,7 +153,6 @@ public:
 		ResetTarget();
 		_move_type = MoveType::duty;
 		__HAL_TIM_SET_COMPARE(_htim, _channel, 0);
-		HAL_TIM_PWM_Start(_htim, _channel);
 		return true;
 	}
 
@@ -151,8 +162,8 @@ public:
 	virtual void Stop() override{
 		_move_type = MoveType::stop;
 		ResetController();
+		ResetTarget();
 		__HAL_TIM_SET_COMPARE(_htim, _channel, 0);
-		HAL_TIM_PWM_Stop(_htim, _channel);
 	}
 
 

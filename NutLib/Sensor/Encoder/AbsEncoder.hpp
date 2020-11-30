@@ -7,6 +7,7 @@
 #pragma once
 
 #include "Encoder.hpp"
+#include "../../HALCallbacks/UART.hpp"
 #include "../../RS485.hpp"
 #include <bitset>
 #include <array>
@@ -19,6 +20,8 @@ namespace nut{
  */
 class AbsEncoder : public Encoder{
 private:
+	using RxCallbackIt = decltype(callback::UART_RxHalfComplete)::ExCallbackIterator;
+
 	UART_HandleTypeDef* const _huart;
 	GPIO_TypeDef* const _port;
 	const uint16_t _pin;
@@ -27,6 +30,27 @@ private:
 	int16_t _bit = 0;
 	TimeScheduler<void> _scheduler;
 
+	RxCallbackIt _rx_it;
+
+	/**
+	 * @brief 受信関数
+	 * @param[in] huart uartハンドル
+	 * @return 受信処理成功の可否
+	 */
+	bool Receive(UART_HandleTypeDef *huart){
+		if(huart == _huart){
+			std::bitset<8> h_byte(_buff[1]);
+			std::bitset<8> l_byte(_buff[0]);
+			if(h_byte[7] == (h_byte[5] ^ h_byte[3] ^ h_byte[1] ^ l_byte[7] ^ l_byte[5] ^ l_byte[3] ^ l_byte[1]))return false;
+			if(h_byte[6] == (h_byte[4] ^ h_byte[2] ^ h_byte[0] ^ l_byte[6] ^ l_byte[4] ^ l_byte[2] ^ l_byte[0]))return false;
+			uint32_t tmp = ((_buff[0] | (_buff[1] << 8)) >> 2) & 0x0FFF;
+			_buff[0] = 0;
+			_buff[1] = 0;
+			_bit = (tmp > _resolution/2 ? tmp -  static_cast<int16_t>(_resolution) : tmp);
+			return true;
+		}
+		return false;
+	}
 
 public:
 	AbsEncoder(uint32_t resolution, UART_HandleTypeDef* huart, GPIO_TypeDef* port, uint16_t pin)
@@ -45,16 +69,18 @@ public:
 	virtual void Init() override{
 		if(_is_init)return;
 		_is_init = true;
+		_rx_it = callback::UART_RxComplete.AddExclusiveCallback(1, [this](UART_HandleTypeDef* huart){return Receive(huart);});
 		_scheduler.Set();
 	}
 
 	/**
 	 * @brief 初期化
 	 */
-	virtual void Deinit() override{
+	virtual void Deinit() override{/*
 		if(!_is_init)return;
 		_is_init = false;
-		_scheduler.Erase();
+		callback::UART_RxComplete.EraseExclusiveCallback(_rx_it);
+		_scheduler.Erase();*/
 	}
 
 	/**
@@ -99,27 +125,6 @@ public:
 		HAL_GPIO_WritePin(_port, _pin, GPIO_PIN_SET);
 		HAL_UART_Transmit(_huart, &addr, 1, 1);
 		HAL_GPIO_WritePin(_port, _pin, GPIO_PIN_RESET);
-	}
-
-	/**
-	 * @brief 受信関数
-	 * @details HAL_UART_RxHalfCpltCallback()内で呼び出してください
-	 * @param[in] huart uartハンドル
-	 * @return 受信処理成功の可否
-	 */
-	bool Receive(UART_HandleTypeDef *huart){
-		if(huart == _huart){
-			std::bitset<8> h_byte(_buff[1]);
-			std::bitset<8> l_byte(_buff[0]);
-			if(h_byte[7] == (h_byte[5] ^ h_byte[3] ^ h_byte[1] ^ l_byte[7] ^ l_byte[5] ^ l_byte[3] ^ l_byte[1]))return false;
-			if(h_byte[6] == (h_byte[4] ^ h_byte[2] ^ h_byte[0] ^ l_byte[6] ^ l_byte[4] ^ l_byte[2] ^ l_byte[0]))return false;
-			uint32_t tmp = ((_buff[0] | (_buff[1] << 8)) >> 2) & 0x0FFF;
-			_buff[0] = 0;
-			_buff[1] = 0;
-			_bit = (tmp > _resolution/2 ? tmp -  static_cast<int16_t>(_resolution) : tmp);
-			return true;
-		}
-		return false;
 	}
 };
 }
