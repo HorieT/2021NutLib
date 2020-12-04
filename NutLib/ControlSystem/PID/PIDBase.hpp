@@ -89,15 +89,12 @@ public:
 	T I() const&& {return _I_gain;}
 	T D() const&& {return _D_gain;}
 	T& P() & {
-		Reset();
 		return _P_gain;
 	}
 	T& I() & {
-		Reset();
 		return _I_gain;
 	}
 	T& D() & {
-		Reset();
 		return _D_gain;
 	}
 };

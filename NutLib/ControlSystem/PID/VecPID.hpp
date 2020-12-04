@@ -37,11 +37,11 @@ public:
 		this->_deviation[0] = input;
 
 		_output_value += this->_P_gain * (
-				this->_deviation[0] - PIDBase<T>::_deviation[1] +
+				this->_deviation[0] - this->_deviation[1] +
 				this->_I_gain * static_cast<T>(ms) * 0.001 * this->_deviation[0] +
 				this->_D_gain / static_cast<T>(ms) * 1000. * (this->_deviation[0] - 2.0 * this->_deviation[1] + this->_deviation[2]));
 
-		if(std::abs(_output_value) > PIDBase<T>::_limit)
+		if(std::abs(_output_value) > this->_limit)
 			_output_value = (_output_value > 0) ? this->_limit : -this->_limit;
 		return _output_value;
 	}
