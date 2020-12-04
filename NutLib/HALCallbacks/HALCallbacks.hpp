@@ -21,13 +21,13 @@ namespace nut{
  * @details copy&move禁止
  */
 template<typename... Args>
-class HALCallback{
+class HALCallback final{
 private:
 	using Function_type = void(Args...);
 	using ExFunction_type = bool(Args...);
 	using CallbackList = std::multimap<uint8_t, std::function<Function_type>>;
 	using ExCallbackList = std::multimap<uint8_t, std::function<ExFunction_type>>;
-protected:
+
 	CallbackList _callbacks;
 	ExCallbackList _exclusive_callbacks;
 
@@ -35,7 +35,7 @@ public:
 	using CallbackIterator = typename CallbackList::iterator;
 	using ExCallbackIterator = typename ExCallbackList::iterator;
 	HALCallback(){}
-	virtual ~HALCallback(){}
+	~HALCallback(){}
 
 	/*copy&moveコンストラクタ削除 */
 	HALCallback(const HALCallback<Args...>& ) = delete;
@@ -96,11 +96,11 @@ public:
  * @details copy&move禁止
  */
 template<>
-class HALCallback<void>{
+class HALCallback<void> final{
 private:
 	using CallbackList = std::multimap<uint8_t, std::function<void(void)>>;
 	using ExCallbackList = std::multimap<uint8_t, std::function<bool(void)>>;
-protected:
+
 	CallbackList _callbacks;
 	ExCallbackList _exclusive_callbacks;
 
@@ -108,7 +108,7 @@ public:
 	using CallbackIterator = typename CallbackList::iterator;
 	using ExCallbackIterator = typename ExCallbackList::iterator;
 	HALCallback(){}
-	virtual ~HALCallback(){}
+	~HALCallback(){}
 
 	/*copy&moveコンストラクタ削除 */
 	HALCallback(const HALCallback<void>& ) = delete;

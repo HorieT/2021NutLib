@@ -19,7 +19,7 @@ namespace nut{
 /**
  * @brief DualshockをSBDBT5Vを通して受信するクラス
  */
-class DualShock{
+class DualShock final{
 public:
 	using Button = uint32_t;//!< ボタンの型エイリアス
 	/*
@@ -207,7 +207,7 @@ public:
 	/**
 	 * @brief デストラクタ
 	 */
-	virtual	~DualShock(){
+	~DualShock(){
 		_schduler.Erase();
 	}
 
@@ -216,7 +216,7 @@ public:
 	/**
 	 * @brief 初期化関数
 	 */
-	inline void Init(){
+	void Init(){
 		HAL_UART_AbortReceive(_uart);
 		HAL_UART_Receive_DMA(_uart, _buff.data(), SBDBT_BUFF_SIZE);
 		_schduler.Set();
@@ -228,14 +228,14 @@ public:
 	 * @brief Buttonエッジでのコールバック関数セット
 	 * @param[in] callback_func コールバック関数
 	 */
-	inline void SetButtonCallback(std::function<void(Button)>&& callback_func){
+	void SetButtonCallback(std::function<void(Button)>&& callback_func){
 		_button_callback = callback_func;
 	}
 	/**
 	 * @brief 受信コールバック関数セット
 	 * @param[in] callback_func コールバック関数
 	 */
-	inline void SetReceiveCallback(std::function<void()>&& callback_func){
+	void SetReceiveCallback(std::function<void()>&& callback_func){
 		_receive_callback = callback_func;
 	}
 
