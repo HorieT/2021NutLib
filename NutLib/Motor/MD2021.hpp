@@ -86,6 +86,9 @@ protected:
 		case MoveType::radSinglePolarity:
 			SendControl(can_protocol::motor::ControlInput::radSinglePolarity, _target_rad, _turn_polarity);
 			break;
+		case MoveType::currnet:
+			SendControl(can_protocol::motor::ControlInput::current, _target_current);
+			break;
 		case MoveType::stop:
 		default:
 			return;
@@ -205,6 +208,16 @@ public:
 	virtual bool ResetRadOrigin(float rad) override{
 
 		return false;
+	}
+
+
+	/**
+	 * @brief 制御モード変更
+	 */
+	bool ChangeMode(Mode mode){
+		if(_move_type != MoveType::stop)return false;
+		_mode = mode;
+		return true;
 	}
 };
 }

@@ -74,6 +74,7 @@ private:
 			return;
 		}
 		else {// no move
+			for(auto& st : _steering)st->SetMove(0.0);
 		}
 	}
 
@@ -82,8 +83,8 @@ public:
 	SteerChassisSp(
 		uint32_t period,
 		const std::shared_ptr<Odmetry>& odmetry,
-		std::array<std::shared_ptr<SteerDriver>, N> steer,
-		std::array<Coordinate<float>, N> steer_pos,
+		const std::array<std::shared_ptr<SteerDriver>, N>& steer,
+		const std::array<Coordinate<float>, N>& steer_pos,
 		float diameter_mm)
 			: Chassis(period, odmetry),
 			  _steering(steer),
