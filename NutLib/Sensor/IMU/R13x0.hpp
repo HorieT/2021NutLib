@@ -7,6 +7,7 @@
 #include "IMU.hpp"
 #include "../../TimeScheduler.hpp"
 #include "../../HALCallbacks/UART.hpp"
+#include "Eigen/Geometry"
 #include <cstring>
 
 
@@ -50,7 +51,6 @@ private:
 		_global_acc = {0.0f, 0.0f, 0.0f};
 		_global_rot = {0.0f, 0.0f, 0.0f};
 		//_global_angle = {0.0f, 0.0f, 0.0f};
-		if(!_init_flag)	Reset();
 	}
 
 	/**
