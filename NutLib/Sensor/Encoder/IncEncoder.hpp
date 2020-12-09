@@ -29,19 +29,19 @@ private:
 		if(_htim->Instance->ARR == 0xFFFFFFFF){
 			int32_t signedCount;
 			std::memcpy(&signedCount, &count, 4);
-			return static_cast<float>(signedCount) * static_cast<float>(M_PI) / static_cast<float>(_resolution);
+			return static_cast<float>(signedCount) * M_2PI_f / static_cast<float>(_resolution);
 		}
 		//16bit counter
 		else if(_htim->Instance->ARR == 0xFFFF){
 			int16_t signedCount;
 			std::memcpy(&signedCount, &count, 2);
-			return static_cast<float>(signedCount) * static_cast<float>(M_PI) / static_cast<float>(_resolution);
+			return static_cast<float>(signedCount) * M_2PI_f / static_cast<float>(_resolution);
 		}
 		//例外的なカウンタ
 		else{
 			int32_t signedCount = (count > (_htim->Instance->ARR / 2U)) ?
 					static_cast<int32_t>(count - _htim->Instance->ARR) : static_cast<int32_t>(count);
-			return static_cast<float>(signedCount) * static_cast<float>(M_PI) / static_cast<float>(_resolution);
+			return static_cast<float>(signedCount) * M_2PI_f / static_cast<float>(_resolution);
 		}
 	}
 

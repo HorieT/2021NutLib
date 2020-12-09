@@ -38,7 +38,6 @@ protected:
 		if(_encoder){
 			float rad = _encoder->GetRad();
 			float rad_div = 0;
-			rad_div *= _encoder_ratio;
 			if(!std::isnan(last_rad)){
 				rad_div = (rad - last_rad > M_PI_f) ?
 						rad - last_rad - M_2PI_f:
@@ -49,6 +48,7 @@ protected:
 				rad_div = (rad> M_PI_f) ?
 						rad - M_2PI_f:
 						((rad < -M_PI_f) ? rad + M_2PI_f : rad);
+				rad_div *= _encoder_ratio;
 			}
 			last_rad = rad;
 			_now_rad +=  rad_div;
