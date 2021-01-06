@@ -78,7 +78,7 @@ public:
 	 * @return 距離[mm]
 	 */
 	float GetDistance() const {
-		return _encoder->GetRad() * _diameter_mm;
+		return _encoder->GetRad() * _diameter_mm * 0.5;
 	}
 	/**
 	 * @brief 距離取得&カウントリセット
@@ -86,7 +86,7 @@ public:
 	 * @return 距離[mm]
 	 */
 	float GetDistanceAndReset() {
-		return _encoder->GetRadAndReset() * _diameter_mm;
+		return _encoder->GetRadAndReset() * _diameter_mm * 0.5;
 	}
 
 	/**
