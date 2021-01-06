@@ -34,7 +34,7 @@ public:
 	 * @param[in] ms 前回計算時からの経過時間
 	 * @return 操作量
 	 */
-	virtual T Calculate(T input, uint32_t ms) override{
+	virtual T Calculate(T input, nut::MilliSecond<float> ms) override{
 		this->_deviation[1] = this->_deviation[0];
 		this->_deviation[0] = input;
 		T P_value = this->_P_gain * this->_deviation[0];

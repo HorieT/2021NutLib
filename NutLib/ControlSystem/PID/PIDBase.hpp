@@ -57,7 +57,7 @@ public:
 	 * @param[in] ms 前回計算時からの経過時間
 	 * @return 操作量
 	 */
-	virtual T Calculate(T input, uint32_t ms)override = 0;
+	virtual T Calculate(T input, nut::MilliSecond<float> ms)override = 0;
 
 	/**
 	 * @brief 操作量リセット

@@ -7,6 +7,7 @@
 #pragma once
 
 #include "../Global.hpp"
+#include "../Unit/UnitCore.hpp"
 #include <array>
 #include <limits>
 
@@ -33,7 +34,7 @@ public:
 	 * @param[in] ms 制御周期時間[ms]
 	 * @return 出力値
 	 */
-	virtual std::array<T, Output> Calculate(std::array<T, Input> input, uint32_t ms) = 0;
+	virtual std::array<T, Output> Calculate(std::array<T, Input> input, nut::MilliSecond<float> ms) = 0;
 	virtual void Reset() = 0;
 	/**
 	 * @brief 操作量上限の設定
@@ -67,7 +68,7 @@ public:
 	 * @param[in] ms 制御周期時間[ms]
 	 * @return 出力値
 	 */
-	virtual std::array<T, Output> Calculate(T input, uint32_t ms) = 0;
+	virtual std::array<T, Output> Calculate(T input, nut::MilliSecond<float> ms) = 0;
 	virtual void Reset() = 0;
 	/**
 	 * @brief 操作量上限の設定
@@ -77,6 +78,13 @@ public:
 	void SetLimit(T limit){
 		Reset();
 		_limit = std::abs(limit);
+	}
+	/**
+	 * @brief 操作量上限の取得
+	 * @return 操作量上限値
+	 */
+	T GetLimit(){
+		return _limit;
 	}
 };
 
@@ -101,7 +109,7 @@ public:
 	 * @param[in] ms 制御周期時間[ms]
 	 * @return 出力値
 	 */
-	virtual T Calculate(std::array<T, Input> input, uint32_t ms) = 0;
+	virtual T Calculate(std::array<T, Input> input, nut::MilliSecond<float> ms) = 0;
 	virtual void Reset() = 0;
 	/**
 	 * @brief 操作量上限の設定
@@ -111,6 +119,13 @@ public:
 	void SetLimit(T limit){
 		Reset();
 		_limit = std::abs(limit);
+	}
+	/**
+	 * @brief 操作量上限の取得
+	 * @return 操作量上限値
+	 */
+	T GetLimit(){
+		return _limit;
 	}
 };
 
@@ -134,7 +149,7 @@ public:
 	 * @param[in] ms 制御周期時間[ms]
 	 * @return 出力値
 	 */
-	virtual T Calculate(T input, uint32_t ms) = 0;
+	virtual T Calculate(T input, nut::MilliSecond<float> ms) = 0;
 	virtual void Reset() = 0;
 	/**
 	 * @brief 操作量上限の設定
@@ -144,6 +159,13 @@ public:
 	void SetLimit(T limit){
 		Reset();
 		_limit = std::abs(limit);
+	}
+	/**
+	 * @brief 操作量上限の取得
+	 * @return 操作量上限値
+	 */
+	T GetLimit(){
+		return _limit;
 	}
 };
 
