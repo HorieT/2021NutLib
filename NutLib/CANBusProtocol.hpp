@@ -24,7 +24,8 @@ enum class Device : uint8_t{
 	microcomputer,
 	PC,
 	motorDriver,
-	solenoidValve
+	solenoidValve,
+	tof,
 };
 
 
@@ -85,19 +86,18 @@ enum class Steering : uint8_t{
 	origin 	= 0x00,
 	lock 	= 0x01,
 };
+enum class DataTypeTof : uint8_t{
+	length = 0x5,
+};
 }
 
 /* pc */
 namespace pc{
 enum class DataType : uint8_t{
 	error 		= 0x0,
-	xPos 		= 0x1,
-	yPos 		= 0x2,
-	thetaPos 	= 0x3,
-	xSpeed 		= 0x4,
-	ySpeed 		= 0x5,
-	xAcc 		= 0x6,
-	yAcc 		= 0x7,
+	odmeter 	= 0x1,
+	speed 		= 0x2,
+	acc 		= 0x3,
 	uniqe 	= 0x8
 };
 }
@@ -127,6 +127,7 @@ enum class SpecialOperation :uint8_t{
 	steerStartDebug 			= 0x14,
 	steerStartDebugCurrent		= 0x15,
 	stop 					= 0x80,
+	dedicatedFirmware 		= 0x90,
 	//writeFlash = 0xFF,
 };
 /* paramas */
@@ -157,7 +158,6 @@ enum class ControlInput{
 	radSingle					= 0x03,
 	radSinglePolarity			= 0x04,
 	current						= 0x80,
-	steer						= 0xF0
 };
 }
 
@@ -167,7 +167,7 @@ namespace sv{
 enum class DataType : uint8_t{
 	specialOperation = 0x00,
 	valveState,
-	valveSetAdd,
+	valveSetAnd,
 	valveSetOr,
 };
 /*special operation*/
@@ -176,6 +176,13 @@ enum class SpecialOperation :uint8_t{
 }
 
 
+/* tof */
+namespace tof{
+enum class DataType : uint8_t{
+	start = 0x01,
+	stop = 0x08,
+};
+}
 /* functions */
 /*
  * @brief デバイスID変換
