@@ -26,8 +26,9 @@ namespace nut{
  */
 class TimeSchedulerBase{
 private:
-	static inline volatile uint32_t _time = 0;//volatileで最適化除外お行うため組み込み型
+	static inline volatile uint32_t _time = 0;//volatileで最適化除外を行うため組み込み型
 	static inline std::vector<TimeSchedulerBase*> _scheduler;
+	static inline std::vector<TimeSchedulerBase*> _delay_func;
 
 #ifdef HAL_TIM_MODULE_ENABLED
 	static inline TIM_HandleTypeDef* _auxiliary_timer = nullptr;
@@ -41,7 +42,6 @@ private:
 	static inline void IncTime(){_time += 1;}
 
 protected:
-	const bool _one_time;//!< 一時オブジェクト用
 
 	/**
 	 * @brief スケジューラのセット
@@ -51,6 +51,13 @@ protected:
 		_setting = true;
 		_scheduler.push_back(this);
 		_start_time = _time;
+	}
+
+	static void SetDelayFunc(TimeSchedulerBase*&& this_h){
+		//if(_setting)return;
+		this_h->_setting = true;
+		_scheduler.push_back(std::move(this_h));
+		this_h->_start_time = _time;
 	}
 	/**
 	 * @brief 周期呼び出しされる関数
@@ -63,7 +70,7 @@ public:
 	 * @brief コンストラクタ
 	 * @param[in] ms スケジューラ周期
 	 */
-	TimeSchedulerBase(MilliSecond<uint32_t> ms) : _period(ms), _one_time(false){}
+	TimeSchedulerBase(MilliSecond<uint32_t> ms) : _period(ms){}
 
 	/**
 	 * @brief デストラクタ
@@ -73,7 +80,7 @@ public:
 	/**
 	 * @brief スケジューラ削除
 	 */
-	virtual void Erase() final{
+	void Erase() {
 		if(!_setting)return;
 		for(auto it = _scheduler.begin(), e = _scheduler.end();it != e;++it){
 			if(*it == this){
@@ -99,8 +106,6 @@ public:
 	 * @brief スケジューラ時刻チェック<br>
 	 * 	USE_NUTLIB_CALLBACKSが無効の場合、HAL_SYSTICK_Callback()内で呼び出してください
 	 * @details cubeでSYSTICK割り込みを1ms周期設定(デフォルト)で許可してください
-	 * @attention 最近のHALはHAL_SYSTICK_Callback()が呼び出しされなくなったのでScr下のit.cにあるSysTick_Handler()内でHAL_SYSTICK_IRQHandler()の呼び出しをすること<br>
-	 * 		詳しくはサンプル閲覧推奨
 	 */
 	static void TimeCheck(){
 #ifdef HAL_TIM_MODULE_ENABLED
@@ -118,8 +123,13 @@ public:
 		for(auto t : _scheduler){
 			if((_time - t->_start_time) >= t->_period){
 				t->Callback();
-				if(t->_one_time)t->Erase();
-				else t->_start_time = _time;
+				 t->_start_time = _time;
+			}
+		}
+		for(auto it = _delay_func.begin();it != _delay_func.end();++it){
+			if((_time - (*it)->_start_time) >= (*it)->_period){
+				(*it)->Callback();
+				it = std::prev(_delay_func.erase(it), 1);
 			}
 		}
 	}
@@ -182,7 +192,7 @@ public:
 	/**
 	 * @brief デストラクタ
 	 */
-	virtual ~TimeScheduler() override{Erase();}
+	virtual ~TimeScheduler() {}
 
 	/**
 	 * @brief スケジューラのセット
@@ -225,12 +235,15 @@ public:
 	/**
 	 * @brief デストラクタ
 	 */
-	virtual ~TimeScheduler() override{Erase();}
+	virtual ~TimeScheduler() {}
 
 	/**
 	 * @brief スケジューラのセット
 	 */
 	void Set() &{TimeSchedulerBase::SetSchedule();}
+	static void DelayCall(std::function<void(void)>&& func, MilliSecond<uint32_t> ms){
+		TimeSchedulerBase::SetDelayFunc(new TimeScheduler<void>(std::move(func), ms));
+	}
 	/*void Set() &&{
 		const_cast<bool&>(_one_time) = true;
 		TimeSchedulerBase::SetSchedule();
