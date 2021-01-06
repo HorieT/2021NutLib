@@ -39,13 +39,15 @@ private:
 	 */
 	bool Receive(UART_HandleTypeDef *huart){
 		if(huart == _huart){
+			__disable_irq();
 			std::bitset<8> h_byte(_buff[1]);
 			std::bitset<8> l_byte(_buff[0]);
-			if(h_byte[7] == (h_byte[5] ^ h_byte[3] ^ h_byte[1] ^ l_byte[7] ^ l_byte[5] ^ l_byte[3] ^ l_byte[1]))return false;
-			if(h_byte[6] == (h_byte[4] ^ h_byte[2] ^ h_byte[0] ^ l_byte[6] ^ l_byte[4] ^ l_byte[2] ^ l_byte[0]))return false;
-			uint32_t tmp = ((_buff[0] | (_buff[1] << 8)) >> 2) & 0x0FFF;
 			_buff[0] = 0;
 			_buff[1] = 0;
+			__enable_irq();
+			if(h_byte[7] == (h_byte[5] ^ h_byte[3] ^ h_byte[1] ^ l_byte[7] ^ l_byte[5] ^ l_byte[3] ^ l_byte[1]))return false;
+			if(h_byte[6] == (h_byte[4] ^ h_byte[2] ^ h_byte[0] ^ l_byte[6] ^ l_byte[4] ^ l_byte[2] ^ l_byte[0]))return false;
+			uint32_t tmp = (l_byte.to_ulong() | (h_byte.to_ulong() << 8)) & 0x3FFF;
 			_bit = (tmp > _resolution/2 ? tmp -  static_cast<int16_t>(_resolution) : tmp);
 			return true;
 		}
@@ -54,7 +56,7 @@ private:
 
 public:
 	AbsEncoder(uint32_t resolution, UART_HandleTypeDef* huart, GPIO_TypeDef* port, uint16_t pin)
-		: Encoder(resolution), _huart(huart), _port(port), _pin(pin), _scheduler([this]{Reqest();}, 2){
+		: Encoder(resolution), _huart(huart), _port(port), _pin(pin), _scheduler([this]{Reqest();}, 1){
 
 	}
 	virtual ~AbsEncoder(){
@@ -98,7 +100,7 @@ public:
 	 * @return 角度[rad]
 	 */
 	virtual float GetRad() override{
-		return (_bit - static_cast<int32_t>(_last_bit)) * 2.0 * M_PI / static_cast<float>(_resolution);
+		return (_bit - static_cast<int32_t>(_last_bit)) * M_2PI_f / static_cast<float>(_resolution);
 	}
 
 	/**
@@ -107,7 +109,7 @@ public:
 	 * @return 角度[rad]
 	 */
 	virtual float GetRadAndReset() override{
-		float value = (_bit - static_cast<int32_t>(_last_bit)) * 2.0 * M_PI / static_cast<float>(_resolution);
+		float value = (_bit - static_cast<int32_t>(_last_bit)) * M_2PI_f / static_cast<float>(_resolution);
 		_last_bit = _bit;
 		return (value > M_PI) ? value - M_PI : ((value < -M_PI) ? value + M_PI : value);
 	}
