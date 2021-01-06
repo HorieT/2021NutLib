@@ -49,6 +49,35 @@ private:
 	T _value;
 
 public:
+	constexpr float f()const{
+		return static_cast<float>(_value);
+	}
+	constexpr float d()const{
+		return static_cast<double>(_value);
+	}
+	constexpr float i8()const{
+		return static_cast<int8_t>(_value);
+	}
+	constexpr float i16()const{
+		return static_cast<int16_t>(_value);
+	}
+	constexpr float i32()const{
+		return static_cast<int32_t>(_value);
+	}
+	constexpr float u8()const{
+		return static_cast<uint8_t>(_value);
+	}
+	constexpr float u16()const{
+		return static_cast<uint16_t>(_value);
+	}
+	constexpr float u32()const{
+		return static_cast<uint32_t>(_value);
+	}
+
+
+
+
+
 	constexpr Unit(T value = 0) : _value(value){}
 	/**
 	 * @brief 同一単位系の代入構築
@@ -123,6 +152,16 @@ public:
 
 
 	/*arithmetic and unit operator*/
+	/**
+	 * @brief 数値型との演算
+	 * @tparam TR 右オペランドの型
+	 * @return this
+	 */
+	template<typename TR>
+	constexpr auto operator=(const TR& r_operand) -> typename std::enable_if_t<std::is_arithmetic_v<TR>, Unit<T, U, P>&>{
+		_value = static_cast<T>(r_operand);
+		return *this;
+	}
 
 	/**
 	 * @brief 数値型との演算
