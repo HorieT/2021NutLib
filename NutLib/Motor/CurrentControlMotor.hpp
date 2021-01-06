@@ -11,11 +11,10 @@
 namespace nut{
 /**
  * @brief 電流制御のモータクラス
- * @attention _schedulerを使用しません。
  */
 class CurrentControlMotor : public DirectDutyMotor{
 private:
-	float _controll_period_ms;//ms
+	MilliSecond<float> _current_controll_period;
 
 
 	/**
@@ -67,16 +66,16 @@ private:
 					switch(_move_type){
 					/*control speed*/
 					case MoveType::radps:
-						_rad_pid->Calculate(0.0f, _controll_period_ms);
-						_target_current = _radps_pid->Calculate(_target_radps - _now_radps, _controll_period_ms);
+						_rad_pid->Calculate(0.0f, static_cast<uint32_t>(_scheduler.GetPeriod()));
+						_target_current = _radps_pid->Calculate(_target_radps - _now_radps, static_cast<uint32_t>(_scheduler.GetPeriod()));
 						break;
 
 						/*control rad*/
 					case MoveType::radMulti:
 					case MoveType::radSingle:
 					case MoveType::radSinglePolarity:
-						_target_radps = _rad_pid->Calculate(_target_rad - _now_rad,  _controll_period_ms);
-						_target_current = _radps_pid->Calculate(_target_radps - _now_radps, _controll_period_ms);
+						_target_radps = _rad_pid->Calculate(_target_rad - _now_rad,  static_cast<uint32_t>(_scheduler.GetPeriod()));
+						_target_current = _radps_pid->Calculate(_target_radps - _now_radps, static_cast<uint32_t>(_scheduler.GetPeriod()));
 						break;
 
 					default:
@@ -85,20 +84,21 @@ private:
 						return;
 					}
 				}
-				_target_duty = _current_pid->Calculate(_target_current - _now_current, _controll_period_ms);
+				//_target_duty = _current_pid->Calculate(_target_current - _now_current, static_cast<uint32_t>(_scheduler.GetPeriod()));
 			}
 
-			_now_duty = _target_duty;
+			//_now_duty = _target_duty;
 			/* set duty */
-			__HAL_TIM_SET_COMPARE(_htim, _channel, static_cast<uint32_t>(std::fabs(_now_duty) / 100.0f * _htim->Instance->ARR));
-			if(_now_duty != 0.0f)HAL_GPIO_WritePin(_gpio_port, _gpio_pin, (_now_duty > 0.0f) ? GPIO_PIN_RESET : GPIO_PIN_SET);
+			//__HAL_TIM_SET_COMPARE(_htim, _channel, static_cast<uint32_t>(std::fabs(_now_duty) / 100.0f * _htim->Instance->ARR));
+			//if(_now_duty != 0.0f)HAL_GPIO_WritePin(_gpio_port, _gpio_pin, (_now_duty > 0.0f) ? GPIO_PIN_RESET : GPIO_PIN_SET);
 		}
 	}
 
 public:
 	/**
 	 * @brief コンストラク
-	 * @param[in] period 電流入力周期[ms]
+	 * @param[in] period_current 電流入力周期[ms]
+	 * @param[in] period_controller 制御器周期[ms]
 	 * @param[in] htim PWM出力タイマ
 	 * @param[in] channel PWM出力チャンネル
 	 * @param[in] port 回転極性ピンのポート
@@ -108,16 +108,17 @@ public:
 	 * @param[in] encoder_ratio エンコーダ一回転に対する実効回転数の比
 	 */
 	CurrentControlMotor(
-			MilliSecond<float> period,
+			MilliSecond<float> period_current,
+			MilliSecond<float> period_controller,
 			TIM_HandleTypeDef* htim,
 			uint32_t channel,
 			GPIO_TypeDef* port,
 			uint16_t pin,
 			std::shared_ptr<Encoder> encoder,
 			float encoder_ratio = 1.0) :
-		DirectDutyMotor(0xFFFFFFFF, htim, channel, port, pin, encoder, encoder_ratio){
+		DirectDutyMotor(period_controller, htim, channel, port, pin, encoder, encoder_ratio),
+		_current_controll_period(period_current){
 		_radps_pid->SetLimit(99.0f);//duty limit
-		_controll_period_ms = static_cast<float>(period);
 	}
 	virtual ~CurrentControlMotor(){Deinit();}
 
@@ -130,6 +131,7 @@ public:
 		if(_is_init)return;
 		_is_init = true;
 		_encoder->Init();
+		_scheduler.Set();
 		__HAL_TIM_SET_COMPARE(_htim, _channel, 0);
 		HAL_TIM_PWM_Start(_htim, _channel);
 	}
@@ -141,6 +143,7 @@ public:
 		Stop();
 		_is_init = false;
 		_encoder->Deinit();
+		_scheduler.Erase();
 		__HAL_TIM_SET_COMPARE(_htim, _channel, 0);
 		HAL_TIM_PWM_Stop(_htim, _channel);
 	}
@@ -190,7 +193,13 @@ public:
 	virtual bool CurrentEXTI(float current){
 		if(!_is_init)return false;
 		_now_current = current;
-		ScheduleTask();
+		if(_move_type == MoveType::stop) return true;
+		if(_move_type != MoveType::duty)_target_duty = _current_pid->Calculate(_target_current - _now_current, _current_controll_period);
+
+		_now_duty = _target_duty;
+		/* set duty */
+		__HAL_TIM_SET_COMPARE(_htim, _channel, static_cast<uint32_t>(std::fabs(_now_duty) / 100.0f * _htim->Instance->ARR));
+		if(_now_duty != 0.0f)HAL_GPIO_WritePin(_gpio_port, _gpio_pin, (_now_duty > 0.0f) ? GPIO_PIN_RESET : GPIO_PIN_SET);
 		return true;
 	}
 };

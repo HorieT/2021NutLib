@@ -9,6 +9,7 @@
 #include "../Global.hpp"
 #include "../TimeScheduler.hpp"
 #include "../ControlSystem/PID/VecPID.hpp"
+#include "../ControlSystem/PID/PosPID.hpp"
 #include <array>
 #include <memory>
 
@@ -36,9 +37,9 @@ protected:
 	TimeScheduler<void> _scheduler;
 
 	//Controller
-	std::unique_ptr<PIDBase<float>> _radps_pid{new VecPID<float>()};
-	std::unique_ptr<PIDBase<float>> _rad_pid{new VecPID<float>()};
-	std::unique_ptr<PIDBase<float>> _current_pid{new VecPID<float>()};
+	std::unique_ptr<PIDBase<float>> _radps_pid{new PosPID<float>()};
+	std::unique_ptr<PIDBase<float>> _rad_pid{new PosPID<float>()};
+	std::unique_ptr<PIDBase<float>> _current_pid{new PosPID<float>()};
 
 	//Target value
 	float _target_duty = 0.0f;//Percentage
