@@ -56,7 +56,7 @@ protected:
 	static void SetDelayFunc(TimeSchedulerBase*&& this_h){
 		//if(_setting)return;
 		this_h->_setting = true;
-		_scheduler.push_back(std::move(this_h));
+		_delay_func.push_back(std::move(this_h));
 		this_h->_start_time = _time;
 	}
 	/**
