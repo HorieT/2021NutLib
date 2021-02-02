@@ -114,8 +114,9 @@ private:
 			PushMailbox(std::move(tx_data));
 		}
 		else{
-			if(_send_data_queue.size() > SEND_DATA_QUEUE_MAX)return;
-			_send_data_queue.push(std::move(tx_data));
+			if(_send_data_queue.size() < SEND_DATA_QUEUE_MAX){
+				_send_data_queue.push(std::move(tx_data));
+			}
 		}
 		__enable_irq();//exti enable
 	}
@@ -130,7 +131,6 @@ private:
 		PushMailbox(TxDataType(_send_data_queue.top()));
 		_send_data_queue.pop();
 		__enable_irq();//exti enable
-
 	}
 
 
