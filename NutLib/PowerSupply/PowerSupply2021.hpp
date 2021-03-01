@@ -25,8 +25,8 @@ private:
 	std::array<uint8_t, 8> _rx_data;
 
 public:
-	PowerSupply2021(const std::shared_ptr<CANWrapper>& can, uint8_t device_id, uint8_t user_id) :
-		_can(can), _device_id(device_id), _user_id(user_id){
+	PowerSupply2021(const std::shared_ptr<CANWrapper>& can, uint8_t device_num, uint8_t user_id) :
+		_can(can), _device_id(device_num), _user_id(user_id){
 
 	}
 

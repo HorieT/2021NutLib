@@ -179,10 +179,19 @@ enum class SpecialOperation :uint8_t{
 /* tof */
 namespace tof{
 enum class DataType : uint8_t{
-	start = 0x01,
-	stop = 0x08,
+	specialOperation = 0x00,
+};
+/*special operation*/
+enum class SpecialOperation :uint8_t{
+	regularModeStart = 0x01,
+	regularModeStop = 0x08
 };
 }
+
+
+
+
+
 /* functions */
 /*
  * @brief デバイスID変換
@@ -199,7 +208,7 @@ static constexpr uint8_t MakeDeviceID(Device device){
  * @return デバイスID
  */
 static constexpr uint8_t MakeDeviceID(Device device, uint8_t num){
-	return (static_cast<uint8_t>(device) << (DEVICE_TYPE_SHIFT - DEVICE_NUM_SHIFT)) | num ;
+	return (static_cast<uint8_t>(device) << (DEVICE_TYPE_SHIFT - DEVICE_NUM_SHIFT)) | (num & 0x0F);
 }
 /*
  * @brief CAN ID変換
@@ -231,7 +240,7 @@ static constexpr uint16_t MakeCANID(uint8_t device_id, uint8_t data_type){
 template<typename T>
 static constexpr auto MakeCANID(Device device, uint8_t num, T data_type)
 -> typename std::enable_if_t<std::is_enum_v<T>, uint16_t>{
-	return (static_cast<uint16_t>(device) << DEVICE_TYPE_SHIFT) | (num << DEVICE_NUM_SHIFT) | static_cast<uint8_t>(data_type);
+	return (static_cast<uint16_t>(device) << DEVICE_TYPE_SHIFT) | ((num & 0x0F) << DEVICE_NUM_SHIFT) | static_cast<uint8_t>(data_type);
 }
 /*
  * @brief CAN ID変換
@@ -241,7 +250,7 @@ static constexpr auto MakeCANID(Device device, uint8_t num, T data_type)
  * @return CAN ID
  */
 static constexpr uint16_t MakeCANID(Device device, uint8_t num, uint8_t data_type){
-	return (static_cast<uint16_t>(device) << DEVICE_TYPE_SHIFT) | (num << DEVICE_NUM_SHIFT) | data_type;
+	return (static_cast<uint16_t>(device) << DEVICE_TYPE_SHIFT) | ((num & 0x0F) << DEVICE_NUM_SHIFT) | data_type;
 }
 /*
  * @brief CAN ID変換(全体通知)
@@ -257,27 +266,27 @@ static constexpr auto MakeCANID(Device device, can_protocol::all::NotificationTy
 }
 /*
  * @brief デバイス型取得
- * @param[in] id CAN ID
+ * @param[in] can_id CAN ID
  * @return デバイス型
  */
-static constexpr Device GetDeviceType(uint16_t id){
-	return static_cast<Device>((id & DEVICE_TYPE_MSK) >> DEVICE_TYPE_SHIFT);
+static constexpr Device GetDeviceType(uint16_t can_id){
+	return static_cast<Device>((can_id & DEVICE_TYPE_MSK) >> DEVICE_TYPE_SHIFT);
 }
 /*
  * @brief デバイスID取得
- * @param[in] id CAN ID
+ * @param[in] can_id CAN ID
  * @return デバイスID
  */
-static constexpr uint8_t GetDeviceID(uint16_t id){
-	return static_cast<uint8_t>((id & DEVICE_ID_MSK) >> DEVICE_NUM_SHIFT);
+static constexpr uint8_t GetDeviceID(uint16_t can_id){
+	return static_cast<uint8_t>((can_id & DEVICE_ID_MSK) >> DEVICE_NUM_SHIFT);
 }
 /*
  * @brief データ型取得
- * @param[in] id CAN ID
+ * @param[in] can_id CAN ID
  * @return データ型
  */
-static constexpr uint8_t GetDataType(uint16_t id){
-	return static_cast<uint8_t>(id & DATA_MSK);
+static constexpr uint8_t GetDataType(uint16_t can_id){
+	return static_cast<uint8_t>(can_id & DATA_MSK);
 }
 }
 }

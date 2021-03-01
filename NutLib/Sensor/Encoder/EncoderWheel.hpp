@@ -16,8 +16,8 @@ namespace nut{
  */
 class EncoderWheel{
 private:
-	std::shared_ptr<Encoder> _encoder;
-	float _diameter_mm;
+	const std::shared_ptr<Encoder> _encoder;
+	const MilliMeter<float> _diameter;
 	Coordinate<float> _position;
 
 public:
@@ -27,8 +27,8 @@ public:
 	 * @param[in] diameter_mm 直径[mm]
 	 * @param[in] position エンコーダ位置
 	 */
-	EncoderWheel(const std::shared_ptr<Encoder>& encoder, float diameter_mm, Coordinate<float> position = Coordinate<float>{0.0f, 0.0f, 0.0f})
-	: _encoder(encoder), _diameter_mm(diameter_mm), _position(position){
+	EncoderWheel(const std::shared_ptr<Encoder>& encoder, MilliMeter<float> diameter, Coordinate<float> position = Coordinate<float>{0.0f, 0.0f, 0.0f})
+	: _encoder(encoder), _diameter(diameter), _position(position){
 
 	}
 	/**
@@ -78,7 +78,7 @@ public:
 	 * @return 距離[mm]
 	 */
 	float GetDistance() const {
-		return _encoder->GetRad() * _diameter_mm * 0.5;
+		return _encoder->GetRad() * _diameter.f() * 0.5;
 	}
 	/**
 	 * @brief 距離取得&カウントリセット
@@ -86,7 +86,7 @@ public:
 	 * @return 距離[mm]
 	 */
 	float GetDistanceAndReset() {
-		return _encoder->GetRadAndReset() * _diameter_mm * 0.5;
+		return _encoder->GetRadAndReset() * _diameter.f() * 0.5;
 	}
 
 	/**
