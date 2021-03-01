@@ -137,7 +137,7 @@ public:
 	 * @param[in] motor_id モータのID
 	 * @param[in] user_id 自分のID
 	 */
-	MD2021(uint32_t period, std::shared_ptr<CANWrapper> can, uint8_t use_fifo, uint8_t motor_id, uint8_t user_id)
+	MD2021(MilliSecond<uint32_t> period, const std::shared_ptr<CANWrapper>& can, uint8_t use_fifo, uint8_t motor_id, uint8_t user_id)
 		: Motor(period), _can(can), _motor_id(motor_id), _user_id(user_id), _can_fifo(use_fifo){
 	}
 	/**

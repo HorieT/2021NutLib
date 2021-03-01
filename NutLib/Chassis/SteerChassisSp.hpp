@@ -22,7 +22,7 @@ private:
 
 	const std::array<std::shared_ptr<SteerDriver>, N> _steering;
 	const std::array<Coordinate<float>, N> _wheel_position;//!< 駆動輪位置
-	const float _diameter_mm;
+	const MilliMeter<float> _diameter_mm;
 
 
 	const std::array<const float, N> _wheel_cos = {0.0};
@@ -68,7 +68,7 @@ private:
 
 
 				/* input */
-				st->SetMove(_mode == MoveMode::nomal ? coff * input[i].norm() * 2000.0f / _diameter_mm : 0.0, rad);
+				st->SetMove(_mode == MoveMode::nomal ? coff * input[i].norm() * 2000.0f / _diameter_mm.f() : 0.0, rad);
 				++i;
 			}
 			return;
@@ -81,11 +81,11 @@ private:
 
 public:
 	SteerChassisSp(
-		uint32_t period,
+		MilliSecond<uint32_t> period,
 		const std::shared_ptr<Odmetry>& odmetry,
 		const std::array<std::shared_ptr<SteerDriver>, N>& steer,
 		const std::array<Coordinate<float>, N>& steer_pos,
-		float diameter_mm)
+		MilliMeter<float> diameter_mm)
 			: Chassis(period, odmetry),
 			  _steering(steer),
 			  _wheel_position(steer_pos),

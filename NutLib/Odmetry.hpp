@@ -96,7 +96,11 @@ public:
 	 * @param[in] enc2  測距輪のshared_ptr
 	 * @param[in] start 初期位置
 	 */
-	Odmetry(uint32_t period, const std::shared_ptr<IMU>& imu, const std::shared_ptr<EncoderWheel>& enc1, const std::shared_ptr<EncoderWheel>& enc2, Coordinate<float> start) :
+	Odmetry(MilliSecond<uint32_t> period,
+			const std::shared_ptr<IMU>& imu,
+			const std::shared_ptr<EncoderWheel>& enc1,
+			const std::shared_ptr<EncoderWheel>& enc2,
+			Coordinate<float> start) :
 		_scheduler([this]{CalcPos();}, period), _imu(imu), _encoder({enc1, enc2}), _start_position(start){
 
 		_position = _start_position;

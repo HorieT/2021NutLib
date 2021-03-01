@@ -45,7 +45,7 @@ public:
 	 * @param[in] odmetry オドメータインスタンス
 	 * @details オドメータを使わない場合はヌルポを入れてください
 	 */
-	Chassis(uint32_t period, const std::shared_ptr<Odmetry>& odmetry)
+	Chassis(MilliSecond<uint32_t> period, const std::shared_ptr<Odmetry>& odmetry)
 		: _scheduler([this]{ScheduleTask();}, period), _odmetry(odmetry){
 
 	}

@@ -78,7 +78,7 @@ public:
 	 * @param[in] wheel_polarity オムニの極性←いらないのでは？
 	 */
 	OmniChassis(
-			uint32_t period,
+			MilliSecond<uint32_t> period,
 			std::shared_ptr<Odmetry> odmetry,
 			std::array<std::shared_ptr<DriveWheel>, N> wheel,
 			Coordinate<float> first_wheel_position,

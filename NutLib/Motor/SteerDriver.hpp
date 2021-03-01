@@ -41,7 +41,7 @@ public:
 	 * @brief コンストラク
 	 * @param[in] period 周期
 	 */
-	SteerDriver(uint32_t period)
+	SteerDriver(MilliSecond<uint32_t> period)
 		: _scheduler([this]{ScheduleTask();}, period){
 
 	}
