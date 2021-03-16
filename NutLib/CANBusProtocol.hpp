@@ -61,8 +61,11 @@ enum class General : uint8_t{
 namespace power{
 enum class DataType : uint8_t{
 	fetState = 0x0,
-	currentLimit = 0x1,
-	FuseState = 0x2
+};
+enum class RemoteType : uint8_t{
+	fetState 	= 0x0,
+	current 	= 0x1,
+	fuseState 	= 0x2,
 };
 }
 
