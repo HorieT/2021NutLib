@@ -1,10 +1,13 @@
 /**
- *
+ * @file SteerChassisSp.hpp
+ * @brief 操舵と駆動一体型MDによるステア足周り
+ * @author Horie
+ * @date 2021/3
  */
 #pragma once
 
 #include "../Global.hpp"
-#include "SteerChassis.hpp"
+#include "SteerChassisBase.hpp"
 #include "../Motor/SteerDriver.hpp"
 #include <array>
 #include <limits>
@@ -12,18 +15,14 @@
 
 namespace nut{
 /**
- *
+ * @brief 操舵と駆動一体型MDによるステア足周りクラス
  */
 template<uint8_t N>
-class SteerChassisSp : public Chassis{
+class SteerChassisSp : public SteerChassisBase{
 private:
-	using MoveMode = SteerOpration::MoveMode;
-	static constexpr float RAD_DIFF_LIM = M_PI / 2.0;
-
 	const std::array<std::shared_ptr<SteerDriver>, N> _steering;
 	const std::array<Coordinate<float>, N> _wheel_position;//!< 駆動輪位置
 	const MilliMeter<float> _diameter_mm;
-
 
 	const std::array<const float, N> _wheel_cos = {0.0};
 	const std::array<const float, N> _wheel_sin = {0.0};
@@ -86,7 +85,7 @@ public:
 		const std::array<std::shared_ptr<SteerDriver>, N>& steer,
 		const std::array<Coordinate<float>, N>& steer_pos,
 		MilliMeter<float> diameter_mm)
-			: Chassis(period, odmetry),
+			: SteerChassisBase(period, odmetry),
 			  _steering(steer),
 			  _wheel_position(steer_pos),
 			  _diameter_mm(diameter_mm){
@@ -110,37 +109,6 @@ public:
 
 	virtual ~SteerChassisSp(){
 
-	}
-
-
-
-
-
-	/**
-	 * @brief 速度入力
-	 * @param[in] velocity 速度[m/s],[rad/s]
-	 * @param[in] mode 動作モード
-	 * @return 速度入力可能か
-	 */
-	virtual bool SetVelocity(Coordinate<float> velocity, MoveMode mode){
-		_mode = mode;
-		_target_velocity = velocity;
-		return true;
-	}
-
-	/**
-	 * @brief 速度入力
-	 * @param[in] velocity_mps 速度[m/s]
-	 * @param[in] rot_radps [rad/s]
-	 * @param[in] mode 動作モード
-	 * @return 速度入力可能か
-	 */
-	virtual bool SetVelocity(Eigen::Vector2f velocity_mps, float rot_radps, MoveMode mode){
-		_mode = mode;
-		_target_velocity.x() = velocity_mps.x();
-		_target_velocity.y() = velocity_mps.y();
-		_target_velocity.theta() = rot_radps;
-		return true;
 	}
 };
 }

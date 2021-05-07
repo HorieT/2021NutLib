@@ -1,33 +1,25 @@
 /**
- *
+ * @file SteerChassis.hpp
+ * @brief 操舵と駆動が独立したステア足周り
+ * @author Horie
+ * @date 2021/3
  */
 #pragma once
 
 #include "../Global.hpp"
-#include "Chassis.hpp"
+#include "SteerChassisBase.hpp"
 #include "../Motor/DriveWheel.hpp"
 #include <array>
 #include <Eigen/Geometry>
 
 namespace nut{
-namespace SteerOpration{
-enum class MoveMode : uint8_t{
-	nomal = 0,
-	reset,
-	steerOnry,
-	steerBreaking
-};
-}
 
 /**
- *
+ *　@brief 操舵と駆動が独立の基本的なステア足回り
  */
 template<uint8_t N>
-class SteerChassis : public Chassis{
+class SteerChassis : public SteerChassisBase{
 private:
-	using MoveMode = SteerOpration::MoveMode;
-	static constexpr float RAD_DIFF_LIM = M_PI / 2.0;
-
 	const std::array<std::shared_ptr<DriveWheel>, N> _wheel;//!< 駆動輪
 	const std::array<std::shared_ptr<Motor>, N> _steering;//<! 操舵
 
@@ -36,7 +28,9 @@ private:
 	const std::array<const float, N> _wheel_sin = {0.0};
 	const std::array<const float, N> _wheel_length = {0.0};
 
-	SteerOpration::MoveMode _mode = MoveMode::nomal;
+	MoveMode _mode = MoveMode::nomal;
+
+
 	/**
 	 * @brief 周期コールバック関数
 	 */
@@ -108,7 +102,7 @@ public:
 		const std::shared_ptr<Odmetry>& odmetry,
 		std::array<std::shared_ptr<DriveWheel>, N> wheel,
 		std::array<std::shared_ptr<Motor>, N> steering)
-			: Chassis(period, odmetry),
+			: SteerChassisBase(period, odmetry),
 			  _wheel(wheel),
 			  _steering(steering){
 
@@ -131,37 +125,6 @@ public:
 
 	virtual ~SteerChassis(){
 
-	}
-
-
-
-
-
-	/**
-	 * @brief 速度入力
-	 * @param[in] velocity 速度[m/s],[rad/s]
-	 * @param[in] mode 動作モード
-	 * @return 速度入力可能か
-	 */
-	virtual bool SetVelocity(Coordinate<float> velocity, MoveMode mode){
-		_mode = mode;
-		_target_velocity = velocity;
-		return true;
-	}
-
-	/**
-	 * @brief 速度入力
-	 * @param[in] velocity_mps 速度[m/s]
-	 * @param[in] rot_radps [rad/s]
-	 * @param[in] mode 動作モード
-	 * @return 速度入力可能か
-	 */
-	virtual bool SetVelocity(Eigen::Vector2f velocity_mps, float rot_radps, MoveMode mode){
-		_mode = mode;
-		_target_velocity.x() = velocity_mps.x();
-		_target_velocity.y() = velocity_mps.y();
-		_target_velocity.theta() = rot_radps;
-		return true;
 	}
 };
 }
