@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['writepage_833',['WritePage',['../d8/d41/namespacenut_1_1flash.html#a146f53b8f8f1bdd6088724634101487c',1,'nut::flash::WritePage(uint32_t address, void *data, uint32_t size)'],['../d8/d41/namespacenut_1_1flash.html#a32c0c9eca6282db60957384a540251dc',1,'nut::flash::WritePage(uint32_t address, std::array&lt; uint8_t, N &gt; data)'],['../d8/d41/namespacenut_1_1flash.html#adc1d8fdc58cf334ec01c0da6a7cb9e91',1,'nut::flash::WritePage(uint32_t address, T *data)']]],
-  ['writesector_834',['WriteSector',['../d8/d41/namespacenut_1_1flash.html#aa392b7de3d8a47b5ee110ab6f56f89a0',1,'nut::flash::WriteSector(uint32_t sector, uint32_t address, void *data, uint32_t size)'],['../d8/d41/namespacenut_1_1flash.html#aad465a61c971220d734f864d41068fd2',1,'nut::flash::WriteSector(uint32_t sector, uint32_t address, std::array&lt; uint8_t, N &gt; data)'],['../d8/d41/namespacenut_1_1flash.html#a2b604ef0e18d71eb0e3e38c433fe40e1',1,'nut::flash::WriteSector(uint32_t sector, uint32_t address, T *data)']]]
+  ['vecpid_1175',['VecPID',['../d2/d44/classnut_1_1_vec_p_i_d.html#a1c964663bf9ddb0dc97106655d0b9e0a',1,'nut::VecPID']]],
+  ['vl53l0x_1176',['VL53L0X',['../d7/df1/classnut_1_1_v_l53_l0_x.html#ad9ee9bb061f78b750ae677e95678f2f5',1,'nut::VL53L0X']]]
 ];

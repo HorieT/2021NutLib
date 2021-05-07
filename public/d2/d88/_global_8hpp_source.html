@@ -109,7 +109,7 @@ $(document).ready(function(){initNavTree('d2/d88/_global_8hpp_source.html','../.
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;stm32f1xx_hal.h&quot;</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#elif defined STM32F303x8</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;stm32f3xx_hal.h&quot;</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#elif defined STM32F407xx || STM32F446xx</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#elif defined STM32F407xx || defined STM32F446xx</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;stm32f4xx_hal.h&quot;</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#elif defined STM32F767xx</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;stm32f7xx_hal.h&quot;</span></div>
@@ -123,6 +123,10 @@ $(document).ready(function(){initNavTree('d2/d88/_global_8hpp_source.html','../.
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">//Eigen代数計算ライブラリ</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &quot;Eigen/Core&quot;</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment"> * STL</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment"> *c++20以降であれば_USE_MATH_DEFINES及びM_PI等の定義を消し&lt;numbers&gt;に変更</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#define _USE_MATH_DEFINES</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#include &lt;cmath&gt;</span></div>
@@ -159,13 +163,40 @@ $(document).ready(function(){initNavTree('d2/d88/_global_8hpp_source.html','../.
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;}</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="../../dd/d51/namespacenut.html#aa8e20f1e91318570d8b1d06885ade476">   87</a></span>&#160;constexpr <span class="keyword">auto</span> <a class="code" href="../../dd/d51/namespacenut.html#aa8e20f1e91318570d8b1d06885ade476">BitSwap</a>(T data) -&gt; std::enable_if_t&lt;std::is_integral_v&lt;T&gt;, T&gt;{</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    constexpr <span class="keywordtype">size_t</span> size = <span class="keyword">sizeof</span>(T);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    static_assert(size &lt;= 32, <span class="stringliteral">&quot;bit size over&quot;</span>);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    T tmp = data;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordflow">switch</span>(size){</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">case</span> 32:</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        tmp = ((tmp &amp; 0x0000ffff) &lt;&lt; 16) | ((tmp &gt;&gt; 16) &amp; 0x0000ffff);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        [[fallthrough]];</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordflow">case</span> 16:</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        tmp = ((tmp &amp; 0x00ff00ff) &lt;&lt;  8) | ((tmp &gt;&gt;  8) &amp; 0x00ff00ff);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        [[fallthrough]];</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordflow">case</span> 8:</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        tmp = ((tmp &amp; 0x0f0f0f0f) &lt;&lt;  4) | ((tmp &gt;&gt;  4) &amp; 0x0f0f0f0f);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        [[fallthrough]];</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordflow">case</span> 4:</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        tmp = ((tmp &amp; 0x33333333) &lt;&lt;  2) | ((tmp &gt;&gt;  2) &amp; 0x33333333);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        [[fallthrough]];</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordflow">case</span> 2:</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        tmp = ((tmp &amp; 0x55555555) &lt;&lt;  1) | ((tmp &gt;&gt;  1) &amp; 0x55555555);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        [[fallthrough]];</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    }</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordflow">return</span> tmp;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;}</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="anamespacenut_html"><div class="ttname"><a href="../../dd/d51/namespacenut.html">nut</a></div><div class="ttdoc">CANバスの通信仕様</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/dbd/_c_a_n_bus_protocol_8hpp_source.html#l00010">CANBusProtocol.hpp:10</a></div></div>
 <div class="ttc" id="anamespacenut_html_ab449a1023ef05c07b040b6e4d1e2dafa"><div class="ttname"><a href="../../dd/d51/namespacenut.html#ab449a1023ef05c07b040b6e4d1e2dafa">nut::USE_NUTLIB_CALLBACKS_FLAG</a></div><div class="ttdeci">static constexpr bool USE_NUTLIB_CALLBACKS_FLAG</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d88/_global_8hpp_source.html#l00077">Global.hpp:77</a></div></div>
 <div class="ttc" id="a_global_8hpp_html_a2ee93ef6e1e3b5d1729900b8fa563931"><div class="ttname"><a href="../../d2/d88/_global_8hpp.html#a2ee93ef6e1e3b5d1729900b8fa563931">M_2PI_f</a></div><div class="ttdeci">constexpr float M_2PI_f</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d88/_global_8hpp_source.html#l00065">Global.hpp:65</a></div></div>
 <div class="ttc" id="a_global_8hpp_html_aec1eaa9c308e28b44ea6f1f930fcc560"><div class="ttname"><a href="../../d2/d88/_global_8hpp.html#aec1eaa9c308e28b44ea6f1f930fcc560">M_PI_f</a></div><div class="ttdeci">constexpr float M_PI_f</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d88/_global_8hpp_source.html#l00066">Global.hpp:66</a></div></div>
+<div class="ttc" id="anamespacenut_html_aa8e20f1e91318570d8b1d06885ade476"><div class="ttname"><a href="../../dd/d51/namespacenut.html#aa8e20f1e91318570d8b1d06885ade476">nut::BitSwap</a></div><div class="ttdeci">constexpr auto BitSwap(T data) -&gt; std::enable_if_t&lt; std::is_integral_v&lt; T &gt;, T &gt;</div><div class="ttdoc">ビットスワップ</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d88/_global_8hpp_source.html#l00087">Global.hpp:87</a></div></div>
 <div class="ttc" id="a_global_8hpp_html_af764d117dca888425c96cf0bb4f5bd19"><div class="ttname"><a href="../../d2/d88/_global_8hpp.html#af764d117dca888425c96cf0bb4f5bd19">M_PI_2_f</a></div><div class="ttdeci">constexpr float M_PI_2_f</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d88/_global_8hpp_source.html#l00067">Global.hpp:67</a></div></div>
 <div class="ttc" id="a_global_8hpp_html_ae71449b1cc6e6250b91f539153a7a0d3"><div class="ttname"><a href="../../d2/d88/_global_8hpp.html#ae71449b1cc6e6250b91f539153a7a0d3">M_PI</a></div><div class="ttdeci">#define M_PI</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d88/_global_8hpp_source.html#l00054">Global.hpp:54</a></div></div>
 <!-- start footer part -->

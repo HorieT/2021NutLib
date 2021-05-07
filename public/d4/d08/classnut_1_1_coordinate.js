@@ -2,7 +2,6 @@ var classnut_1_1_coordinate =
 [
     [ "Coordinate", "d4/d08/classnut_1_1_coordinate.html#a4b5d5d5c26308db2dcec2ed599fca315", null ],
     [ "Coordinate", "d4/d08/classnut_1_1_coordinate.html#a90c694db49d64f0b9487363688d8df67", null ],
-    [ "Coordinate", "d4/d08/classnut_1_1_coordinate.html#ad624636cfb2e0462116b12b4e1bcfe7a", null ],
     [ "Angle", "d4/d08/classnut_1_1_coordinate.html#a20e328a9a892b42718ba0d82acaa0851", null ],
     [ "Angle", "d4/d08/classnut_1_1_coordinate.html#aedcbac79d9f0a1122b9b86d5ae73f107", null ],
     [ "GetVector", "d4/d08/classnut_1_1_coordinate.html#a57691b4b83223055b779ed8c9a4250dd", null ],
@@ -16,7 +15,6 @@ var classnut_1_1_coordinate =
     [ "operator-=", "d4/d08/classnut_1_1_coordinate.html#ab18aec5f13f22aa082ea33ae14ea313f", null ],
     [ "operator-=", "d4/d08/classnut_1_1_coordinate.html#a1798fbc63ac8b0c52b9faa7921c07e26", null ],
     [ "operator/=", "d4/d08/classnut_1_1_coordinate.html#adbb1394ec064290add359736fc9db074", null ],
-    [ "operator=", "d4/d08/classnut_1_1_coordinate.html#a37f737ab60c89af2cf93498fcb747501", null ],
     [ "operator[]", "d4/d08/classnut_1_1_coordinate.html#af7d26e0b5b119abb90d506402cae590f", null ],
     [ "operator[]", "d4/d08/classnut_1_1_coordinate.html#a37302d7c69271c9456f2b2ee00d197ac", null ],
     [ "operator[]", "d4/d08/classnut_1_1_coordinate.html#af7338dc37824dd90e4168358783b9bd7", null ],

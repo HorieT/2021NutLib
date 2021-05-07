@@ -6,8 +6,9 @@ var classnut_1_1_m_d2021 =
       [ "absEnc", "d0/d4a/classnut_1_1_m_d2021.html#a5abb9d9aeaf08f3b3c3cb46aa87ddd83ad89375c6cfd71bf90a85e05c9ae88898", null ],
       [ "absEncCurrent", "d0/d4a/classnut_1_1_m_d2021.html#a5abb9d9aeaf08f3b3c3cb46aa87ddd83aefb471b63ff000ae3105b6b9bf7312e4", null ]
     ] ],
-    [ "MD2021", "d0/d4a/classnut_1_1_m_d2021.html#ae9b10a8fd56a471e6a0a578f9d817b15", null ],
+    [ "MD2021", "d0/d4a/classnut_1_1_m_d2021.html#a6213bdf82f6fc647a22afaebe2f0e776", null ],
     [ "~MD2021", "d0/d4a/classnut_1_1_m_d2021.html#ab78dd23458786bc53ea6ba787cc87cd7", null ],
+    [ "ChangeMode", "d0/d4a/classnut_1_1_m_d2021.html#aebbb11cf6d7069b4925a16de1b9493ab", null ],
     [ "ConvertOpration", "d0/d4a/classnut_1_1_m_d2021.html#a529a40c9719d0ae4a7e2cb283c8527ae", null ],
     [ "Deinit", "d0/d4a/classnut_1_1_m_d2021.html#ab8679cfb8de0c9e2996e163e7b8c53a7", null ],
     [ "Init", "d0/d4a/classnut_1_1_m_d2021.html#a9af3b1f8853c1c283df0b345409848a6", null ],

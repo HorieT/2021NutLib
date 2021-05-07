@@ -24,7 +24,7 @@ namespace nut{
  *  FIFOごとに`FIFO0ReceiveCallback()`と'FIFO1ReceiveCallback()'を使用して下ください。
  *  また送信はSTマイコン内部のメールボックスとは別にFIFO queueを用意してあります。
  *  このqueueの排出優先順位はCANの識別子優先順位と同等です。
- *	queueは最大255までのメッセージを保持しますが、それ以上溜まると以降のデータは破棄します。
+ *	queueは最大128までのメッセージを保持しますが、それ以上溜まると送信待ち中のメールボックス内データから破棄します。
  *
  * @attention
  *  	拡張CANには対応していません
@@ -46,13 +46,17 @@ public:
 
 	using RxCallbackIt = HALCallback<RxDataType>::CallbackIterator;
 	using RxExCallbackIt = HALCallback<RxDataType>::ExCallbackIterator;
+	using ErrorCallbackIt = HALCallback<RxDataType>::CallbackIterator;
+	using ErrorExCallbackIt = HALCallback<RxDataType>::ExCallbackIterator;
 
 private:
 	using TxCallbackIt = decltype(callback::CAN_TxMailboxComplete)::CallbackIterator;
+	using TxAbortCallbackIt = decltype(callback::CAN_TxMailboxAbort)::CallbackIterator;
 	using Rx0CallbackIt = decltype(callback::CAN_RxFifo0MsgPending)::ExCallbackIterator;
 	using Rx1CallbackIt = decltype(callback::CAN_RxFifo1MsgPending)::ExCallbackIterator;
+	using ErrorBaseCallbackIt = decltype(callback::CAN_Error)::ExCallbackIterator;
 
-	static constexpr uint16_t SEND_DATA_QUEUE_MAX = 255;
+	static constexpr uint16_t SEND_DATA_QUEUE_MAX = 128;
 	static constexpr uint32_t CAN_DEFAULT_CALLBACK_FLAGS =
 			CAN_IT_RX_FIFO0_MSG_PENDING |
 			CAN_IT_RX_FIFO1_MSG_PENDING |
@@ -70,17 +74,19 @@ private:
 		std::greater<TxDataType>
 		> _send_data_queue;
 	//tx mailbox object pueue
-	std::deque<TxDataType> _mailbox_queue;
+	std::array<std::unique_ptr<TxDataType>, 3> _mailbox_data;
 
 	//mutexの代わり
 	volatile bool _mailbox_queue_lock = false;
 
 
 	TxCallbackIt _tx_callback_it;
+	TxAbortCallbackIt _tx_abort_callback_it;
 	Rx0CallbackIt _rx0_callback_it;
 	Rx1CallbackIt _rx1_callback_it;
+	ErrorBaseCallbackIt _error_callback_it;
 	std::array<HALCallback<RxDataType>, 2> _receive_callback;
-
+	HALCallback<CAN_HandleTypeDef*> _error_callback;
 
 	/**
 	 * @brief メールボックス追加関数
@@ -88,21 +94,20 @@ private:
 	 * @details 送信メールボックスにデータを入れます
 	 * @param[in] tx_data 送信データ
 	 */
-	void PushMailbox(TxDataType&& tx_data){
+	void PushMailbox(const TxDataType& tx_data){
 		_mailbox_queue_lock = true;
-		_mailbox_queue.push_back(std::move(tx_data));
-		HAL_CAN_AddTxMessage(
-				_hcan,
-				&_mailbox_queue.back().header,
-				_mailbox_queue.back().data.data(),
-				&_mailbox_queue.back().mailbox);
-		if(_mailbox_queue.size() > 3){
-			for(auto it = _mailbox_queue.begin();it != std::prev(_mailbox_queue.end());++it){
-				if(it->mailbox ==_mailbox_queue.back().mailbox)
-					if(_mailbox_queue.erase(it) == std::prev(_mailbox_queue.end()))break;
-			}
-		}
+		std::unique_ptr<TxDataType> data = std::make_unique<TxDataType>(tx_data);
+
+		__disable_irq();//exti disable
+		if(HAL_OK == HAL_CAN_AddTxMessage(
+						_hcan,
+						&data.get()->header,
+						data.get()->data.data(),
+						&data.get()->mailbox))
+			_mailbox_data[data.get()->mailbox / 2u] = std::move(data);
+
 		_mailbox_queue_lock = false;
+		__enable_irq();//exti enable
 	}
 
 
@@ -111,14 +116,17 @@ private:
 	 * @details 送信メールボックスにデータを入れます
 	 * @param[in] tx_data 送信データ
 	 */
-	void AddTxDataQueue(TxDataType tx_data){
+	void AddTxDataQueue(const TxDataType& tx_data){
 		__disable_irq();//exti disable
 		if(HAL_CAN_GetTxMailboxesFreeLevel(_hcan) != 0){
-			PushMailbox(std::move(tx_data));
+			PushMailbox(tx_data);
 		}
 		else{
 			if(_send_data_queue.size() < SEND_DATA_QUEUE_MAX){
-				_send_data_queue.push(std::move(tx_data));
+				_send_data_queue.emplace(tx_data);
+			}
+			else{
+				HAL_CAN_AbortTxRequest(_hcan, CAN_TX_MAILBOX0 | CAN_TX_MAILBOX1 | CAN_TX_MAILBOX2);
 			}
 		}
 		__enable_irq();//exti enable
@@ -129,9 +137,12 @@ private:
 	 * @param[in] hcan 割込みCANハンドラ
 	 */
 	void MailboxComplete(CAN_HandleTypeDef* hcan){
-		if(hcan != _hcan || _send_data_queue.empty())return;
 		__disable_irq();//exti disable
-		PushMailbox(TxDataType(_send_data_queue.top()));
+		if(hcan != _hcan || _send_data_queue.empty()){
+			__enable_irq();//exti enable
+			return;
+		}
+		PushMailbox(_send_data_queue.top());
 		_send_data_queue.pop();
 		__enable_irq();//exti enable
 	}
@@ -159,19 +170,36 @@ private:
 		return false;
 	}
 
+	/**
+	 * @brief エラー取得関数
+	 * @param[in] hcan canハンドル
+	 * @return エラー処理通過の可否
+	 */
+	bool Error(CAN_HandleTypeDef* hcan){
+		if(hcan == _hcan){
+			_error_callback.ReadCallbacks(hcan);
+			return true;
+		}
+		return false;
+	}
+
 public:
 	/*
 	 * @param[in] hcan CANハンドル
 	 */
 	CANWrapper(CAN_HandleTypeDef* hcan) : _hcan(hcan){
 		_tx_callback_it = callback::CAN_TxMailboxComplete.AddCallback(1, [this](CAN_HandleTypeDef* hcan){MailboxComplete(hcan);});
+		_tx_abort_callback_it = callback::CAN_TxMailboxAbort.AddCallback(1, [this](CAN_HandleTypeDef* hcan){MailboxComplete(hcan);});
 		_rx0_callback_it = callback::CAN_RxFifo0MsgPending.AddExclusiveCallback(1, [this](CAN_HandleTypeDef* hcan){return Receive(hcan, 0);});
 		_rx1_callback_it = callback::CAN_RxFifo1MsgPending.AddExclusiveCallback(1, [this](CAN_HandleTypeDef* hcan){return Receive(hcan, 1);});
+		_error_callback_it = callback::CAN_Error.AddExclusiveCallback(1, [this](CAN_HandleTypeDef* hcan){return Error(hcan);});
 	}
 	~CANWrapper(){
 		callback::CAN_TxMailboxComplete.EraseCallback(_tx_callback_it);
+		callback::CAN_TxMailboxAbort.EraseCallback(_tx_abort_callback_it);
 		callback::CAN_RxFifo0MsgPending.EraseExclusiveCallback(_rx0_callback_it);
 		callback::CAN_RxFifo1MsgPending.EraseExclusiveCallback(_rx1_callback_it);
+		callback::CAN_Error.EraseExclusiveCallback(_error_callback_it);
 	}
 
 
@@ -355,6 +383,12 @@ public:
 		return _receive_callback[1];
 	}
 
+	/**
+	 * @brief エラーコールバック関数ハンドラ
+	 */
+	inline HALCallback<CAN_HandleTypeDef*>& ErrorCallback(){
+		return _error_callback;
+	}
 	/**
 	 * @brief 保有ハンドルのゲッター
 	 * @return 保有しているCANハンドルの生ポインタ

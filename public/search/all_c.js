@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['last_5frad_228',['last_rad',['../db/d01/classnut_1_1_direct_duty_motor.html#a46b93decc586b6b1b2af979ade153489',1,'nut::DirectDutyMotor']]],
-  ['lock_229',['lock',['../d3/d8d/namespacenut_1_1can__protocol_1_1micom.html#a4510e29fd1a8a8002e588e1160cab27aadce7c4174ce9323904a934a486c41288',1,'nut::can_protocol::micom']]]
+  ['kilo_328',['kilo',['../da/dc9/namespacenut_1_1unit.html#af650c50f32b1a28cba904ef33d5bf793',1,'nut::unit']]],
+  ['kilogram_329',['KiloGram',['../dd/d51/namespacenut.html#a9b646c16fbaa9a54cdf2bcc868fe339c',1,'nut']]]
 ];

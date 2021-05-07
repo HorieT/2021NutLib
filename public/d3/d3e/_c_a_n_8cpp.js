@@ -1,5 +1,6 @@
 var _c_a_n_8cpp =
 [
+    [ "HAL_CAN_ErrorCallback", "d3/d3e/_c_a_n_8cpp.html#a5f50dd09a65bf48c31926f5aa9b162e7", null ],
     [ "HAL_CAN_RxFifo0FullCallback", "d3/d3e/_c_a_n_8cpp.html#a29ebf2ba3648d7289dfb17ec850e5b97", null ],
     [ "HAL_CAN_RxFifo0MsgPendingCallback", "d3/d3e/_c_a_n_8cpp.html#a7368d39e78009c017d6f81ccf33b9b2c", null ],
     [ "HAL_CAN_RxFifo1FullCallback", "d3/d3e/_c_a_n_8cpp.html#a066371ef27009ea142a4ddd765996a79", null ],

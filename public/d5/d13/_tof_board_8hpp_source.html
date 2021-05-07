@@ -1,0 +1,220 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>NutLib: NutLib/Sensor/TofBoard.hpp ソースファイル</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">NutLib
+   </div>
+  </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.svg"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.20 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'検索');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('d5/d13/_tof_board_8hpp_source.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">TofBoard.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d5/d13/_tof_board_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;../Global.hpp&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;../CANWrapper.hpp&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;../CANBusProtocol.hpp&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;../TimeScheduler.hpp&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../dd/d51/namespacenut.html">nut</a>{</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="../../da/d0a/classnut_1_1_tof_board.html">   16</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../da/d0a/classnut_1_1_tof_board.html">TofBoard</a> final{</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">static</span> constexpr uint8_t DEFAULT_CAN_PRIORITY = 16;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">static</span> constexpr <a class="code" href="../../db/dcb/classnut_1_1unit_1_1_unit.html">MilliSecond&lt;uint32_t&gt;</a> REGULAR_TIMEOUT = 300;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">static</span> constexpr <a class="code" href="../../db/dcb/classnut_1_1unit_1_1_unit.html">MilliSecond&lt;uint32_t&gt;</a> REMOTE_TIMEOUT = 100;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">const</span> std::shared_ptr&lt;CANWrapper&gt; _can;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">const</span> uint8_t _my_id = 0;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">const</span> uint8_t _id = 0;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">bool</span> _is_init = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">bool</span> _is_regular_request = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="../../db/dcb/classnut_1_1unit_1_1_unit.html">MilliMeter&lt;uint16_t&gt;</a> _distance = 65535;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="../../dc/d4f/classnut_1_1_c_a_n_wrapper.html#a977fc2052cebe9b0d79b4ccac1cc3698">CANWrapper::RxExCallbackIt</a> _recive_it;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">bool</span> Recive(<a class="code" href="../../d9/da1/structnut_1_1_c_a_n_wrapper_1_1_rx_data_type.html">CANWrapper::RxDataType</a> rx_data){</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordflow">if</span>(rx_data.<a class="code" href="../../d9/da1/structnut_1_1_c_a_n_wrapper_1_1_rx_data_type.html#a994bf0de8663b672f6e41abcb166ae4d">header</a>.RTR != CAN_RTR_DATA)<span class="keywordflow">return</span> <span class="keyword">false</span>;<span class="comment">//not data frame</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordflow">if</span>(rx_data.<a class="code" href="../../d9/da1/structnut_1_1_c_a_n_wrapper_1_1_rx_data_type.html#aa16830f8805797226021e6e2827cdb76">data</a>[0] != _id)<span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="../../d4/db2/namespacenut_1_1can__protocol.html#a8f6d69b0ea52a4d58f360f48bfab1cc2">can_protocol::GetDeviceID</a>(rx_data.<a class="code" href="../../d9/da1/structnut_1_1_c_a_n_wrapper_1_1_rx_data_type.html#a994bf0de8663b672f6e41abcb166ae4d">header</a>.StdId) != _my_id)<span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordflow">switch</span>(<span class="keyword">static_cast&lt;</span><a class="code" href="../../d3/d8d/namespacenut_1_1can__protocol_1_1micom.html#a6a234046b77cba7ae3c59ec1c8319964">can_protocol::micom::DataTypeTof</a><span class="keyword">&gt;</span>(<a class="code" href="../../d4/db2/namespacenut_1_1can__protocol.html#af51b8e40c6700abc5489e675dff57f35">can_protocol::GetDataType</a>(rx_data.<a class="code" href="../../d9/da1/structnut_1_1_c_a_n_wrapper_1_1_rx_data_type.html#a994bf0de8663b672f6e41abcb166ae4d">header</a>.StdId))){</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="../../d3/d8d/namespacenut_1_1can__protocol_1_1micom.html#a6a234046b77cba7ae3c59ec1c8319964a2fa47f7c65fec19cc163b195725e3844">nut::can_protocol::micom::DataTypeTof::length</a>:</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            uint16_t tmp;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            std::memcpy(&amp;tmp, &amp;rx_data.<a class="code" href="../../d9/da1/structnut_1_1_c_a_n_wrapper_1_1_rx_data_type.html#aa16830f8805797226021e6e2827cdb76">data</a>[1], 2);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            _distance = tmp;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        }</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">void</span> SendOperation(<a class="code" href="../../df/d57/namespacenut_1_1can__protocol_1_1tof.html#ae45c7b8ee5025ab12b148b124ef46b15">can_protocol::tof::SpecialOperation</a> operation){</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">if</span>(!_is_init)<span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        std::array&lt;uint8_t, 2&gt; data{_my_id, <span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(operation)};</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        _can-&gt;Transmit&lt;2&gt;(<a class="code" href="../../d4/db2/namespacenut_1_1can__protocol.html#a58cc76324c52ec953d7699f31457baa9">can_protocol::MakeCANID</a>(_id, <a class="code" href="../../df/d57/namespacenut_1_1can__protocol_1_1tof.html#aaf03f9ac2749a9a4317862729d1c18b8a8673c35f714e6645ca3ca8c0d65d86c1">can_protocol::tof::DataType::specialOperation</a>), data);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="../../da/d0a/classnut_1_1_tof_board.html#a0b6f236ce37bbdee20d2c3a757c686bf">   57</a></span>&#160;    <a class="code" href="../../da/d0a/classnut_1_1_tof_board.html#a0b6f236ce37bbdee20d2c3a757c686bf">TofBoard</a>(<span class="keyword">const</span> std::shared_ptr&lt;CANWrapper&gt;&amp; can) : _can(can){</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="../../da/d0a/classnut_1_1_tof_board.html#aa3122203ce2d35fd839aa8f4be21c8a6">   60</a></span>&#160;    <a class="code" href="../../da/d0a/classnut_1_1_tof_board.html#aa3122203ce2d35fd839aa8f4be21c8a6">~TofBoard</a>(){</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <a class="code" href="../../da/d0a/classnut_1_1_tof_board.html#a18c339ef48cf84d00da0e9e67e0b91bf">Deinit</a>();</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="../../da/d0a/classnut_1_1_tof_board.html#a5fef5be64872f6048d423e1172bf3e12">   65</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../da/d0a/classnut_1_1_tof_board.html#a5fef5be64872f6048d423e1172bf3e12">Init</a>(uint8_t my_id, uint8_t device_num, uint8_t can_priority = DEFAULT_CAN_PRIORITY){</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordflow">if</span>(_is_init)<span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        _is_init = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keyword">const_cast&lt;</span>uint8_t&amp;<span class="keyword">&gt;</span>(_my_id) = my_id;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keyword">const_cast&lt;</span>uint8_t&amp;<span class="keyword">&gt;</span>(_id) = <a class="code" href="../../d4/db2/namespacenut_1_1can__protocol.html#ab9d182ae4b58b3259481136dc0bc0d44">can_protocol::MakeDeviceID</a>(<a class="code" href="../../d4/db2/namespacenut_1_1can__protocol.html#a81d11237e130e2bb55ce3201eacf5375a81898fbfdc20875560e7765d51e85a87">can_protocol::Device::tof</a>, device_num);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        _recive_it = _can-&gt;FIFO0ReceiveCallback().AddExclusiveCallback(can_priority, [<span class="keyword">this</span>](<a class="code" href="../../d9/da1/structnut_1_1_c_a_n_wrapper_1_1_rx_data_type.html">CANWrapper::RxDataType</a> rx_data){<span class="keywordflow">return</span> Recive(rx_data);});</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="../../da/d0a/classnut_1_1_tof_board.html#a18c339ef48cf84d00da0e9e67e0b91bf">   73</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../da/d0a/classnut_1_1_tof_board.html#a18c339ef48cf84d00da0e9e67e0b91bf">Deinit</a>(){</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordflow">if</span>(!_is_init)<span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        _can-&gt;FIFO0ReceiveCallback().EraseExclusiveCallback(_recive_it);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        _is_init = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="../../da/d0a/classnut_1_1_tof_board.html#a2f6368b6872fa88b8da000a589a47170">   79</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../da/d0a/classnut_1_1_tof_board.html#a2f6368b6872fa88b8da000a589a47170">RegularModeStart</a>(){</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordflow">if</span>(!_is_init || _is_regular_request)<span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        SendOperation(can_protocol::tof::SpecialOperation::regularModeStart);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        _is_regular_request = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    }</div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="../../da/d0a/classnut_1_1_tof_board.html#a2702b64c58688304930fc4fec1af8e66">   84</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../da/d0a/classnut_1_1_tof_board.html#a2702b64c58688304930fc4fec1af8e66">RegularModeStop</a>(){</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordflow">if</span>(!_is_init || !_is_regular_request)<span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        SendOperation(<a class="code" href="../../df/d57/namespacenut_1_1can__protocol_1_1tof.html#ae45c7b8ee5025ab12b148b124ef46b15a7da40cb408b7e9deb6fc883e95c39504">can_protocol::tof::SpecialOperation::regularModeStop</a>);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        _is_regular_request = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    }</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="../../da/d0a/classnut_1_1_tof_board.html#a870bea3b9ba5e83aaca8d9de665902bc">   90</a></span>&#160;    <a class="code" href="../../db/dcb/classnut_1_1unit_1_1_unit.html">MilliMeter&lt;uint16_t&gt;</a> <a class="code" href="../../da/d0a/classnut_1_1_tof_board.html#a870bea3b9ba5e83aaca8d9de665902bc">Distance</a>()<span class="keyword">const</span>{</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordflow">return</span> _distance;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;};</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}</div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="anamespacenut_1_1can__protocol_1_1tof_html_ae45c7b8ee5025ab12b148b124ef46b15a7da40cb408b7e9deb6fc883e95c39504"><div class="ttname"><a href="../../df/d57/namespacenut_1_1can__protocol_1_1tof.html#ae45c7b8ee5025ab12b148b124ef46b15a7da40cb408b7e9deb6fc883e95c39504">nut::can_protocol::tof::SpecialOperation::regularModeStart</a></div><div class="ttdeci">@ regularModeStart</div></div>
+<div class="ttc" id="astructnut_1_1_c_a_n_wrapper_1_1_rx_data_type_html_aa16830f8805797226021e6e2827cdb76"><div class="ttname"><a href="../../d9/da1/structnut_1_1_c_a_n_wrapper_1_1_rx_data_type.html#aa16830f8805797226021e6e2827cdb76">nut::CANWrapper::RxDataType::data</a></div><div class="ttdeci">std::array&lt; uint8_t, 8 &gt; data</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html#l00044">CANWrapper.hpp:44</a></div></div>
+<div class="ttc" id="anamespacenut_1_1can__protocol_html_a58cc76324c52ec953d7699f31457baa9"><div class="ttname"><a href="../../d4/db2/namespacenut_1_1can__protocol.html#a58cc76324c52ec953d7699f31457baa9">nut::can_protocol::MakeCANID</a></div><div class="ttdeci">static constexpr auto MakeCANID(uint8_t device_id, T data_type) -&gt; typename std::enable_if_t&lt; std::is_enum_v&lt; T &gt;, uint16_t &gt;</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/dbd/_c_a_n_bus_protocol_8hpp_source.html#l00223">CANBusProtocol.hpp:223</a></div></div>
+<div class="ttc" id="aclassnut_1_1_tof_board_html_aa3122203ce2d35fd839aa8f4be21c8a6"><div class="ttname"><a href="../../da/d0a/classnut_1_1_tof_board.html#aa3122203ce2d35fd839aa8f4be21c8a6">nut::TofBoard::~TofBoard</a></div><div class="ttdeci">~TofBoard()</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d13/_tof_board_8hpp_source.html#l00060">TofBoard.hpp:60</a></div></div>
+<div class="ttc" id="anamespacenut_1_1can__protocol_1_1micom_html_a6a234046b77cba7ae3c59ec1c8319964"><div class="ttname"><a href="../../d3/d8d/namespacenut_1_1can__protocol_1_1micom.html#a6a234046b77cba7ae3c59ec1c8319964">nut::can_protocol::micom::DataTypeTof</a></div><div class="ttdeci">DataTypeTof</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/dbd/_c_a_n_bus_protocol_8hpp_source.html#l00092">CANBusProtocol.hpp:92</a></div></div>
+<div class="ttc" id="aclassnut_1_1_tof_board_html"><div class="ttname"><a href="../../da/d0a/classnut_1_1_tof_board.html">nut::TofBoard</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d13/_tof_board_8hpp_source.html#l00016">TofBoard.hpp:16</a></div></div>
+<div class="ttc" id="aclassnut_1_1_tof_board_html_a2f6368b6872fa88b8da000a589a47170"><div class="ttname"><a href="../../da/d0a/classnut_1_1_tof_board.html#a2f6368b6872fa88b8da000a589a47170">nut::TofBoard::RegularModeStart</a></div><div class="ttdeci">void RegularModeStart()</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d13/_tof_board_8hpp_source.html#l00079">TofBoard.hpp:79</a></div></div>
+<div class="ttc" id="anamespacenut_1_1can__protocol_1_1tof_html_aaf03f9ac2749a9a4317862729d1c18b8a8673c35f714e6645ca3ca8c0d65d86c1"><div class="ttname"><a href="../../df/d57/namespacenut_1_1can__protocol_1_1tof.html#aaf03f9ac2749a9a4317862729d1c18b8a8673c35f714e6645ca3ca8c0d65d86c1">nut::can_protocol::tof::DataType::specialOperation</a></div><div class="ttdeci">@ specialOperation</div></div>
+<div class="ttc" id="astructnut_1_1_c_a_n_wrapper_1_1_rx_data_type_html"><div class="ttname"><a href="../../d9/da1/structnut_1_1_c_a_n_wrapper_1_1_rx_data_type.html">nut::CANWrapper::RxDataType</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html#l00042">CANWrapper.hpp:42</a></div></div>
+<div class="ttc" id="aclassnut_1_1_c_a_n_wrapper_html_a977fc2052cebe9b0d79b4ccac1cc3698"><div class="ttname"><a href="../../dc/d4f/classnut_1_1_c_a_n_wrapper.html#a977fc2052cebe9b0d79b4ccac1cc3698">nut::CANWrapper::RxExCallbackIt</a></div><div class="ttdeci">HALCallback&lt; RxDataType &gt;::ExCallbackIterator RxExCallbackIt</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html#l00048">CANWrapper.hpp:48</a></div></div>
+<div class="ttc" id="anamespacenut_1_1can__protocol_1_1tof_html_ae45c7b8ee5025ab12b148b124ef46b15"><div class="ttname"><a href="../../df/d57/namespacenut_1_1can__protocol_1_1tof.html#ae45c7b8ee5025ab12b148b124ef46b15">nut::can_protocol::tof::SpecialOperation</a></div><div class="ttdeci">SpecialOperation</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/dbd/_c_a_n_bus_protocol_8hpp_source.html#l00188">CANBusProtocol.hpp:188</a></div></div>
+<div class="ttc" id="aclassnut_1_1unit_1_1_unit_html"><div class="ttname"><a href="../../db/dcb/classnut_1_1unit_1_1_unit.html">nut::unit::Unit</a></div><div class="ttdoc">単位系クラス</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d6d/_unit_8hpp_source.html#l00044">Unit.hpp:44</a></div></div>
+<div class="ttc" id="anamespacenut_html"><div class="ttname"><a href="../../dd/d51/namespacenut.html">nut</a></div><div class="ttdoc">CANバスの通信仕様</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/dbd/_c_a_n_bus_protocol_8hpp_source.html#l00010">CANBusProtocol.hpp:10</a></div></div>
+<div class="ttc" id="aclassnut_1_1_tof_board_html_a0b6f236ce37bbdee20d2c3a757c686bf"><div class="ttname"><a href="../../da/d0a/classnut_1_1_tof_board.html#a0b6f236ce37bbdee20d2c3a757c686bf">nut::TofBoard::TofBoard</a></div><div class="ttdeci">TofBoard(const std::shared_ptr&lt; CANWrapper &gt; &amp;can)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d13/_tof_board_8hpp_source.html#l00057">TofBoard.hpp:57</a></div></div>
+<div class="ttc" id="anamespacenut_1_1can__protocol_1_1micom_html_a6a234046b77cba7ae3c59ec1c8319964a2fa47f7c65fec19cc163b195725e3844"><div class="ttname"><a href="../../d3/d8d/namespacenut_1_1can__protocol_1_1micom.html#a6a234046b77cba7ae3c59ec1c8319964a2fa47f7c65fec19cc163b195725e3844">nut::can_protocol::micom::DataTypeTof::length</a></div><div class="ttdeci">@ length</div></div>
+<div class="ttc" id="aclassnut_1_1_tof_board_html_a870bea3b9ba5e83aaca8d9de665902bc"><div class="ttname"><a href="../../da/d0a/classnut_1_1_tof_board.html#a870bea3b9ba5e83aaca8d9de665902bc">nut::TofBoard::Distance</a></div><div class="ttdeci">MilliMeter&lt; uint16_t &gt; Distance() const</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d13/_tof_board_8hpp_source.html#l00090">TofBoard.hpp:90</a></div></div>
+<div class="ttc" id="anamespacenut_1_1can__protocol_html_af51b8e40c6700abc5489e675dff57f35"><div class="ttname"><a href="../../d4/db2/namespacenut_1_1can__protocol.html#af51b8e40c6700abc5489e675dff57f35">nut::can_protocol::GetDataType</a></div><div class="ttdeci">static constexpr uint8_t GetDataType(uint16_t can_id)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/dbd/_c_a_n_bus_protocol_8hpp_source.html#l00291">CANBusProtocol.hpp:291</a></div></div>
+<div class="ttc" id="anamespacenut_1_1can__protocol_html_a81d11237e130e2bb55ce3201eacf5375a81898fbfdc20875560e7765d51e85a87"><div class="ttname"><a href="../../d4/db2/namespacenut_1_1can__protocol.html#a81d11237e130e2bb55ce3201eacf5375a81898fbfdc20875560e7765d51e85a87">nut::can_protocol::Device::allNode</a></div><div class="ttdeci">@ allNode</div></div>
+<div class="ttc" id="astructnut_1_1_c_a_n_wrapper_1_1_rx_data_type_html_a994bf0de8663b672f6e41abcb166ae4d"><div class="ttname"><a href="../../d9/da1/structnut_1_1_c_a_n_wrapper_1_1_rx_data_type.html#a994bf0de8663b672f6e41abcb166ae4d">nut::CANWrapper::RxDataType::header</a></div><div class="ttdeci">CAN_RxHeaderTypeDef header</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html#l00043">CANWrapper.hpp:43</a></div></div>
+<div class="ttc" id="aclassnut_1_1_tof_board_html_a2702b64c58688304930fc4fec1af8e66"><div class="ttname"><a href="../../da/d0a/classnut_1_1_tof_board.html#a2702b64c58688304930fc4fec1af8e66">nut::TofBoard::RegularModeStop</a></div><div class="ttdeci">void RegularModeStop()</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d13/_tof_board_8hpp_source.html#l00084">TofBoard.hpp:84</a></div></div>
+<div class="ttc" id="aclassnut_1_1_tof_board_html_a5fef5be64872f6048d423e1172bf3e12"><div class="ttname"><a href="../../da/d0a/classnut_1_1_tof_board.html#a5fef5be64872f6048d423e1172bf3e12">nut::TofBoard::Init</a></div><div class="ttdeci">void Init(uint8_t my_id, uint8_t device_num, uint8_t can_priority=DEFAULT_CAN_PRIORITY)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d13/_tof_board_8hpp_source.html#l00065">TofBoard.hpp:65</a></div></div>
+<div class="ttc" id="anamespacenut_1_1can__protocol_html_a8f6d69b0ea52a4d58f360f48bfab1cc2"><div class="ttname"><a href="../../d4/db2/namespacenut_1_1can__protocol.html#a8f6d69b0ea52a4d58f360f48bfab1cc2">nut::can_protocol::GetDeviceID</a></div><div class="ttdeci">static constexpr uint8_t GetDeviceID(uint16_t can_id)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/dbd/_c_a_n_bus_protocol_8hpp_source.html#l00283">CANBusProtocol.hpp:283</a></div></div>
+<div class="ttc" id="aclassnut_1_1_tof_board_html_a18c339ef48cf84d00da0e9e67e0b91bf"><div class="ttname"><a href="../../da/d0a/classnut_1_1_tof_board.html#a18c339ef48cf84d00da0e9e67e0b91bf">nut::TofBoard::Deinit</a></div><div class="ttdeci">void Deinit()</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d13/_tof_board_8hpp_source.html#l00073">TofBoard.hpp:73</a></div></div>
+<div class="ttc" id="anamespacenut_1_1can__protocol_html_ab9d182ae4b58b3259481136dc0bc0d44"><div class="ttname"><a href="../../d4/db2/namespacenut_1_1can__protocol.html#ab9d182ae4b58b3259481136dc0bc0d44">nut::can_protocol::MakeDeviceID</a></div><div class="ttdeci">static constexpr uint8_t MakeDeviceID(Device device)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/dbd/_c_a_n_bus_protocol_8hpp_source.html#l00204">CANBusProtocol.hpp:204</a></div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_8b1cfa3accea10fc5ecd39c63013c190.html">NutLib</a></li><li class="navelem"><a class="el" href="../../dir_c2c735cbd9a0ae71a2beef0eda132d9d.html">Sensor</a></li><li class="navelem"><a class="el" href="../../d5/d13/_tof_board_8hpp.html">TofBoard.hpp</a></li>
+    <li class="footer">構築: <a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
+  </ul>
+</div>
+</body>
+</html>

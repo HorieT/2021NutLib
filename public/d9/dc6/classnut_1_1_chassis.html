@@ -113,16 +113,17 @@ nut::Chassis の継承関係図</div>
   <img src="../../d9/dc6/classnut_1_1_chassis.png" usemap="#nut::Chassis_map" alt=""/>
   <map id="nut::Chassis_map" name="nut::Chassis_map">
 <area href="../../df/dd5/classnut_1_1_omni_chassis.html" title="オムニ足回りクラス" alt="nut::OmniChassis&lt; N &gt;" shape="rect" coords="0,56,157,80"/>
-<area href="../../d3/d79/classnut_1_1_steer_chassis.html" alt="nut::SteerChassis&lt; N &gt;" shape="rect" coords="167,56,324,80"/>
-<area href="../../d5/d6b/classnut_1_1_steer_chassis_sp.html" alt="nut::SteerChassisSp&lt; N &gt;" shape="rect" coords="334,56,491,80"/>
+<area href="../../d9/d6a/classnut_1_1_steer_chassis_base.html" title="ステア足回り基底純粋仮想クラス" alt="nut::SteerChassisBase" shape="rect" coords="167,56,324,80"/>
+<area href="../../d3/d79/classnut_1_1_steer_chassis.html" title="操舵と駆動が独立の基本的なステア足回り" alt="nut::SteerChassis&lt; N &gt;" shape="rect" coords="83,112,240,136"/>
+<area href="../../d5/d6b/classnut_1_1_steer_chassis_sp.html" title="操舵と駆動一体型MDによるステア足周りクラス" alt="nut::SteerChassisSp&lt; N &gt;" shape="rect" coords="250,112,407,136"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 公開メンバ関数</h2></td></tr>
-<tr class="memitem:a066c67af9b00ed43b61b75d73f9cec46"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dc6/classnut_1_1_chassis.html#a066c67af9b00ed43b61b75d73f9cec46">Chassis</a> (uint32_t period, const std::shared_ptr&lt; <a class="el" href="../../d6/dcf/classnut_1_1_odmetry.html">Odmetry</a> &gt; &amp;odmetry)</td></tr>
-<tr class="memdesc:a066c67af9b00ed43b61b75d73f9cec46"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ  <a href="../../d9/dc6/classnut_1_1_chassis.html#a066c67af9b00ed43b61b75d73f9cec46">[詳解]</a><br /></td></tr>
-<tr class="separator:a066c67af9b00ed43b61b75d73f9cec46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a825a8e77e3392411e2a04106f71d7969"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dc6/classnut_1_1_chassis.html#a825a8e77e3392411e2a04106f71d7969">Chassis</a> (<a class="el" href="../../dd/d51/namespacenut.html#aabd23ff06314def2ae227f45a4ad9f25">MilliSecond</a>&lt; uint32_t &gt; period, const std::shared_ptr&lt; <a class="el" href="../../d6/dcf/classnut_1_1_odmetry.html">Odmetry</a> &gt; &amp;odmetry)</td></tr>
+<tr class="memdesc:a825a8e77e3392411e2a04106f71d7969"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ  <a href="../../d9/dc6/classnut_1_1_chassis.html#a825a8e77e3392411e2a04106f71d7969">[詳解]</a><br /></td></tr>
+<tr class="separator:a825a8e77e3392411e2a04106f71d7969"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a709cc22845ce960d5c39f218464912c6"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dc6/classnut_1_1_chassis.html#a709cc22845ce960d5c39f218464912c6">~Chassis</a> ()</td></tr>
 <tr class="memdesc:a709cc22845ce960d5c39f218464912c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">デストラクタ  <a href="../../d9/dc6/classnut_1_1_chassis.html#a709cc22845ce960d5c39f218464912c6">[詳解]</a><br /></td></tr>
 <tr class="separator:a709cc22845ce960d5c39f218464912c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -202,8 +203,8 @@ nut::Chassis の継承関係図</div>
 </div>
 </div>
 <h2 class="groupheader">構築子と解体子</h2>
-<a id="a066c67af9b00ed43b61b75d73f9cec46"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a066c67af9b00ed43b61b75d73f9cec46">&#9670;&nbsp;</a></span>Chassis()</h2>
+<a id="a825a8e77e3392411e2a04106f71d7969"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a825a8e77e3392411e2a04106f71d7969">&#9670;&nbsp;</a></span>Chassis()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -214,7 +215,7 @@ nut::Chassis の継承関係図</div>
         <tr>
           <td class="memname">nut::Chassis::Chassis </td>
           <td>(</td>
-          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramtype"><a class="el" href="../../dd/d51/namespacenut.html#aabd23ff06314def2ae227f45a4ad9f25">MilliSecond</a>&lt; uint32_t &gt;&#160;</td>
           <td class="paramname"><em>period</em>, </td>
         </tr>
         <tr>
@@ -363,7 +364,7 @@ nut::Chassis の継承関係図</div>
 
 <p>周期コールバック関数 </p>
 
-<p><a class="el" href="../../df/dd5/classnut_1_1_omni_chassis.html#a909d778161ff44a4905980b35ab8dda4">nut::OmniChassis&lt; N &gt;</a>で実装されています。</p>
+<p><a class="el" href="../../d9/d6a/classnut_1_1_steer_chassis_base.html#aa9eb4069b8d360855c6cc5588cf53f89">nut::SteerChassisBase</a>, <a class="el" href="../../df/dd5/classnut_1_1_omni_chassis.html#a909d778161ff44a4905980b35ab8dda4">nut::OmniChassis&lt; N &gt;</a>で実装されています。</p>
 
 </div>
 </div>

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['zeroreturn_512',['ZeroReturn',['../df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2a306035611947a2057431fd228a41ddfe',1,'nut::ReiwaMD']]]
+  ['y_740',['Y',['../df/d9f/classnut_1_1_joycon_r_o_s.html#a53bcdb205f0f401b5e7a4af0d845e9f7a57cec4137b614c87cb4e24a3d003a3e0',1,'nut::JoyconROS::Y()'],['../d0/d9d/classnut_1_1_xbox_controller.html#a8872d0abe86dbd1f66df54f31bcf52b9a57cec4137b614c87cb4e24a3d003a3e0',1,'nut::XboxController::Y()'],['../d4/d08/classnut_1_1_coordinate.html#a06cf225a0b3fda31a95a1965c03fb31d',1,'nut::Coordinate::y() const &amp;'],['../d4/d08/classnut_1_1_coordinate.html#af36721338e235aab32d08152f8609c01',1,'nut::Coordinate::y() &amp;'],['../d4/d08/classnut_1_1_coordinate.html#a84d3004d37c670d143998e458c874745',1,'nut::Coordinate::y() const &amp;&amp;']]],
+  ['yspead_741',['ySpead',['../d3/d8d/namespacenut_1_1can__protocol_1_1micom.html#a7b3bf21093fcec61da0edab255f62a6eacf935033f8489f5f3152189c63f3cfbb',1,'nut::can_protocol::micom']]]
 ];

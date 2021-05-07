@@ -1,5 +1,5 @@
 /**
- *
+ *　@brief　データのエンコードやデコードのアルゴリズム類
  */
 #pragma once
 
@@ -7,7 +7,16 @@
 #include <vector>
 
 namespace nut{
+/**
+ * @brief COBSエンコード名前空間
+ */
 namespace COBS{
+/**
+ * @brief COBSエンコード
+ * @param[in] first エンコード対象データコンテナのイテレータ始点
+ * @param[in] last エンコード対象データコンテナのイテレータ終点
+ * @return エンコード後データ
+ */
 inline std::vector<uint8_t> Encode(std::vector<uint8_t>::const_iterator first, std::vector<uint8_t>::const_iterator last){
 	std::vector<uint8_t> encoded_data;
 	size_t size = std::distance(first, last);
@@ -32,9 +41,20 @@ inline std::vector<uint8_t> Encode(std::vector<uint8_t>::const_iterator first, s
 	}
 	return encoded_data;
 }
+/**
+ * @brief COBSエンコード
+ * @param[in] data エンコード対象データ
+ * @return エンコード後データ
+ */
 inline std::vector<uint8_t> Encode(const std::vector<uint8_t>& data){
 	return std::move(Encode(data.begin(), data.end()));
 }
+/**
+ * @brief COBSデコード
+ * @param[in] first デコード対象データコンテナのイテレータ始点
+ * @param[in] last デコード対象データコンテナのイテレータ終点
+ * @return デコード後データ
+ */
 inline std::vector<uint8_t> Decode(std::vector<uint8_t>::const_iterator first, std::vector<uint8_t>::const_iterator last){
 	std::vector<uint8_t> decoded_data;
 	size_t size = std::distance(first, last);
@@ -55,6 +75,11 @@ inline std::vector<uint8_t> Decode(std::vector<uint8_t>::const_iterator first, s
 	}
 	return decoded_data;
 }
+/**
+ * @brief COBSデコード
+ * @param[in] data デコード対象データ
+ * @return デコード後データ
+ */
 inline std::vector<uint8_t> Decode(const std::vector<uint8_t>& data){
 	return std::move(Decode(data.begin(), data.end()));
 }

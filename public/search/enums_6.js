@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['paramsinput_1010',['ParamsInput',['../dd/df5/namespacenut_1_1can__protocol_1_1motor.html#a6536007e70dc526c5808ba5b358a8d11',1,'nut::can_protocol::motor']]],
-  ['power_1011',['Power',['../d1/db3/namespacenut_1_1can__protocol_1_1all.html#a3cb6645656a5fe9f5a358f94e3b72124',1,'nut::can_protocol::all']]]
+  ['notificationtype_1404',['NotificationType',['../d1/db3/namespacenut_1_1can__protocol_1_1all.html#adad5d76e61c2a8308c850a46eb9fbd09',1,'nut::can_protocol::all']]]
 ];

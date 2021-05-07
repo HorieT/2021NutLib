@@ -1,11 +1,11 @@
 /**
- * 自作PCコントローラとの通信用クラス
+ * @brief 自作PCコントローラとの通信用クラス
  * ジョイコンのデータはここで持つ
  * GUIの入出力はユーザー定義
  */
 #pragma once
 
-#define IS_EDIT_CONTROLAPP//編集用マクロ こいつが無いとエディタが仕事しない
+#define IS_EDIT_CONTROLAPP///編集用マクロ こいつが無いとエディタが仕事しない
 
 #if defined(IS_EDIT_CONTROLAPP) || __has_include("usbd_cdc_if.h")
 #include "../Global.hpp"
@@ -18,6 +18,9 @@
 #include <map>
 
 namespace nut{
+/**
+ * @brief 自作PCコントローラクラス
+ */
 class ControlApp final{
 private:
 	static constexpr uint8_t JOYCON_HEAD = 0xF0;
@@ -33,9 +36,12 @@ private:
 		}
 		return true;
 	}
+
 	/**
 	 * @brief 受信文の振り分け
 	 * といっても一般データとジョイコンのデータを分けてるだけ
+	 * @param[in] data_sentence 受信データ文
+	 * @return 振り分けできたかどうか
 	 */
 	bool ReadSentence(std::vector<uint8_t>&& data_sentence){
 		uint8_t head = data_sentence[0];
@@ -53,7 +59,7 @@ public:
 	~ControlApp(){}
 
 
-	/*
+	/**
 	 * @brief USB CDCからの受信関数
 	 * @param[in,out] data 受信データ列
 	 * 終端が存在しない未処理データを残して返す
@@ -76,6 +82,13 @@ public:
 		return sentence_count;
 	}
 
+	/**
+	 * @brief データ受信コールバック追加
+	 * @details 同一ヘッダに付き一種類のコールバック関数が持てます
+	 * @param[in] head データヘッダ
+	 * @param[in] callback コールバック関数
+	 * @return 追加できたか
+	 */
 	bool AddReadDataCallback(uint8_t head, std::function<bool(std::vector<uint8_t>)> callback){
 		if(head == JOYCON_HEAD)return false;
 		if(_get_sentence_callback.count(head) != 0) return false;
@@ -83,6 +96,11 @@ public:
 		_get_sentence_callback.emplace(head, callback);
 		return true;
 	}
+	/**
+	 * @brief データ受信コールバック削除
+	 * @param[in] head データヘッダ
+	 * @return 削除できたか
+	 */
 	bool EraseReadDataCallback(uint8_t head){
 		if(head == JOYCON_HEAD)return false;
 		if(_get_sentence_callback.count(head) == 0) return false;
@@ -92,6 +110,12 @@ public:
 	}
 
 
+	/**
+	 * @brief データ送信
+	 * @tparam Size データサイズ
+	 * @param[in] head ヘッダ
+	 * @param[in] data データ
+	 */
 	template<size_t Size>
 	void SendData(uint8_t head, std::array<uint8_t, Size> data){
 		std::vector<uint8_t> send_msg(Size + 1);
@@ -100,8 +124,15 @@ public:
 
 		CDC_Transmit_FS(COBS::Encode(send_msg).data(), Size + 3);//USB送信はブロッカーで同期処理になってるはず
 	}
+
+	/**
+	 * @brief データ送信
+	 * @tparam T データ型
+	 * @param[in] head ヘッダ
+	 * @param[in] data データ
+	 */
 	template<typename T>
-	auto SendData(uint8_t head, T data) -> std::enable_if<std::is_trivially_copyable_v<T>, void>{
+	auto SendData(uint8_t head, T data) -> std::enable_if_t<std::is_trivially_copyable_v<T>>{
 		//static_assert(std::is_trivially_copyable_v<T>, "Send data must be trivial copyable");
 		static constexpr uint8_t size = sizeof(T);
 
@@ -112,9 +143,17 @@ public:
 		CDC_Transmit_FS(COBS::Encode(send_msg).data(), size + 3);//USB送信はブロッカーで同期処理になってるはず
 	}
 
+	/**
+	 * @brief ジョイコンデータが有効に受信できているか
+	 * @return 有効か
+	 */
 	bool IsEnableJoycon()const{
 		return _is_enable_joycon;
 	}
+	/**
+	 * @brief ジョイコンデータの取得
+	 * @return ジョイコンデータ
+	 */
 	const JoyconROS::ButtonData& GetJoycon()const{
 		return _joycon;
 	}

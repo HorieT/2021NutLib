@@ -1,11 +1,17 @@
 /**
- * Xboxコントローラのクラス
+ * @file OmniChassis.hpp
+ * @brief Xboxコントローラ
+ * @author Horie
+ * @date 2021/3
  */
 #pragma once
 
 #include "../Global.hpp"
 
 namespace nut{
+/*
+ * @brief Xboxコントローラのデータクラス
+ */
 class XboxController{
 public:
 	enum class Button : uint32_t{

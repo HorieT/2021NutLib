@@ -113,8 +113,8 @@ $(document).ready(function(){initNavTree('da/d47/_power_supply2021_8hpp_source.h
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    std::array&lt;uint8_t, 8&gt; _rx_data;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="../../df/db1/classnut_1_1_power_supply2021.html#a517ea708d221f3aaf6f743b5916293bf">   28</a></span>&#160;    <a class="code" href="../../df/db1/classnut_1_1_power_supply2021.html#a517ea708d221f3aaf6f743b5916293bf">PowerSupply2021</a>(<span class="keyword">const</span> std::shared_ptr&lt;CANWrapper&gt;&amp; can, uint8_t device_id, uint8_t user_id) :</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        _can(can), _device_id(device_id), _user_id(user_id){</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="../../df/db1/classnut_1_1_power_supply2021.html#a9d4ca5756736493f44a2159361fc7a28">   28</a></span>&#160;    <a class="code" href="../../df/db1/classnut_1_1_power_supply2021.html#a9d4ca5756736493f44a2159361fc7a28">PowerSupply2021</a>(<span class="keyword">const</span> std::shared_ptr&lt;CANWrapper&gt;&amp; can, uint8_t device_num, uint8_t user_id) :</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        _can(can), _device_id(device_num), _user_id(user_id){</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    }</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
@@ -124,39 +124,40 @@ $(document).ready(function(){initNavTree('da/d47/_power_supply2021_8hpp_source.h
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="../../df/db1/classnut_1_1_power_supply2021.html#aaf69fa588f4a904fdb7bf16e0588a5e3">   39</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../df/db1/classnut_1_1_power_supply2021.html#aaf69fa588f4a904fdb7bf16e0588a5e3">Start</a>(){</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;          std::array&lt;uint8_t, 2&gt; ps_data{_user_id, 0x01};</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;          _can-&gt;Transmit&lt;2&gt;(</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                  <a class="code" href="../../d4/db2/namespacenut_1_1can__protocol.html#a58cc76324c52ec953d7699f31457baa9">can_protocol::MakeCANID</a>(</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                          can_protocol::Device::powerSupplay,</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                          _device_id,</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                          <span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(can_protocol::power::DataType::fetState)</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                  ),</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                  ps_data</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;          );</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="../../df/db1/classnut_1_1_power_supply2021.html#a5f8b211fe2ae626eae438946180eb3b6">   50</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../df/db1/classnut_1_1_power_supply2021.html#a5f8b211fe2ae626eae438946180eb3b6">Stop</a>(){</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;          std::array&lt;uint8_t, 2&gt; ps_data{_user_id, 0x00};</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;          _can-&gt;Transmit&lt;2&gt;(</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                  <a class="code" href="../../d4/db2/namespacenut_1_1can__protocol.html#a58cc76324c52ec953d7699f31457baa9">can_protocol::MakeCANID</a>(</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                          can_protocol::Device::powerSupplay,</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                          _device_id,</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                          <span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(can_protocol::power::DataType::fetState)</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                  ),</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                  ps_data</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;          );</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;};</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="../../df/db1/classnut_1_1_power_supply2021.html#aaf69fa588f4a904fdb7bf16e0588a5e3">   42</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../df/db1/classnut_1_1_power_supply2021.html#aaf69fa588f4a904fdb7bf16e0588a5e3">Start</a>(){</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;          std::array&lt;uint8_t, 2&gt; ps_data{_user_id, 0x01};</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;          _can-&gt;Transmit&lt;2&gt;(</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                  <a class="code" href="../../d4/db2/namespacenut_1_1can__protocol.html#a58cc76324c52ec953d7699f31457baa9">can_protocol::MakeCANID</a>(</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                          can_protocol::Device::powerSupplay,</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                          _device_id,</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                          <span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(<a class="code" href="../../db/d6c/namespacenut_1_1can__protocol_1_1power.html#aa9983c54d2d0466d2dc3a2b2aa5a31e6a80aa0912ea897f671b63927c919c38e4">can_protocol::power::DataType::fetState</a>)</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                  ),</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                  ps_data</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;          );</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="../../df/db1/classnut_1_1_power_supply2021.html#a5f8b211fe2ae626eae438946180eb3b6">   56</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../df/db1/classnut_1_1_power_supply2021.html#a5f8b211fe2ae626eae438946180eb3b6">Stop</a>(){</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;          std::array&lt;uint8_t, 2&gt; ps_data{_user_id, 0x00};</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;          _can-&gt;Transmit&lt;2&gt;(</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                  <a class="code" href="../../d4/db2/namespacenut_1_1can__protocol.html#a58cc76324c52ec953d7699f31457baa9">can_protocol::MakeCANID</a>(</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                          can_protocol::Device::powerSupplay,</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                          _device_id,</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                          <span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(<a class="code" href="../../db/d6c/namespacenut_1_1can__protocol_1_1power.html#aa9983c54d2d0466d2dc3a2b2aa5a31e6a80aa0912ea897f671b63927c919c38e4">can_protocol::power::DataType::fetState</a>)</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                  ),</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                  ps_data</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;          );</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;};</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="anamespacenut_1_1can__protocol_html_a58cc76324c52ec953d7699f31457baa9"><div class="ttname"><a href="../../d4/db2/namespacenut_1_1can__protocol.html#a58cc76324c52ec953d7699f31457baa9">nut::can_protocol::MakeCANID</a></div><div class="ttdeci">static constexpr auto MakeCANID(uint8_t device_id, T data_type) -&gt; typename std::enable_if_t&lt; std::is_enum_v&lt; T &gt;, uint16_t &gt;</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/dbd/_c_a_n_bus_protocol_8hpp_source.html#l00204">CANBusProtocol.hpp:204</a></div></div>
+<div class="ttc" id="anamespacenut_1_1can__protocol_html_a58cc76324c52ec953d7699f31457baa9"><div class="ttname"><a href="../../d4/db2/namespacenut_1_1can__protocol.html#a58cc76324c52ec953d7699f31457baa9">nut::can_protocol::MakeCANID</a></div><div class="ttdeci">static constexpr auto MakeCANID(uint8_t device_id, T data_type) -&gt; typename std::enable_if_t&lt; std::is_enum_v&lt; T &gt;, uint16_t &gt;</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/dbd/_c_a_n_bus_protocol_8hpp_source.html#l00223">CANBusProtocol.hpp:223</a></div></div>
 <div class="ttc" id="aclassnut_1_1_power_supply2021_html"><div class="ttname"><a href="../../df/db1/classnut_1_1_power_supply2021.html">nut::PowerSupply2021</a></div><div class="ttdoc">2021gakurobo用電源制御基板</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d47/_power_supply2021_8hpp_source.html#l00020">PowerSupply2021.hpp:20</a></div></div>
 <div class="ttc" id="aclassnut_1_1_power_supply2021_html_a6e48d574a3ae815d1285cc44161873be"><div class="ttname"><a href="../../df/db1/classnut_1_1_power_supply2021.html#a6e48d574a3ae815d1285cc44161873be">nut::PowerSupply2021::~PowerSupply2021</a></div><div class="ttdeci">virtual ~PowerSupply2021()</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d47/_power_supply2021_8hpp_source.html#l00033">PowerSupply2021.hpp:33</a></div></div>
-<div class="ttc" id="aclassnut_1_1_power_supply2021_html_aaf69fa588f4a904fdb7bf16e0588a5e3"><div class="ttname"><a href="../../df/db1/classnut_1_1_power_supply2021.html#aaf69fa588f4a904fdb7bf16e0588a5e3">nut::PowerSupply2021::Start</a></div><div class="ttdeci">void Start()</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d47/_power_supply2021_8hpp_source.html#l00039">PowerSupply2021.hpp:39</a></div></div>
+<div class="ttc" id="aclassnut_1_1_power_supply2021_html_aaf69fa588f4a904fdb7bf16e0588a5e3"><div class="ttname"><a href="../../df/db1/classnut_1_1_power_supply2021.html#aaf69fa588f4a904fdb7bf16e0588a5e3">nut::PowerSupply2021::Start</a></div><div class="ttdeci">void Start()</div><div class="ttdoc">通電開始</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d47/_power_supply2021_8hpp_source.html#l00042">PowerSupply2021.hpp:42</a></div></div>
 <div class="ttc" id="anamespacenut_html"><div class="ttname"><a href="../../dd/d51/namespacenut.html">nut</a></div><div class="ttdoc">CANバスの通信仕様</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/dbd/_c_a_n_bus_protocol_8hpp_source.html#l00010">CANBusProtocol.hpp:10</a></div></div>
-<div class="ttc" id="aclassnut_1_1_power_supply2021_html_a5f8b211fe2ae626eae438946180eb3b6"><div class="ttname"><a href="../../df/db1/classnut_1_1_power_supply2021.html#a5f8b211fe2ae626eae438946180eb3b6">nut::PowerSupply2021::Stop</a></div><div class="ttdeci">void Stop()</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d47/_power_supply2021_8hpp_source.html#l00050">PowerSupply2021.hpp:50</a></div></div>
-<div class="ttc" id="aclassnut_1_1_power_supply2021_html_a517ea708d221f3aaf6f743b5916293bf"><div class="ttname"><a href="../../df/db1/classnut_1_1_power_supply2021.html#a517ea708d221f3aaf6f743b5916293bf">nut::PowerSupply2021::PowerSupply2021</a></div><div class="ttdeci">PowerSupply2021(const std::shared_ptr&lt; CANWrapper &gt; &amp;can, uint8_t device_id, uint8_t user_id)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d47/_power_supply2021_8hpp_source.html#l00028">PowerSupply2021.hpp:28</a></div></div>
+<div class="ttc" id="aclassnut_1_1_power_supply2021_html_a5f8b211fe2ae626eae438946180eb3b6"><div class="ttname"><a href="../../df/db1/classnut_1_1_power_supply2021.html#a5f8b211fe2ae626eae438946180eb3b6">nut::PowerSupply2021::Stop</a></div><div class="ttdeci">void Stop()</div><div class="ttdoc">通電停止</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d47/_power_supply2021_8hpp_source.html#l00056">PowerSupply2021.hpp:56</a></div></div>
+<div class="ttc" id="aclassnut_1_1_power_supply2021_html_a9d4ca5756736493f44a2159361fc7a28"><div class="ttname"><a href="../../df/db1/classnut_1_1_power_supply2021.html#a9d4ca5756736493f44a2159361fc7a28">nut::PowerSupply2021::PowerSupply2021</a></div><div class="ttdeci">PowerSupply2021(const std::shared_ptr&lt; CANWrapper &gt; &amp;can, uint8_t device_num, uint8_t user_id)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d47/_power_supply2021_8hpp_source.html#l00028">PowerSupply2021.hpp:28</a></div></div>
+<div class="ttc" id="anamespacenut_1_1can__protocol_1_1power_html_aa9983c54d2d0466d2dc3a2b2aa5a31e6a80aa0912ea897f671b63927c919c38e4"><div class="ttname"><a href="../../db/d6c/namespacenut_1_1can__protocol_1_1power.html#aa9983c54d2d0466d2dc3a2b2aa5a31e6a80aa0912ea897f671b63927c919c38e4">nut::can_protocol::power::DataType::fetState</a></div><div class="ttdeci">@ fetState</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

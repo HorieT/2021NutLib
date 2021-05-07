@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['general_1004',['General',['../d1/db3/namespacenut_1_1can__protocol_1_1all.html#a09adda460b330615520b743031e330ca',1,'nut::can_protocol::all']]]
+  ['error_1398',['Error',['../d1/db3/namespacenut_1_1can__protocol_1_1all.html#a3528758e2ad6d4b6625ef4a786e14d5b',1,'nut::can_protocol::all']]]
 ];

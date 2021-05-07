@@ -1,5 +1,29 @@
 var searchData=
 [
-  ['thetapos_1105',['thetaPos',['../da/dd6/namespacenut_1_1can__protocol_1_1pc.html#ae4491dee7b163e95d69c270b0994f83aa049da0cbe17bb00c74769ab4828ee77a',1,'nut::can_protocol::pc']]],
-  ['thetaspead_1106',['thetaSpead',['../d3/d8d/namespacenut_1_1can__protocol_1_1micom.html#a7b3bf21093fcec61da0edab255f62a6eaa6a45785c347a39a826107dbfca050b8',1,'nut::can_protocol::micom']]]
+  ['r1_1516',['R1',['../df/d9f/classnut_1_1_joycon_r_o_s.html#a53bcdb205f0f401b5e7a4af0d845e9f7acda522d4353b166cc2dee84673307b4e',1,'nut::JoyconROS::R1()'],['../d0/d9d/classnut_1_1_xbox_controller.html#a8872d0abe86dbd1f66df54f31bcf52b9acda522d4353b166cc2dee84673307b4e',1,'nut::XboxController::R1()']]],
+  ['r2_1517',['R2',['../df/d9f/classnut_1_1_joycon_r_o_s.html#a53bcdb205f0f401b5e7a4af0d845e9f7a8c6d22ff6f63fc6711cfa315cb80b314',1,'nut::JoyconROS']]],
+  ['r3_1518',['R3',['../df/d9f/classnut_1_1_joycon_r_o_s.html#a53bcdb205f0f401b5e7a4af0d845e9f7a5c108ce0fe89d0632cfce75f650b36c2',1,'nut::JoyconROS::R3()'],['../d0/d9d/classnut_1_1_xbox_controller.html#a8872d0abe86dbd1f66df54f31bcf52b9a5c108ce0fe89d0632cfce75f650b36c2',1,'nut::XboxController::R3()']]],
+  ['radian_1519',['radian',['../da/dc9/namespacenut_1_1unit.html#a71c65554a8697cd990496eec57068896a2fb79ab9685ea3b8e82385daca76a390',1,'nut::unit']]],
+  ['radiand_1520',['radianD',['../dd/df5/namespacenut_1_1can__protocol_1_1motor.html#a6536007e70dc526c5808ba5b358a8d11a7e131988a5fc95d7abb67dc60c03df4c',1,'nut::can_protocol::motor']]],
+  ['radiani_1521',['radianI',['../dd/df5/namespacenut_1_1can__protocol_1_1motor.html#a6536007e70dc526c5808ba5b358a8d11a75f284bd61fc520b4780ee4a59af74fb',1,'nut::can_protocol::motor']]],
+  ['radianilimit_1522',['radianILimit',['../dd/df5/namespacenut_1_1can__protocol_1_1motor.html#a6536007e70dc526c5808ba5b358a8d11ad741f78c7adb3e7d0fbd1542ebb23252',1,'nut::can_protocol::motor']]],
+  ['radianlimit_1523',['radianLimit',['../dd/df5/namespacenut_1_1can__protocol_1_1motor.html#a6536007e70dc526c5808ba5b358a8d11ac49e391c51e82586b2ce11c227e1f4b9',1,'nut::can_protocol::motor']]],
+  ['radianp_1524',['radianP',['../dd/df5/namespacenut_1_1can__protocol_1_1motor.html#a6536007e70dc526c5808ba5b358a8d11a279ac0a4eea3d0db21b2297a58883330',1,'nut::can_protocol::motor']]],
+  ['radmulti_1525',['radMulti',['../d5/da2/classnut_1_1_motor.html#a21a5cd6931fdabe222955f11ae32571ba2e72482cfe40647a82b17b64cd5f3611',1,'nut::Motor::radMulti()'],['../dd/df5/namespacenut_1_1can__protocol_1_1motor.html#ad1f07de735117d905354ea397cb2f057a2e72482cfe40647a82b17b64cd5f3611',1,'nut::can_protocol::motor::radMulti()']]],
+  ['radps_1526',['radps',['../d5/da2/classnut_1_1_motor.html#a21a5cd6931fdabe222955f11ae32571ba78f07136b202513cf64db444ab164e8d',1,'nut::Motor::radps()'],['../dd/df5/namespacenut_1_1can__protocol_1_1motor.html#ad1f07de735117d905354ea397cb2f057a78f07136b202513cf64db444ab164e8d',1,'nut::can_protocol::motor::radps()']]],
+  ['radsingle_1527',['radSingle',['../d5/da2/classnut_1_1_motor.html#a21a5cd6931fdabe222955f11ae32571ba55e2b971e3f427b5bb9e25427e4886e9',1,'nut::Motor::radSingle()'],['../dd/df5/namespacenut_1_1can__protocol_1_1motor.html#ad1f07de735117d905354ea397cb2f057a55e2b971e3f427b5bb9e25427e4886e9',1,'nut::can_protocol::motor::radSingle()']]],
+  ['radsinglepolarity_1528',['radSinglePolarity',['../d5/da2/classnut_1_1_motor.html#a21a5cd6931fdabe222955f11ae32571bac4e49bd816b656c783198855c46c169a',1,'nut::Motor::radSinglePolarity()'],['../dd/df5/namespacenut_1_1can__protocol_1_1motor.html#ad1f07de735117d905354ea397cb2f057ac4e49bd816b656c783198855c46c169a',1,'nut::can_protocol::motor::radSinglePolarity()']]],
+  ['regularmodestart_1529',['regularModeStart',['../df/d57/namespacenut_1_1can__protocol_1_1tof.html#ae45c7b8ee5025ab12b148b124ef46b15a7da40cb408b7e9deb6fc883e95c39504',1,'nut::can_protocol::tof']]],
+  ['regularmodestop_1530',['regularModeStop',['../df/d57/namespacenut_1_1can__protocol_1_1tof.html#ae45c7b8ee5025ab12b148b124ef46b15aabf4a51c63cdd7688c76b70451c68657',1,'nut::can_protocol::tof']]],
+  ['reset_1531',['reset',['../d9/d6a/classnut_1_1_steer_chassis_base.html#a090572b613943d502dc2347835de54d2a86266ee937d97f812a8e57d22b62ee29',1,'nut::SteerChassisBase']]],
+  ['resetabsenc_1532',['ResetAbsEnc',['../df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2ae304b7669c47fbe623d6559eacd102e3',1,'nut::ReiwaMD']]],
+  ['resetincenc_1533',['ResetIncEnc',['../df/da1/classnut_1_1_reiwa_m_d.html#af3c2f1bbd3aa46474756d1b9fe4a1bb2aa19b55fc777494f56b7154d6e612047e',1,'nut::ReiwaMD']]],
+  ['result_5fcore_5fambient_5fwindow_5fevents_5fref_1534',['RESULT_CORE_AMBIENT_WINDOW_EVENTS_REF',['../d7/df1/classnut_1_1_v_l53_l0_x.html#a2344ca2de9dca718607eef664b645898aa356dfb9e282b56df7247f56d1a8c8cb',1,'nut::VL53L0X']]],
+  ['result_5fcore_5fambient_5fwindow_5fevents_5frtn_1535',['RESULT_CORE_AMBIENT_WINDOW_EVENTS_RTN',['../d7/df1/classnut_1_1_v_l53_l0_x.html#a2344ca2de9dca718607eef664b645898af1be66c78189566c839ba334c82a4223',1,'nut::VL53L0X']]],
+  ['result_5fcore_5franging_5ftotal_5fevents_5fref_1536',['RESULT_CORE_RANGING_TOTAL_EVENTS_REF',['../d7/df1/classnut_1_1_v_l53_l0_x.html#a2344ca2de9dca718607eef664b645898a7484c04017d2a8d00991544528a1348d',1,'nut::VL53L0X']]],
+  ['result_5fcore_5franging_5ftotal_5fevents_5frtn_1537',['RESULT_CORE_RANGING_TOTAL_EVENTS_RTN',['../d7/df1/classnut_1_1_v_l53_l0_x.html#a2344ca2de9dca718607eef664b645898a2b67948291273bb126090885648786a8',1,'nut::VL53L0X']]],
+  ['result_5finterrupt_5fstatus_1538',['RESULT_INTERRUPT_STATUS',['../d7/df1/classnut_1_1_v_l53_l0_x.html#a2344ca2de9dca718607eef664b645898a127bb83201236411be27582f8204360f',1,'nut::VL53L0X']]],
+  ['result_5fpeak_5fsignal_5frate_5fref_1539',['RESULT_PEAK_SIGNAL_RATE_REF',['../d7/df1/classnut_1_1_v_l53_l0_x.html#a2344ca2de9dca718607eef664b645898a8e29a00a96a37722f950aa422b54110b',1,'nut::VL53L0X']]],
+  ['result_5frange_5fstatus_1540',['RESULT_RANGE_STATUS',['../d7/df1/classnut_1_1_v_l53_l0_x.html#a2344ca2de9dca718607eef664b645898ae03d90eee9a73fc957161c6ee67cf876',1,'nut::VL53L0X']]],
+  ['right_1541',['RIGHT',['../df/d9f/classnut_1_1_joycon_r_o_s.html#a53bcdb205f0f401b5e7a4af0d845e9f7a21507b40c80068eda19865706fdc2403',1,'nut::JoyconROS::RIGHT()'],['../d0/d9d/classnut_1_1_xbox_controller.html#a1fcd1be8df5543443a3c558af042b123a21507b40c80068eda19865706fdc2403',1,'nut::XboxController::RIGHT()']]]
 ];

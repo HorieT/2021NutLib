@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['controlinput_999',['ControlInput',['../dd/df5/namespacenut_1_1can__protocol_1_1motor.html#ad1f07de735117d905354ea397cb2f057',1,'nut::can_protocol::motor']]],
-  ['controlmode_1000',['ControlMode',['../d3/d8d/namespacenut_1_1can__protocol_1_1micom.html#a54ab8a12421163fb6f49b7eb2ebbfa68',1,'nut::can_protocol::micom']]]
+  ['button_1392',['Button',['../df/d9f/classnut_1_1_joycon_r_o_s.html#a53bcdb205f0f401b5e7a4af0d845e9f7',1,'nut::JoyconROS::Button()'],['../d0/d9d/classnut_1_1_xbox_controller.html#a8872d0abe86dbd1f66df54f31bcf52b9',1,'nut::XboxController::Button()']]]
 ];

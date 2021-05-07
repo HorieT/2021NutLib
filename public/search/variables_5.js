@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['m_5f2pi_5ff_935',['M_2PI_f',['../d2/d88/_global_8hpp.html#a2ee93ef6e1e3b5d1729900b8fa563931',1,'Global.hpp']]],
-  ['m_5fpi_5f2_5ff_936',['M_PI_2_f',['../d2/d88/_global_8hpp.html#af764d117dca888425c96cf0bb4f5bd19',1,'Global.hpp']]],
-  ['m_5fpi_5ff_937',['M_PI_f',['../d2/d88/_global_8hpp.html#aec1eaa9c308e28b44ea6f1f930fcc560',1,'Global.hpp']]],
-  ['mailbox_938',['mailbox',['../d9/dd8/structnut_1_1_c_a_n_wrapper_1_1_tx_data_type.html#a4fe4ce41b81bb21486770ca4d67c4d4d',1,'nut::CANWrapper::TxDataType']]]
+  ['final_5frange_1299',['final_range',['../df/d49/structnut_1_1_v_l53_l0_x_1_1_sequence_step_enables.html#ad002fc6c24460dd3da6570e175afbb4b',1,'nut::VL53L0X::SequenceStepEnables']]],
+  ['final_5frange_5fmclks_1300',['final_range_mclks',['../d7/dfc/structnut_1_1_v_l53_l0_x_1_1_sequence_step_timeouts.html#ad2ce445a340ab82f6fa23b4206b47c3e',1,'nut::VL53L0X::SequenceStepTimeouts']]],
+  ['final_5frange_5fus_1301',['final_range_us',['../d7/dfc/structnut_1_1_v_l53_l0_x_1_1_sequence_step_timeouts.html#a56cc269bbea935408803f82d44209419',1,'nut::VL53L0X::SequenceStepTimeouts']]],
+  ['final_5frange_5fvcsel_5fperiod_5fpclks_1302',['final_range_vcsel_period_pclks',['../d7/dfc/structnut_1_1_v_l53_l0_x_1_1_sequence_step_timeouts.html#aa8da426de767a150d6f7eb16eddef3db',1,'nut::VL53L0X::SequenceStepTimeouts']]]
 ];

@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>NutLib: NutLib/Chassis/SteerChassisBase.hpp ソースファイル</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">NutLib
+   </div>
+  </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.svg"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.20 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'検索');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('d0/d9f/_steer_chassis_base_8hpp_source.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">SteerChassisBase.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d0/d9f/_steer_chassis_base_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;../Global.hpp&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d5/de2/_chassis_8hpp.html">Chassis.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;../Motor/DriveWheel.hpp&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;array&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;Eigen/Geometry&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../dd/d51/namespacenut.html">nut</a>{</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="../../d9/d6a/classnut_1_1_steer_chassis_base.html">   20</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d9/d6a/classnut_1_1_steer_chassis_base.html">SteerChassisBase</a> : <span class="keyword">public</span> <a class="code" href="../../d9/dc6/classnut_1_1_chassis.html">Chassis</a>{</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="../../d9/d6a/classnut_1_1_steer_chassis_base.html#a090572b613943d502dc2347835de54d2">   22</a></span>&#160;    <span class="keyword">enum class</span> <a class="code" href="../../d9/d6a/classnut_1_1_steer_chassis_base.html#a090572b613943d502dc2347835de54d2">MoveMode</a> : uint8_t{</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <a class="code" href="../../d9/d6a/classnut_1_1_steer_chassis_base.html#a090572b613943d502dc2347835de54d2acfb4b9293cd9ec418900b7b644c30042">nomal</a> = 0,</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <a class="code" href="../../d9/d6a/classnut_1_1_steer_chassis_base.html#a090572b613943d502dc2347835de54d2a86266ee937d97f812a8e57d22b62ee29">reset</a>,</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <a class="code" href="../../d9/d6a/classnut_1_1_steer_chassis_base.html#a090572b613943d502dc2347835de54d2ab53cf904cd7efb8f64897d8aa3606a51">steerOnry</a>,</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <a class="code" href="../../d9/d6a/classnut_1_1_steer_chassis_base.html#a090572b613943d502dc2347835de54d2a337ee3989c2c360a16e8f87dd02930cc">steerBreaking</a></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    };</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="../../d9/d6a/classnut_1_1_steer_chassis_base.html#a7b97553e2fe6bfa18e946a7189781495">   31</a></span>&#160;    <span class="keyword">static</span> constexpr <span class="keywordtype">float</span> <a class="code" href="../../d9/d6a/classnut_1_1_steer_chassis_base.html#a7b97553e2fe6bfa18e946a7189781495">RAD_DIFF_LIM</a> = <a class="code" href="../../d2/d88/_global_8hpp.html#ae71449b1cc6e6250b91f539153a7a0d3">M_PI</a> / 2.0;</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="../../d9/d6a/classnut_1_1_steer_chassis_base.html#a7d07513b45a9a1ba17a975427021d958">   32</a></span>&#160;    <a class="code" href="../../d9/d6a/classnut_1_1_steer_chassis_base.html#a090572b613943d502dc2347835de54d2">MoveMode</a> <a class="code" href="../../d9/d6a/classnut_1_1_steer_chassis_base.html#a7d07513b45a9a1ba17a975427021d958">_mode</a> = <a class="code" href="../../d9/d6a/classnut_1_1_steer_chassis_base.html#a090572b613943d502dc2347835de54d2acfb4b9293cd9ec418900b7b644c30042">MoveMode::nomal</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="../../d9/d6a/classnut_1_1_steer_chassis_base.html#aa9eb4069b8d360855c6cc5588cf53f89">   38</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d9/d6a/classnut_1_1_steer_chassis_base.html#aa9eb4069b8d360855c6cc5588cf53f89">ScheduleTask</a>() <span class="keyword">override</span> = 0;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="comment">/*</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">     * @brief コンストラクタ</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="../../d9/d6a/classnut_1_1_steer_chassis_base.html#a4278684eb331a84cbbb25c36b71c8b39">   46</a></span>&#160;    <a class="code" href="../../d9/d6a/classnut_1_1_steer_chassis_base.html#a4278684eb331a84cbbb25c36b71c8b39">SteerChassisBase</a>(<a class="code" href="../../db/dcb/classnut_1_1unit_1_1_unit.html">MilliSecond&lt;uint32_t&gt;</a> period, <span class="keyword">const</span> std::shared_ptr&lt;Odmetry&gt;&amp; odmetry) :</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <a class="code" href="../../d9/dc6/classnut_1_1_chassis.html">Chassis</a>(period, odmetry){</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">/*</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">     * @brief デストラクタ</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="../../d9/d6a/classnut_1_1_steer_chassis_base.html#a7c3bd08f590dcb559c45259d0c40fa36">   54</a></span>&#160;    <span class="keyword">virtual</span> <a class="code" href="../../d9/d6a/classnut_1_1_steer_chassis_base.html#a7c3bd08f590dcb559c45259d0c40fa36">~SteerChassisBase</a>(){</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="../../d9/d6a/classnut_1_1_steer_chassis_base.html#ade14dfafd0ec6b4860ce437d71c28fa0">   66</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="../../d9/d6a/classnut_1_1_steer_chassis_base.html#ade14dfafd0ec6b4860ce437d71c28fa0">SetVelocity</a>(<a class="code" href="../../d4/d08/classnut_1_1_coordinate.html">Coordinate&lt;float&gt;</a> velocity, <a class="code" href="../../d9/d6a/classnut_1_1_steer_chassis_base.html#a090572b613943d502dc2347835de54d2">MoveMode</a> mode = <a class="code" href="../../d9/d6a/classnut_1_1_steer_chassis_base.html#a090572b613943d502dc2347835de54d2acfb4b9293cd9ec418900b7b644c30042">MoveMode::nomal</a>){</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <a class="code" href="../../d9/d6a/classnut_1_1_steer_chassis_base.html#a7d07513b45a9a1ba17a975427021d958">_mode</a> = mode;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <a class="code" href="../../d9/dc6/classnut_1_1_chassis.html#a4c8bfb0f3774f912f40823084b1f4b5a">_target_velocity</a> = velocity;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    }</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="../../d9/d6a/classnut_1_1_steer_chassis_base.html#a4ce6de08930087397d21564b484f9852">   79</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="../../d9/d6a/classnut_1_1_steer_chassis_base.html#a4ce6de08930087397d21564b484f9852">SetVelocity</a>(Eigen::Vector2f velocity_mps, <span class="keywordtype">float</span> rot_radps, <a class="code" href="../../d9/d6a/classnut_1_1_steer_chassis_base.html#a090572b613943d502dc2347835de54d2">MoveMode</a> mode = <a class="code" href="../../d9/d6a/classnut_1_1_steer_chassis_base.html#a090572b613943d502dc2347835de54d2acfb4b9293cd9ec418900b7b644c30042">MoveMode::nomal</a>){</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <a class="code" href="../../d9/d6a/classnut_1_1_steer_chassis_base.html#a7d07513b45a9a1ba17a975427021d958">_mode</a> = mode;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <a class="code" href="../../d9/dc6/classnut_1_1_chassis.html#a4c8bfb0f3774f912f40823084b1f4b5a">_target_velocity</a>.<a class="code" href="../../d4/d08/classnut_1_1_coordinate.html#a43576eccd7c2ed11c252f9f95cd63611">x</a>() = velocity_mps.x();</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <a class="code" href="../../d9/dc6/classnut_1_1_chassis.html#a4c8bfb0f3774f912f40823084b1f4b5a">_target_velocity</a>.<a class="code" href="../../d4/d08/classnut_1_1_coordinate.html#a06cf225a0b3fda31a95a1965c03fb31d">y</a>() = velocity_mps.y();</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <a class="code" href="../../d9/dc6/classnut_1_1_chassis.html#a4c8bfb0f3774f912f40823084b1f4b5a">_target_velocity</a>.<a class="code" href="../../d4/d08/classnut_1_1_coordinate.html#a59da2be52edeac1200e5159b3b0e866f">theta</a>() = rot_radps;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    }</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;};</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;}</div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="aclassnut_1_1_steer_chassis_base_html_ade14dfafd0ec6b4860ce437d71c28fa0"><div class="ttname"><a href="../../d9/d6a/classnut_1_1_steer_chassis_base.html#ade14dfafd0ec6b4860ce437d71c28fa0">nut::SteerChassisBase::SetVelocity</a></div><div class="ttdeci">virtual bool SetVelocity(Coordinate&lt; float &gt; velocity, MoveMode mode=MoveMode::nomal)</div><div class="ttdoc">速度入力</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d9f/_steer_chassis_base_8hpp_source.html#l00066">SteerChassisBase.hpp:66</a></div></div>
+<div class="ttc" id="aclassnut_1_1_steer_chassis_base_html_a090572b613943d502dc2347835de54d2"><div class="ttname"><a href="../../d9/d6a/classnut_1_1_steer_chassis_base.html#a090572b613943d502dc2347835de54d2">nut::SteerChassisBase::MoveMode</a></div><div class="ttdeci">MoveMode</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d9f/_steer_chassis_base_8hpp_source.html#l00022">SteerChassisBase.hpp:22</a></div></div>
+<div class="ttc" id="aclassnut_1_1_steer_chassis_base_html_a4278684eb331a84cbbb25c36b71c8b39"><div class="ttname"><a href="../../d9/d6a/classnut_1_1_steer_chassis_base.html#a4278684eb331a84cbbb25c36b71c8b39">nut::SteerChassisBase::SteerChassisBase</a></div><div class="ttdeci">SteerChassisBase(MilliSecond&lt; uint32_t &gt; period, const std::shared_ptr&lt; Odmetry &gt; &amp;odmetry)</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d9f/_steer_chassis_base_8hpp_source.html#l00046">SteerChassisBase.hpp:46</a></div></div>
+<div class="ttc" id="aclassnut_1_1_chassis_html_a4c8bfb0f3774f912f40823084b1f4b5a"><div class="ttname"><a href="../../d9/dc6/classnut_1_1_chassis.html#a4c8bfb0f3774f912f40823084b1f4b5a">nut::Chassis::_target_velocity</a></div><div class="ttdeci">Coordinate&lt; float &gt; _target_velocity</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/de2/_chassis_8hpp_source.html#l00031">Chassis.hpp:31</a></div></div>
+<div class="ttc" id="aclassnut_1_1_steer_chassis_base_html_a4ce6de08930087397d21564b484f9852"><div class="ttname"><a href="../../d9/d6a/classnut_1_1_steer_chassis_base.html#a4ce6de08930087397d21564b484f9852">nut::SteerChassisBase::SetVelocity</a></div><div class="ttdeci">virtual bool SetVelocity(Eigen::Vector2f velocity_mps, float rot_radps, MoveMode mode=MoveMode::nomal)</div><div class="ttdoc">速度入力</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d9f/_steer_chassis_base_8hpp_source.html#l00079">SteerChassisBase.hpp:79</a></div></div>
+<div class="ttc" id="aclassnut_1_1_coordinate_html_a06cf225a0b3fda31a95a1965c03fb31d"><div class="ttname"><a href="../../d4/d08/classnut_1_1_coordinate.html#a06cf225a0b3fda31a95a1965c03fb31d">nut::Coordinate::y</a></div><div class="ttdeci">constexpr const T &amp; y() const &amp;</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d40/_coordinate_8hpp_source.html#l00029">Coordinate.hpp:29</a></div></div>
+<div class="ttc" id="aclassnut_1_1_steer_chassis_base_html_a090572b613943d502dc2347835de54d2acfb4b9293cd9ec418900b7b644c30042"><div class="ttname"><a href="../../d9/d6a/classnut_1_1_steer_chassis_base.html#a090572b613943d502dc2347835de54d2acfb4b9293cd9ec418900b7b644c30042">nut::SteerChassisBase::MoveMode::nomal</a></div><div class="ttdeci">@ nomal</div></div>
+<div class="ttc" id="aclassnut_1_1_steer_chassis_base_html_a090572b613943d502dc2347835de54d2a86266ee937d97f812a8e57d22b62ee29"><div class="ttname"><a href="../../d9/d6a/classnut_1_1_steer_chassis_base.html#a090572b613943d502dc2347835de54d2a86266ee937d97f812a8e57d22b62ee29">nut::SteerChassisBase::MoveMode::reset</a></div><div class="ttdeci">@ reset</div></div>
+<div class="ttc" id="aclassnut_1_1_steer_chassis_base_html_a7c3bd08f590dcb559c45259d0c40fa36"><div class="ttname"><a href="../../d9/d6a/classnut_1_1_steer_chassis_base.html#a7c3bd08f590dcb559c45259d0c40fa36">nut::SteerChassisBase::~SteerChassisBase</a></div><div class="ttdeci">virtual ~SteerChassisBase()</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d9f/_steer_chassis_base_8hpp_source.html#l00054">SteerChassisBase.hpp:54</a></div></div>
+<div class="ttc" id="aclassnut_1_1_steer_chassis_base_html_aa9eb4069b8d360855c6cc5588cf53f89"><div class="ttname"><a href="../../d9/d6a/classnut_1_1_steer_chassis_base.html#aa9eb4069b8d360855c6cc5588cf53f89">nut::SteerChassisBase::ScheduleTask</a></div><div class="ttdeci">virtual void ScheduleTask() override=0</div><div class="ttdoc">周期コールバック関数</div></div>
+<div class="ttc" id="aclassnut_1_1unit_1_1_unit_html"><div class="ttname"><a href="../../db/dcb/classnut_1_1unit_1_1_unit.html">nut::unit::Unit</a></div><div class="ttdoc">単位系クラス</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d6d/_unit_8hpp_source.html#l00044">Unit.hpp:44</a></div></div>
+<div class="ttc" id="anamespacenut_html"><div class="ttname"><a href="../../dd/d51/namespacenut.html">nut</a></div><div class="ttdoc">CANバスの通信仕様</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/dbd/_c_a_n_bus_protocol_8hpp_source.html#l00010">CANBusProtocol.hpp:10</a></div></div>
+<div class="ttc" id="aclassnut_1_1_coordinate_html"><div class="ttname"><a href="../../d4/d08/classnut_1_1_coordinate.html">nut::Coordinate&lt; float &gt;</a></div></div>
+<div class="ttc" id="a_chassis_8hpp_html"><div class="ttname"><a href="../../d5/de2/_chassis_8hpp.html">Chassis.hpp</a></div><div class="ttdoc">機体足回り基幹</div></div>
+<div class="ttc" id="aclassnut_1_1_steer_chassis_base_html_a7b97553e2fe6bfa18e946a7189781495"><div class="ttname"><a href="../../d9/d6a/classnut_1_1_steer_chassis_base.html#a7b97553e2fe6bfa18e946a7189781495">nut::SteerChassisBase::RAD_DIFF_LIM</a></div><div class="ttdeci">static constexpr float RAD_DIFF_LIM</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d9f/_steer_chassis_base_8hpp_source.html#l00031">SteerChassisBase.hpp:31</a></div></div>
+<div class="ttc" id="aclassnut_1_1_steer_chassis_base_html_a090572b613943d502dc2347835de54d2ab53cf904cd7efb8f64897d8aa3606a51"><div class="ttname"><a href="../../d9/d6a/classnut_1_1_steer_chassis_base.html#a090572b613943d502dc2347835de54d2ab53cf904cd7efb8f64897d8aa3606a51">nut::SteerChassisBase::MoveMode::steerOnry</a></div><div class="ttdeci">@ steerOnry</div></div>
+<div class="ttc" id="aclassnut_1_1_steer_chassis_base_html_a7d07513b45a9a1ba17a975427021d958"><div class="ttname"><a href="../../d9/d6a/classnut_1_1_steer_chassis_base.html#a7d07513b45a9a1ba17a975427021d958">nut::SteerChassisBase::_mode</a></div><div class="ttdeci">MoveMode _mode</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d9f/_steer_chassis_base_8hpp_source.html#l00032">SteerChassisBase.hpp:32</a></div></div>
+<div class="ttc" id="aclassnut_1_1_coordinate_html_a59da2be52edeac1200e5159b3b0e866f"><div class="ttname"><a href="../../d4/d08/classnut_1_1_coordinate.html#a59da2be52edeac1200e5159b3b0e866f">nut::Coordinate::theta</a></div><div class="ttdeci">constexpr const T &amp; theta() const &amp;</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d40/_coordinate_8hpp_source.html#l00030">Coordinate.hpp:30</a></div></div>
+<div class="ttc" id="aclassnut_1_1_steer_chassis_base_html"><div class="ttname"><a href="../../d9/d6a/classnut_1_1_steer_chassis_base.html">nut::SteerChassisBase</a></div><div class="ttdoc">ステア足回り基底純粋仮想クラス</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d9f/_steer_chassis_base_8hpp_source.html#l00020">SteerChassisBase.hpp:20</a></div></div>
+<div class="ttc" id="aclassnut_1_1_steer_chassis_base_html_a090572b613943d502dc2347835de54d2a337ee3989c2c360a16e8f87dd02930cc"><div class="ttname"><a href="../../d9/d6a/classnut_1_1_steer_chassis_base.html#a090572b613943d502dc2347835de54d2a337ee3989c2c360a16e8f87dd02930cc">nut::SteerChassisBase::MoveMode::steerBreaking</a></div><div class="ttdeci">@ steerBreaking</div></div>
+<div class="ttc" id="a_global_8hpp_html_ae71449b1cc6e6250b91f539153a7a0d3"><div class="ttname"><a href="../../d2/d88/_global_8hpp.html#ae71449b1cc6e6250b91f539153a7a0d3">M_PI</a></div><div class="ttdeci">#define M_PI</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d88/_global_8hpp_source.html#l00054">Global.hpp:54</a></div></div>
+<div class="ttc" id="aclassnut_1_1_chassis_html"><div class="ttname"><a href="../../d9/dc6/classnut_1_1_chassis.html">nut::Chassis</a></div><div class="ttdoc">機体足回り基底純粋仮想クラス</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/de2/_chassis_8hpp_source.html#l00019">Chassis.hpp:19</a></div></div>
+<div class="ttc" id="aclassnut_1_1_coordinate_html_a43576eccd7c2ed11c252f9f95cd63611"><div class="ttname"><a href="../../d4/d08/classnut_1_1_coordinate.html#a43576eccd7c2ed11c252f9f95cd63611">nut::Coordinate::x</a></div><div class="ttdeci">constexpr const T &amp; x() const &amp;</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d40/_coordinate_8hpp_source.html#l00028">Coordinate.hpp:28</a></div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_8b1cfa3accea10fc5ecd39c63013c190.html">NutLib</a></li><li class="navelem"><a class="el" href="../../dir_f675b4a47c10cd3a9277bd5eb227d2c8.html">Chassis</a></li><li class="navelem"><a class="el" href="../../d0/d9f/_steer_chassis_base_8hpp.html">SteerChassisBase.hpp</a></li>
+    <li class="footer">構築: <a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
+  </ul>
+</div>
+</body>
+</html>

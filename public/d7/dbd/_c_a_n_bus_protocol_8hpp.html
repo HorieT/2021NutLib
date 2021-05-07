@@ -124,6 +124,8 @@ $(document).ready(function(){initNavTree('d7/dbd/_c_a_n_bus_protocol_8hpp.html',
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:d1/d3f/namespacenut_1_1can__protocol_1_1sv"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d3f/namespacenut_1_1can__protocol_1_1sv.html">nut::can_protocol::sv</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:df/d57/namespacenut_1_1can__protocol_1_1tof"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d57/namespacenut_1_1can__protocol_1_1tof.html">nut::can_protocol::tof</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 列挙型</h2></td></tr>
@@ -134,7 +136,8 @@ $(document).ready(function(){initNavTree('d7/dbd/_c_a_n_bus_protocol_8hpp.html',
 <a class="el" href="../../d4/db2/namespacenut_1_1can__protocol.html#a81d11237e130e2bb55ce3201eacf5375a88dba0c4e2af76447df43d1e31331a3d">nut::can_protocol::Device::PC</a>, 
 <br />
 &#160;&#160;<a class="el" href="../../d4/db2/namespacenut_1_1can__protocol.html#a81d11237e130e2bb55ce3201eacf5375a428f20b688f982957c58ae00b91f3d4f">nut::can_protocol::Device::motorDriver</a>, 
-<a class="el" href="../../d4/db2/namespacenut_1_1can__protocol.html#a81d11237e130e2bb55ce3201eacf5375a651a07985bf518219e04422480e781a6">nut::can_protocol::Device::solenoidValve</a>
+<a class="el" href="../../d4/db2/namespacenut_1_1can__protocol.html#a81d11237e130e2bb55ce3201eacf5375a651a07985bf518219e04422480e781a6">nut::can_protocol::Device::solenoidValve</a>, 
+<a class="el" href="../../d4/db2/namespacenut_1_1can__protocol.html#a81d11237e130e2bb55ce3201eacf5375a4392653a13bc19a01a637fc3a6678e18">nut::can_protocol::Device::tof</a>
 <br />
  }</td></tr>
 <tr class="separator:a81d11237e130e2bb55ce3201eacf5375"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -161,11 +164,14 @@ $(document).ready(function(){initNavTree('d7/dbd/_c_a_n_bus_protocol_8hpp.html',
 <a class="el" href="../../d1/db3/namespacenut_1_1can__protocol_1_1all.html#a09adda460b330615520b743031e330caa0c2fec82816cdf34825a36d5f573a657">nut::can_protocol::all::General::uninit</a>
  }</td></tr>
 <tr class="separator:a09adda460b330615520b743031e330ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa9983c54d2d0466d2dc3a2b2aa5a31e6"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d6c/namespacenut_1_1can__protocol_1_1power.html#aa9983c54d2d0466d2dc3a2b2aa5a31e6">nut::can_protocol::power::DataType</a> : uint8_t { <a class="el" href="../../db/d6c/namespacenut_1_1can__protocol_1_1power.html#aa9983c54d2d0466d2dc3a2b2aa5a31e6a80aa0912ea897f671b63927c919c38e4">nut::can_protocol::power::DataType::fetState</a> = 0x0, 
-<a class="el" href="../../db/d6c/namespacenut_1_1can__protocol_1_1power.html#aa9983c54d2d0466d2dc3a2b2aa5a31e6ae38139813c593308c41658ab5106819e">nut::can_protocol::power::DataType::currentLimit</a> = 0x1, 
-<a class="el" href="../../db/d6c/namespacenut_1_1can__protocol_1_1power.html#aa9983c54d2d0466d2dc3a2b2aa5a31e6afeb6b2828f97cea582722daf0eb116f0">nut::can_protocol::power::DataType::FuseState</a> = 0x2
+<tr class="memitem:aa9983c54d2d0466d2dc3a2b2aa5a31e6"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d6c/namespacenut_1_1can__protocol_1_1power.html#aa9983c54d2d0466d2dc3a2b2aa5a31e6">nut::can_protocol::power::DataType</a> : uint8_t { <a class="el" href="../../db/d6c/namespacenut_1_1can__protocol_1_1power.html#aa9983c54d2d0466d2dc3a2b2aa5a31e6a80aa0912ea897f671b63927c919c38e4">nut::can_protocol::power::DataType::fetState</a> = 0x0
  }</td></tr>
 <tr class="separator:aa9983c54d2d0466d2dc3a2b2aa5a31e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acbaecff492fe6da42fe1575dbd32ccdb"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d6c/namespacenut_1_1can__protocol_1_1power.html#acbaecff492fe6da42fe1575dbd32ccdb">nut::can_protocol::power::RemoteType</a> : uint8_t { <a class="el" href="../../db/d6c/namespacenut_1_1can__protocol_1_1power.html#acbaecff492fe6da42fe1575dbd32ccdba80aa0912ea897f671b63927c919c38e4">nut::can_protocol::power::RemoteType::fetState</a> = 0x0, 
+<a class="el" href="../../db/d6c/namespacenut_1_1can__protocol_1_1power.html#acbaecff492fe6da42fe1575dbd32ccdba43b5c9175984c071f30b873fdce0a000">nut::can_protocol::power::RemoteType::current</a> = 0x1, 
+<a class="el" href="../../db/d6c/namespacenut_1_1can__protocol_1_1power.html#acbaecff492fe6da42fe1575dbd32ccdba240938ca8fc6adfd5d2ab68c5a452993">nut::can_protocol::power::RemoteType::fuseState</a> = 0x2
+ }</td></tr>
+<tr class="separator:acbaecff492fe6da42fe1575dbd32ccdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7b3bf21093fcec61da0edab255f62a6e"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d8d/namespacenut_1_1can__protocol_1_1micom.html#a7b3bf21093fcec61da0edab255f62a6e">nut::can_protocol::micom::DataType</a> : uint8_t { <br />
 &#160;&#160;<a class="el" href="../../d3/d8d/namespacenut_1_1can__protocol_1_1micom.html#a7b3bf21093fcec61da0edab255f62a6ea327620476fa7a450e0661754bbd26e1a">nut::can_protocol::micom::DataType::controlMode</a> = 0x0, 
 <a class="el" href="../../d3/d8d/namespacenut_1_1can__protocol_1_1micom.html#a7b3bf21093fcec61da0edab255f62a6eab810d3b7e3402b18e6635d73ccbc52ab">nut::can_protocol::micom::DataType::xSpead</a>, 
@@ -186,16 +192,14 @@ $(document).ready(function(){initNavTree('d7/dbd/_c_a_n_bus_protocol_8hpp.html',
 <a class="el" href="../../d3/d8d/namespacenut_1_1can__protocol_1_1micom.html#a4510e29fd1a8a8002e588e1160cab27aadce7c4174ce9323904a934a486c41288">nut::can_protocol::micom::Steering::lock</a> = 0x01
  }</td></tr>
 <tr class="separator:a4510e29fd1a8a8002e588e1160cab27a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a234046b77cba7ae3c59ec1c8319964"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d8d/namespacenut_1_1can__protocol_1_1micom.html#a6a234046b77cba7ae3c59ec1c8319964">nut::can_protocol::micom::DataTypeTof</a> : uint8_t { <a class="el" href="../../d3/d8d/namespacenut_1_1can__protocol_1_1micom.html#a6a234046b77cba7ae3c59ec1c8319964a2fa47f7c65fec19cc163b195725e3844">nut::can_protocol::micom::DataTypeTof::length</a> = 0x5
+ }</td></tr>
+<tr class="separator:a6a234046b77cba7ae3c59ec1c8319964"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae4491dee7b163e95d69c270b0994f83a"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd6/namespacenut_1_1can__protocol_1_1pc.html#ae4491dee7b163e95d69c270b0994f83a">nut::can_protocol::pc::DataType</a> : uint8_t { <br />
 &#160;&#160;<a class="el" href="../../da/dd6/namespacenut_1_1can__protocol_1_1pc.html#ae4491dee7b163e95d69c270b0994f83aacb5e100e5a9a3e7f6d1fd97512215282">nut::can_protocol::pc::DataType::error</a> = 0x0, 
-<a class="el" href="../../da/dd6/namespacenut_1_1can__protocol_1_1pc.html#ae4491dee7b163e95d69c270b0994f83aabac19872ffd5b06f1d042fd95a3a9fa1">nut::can_protocol::pc::DataType::xPos</a> = 0x1, 
-<a class="el" href="../../da/dd6/namespacenut_1_1can__protocol_1_1pc.html#ae4491dee7b163e95d69c270b0994f83aa620489991d5ec0c455f8251029b69807">nut::can_protocol::pc::DataType::yPos</a> = 0x2, 
-<a class="el" href="../../da/dd6/namespacenut_1_1can__protocol_1_1pc.html#ae4491dee7b163e95d69c270b0994f83aa049da0cbe17bb00c74769ab4828ee77a">nut::can_protocol::pc::DataType::thetaPos</a> = 0x3, 
-<br />
-&#160;&#160;<a class="el" href="../../da/dd6/namespacenut_1_1can__protocol_1_1pc.html#ae4491dee7b163e95d69c270b0994f83aadd73bde1d8ce417859d272ea7d90bade">nut::can_protocol::pc::DataType::xSpeed</a> = 0x4, 
-<a class="el" href="../../da/dd6/namespacenut_1_1can__protocol_1_1pc.html#ae4491dee7b163e95d69c270b0994f83aa9b9c996e224b0bf245a1e11abae13a53">nut::can_protocol::pc::DataType::ySpeed</a> = 0x5, 
-<a class="el" href="../../da/dd6/namespacenut_1_1can__protocol_1_1pc.html#ae4491dee7b163e95d69c270b0994f83aa33c3b9a20640d7495b6c7e122b0413a2">nut::can_protocol::pc::DataType::xAcc</a> = 0x6, 
-<a class="el" href="../../da/dd6/namespacenut_1_1can__protocol_1_1pc.html#ae4491dee7b163e95d69c270b0994f83aa4c825c642748d7e3481e87c8014cf3d3">nut::can_protocol::pc::DataType::yAcc</a> = 0x7, 
+<a class="el" href="../../da/dd6/namespacenut_1_1can__protocol_1_1pc.html#ae4491dee7b163e95d69c270b0994f83aad821d13ce932944240c6ca8db4e824f3">nut::can_protocol::pc::DataType::odmeter</a> = 0x1, 
+<a class="el" href="../../da/dd6/namespacenut_1_1can__protocol_1_1pc.html#ae4491dee7b163e95d69c270b0994f83aace4ef3ec98443ed10da505114b58f153">nut::can_protocol::pc::DataType::speed</a> = 0x2, 
+<a class="el" href="../../da/dd6/namespacenut_1_1can__protocol_1_1pc.html#ae4491dee7b163e95d69c270b0994f83aa1673448ee7064c989d02579c534f6b66">nut::can_protocol::pc::DataType::acc</a> = 0x3, 
 <br />
 &#160;&#160;<a class="el" href="../../da/dd6/namespacenut_1_1can__protocol_1_1pc.html#ae4491dee7b163e95d69c270b0994f83aa156f8302e6df6804b4fc79a1e29359ee">nut::can_protocol::pc::DataType::uniqe</a> = 0x8
 <br />
@@ -223,7 +227,8 @@ $(document).ready(function(){initNavTree('d7/dbd/_c_a_n_bus_protocol_8hpp.html',
 <a class="el" href="../../dd/df5/namespacenut_1_1can__protocol_1_1motor.html#aa89c9d2ff08fe11870c186f6edf9d5cda11a4a76169377b0f5efee25ae5b75d8b">nut::can_protocol::motor::SpecialOperation::steerStartDebug</a> = 0x14, 
 <a class="el" href="../../dd/df5/namespacenut_1_1can__protocol_1_1motor.html#aa89c9d2ff08fe11870c186f6edf9d5cdaa27c14124643fe57237c96b545b316ea">nut::can_protocol::motor::SpecialOperation::steerStartDebugCurrent</a> = 0x15, 
 <br />
-&#160;&#160;<a class="el" href="../../dd/df5/namespacenut_1_1can__protocol_1_1motor.html#aa89c9d2ff08fe11870c186f6edf9d5cdaef399b2d446bb37b7c32ad2cc1b6045b">nut::can_protocol::motor::SpecialOperation::stop</a> = 0x80
+&#160;&#160;<a class="el" href="../../dd/df5/namespacenut_1_1can__protocol_1_1motor.html#aa89c9d2ff08fe11870c186f6edf9d5cdaef399b2d446bb37b7c32ad2cc1b6045b">nut::can_protocol::motor::SpecialOperation::stop</a> = 0x80, 
+<a class="el" href="../../dd/df5/namespacenut_1_1can__protocol_1_1motor.html#aa89c9d2ff08fe11870c186f6edf9d5cdac2adc7d0141c04a90fbcadfd74092f05">nut::can_protocol::motor::SpecialOperation::dedicatedFirmware</a> = 0x90
 <br />
  }</td></tr>
 <tr class="separator:aa89c9d2ff08fe11870c186f6edf9d5cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -259,19 +264,25 @@ $(document).ready(function(){initNavTree('d7/dbd/_c_a_n_bus_protocol_8hpp.html',
 <a class="el" href="../../dd/df5/namespacenut_1_1can__protocol_1_1motor.html#ad1f07de735117d905354ea397cb2f057a55e2b971e3f427b5bb9e25427e4886e9">nut::can_protocol::motor::ControlInput::radSingle</a> = 0x03, 
 <br />
 &#160;&#160;<a class="el" href="../../dd/df5/namespacenut_1_1can__protocol_1_1motor.html#ad1f07de735117d905354ea397cb2f057ac4e49bd816b656c783198855c46c169a">nut::can_protocol::motor::ControlInput::radSinglePolarity</a> = 0x04, 
-<a class="el" href="../../dd/df5/namespacenut_1_1can__protocol_1_1motor.html#ad1f07de735117d905354ea397cb2f057a43b5c9175984c071f30b873fdce0a000">nut::can_protocol::motor::ControlInput::current</a> = 0x80, 
-<a class="el" href="../../dd/df5/namespacenut_1_1can__protocol_1_1motor.html#ad1f07de735117d905354ea397cb2f057a1f0ccbc3f9b05fa6fff491d0b759e327">nut::can_protocol::motor::ControlInput::steer</a> = 0xF0
+<a class="el" href="../../dd/df5/namespacenut_1_1can__protocol_1_1motor.html#ad1f07de735117d905354ea397cb2f057a43b5c9175984c071f30b873fdce0a000">nut::can_protocol::motor::ControlInput::current</a> = 0x80
 <br />
  }</td></tr>
 <tr class="separator:ad1f07de735117d905354ea397cb2f057"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a98d921684953e108faa8aef1ea01c9b6"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d3f/namespacenut_1_1can__protocol_1_1sv.html#a98d921684953e108faa8aef1ea01c9b6">nut::can_protocol::sv::DataType</a> : uint8_t { <a class="el" href="../../d1/d3f/namespacenut_1_1can__protocol_1_1sv.html#a98d921684953e108faa8aef1ea01c9b6a8673c35f714e6645ca3ca8c0d65d86c1">nut::can_protocol::sv::DataType::specialOperation</a> = 0x00, 
 <a class="el" href="../../d1/d3f/namespacenut_1_1can__protocol_1_1sv.html#a98d921684953e108faa8aef1ea01c9b6aaa83283d5349be9555d996623084c660">nut::can_protocol::sv::DataType::valveState</a>, 
-<a class="el" href="../../d1/d3f/namespacenut_1_1can__protocol_1_1sv.html#a98d921684953e108faa8aef1ea01c9b6a409fbd326d1c38ccde70c670daaf88f6">nut::can_protocol::sv::DataType::valveSetAdd</a>, 
+<a class="el" href="../../d1/d3f/namespacenut_1_1can__protocol_1_1sv.html#a98d921684953e108faa8aef1ea01c9b6afea693dbd897a2dae192fb48069ef930">nut::can_protocol::sv::DataType::valveSetAnd</a>, 
 <a class="el" href="../../d1/d3f/namespacenut_1_1can__protocol_1_1sv.html#a98d921684953e108faa8aef1ea01c9b6ae252e40209187a394441730877c423b0">nut::can_protocol::sv::DataType::valveSetOr</a>
  }</td></tr>
 <tr class="separator:a98d921684953e108faa8aef1ea01c9b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeb9377e8fccae12e0f7ceb37bf5cbcf2"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d3f/namespacenut_1_1can__protocol_1_1sv.html#aeb9377e8fccae12e0f7ceb37bf5cbcf2">nut::can_protocol::sv::SpecialOperation</a> : uint8_t </td></tr>
 <tr class="separator:aeb9377e8fccae12e0f7ceb37bf5cbcf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf03f9ac2749a9a4317862729d1c18b8"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d57/namespacenut_1_1can__protocol_1_1tof.html#aaf03f9ac2749a9a4317862729d1c18b8">nut::can_protocol::tof::DataType</a> : uint8_t { <a class="el" href="../../df/d57/namespacenut_1_1can__protocol_1_1tof.html#aaf03f9ac2749a9a4317862729d1c18b8a8673c35f714e6645ca3ca8c0d65d86c1">nut::can_protocol::tof::DataType::specialOperation</a> = 0x00
+ }</td></tr>
+<tr class="separator:aaf03f9ac2749a9a4317862729d1c18b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae45c7b8ee5025ab12b148b124ef46b15"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d57/namespacenut_1_1can__protocol_1_1tof.html#ae45c7b8ee5025ab12b148b124ef46b15">nut::can_protocol::tof::SpecialOperation</a> : uint8_t { <a class="el" href="../../df/d57/namespacenut_1_1can__protocol_1_1tof.html#ae45c7b8ee5025ab12b148b124ef46b15a7da40cb408b7e9deb6fc883e95c39504">nut::can_protocol::tof::SpecialOperation::regularModeStart</a> = 0x01, 
+<a class="el" href="../../df/d57/namespacenut_1_1can__protocol_1_1tof.html#ae45c7b8ee5025ab12b148b124ef46b15aabf4a51c63cdd7688c76b70451c68657">nut::can_protocol::tof::SpecialOperation::regularModeStop</a> = 0x08
+ }</td></tr>
+<tr class="separator:ae45c7b8ee5025ab12b148b124ef46b15"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 関数</h2></td></tr>
@@ -292,12 +303,12 @@ $(document).ready(function(){initNavTree('d7/dbd/_c_a_n_bus_protocol_8hpp.html',
 <tr class="memitem:a37903048835bcd7500cc2a6284728c3f"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a37903048835bcd7500cc2a6284728c3f"><td class="memTemplItemLeft" align="right" valign="top">static constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d4/db2/namespacenut_1_1can__protocol.html#a37903048835bcd7500cc2a6284728c3f">nut::can_protocol::MakeCANID</a> (Device device, can_protocol::all::NotificationType data_type, T data) -&gt; typename std::enable_if_t&lt; std::is_enum_v&lt; T &gt;, uint16_t &gt;</td></tr>
 <tr class="separator:a37903048835bcd7500cc2a6284728c3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adcef60be9db1c19b4bdc3ce0b89951f3"><td class="memItemLeft" align="right" valign="top">static constexpr Device&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/db2/namespacenut_1_1can__protocol.html#adcef60be9db1c19b4bdc3ce0b89951f3">nut::can_protocol::GetDeviceType</a> (uint16_t id)</td></tr>
-<tr class="separator:adcef60be9db1c19b4bdc3ce0b89951f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0a273244dbe97f8c2227d70991513ee5"><td class="memItemLeft" align="right" valign="top">static constexpr uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/db2/namespacenut_1_1can__protocol.html#a0a273244dbe97f8c2227d70991513ee5">nut::can_protocol::GetDeviceID</a> (uint16_t id)</td></tr>
-<tr class="separator:a0a273244dbe97f8c2227d70991513ee5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68d6725c51c5e819e1e1b9a449eaad7f"><td class="memItemLeft" align="right" valign="top">static constexpr uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/db2/namespacenut_1_1can__protocol.html#a68d6725c51c5e819e1e1b9a449eaad7f">nut::can_protocol::GetDataType</a> (uint16_t id)</td></tr>
-<tr class="separator:a68d6725c51c5e819e1e1b9a449eaad7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a794f59320468e755047cb2f3783b6825"><td class="memItemLeft" align="right" valign="top">static constexpr Device&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/db2/namespacenut_1_1can__protocol.html#a794f59320468e755047cb2f3783b6825">nut::can_protocol::GetDeviceType</a> (uint16_t can_id)</td></tr>
+<tr class="separator:a794f59320468e755047cb2f3783b6825"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f6d69b0ea52a4d58f360f48bfab1cc2"><td class="memItemLeft" align="right" valign="top">static constexpr uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/db2/namespacenut_1_1can__protocol.html#a8f6d69b0ea52a4d58f360f48bfab1cc2">nut::can_protocol::GetDeviceID</a> (uint16_t can_id)</td></tr>
+<tr class="separator:a8f6d69b0ea52a4d58f360f48bfab1cc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af51b8e40c6700abc5489e675dff57f35"><td class="memItemLeft" align="right" valign="top">static constexpr uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/db2/namespacenut_1_1can__protocol.html#af51b8e40c6700abc5489e675dff57f35">nut::can_protocol::GetDataType</a> (uint16_t can_id)</td></tr>
+<tr class="separator:af51b8e40c6700abc5489e675dff57f35"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 変数</h2></td></tr>

@@ -24,7 +24,7 @@ public:
 	/**
 	 * @brief コンストラクタ
 	 * @param[in] encoder エンコーダインスタンス
-	 * @param[in] diameter_mm 直径[mm]
+	 * @param[in] diameter 直径[mm]
 	 * @param[in] position エンコーダ位置
 	 */
 	EncoderWheel(const std::shared_ptr<Encoder>& encoder, MilliMeter<float> diameter, Coordinate<float> position = Coordinate<float>{0.0f, 0.0f, 0.0f})

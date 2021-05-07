@@ -4,7 +4,7 @@ var classnut_1_1_chassis =
       [ "stop", "d9/dc6/classnut_1_1_chassis.html#a1fbcb0cadc3136c9fbc8ee619d1a0f98aef399b2d446bb37b7c32ad2cc1b6045b", null ],
       [ "velocity", "d9/dc6/classnut_1_1_chassis.html#a1fbcb0cadc3136c9fbc8ee619d1a0f98aac1a453d0cdc1f19d9479ccfaa8b082c", null ]
     ] ],
-    [ "Chassis", "d9/dc6/classnut_1_1_chassis.html#a066c67af9b00ed43b61b75d73f9cec46", null ],
+    [ "Chassis", "d9/dc6/classnut_1_1_chassis.html#a825a8e77e3392411e2a04106f71d7969", null ],
     [ "~Chassis", "d9/dc6/classnut_1_1_chassis.html#a709cc22845ce960d5c39f218464912c6", null ],
     [ "GetVelocity", "d9/dc6/classnut_1_1_chassis.html#ab32409c809c8f1dfefb7668bb7253f9d", null ],
     [ "Init", "d9/dc6/classnut_1_1_chassis.html#a653aa9e412fc444fc58469e6c149adb8", null ],

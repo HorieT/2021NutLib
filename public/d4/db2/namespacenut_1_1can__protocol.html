@@ -115,6 +115,8 @@ $(document).ready(function(){initNavTree('d4/db2/namespacenut_1_1can__protocol.h
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:d1/d3f/namespacenut_1_1can__protocol_1_1sv"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d3f/namespacenut_1_1can__protocol_1_1sv.html">sv</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:df/d57/namespacenut_1_1can__protocol_1_1tof"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d57/namespacenut_1_1can__protocol_1_1tof.html">tof</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 列挙型</h2></td></tr>
@@ -125,7 +127,8 @@ $(document).ready(function(){initNavTree('d4/db2/namespacenut_1_1can__protocol.h
 <a class="el" href="../../d4/db2/namespacenut_1_1can__protocol.html#a81d11237e130e2bb55ce3201eacf5375a88dba0c4e2af76447df43d1e31331a3d">Device::PC</a>, 
 <br />
 &#160;&#160;<a class="el" href="../../d4/db2/namespacenut_1_1can__protocol.html#a81d11237e130e2bb55ce3201eacf5375a428f20b688f982957c58ae00b91f3d4f">Device::motorDriver</a>, 
-<a class="el" href="../../d4/db2/namespacenut_1_1can__protocol.html#a81d11237e130e2bb55ce3201eacf5375a651a07985bf518219e04422480e781a6">Device::solenoidValve</a>
+<a class="el" href="../../d4/db2/namespacenut_1_1can__protocol.html#a81d11237e130e2bb55ce3201eacf5375a651a07985bf518219e04422480e781a6">Device::solenoidValve</a>, 
+<a class="el" href="../../d4/db2/namespacenut_1_1can__protocol.html#a81d11237e130e2bb55ce3201eacf5375a4392653a13bc19a01a637fc3a6678e18">Device::tof</a>
 <br />
  }</td></tr>
 <tr class="separator:a81d11237e130e2bb55ce3201eacf5375"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -149,12 +152,12 @@ $(document).ready(function(){initNavTree('d4/db2/namespacenut_1_1can__protocol.h
 <tr class="memitem:a37903048835bcd7500cc2a6284728c3f"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a37903048835bcd7500cc2a6284728c3f"><td class="memTemplItemLeft" align="right" valign="top">static constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d4/db2/namespacenut_1_1can__protocol.html#a37903048835bcd7500cc2a6284728c3f">MakeCANID</a> (<a class="el" href="../../d4/db2/namespacenut_1_1can__protocol.html#a81d11237e130e2bb55ce3201eacf5375">Device</a> device, <a class="el" href="../../d1/db3/namespacenut_1_1can__protocol_1_1all.html#adad5d76e61c2a8308c850a46eb9fbd09">can_protocol::all::NotificationType</a> data_type, T data) -&gt; typename std::enable_if_t&lt; std::is_enum_v&lt; T &gt;, uint16_t &gt;</td></tr>
 <tr class="separator:a37903048835bcd7500cc2a6284728c3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adcef60be9db1c19b4bdc3ce0b89951f3"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="../../d4/db2/namespacenut_1_1can__protocol.html#a81d11237e130e2bb55ce3201eacf5375">Device</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/db2/namespacenut_1_1can__protocol.html#adcef60be9db1c19b4bdc3ce0b89951f3">GetDeviceType</a> (uint16_t id)</td></tr>
-<tr class="separator:adcef60be9db1c19b4bdc3ce0b89951f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0a273244dbe97f8c2227d70991513ee5"><td class="memItemLeft" align="right" valign="top">static constexpr uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/db2/namespacenut_1_1can__protocol.html#a0a273244dbe97f8c2227d70991513ee5">GetDeviceID</a> (uint16_t id)</td></tr>
-<tr class="separator:a0a273244dbe97f8c2227d70991513ee5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68d6725c51c5e819e1e1b9a449eaad7f"><td class="memItemLeft" align="right" valign="top">static constexpr uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/db2/namespacenut_1_1can__protocol.html#a68d6725c51c5e819e1e1b9a449eaad7f">GetDataType</a> (uint16_t id)</td></tr>
-<tr class="separator:a68d6725c51c5e819e1e1b9a449eaad7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a794f59320468e755047cb2f3783b6825"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="../../d4/db2/namespacenut_1_1can__protocol.html#a81d11237e130e2bb55ce3201eacf5375">Device</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/db2/namespacenut_1_1can__protocol.html#a794f59320468e755047cb2f3783b6825">GetDeviceType</a> (uint16_t can_id)</td></tr>
+<tr class="separator:a794f59320468e755047cb2f3783b6825"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f6d69b0ea52a4d58f360f48bfab1cc2"><td class="memItemLeft" align="right" valign="top">static constexpr uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/db2/namespacenut_1_1can__protocol.html#a8f6d69b0ea52a4d58f360f48bfab1cc2">GetDeviceID</a> (uint16_t can_id)</td></tr>
+<tr class="separator:a8f6d69b0ea52a4d58f360f48bfab1cc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af51b8e40c6700abc5489e675dff57f35"><td class="memItemLeft" align="right" valign="top">static constexpr uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/db2/namespacenut_1_1can__protocol.html#af51b8e40c6700abc5489e675dff57f35">GetDataType</a> (uint16_t can_id)</td></tr>
+<tr class="separator:af51b8e40c6700abc5489e675dff57f35"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 変数</h2></td></tr>
@@ -198,6 +201,7 @@ $(document).ready(function(){initNavTree('d4/db2/namespacenut_1_1can__protocol.h
 <tr><td class="fieldname"><a id="a81d11237e130e2bb55ce3201eacf5375a88dba0c4e2af76447df43d1e31331a3d"></a>PC&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a81d11237e130e2bb55ce3201eacf5375a428f20b688f982957c58ae00b91f3d4f"></a>motorDriver&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a81d11237e130e2bb55ce3201eacf5375a651a07985bf518219e04422480e781a6"></a>solenoidValve&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a81d11237e130e2bb55ce3201eacf5375a4392653a13bc19a01a637fc3a6678e18"></a>tof&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
 <p class="definition"> <a class="el" href="../../d7/dbd/_c_a_n_bus_protocol_8hpp_source.html">CANBusProtocol.hpp</a> の <a class="el" href="../../d7/dbd/_c_a_n_bus_protocol_8hpp_source.html#l00021">21</a> 行目に定義があります。</p>
@@ -205,8 +209,8 @@ $(document).ready(function(){initNavTree('d4/db2/namespacenut_1_1can__protocol.h
 </div>
 </div>
 <h2 class="groupheader">関数詳解</h2>
-<a id="a68d6725c51c5e819e1e1b9a449eaad7f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a68d6725c51c5e819e1e1b9a449eaad7f">&#9670;&nbsp;</a></span>GetDataType()</h2>
+<a id="af51b8e40c6700abc5489e675dff57f35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af51b8e40c6700abc5489e675dff57f35">&#9670;&nbsp;</a></span>GetDataType()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -218,7 +222,7 @@ $(document).ready(function(){initNavTree('d4/db2/namespacenut_1_1can__protocol.h
           <td class="memname">static constexpr uint8_t nut::can_protocol::GetDataType </td>
           <td>(</td>
           <td class="paramtype">uint16_t&#160;</td>
-          <td class="paramname"><em>id</em></td><td>)</td>
+          <td class="paramname"><em>can_id</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -229,12 +233,12 @@ $(document).ready(function(){initNavTree('d4/db2/namespacenut_1_1can__protocol.h
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="../../d7/dbd/_c_a_n_bus_protocol_8hpp_source.html">CANBusProtocol.hpp</a> の <a class="el" href="../../d7/dbd/_c_a_n_bus_protocol_8hpp_source.html#l00272">272</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d7/dbd/_c_a_n_bus_protocol_8hpp_source.html">CANBusProtocol.hpp</a> の <a class="el" href="../../d7/dbd/_c_a_n_bus_protocol_8hpp_source.html#l00291">291</a> 行目に定義があります。</p>
 
 </div>
 </div>
-<a id="a0a273244dbe97f8c2227d70991513ee5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0a273244dbe97f8c2227d70991513ee5">&#9670;&nbsp;</a></span>GetDeviceID()</h2>
+<a id="a8f6d69b0ea52a4d58f360f48bfab1cc2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f6d69b0ea52a4d58f360f48bfab1cc2">&#9670;&nbsp;</a></span>GetDeviceID()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -246,7 +250,7 @@ $(document).ready(function(){initNavTree('d4/db2/namespacenut_1_1can__protocol.h
           <td class="memname">static constexpr uint8_t nut::can_protocol::GetDeviceID </td>
           <td>(</td>
           <td class="paramtype">uint16_t&#160;</td>
-          <td class="paramname"><em>id</em></td><td>)</td>
+          <td class="paramname"><em>can_id</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -257,12 +261,12 @@ $(document).ready(function(){initNavTree('d4/db2/namespacenut_1_1can__protocol.h
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="../../d7/dbd/_c_a_n_bus_protocol_8hpp_source.html">CANBusProtocol.hpp</a> の <a class="el" href="../../d7/dbd/_c_a_n_bus_protocol_8hpp_source.html#l00264">264</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d7/dbd/_c_a_n_bus_protocol_8hpp_source.html">CANBusProtocol.hpp</a> の <a class="el" href="../../d7/dbd/_c_a_n_bus_protocol_8hpp_source.html#l00283">283</a> 行目に定義があります。</p>
 
 </div>
 </div>
-<a id="adcef60be9db1c19b4bdc3ce0b89951f3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adcef60be9db1c19b4bdc3ce0b89951f3">&#9670;&nbsp;</a></span>GetDeviceType()</h2>
+<a id="a794f59320468e755047cb2f3783b6825"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a794f59320468e755047cb2f3783b6825">&#9670;&nbsp;</a></span>GetDeviceType()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -274,7 +278,7 @@ $(document).ready(function(){initNavTree('d4/db2/namespacenut_1_1can__protocol.h
           <td class="memname">static constexpr <a class="el" href="../../d4/db2/namespacenut_1_1can__protocol.html#a81d11237e130e2bb55ce3201eacf5375">Device</a> nut::can_protocol::GetDeviceType </td>
           <td>(</td>
           <td class="paramtype">uint16_t&#160;</td>
-          <td class="paramname"><em>id</em></td><td>)</td>
+          <td class="paramname"><em>can_id</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -285,7 +289,7 @@ $(document).ready(function(){initNavTree('d4/db2/namespacenut_1_1can__protocol.h
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="../../d7/dbd/_c_a_n_bus_protocol_8hpp_source.html">CANBusProtocol.hpp</a> の <a class="el" href="../../d7/dbd/_c_a_n_bus_protocol_8hpp_source.html#l00256">256</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d7/dbd/_c_a_n_bus_protocol_8hpp_source.html">CANBusProtocol.hpp</a> の <a class="el" href="../../d7/dbd/_c_a_n_bus_protocol_8hpp_source.html#l00275">275</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -331,7 +335,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="../../d7/dbd/_c_a_n_bus_protocol_8hpp_source.html">CANBusProtocol.hpp</a> の <a class="el" href="../../d7/dbd/_c_a_n_bus_protocol_8hpp_source.html#l00247">247</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d7/dbd/_c_a_n_bus_protocol_8hpp_source.html">CANBusProtocol.hpp</a> の <a class="el" href="../../d7/dbd/_c_a_n_bus_protocol_8hpp_source.html#l00266">266</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -377,7 +381,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="../../d7/dbd/_c_a_n_bus_protocol_8hpp_source.html">CANBusProtocol.hpp</a> の <a class="el" href="../../d7/dbd/_c_a_n_bus_protocol_8hpp_source.html#l00225">225</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d7/dbd/_c_a_n_bus_protocol_8hpp_source.html">CANBusProtocol.hpp</a> の <a class="el" href="../../d7/dbd/_c_a_n_bus_protocol_8hpp_source.html#l00244">244</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -421,7 +425,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="../../d7/dbd/_c_a_n_bus_protocol_8hpp_source.html">CANBusProtocol.hpp</a> の <a class="el" href="../../d7/dbd/_c_a_n_bus_protocol_8hpp_source.html#l00236">236</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d7/dbd/_c_a_n_bus_protocol_8hpp_source.html">CANBusProtocol.hpp</a> の <a class="el" href="../../d7/dbd/_c_a_n_bus_protocol_8hpp_source.html#l00255">255</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -461,7 +465,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="../../d7/dbd/_c_a_n_bus_protocol_8hpp_source.html">CANBusProtocol.hpp</a> の <a class="el" href="../../d7/dbd/_c_a_n_bus_protocol_8hpp_source.html#l00204">204</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d7/dbd/_c_a_n_bus_protocol_8hpp_source.html">CANBusProtocol.hpp</a> の <a class="el" href="../../d7/dbd/_c_a_n_bus_protocol_8hpp_source.html#l00223">223</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -499,7 +503,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="../../d7/dbd/_c_a_n_bus_protocol_8hpp_source.html">CANBusProtocol.hpp</a> の <a class="el" href="../../d7/dbd/_c_a_n_bus_protocol_8hpp_source.html#l00214">214</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d7/dbd/_c_a_n_bus_protocol_8hpp_source.html">CANBusProtocol.hpp</a> の <a class="el" href="../../d7/dbd/_c_a_n_bus_protocol_8hpp_source.html#l00233">233</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -527,7 +531,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="../../d7/dbd/_c_a_n_bus_protocol_8hpp_source.html">CANBusProtocol.hpp</a> の <a class="el" href="../../d7/dbd/_c_a_n_bus_protocol_8hpp_source.html#l00185">185</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d7/dbd/_c_a_n_bus_protocol_8hpp_source.html">CANBusProtocol.hpp</a> の <a class="el" href="../../d7/dbd/_c_a_n_bus_protocol_8hpp_source.html#l00204">204</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -565,7 +569,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="../../d7/dbd/_c_a_n_bus_protocol_8hpp_source.html">CANBusProtocol.hpp</a> の <a class="el" href="../../d7/dbd/_c_a_n_bus_protocol_8hpp_source.html#l00194">194</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d7/dbd/_c_a_n_bus_protocol_8hpp_source.html">CANBusProtocol.hpp</a> の <a class="el" href="../../d7/dbd/_c_a_n_bus_protocol_8hpp_source.html#l00213">213</a> 行目に定義があります。</p>
 
 </div>
 </div>

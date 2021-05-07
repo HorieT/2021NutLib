@@ -1,6 +1,5 @@
 /**
  * @brief ステアドライバノード
- *
  */
 #pragma once
 
@@ -13,7 +12,7 @@
 
 
 namespace nut{
-/*
+/**
  * @brief ステアドライバクラス
  * @details ステア用の一体型ドライバへのノード接続用
  */
@@ -38,7 +37,7 @@ protected:
 
 public:
 	/**
-	 * @brief コンストラク
+	 * @brief コンストラクタ
 	 * @param[in] period 周期
 	 */
 	SteerDriver(MilliSecond<uint32_t> period)
@@ -74,7 +73,7 @@ public:
 	virtual void Stop() = 0;
 
 
-	/*
+	/**
 	 *  @brief 制御入力
 	 *  @param[in] norm 平面ベクトルの絶対値[m/s]
 	 *  @param[in] norm 平面ベクトルの角度[rad]
@@ -85,7 +84,7 @@ public:
 
 		return true;
 	}
-	/*
+	/**
 	 *  @brief 制御入力(角度保持)
 	 *  @param[in] norm 平面ベクトルの絶対値[m/s]
 	 */

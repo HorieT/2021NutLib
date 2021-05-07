@@ -3,6 +3,11 @@ var classnut_1_1unit_1_1_unit =
     [ "Unit", "db/dcb/classnut_1_1unit_1_1_unit.html#af4283ee01dee50cf9811bcd13adedc28", null ],
     [ "Unit", "db/dcb/classnut_1_1unit_1_1_unit.html#af074d28d6da9d12891e4e0b9ce7a8d39", null ],
     [ "Unit", "db/dcb/classnut_1_1unit_1_1_unit.html#a81bb77cf827ff26ae55276cf24a390ac", null ],
+    [ "d", "db/dcb/classnut_1_1unit_1_1_unit.html#ae2394d96b7d23ed78ce8358ce0c3c23c", null ],
+    [ "f", "db/dcb/classnut_1_1unit_1_1_unit.html#a0aa46cb71709b5c0c0359f8e897ceaac", null ],
+    [ "i16", "db/dcb/classnut_1_1unit_1_1_unit.html#a2dc97810f20f6b5044b2c959ea686a0b", null ],
+    [ "i32", "db/dcb/classnut_1_1unit_1_1_unit.html#a58b66de4dfcddbd11c5da1c96e3b8efd", null ],
+    [ "i8", "db/dcb/classnut_1_1unit_1_1_unit.html#a60057b56d1008dea1cdd1e67452077e8", null ],
     [ "operator A", "db/dcb/classnut_1_1unit_1_1_unit.html#ab4e8214c9bde4e6f3b6cb55001d03958", null ],
     [ "operator*=", "db/dcb/classnut_1_1unit_1_1_unit.html#a23e6b457f875490fd226c1410bb49038", null ],
     [ "operator+", "db/dcb/classnut_1_1unit_1_1_unit.html#a5631c1f24828a08fa758cea7f6238e70", null ],
@@ -12,6 +17,10 @@ var classnut_1_1unit_1_1_unit =
     [ "operator-=", "db/dcb/classnut_1_1unit_1_1_unit.html#ab56cdc2452c8736a1f2a5712a90a2e7b", null ],
     [ "operator-=", "db/dcb/classnut_1_1unit_1_1_unit.html#a988a0a11cd38945f4ce24019f4489d19", null ],
     [ "operator/=", "db/dcb/classnut_1_1unit_1_1_unit.html#a411828a5efd263c28e14ceac41a5f42b", null ],
+    [ "operator=", "db/dcb/classnut_1_1unit_1_1_unit.html#a07afe01e46351966c5d1622c96320622", null ],
     [ "operator=", "db/dcb/classnut_1_1unit_1_1_unit.html#a479b7ac426c256225faa67f4e0b50d66", null ],
-    [ "operator=", "db/dcb/classnut_1_1unit_1_1_unit.html#aebc932b08f9b74c73df4035eac0c6e63", null ]
+    [ "operator=", "db/dcb/classnut_1_1unit_1_1_unit.html#aebc932b08f9b74c73df4035eac0c6e63", null ],
+    [ "u16", "db/dcb/classnut_1_1unit_1_1_unit.html#a1dbeec960ffd05f4228bd8b18d70127a", null ],
+    [ "u32", "db/dcb/classnut_1_1unit_1_1_unit.html#aa148680708656aeeabf9af1674900fac", null ],
+    [ "u8", "db/dcb/classnut_1_1unit_1_1_unit.html#a27dbf1cebdbd266d1a1c542b27861319", null ]
 ];

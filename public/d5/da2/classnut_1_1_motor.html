@@ -234,11 +234,11 @@ nut::Motor の継承関係図</div>
 <tr class="separator:a07419fd0f0e964016084ab9b3605009b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e7f0ef80cbc1fde3400dcfb83405de0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/dff/classnut_1_1_time_scheduler.html">TimeScheduler</a>&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/da2/classnut_1_1_motor.html#a3e7f0ef80cbc1fde3400dcfb83405de0">_scheduler</a></td></tr>
 <tr class="separator:a3e7f0ef80cbc1fde3400dcfb83405de0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a14a403a4d236b8e12342250b888e5ed9"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="../../df/ddb/classnut_1_1_p_i_d_base.html">PIDBase</a>&lt; float &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/da2/classnut_1_1_motor.html#a14a403a4d236b8e12342250b888e5ed9">_radps_pid</a> {new <a class="el" href="../../d2/d44/classnut_1_1_vec_p_i_d.html">VecPID</a>&lt;float&gt;()}</td></tr>
+<tr class="memitem:a14a403a4d236b8e12342250b888e5ed9"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="../../df/ddb/classnut_1_1_p_i_d_base.html">PIDBase</a>&lt; float &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/da2/classnut_1_1_motor.html#a14a403a4d236b8e12342250b888e5ed9">_radps_pid</a> {new <a class="el" href="../../d4/d7c/classnut_1_1_pos_p_i_d.html">PosPID</a>&lt;float&gt;()}</td></tr>
 <tr class="separator:a14a403a4d236b8e12342250b888e5ed9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a96e15c6af46b58dc17125b4ae4a1270d"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="../../df/ddb/classnut_1_1_p_i_d_base.html">PIDBase</a>&lt; float &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/da2/classnut_1_1_motor.html#a96e15c6af46b58dc17125b4ae4a1270d">_rad_pid</a> {new <a class="el" href="../../d2/d44/classnut_1_1_vec_p_i_d.html">VecPID</a>&lt;float&gt;()}</td></tr>
+<tr class="memitem:a96e15c6af46b58dc17125b4ae4a1270d"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="../../df/ddb/classnut_1_1_p_i_d_base.html">PIDBase</a>&lt; float &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/da2/classnut_1_1_motor.html#a96e15c6af46b58dc17125b4ae4a1270d">_rad_pid</a> {new <a class="el" href="../../d4/d7c/classnut_1_1_pos_p_i_d.html">PosPID</a>&lt;float&gt;()}</td></tr>
 <tr class="separator:a96e15c6af46b58dc17125b4ae4a1270d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a153142a7b3a2c77cb48632a93d46ce4c"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="../../df/ddb/classnut_1_1_p_i_d_base.html">PIDBase</a>&lt; float &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/da2/classnut_1_1_motor.html#a153142a7b3a2c77cb48632a93d46ce4c">_current_pid</a> {new <a class="el" href="../../d2/d44/classnut_1_1_vec_p_i_d.html">VecPID</a>&lt;float&gt;()}</td></tr>
+<tr class="memitem:a153142a7b3a2c77cb48632a93d46ce4c"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="../../df/ddb/classnut_1_1_p_i_d_base.html">PIDBase</a>&lt; float &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/da2/classnut_1_1_motor.html#a153142a7b3a2c77cb48632a93d46ce4c">_current_pid</a> {new <a class="el" href="../../d4/d7c/classnut_1_1_pos_p_i_d.html">PosPID</a>&lt;float&gt;()}</td></tr>
 <tr class="separator:a153142a7b3a2c77cb48632a93d46ce4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a88a9ba06f74cfa8eeee81cf3d3bd119a"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/da2/classnut_1_1_motor.html#a88a9ba06f74cfa8eeee81cf3d3bd119a">_target_duty</a> = 0.0f</td></tr>
 <tr class="separator:a88a9ba06f74cfa8eeee81cf3d3bd119a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -264,7 +264,7 @@ nut::Motor の継承関係図</div>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock"><p>モータ制御基底純粋仮想クラス </p>
 
-<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00019">19</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00020">20</a> 行目に定義があります。</p>
 </div><h2 class="groupheader">列挙型メンバ詳解</h2>
 <a id="a21a5cd6931fdabe222955f11ae32571b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a21a5cd6931fdabe222955f11ae32571b">&#9670;&nbsp;</a></span>MoveType</h2>
@@ -297,7 +297,7 @@ nut::Motor の継承関係図</div>
 <tr><td class="fieldname"><a id="a21a5cd6931fdabe222955f11ae32571ba5741ab9a473f6623c5c8d4cb474cb4f4"></a>currnet&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00024">24</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00025">25</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -334,7 +334,7 @@ nut::Motor の継承関係図</div>
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00090">90</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00091">91</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -363,7 +363,7 @@ nut::Motor の継承関係図</div>
 
 <p>デストラクタ </p>
 
-<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00096">96</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00097">97</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -423,7 +423,7 @@ nut::Motor の継承関係図</div>
 <p>現在電流値取得 </p>
 <dl class="section return"><dt>戻り値</dt><dd>[A] </dd></dl>
 
-<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00320">320</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00321">321</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -453,7 +453,7 @@ nut::Motor の継承関係図</div>
 <p>電流PID制御器取得 </p>
 <dl class="section return"><dt>戻り値</dt><dd>制御器生ポインタ  <a class="el" href="../../d5/da2/classnut_1_1_motor.html#a13f7a160817185060384a98203618e9e" title="制御ストップ">Stop()</a>していない場合はヌルポ </dd></dl>
 
-<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00285">285</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00286">286</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -483,7 +483,7 @@ nut::Motor の継承関係図</div>
 <p>Duty取得 </p>
 <dl class="section return"><dt>戻り値</dt><dd>Duty比(百分率) </dd></dl>
 
-<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00299">299</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00300">300</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -513,7 +513,7 @@ nut::Motor の継承関係図</div>
 <p>角度取得 </p>
 <dl class="section return"><dt>戻り値</dt><dd>Rad </dd></dl>
 
-<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00313">313</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00314">314</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -543,7 +543,7 @@ nut::Motor の継承関係図</div>
 <p>角度PID制御器取得 </p>
 <dl class="section return"><dt>戻り値</dt><dd>制御器生ポインタ  <a class="el" href="../../d5/da2/classnut_1_1_motor.html#a13f7a160817185060384a98203618e9e" title="制御ストップ">Stop()</a>していない場合はヌルポ </dd></dl>
 
-<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00276">276</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00277">277</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -573,7 +573,7 @@ nut::Motor の継承関係図</div>
 <p>速度取得 </p>
 <dl class="section return"><dt>戻り値</dt><dd>rad/s </dd></dl>
 
-<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00306">306</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00307">307</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -603,7 +603,7 @@ nut::Motor の継承関係図</div>
 <p>角速度PID制御器取得 </p>
 <dl class="section return"><dt>戻り値</dt><dd>制御器生ポインタ  <a class="el" href="../../d5/da2/classnut_1_1_motor.html#a13f7a160817185060384a98203618e9e" title="制御ストップ">Stop()</a>していない場合はヌルポ </dd></dl>
 
-<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00267">267</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00268">268</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -633,7 +633,7 @@ nut::Motor の継承関係図</div>
 <p>目標電流値取得 </p>
 <dl class="section return"><dt>戻り値</dt><dd>[A] </dd></dl>
 
-<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00341">341</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00342">342</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -663,7 +663,7 @@ nut::Motor の継承関係図</div>
 <p>目標角度取得 </p>
 <dl class="section return"><dt>戻り値</dt><dd>Rad </dd></dl>
 
-<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00334">334</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00335">335</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -693,7 +693,7 @@ nut::Motor の継承関係図</div>
 <p>目標速度取得 </p>
 <dl class="section return"><dt>戻り値</dt><dd>rad/s </dd></dl>
 
-<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00327">327</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00328">328</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -751,7 +751,7 @@ nut::Motor の継承関係図</div>
 
 <p>パラメータ&amp;目標値リセット </p>
 
-<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00073">73</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00074">74</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -790,7 +790,7 @@ nut::Motor の継承関係図</div>
 
 <p><a class="el" href="../../df/da1/classnut_1_1_reiwa_m_d.html#a39100c5ad64a7d4a5fdfe13fe78b6594">nut::ReiwaMD</a>, <a class="el" href="../../d0/d4a/classnut_1_1_m_d2021.html#a593ae91a75e211f3c045dd7e5e9780d1">nut::MD2021</a>, <a class="el" href="../../db/d01/classnut_1_1_direct_duty_motor.html#ae03abe769a82cec49f161eb2cb530727">nut::DirectDutyMotor</a>で再実装されています。</p>
 
-<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00221">221</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00222">222</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -819,7 +819,7 @@ nut::Motor の継承関係図</div>
 
 <p>目標値リセット </p>
 
-<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00064">64</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00065">65</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -887,7 +887,7 @@ nut::Motor の継承関係図</div>
 
 <p><a class="el" href="../../db/d01/classnut_1_1_direct_duty_motor.html#aaf9cbf72741556ab66ca800f78a432c3">nut::DirectDutyMotor</a>, <a class="el" href="../../d4/dfa/classnut_1_1_current_control_motor.html#aa8fe60d6e40cbc7e78b3406152883630">nut::CurrentControlMotor</a>で再実装されています。</p>
 
-<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00205">205</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00206">206</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -924,7 +924,7 @@ nut::Motor の継承関係図</div>
 </dl>
 <dl class="section return"><dt>戻り値</dt><dd>セットの可否 </dd></dl>
 
-<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00253">253</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00254">254</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -963,7 +963,7 @@ nut::Motor の継承関係図</div>
 
 <p><a class="el" href="../../df/da1/classnut_1_1_reiwa_m_d.html#a5e7015dc7a039d8f4fdb6c9911dab941">nut::ReiwaMD</a>で再実装されています。</p>
 
-<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00126">126</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00127">127</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -1002,7 +1002,7 @@ nut::Motor の継承関係図</div>
 
 <p><a class="el" href="../../db/d01/classnut_1_1_direct_duty_motor.html#ab268cfffa6dcb5bc2daae5c5d42eef54">nut::DirectDutyMotor</a>, <a class="el" href="../../df/da1/classnut_1_1_reiwa_m_d.html#a14e6ace9c1401477dc94db57a8cdcb20">nut::ReiwaMD</a>で再実装されています。</p>
 
-<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00149">149</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00150">150</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -1039,7 +1039,7 @@ nut::Motor の継承関係図</div>
 </dl>
 <dl class="section return"><dt>戻り値</dt><dd>セットの可否 </dd></dl>
 
-<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00243">243</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00244">244</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -1078,7 +1078,7 @@ nut::Motor の継承関係図</div>
 
 <p><a class="el" href="../../df/da1/classnut_1_1_reiwa_m_d.html#a9a931fb345820b871594bdab35628805">nut::ReiwaMD</a>, <a class="el" href="../../db/d01/classnut_1_1_direct_duty_motor.html#a791fbedbb22a20bb3938825453b3e626">nut::DirectDutyMotor</a>で再実装されています。</p>
 
-<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00138">138</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00139">139</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -1115,7 +1115,7 @@ nut::Motor の継承関係図</div>
 </dl>
 <dl class="section return"><dt>戻り値</dt><dd>セットの可否 </dd></dl>
 
-<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00233">233</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00234">234</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -1154,7 +1154,7 @@ nut::Motor の継承関係図</div>
 
 <p><a class="el" href="../../db/d01/classnut_1_1_direct_duty_motor.html#ad31ca9679c25afd8bfc0295c23f0d844">nut::DirectDutyMotor</a>, <a class="el" href="../../df/da1/classnut_1_1_reiwa_m_d.html#aa2b143308f00dffa73733943a1a029bb">nut::ReiwaMD</a>で再実装されています。</p>
 
-<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00162">162</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00163">163</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -1204,7 +1204,7 @@ nut::Motor の継承関係図</div>
 
 <p><a class="el" href="../../db/d01/classnut_1_1_direct_duty_motor.html#a9a659ce46da54d7b5c3a533dc8f8daf3">nut::DirectDutyMotor</a>, <a class="el" href="../../df/da1/classnut_1_1_reiwa_m_d.html#a2d134b09df7527be717efec6829d6507">nut::ReiwaMD</a>で再実装されています。</p>
 
-<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00182">182</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00183">183</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -1277,7 +1277,7 @@ nut::Motor の継承関係図</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::unique_ptr&lt;<a class="el" href="../../df/ddb/classnut_1_1_p_i_d_base.html">PIDBase</a>&lt;float&gt; &gt; nut::Motor::_current_pid {new <a class="el" href="../../d2/d44/classnut_1_1_vec_p_i_d.html">VecPID</a>&lt;float&gt;()}</td>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="../../df/ddb/classnut_1_1_p_i_d_base.html">PIDBase</a>&lt;float&gt; &gt; nut::Motor::_current_pid {new <a class="el" href="../../d4/d7c/classnut_1_1_pos_p_i_d.html">PosPID</a>&lt;float&gt;()}</td>
         </tr>
       </table>
   </td>
@@ -1287,7 +1287,7 @@ nut::Motor の継承関係図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00041">41</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00042">42</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -1311,7 +1311,7 @@ nut::Motor の継承関係図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00057">57</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00058">58</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -1335,7 +1335,7 @@ nut::Motor の継承関係図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00033">33</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00034">34</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -1359,7 +1359,7 @@ nut::Motor の継承関係図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00055">55</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00056">56</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -1383,7 +1383,7 @@ nut::Motor の継承関係図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00052">52</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00053">53</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -1407,7 +1407,7 @@ nut::Motor の継承関係図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00054">54</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00055">55</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -1431,7 +1431,7 @@ nut::Motor の継承関係図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00053">53</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00054">54</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -1445,7 +1445,7 @@ nut::Motor の継承関係図</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::unique_ptr&lt;<a class="el" href="../../df/ddb/classnut_1_1_p_i_d_base.html">PIDBase</a>&lt;float&gt; &gt; nut::Motor::_rad_pid {new <a class="el" href="../../d2/d44/classnut_1_1_vec_p_i_d.html">VecPID</a>&lt;float&gt;()}</td>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="../../df/ddb/classnut_1_1_p_i_d_base.html">PIDBase</a>&lt;float&gt; &gt; nut::Motor::_rad_pid {new <a class="el" href="../../d4/d7c/classnut_1_1_pos_p_i_d.html">PosPID</a>&lt;float&gt;()}</td>
         </tr>
       </table>
   </td>
@@ -1455,7 +1455,7 @@ nut::Motor の継承関係図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00040">40</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00041">41</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -1469,7 +1469,7 @@ nut::Motor の継承関係図</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::unique_ptr&lt;<a class="el" href="../../df/ddb/classnut_1_1_p_i_d_base.html">PIDBase</a>&lt;float&gt; &gt; nut::Motor::_radps_pid {new <a class="el" href="../../d2/d44/classnut_1_1_vec_p_i_d.html">VecPID</a>&lt;float&gt;()}</td>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="../../df/ddb/classnut_1_1_p_i_d_base.html">PIDBase</a>&lt;float&gt; &gt; nut::Motor::_radps_pid {new <a class="el" href="../../d4/d7c/classnut_1_1_pos_p_i_d.html">PosPID</a>&lt;float&gt;()}</td>
         </tr>
       </table>
   </td>
@@ -1479,7 +1479,7 @@ nut::Motor の継承関係図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00039">39</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00040">40</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -1503,7 +1503,7 @@ nut::Motor の継承関係図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00036">36</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00037">37</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -1527,7 +1527,7 @@ nut::Motor の継承関係図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00047">47</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00048">48</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -1551,7 +1551,7 @@ nut::Motor の継承関係図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00044">44</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00045">45</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -1575,7 +1575,7 @@ nut::Motor の継承関係図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00046">46</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00047">47</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -1599,7 +1599,7 @@ nut::Motor の継承関係図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00045">45</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00046">46</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -1623,7 +1623,7 @@ nut::Motor の継承関係図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00048">48</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d4/dcd/_motor_8hpp_source.html">Motor.hpp</a> の <a class="el" href="../../d4/dcd/_motor_8hpp_source.html#l00049">49</a> 行目に定義があります。</p>
 
 </div>
 </div>

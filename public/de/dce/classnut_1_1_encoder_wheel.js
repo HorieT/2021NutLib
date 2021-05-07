@@ -1,6 +1,6 @@
 var classnut_1_1_encoder_wheel =
 [
-    [ "EncoderWheel", "de/dce/classnut_1_1_encoder_wheel.html#abdb50f7b4b9f4312dc7838b2c8797ac5", null ],
+    [ "EncoderWheel", "de/dce/classnut_1_1_encoder_wheel.html#a1abe35c7a67731a03387d6b6cfb76853", null ],
     [ "~EncoderWheel", "de/dce/classnut_1_1_encoder_wheel.html#aeb6681f8ebd4b8d64f73e2072942925c", null ],
     [ "GetDistance", "de/dce/classnut_1_1_encoder_wheel.html#a48323897d222c69acbf292c8ac833a41", null ],
     [ "GetDistanceAndReset", "de/dce/classnut_1_1_encoder_wheel.html#aaef592c5203545da6dd0a23ea0e163d5", null ],

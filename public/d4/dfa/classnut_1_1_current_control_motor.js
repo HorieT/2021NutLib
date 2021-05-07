@@ -1,6 +1,6 @@
 var classnut_1_1_current_control_motor =
 [
-    [ "CurrentControlMotor", "d4/dfa/classnut_1_1_current_control_motor.html#ad3bf74125f488ce45805e218b3e02ad7", null ],
+    [ "CurrentControlMotor", "d4/dfa/classnut_1_1_current_control_motor.html#a4d77c0c52c3efc7db53bea5498dfdd2a", null ],
     [ "~CurrentControlMotor", "d4/dfa/classnut_1_1_current_control_motor.html#a4b70ac9d6c8ec2ab0b5de6084fb7f5c6", null ],
     [ "CurrentEXTI", "d4/dfa/classnut_1_1_current_control_motor.html#a4f3cf2a6cccecd6ff7c2a7b0dda6ec1b", null ],
     [ "Deinit", "d4/dfa/classnut_1_1_current_control_motor.html#acb7a0d0edb0891286e6d5535f6dc301c", null ],

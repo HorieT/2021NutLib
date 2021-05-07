@@ -15,6 +15,7 @@ var _global_8hpp =
     [ "M_SQRT1_2", "d2/d88/_global_8hpp.html#acdbb2c2f9429f08916f03c8786d2d2d7", null ],
     [ "M_SQRT2", "d2/d88/_global_8hpp.html#a66b3ab30f1332874326ed93969e496e0", null ],
     [ "USE_NUTLIB_CALLBACKS", "d2/d88/_global_8hpp.html#aa932e9dee0bbc904d21e7ec9da816a66", null ],
+    [ "BitSwap", "d2/d88/_global_8hpp.html#aa8e20f1e91318570d8b1d06885ade476", null ],
     [ "M_2PI_f", "d2/d88/_global_8hpp.html#a2ee93ef6e1e3b5d1729900b8fa563931", null ],
     [ "M_PI_2_f", "d2/d88/_global_8hpp.html#af764d117dca888425c96cf0bb4f5bd19", null ],
     [ "M_PI_f", "d2/d88/_global_8hpp.html#aec1eaa9c308e28b44ea6f1f930fcc560", null ],

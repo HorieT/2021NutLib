@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['encoder_560',['Encoder',['../df/d9b/classnut_1_1_encoder.html',1,'nut']]],
-  ['encoderwheel_561',['EncoderWheel',['../de/dce/classnut_1_1_encoder_wheel.html',1,'nut']]]
+  ['directdutymotor_796',['DirectDutyMotor',['../db/d01/classnut_1_1_direct_duty_motor.html',1,'nut']]],
+  ['drivewheel_797',['DriveWheel',['../dc/d39/classnut_1_1_drive_wheel.html',1,'nut']]],
+  ['dualshock_798',['DualShock',['../d6/de4/classnut_1_1_dual_shock.html',1,'nut']]]
 ];

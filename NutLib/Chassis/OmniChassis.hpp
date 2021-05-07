@@ -90,7 +90,7 @@ public:
 		uint8_t i = 0;
 		for(auto& c : _coefficient){
 			c[0] = -std::cos(_wheel_position.theta() + static_cast<float>(M_PI) * 2.0f * static_cast<float>(i) / static_cast<float>(N));
-			c[1] = -std::sin(_wheel_position.theta() + static_cast<float>(M_PI) * 2.0f * static_cast<float>(i)/ static_cast<float>(N));
+			c[1] = -std::sin(_wheel_position.theta() + static_cast<float>(M_PI) * 2.0f * static_cast<float>(i) / static_cast<float>(N));
 			++i;
 		}
 	}

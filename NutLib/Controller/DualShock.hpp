@@ -275,7 +275,10 @@ public:
 		return static_cast<int8_t>(data);
 	}
 
-	std::array<uint8_t, SBDBT_DATA_SIZE> GetData(){
+	/*
+	 * @brief 生データの取得
+	 */
+	std::array<uint8_t, SBDBT_DATA_SIZE> GetData() const{
 		return _buttonn_data;
 	}
 };

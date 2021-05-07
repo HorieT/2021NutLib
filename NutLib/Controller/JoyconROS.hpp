@@ -1,12 +1,20 @@
 /**
- * XboxController使おうと思ったけど、マイコン側でエンコードするのだるいから
- * ROSのトピックと同じ形の奴作った
+ * @file OmniChassis.hpp
+ * @brief ROSトピックのjoyconと同一のデータ定義
+ * @author Horie
+ * @date 2021/3
  */
 #pragma once
 
 #include "../Global.hpp"
 
 namespace nut{
+/*
+ * @brief ROSトピックのjoycon定義のコピークラス
+ * @details
+ * XboxController使おうと思ったけど、マイコン側でエンコードするのだるいから
+ * ROSのトピックと同じ形の奴作った
+ */
 class JoyconROS{
 public:
 	enum class Button : uint32_t{

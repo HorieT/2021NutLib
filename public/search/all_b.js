@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['kilo_226',['kilo',['../da/dc9/namespacenut_1_1unit.html#af650c50f32b1a28cba904ef33d5bf793',1,'nut::unit']]],
-  ['kilogram_227',['KiloGram',['../dd/d51/namespacenut.html#a9b646c16fbaa9a54cdf2bcc868fe339c',1,'nut']]]
+  ['joyconros_326',['JoyconROS',['../df/d9f/classnut_1_1_joycon_r_o_s.html',1,'nut']]],
+  ['joyconros_2ehpp_327',['JoyconROS.hpp',['../d3/dab/_joycon_r_o_s_8hpp.html',1,'']]]
 ];

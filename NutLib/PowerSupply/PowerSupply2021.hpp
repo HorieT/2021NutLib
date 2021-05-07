@@ -36,6 +36,9 @@ public:
 
 
 
+	/**
+	 * @brief 通電開始
+	 */
 	void Start(){
 		  std::array<uint8_t, 2> ps_data{_user_id, 0x01};
 		  _can->Transmit<2>(
@@ -47,6 +50,9 @@ public:
 				  ps_data
 		  );
 	}
+	/**
+	 * @brief 通電停止
+	 */
 	void Stop(){
 		  std::array<uint8_t, 2> ps_data{_user_id, 0x00};
 		  _can->Transmit<2>(

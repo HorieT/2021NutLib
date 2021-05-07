@@ -6,8 +6,7 @@ var _c_a_n_bus_protocol_8hpp =
       [ "radMulti", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#ad1f07de735117d905354ea397cb2f057a2e72482cfe40647a82b17b64cd5f3611", null ],
       [ "radSingle", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#ad1f07de735117d905354ea397cb2f057a55e2b971e3f427b5bb9e25427e4886e9", null ],
       [ "radSinglePolarity", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#ad1f07de735117d905354ea397cb2f057ac4e49bd816b656c783198855c46c169a", null ],
-      [ "current", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#ad1f07de735117d905354ea397cb2f057a43b5c9175984c071f30b873fdce0a000", null ],
-      [ "steer", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#ad1f07de735117d905354ea397cb2f057a1f0ccbc3f9b05fa6fff491d0b759e327", null ]
+      [ "current", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#ad1f07de735117d905354ea397cb2f057a43b5c9175984c071f30b873fdce0a000", null ]
     ] ],
     [ "ControlMode", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#a54ab8a12421163fb6f49b7eb2ebbfa68", [
       [ "init", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#a54ab8a12421163fb6f49b7eb2ebbfa68ae37f0136aa3ffaf149b351f6a4c948e9", null ],
@@ -16,9 +15,7 @@ var _c_a_n_bus_protocol_8hpp =
       [ "emergency", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#a54ab8a12421163fb6f49b7eb2ebbfa68ab65d50673fb197078c78f3a448a958bf", null ]
     ] ],
     [ "DataType", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#aa9983c54d2d0466d2dc3a2b2aa5a31e6", [
-      [ "fetState", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#aa9983c54d2d0466d2dc3a2b2aa5a31e6a80aa0912ea897f671b63927c919c38e4", null ],
-      [ "currentLimit", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#aa9983c54d2d0466d2dc3a2b2aa5a31e6ae38139813c593308c41658ab5106819e", null ],
-      [ "FuseState", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#aa9983c54d2d0466d2dc3a2b2aa5a31e6afeb6b2828f97cea582722daf0eb116f0", null ]
+      [ "fetState", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#aa9983c54d2d0466d2dc3a2b2aa5a31e6a80aa0912ea897f671b63927c919c38e4", null ]
     ] ],
     [ "DataType", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#a7b3bf21093fcec61da0edab255f62a6e", [
       [ "controlMode", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#a7b3bf21093fcec61da0edab255f62a6ea327620476fa7a450e0661754bbd26e1a", null ],
@@ -29,13 +26,9 @@ var _c_a_n_bus_protocol_8hpp =
     ] ],
     [ "DataType", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#ae4491dee7b163e95d69c270b0994f83a", [
       [ "error", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#ae4491dee7b163e95d69c270b0994f83aacb5e100e5a9a3e7f6d1fd97512215282", null ],
-      [ "xPos", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#ae4491dee7b163e95d69c270b0994f83aabac19872ffd5b06f1d042fd95a3a9fa1", null ],
-      [ "yPos", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#ae4491dee7b163e95d69c270b0994f83aa620489991d5ec0c455f8251029b69807", null ],
-      [ "thetaPos", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#ae4491dee7b163e95d69c270b0994f83aa049da0cbe17bb00c74769ab4828ee77a", null ],
-      [ "xSpeed", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#ae4491dee7b163e95d69c270b0994f83aadd73bde1d8ce417859d272ea7d90bade", null ],
-      [ "ySpeed", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#ae4491dee7b163e95d69c270b0994f83aa9b9c996e224b0bf245a1e11abae13a53", null ],
-      [ "xAcc", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#ae4491dee7b163e95d69c270b0994f83aa33c3b9a20640d7495b6c7e122b0413a2", null ],
-      [ "yAcc", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#ae4491dee7b163e95d69c270b0994f83aa4c825c642748d7e3481e87c8014cf3d3", null ],
+      [ "odmeter", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#ae4491dee7b163e95d69c270b0994f83aad821d13ce932944240c6ca8db4e824f3", null ],
+      [ "speed", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#ae4491dee7b163e95d69c270b0994f83aace4ef3ec98443ed10da505114b58f153", null ],
+      [ "acc", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#ae4491dee7b163e95d69c270b0994f83aa1673448ee7064c989d02579c534f6b66", null ],
       [ "uniqe", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#ae4491dee7b163e95d69c270b0994f83aa156f8302e6df6804b4fc79a1e29359ee", null ]
     ] ],
     [ "DataType", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#a0296f01a39e05016bfe9ba7cedd39fb1", [
@@ -47,8 +40,14 @@ var _c_a_n_bus_protocol_8hpp =
     [ "DataType", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#a98d921684953e108faa8aef1ea01c9b6", [
       [ "specialOperation", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#a98d921684953e108faa8aef1ea01c9b6a8673c35f714e6645ca3ca8c0d65d86c1", null ],
       [ "valveState", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#a98d921684953e108faa8aef1ea01c9b6aaa83283d5349be9555d996623084c660", null ],
-      [ "valveSetAdd", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#a98d921684953e108faa8aef1ea01c9b6a409fbd326d1c38ccde70c670daaf88f6", null ],
+      [ "valveSetAnd", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#a98d921684953e108faa8aef1ea01c9b6afea693dbd897a2dae192fb48069ef930", null ],
       [ "valveSetOr", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#a98d921684953e108faa8aef1ea01c9b6ae252e40209187a394441730877c423b0", null ]
+    ] ],
+    [ "DataType", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#aaf03f9ac2749a9a4317862729d1c18b8", [
+      [ "specialOperation", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#aaf03f9ac2749a9a4317862729d1c18b8a8673c35f714e6645ca3ca8c0d65d86c1", null ]
+    ] ],
+    [ "DataTypeTof", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#a6a234046b77cba7ae3c59ec1c8319964", [
+      [ "length", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#a6a234046b77cba7ae3c59ec1c8319964a2fa47f7c65fec19cc163b195725e3844", null ]
     ] ],
     [ "Device", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#a81d11237e130e2bb55ce3201eacf5375", [
       [ "allNode", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#a81d11237e130e2bb55ce3201eacf5375a81898fbfdc20875560e7765d51e85a87", null ],
@@ -56,7 +55,8 @@ var _c_a_n_bus_protocol_8hpp =
       [ "microcomputer", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#a81d11237e130e2bb55ce3201eacf5375a7f0e7ae0fcc727183ab9b8ac5daa896c", null ],
       [ "PC", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#a81d11237e130e2bb55ce3201eacf5375a88dba0c4e2af76447df43d1e31331a3d", null ],
       [ "motorDriver", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#a81d11237e130e2bb55ce3201eacf5375a428f20b688f982957c58ae00b91f3d4f", null ],
-      [ "solenoidValve", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#a81d11237e130e2bb55ce3201eacf5375a651a07985bf518219e04422480e781a6", null ]
+      [ "solenoidValve", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#a81d11237e130e2bb55ce3201eacf5375a651a07985bf518219e04422480e781a6", null ],
+      [ "tof", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#a81d11237e130e2bb55ce3201eacf5375a4392653a13bc19a01a637fc3a6678e18", null ]
     ] ],
     [ "Error", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#a3528758e2ad6d4b6625ef4a786e14d5b", null ],
     [ "General", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#a09adda460b330615520b743031e330ca", [
@@ -96,6 +96,11 @@ var _c_a_n_bus_protocol_8hpp =
       [ "emergencyRelease", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#a3cb6645656a5fe9f5a358f94e3b72124a00cf591f469dd21498a4ac5186cba1a7", null ],
       [ "fetOn", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#a3cb6645656a5fe9f5a358f94e3b72124a0912d31ac51a33bef9182e7f3bd38414", null ]
     ] ],
+    [ "RemoteType", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#acbaecff492fe6da42fe1575dbd32ccdb", [
+      [ "fetState", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#acbaecff492fe6da42fe1575dbd32ccdba80aa0912ea897f671b63927c919c38e4", null ],
+      [ "current", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#acbaecff492fe6da42fe1575dbd32ccdba43b5c9175984c071f30b873fdce0a000", null ],
+      [ "fuseState", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#acbaecff492fe6da42fe1575dbd32ccdba240938ca8fc6adfd5d2ab68c5a452993", null ]
+    ] ],
     [ "SpecialOperation", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#aa89c9d2ff08fe11870c186f6edf9d5cd", [
       [ "singleStartInc", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#aa89c9d2ff08fe11870c186f6edf9d5cda1144a859ce7f09208baab99634807268", null ],
       [ "singleStartIncCurrent", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#aa89c9d2ff08fe11870c186f6edf9d5cdab6f8c1b0ff8ce81ddf90b56524957ad0", null ],
@@ -109,16 +114,21 @@ var _c_a_n_bus_protocol_8hpp =
       [ "singleStartAbsCurrentDebug", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#aa89c9d2ff08fe11870c186f6edf9d5cdaafa2ff4772956efad157bbe5c782e8e9", null ],
       [ "steerStartDebug", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#aa89c9d2ff08fe11870c186f6edf9d5cda11a4a76169377b0f5efee25ae5b75d8b", null ],
       [ "steerStartDebugCurrent", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#aa89c9d2ff08fe11870c186f6edf9d5cdaa27c14124643fe57237c96b545b316ea", null ],
-      [ "stop", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#aa89c9d2ff08fe11870c186f6edf9d5cdaef399b2d446bb37b7c32ad2cc1b6045b", null ]
+      [ "stop", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#aa89c9d2ff08fe11870c186f6edf9d5cdaef399b2d446bb37b7c32ad2cc1b6045b", null ],
+      [ "dedicatedFirmware", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#aa89c9d2ff08fe11870c186f6edf9d5cdac2adc7d0141c04a90fbcadfd74092f05", null ]
     ] ],
     [ "SpecialOperation", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#aeb9377e8fccae12e0f7ceb37bf5cbcf2", null ],
+    [ "SpecialOperation", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#ae45c7b8ee5025ab12b148b124ef46b15", [
+      [ "regularModeStart", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#ae45c7b8ee5025ab12b148b124ef46b15a7da40cb408b7e9deb6fc883e95c39504", null ],
+      [ "regularModeStop", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#ae45c7b8ee5025ab12b148b124ef46b15aabf4a51c63cdd7688c76b70451c68657", null ]
+    ] ],
     [ "Steering", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#a4510e29fd1a8a8002e588e1160cab27a", [
       [ "origin", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#a4510e29fd1a8a8002e588e1160cab27aa7c49b153d4b59f8c0cf8c3e18dc80cb7", null ],
       [ "lock", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#a4510e29fd1a8a8002e588e1160cab27aadce7c4174ce9323904a934a486c41288", null ]
     ] ],
-    [ "GetDataType", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#a68d6725c51c5e819e1e1b9a449eaad7f", null ],
-    [ "GetDeviceID", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#a0a273244dbe97f8c2227d70991513ee5", null ],
-    [ "GetDeviceType", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#adcef60be9db1c19b4bdc3ce0b89951f3", null ],
+    [ "GetDataType", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#af51b8e40c6700abc5489e675dff57f35", null ],
+    [ "GetDeviceID", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#a8f6d69b0ea52a4d58f360f48bfab1cc2", null ],
+    [ "GetDeviceType", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#a794f59320468e755047cb2f3783b6825", null ],
     [ "MakeCANID", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#a37903048835bcd7500cc2a6284728c3f", null ],
     [ "MakeCANID", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#ac34b5543a8ba577a1ae13a16085b7168", null ],
     [ "MakeCANID", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#a6c6252927f1453287b786f5cc0318b27", null ],

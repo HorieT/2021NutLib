@@ -18,7 +18,7 @@ extern "C"{
 #include "stm32f1xx_hal.h"
 #elif defined STM32F303x8
 #include "stm32f3xx_hal.h"
-#elif defined STM32F407xx || STM32F446xx
+#elif defined STM32F407xx || defined STM32F446xx
 #include "stm32f4xx_hal.h"
 #elif defined STM32F767xx
 #include "stm32f7xx_hal.h"
@@ -26,14 +26,14 @@ extern "C"{
 }
 
 #ifndef UNUSE_NUTLIB_CALLBACKS
-//!< HAL default callback function をライブラリに移譲します
+//! HAL default callback function をライブラリに移譲します
 #define USE_NUTLIB_CALLBACKS
 #endif
 
 //Eigen代数計算ライブラリ
 #include "Eigen/Core"
 
-/**
+/*
  * STL
  *c++20以降であれば_USE_MATH_DEFINES及びM_PI等の定義を消し<numbers>に変更
  */
@@ -80,6 +80,9 @@ static constexpr bool USE_NUTLIB_CALLBACKS_FLAG = false;
 #endif
 
 
+/**
+ * @brief ビットスワップ
+ */
 template<typename T>
 constexpr auto BitSwap(T data) -> std::enable_if_t<std::is_integral_v<T>, T>{
 	constexpr size_t size = sizeof(T);

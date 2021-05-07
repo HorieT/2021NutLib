@@ -16,6 +16,7 @@ inline HALCallback<CAN_HandleTypeDef*> CAN_RxFifo0MsgPending;//<! FIFO0着信割
 inline HALCallback<CAN_HandleTypeDef*> CAN_RxFifo1MsgPending;//<! FIFO1着信割込み
 inline HALCallback<CAN_HandleTypeDef*> CAN_RxFifo0Full;//<! FIFO0メールボックス充填割込み
 inline HALCallback<CAN_HandleTypeDef*> CAN_RxFifo1Full;//<! FIFO1メールボックス充填割込み
+inline HALCallback<CAN_HandleTypeDef*> CAN_Error;//<! Error割込み
 }
 }
 #endif

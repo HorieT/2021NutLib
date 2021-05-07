@@ -1,10 +1,22 @@
 var searchData=
 [
-  ['feton_147',['fetOn',['../d1/db3/namespacenut_1_1can__protocol_1_1all.html#a3cb6645656a5fe9f5a358f94e3b72124a0912d31ac51a33bef9182e7f3bd38414',1,'nut::can_protocol::all']]],
-  ['fetstate_148',['fetState',['../db/d6c/namespacenut_1_1can__protocol_1_1power.html#aa9983c54d2d0466d2dc3a2b2aa5a31e6a80aa0912ea897f671b63927c919c38e4',1,'nut::can_protocol::power']]],
-  ['fifo0receivecallback_149',['FIFO0ReceiveCallback',['../dc/d4f/classnut_1_1_c_a_n_wrapper.html#af238b6dacef1c742af91eaa87aec01a0',1,'nut::CANWrapper']]],
-  ['fifo1receivecallback_150',['FIFO1ReceiveCallback',['../dc/d4f/classnut_1_1_c_a_n_wrapper.html#a1cd6126a428beb63ee9371aea586cf61',1,'nut::CANWrapper']]],
-  ['flash_2ehpp_151',['Flash.hpp',['../d7/d2b/_flash_8hpp.html',1,'']]],
-  ['fusedown_152',['fuseDown',['../d1/db3/namespacenut_1_1can__protocol_1_1all.html#a3cb6645656a5fe9f5a358f94e3b72124a7140bdef038cb515a1815b6bc546c8fe',1,'nut::can_protocol::all']]],
-  ['fusestate_153',['FuseState',['../db/d6c/namespacenut_1_1can__protocol_1_1power.html#aa9983c54d2d0466d2dc3a2b2aa5a31e6afeb6b2828f97cea582722daf0eb116f0',1,'nut::can_protocol::power']]]
+  ['f_196',['f',['../db/dcb/classnut_1_1unit_1_1_unit.html#a0aa46cb71709b5c0c0359f8e897ceaac',1,'nut::unit::Unit']]],
+  ['feton_197',['fetOn',['../d1/db3/namespacenut_1_1can__protocol_1_1all.html#a3cb6645656a5fe9f5a358f94e3b72124a0912d31ac51a33bef9182e7f3bd38414',1,'nut::can_protocol::all']]],
+  ['fetstate_198',['fetState',['../db/d6c/namespacenut_1_1can__protocol_1_1power.html#aa9983c54d2d0466d2dc3a2b2aa5a31e6a80aa0912ea897f671b63927c919c38e4',1,'nut::can_protocol::power::fetState()'],['../db/d6c/namespacenut_1_1can__protocol_1_1power.html#acbaecff492fe6da42fe1575dbd32ccdba80aa0912ea897f671b63927c919c38e4',1,'nut::can_protocol::power::fetState()']]],
+  ['fifo0receivecallback_199',['FIFO0ReceiveCallback',['../dc/d4f/classnut_1_1_c_a_n_wrapper.html#af238b6dacef1c742af91eaa87aec01a0',1,'nut::CANWrapper']]],
+  ['fifo1receivecallback_200',['FIFO1ReceiveCallback',['../dc/d4f/classnut_1_1_c_a_n_wrapper.html#a1cd6126a428beb63ee9371aea586cf61',1,'nut::CANWrapper']]],
+  ['final_5frange_201',['final_range',['../df/d49/structnut_1_1_v_l53_l0_x_1_1_sequence_step_enables.html#ad002fc6c24460dd3da6570e175afbb4b',1,'nut::VL53L0X::SequenceStepEnables']]],
+  ['final_5frange_5fconfig_5fmin_5fcount_5frate_5frtn_5flimit_202',['FINAL_RANGE_CONFIG_MIN_COUNT_RATE_RTN_LIMIT',['../d7/df1/classnut_1_1_v_l53_l0_x.html#a2344ca2de9dca718607eef664b645898ae124365ebcf21c2b6bb6423e183f7121',1,'nut::VL53L0X']]],
+  ['final_5frange_5fconfig_5fmin_5fsnr_203',['FINAL_RANGE_CONFIG_MIN_SNR',['../d7/df1/classnut_1_1_v_l53_l0_x.html#a2344ca2de9dca718607eef664b645898ad527b78bf01abfc09703558bc1268125',1,'nut::VL53L0X']]],
+  ['final_5frange_5fconfig_5ftimeout_5fmacrop_5fhi_204',['FINAL_RANGE_CONFIG_TIMEOUT_MACROP_HI',['../d7/df1/classnut_1_1_v_l53_l0_x.html#a2344ca2de9dca718607eef664b645898a8dc5a20cf069f372679bcd59ac8cd5ab',1,'nut::VL53L0X']]],
+  ['final_5frange_5fconfig_5ftimeout_5fmacrop_5flo_205',['FINAL_RANGE_CONFIG_TIMEOUT_MACROP_LO',['../d7/df1/classnut_1_1_v_l53_l0_x.html#a2344ca2de9dca718607eef664b645898a70cd264ca7ccaaacb19331fdc47ae613',1,'nut::VL53L0X']]],
+  ['final_5frange_5fconfig_5fvalid_5fphase_5fhigh_206',['FINAL_RANGE_CONFIG_VALID_PHASE_HIGH',['../d7/df1/classnut_1_1_v_l53_l0_x.html#a2344ca2de9dca718607eef664b645898a4f58cdae5cb9f0a879edd7ea12b840c2',1,'nut::VL53L0X']]],
+  ['final_5frange_5fconfig_5fvalid_5fphase_5flow_207',['FINAL_RANGE_CONFIG_VALID_PHASE_LOW',['../d7/df1/classnut_1_1_v_l53_l0_x.html#a2344ca2de9dca718607eef664b645898abd7010b2c31e296b0dd9697f8940426c',1,'nut::VL53L0X']]],
+  ['final_5frange_5fconfig_5fvcsel_5fperiod_208',['FINAL_RANGE_CONFIG_VCSEL_PERIOD',['../d7/df1/classnut_1_1_v_l53_l0_x.html#a2344ca2de9dca718607eef664b645898afa086b72478831eec4e0a94ce86f2e08',1,'nut::VL53L0X']]],
+  ['final_5frange_5fmclks_209',['final_range_mclks',['../d7/dfc/structnut_1_1_v_l53_l0_x_1_1_sequence_step_timeouts.html#ad2ce445a340ab82f6fa23b4206b47c3e',1,'nut::VL53L0X::SequenceStepTimeouts']]],
+  ['final_5frange_5fus_210',['final_range_us',['../d7/dfc/structnut_1_1_v_l53_l0_x_1_1_sequence_step_timeouts.html#a56cc269bbea935408803f82d44209419',1,'nut::VL53L0X::SequenceStepTimeouts']]],
+  ['final_5frange_5fvcsel_5fperiod_5fpclks_211',['final_range_vcsel_period_pclks',['../d7/dfc/structnut_1_1_v_l53_l0_x_1_1_sequence_step_timeouts.html#aa8da426de767a150d6f7eb16eddef3db',1,'nut::VL53L0X::SequenceStepTimeouts']]],
+  ['flash_2ehpp_212',['Flash.hpp',['../d7/d2b/_flash_8hpp.html',1,'']]],
+  ['fusedown_213',['fuseDown',['../d1/db3/namespacenut_1_1can__protocol_1_1all.html#a3cb6645656a5fe9f5a358f94e3b72124a7140bdef038cb515a1815b6bc546c8fe',1,'nut::can_protocol::all']]],
+  ['fusestate_214',['fuseState',['../db/d6c/namespacenut_1_1can__protocol_1_1power.html#acbaecff492fe6da42fe1575dbd32ccdba240938ca8fc6adfd5d2ab68c5a452993',1,'nut::can_protocol::power']]]
 ];

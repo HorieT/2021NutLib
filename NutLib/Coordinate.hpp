@@ -48,22 +48,6 @@ public:
 	 * @param[in] rad 回転座標
 	 */
 	constexpr Coordinate(T x, T y , T rad = 0.0) : _x(x), _y(y), _theta(rad){}
-	/**
-	 * @brief  コピーコンストラクタ
-	 * @param[in] copy コピー対象
-	 */
-	constexpr Coordinate(const Coordinate<T>& copy) : _x(copy.x()), _y(copy.y()), _theta(copy.theta()){
-	}
-	/**
-	 * @brief  コピー代入
-	 * @param[in] copy コピー対象
-	 */
-	constexpr Coordinate& operator=(const Coordinate<T>& copy){
-		_x = copy.x();
-		_y = copy.y();
-		_theta = copy.theta();
-		return *this;
-	}
 
 
 

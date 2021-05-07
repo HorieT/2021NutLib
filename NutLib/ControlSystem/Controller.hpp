@@ -150,6 +150,10 @@ public:
 	 * @return 出力値
 	 */
 	virtual T Calculate(T input, nut::MilliSecond<float> ms) = 0;
+
+	/**
+	 * @brief 演算リセット
+	 */
 	virtual void Reset() = 0;
 	/**
 	 * @brief 操作量上限の設定

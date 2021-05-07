@@ -36,4 +36,7 @@ void HAL_CAN_RxFifo0FullCallback(CAN_HandleTypeDef *hcan){
 void HAL_CAN_RxFifo1FullCallback(CAN_HandleTypeDef *hcan){
 	nut::callback::CAN_RxFifo1Full.ReadCallbacks(hcan);
 }
+void HAL_CAN_ErrorCallback(CAN_HandleTypeDef *hcan){
+	nut::callback::CAN_Error.ReadCallbacks(hcan);
+}
 #endif

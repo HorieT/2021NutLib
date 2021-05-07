@@ -93,14 +93,16 @@ $(document).ready(function(){initNavTree('d3/d93/_steer_chassis_8hpp.html','../.
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">クラス</a> &#124;
-<a href="#namespaces">名前空間</a> &#124;
-<a href="#enum-members">列挙型</a>  </div>
+<a href="#namespaces">名前空間</a>  </div>
   <div class="headertitle">
 <div class="title">SteerChassis.hpp ファイル</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>操舵と駆動が独立したステア足周り  
+<a href="#details">[詳解]</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="../../d2/d88/_global_8hpp_source.html">../Global.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../d5/de2/_chassis_8hpp_source.html">Chassis.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d0/d9f/_steer_chassis_base_8hpp_source.html">SteerChassisBase.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d5/dd3/_drive_wheel_8hpp_source.html">../Motor/DriveWheel.hpp</a>&quot;</code><br />
 <code>#include &lt;array&gt;</code><br />
 <code>#include &lt;Eigen/Geometry&gt;</code><br />
@@ -110,6 +112,7 @@ $(document).ready(function(){initNavTree('d3/d93/_steer_chassis_8hpp.html','../.
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 クラス</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d79/classnut_1_1_steer_chassis.html">nut::SteerChassis&lt; N &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">操舵と駆動が独立の基本的なステア足回り  <a href="../../d3/d79/classnut_1_1_steer_chassis.html#details">[詳解]</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
@@ -117,19 +120,14 @@ $(document).ready(function(){initNavTree('d3/d93/_steer_chassis_8hpp.html','../.
 <tr class="memitem:dd/d51/namespacenut"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d51/namespacenut.html">nut</a></td></tr>
 <tr class="memdesc:dd/d51/namespacenut"><td class="mdescLeft">&#160;</td><td class="mdescRight">CANバスの通信仕様 <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:d8/d98/namespacenut_1_1_steer_opration"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d98/namespacenut_1_1_steer_opration.html">nut::SteerOpration</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
-列挙型</h2></td></tr>
-<tr class="memitem:a0eb4f8bb726f6f009297645e1f0943c9"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d98/namespacenut_1_1_steer_opration.html#a0eb4f8bb726f6f009297645e1f0943c9">nut::SteerOpration::MoveMode</a> : uint8_t { <a class="el" href="../../d8/d98/namespacenut_1_1_steer_opration.html#a0eb4f8bb726f6f009297645e1f0943c9acfb4b9293cd9ec418900b7b644c30042">nut::SteerOpration::MoveMode::nomal</a> = 0, 
-<a class="el" href="../../d8/d98/namespacenut_1_1_steer_opration.html#a0eb4f8bb726f6f009297645e1f0943c9a86266ee937d97f812a8e57d22b62ee29">nut::SteerOpration::MoveMode::reset</a>, 
-<a class="el" href="../../d8/d98/namespacenut_1_1_steer_opration.html#a0eb4f8bb726f6f009297645e1f0943c9ab53cf904cd7efb8f64897d8aa3606a51">nut::SteerOpration::MoveMode::steerOnry</a>, 
-<a class="el" href="../../d8/d98/namespacenut_1_1_steer_opration.html#a0eb4f8bb726f6f009297645e1f0943c9a337ee3989c2c360a16e8f87dd02930cc">nut::SteerOpration::MoveMode::steerBreaking</a>
- }</td></tr>
-<tr class="separator:a0eb4f8bb726f6f009297645e1f0943c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>操舵と駆動が独立したステア足周り </p>
+<dl class="section author"><dt>著者</dt><dd>Horie </dd></dl>
+<dl class="section date"><dt>日付</dt><dd>2021/3 </dd></dl>
+
+<p class="definition"> <a class="el" href="../../d3/d93/_steer_chassis_8hpp_source.html">SteerChassis.hpp</a> に定義があります。</p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

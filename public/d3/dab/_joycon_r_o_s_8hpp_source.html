@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>NutLib: NutLib/Controller/JoyconROS.hpp ソースファイル</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">NutLib
+   </div>
+  </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.svg"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.20 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'検索');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('d3/dab/_joycon_r_o_s_8hpp_source.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">JoyconROS.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d3/dab/_joycon_r_o_s_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;../Global.hpp&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../dd/d51/namespacenut.html">nut</a>{</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> * @brief ROSトピックのjoycon定義のコピークラス</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * @details</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> * XboxController使おうと思ったけど、マイコン側でエンコードするのだるいから</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> * ROSのトピックと同じ形の奴作った</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="../../df/d9f/classnut_1_1_joycon_r_o_s.html">   18</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../df/d9f/classnut_1_1_joycon_r_o_s.html">JoyconROS</a>{</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="../../df/d9f/classnut_1_1_joycon_r_o_s.html#a53bcdb205f0f401b5e7a4af0d845e9f7">   20</a></span>&#160;    <span class="keyword">enum class</span> <a class="code" href="../../df/d9f/classnut_1_1_joycon_r_o_s.html#a53bcdb205f0f401b5e7a4af0d845e9f7">Button</a> : uint32_t{</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <a class="code" href="../../df/d9f/classnut_1_1_joycon_r_o_s.html#a53bcdb205f0f401b5e7a4af0d845e9f7a63225f19fccb18e7c709f1fa11bc738e">SELECT</a>  = 0x0001,</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <a class="code" href="../../df/d9f/classnut_1_1_joycon_r_o_s.html#a53bcdb205f0f401b5e7a4af0d845e9f7a842ce6eb510f7e7047da883915ec90e0">L3</a>      = 0x0002,</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <a class="code" href="../../df/d9f/classnut_1_1_joycon_r_o_s.html#a53bcdb205f0f401b5e7a4af0d845e9f7a5c108ce0fe89d0632cfce75f650b36c2">R3</a>      = 0x0004,</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <a class="code" href="../../df/d9f/classnut_1_1_joycon_r_o_s.html#a53bcdb205f0f401b5e7a4af0d845e9f7ab078ffd28db767c502ac367053f6e0ac">START</a>   = 0x0008,</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <a class="code" href="../../df/d9f/classnut_1_1_joycon_r_o_s.html#a53bcdb205f0f401b5e7a4af0d845e9f7afbaedde498cdead4f2780217646e9ba1">UP</a>      = 0x0010,</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <a class="code" href="../../df/d9f/classnut_1_1_joycon_r_o_s.html#a53bcdb205f0f401b5e7a4af0d845e9f7a21507b40c80068eda19865706fdc2403">RIGHT</a>   = 0x0020,</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <a class="code" href="../../df/d9f/classnut_1_1_joycon_r_o_s.html#a53bcdb205f0f401b5e7a4af0d845e9f7ac4e0e4e3118472beeb2ae75827450f1f">DOWN</a>    = 0x0040,</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <a class="code" href="../../df/d9f/classnut_1_1_joycon_r_o_s.html#a53bcdb205f0f401b5e7a4af0d845e9f7a684d325a7303f52e64011467ff5c5758">LEFT</a>    = 0x0080,</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <a class="code" href="../../df/d9f/classnut_1_1_joycon_r_o_s.html#a53bcdb205f0f401b5e7a4af0d845e9f7a7e6aa2d53f6ee2b1a34b017fa403cb76">L2</a>      = 0x0100,</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <a class="code" href="../../df/d9f/classnut_1_1_joycon_r_o_s.html#a53bcdb205f0f401b5e7a4af0d845e9f7a8c6d22ff6f63fc6711cfa315cb80b314">R2</a>      = 0x0200,</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <a class="code" href="../../df/d9f/classnut_1_1_joycon_r_o_s.html#a53bcdb205f0f401b5e7a4af0d845e9f7a9ec4c0afd450ceac7adb81c3bcfc9732">L1</a>      = 0x0400,</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <a class="code" href="../../df/d9f/classnut_1_1_joycon_r_o_s.html#a53bcdb205f0f401b5e7a4af0d845e9f7acda522d4353b166cc2dee84673307b4e">R1</a>      = 0x0800,</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <a class="code" href="../../df/d9f/classnut_1_1_joycon_r_o_s.html#a53bcdb205f0f401b5e7a4af0d845e9f7a57cec4137b614c87cb4e24a3d003a3e0">Y</a>       = 0x1000,</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <a class="code" href="../../df/d9f/classnut_1_1_joycon_r_o_s.html#a53bcdb205f0f401b5e7a4af0d845e9f7a9d5ed678fe57bcca610140957afab571">B</a>       = 0x2000,</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <a class="code" href="../../df/d9f/classnut_1_1_joycon_r_o_s.html#a53bcdb205f0f401b5e7a4af0d845e9f7a7fc56270e7a70fa81a5935b72eacbe29">A</a>       = 0x4000,</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <a class="code" href="../../df/d9f/classnut_1_1_joycon_r_o_s.html#a53bcdb205f0f401b5e7a4af0d845e9f7a02129bb861061d1a052c592e2dc6b383">X</a>       = 0x8000,</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <a class="code" href="../../df/d9f/classnut_1_1_joycon_r_o_s.html#a53bcdb205f0f401b5e7a4af0d845e9f7a710533dd879dd1202e5c73b27705bf02">HOME</a>    = 0x10000,</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    };</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="../../df/d3b/structnut_1_1_joycon_r_o_s_1_1_button_data.html">   39</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="../../df/d3b/structnut_1_1_joycon_r_o_s_1_1_button_data.html">ButtonData</a>{</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="../../df/d3b/structnut_1_1_joycon_r_o_s_1_1_button_data.html#a399077cbfaf72ff9bdb14548efd6bb93">   40</a></span>&#160;        uint32_t <a class="code" href="../../df/d3b/structnut_1_1_joycon_r_o_s_1_1_button_data.html#a399077cbfaf72ff9bdb14548efd6bb93">button</a>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="../../df/d3b/structnut_1_1_joycon_r_o_s_1_1_button_data.html#a2e36cd60fa3f91f1caac74da2a317441">   41</a></span>&#160;        int8_t <a class="code" href="../../df/d3b/structnut_1_1_joycon_r_o_s_1_1_button_data.html#a2e36cd60fa3f91f1caac74da2a317441">leftX</a>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="../../df/d3b/structnut_1_1_joycon_r_o_s_1_1_button_data.html#a507c6592b19d647fe580d1d206d731a9">   42</a></span>&#160;        int8_t <a class="code" href="../../df/d3b/structnut_1_1_joycon_r_o_s_1_1_button_data.html#a507c6592b19d647fe580d1d206d731a9">leftY</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="../../df/d3b/structnut_1_1_joycon_r_o_s_1_1_button_data.html#aa1a81c10caa8d80adf3e57c2ab1c2d4a">   43</a></span>&#160;        int8_t <a class="code" href="../../df/d3b/structnut_1_1_joycon_r_o_s_1_1_button_data.html#aa1a81c10caa8d80adf3e57c2ab1c2d4a">rightX</a>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="../../df/d3b/structnut_1_1_joycon_r_o_s_1_1_button_data.html#a2c141e65ecf659152b78b209b7b768e6">   44</a></span>&#160;        int8_t <a class="code" href="../../df/d3b/structnut_1_1_joycon_r_o_s_1_1_button_data.html#a2c141e65ecf659152b78b209b7b768e6">rightY</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    };</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;};</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="aclassnut_1_1_joycon_r_o_s_html_a53bcdb205f0f401b5e7a4af0d845e9f7a21507b40c80068eda19865706fdc2403"><div class="ttname"><a href="../../df/d9f/classnut_1_1_joycon_r_o_s.html#a53bcdb205f0f401b5e7a4af0d845e9f7a21507b40c80068eda19865706fdc2403">nut::JoyconROS::Button::RIGHT</a></div><div class="ttdeci">@ RIGHT</div></div>
+<div class="ttc" id="aclassnut_1_1_joycon_r_o_s_html_a53bcdb205f0f401b5e7a4af0d845e9f7a842ce6eb510f7e7047da883915ec90e0"><div class="ttname"><a href="../../df/d9f/classnut_1_1_joycon_r_o_s.html#a53bcdb205f0f401b5e7a4af0d845e9f7a842ce6eb510f7e7047da883915ec90e0">nut::JoyconROS::Button::L3</a></div><div class="ttdeci">@ L3</div></div>
+<div class="ttc" id="astructnut_1_1_joycon_r_o_s_1_1_button_data_html_a507c6592b19d647fe580d1d206d731a9"><div class="ttname"><a href="../../df/d3b/structnut_1_1_joycon_r_o_s_1_1_button_data.html#a507c6592b19d647fe580d1d206d731a9">nut::JoyconROS::ButtonData::leftY</a></div><div class="ttdeci">int8_t leftY</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dab/_joycon_r_o_s_8hpp_source.html#l00042">JoyconROS.hpp:42</a></div></div>
+<div class="ttc" id="aclassnut_1_1_joycon_r_o_s_html_a53bcdb205f0f401b5e7a4af0d845e9f7a02129bb861061d1a052c592e2dc6b383"><div class="ttname"><a href="../../df/d9f/classnut_1_1_joycon_r_o_s.html#a53bcdb205f0f401b5e7a4af0d845e9f7a02129bb861061d1a052c592e2dc6b383">nut::JoyconROS::Button::X</a></div><div class="ttdeci">@ X</div></div>
+<div class="ttc" id="aclassnut_1_1_joycon_r_o_s_html_a53bcdb205f0f401b5e7a4af0d845e9f7a7e6aa2d53f6ee2b1a34b017fa403cb76"><div class="ttname"><a href="../../df/d9f/classnut_1_1_joycon_r_o_s.html#a53bcdb205f0f401b5e7a4af0d845e9f7a7e6aa2d53f6ee2b1a34b017fa403cb76">nut::JoyconROS::Button::L2</a></div><div class="ttdeci">@ L2</div></div>
+<div class="ttc" id="astructnut_1_1_joycon_r_o_s_1_1_button_data_html_a399077cbfaf72ff9bdb14548efd6bb93"><div class="ttname"><a href="../../df/d3b/structnut_1_1_joycon_r_o_s_1_1_button_data.html#a399077cbfaf72ff9bdb14548efd6bb93">nut::JoyconROS::ButtonData::button</a></div><div class="ttdeci">uint32_t button</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dab/_joycon_r_o_s_8hpp_source.html#l00040">JoyconROS.hpp:40</a></div></div>
+<div class="ttc" id="aclassnut_1_1_joycon_r_o_s_html_a53bcdb205f0f401b5e7a4af0d845e9f7a5c108ce0fe89d0632cfce75f650b36c2"><div class="ttname"><a href="../../df/d9f/classnut_1_1_joycon_r_o_s.html#a53bcdb205f0f401b5e7a4af0d845e9f7a5c108ce0fe89d0632cfce75f650b36c2">nut::JoyconROS::Button::R3</a></div><div class="ttdeci">@ R3</div></div>
+<div class="ttc" id="anamespacenut_html"><div class="ttname"><a href="../../dd/d51/namespacenut.html">nut</a></div><div class="ttdoc">CANバスの通信仕様</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/dbd/_c_a_n_bus_protocol_8hpp_source.html#l00010">CANBusProtocol.hpp:10</a></div></div>
+<div class="ttc" id="aclassnut_1_1_joycon_r_o_s_html_a53bcdb205f0f401b5e7a4af0d845e9f7ac4e0e4e3118472beeb2ae75827450f1f"><div class="ttname"><a href="../../df/d9f/classnut_1_1_joycon_r_o_s.html#a53bcdb205f0f401b5e7a4af0d845e9f7ac4e0e4e3118472beeb2ae75827450f1f">nut::JoyconROS::Button::DOWN</a></div><div class="ttdeci">@ DOWN</div></div>
+<div class="ttc" id="aclassnut_1_1_joycon_r_o_s_html_a53bcdb205f0f401b5e7a4af0d845e9f7a63225f19fccb18e7c709f1fa11bc738e"><div class="ttname"><a href="../../df/d9f/classnut_1_1_joycon_r_o_s.html#a53bcdb205f0f401b5e7a4af0d845e9f7a63225f19fccb18e7c709f1fa11bc738e">nut::JoyconROS::Button::SELECT</a></div><div class="ttdeci">@ SELECT</div></div>
+<div class="ttc" id="aclassnut_1_1_joycon_r_o_s_html_a53bcdb205f0f401b5e7a4af0d845e9f7a9ec4c0afd450ceac7adb81c3bcfc9732"><div class="ttname"><a href="../../df/d9f/classnut_1_1_joycon_r_o_s.html#a53bcdb205f0f401b5e7a4af0d845e9f7a9ec4c0afd450ceac7adb81c3bcfc9732">nut::JoyconROS::Button::L1</a></div><div class="ttdeci">@ L1</div></div>
+<div class="ttc" id="astructnut_1_1_joycon_r_o_s_1_1_button_data_html_a2e36cd60fa3f91f1caac74da2a317441"><div class="ttname"><a href="../../df/d3b/structnut_1_1_joycon_r_o_s_1_1_button_data.html#a2e36cd60fa3f91f1caac74da2a317441">nut::JoyconROS::ButtonData::leftX</a></div><div class="ttdeci">int8_t leftX</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dab/_joycon_r_o_s_8hpp_source.html#l00041">JoyconROS.hpp:41</a></div></div>
+<div class="ttc" id="aclassnut_1_1_joycon_r_o_s_html_a53bcdb205f0f401b5e7a4af0d845e9f7"><div class="ttname"><a href="../../df/d9f/classnut_1_1_joycon_r_o_s.html#a53bcdb205f0f401b5e7a4af0d845e9f7">nut::JoyconROS::Button</a></div><div class="ttdeci">Button</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dab/_joycon_r_o_s_8hpp_source.html#l00020">JoyconROS.hpp:20</a></div></div>
+<div class="ttc" id="aclassnut_1_1_joycon_r_o_s_html_a53bcdb205f0f401b5e7a4af0d845e9f7a9d5ed678fe57bcca610140957afab571"><div class="ttname"><a href="../../df/d9f/classnut_1_1_joycon_r_o_s.html#a53bcdb205f0f401b5e7a4af0d845e9f7a9d5ed678fe57bcca610140957afab571">nut::JoyconROS::Button::B</a></div><div class="ttdeci">@ B</div></div>
+<div class="ttc" id="aclassnut_1_1_joycon_r_o_s_html_a53bcdb205f0f401b5e7a4af0d845e9f7a57cec4137b614c87cb4e24a3d003a3e0"><div class="ttname"><a href="../../df/d9f/classnut_1_1_joycon_r_o_s.html#a53bcdb205f0f401b5e7a4af0d845e9f7a57cec4137b614c87cb4e24a3d003a3e0">nut::JoyconROS::Button::Y</a></div><div class="ttdeci">@ Y</div></div>
+<div class="ttc" id="astructnut_1_1_joycon_r_o_s_1_1_button_data_html_aa1a81c10caa8d80adf3e57c2ab1c2d4a"><div class="ttname"><a href="../../df/d3b/structnut_1_1_joycon_r_o_s_1_1_button_data.html#aa1a81c10caa8d80adf3e57c2ab1c2d4a">nut::JoyconROS::ButtonData::rightX</a></div><div class="ttdeci">int8_t rightX</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dab/_joycon_r_o_s_8hpp_source.html#l00043">JoyconROS.hpp:43</a></div></div>
+<div class="ttc" id="aclassnut_1_1_joycon_r_o_s_html_a53bcdb205f0f401b5e7a4af0d845e9f7afbaedde498cdead4f2780217646e9ba1"><div class="ttname"><a href="../../df/d9f/classnut_1_1_joycon_r_o_s.html#a53bcdb205f0f401b5e7a4af0d845e9f7afbaedde498cdead4f2780217646e9ba1">nut::JoyconROS::Button::UP</a></div><div class="ttdeci">@ UP</div></div>
+<div class="ttc" id="aclassnut_1_1_joycon_r_o_s_html_a53bcdb205f0f401b5e7a4af0d845e9f7a684d325a7303f52e64011467ff5c5758"><div class="ttname"><a href="../../df/d9f/classnut_1_1_joycon_r_o_s.html#a53bcdb205f0f401b5e7a4af0d845e9f7a684d325a7303f52e64011467ff5c5758">nut::JoyconROS::Button::LEFT</a></div><div class="ttdeci">@ LEFT</div></div>
+<div class="ttc" id="aclassnut_1_1_joycon_r_o_s_html_a53bcdb205f0f401b5e7a4af0d845e9f7a710533dd879dd1202e5c73b27705bf02"><div class="ttname"><a href="../../df/d9f/classnut_1_1_joycon_r_o_s.html#a53bcdb205f0f401b5e7a4af0d845e9f7a710533dd879dd1202e5c73b27705bf02">nut::JoyconROS::Button::HOME</a></div><div class="ttdeci">@ HOME</div></div>
+<div class="ttc" id="aclassnut_1_1_joycon_r_o_s_html_a53bcdb205f0f401b5e7a4af0d845e9f7a7fc56270e7a70fa81a5935b72eacbe29"><div class="ttname"><a href="../../df/d9f/classnut_1_1_joycon_r_o_s.html#a53bcdb205f0f401b5e7a4af0d845e9f7a7fc56270e7a70fa81a5935b72eacbe29">nut::JoyconROS::Button::A</a></div><div class="ttdeci">@ A</div></div>
+<div class="ttc" id="astructnut_1_1_joycon_r_o_s_1_1_button_data_html_a2c141e65ecf659152b78b209b7b768e6"><div class="ttname"><a href="../../df/d3b/structnut_1_1_joycon_r_o_s_1_1_button_data.html#a2c141e65ecf659152b78b209b7b768e6">nut::JoyconROS::ButtonData::rightY</a></div><div class="ttdeci">int8_t rightY</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dab/_joycon_r_o_s_8hpp_source.html#l00044">JoyconROS.hpp:44</a></div></div>
+<div class="ttc" id="aclassnut_1_1_joycon_r_o_s_html_a53bcdb205f0f401b5e7a4af0d845e9f7ab078ffd28db767c502ac367053f6e0ac"><div class="ttname"><a href="../../df/d9f/classnut_1_1_joycon_r_o_s.html#a53bcdb205f0f401b5e7a4af0d845e9f7ab078ffd28db767c502ac367053f6e0ac">nut::JoyconROS::Button::START</a></div><div class="ttdeci">@ START</div></div>
+<div class="ttc" id="aclassnut_1_1_joycon_r_o_s_html_a53bcdb205f0f401b5e7a4af0d845e9f7acda522d4353b166cc2dee84673307b4e"><div class="ttname"><a href="../../df/d9f/classnut_1_1_joycon_r_o_s.html#a53bcdb205f0f401b5e7a4af0d845e9f7acda522d4353b166cc2dee84673307b4e">nut::JoyconROS::Button::R1</a></div><div class="ttdeci">@ R1</div></div>
+<div class="ttc" id="aclassnut_1_1_joycon_r_o_s_html"><div class="ttname"><a href="../../df/d9f/classnut_1_1_joycon_r_o_s.html">nut::JoyconROS</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dab/_joycon_r_o_s_8hpp_source.html#l00018">JoyconROS.hpp:18</a></div></div>
+<div class="ttc" id="astructnut_1_1_joycon_r_o_s_1_1_button_data_html"><div class="ttname"><a href="../../df/d3b/structnut_1_1_joycon_r_o_s_1_1_button_data.html">nut::JoyconROS::ButtonData</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dab/_joycon_r_o_s_8hpp_source.html#l00039">JoyconROS.hpp:39</a></div></div>
+<div class="ttc" id="aclassnut_1_1_joycon_r_o_s_html_a53bcdb205f0f401b5e7a4af0d845e9f7a8c6d22ff6f63fc6711cfa315cb80b314"><div class="ttname"><a href="../../df/d9f/classnut_1_1_joycon_r_o_s.html#a53bcdb205f0f401b5e7a4af0d845e9f7a8c6d22ff6f63fc6711cfa315cb80b314">nut::JoyconROS::Button::R2</a></div><div class="ttdeci">@ R2</div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_8b1cfa3accea10fc5ecd39c63013c190.html">NutLib</a></li><li class="navelem"><a class="el" href="../../dir_0cad120789fa44f7b8eed022044aaccf.html">Controller</a></li><li class="navelem"><a class="el" href="../../d3/dab/_joycon_r_o_s_8hpp.html">JoyconROS.hpp</a></li>
+    <li class="footer">構築: <a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
+  </ul>
+</div>
+</body>
+</html>

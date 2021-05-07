@@ -4,7 +4,7 @@
  * @details systickベース
  * @author Horie
  * @date 2020/10
- * @attention <font color='red'>Callback関数の実行時間は1ms以下にしてください<\font>
+ * @attention __Callback関数の実行時間は1ms以下にしてください__
  */
 #pragma once
 
@@ -103,6 +103,11 @@ public:
 
 
 	/**
+	 *@brief セット状態
+	 */
+	bool IsSet()const {return _setting;}
+
+	/**
 	 * @brief スケジューラ時刻チェック<br>
 	 * 	USE_NUTLIB_CALLBACKSが無効の場合、HAL_SYSTICK_Callback()内で呼び出してください
 	 * @details cubeでSYSTICK割り込みを1ms周期設定(デフォルト)で許可してください
@@ -162,7 +167,9 @@ public:
 	 * @attention スケジューラのコールバック内で呼び出ししないでください<br>
 	 * 		プログラムがロックされます
 	 */
+#ifndef OFF_DEPRECATED_WARNING
 	[[deprecated("It may adversely affect the control system of 'sysClock'.")]]
+#endif
 	static void Delay(MilliSecond<uint32_t> ms){
 		volatile const uint32_t end = _time + static_cast<uint32_t>(ms);
 		while(_time <= end);//最適化の阻害

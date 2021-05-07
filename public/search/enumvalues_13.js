@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['yacc_1126',['yAcc',['../da/dd6/namespacenut_1_1can__protocol_1_1pc.html#ae4491dee7b163e95d69c270b0994f83aa4c825c642748d7e3481e87c8014cf3d3',1,'nut::can_protocol::pc']]],
-  ['ypos_1127',['yPos',['../da/dd6/namespacenut_1_1can__protocol_1_1pc.html#ae4491dee7b163e95d69c270b0994f83aa620489991d5ec0c455f8251029b69807',1,'nut::can_protocol::pc']]],
-  ['yspead_1128',['ySpead',['../d3/d8d/namespacenut_1_1can__protocol_1_1micom.html#a7b3bf21093fcec61da0edab255f62a6eacf935033f8489f5f3152189c63f3cfbb',1,'nut::can_protocol::micom']]],
-  ['yspeed_1129',['ySpeed',['../da/dd6/namespacenut_1_1can__protocol_1_1pc.html#ae4491dee7b163e95d69c270b0994f83aa9b9c996e224b0bf245a1e11abae13a53',1,'nut::can_protocol::pc']]]
+  ['wakeup_1607',['wakeUp',['../d1/db3/namespacenut_1_1can__protocol_1_1all.html#a09adda460b330615520b743031e330caa658dd7a46cf80a645c506a595b25f355',1,'nut::can_protocol::all']]]
 ];

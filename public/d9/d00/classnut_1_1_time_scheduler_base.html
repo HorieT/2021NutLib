@@ -95,7 +95,7 @@ $(document).ready(function(){initNavTree('d9/d00/classnut_1_1_time_scheduler_bas
 <a href="#pub-methods">公開メンバ関数</a> &#124;
 <a href="#pub-static-methods">静的公開メンバ関数</a> &#124;
 <a href="#pro-methods">限定公開メンバ関数</a> &#124;
-<a href="#pro-attribs">限定公開変数類</a> &#124;
+<a href="#pro-static-methods">静的限定公開メンバ関数</a> &#124;
 <a href="../../d4/d40/classnut_1_1_time_scheduler_base-members.html">全メンバ一覧</a>  </div>
   <div class="headertitle">
 <div class="title">nut::TimeSchedulerBase クラス<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
@@ -125,15 +125,18 @@ nut::TimeSchedulerBase の継承関係図</div>
 <tr class="memitem:a2b55746ac6ff5e114cc73ac8f815e56a"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d00/classnut_1_1_time_scheduler_base.html#a2b55746ac6ff5e114cc73ac8f815e56a">~TimeSchedulerBase</a> ()</td></tr>
 <tr class="memdesc:a2b55746ac6ff5e114cc73ac8f815e56a"><td class="mdescLeft">&#160;</td><td class="mdescRight">デストラクタ  <a href="../../d9/d00/classnut_1_1_time_scheduler_base.html#a2b55746ac6ff5e114cc73ac8f815e56a">[詳解]</a><br /></td></tr>
 <tr class="separator:a2b55746ac6ff5e114cc73ac8f815e56a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1d0ecaefe7d5c5f1266a4021fba23d69"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d00/classnut_1_1_time_scheduler_base.html#a1d0ecaefe7d5c5f1266a4021fba23d69">Erase</a> () final</td></tr>
-<tr class="memdesc:a1d0ecaefe7d5c5f1266a4021fba23d69"><td class="mdescLeft">&#160;</td><td class="mdescRight">スケジューラ削除  <a href="../../d9/d00/classnut_1_1_time_scheduler_base.html#a1d0ecaefe7d5c5f1266a4021fba23d69">[詳解]</a><br /></td></tr>
-<tr class="separator:a1d0ecaefe7d5c5f1266a4021fba23d69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a215527d87d7a78261c7664e16596f003"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d00/classnut_1_1_time_scheduler_base.html#a215527d87d7a78261c7664e16596f003">Erase</a> ()</td></tr>
+<tr class="memdesc:a215527d87d7a78261c7664e16596f003"><td class="mdescLeft">&#160;</td><td class="mdescRight">スケジューラ削除  <a href="../../d9/d00/classnut_1_1_time_scheduler_base.html#a215527d87d7a78261c7664e16596f003">[詳解]</a><br /></td></tr>
+<tr class="separator:a215527d87d7a78261c7664e16596f003"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a981b5854d4d86720b6d0a914a3b446f1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d00/classnut_1_1_time_scheduler_base.html#a981b5854d4d86720b6d0a914a3b446f1">Reset</a> () final</td></tr>
 <tr class="memdesc:a981b5854d4d86720b6d0a914a3b446f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">スケジューラ周期リセット  <a href="../../d9/d00/classnut_1_1_time_scheduler_base.html#a981b5854d4d86720b6d0a914a3b446f1">[詳解]</a><br /></td></tr>
 <tr class="separator:a981b5854d4d86720b6d0a914a3b446f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac2f33cb548ef53672bea894ade476416"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../dd/d51/namespacenut.html#aabd23ff06314def2ae227f45a4ad9f25">MilliSecond</a>&lt; uint32_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d00/classnut_1_1_time_scheduler_base.html#ac2f33cb548ef53672bea894ade476416">GetPeriod</a> () const final</td></tr>
 <tr class="memdesc:ac2f33cb548ef53672bea894ade476416"><td class="mdescLeft">&#160;</td><td class="mdescRight">スケジューラ周期取得  <a href="../../d9/d00/classnut_1_1_time_scheduler_base.html#ac2f33cb548ef53672bea894ade476416">[詳解]</a><br /></td></tr>
 <tr class="separator:ac2f33cb548ef53672bea894ade476416"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcbe8907d16cde91dbf64c14c2e6c6dd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d00/classnut_1_1_time_scheduler_base.html#adcbe8907d16cde91dbf64c14c2e6c6dd">IsSet</a> () const</td></tr>
+<tr class="memdesc:adcbe8907d16cde91dbf64c14c2e6c6dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">セット状態  <a href="../../d9/d00/classnut_1_1_time_scheduler_base.html#adcbe8907d16cde91dbf64c14c2e6c6dd">[詳解]</a><br /></td></tr>
+<tr class="separator:adcbe8907d16cde91dbf64c14c2e6c6dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 静的公開メンバ関数</h2></td></tr>
@@ -163,11 +166,10 @@ nut::TimeSchedulerBase の継承関係図</div>
 <tr class="memdesc:a7d205cd100b2ebddbf7c16b9853f6cde"><td class="mdescLeft">&#160;</td><td class="mdescRight">周期呼び出しされる関数  <a href="../../d9/d00/classnut_1_1_time_scheduler_base.html#a7d205cd100b2ebddbf7c16b9853f6cde">[詳解]</a><br /></td></tr>
 <tr class="separator:a7d205cd100b2ebddbf7c16b9853f6cde"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
-限定公開変数類</h2></td></tr>
-<tr class="memitem:a526ce3542cbd49bb61a6c7f16fb73661"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d00/classnut_1_1_time_scheduler_base.html#a526ce3542cbd49bb61a6c7f16fb73661">_one_time</a></td></tr>
-<tr class="memdesc:a526ce3542cbd49bb61a6c7f16fb73661"><td class="mdescLeft">&#160;</td><td class="mdescRight">一時オブジェクト用  <a href="../../d9/d00/classnut_1_1_time_scheduler_base.html#a526ce3542cbd49bb61a6c7f16fb73661">[詳解]</a><br /></td></tr>
-<tr class="separator:a526ce3542cbd49bb61a6c7f16fb73661"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-static-methods"></a>
+静的限定公開メンバ関数</h2></td></tr>
+<tr class="memitem:aaaad0da851bf43d2537c57fe6e6bbfdc"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d00/classnut_1_1_time_scheduler_base.html#aaaad0da851bf43d2537c57fe6e6bbfdc">SetDelayFunc</a> (<a class="el" href="../../d9/d00/classnut_1_1_time_scheduler_base.html">TimeSchedulerBase</a> *&amp;&amp;this_h)</td></tr>
+<tr class="separator:aaaad0da851bf43d2537c57fe6e6bbfdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock"><p>時間制御基底純粋仮想クラス </p>
@@ -206,7 +208,7 @@ nut::TimeSchedulerBase の継承関係図</div>
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="../../dd/d5c/_time_scheduler_8hpp_source.html">TimeScheduler.hpp</a> の <a class="el" href="../../dd/d5c/_time_scheduler_8hpp_source.html#l00066">66</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../dd/d5c/_time_scheduler_8hpp_source.html">TimeScheduler.hpp</a> の <a class="el" href="../../dd/d5c/_time_scheduler_8hpp_source.html#l00073">73</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -235,7 +237,7 @@ nut::TimeSchedulerBase の継承関係図</div>
 
 <p>デストラクタ </p>
 
-<p class="definition"> <a class="el" href="../../dd/d5c/_time_scheduler_8hpp_source.html">TimeScheduler.hpp</a> の <a class="el" href="../../dd/d5c/_time_scheduler_8hpp_source.html#l00071">71</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../dd/d5c/_time_scheduler_8hpp_source.html">TimeScheduler.hpp</a> の <a class="el" href="../../dd/d5c/_time_scheduler_8hpp_source.html#l00078">78</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -295,12 +297,12 @@ nut::TimeSchedulerBase の継承関係図</div>
 <p>他のスケジューラを阻害しない </p><dl class="section attention"><dt>注意</dt><dd>スケジューラのコールバック内で呼び出ししないでください<br  />
  プログラムがロックされます </dd></dl>
 
-<p class="definition"> <a class="el" href="../../dd/d5c/_time_scheduler_8hpp_source.html">TimeScheduler.hpp</a> の <a class="el" href="../../dd/d5c/_time_scheduler_8hpp_source.html#l00156">156</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../dd/d5c/_time_scheduler_8hpp_source.html">TimeScheduler.hpp</a> の <a class="el" href="../../dd/d5c/_time_scheduler_8hpp_source.html#l00173">173</a> 行目に定義があります。</p>
 
 </div>
 </div>
-<a id="a1d0ecaefe7d5c5f1266a4021fba23d69"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1d0ecaefe7d5c5f1266a4021fba23d69">&#9670;&nbsp;</a></span>Erase()</h2>
+<a id="a215527d87d7a78261c7664e16596f003"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a215527d87d7a78261c7664e16596f003">&#9670;&nbsp;</a></span>Erase()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -309,7 +311,7 @@ nut::TimeSchedulerBase の継承関係図</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void nut::TimeSchedulerBase::Erase </td>
+          <td class="memname">void nut::TimeSchedulerBase::Erase </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -317,14 +319,14 @@ nut::TimeSchedulerBase の継承関係図</div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">final</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>スケジューラ削除 </p>
 
-<p class="definition"> <a class="el" href="../../dd/d5c/_time_scheduler_8hpp_source.html">TimeScheduler.hpp</a> の <a class="el" href="../../dd/d5c/_time_scheduler_8hpp_source.html#l00076">76</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../dd/d5c/_time_scheduler_8hpp_source.html">TimeScheduler.hpp</a> の <a class="el" href="../../dd/d5c/_time_scheduler_8hpp_source.html#l00083">83</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -354,7 +356,7 @@ nut::TimeSchedulerBase の継承関係図</div>
 <p>スケジューラ補助タイマ削除 </p>
 <p>スケジューラが渋滞した際の補助に使われるタイマの削除 </p>
 
-<p class="definition"> <a class="el" href="../../dd/d5c/_time_scheduler_8hpp_source.html">TimeScheduler.hpp</a> の <a class="el" href="../../dd/d5c/_time_scheduler_8hpp_source.html#l00143">143</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../dd/d5c/_time_scheduler_8hpp_source.html">TimeScheduler.hpp</a> の <a class="el" href="../../dd/d5c/_time_scheduler_8hpp_source.html#l00158">158</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -384,7 +386,7 @@ nut::TimeSchedulerBase の継承関係図</div>
 <p>スケジューラ周期取得 </p>
 <dl class="section return"><dt>戻り値</dt><dd>スケジューラ周期[ms] </dd></dl>
 
-<p class="definition"> <a class="el" href="../../dd/d5c/_time_scheduler_8hpp_source.html">TimeScheduler.hpp</a> の <a class="el" href="../../dd/d5c/_time_scheduler_8hpp_source.html#l00095">95</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../dd/d5c/_time_scheduler_8hpp_source.html">TimeScheduler.hpp</a> の <a class="el" href="../../dd/d5c/_time_scheduler_8hpp_source.html#l00102">102</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -414,7 +416,36 @@ nut::TimeSchedulerBase の継承関係図</div>
 <p>　現在時刻取得 </p>
 <dl class="section return"><dt>戻り値</dt><dd>現在時刻[ms] </dd></dl>
 
-<p class="definition"> <a class="el" href="../../dd/d5c/_time_scheduler_8hpp_source.html">TimeScheduler.hpp</a> の <a class="el" href="../../dd/d5c/_time_scheduler_8hpp_source.html#l00165">165</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../dd/d5c/_time_scheduler_8hpp_source.html">TimeScheduler.hpp</a> の <a class="el" href="../../dd/d5c/_time_scheduler_8hpp_source.html#l00182">182</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="adcbe8907d16cde91dbf64c14c2e6c6dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adcbe8907d16cde91dbf64c14c2e6c6dd">&#9670;&nbsp;</a></span>IsSet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool nut::TimeSchedulerBase::IsSet </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>セット状態 </p>
+
+<p class="definition"> <a class="el" href="../../dd/d5c/_time_scheduler_8hpp_source.html">TimeScheduler.hpp</a> の <a class="el" href="../../dd/d5c/_time_scheduler_8hpp_source.html#l00108">108</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -443,7 +474,7 @@ nut::TimeSchedulerBase の継承関係図</div>
 
 <p>スケジューラ周期リセット </p>
 
-<p class="definition"> <a class="el" href="../../dd/d5c/_time_scheduler_8hpp_source.html">TimeScheduler.hpp</a> の <a class="el" href="../../dd/d5c/_time_scheduler_8hpp_source.html#l00089">89</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../dd/d5c/_time_scheduler_8hpp_source.html">TimeScheduler.hpp</a> の <a class="el" href="../../dd/d5c/_time_scheduler_8hpp_source.html#l00096">96</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -479,7 +510,35 @@ nut::TimeSchedulerBase の継承関係図</div>
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="../../dd/d5c/_time_scheduler_8hpp_source.html">TimeScheduler.hpp</a> の <a class="el" href="../../dd/d5c/_time_scheduler_8hpp_source.html#l00134">134</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../dd/d5c/_time_scheduler_8hpp_source.html">TimeScheduler.hpp</a> の <a class="el" href="../../dd/d5c/_time_scheduler_8hpp_source.html#l00149">149</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aaaad0da851bf43d2537c57fe6e6bbfdc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaaad0da851bf43d2537c57fe6e6bbfdc">&#9670;&nbsp;</a></span>SetDelayFunc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void nut::TimeSchedulerBase::SetDelayFunc </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d9/d00/classnut_1_1_time_scheduler_base.html">TimeSchedulerBase</a> *&amp;&amp;&#160;</td>
+          <td class="paramname"><em>this_h</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../dd/d5c/_time_scheduler_8hpp_source.html">TimeScheduler.hpp</a> の <a class="el" href="../../dd/d5c/_time_scheduler_8hpp_source.html#l00056">56</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -537,37 +596,9 @@ nut::TimeSchedulerBase の継承関係図</div>
 
 <p>スケジューラ時刻チェック<br  />
  USE_NUTLIB_CALLBACKSが無効の場合、HAL_SYSTICK_Callback()内で呼び出してください </p>
-<p>cubeでSYSTICK割り込みを1ms周期設定(デフォルト)で許可してください </p><dl class="section attention"><dt>注意</dt><dd>最近のHALはHAL_SYSTICK_Callback()が呼び出しされなくなったのでScr下のit.cにあるSysTick_Handler()内でHAL_SYSTICK_IRQHandler()の呼び出しをすること<br  />
- 詳しくはサンプル閲覧推奨 </dd></dl>
+<p>cubeでSYSTICK割り込みを1ms周期設定(デフォルト)で許可してください </p>
 
-<p class="definition"> <a class="el" href="../../dd/d5c/_time_scheduler_8hpp_source.html">TimeScheduler.hpp</a> の <a class="el" href="../../dd/d5c/_time_scheduler_8hpp_source.html#l00105">105</a> 行目に定義があります。</p>
-
-</div>
-</div>
-<h2 class="groupheader">メンバ詳解</h2>
-<a id="a526ce3542cbd49bb61a6c7f16fb73661"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a526ce3542cbd49bb61a6c7f16fb73661">&#9670;&nbsp;</a></span>_one_time</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const bool nut::TimeSchedulerBase::_one_time</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>一時オブジェクト用 </p>
-
-<p class="definition"> <a class="el" href="../../dd/d5c/_time_scheduler_8hpp_source.html">TimeScheduler.hpp</a> の <a class="el" href="../../dd/d5c/_time_scheduler_8hpp_source.html#l00044">44</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../dd/d5c/_time_scheduler_8hpp_source.html">TimeScheduler.hpp</a> の <a class="el" href="../../dd/d5c/_time_scheduler_8hpp_source.html#l00115">115</a> 行目に定義があります。</p>
 
 </div>
 </div>

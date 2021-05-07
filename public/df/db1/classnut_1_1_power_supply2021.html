@@ -106,13 +106,15 @@ $(document).ready(function(){initNavTree('df/db1/classnut_1_1_power_supply2021.h
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 公開メンバ関数</h2></td></tr>
-<tr class="memitem:a517ea708d221f3aaf6f743b5916293bf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/db1/classnut_1_1_power_supply2021.html#a517ea708d221f3aaf6f743b5916293bf">PowerSupply2021</a> (const std::shared_ptr&lt; <a class="el" href="../../dc/d4f/classnut_1_1_c_a_n_wrapper.html">CANWrapper</a> &gt; &amp;can, uint8_t device_id, uint8_t user_id)</td></tr>
-<tr class="separator:a517ea708d221f3aaf6f743b5916293bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d4ca5756736493f44a2159361fc7a28"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/db1/classnut_1_1_power_supply2021.html#a9d4ca5756736493f44a2159361fc7a28">PowerSupply2021</a> (const std::shared_ptr&lt; <a class="el" href="../../dc/d4f/classnut_1_1_c_a_n_wrapper.html">CANWrapper</a> &gt; &amp;can, uint8_t device_num, uint8_t user_id)</td></tr>
+<tr class="separator:a9d4ca5756736493f44a2159361fc7a28"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e48d574a3ae815d1285cc44161873be"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/db1/classnut_1_1_power_supply2021.html#a6e48d574a3ae815d1285cc44161873be">~PowerSupply2021</a> ()</td></tr>
 <tr class="separator:a6e48d574a3ae815d1285cc44161873be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf69fa588f4a904fdb7bf16e0588a5e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/db1/classnut_1_1_power_supply2021.html#aaf69fa588f4a904fdb7bf16e0588a5e3">Start</a> ()</td></tr>
+<tr class="memdesc:aaf69fa588f4a904fdb7bf16e0588a5e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">通電開始  <a href="../../df/db1/classnut_1_1_power_supply2021.html#aaf69fa588f4a904fdb7bf16e0588a5e3">[詳解]</a><br /></td></tr>
 <tr class="separator:aaf69fa588f4a904fdb7bf16e0588a5e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f8b211fe2ae626eae438946180eb3b6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/db1/classnut_1_1_power_supply2021.html#a5f8b211fe2ae626eae438946180eb3b6">Stop</a> ()</td></tr>
+<tr class="memdesc:a5f8b211fe2ae626eae438946180eb3b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">通電停止  <a href="../../df/db1/classnut_1_1_power_supply2021.html#a5f8b211fe2ae626eae438946180eb3b6">[詳解]</a><br /></td></tr>
 <tr class="separator:a5f8b211fe2ae626eae438946180eb3b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
@@ -120,8 +122,8 @@ $(document).ready(function(){initNavTree('df/db1/classnut_1_1_power_supply2021.h
 
 <p class="definition"> <a class="el" href="../../da/d47/_power_supply2021_8hpp_source.html">PowerSupply2021.hpp</a> の <a class="el" href="../../da/d47/_power_supply2021_8hpp_source.html#l00020">20</a> 行目に定義があります。</p>
 </div><h2 class="groupheader">構築子と解体子</h2>
-<a id="a517ea708d221f3aaf6f743b5916293bf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a517ea708d221f3aaf6f743b5916293bf">&#9670;&nbsp;</a></span>PowerSupply2021()</h2>
+<a id="a9d4ca5756736493f44a2159361fc7a28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d4ca5756736493f44a2159361fc7a28">&#9670;&nbsp;</a></span>PowerSupply2021()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -139,7 +141,7 @@ $(document).ready(function(){initNavTree('df/db1/classnut_1_1_power_supply2021.h
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>device_id</em>, </td>
+          <td class="paramname"><em>device_num</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -215,7 +217,9 @@ $(document).ready(function(){initNavTree('df/db1/classnut_1_1_power_supply2021.h
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="../../da/d47/_power_supply2021_8hpp_source.html">PowerSupply2021.hpp</a> の <a class="el" href="../../da/d47/_power_supply2021_8hpp_source.html#l00039">39</a> 行目に定義があります。</p>
+<p>通電開始 </p>
+
+<p class="definition"> <a class="el" href="../../da/d47/_power_supply2021_8hpp_source.html">PowerSupply2021.hpp</a> の <a class="el" href="../../da/d47/_power_supply2021_8hpp_source.html#l00042">42</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -242,7 +246,9 @@ $(document).ready(function(){initNavTree('df/db1/classnut_1_1_power_supply2021.h
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="../../da/d47/_power_supply2021_8hpp_source.html">PowerSupply2021.hpp</a> の <a class="el" href="../../da/d47/_power_supply2021_8hpp_source.html#l00050">50</a> 行目に定義があります。</p>
+<p>通電停止 </p>
+
+<p class="definition"> <a class="el" href="../../da/d47/_power_supply2021_8hpp_source.html">PowerSupply2021.hpp</a> の <a class="el" href="../../da/d47/_power_supply2021_8hpp_source.html#l00056">56</a> 行目に定義があります。</p>
 
 </div>
 </div>

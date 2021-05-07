@@ -3,7 +3,7 @@ var classnut_1_1_h_a_l_callback_3_01void_01_4 =
     [ "CallbackIterator", "dc/df6/classnut_1_1_h_a_l_callback_3_01void_01_4.html#af60fe36aff7ba1a4f55f3fedac79188f", null ],
     [ "ExCallbackIterator", "dc/df6/classnut_1_1_h_a_l_callback_3_01void_01_4.html#a0e4d45e7cbaba1aba5cff032147b26ea", null ],
     [ "HALCallback", "dc/df6/classnut_1_1_h_a_l_callback_3_01void_01_4.html#a39a3553a631c65d41fceaf9754af5436", null ],
-    [ "~HALCallback", "dc/df6/classnut_1_1_h_a_l_callback_3_01void_01_4.html#a9c624910cb4bed8f429e27fb7aa3e05b", null ],
+    [ "~HALCallback", "dc/df6/classnut_1_1_h_a_l_callback_3_01void_01_4.html#a051e0fee98590f3bc2861f4d689a2592", null ],
     [ "HALCallback", "dc/df6/classnut_1_1_h_a_l_callback_3_01void_01_4.html#ab7eedd0b5364e25e3117603dd8607dec", null ],
     [ "HALCallback", "dc/df6/classnut_1_1_h_a_l_callback_3_01void_01_4.html#a3d1459c1a3c3bcabb45271b6b73bf2cb", null ],
     [ "AddCallback", "dc/df6/classnut_1_1_h_a_l_callback_3_01void_01_4.html#a9597e93c6c7de5fcd974eedb18dee2d2", null ],
@@ -12,7 +12,5 @@ var classnut_1_1_h_a_l_callback_3_01void_01_4 =
     [ "EraseExclusiveCallback", "dc/df6/classnut_1_1_h_a_l_callback_3_01void_01_4.html#a899cbf18df32705f5390bf0a969e2bfb", null ],
     [ "operator=", "dc/df6/classnut_1_1_h_a_l_callback_3_01void_01_4.html#a9035011dc7a7552770b477e8f190fd04", null ],
     [ "operator=", "dc/df6/classnut_1_1_h_a_l_callback_3_01void_01_4.html#a35fe468164078aa21467a0050cc658a9", null ],
-    [ "ReadCallbacks", "dc/df6/classnut_1_1_h_a_l_callback_3_01void_01_4.html#a1988c9bd9fd051baf15b34c1d0382e55", null ],
-    [ "_callbacks", "dc/df6/classnut_1_1_h_a_l_callback_3_01void_01_4.html#a93b84bf5aac7be9e7b2e0be00b706c2a", null ],
-    [ "_exclusive_callbacks", "dc/df6/classnut_1_1_h_a_l_callback_3_01void_01_4.html#a0c4aa686b568aa71cfee2fadf79268d7", null ]
+    [ "ReadCallbacks", "dc/df6/classnut_1_1_h_a_l_callback_3_01void_01_4.html#a1988c9bd9fd051baf15b34c1d0382e55", null ]
 ];

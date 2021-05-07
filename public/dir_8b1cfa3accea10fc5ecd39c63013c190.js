@@ -5,6 +5,7 @@ var dir_8b1cfa3accea10fc5ecd39c63013c190 =
     [ "ControlSystem", "dir_63dbf4c33d1d3000acb3ae6cb6b3c647.html", "dir_63dbf4c33d1d3000acb3ae6cb6b3c647" ],
     [ "Etc", "dir_e8fb95b603c706a6281aaf6aeed4173d.html", "dir_e8fb95b603c706a6281aaf6aeed4173d" ],
     [ "HALCallbacks", "dir_959b2361a1e1cf406203698b4a7942e5.html", "dir_959b2361a1e1cf406203698b4a7942e5" ],
+    [ "MachineFunction", "dir_24ff83323cb8c9b8e096ff92557dd42e.html", "dir_24ff83323cb8c9b8e096ff92557dd42e" ],
     [ "Motor", "dir_292c5ded82e59d93da76ae0f1632d666.html", "dir_292c5ded82e59d93da76ae0f1632d666" ],
     [ "PowerSupply", "dir_28514fe294da9b592094b802ee99f2d1.html", "dir_28514fe294da9b592094b802ee99f2d1" ],
     [ "Sensor", "dir_c2c735cbd9a0ae71a2beef0eda132d9d.html", "dir_c2c735cbd9a0ae71a2beef0eda132d9d" ],
@@ -13,6 +14,7 @@ var dir_8b1cfa3accea10fc5ecd39c63013c190 =
     [ "CANBusProtocol.hpp", "d7/dbd/_c_a_n_bus_protocol_8hpp.html", "d7/dbd/_c_a_n_bus_protocol_8hpp" ],
     [ "CANWrapper.hpp", "d6/d16/_c_a_n_wrapper_8hpp.html", "d6/d16/_c_a_n_wrapper_8hpp" ],
     [ "Coordinate.hpp", "df/d40/_coordinate_8hpp.html", "df/d40/_coordinate_8hpp" ],
+    [ "DataEncode.hpp", "d9/d2b/_data_encode_8hpp.html", "d9/d2b/_data_encode_8hpp" ],
     [ "Flash.hpp", "d7/d2b/_flash_8hpp.html", "d7/d2b/_flash_8hpp" ],
     [ "Global.hpp", "d2/d88/_global_8hpp.html", "d2/d88/_global_8hpp" ],
     [ "Odmetry.hpp", "d5/dff/_odmetry_8hpp.html", [

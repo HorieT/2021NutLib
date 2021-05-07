@@ -94,9 +94,9 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <div class="textblock">全クラスメンバ一覧です。各メンバが属するクラスへのリンクがあります。</div>
 
 <h3><a id="index__5F"></a>- _ -</h3><ul>
-<li>_callbacks
-: <a class="el" href="d5/d40/classnut_1_1_h_a_l_callback.html#a29c6db26db811212f0cf5f8686273d0d">nut::HALCallback&lt; Args &gt;</a>
-, <a class="el" href="dc/df6/classnut_1_1_h_a_l_callback_3_01void_01_4.html#a93b84bf5aac7be9e7b2e0be00b706c2a">nut::HALCallback&lt; void &gt;</a>
+<li>_can
+: <a class="el" href="d6/d51/classnut_1_1_n_h_k21_1_1_com_r_o_s.html#a6e8c4fec2b1eb2e80521be07247269ea">nut::NHK21::ComROS</a>
+, <a class="el" href="d1/dcb/classnut_1_1_n_h_k21_1_1_sp_m_d.html#aea0c0ea28c785835ec6cc3dd1591a5c0">nut::NHK21::SpMD</a>
 </li>
 <li>_channel
 : <a class="el" href="db/d01/classnut_1_1_direct_duty_motor.html#a6cde526f0009e24529cfbad7075f0402">nut::DirectDutyMotor</a>
@@ -113,18 +113,14 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <li>_deviation
 : <a class="el" href="df/ddb/classnut_1_1_p_i_d_base.html#a01830fafc04d5bde18932910012d8adc">nut::PIDBase&lt; T &gt;</a>
 </li>
-<li>_diameter_mm
-: <a class="el" href="dc/d39/classnut_1_1_drive_wheel.html#afa2b9a25ffc6c67f525c28c3f31a66ce">nut::DriveWheel</a>
+<li>_diameter
+: <a class="el" href="dc/d39/classnut_1_1_drive_wheel.html#ae248d4034eef27d502aa8d7088dab235">nut::DriveWheel</a>
 </li>
 <li>_encoder
 : <a class="el" href="db/d01/classnut_1_1_direct_duty_motor.html#ac26c173f9115c15f13e70fdba3822bda">nut::DirectDutyMotor</a>
 </li>
 <li>_encoder_ratio
 : <a class="el" href="db/d01/classnut_1_1_direct_duty_motor.html#a1062b2518b5e1c3f51d93bbd6a99a5fa">nut::DirectDutyMotor</a>
-</li>
-<li>_exclusive_callbacks
-: <a class="el" href="d5/d40/classnut_1_1_h_a_l_callback.html#af1e2cf877c082d05bcf4e923302a28aa">nut::HALCallback&lt; Args &gt;</a>
-, <a class="el" href="dc/df6/classnut_1_1_h_a_l_callback_3_01void_01_4.html#a0c4aa686b568aa71cfee2fadf79268d7">nut::HALCallback&lt; void &gt;</a>
 </li>
 <li>_global_acc
 : <a class="el" href="db/d8d/classnut_1_1_i_m_u.html#af3ff3fe1b4495aa950cec8794e7bd44b">nut::IMU</a>
@@ -141,8 +137,12 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <li>_gpio_port
 : <a class="el" href="db/d01/classnut_1_1_direct_duty_motor.html#a2894909c1ab2233f402727e1ffb0ec2b">nut::DirectDutyMotor</a>
 </li>
+<li>_hi2c
+: <a class="el" href="d7/df1/classnut_1_1_v_l53_l0_x.html#a3d321376f5b107eca06fe2883ef2853d">nut::VL53L0X</a>
+</li>
 <li>_htim
 : <a class="el" href="db/d01/classnut_1_1_direct_duty_motor.html#a8dd78a0ee4b682dd713e2aa8b28f98cd">nut::DirectDutyMotor</a>
+, <a class="el" href="d7/df1/classnut_1_1_v_l53_l0_x.html#a91516b37e47d15f433bd53f3253dd60e">nut::VL53L0X</a>
 </li>
 <li>_I_gain
 : <a class="el" href="df/ddb/classnut_1_1_p_i_d_base.html#ae3f7c5ea0a97bea0419388283e40a451">nut::PIDBase&lt; T &gt;</a>
@@ -153,11 +153,20 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <li>_I_stack
 : <a class="el" href="d4/d7c/classnut_1_1_pos_p_i_d.html#ab31a270523b9062825ceb65cafc06177">nut::PosPID&lt; T &gt;</a>
 </li>
+<li>_id
+: <a class="el" href="d1/dcb/classnut_1_1_n_h_k21_1_1_sp_m_d.html#aadb3bad1668af48ae80e833f32ced4ba">nut::NHK21::SpMD</a>
+</li>
 <li>_is_init
 : <a class="el" href="df/d9b/classnut_1_1_encoder.html#a4215259d653f25dca6de0845407a3b8a">nut::Encoder</a>
 , <a class="el" href="db/d8d/classnut_1_1_i_m_u.html#a43905a0ee530c7de7d9b51e35e705a37">nut::IMU</a>
 , <a class="el" href="d5/da2/classnut_1_1_motor.html#a097393bddd50dd35481c29af3b038763">nut::Motor</a>
 , <a class="el" href="db/d47/classnut_1_1_steer_driver.html#a622da1a91a1a614fdaba9e212dd6028e">nut::SteerDriver</a>
+</li>
+<li>_is_move
+: <a class="el" href="d1/dcb/classnut_1_1_n_h_k21_1_1_sp_m_d.html#ae131f984ae53912e086b613f612814d3">nut::NHK21::SpMD</a>
+</li>
+<li>_is_started
+: <a class="el" href="d1/dcb/classnut_1_1_n_h_k21_1_1_sp_m_d.html#a93ac09e13df1ce37b8feee488e10e0c7">nut::NHK21::SpMD</a>
 </li>
 <li>_limit
 : <a class="el" href="d6/d69/classnut_1_1_controller.html#a0d768ee40da678abaa3abea82a2e8e9b">nut::Controller&lt; T, Input, Output &gt;</a>
@@ -165,12 +174,22 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 , <a class="el" href="d6/d64/classnut_1_1_controller_3_01_t_00_011_00_01_output_01_4.html#a91a5855695baaed6947fd58f25041233">nut::Controller&lt; T, 1, Output &gt;</a>
 , <a class="el" href="db/dd9/classnut_1_1_controller_3_01_t_00_01_input_00_011_01_4.html#ae4abeb7a6301407b6ca4408ae5da210c">nut::Controller&lt; T, Input, 1 &gt;</a>
 </li>
+<li>_mode
+: <a class="el" href="d9/d6a/classnut_1_1_steer_chassis_base.html#a7d07513b45a9a1ba17a975427021d958">nut::SteerChassisBase</a>
+</li>
 <li>_motor
 : <a class="el" href="dc/d39/classnut_1_1_drive_wheel.html#a7f88d939f831edb04ca891be2710817d">nut::DriveWheel</a>
+</li>
+<li>_move_end_callback
+: <a class="el" href="d1/dcb/classnut_1_1_n_h_k21_1_1_sp_m_d.html#aabdb79d23de1dac7926fdd19eac2f513">nut::NHK21::SpMD</a>
 </li>
 <li>_move_type
 : <a class="el" href="d9/dc6/classnut_1_1_chassis.html#ae98040dd6274a94585c3b77645596c91">nut::Chassis</a>
 , <a class="el" href="d5/da2/classnut_1_1_motor.html#a07419fd0f0e964016084ab9b3605009b">nut::Motor</a>
+</li>
+<li>_my_id
+: <a class="el" href="d6/d51/classnut_1_1_n_h_k21_1_1_com_r_o_s.html#aae7ff71a78c80652ff2eb078b56cb297">nut::NHK21::ComROS</a>
+, <a class="el" href="d1/dcb/classnut_1_1_n_h_k21_1_1_sp_m_d.html#a7c4ed7214e9109141a3e53f8790de500">nut::NHK21::SpMD</a>
 </li>
 <li>_now_current
 : <a class="el" href="d5/da2/classnut_1_1_motor.html#af72fbd3805053318bd6f752c943d1b17">nut::Motor</a>
@@ -186,9 +205,6 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 </li>
 <li>_odmetry
 : <a class="el" href="d9/dc6/classnut_1_1_chassis.html#a91cda6f2ffb71c1c70528d9d24ada87d">nut::Chassis</a>
-</li>
-<li>_one_time
-: <a class="el" href="d9/d00/classnut_1_1_time_scheduler_base.html#a526ce3542cbd49bb61a6c7f16fb73661">nut::TimeSchedulerBase</a>
 </li>
 <li>_output_value
 : <a class="el" href="d2/d44/classnut_1_1_vec_p_i_d.html#ac7d9dd1a37472a39f8cf3f5682526367">nut::VecPID&lt; T &gt;</a>
@@ -208,10 +224,17 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <li>_resolution
 : <a class="el" href="df/d9b/classnut_1_1_encoder.html#aa112a08c6cbb7361e744d25204f8b584">nut::Encoder</a>
 </li>
+<li>_ros_id
+: <a class="el" href="d6/d51/classnut_1_1_n_h_k21_1_1_com_r_o_s.html#ad8f3c841f30bbe814205b093e64496a5">nut::NHK21::ComROS</a>
+</li>
+<li>_rx_callback_it
+: <a class="el" href="d1/dcb/classnut_1_1_n_h_k21_1_1_sp_m_d.html#a466e385465d4da17f60a2431ac667362">nut::NHK21::SpMD</a>
+</li>
 <li>_scheduler
 : <a class="el" href="d9/dc6/classnut_1_1_chassis.html#affef51990647fae61b8c4e0fe9488de0">nut::Chassis</a>
 , <a class="el" href="d5/da2/classnut_1_1_motor.html#a3e7f0ef80cbc1fde3400dcfb83405de0">nut::Motor</a>
 , <a class="el" href="db/d47/classnut_1_1_steer_driver.html#a25c905d02450270271801704602ed557">nut::SteerDriver</a>
+, <a class="el" href="d7/df1/classnut_1_1_v_l53_l0_x.html#a7d881cafcfd3def4b52758e919fa9dc8">nut::VL53L0X</a>
 </li>
 <li>_sensor_acc
 : <a class="el" href="db/d8d/classnut_1_1_i_m_u.html#a6b91a8f39d12570c1e80f7ddae486b36">nut::IMU</a>
