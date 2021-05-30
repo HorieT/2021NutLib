@@ -28,7 +28,6 @@ private:
 	const std::array<const float, N> _wheel_sin = {0.0};
 	const std::array<const float, N> _wheel_length = {0.0};
 
-	MoveMode _mode = MoveMode::nomal;
 
 
 	/**
@@ -38,7 +37,7 @@ private:
 		std::array<Eigen::Vector2f, N> input;
 
 		//move
-		if((_target_velocity.x() != 0.0) || (_target_velocity.y() != 0.0) || (_target_velocity.theta() != 0.0)){
+		if((_target_velocity.x() != 0.0) || (_target_velocity.y() != 0.0) || (_target_velocity.theta() != 0.0) || (_mode == MoveMode::steerBreaking)){
 			uint8_t i = 0;
 
 			if(_mode != MoveMode::steerBreaking){
