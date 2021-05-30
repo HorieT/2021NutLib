@@ -49,5 +49,6 @@ using micro = Prefix<1, 1000000>;//<! マイクロ
 using milli = Prefix<1, 1000>;//<! ミリ
 using centi = Prefix<1, 100>;//<! センチ
 using kilo = Prefix<1000, 1>;//<! キロ
+using mega = Prefix<1000000, 1>;//<! メガ
 }
 }

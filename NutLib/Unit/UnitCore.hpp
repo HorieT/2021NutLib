@@ -17,6 +17,9 @@ template<typename T>
 using MicroSecond = unit::Unit<T, nut::unit::Type::second, unit::micro>;
 
 template<typename T>
+using Minute = unit::Unit<T, nut::unit::Type::minute>;
+
+template<typename T>
 using Meter = unit::Unit<T, nut::unit::Type::meter>;
 template<typename T>
 using MilliMeter = unit::Unit<T, nut::unit::Type::meter, unit::milli>;
@@ -45,4 +48,37 @@ template<typename T>
 using Volt = unit::Unit<T, nut::unit::Type::volt>;
 template<typename T>
 using MilliVolt = unit::Unit<T, nut::unit::Type::volt, unit::milli>;
+
+template<typename T>
+using Ohm = unit::Unit<T, nut::unit::Type::ohm>;
+template<typename T>
+using MilliOhm = unit::Unit<T, nut::unit::Type::ohm, unit::milli>;
+template<typename T>
+using KiloOhm = unit::Unit<T, nut::unit::Type::ohm, unit::kilo>;
+template<typename T>
+using MegaOhm = unit::Unit<T, nut::unit::Type::ohm, unit::mega>;
+
+template<typename T>
+using Henry = unit::Unit<T, nut::unit::Type::henry>;
+template<typename T>
+using MicroHenry = unit::Unit<T, nut::unit::Type::henry, unit::micro>;
+
+template<typename T>
+using Farad = unit::Unit<T, nut::unit::Type::farad>;
+template<typename T>
+using MicroFarad = unit::Unit<T, nut::unit::Type::farad, unit::micro>;
+
+/* 変換 */
+namespace unit{
+template<typename T>
+constexpr Second<T> ToSecond(Minute<T> minute){return static_cast<T>(minute * 60.0);}
+template<typename T>
+constexpr Minute<T> ToMinute(Second<T> second){return static_cast<T>(second / 60.0);}
+template<typename T>
+constexpr Radian<T> ToRadian(Degre<T> degre){return static_cast<T>(degre / 180.0 * M_PI);}
+template<typename T>
+constexpr Degre<T> ToDegre(Radian<T> radian){return static_cast<T>(radian / M_PI * 180.0);}
+
 }
+}
+

@@ -3,7 +3,7 @@
  * @brief 単位系
  * @author Horie
  * @date 2020/9
- * @attention まだ作成中
+ * @attention 構造上,組み単位が作りにくい
  */
 #pragma once
 
@@ -20,14 +20,17 @@ namespace unit{
  * @brief 単位
  */
 enum class Type : uint16_t{
-	second = 0U,//!< 秒
-	minute,//!< 分
-	meter,//!< メートル
-	radian,//!< rad
-	degre,//!< deg
-	gram,//!< グラム
-	ampere,//!< アンペア
-	volt,//!< ボルト
+	second = 0U,	//!< 秒
+	minute,			//!< 分
+	meter,			//!< メートル
+	radian,			//!< rad
+	degre,			//!< deg
+	gram,			//!< グラム
+	ampere,			//!< アンペア
+	volt,			//!< ボルト
+	ohm,			//!< オーム
+	henry,			//!< ヘンリー
+	farad,			//!< ファラド
 };
 
 
