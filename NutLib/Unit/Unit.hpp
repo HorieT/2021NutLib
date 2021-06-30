@@ -3,7 +3,7 @@
  * @brief 単位系
  * @author Horie
  * @date 2020/9
- * @attention まだ作成中
+ * @attention 構造上,組み単位が作りにくい
  */
 #pragma once
 
@@ -20,14 +20,17 @@ namespace unit{
  * @brief 単位
  */
 enum class Type : uint16_t{
-	second = 0U,//!< 秒
-	minute,//!< 分
-	meter,//!< メートル
-	radian,//!< rad
-	degre,//!< deg
-	gram,//!< グラム
-	ampere,//!< アンペア
-	volt,//!< ボルト
+	second = 0U,	//!< 秒
+	minute,			//!< 分
+	meter,			//!< メートル
+	radian,			//!< rad
+	degre,			//!< deg
+	gram,			//!< グラム
+	ampere,			//!< アンペア
+	volt,			//!< ボルト
+	ohm,			//!< オーム
+	henry,			//!< ヘンリー
+	farad,			//!< ファラド
 };
 
 
@@ -52,25 +55,25 @@ public:
 	constexpr float f()const{
 		return static_cast<float>(_value);
 	}
-	constexpr float d()const{
+	constexpr double d()const{
 		return static_cast<double>(_value);
 	}
-	constexpr float i8()const{
+	constexpr int8_t i8()const{
 		return static_cast<int8_t>(_value);
 	}
-	constexpr float i16()const{
+	constexpr int16_t i16()const{
 		return static_cast<int16_t>(_value);
 	}
-	constexpr float i32()const{
+	constexpr int32_t i32()const{
 		return static_cast<int32_t>(_value);
 	}
-	constexpr float u8()const{
+	constexpr uint8_t u8()const{
 		return static_cast<uint8_t>(_value);
 	}
-	constexpr float u16()const{
+	constexpr uint16_t u16()const{
 		return static_cast<uint16_t>(_value);
 	}
-	constexpr float u32()const{
+	constexpr uint32_t u32()const{
 		return static_cast<uint32_t>(_value);
 	}
 
@@ -86,9 +89,8 @@ public:
 	 * @return this
 	 */
 	template<typename TR, class PR>
-	constexpr Unit(const Unit<TR, U, PR>& r_operand){
-		_value = static_cast<T>((static_cast<TR>(r_operand) * P::den * PR::num) / (P::num * PR::den));
-	}
+	constexpr Unit(const Unit<TR, U, PR>& r_operand) :
+		Unit(static_cast<T>((static_cast<TR>(r_operand) * P::den * PR::num) / (P::num * PR::den))){}
 	/**
 	 * @brief 同一単位系の代入構築
 	 * @tparam TR 右オペランドの数値型
@@ -96,9 +98,8 @@ public:
 	 * @return this
 	 */
 	template<typename TR, class PR>
-	constexpr Unit(Unit<TR, U, PR>&& r_operand){
-		_value = static_cast<T>((static_cast<TR>(r_operand) * P::den * PR::num) / (P::num * PR::den));
-	}
+	constexpr Unit(Unit<TR, U, PR>&& r_operand) :
+		Unit(static_cast<T>((static_cast<TR>(r_operand) * P::den * PR::num) / (P::num * PR::den))){}
 
 	/**
 	 * @brief 同一単位系の代入

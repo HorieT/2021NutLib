@@ -63,6 +63,7 @@ public:
 		_last_type = LastSendType::And;
 		_continue_flag = true;
 		_can->Transmit<3>(can_protocol::MakeCANID(_id, can_protocol::sv::DataType::valveSetAnd), data);
+		_can->Transmit<3>(can_protocol::MakeCANID(_id, can_protocol::sv::DataType::valveSetAnd), data);
 		_continue_check.Reset();
 		return true;
 	}
@@ -80,6 +81,7 @@ public:
 		_last_type = LastSendType::Or;
 		_continue_flag = true;
 		_can->Transmit<3>(can_protocol::MakeCANID(_id, can_protocol::sv::DataType::valveSetOr), data);
+		_can->Transmit<3>(can_protocol::MakeCANID(_id, can_protocol::sv::DataType::valveSetOr), data);
 		_continue_check.Reset();
 		return true;
 	}
@@ -96,6 +98,7 @@ public:
 		_last_send_data = bit;
 		_last_type = LastSendType::Copy;
 		_continue_flag = true;
+		_can->Transmit<3>(can_protocol::MakeCANID(_id, can_protocol::sv::DataType::valveState), data);
 		_can->Transmit<3>(can_protocol::MakeCANID(_id, can_protocol::sv::DataType::valveState), data);
 		_continue_check.Reset();
 		return true;

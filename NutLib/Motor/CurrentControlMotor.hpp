@@ -130,7 +130,7 @@ public:
 	virtual void Init() override{
 		if(_is_init)return;
 		_is_init = true;
-		_encoder->Init();
+		if(_encoder)_encoder->Init();
 		_scheduler.Set();
 		__HAL_TIM_SET_COMPARE(_htim, _channel, 0);
 		HAL_TIM_PWM_Start(_htim, _channel);
@@ -142,7 +142,7 @@ public:
 		if(!_is_init)return;
 		Stop();
 		_is_init = false;
-		_encoder->Deinit();
+		if(_encoder)_encoder->Deinit();
 		_scheduler.Erase();
 		__HAL_TIM_SET_COMPARE(_htim, _channel, 0);
 		HAL_TIM_PWM_Stop(_htim, _channel);

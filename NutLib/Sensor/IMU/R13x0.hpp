@@ -82,8 +82,8 @@ private:
 						[[maybe_unused]]int16_t angle, angle_vel, acc;//隴ｦ蜻雁屓驕ｿ縺ｧunused莉倥￠縺ｦ繧九￠縺ｩ蠢�隕∽ｸ�譎ょ､画焚
 						memcpy(&angle, &read_data[1], 2);
 						memcpy(&angle_vel, &read_data[3], 2);
-						_global_angle.z() = - static_cast<float>(angle) * static_cast<float>(M_PI) / 18000.0f;
-						_global_rot.z()=  - static_cast<float>(angle_vel) * static_cast<float>(M_PI) / 18000.0f;
+						_global_angle.z() = - static_cast<float>(angle) * M_PI_f / 18000.0f;
+						_global_rot.z()=  - static_cast<float>(angle_vel) * M_PI_f / 18000.0f;
 
 						memcpy(&acc, &read_data[5], 2);
 						_sensor_acc.x() = static_cast<float>(acc);

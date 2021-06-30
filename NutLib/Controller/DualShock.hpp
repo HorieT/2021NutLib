@@ -199,7 +199,7 @@ public:
 	 * @param[in] callback_func タイムアウトコールバック関数
 	 * @param[in] time タイムアウト時間[ms]
 	 */
-	DualShock(UART_HandleTypeDef* huart, std::function<void()>&& callback_func, uint32_t time)
+	DualShock(UART_HandleTypeDef* huart, std::function<void()>&& callback_func, MilliSecond<uint32_t> time)
 		: _uart(huart), _schduler([this]{timeout();}, time), _timeout_callback(callback_func)
 	{
 		callback::UART_RxHalfComplete.AddExclusiveCallback(UART_PRIORITY, [this](UART_HandleTypeDef* huart){return Receive(huart);});

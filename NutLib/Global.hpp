@@ -89,19 +89,15 @@ constexpr auto BitSwap(T data) -> std::enable_if_t<std::is_integral_v<T>, T>{
 	static_assert(size <= 32, "bit size over");
 	T tmp = data;
 	switch(size){
-	case 32:
+	case 4:
 		tmp = ((tmp & 0x0000ffff) << 16) | ((tmp >> 16) & 0x0000ffff);
 		[[fallthrough]];
-	case 16:
+	case 2:
 		tmp = ((tmp & 0x00ff00ff) <<  8) | ((tmp >>  8) & 0x00ff00ff);
 		[[fallthrough]];
-	case 8:
+	case 1:
 		tmp = ((tmp & 0x0f0f0f0f) <<  4) | ((tmp >>  4) & 0x0f0f0f0f);
-		[[fallthrough]];
-	case 4:
 		tmp = ((tmp & 0x33333333) <<  2) | ((tmp >>  2) & 0x33333333);
-		[[fallthrough]];
-	case 2:
 		tmp = ((tmp & 0x55555555) <<  1) | ((tmp >>  1) & 0x55555555);
 		[[fallthrough]];
 	default:

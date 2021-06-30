@@ -7,10 +7,10 @@
  */
 #pragma once
 
-#include "../Global.hpp"
-#include "../CANWrapper.hpp"
-#include "../CANBusProtocol.hpp"
-#include "../TimeScheduler.hpp"
+#include "../../Global.hpp"
+#include "../../CANWrapper.hpp"
+#include "../../CANBusProtocol.hpp"
+#include "../../TimeScheduler.hpp"
 
 namespace nut{
 class TofBoard final{

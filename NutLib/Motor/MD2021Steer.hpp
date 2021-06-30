@@ -133,5 +133,28 @@ public:
 				std::array<uint8_t, 2>{_user_id, static_cast<uint8_t>(can_protocol::motor::SpecialOperation::stop)}
 		);
 	}
+
+
+
+	/**
+	 *
+	 */
+	template<uint8_t N>
+	static std::array<std::shared_ptr<SteerDriver>, N> MakeSteerArray(uint8_t driver_num_start, MilliSecond<uint32_t> period, const std::shared_ptr<CANWrapper>& can, uint8_t fifo, uint8_t my_id){
+		std::array<std::shared_ptr<SteerDriver>, N> steers;
+
+		uint8_t i = driver_num_start;
+		for(auto& steer : steers){
+		  steer = std::static_pointer_cast<SteerDriver>(
+				  std::make_shared<MD2021Steer>(
+						  period,
+						  can,
+						  fifo,
+						  can_protocol::MakeDeviceID(can_protocol::Device::motorDriver, i),
+						  my_id));
+		  i+=2;
+		}
+		return steers;
+	}
 };
 }

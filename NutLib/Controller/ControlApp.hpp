@@ -112,21 +112,6 @@ public:
 
 	/**
 	 * @brief データ送信
-	 * @tparam Size データサイズ
-	 * @param[in] head ヘッダ
-	 * @param[in] data データ
-	 */
-	template<size_t Size>
-	void SendData(uint8_t head, std::array<uint8_t, Size> data){
-		std::vector<uint8_t> send_msg(Size + 1);
-		send_msg[0] = head;
-		std::memcpy(&send_msg[1], data.data(), Size);
-
-		CDC_Transmit_FS(COBS::Encode(send_msg).data(), Size + 3);//USB送信はブロッカーで同期処理になってるはず
-	}
-
-	/**
-	 * @brief データ送信
 	 * @tparam T データ型
 	 * @param[in] head ヘッダ
 	 * @param[in] data データ

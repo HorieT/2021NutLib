@@ -29,6 +29,8 @@ private:
 	int16_t _last_bit = 0;
 	int16_t _bit = 0;
 	TimeScheduler<void> _scheduler;
+	static constexpr uint32_t BIT12 = std::pow(2, 12);
+	static constexpr uint32_t BIT14 = std::pow(2, 14);
 
 	RxCallbackIt _rx_it;
 
@@ -48,11 +50,13 @@ private:
 			if(h_byte[7] == (h_byte[5] ^ h_byte[3] ^ h_byte[1] ^ l_byte[7] ^ l_byte[5] ^ l_byte[3] ^ l_byte[1]))return false;
 			if(h_byte[6] == (h_byte[4] ^ h_byte[2] ^ h_byte[0] ^ l_byte[6] ^ l_byte[4] ^ l_byte[2] ^ l_byte[0]))return false;
 			uint32_t tmp = (l_byte.to_ulong() | (h_byte.to_ulong() << 8)) & 0x3FFF;
+			if(_resolution == BIT12)tmp = tmp >> 2;
 			_bit = (tmp > _resolution/2 ? tmp -  static_cast<int16_t>(_resolution) : tmp);
 			return true;
 		}
 		return false;
 	}
+
 
 public:
 	AbsEncoder(uint32_t resolution, UART_HandleTypeDef* huart, GPIO_TypeDef* port, uint16_t pin)
