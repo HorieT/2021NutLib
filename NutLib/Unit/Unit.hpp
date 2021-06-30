@@ -89,9 +89,8 @@ public:
 	 * @return this
 	 */
 	template<typename TR, class PR>
-	constexpr Unit(const Unit<TR, U, PR>& r_operand){
-		_value = static_cast<T>((static_cast<TR>(r_operand) * P::den * PR::num) / (P::num * PR::den));
-	}
+	constexpr Unit(const Unit<TR, U, PR>& r_operand) :
+		Unit(static_cast<T>((static_cast<TR>(r_operand) * P::den * PR::num) / (P::num * PR::den))){}
 	/**
 	 * @brief 同一単位系の代入構築
 	 * @tparam TR 右オペランドの数値型
@@ -99,9 +98,8 @@ public:
 	 * @return this
 	 */
 	template<typename TR, class PR>
-	constexpr Unit(Unit<TR, U, PR>&& r_operand){
-		_value = static_cast<T>((static_cast<TR>(r_operand) * P::den * PR::num) / (P::num * PR::den));
-	}
+	constexpr Unit(Unit<TR, U, PR>&& r_operand) :
+		Unit(static_cast<T>((static_cast<TR>(r_operand) * P::den * PR::num) / (P::num * PR::den))){}
 
 	/**
 	 * @brief 同一単位系の代入

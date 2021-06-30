@@ -36,14 +36,17 @@ public:
 	{
 		SetCurrentSettingTime(0.1f);
 	}
+	constexpr DCMotorParam(DCMotorParam param, Second<float> Tc) : DCMotorParam(param){
+		SetCurrentSettingTime(Tc);
+	}
 
 	constexpr void SetCurrentSettingTime(Second<float> Tc){
-		if(Tc <= 0)return;
+		if(Tc <= 0.0)return;
 		_current_setting_time = Tc;
 		_corner_frequency = 3.0f / _current_setting_time.f();
-
 		_current_p_gain_base = _s_inductance.f() * _corner_frequency;
-		_current_p_gain_base = _s_resistance.f() * _corner_frequency;
+		_current_i_gain_base = _s_resistance.f() * _corner_frequency;
+
 	}
 
 	constexpr Second<float> GetTm()const{return _time_constant;}
