@@ -342,5 +342,8 @@ public:
 	virtual float GetTagCurrent()const{
 		return _target_current;
 	}
+	bool IsStart(){
+		return _move_type != MoveType::stop;
+	}
 };
 }

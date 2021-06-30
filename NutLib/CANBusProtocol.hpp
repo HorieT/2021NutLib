@@ -78,6 +78,7 @@ enum class DataType : uint8_t{
 	ySpead,
 	thetaSpead,
 	steering,
+	uniqe = 0x8
 };
 enum class ControlMode : uint8_t{
 	init 		= 0x00,
@@ -101,7 +102,7 @@ enum class DataType : uint8_t{
 	odmeter 	= 0x1,
 	speed 		= 0x2,
 	acc 		= 0x3,
-	uniqe 	= 0x8
+	uniqe 		= 0x8
 };
 }
 
