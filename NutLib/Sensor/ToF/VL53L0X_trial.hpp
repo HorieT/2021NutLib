@@ -12,6 +12,9 @@
 
 namespace nut {
 
+
+#ifdef HAL_I2C_MODULE_ENABLED
+
 class VL53L0X
 {
 public:
@@ -1138,5 +1141,6 @@ public:
 		return true;
 	}
 };
+#endif
 }
 /* INC_NUTLIB_SENSOR_TOF_VL53L0X_TRIAL_HPP_ */
