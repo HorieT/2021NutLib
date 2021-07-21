@@ -13,11 +13,14 @@
 #include <array>
 
 namespace nut{
+#if false
 /*
  * @attention まだ作成中
  */
 class AbsEncoderMulti : public Encoder{
 private:
+	using RxCallbackIt = decltype(callback::UART_RxHalfComplete)::ExCallbackIterator;
+
 	UART_HandleTypeDef* const _huart;
 	GPIO_TypeDef* const _port;
 	const uint16_t _pin;
@@ -29,6 +32,9 @@ private:
 	TimeScheduler<void> _scheduler;
 	bool _rq_rad = false;
 	bool _rq_turn = false;
+
+
+	RxCallbackIt _rx_it;
 
 
 public:
@@ -48,6 +54,7 @@ public:
 	virtual void Init() override{
 		if(_is_init)return;
 		_is_init = true;
+		_rx_it = callback::UART_RxComplete.AddExclusiveCallback(1, [this](UART_HandleTypeDef* huart){return Receive(huart);});
 		_scheduler.Set();
 	}
 
@@ -55,9 +62,9 @@ public:
 	 * @brief 初期化
 	 */
 	virtual void Deinit() override{
-		if(!_is_init)return;
+		/*if(!_is_init)return;
 		_is_init = false;
-		_scheduler.Erase();
+		_scheduler.Erase();*/
 	}
 
 	/**
@@ -67,7 +74,7 @@ public:
 		std::array<uint8_t, 2> data{0x56, 0x5E};
 		HAL_GPIO_WritePin(_port, _pin, GPIO_PIN_SET);
 		HAL_UART_Transmit(_huart, data.data(), 2, 2);
-		_last_bit_rad = 0;
+		//_last_bit_rad = 0;
 		HAL_GPIO_WritePin(_port, _pin, GPIO_PIN_RESET);
 	}
 
@@ -138,7 +145,7 @@ public:
 				_buff_rad[0] = 0;
 				_buff_rad[1] = 0;
 				_bit_rad = (tmp > _resolution/2 ? tmp -  static_cast<int16_t>(_resolution) : tmp);
-				ReqestTurn();
+				//ReqestTurn();
 				return true;
 			}
 			else if(_rq_turn){
@@ -158,4 +165,5 @@ public:
 		return false;
 	}
 };
+#endif
 }

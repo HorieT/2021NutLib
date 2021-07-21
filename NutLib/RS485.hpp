@@ -1,5 +1,6 @@
 /**
- * まだ！！！！！！！！！！！！！！！！！！！！
+ * @brief RS485インターフェース
+ * @attention まだ！！！！！！！！！！！！！！！！！！！！
  */
 #pragma once
 
@@ -11,6 +12,7 @@
 
 namespace nut{
 
+#if false
 /**
  * @brief RS485インターフェースクラス
  * @attention 未完成！！！！！
@@ -123,4 +125,5 @@ public:
 		return true;
 	}
 };
+#endif
 }
