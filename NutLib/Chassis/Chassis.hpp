@@ -72,6 +72,18 @@ public:
 		_target_velocity = velocity;
 		return true;
 	}
+	/**
+	 * @brief 速度入力
+	 * @param[in] velocity 速度[m/s],[rad/s]
+	 * @param[in] origin 速度[m/s],[rad/s]
+	 * @return 速度入力可能か
+	 */
+	virtual bool SetVelocity(Coordinate<float> velocity, Coordinate<float> origen){
+		float norm = origen.Norm().f() * velocity.theta().f();
+		Eigen::Vector2f tmp{norm * std::cos(origen.Angle().f() - M_PI_2_f), -norm * std::sin(origen.Angle().f() - M_PI_2_f)};
+		SetVelocity(velocity + tmp);
+		return true;
+	}
 
 	/**
 	 * @brief 速度入力
@@ -83,6 +95,19 @@ public:
 		_target_velocity.x() = velocity_mps.x();
 		_target_velocity.y() = velocity_mps.y();
 		_target_velocity.theta() = rot_radps;
+		return true;
+	}
+	/**
+	 * @brief 速度入力
+	 * @param[in] velocity 速度[m/s],[rad/s]
+	 * @param[in] origin 速度[m/s],[rad/s]
+	 * @return 速度入力可能か
+	 */
+	virtual bool SetVelocity(Eigen::Vector2f velocity_mps, float rot_radps, Coordinate<float> origen){
+		float norm = origen.Norm().f() * rot_radps;
+		float rad = std::atan2(velocity_mps.y(), velocity_mps.x());
+		Eigen::Vector2f tmp{norm * std::cos(rad + M_PI_2_f), -norm * std::sin(rad + M_PI_2_f)};
+		SetVelocity(velocity_mps + tmp, rot_radps);
 		return true;
 	}
 

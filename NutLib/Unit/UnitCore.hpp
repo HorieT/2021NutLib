@@ -7,6 +7,7 @@
 #pragma once
 
 #include "Unit.hpp"
+#include <cmath>
 
 namespace nut{
 template<typename T>
@@ -15,14 +16,15 @@ template<typename T>
 using MilliSecond = unit::Unit<T, nut::unit::Type::second, unit::milli>;
 template<typename T>
 using MicroSecond = unit::Unit<T, nut::unit::Type::second, unit::micro>;
-
 template<typename T>
-using Minute = unit::Unit<T, nut::unit::Type::minute>;
+using Minute = unit::Unit<T, nut::unit::Type::second, unit::Prefix<60, 1>>;
 
 template<typename T>
 using Meter = unit::Unit<T, nut::unit::Type::meter>;
 template<typename T>
 using MilliMeter = unit::Unit<T, nut::unit::Type::meter, unit::milli>;
+template<typename T>
+using Inch = unit::Unit<T, nut::unit::Type::meter, unit::Prefix<1000, 393701>>;
 
 
 template<typename T>
@@ -35,9 +37,9 @@ using KiloGram = unit::Unit<T, nut::unit::Type::gram, unit::kilo>;
 
 template<typename T>
 using Radian = unit::Unit<T, nut::unit::Type::radian>;
-
 template<typename T>
-using Degre = unit::Unit<T, nut::unit::Type::degre>;
+using Degree = unit::Unit<T, nut::unit::Type::radian,
+		unit::Prefix<std::numeric_limits<uint32_t>::max(), static_cast<uint32_t>((std::numeric_limits<uint32_t>::max() / 180.0) * M_PI)>>;//なるべく精度を出すために最大化
 
 template<typename T>
 using Ampere = unit::Unit<T, nut::unit::Type::ampere>;
@@ -68,17 +70,34 @@ using Farad = unit::Unit<T, nut::unit::Type::farad>;
 template<typename T>
 using MicroFarad = unit::Unit<T, nut::unit::Type::farad, unit::micro>;
 
-/* 変換 */
-namespace unit{
+/* 非メンバ関数 */
+/**
+ * @brief +pi~-piに正規化
+ * @pram[in] rad 角度
+ * @return +pi~-piの角度
+ */
 template<typename T>
-constexpr Second<T> ToSecond(Minute<T> minute){return static_cast<T>(minute * 60.0);}
+constexpr Radian<T> NormalizeRadian(Radian<T> rad){
+	if(!std::isfinite(rad.value()))return rad;
+	T tmp = std::fmod(rad.value(), M_2PI_f);
+	return (tmp < -M_PI) ? tmp + M_2PI_f : ((tmp > M_PI) ? tmp - M_2PI_f : tmp);
+}
 template<typename T>
-constexpr Minute<T> ToMinute(Second<T> second){return static_cast<T>(second / 60.0);}
+constexpr auto sin(Radian<T> rad){
+	return std::sin(rad.value());
+}
 template<typename T>
-constexpr Radian<T> ToRadian(Degre<T> degre){return static_cast<T>(degre / 180.0 * M_PI);}
+constexpr auto cos(Radian<T> rad){
+	return std::cos(rad.value());
+}
 template<typename T>
-constexpr Degre<T> ToDegre(Radian<T> radian){return static_cast<T>(radian / M_PI * 180.0);}
+constexpr auto tan(Radian<T> rad){
+	return std::tan(rad.value());
+}
 
+template<typename T, unit::Type U, class P>
+constexpr auto abs(unit::Unit<T, U, P> value){
+	return unit::Unit<T, U, P>(std::abs(value.value()));
 }
 }
 

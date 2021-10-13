@@ -25,7 +25,7 @@ private:
 	std::array<uint8_t, 8> _rx_data;
 
 public:
-	PowerSupply2021(const std::shared_ptr<CANWrapper>& can, uint8_t device_num, uint8_t user_id) :
+	PowerSupply2021(const std::shared_ptr<CANWrapper>& can, uint8_t device_num, uint8_t user_id = can_protocol::MakeDeviceID(can_protocol::Device::microcomputer)) :
 		_can(can), _device_id(device_num), _user_id(user_id){
 
 	}
@@ -63,6 +63,16 @@ public:
 				  ),
 				  ps_data
 		  );
+	}
+
+
+	/**
+	 * @brief 制御IDの変更
+	 * @attention Init()の呼び出し前、またはDeinit()の呼び出し後以外は無意味
+	 * @return ID変更したか
+	 */
+	void ResetUserID(uint8_t id){
+		const_cast<uint8_t&>(_user_id) = id;
 	}
 };
 }

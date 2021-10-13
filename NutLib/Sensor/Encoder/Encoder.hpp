@@ -48,13 +48,13 @@ public:
 	 * @brief 角度取得
 	 * @return 角度[rad]
 	 */
-	virtual float GetRad() = 0;
+	virtual Radian<float> GetRad() = 0;
 
 	/**
 	 * @brief 角度取得&カウントリセット
 	 * @details 周期角度取得精度を上げるためのもの
 	 * @return 角度[rad]
 	 */
-	virtual float GetRadAndReset() = 0;
+	virtual Radian<float> GetRadAndReset() = 0;
 };
 }

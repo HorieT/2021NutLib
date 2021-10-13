@@ -58,7 +58,8 @@
 #include "Sensor/Encoder/EncoderWheel.hpp"
 //#include "Sensor/IMU/IMU.hpp"
 #include "Sensor/IMU/R13x0.hpp"
-#include "Sensor/ToFBoard.hpp"
+#include "Sensor/Tof/ToFBoard.hpp"
+#include "Sensor/ToF/VL53L0X_trial.hpp"
 
 /*Unit*/
 #include "Unit/UnitCore.hpp"//All unit in

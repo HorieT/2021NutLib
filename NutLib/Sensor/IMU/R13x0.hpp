@@ -4,6 +4,8 @@
  * @author Horie
  * @date 2020/9
  */
+#pragma once
+
 #include "IMU.hpp"
 #include "../../TimeScheduler.hpp"
 #include "../../HALCallbacks/UART.hpp"

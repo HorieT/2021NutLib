@@ -36,22 +36,16 @@ protected:
 	virtual void ScheduleTask() override{
 		//get radian
 		if(_encoder){
-			float rad = _encoder->GetRad();
-			float rad_div = 0;
+			Radian<float> rad = _encoder->GetRad();
+			Radian<float> rad_div = 0;
 			if(!std::isnan(last_rad)){
-				rad_div = (rad - last_rad > M_PI_f) ?
-						rad - last_rad - M_2PI_f:
-						((rad - last_rad < -M_PI_f) ? rad - last_rad + M_2PI_f : rad - last_rad);
-				rad_div *= _encoder_ratio;
-				_now_radps = rad_div * 1000.0f / static_cast<float>(_scheduler.GetPeriod());
+				rad_div = NormalizeRadian(rad - last_rad) * _encoder_ratio;
+				_now_radps = rad_div.f() / Second<float>(_scheduler.GetPeriod()).f();
 			}else{
-				rad_div = (rad> M_PI_f) ?
-						rad - M_2PI_f:
-						((rad < -M_PI_f) ? rad + M_2PI_f : rad);
-				rad_div *= _encoder_ratio;
+				rad_div = NormalizeRadian(rad) * _encoder_ratio;
 			}
-			last_rad = rad;
-			_now_rad +=  rad_div;
+			last_rad = rad.f();
+			_now_rad +=  rad_div.f();
 		}
 
 
@@ -199,9 +193,9 @@ public:
 	 * @param[in] rad 角度[rad]
 	 * @return 角度制御可能かどうか
 	 */
-	virtual bool SetRadMulti(float rad) override{
+	virtual bool SetRadMulti(Radian<float> rad) override{
 		if(_move_type == MoveType::stop || !_encoder) return false;
-		_target_rad = rad;
+		_target_rad = rad.f();
 		_move_type = MoveType::radMulti;
 		return true;
 	}
@@ -212,16 +206,11 @@ public:
 	 * @details M_PI ~ -M_PIまで
 	 * @return 角度制御可能かどうか
 	 */
-	virtual bool SetRadSingle(float rad) override{
+	virtual bool SetRadSingle(Radian<float> rad) override{
 		if(_move_type == MoveType::stop || !_encoder) return false;
-		if(std::fabs(rad) > M_PI_f)return false;
+		if(abs(rad) > M_PI_f)return false;
 
-		float rad_diff = std::fmod(rad - _now_rad, M_2PI_f);
-		if(std::fabs(rad_diff) >= M_PI_f){//over rad
-			rad_diff = (rad_diff < 0 ? M_2PI_f : -M_2PI_f) + rad_diff;
-		}
-
-		_target_rad = _now_rad + rad_diff;
+		_target_rad = _now_rad + NormalizeRadian(rad - _now_rad).f();
 		_move_type = MoveType::radSingle;
 		return true;
 	}
@@ -233,9 +222,10 @@ public:
 	 * @details trueなら正,falsなら負です
 	 * @return 角度制御可能かどうか
 	 */
-	virtual bool SetRadSingle(float rad, bool polarity) override{
+	[[deprecated("This function is not yet in place.")]]
+	virtual bool SetRadSingle(Radian<float> rad, bool polarity) override{
 		if(_move_type == MoveType::stop || !_encoder) return false;
-		if(std::fabs(rad) > static_cast<float>(M_PI))return false;
+		if(abs(rad) > M_PI_f)return false;
 
 		/* not yet!!!!! */
 /*
@@ -255,7 +245,7 @@ public:
 	 * @param[in] currnet 電流[A]
 	 * @return 電流制御可能かどうか
 	 */
-	virtual bool SetCurrent(float currnet) override{
+	virtual bool SetCurrent(Ampere<float> currnet) override{
 		return false;
 	}
 
@@ -270,9 +260,9 @@ public:
 	 * @param[in] rad 書き換え角度
 	 * @return bool 角度原点リセット可能かどうか
 	 */
-	virtual bool ResetRadOrigin(float rad) override{
+	virtual bool ResetRadOrigin(Radian<float> rad) override{
 		if(_move_type != MoveType::stop || !_encoder)return false;
-		_now_rad = rad;
+		_now_rad = rad.f();
 		return true;
 	}
 

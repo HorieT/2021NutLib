@@ -16,7 +16,7 @@ namespace nut{
 class IncEncoder : public Encoder{
 private:
 	TIM_HandleTypeDef* const _htim;
-	float radian = 0.0f;
+	Radian<float> _radian = 0.0f;
 
 
 	/**
@@ -24,7 +24,7 @@ private:
 	 * @param[in] count カウント
 	 * @return 角度[rad]
 	 */
-	float ConvertRad(uint32_t count) const{
+	Radian<float> ConvertRad(uint32_t count) const{
 		//32bit counter
 		if(_htim->Instance->ARR == 0xFFFFFFFF){
 			int32_t signedCount;
@@ -92,21 +92,21 @@ public:
 	 * @brief 角度取得
 	 * @return 角度[rad]
 	 */
-	virtual float GetRad() override {
+	virtual Radian<float> GetRad() override {
 		uint32_t count = _htim->Instance->CNT;
 		_htim->Instance->CNT = 0;
-		return radian += ConvertRad(count);
+		return _radian += ConvertRad(count);
 	}
 	/**
 	 * @brief 角度取得&カウントリセット
 	 * @details 周期角度取得精度を上げるためのもの
 	 * @return 角度[rad]
 	 */
-	virtual float GetRadAndReset() override{
+	virtual Radian<float> GetRadAndReset() override{
 		uint32_t count = _htim->Instance->CNT;
 		_htim->Instance->CNT = 0;
-		float value = ConvertRad(count);
-		radian += value;
+		auto value = ConvertRad(count);
+		_radian += value;
 		return value;
 	}
 };

@@ -62,7 +62,7 @@ public:
 	 * @brief 角度取得
 	 * @return 角度[rad]
 	 */
-	float GetRad() const{
+	Radian<float> GetRad() const{
 		return _encoder->GetRad();
 	}
 	/**
@@ -70,23 +70,23 @@ public:
 	 * @details 周期角度取得精度を上げるためのもの
 	 * @return 角度[rad]
 	 */
-	float GetRadAndReset(){
+	Radian<float> GetRadAndReset(){
 		return _encoder->GetRadAndReset();
 	}
 	/**
 	 * @brief 距離取得
 	 * @return 距離[mm]
 	 */
-	float GetDistance() const {
-		return _encoder->GetRad() * _diameter.f() * 0.5;
+	MilliMeter<float> GetDistance() const {
+		return _encoder->GetRad().f() * _diameter * 0.5;
 	}
 	/**
 	 * @brief 距離取得&カウントリセット
 	 * @details 周期距離取得精度を上げるためのもの
 	 * @return 距離[mm]
 	 */
-	float GetDistanceAndReset() {
-		return _encoder->GetRadAndReset() * _diameter.f() * 0.5;
+	MilliMeter<float> GetDistanceAndReset() {
+		return _encoder->GetRadAndReset().f() * _diameter * 0.5;
 	}
 
 	/**

@@ -26,7 +26,7 @@ private:
 
 	const std::array<const float, N> _wheel_cos = {0.0};
 	const std::array<const float, N> _wheel_sin = {0.0};
-	const std::array<const float, N> _wheel_length = {0.0};
+	const std::array<const Meter<float>, N> _wheel_length = {0.0};
 
 	/**
 	 * @brief 周期コールバック関数
@@ -48,9 +48,9 @@ private:
 			if(_mode != MoveMode::steerBreaking){
 				for(auto& in : input){
 					in <<
-							_target_velocity.x() - _wheel_length[i] * _target_velocity.theta() * _wheel_sin[i],
-							_target_velocity.y() + _wheel_length[i] * _target_velocity.theta() * _wheel_cos[i];
-					in = Eigen::Rotation2Df(-_wheel_position[i].theta()) * in;
+							(_target_velocity.x() - _wheel_length[i] * _target_velocity.theta().f() * _wheel_sin[i]).f(),
+							(_target_velocity.y() + _wheel_length[i] * _target_velocity.theta().f() * _wheel_cos[i]).f();
+					in = Eigen::Rotation2Df(-_wheel_position[i].theta().f()) * in;
 					++i;
 				}
 			}
@@ -91,17 +91,17 @@ public:
 
 		uint8_t i = 0;
 		for(auto& w_cos : const_cast<std::array<const float, N>&>(_wheel_cos)){
-			const_cast<float&>(w_cos) = std::cos(_wheel_position[i].Angle());
+			const_cast<float&>(w_cos) = cos(_wheel_position[i].Angle());
 			++i;
 		}
 		i = 0;
 		for(auto& w_sin : const_cast<std::array<const float, N>&>(_wheel_sin)){
-			const_cast<float&>(w_sin) = std::sin(_wheel_position[i].Angle());
+			const_cast<float&>(w_sin) = sin(_wheel_position[i].Angle());
 			++i;
 		}
 		i = 0;
-		for(auto& w_length : const_cast<std::array<const float, N>&>(_wheel_length)){
-			const_cast<float&>(w_length) = _wheel_position[i].Norm();
+		for(auto& w_length : const_cast<std::array<const Meter<float>, N>&>(_wheel_length)){
+			const_cast<Meter<float>&>(w_length) = _wheel_position[i].Norm();
 			++i;
 		}
 	}

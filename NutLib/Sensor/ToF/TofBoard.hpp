@@ -52,6 +52,7 @@ private:
 		if(!_is_init)return;
 		std::array<uint8_t, 2> data{_my_id, static_cast<uint8_t>(operation)};
 		_can->Transmit<2>(can_protocol::MakeCANID(_id, can_protocol::tof::DataType::specialOperation), data);
+		_can->Transmit<2>(can_protocol::MakeCANID(_id, can_protocol::tof::DataType::specialOperation), data);
 	}
 public:
 	TofBoard(const std::shared_ptr<CANWrapper>& can) : _can(can){
