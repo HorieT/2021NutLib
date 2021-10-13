@@ -17,7 +17,7 @@ namespace nut{
 class SolenoidDriver final{
 private:
 	const std::shared_ptr<CANWrapper> _can;
-	const uint8_t _my_id;
+	const uint8_t _user_id;
 	const uint8_t _id;
 
 	static constexpr MilliSecond<uint32_t> CONTINUE_BLOCK_TIME = 50;
@@ -38,8 +38,8 @@ public:
 	 * @param[in] dv_num デバイスナンバー
 	 * @param[in] my_id 自己ID
 	 */
-	SolenoidDriver(const std::shared_ptr<CANWrapper>& can, uint8_t dv_num, uint8_t my_id) :
-	_can(can), _my_id(my_id), _id(can_protocol::MakeDeviceID(can_protocol::Device::solenoidValve, dv_num)){
+	SolenoidDriver(const std::shared_ptr<CANWrapper>& can, uint8_t dv_num, uint8_t user_id = can_protocol::MakeDeviceID(can_protocol::Device::microcomputer)) :
+	_can(can), _user_id(user_id), _id(can_protocol::MakeDeviceID(can_protocol::Device::solenoidValve, dv_num)){
 		_continue_check.Set();
 	}
 	/**
@@ -56,7 +56,7 @@ public:
 	 */
 	bool SetAnd(uint16_t bit){
 		if(_last_type == LastSendType::And && bit == _last_send_data && _continue_flag)return false;
-		std::array<uint8_t, 3> data{_my_id};
+		std::array<uint8_t, 3> data{_user_id};
 		std::memcpy(&data[1], &bit, 2);
 
 		_last_send_data = bit;
@@ -74,7 +74,7 @@ public:
 	 */
 	bool SetOr(uint16_t bit){
 		if(_last_type == LastSendType::Or && bit == _last_send_data && _continue_flag)return false;
-		std::array<uint8_t, 3> data{_my_id};
+		std::array<uint8_t, 3> data{_user_id};
 		std::memcpy(&data[1], &bit, 2);
 
 		_last_send_data = bit;
@@ -92,7 +92,7 @@ public:
 	 */
 	bool SetCopy(uint16_t bit){
 		if(_last_type == LastSendType::Copy && bit == _last_send_data && _continue_flag)return false;
-		std::array<uint8_t, 3> data{_my_id};
+		std::array<uint8_t, 3> data{_user_id};
 		std::memcpy(&data[1], &bit, 2);
 
 		_last_send_data = bit;
@@ -177,6 +177,16 @@ public:
 	 */
 	void AllOff(){
 		Off(0x3FF);
+	}
+
+
+	/**
+	 * @brief 制御IDの変更
+	 * @attention Init()の呼び出し前、またはDeinit()の呼び出し後以外は無意味
+	 * @return ID変更したか
+	 */
+	void ResetUserID(uint8_t id){
+		const_cast<uint8_t&>(_user_id) = id;
 	}
 };
 }

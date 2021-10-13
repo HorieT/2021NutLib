@@ -44,6 +44,7 @@ enum class Power : uint8_t{
 	irregularFetOff = 0x4,
 	emergencyRelease = 0x8,
 	fetOn = 0xC,
+	fetOnNow = 0xF,
 };
 enum class Error : uint8_t{
 };

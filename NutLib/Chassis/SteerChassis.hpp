@@ -24,9 +24,9 @@ private:
 	const std::array<std::shared_ptr<Motor>, N> _steering;//<! 操舵
 
 
-	const std::array<const float, N> _wheel_cos = {0.0};
-	const std::array<const float, N> _wheel_sin = {0.0};
-	const std::array<const float, N> _wheel_length = {0.0};
+	std::array<float, N> _wheel_cos = {0.0};
+	std::array<float, N> _wheel_sin = {0.0};
+	std::array<Meter<float>, N> _wheel_length = {0.0};
 
 
 
@@ -106,18 +106,18 @@ public:
 			  _steering(steering){
 
 		uint8_t i = 0;
-		for(auto& w_cos : const_cast<std::array<const float, N>&>(_wheel_cos)){
-			const_cast<float&>(w_cos) = std::cos(_wheel[i]->GetPos().Angle());
+		for(auto& w_cos : _wheel_cos){
+			w_cos = cos(_wheel[i]->GetPos().Angle());
 			++i;
 		}
 		i = 0;
-		for(auto& w_sin : const_cast<std::array<const float, N>&>(_wheel_sin)){
-			const_cast<float&>(w_sin) = std::sin(_wheel[i]->GetPos().Angle());
+		for(auto& w_sin : _wheel_sin){
+			w_sin = sin(_wheel[i]->GetPos().Angle());
 			++i;
 		}
 		i = 0;
-		for(auto& w_length : const_cast<std::array<const float, N>&>(_wheel_length)){
-			const_cast<float&>(w_length) = _wheel[i]->GetPos().Norm();
+		for(auto& w_length : _wheel_length){
+			w_length = _wheel[i]->GetPos().Norm();
 			++i;
 		}
 	}

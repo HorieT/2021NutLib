@@ -65,10 +65,20 @@ public:
 	 */
 	virtual bool SetVelocity(Coordinate<float> velocity, MoveMode mode = MoveMode::nomal){
 		_mode = mode;
-		_target_velocity = velocity;
+		Chassis::SetVelocity(velocity);
 		return true;
 	}
-
+	/**
+	 * @brief 速度入力
+	 * @param[in] velocity 速度[m/s],[rad/s]
+	 * @param[in] origin 速度[m/s],[rad/s]
+	 * @return 速度入力可能か
+	 */
+	virtual bool SetVelocity(Coordinate<float> velocity, Coordinate<float> origen, MoveMode mode = MoveMode::nomal){
+		_mode = mode;
+		Chassis::SetVelocity(velocity, origen);
+		return true;
+	}
 	/**
 	 * @brief 速度入力
 	 * @param[in] velocity_mps 速度[m/s]
@@ -78,9 +88,19 @@ public:
 	 */
 	virtual bool SetVelocity(Eigen::Vector2f velocity_mps, float rot_radps, MoveMode mode = MoveMode::nomal){
 		_mode = mode;
-		_target_velocity.x() = velocity_mps.x();
-		_target_velocity.y() = velocity_mps.y();
-		_target_velocity.theta() = rot_radps;
+		Chassis::SetVelocity(velocity_mps, rot_radps);
+		return true;
+	}
+	/**
+	 * @brief 速度入力
+	 * @param[in] velocity_mps 速度[m/s]
+	 * @param[in] rot_radps [rad/s]
+	 * @param[in] mode 動作モード
+	 * @return 速度入力可能か
+	 */
+	virtual bool SetVelocity(Eigen::Vector2f velocity_mps, float rot_radps, Coordinate<float> origen, MoveMode mode = MoveMode::nomal){
+		_mode = mode;
+		Chassis::SetVelocity(velocity_mps, rot_radps, origen);
 		return true;
 	}
 };

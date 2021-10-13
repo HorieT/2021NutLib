@@ -31,14 +31,14 @@ private:
 	Coordinate<float> _start_position;
 	Coordinate<float> _position;
 	Coordinate<float> _velocity;
-	MinCutoff<float> _cutoff_filter{1.0e-6, -1.0e-6};
+	MinCutoff<float> _cutoff_filter{1.0e-9, -1.0e-9};
 	std::function<void(Coordinate<float>, Odmetry*)>_calc_callback;
 
 	/*
 	 *  計算リソース
 	 */
-	std::array<float, 2> _encoder_radPos;//エンコーダ座標角
-	std::array<float, 2> _encoder_norm;//エンコーダ座標ノルム
+	std::array<Radian<float>, 2> _encoder_radPos;//エンコーダ座標角
+	std::array<Meter<float>, 2> _encoder_norm;//エンコーダ座標ノルム
 	float _sin_encoder_directiion_diff;
 	std::array<float, 2> _cos_encoder_direction;
 	std::array<float, 2> _sin_encoder_direction;
@@ -52,10 +52,10 @@ private:
 	 */
 	void CalcPos(){
 		//a回転量
-		const float rot_vel = _imu->GetGlobalRot().z() * static_cast<float>(_scheduler.GetPeriod()) / 1000.0f;
+		const float rot_vel = _imu->GetGlobalRot().z() * Second<float>(_scheduler.GetPeriod()).f();
 
 		//2測距輪
-		std::array<float, 2> distance {
+		std::array<Meter<float>, 2> distance {
 			_encoder.at(0)->GetDistanceAndReset(),
 			_encoder.at(1)->GetDistanceAndReset()
 		};
@@ -65,33 +65,35 @@ private:
 		Coordinate<float> now_position = _position;
 
 		now_position.theta() = _start_position.theta() + _imu->GetGlobalAngle().z();
-		if(fabs(now_position.theta()) > static_cast<float>(M_PI))//piより大きい角度の修正
+		if(fabs(now_position.theta().f()) > M_PI_f)//piより大きい角度の修正
 			now_position.theta() += (now_position.theta() > 0.0f) ? -M_2PI_f : 2.0f*static_cast<float>(M_PI);
 
 		//a移動量座標変換
 		std::array<Eigen::Vector2f, 2> distance_vec{
-			Eigen::Vector2f{distance.at(0) * _cos_encoder_direction.at(0), distance.at(0) * _sin_encoder_direction.at(0)},
-			Eigen::Vector2f{distance.at(1) * _cos_encoder_direction.at(1), distance.at(1) * _sin_encoder_direction.at(1)}};
+			Eigen::Vector2f{distance.at(0).f() * _cos_encoder_direction.at(0), distance.at(0).f() * _sin_encoder_direction.at(0)},
+			Eigen::Vector2f{distance.at(1).f() * _cos_encoder_direction.at(1), distance.at(1).f() * _sin_encoder_direction.at(1)}};
 
 
 		for(uint8_t i = 0;i < 2;++i){
 			//a回転による測距輪の偏差
-			float rot_len = rot_vel * _encoder_norm.at(i);
+			float rot_len = rot_vel * _encoder_norm.at(i).f();
 			Eigen::Vector2f calc_vec =
 					distance_vec.at(i) - Eigen::Vector2f(rot_len * -_sin_encoder_rad.at(i), rot_len * _cos_encoder_rad.at(i));
 			distance.at(i) = sqrtf(calc_vec.x() * calc_vec.x() + calc_vec.y() * calc_vec.y()) * cos(_encoder.at(i)->GetPosition().theta() - atan2f(calc_vec.y(), calc_vec.x()));
 		}
 		//a移動値積分
 		now_position.x() += _cutoff_filter.Calculate(
-				(distance.at(0) * sin(_encoder.at(1)->GetPosition().theta() + last_pos.theta()) - distance.at(1) * sin(_encoder.at(0)->GetPosition().theta() + last_pos.theta())) /
-				(-_sin_encoder_directiion_diff));
+				((distance.at(0) * sin(_encoder.at(1)->GetPosition().theta() + last_pos.theta())
+						- distance.at(1) * sin(_encoder.at(0)->GetPosition().theta() + last_pos.theta())) /
+				(-_sin_encoder_directiion_diff)).f());
 		now_position.y() += _cutoff_filter.Calculate(
-				(distance.at(0) * cos(_encoder.at(1)->GetPosition().theta() + last_pos.theta()) - distance.at(1) * cos(_encoder.at(0)->GetPosition().theta()+ last_pos.theta())) /
-				(_sin_encoder_directiion_diff));
+				((distance.at(0) * cos(_encoder.at(1)->GetPosition().theta() + last_pos.theta())
+						- distance.at(1) * cos(_encoder.at(0)->GetPosition().theta() + last_pos.theta())) /
+				(_sin_encoder_directiion_diff)).f());
 
 
 		//a計算値
-		Coordinate<float> tmp_vel = (now_position - last_pos) / static_cast<float>(_scheduler.GetPeriod()) * 1000.0f;
+		Coordinate<float> tmp_vel = (now_position - last_pos) / Second<float>(_scheduler.GetPeriod()).f();
 		tmp_vel.theta() = _imu->GetGlobalRot().z();
 		_position = now_position;
 		_velocity = tmp_vel;
@@ -120,11 +122,11 @@ public:
 		for(uint8_t i = 0;i < 2;++i){
 			_encoder_radPos.at(i) = _encoder.at(i)->GetPosition().Angle();
 			_encoder_norm.at(i) = _encoder.at(i)->GetPosition().Norm();
-			_cos_encoder_direction.at(i) = cosf(_encoder.at(i)->GetPosition().theta());
-			_sin_encoder_direction.at(i) = sinf(_encoder.at(i)->GetPosition().theta());
-			_cos_encoder_rad.at(i) = cosf(_encoder_radPos.at(i));
-			_sin_encoder_rad.at(i) = sinf(_encoder_radPos.at(i));
-			_sin_encoder_directiion_diff = sinf(_encoder.at(0)->GetPosition().theta() - _encoder.at(1)->GetPosition().theta());
+			_cos_encoder_direction.at(i) = cos(_encoder.at(i)->GetPosition().theta());
+			_sin_encoder_direction.at(i) = sin(_encoder.at(i)->GetPosition().theta());
+			_cos_encoder_rad.at(i) = cos(_encoder_radPos.at(i));
+			_sin_encoder_rad.at(i) = sin(_encoder_radPos.at(i));
+			_sin_encoder_directiion_diff = sin(_encoder.at(0)->GetPosition().theta() - _encoder.at(1)->GetPosition().theta());
 		}
 	}
 	/**
@@ -164,7 +166,8 @@ public:
 	 * @param[in] position リセット座標
 	 */
 	void ResetPosition(const Coordinate<float>& position){
-		_position = position;
+		_start_position = position;
+		_position = _start_position;
 	}
 
 	/**

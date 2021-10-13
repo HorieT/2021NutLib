@@ -23,7 +23,7 @@ namespace nut{
  */
 class ControlApp final{
 private:
-	static constexpr uint8_t JOYCON_HEAD = 0xF0;
+	static constexpr uint8_t JOYCON_HEAD = 0x80;
 	std::map<uint8_t, std::function<bool(std::vector<uint8_t>)>> _get_sentence_callback;
 	bool _is_enable_joycon = false;
 	JoyconROS::ButtonData _joycon;

@@ -68,11 +68,7 @@ private:
 	//can handle
 	CAN_HandleTypeDef* const _hcan;
 	//tx send data pueue
-	std::priority_queue<
-		TxDataType,
-		std::vector<TxDataType>,
-		std::greater<TxDataType>
-		> _send_data_queue;
+	std::queue<TxDataType> _send_data_queue;
 	//tx mailbox object pueue
 	std::array<std::unique_ptr<TxDataType>, 3> _mailbox_data;
 
@@ -142,7 +138,7 @@ private:
 			__enable_irq();//exti enable
 			return;
 		}
-		PushMailbox(_send_data_queue.top());
+		PushMailbox(_send_data_queue.front());
 		_send_data_queue.pop();
 		__enable_irq();//exti enable
 	}

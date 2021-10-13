@@ -21,6 +21,9 @@ namespace nut{
 class AbsEncoder : public Encoder{
 private:
 	using RxCallbackIt = decltype(callback::UART_RxHalfComplete)::ExCallbackIterator;
+	static constexpr uint32_t BIT12 = std::pow(2, 12);
+	static constexpr uint32_t BIT14 = std::pow(2, 14);
+
 
 	UART_HandleTypeDef* const _huart;
 	GPIO_TypeDef* const _port;
@@ -29,9 +32,6 @@ private:
 	int16_t _last_bit = 0;
 	int16_t _bit = 0;
 	TimeScheduler<void> _scheduler;
-	static constexpr uint32_t BIT12 = std::pow(2, 12);
-	static constexpr uint32_t BIT14 = std::pow(2, 14);
-
 	RxCallbackIt _rx_it;
 
 	/**
@@ -103,7 +103,7 @@ public:
 	 * @brief 角度取得
 	 * @return 角度[rad]
 	 */
-	virtual float GetRad() override{
+	virtual Radian<float> GetRad() override{
 		return (_bit - static_cast<int32_t>(_last_bit)) * M_2PI_f / static_cast<float>(_resolution);
 	}
 
@@ -112,7 +112,7 @@ public:
 	 * @details 周期角度取得精度を上げるためのもの
 	 * @return 角度[rad]
 	 */
-	virtual float GetRadAndReset() override{
+	virtual Radian<float> GetRadAndReset() override{
 		float value = (_bit - static_cast<int32_t>(_last_bit)) * M_2PI_f / static_cast<float>(_resolution);
 		_last_bit = _bit;
 		return (value > M_PI) ? value - M_PI : ((value < -M_PI) ? value + M_PI : value);

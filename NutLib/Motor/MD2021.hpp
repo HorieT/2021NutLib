@@ -137,8 +137,13 @@ public:
 	 * @param[in] motor_id モータのID
 	 * @param[in] user_id 自分のID
 	 */
-	MD2021(MilliSecond<uint32_t> period, const std::shared_ptr<CANWrapper>& can, uint8_t use_fifo, uint8_t motor_id, uint8_t user_id)
-		: Motor(period), _can(can), _motor_id(motor_id), _user_id(user_id), _can_fifo(use_fifo){
+	MD2021(
+			MilliSecond<uint32_t> period,
+			const std::shared_ptr<CANWrapper>& can,
+			uint8_t use_fifo,
+			uint8_t motor_id,
+			uint8_t user_id = can_protocol::MakeDeviceID(can_protocol::Device::microcomputer))
+		: Motor(period), _can(can), _motor_id(can_protocol::MakeDeviceID(can_protocol::Device::motorDriver, motor_id)), _user_id(user_id), _can_fifo(use_fifo){
 	}
 	/**
 	 * @brief デストラクタ
@@ -205,7 +210,8 @@ public:
 	 * @details 未実装です
 	 * @return false
 	 */
-	virtual bool ResetRadOrigin(float rad) override{
+	[[deprecated("This function is not yet in place.")]]
+	virtual bool ResetRadOrigin(Radian<float> rad) override{
 
 		return false;
 	}
@@ -217,6 +223,17 @@ public:
 	bool ChangeMode(Mode mode){
 		if(_move_type != MoveType::stop)return false;
 		_mode = mode;
+		return true;
+	}
+
+	/**
+	 * @brief 制御IDの変更
+	 * @attention Init()の呼び出し前、またはDeinit()の呼び出し後以外は無意味
+	 * @return ID変更したか
+	 */
+	bool ResetUserID(uint8_t id){
+		if(_is_init)return false;
+		const_cast<uint8_t&>(_user_id) = id;
 		return true;
 	}
 };

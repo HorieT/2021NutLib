@@ -21,10 +21,8 @@ namespace unit{
  */
 enum class Type : uint16_t{
 	second = 0U,	//!< 秒
-	minute,			//!< 分
 	meter,			//!< メートル
 	radian,			//!< rad
-	degre,			//!< deg
 	gram,			//!< グラム
 	ampere,			//!< アンペア
 	volt,			//!< ボルト
@@ -76,6 +74,9 @@ public:
 	constexpr uint32_t u32()const{
 		return static_cast<uint32_t>(_value);
 	}
+	constexpr T value()const{
+		return _value;
+	}
 
 
 
@@ -85,12 +86,20 @@ public:
 	/**
 	 * @brief 同一単位系の代入構築
 	 * @tparam TR 右オペランドの数値型
+	 * @return this
+	 */
+	template<typename TR>
+	constexpr Unit(const Unit<TR, U, P>& r_operand) :
+		Unit(static_cast<T>(r_operand)){}
+	/**
+	 * @brief 同一単位系の代入構築
+	 * @tparam TR 右オペランドの数値型
 	 * @tparam PR 右オペランドの接頭辞
 	 * @return this
 	 */
 	template<typename TR, class PR>
 	constexpr Unit(const Unit<TR, U, PR>& r_operand) :
-		Unit(static_cast<T>((static_cast<TR>(r_operand) * P::den * PR::num) / (P::num * PR::den))){}
+		Unit(static_cast<T>((static_cast<decltype(TR(0)+T(0))>(r_operand) * P::den * PR::num) / (P::num * PR::den))){}
 	/**
 	 * @brief 同一単位系の代入構築
 	 * @tparam TR 右オペランドの数値型
@@ -99,7 +108,7 @@ public:
 	 */
 	template<typename TR, class PR>
 	constexpr Unit(Unit<TR, U, PR>&& r_operand) :
-		Unit(static_cast<T>((static_cast<TR>(r_operand) * P::den * PR::num) / (P::num * PR::den))){}
+		Unit(static_cast<T>((static_cast<decltype(TR(0)+T(0))>(r_operand) * P::den * PR::num) / (P::num * PR::den))){}
 
 	/**
 	 * @brief 同一単位系の代入
@@ -109,7 +118,7 @@ public:
 	 */
 	template<typename TR, class PR>
 	constexpr Unit<T, U, P>& operator=(const Unit<TR, U, PR>& r_operand) &{
-		_value = static_cast<T>((static_cast<TR>(r_operand) * P::den * PR::num) / (P::num * PR::den));
+		_value = static_cast<T>((static_cast<decltype(TR(0)+T(0))>(r_operand) * P::den * PR::num) / (P::num * PR::den));
 		return *this;
 	}
 	/**
@@ -120,12 +129,22 @@ public:
 	 */
 	template<typename TR, class PR>
 	constexpr Unit<T, U, P>& operator=(Unit<TR, U, PR>&& r_operand) & noexcept{
-		_value = static_cast<T>((static_cast<TR>(r_operand) * P::den * PR::num) / (P::num * PR::den));
+		_value = static_cast<T>((static_cast<decltype(TR(0)+T(0))>(r_operand) * P::den * PR::num) / (P::num * PR::den));
 		return *this;
 	}
 
 
 
+	/**
+	 * @brief 非明示的なキャスト
+	 * @tparam TR キャスト後の数値型
+	 * @tparam PR キャスト後の接頭辞
+	 * @return 値
+	 */
+	template<typename TL, class PL>
+	explicit constexpr operator Unit<TL, U, PL> () const {
+		return Unit<TL, U, PL>(*this);
+	}
 	/**
 	 * @brief 明示的なキャスト
 	 * @tparam A 数値型

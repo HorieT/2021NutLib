@@ -252,7 +252,8 @@ public:
 	 * @details 未実装です
 	 * @return false
 	 */
-	virtual bool ResetRadOrigin(float rad) override{
+	[[deprecated("This function is not yet in place.")]]
+	virtual bool ResetRadOrigin(Radian<float> rad) override{
 
 		return false;
 	}

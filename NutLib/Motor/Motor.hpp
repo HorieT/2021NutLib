@@ -8,6 +8,7 @@
 
 #include "../Global.hpp"
 #include "../TimeScheduler.hpp"
+#include "../Unit/UnitCore.hpp"
 #include "../ControlSystem/PID/VecPID.hpp"
 #include "../ControlSystem/PID/PosPID.hpp"
 #include <array>
@@ -147,9 +148,9 @@ public:
 	 * @param[in] rad 角度[rad]
 	 * @return 角度制御可能かどうか
 	 */
-	virtual bool SetRadMulti(float rad){
+	virtual bool SetRadMulti(Radian<float> rad){
 		if(_move_type == MoveType::stop) return false;
-		_target_rad = rad;
+		_target_rad = rad.f();
 		_move_type = MoveType::radMulti;
 		return true;
 	}
@@ -160,15 +161,11 @@ public:
 	 * @details M_PI ~ -M_PIまで
 	 * @return 角度制御可能かどうか
 	 */
-	virtual bool SetRadSingle(float rad){
+	virtual bool SetRadSingle(Radian<float> rad){
 		if(_move_type == MoveType::stop) return false;
-		if(std::fabs(rad) > M_PI_f)return false;
+		if(abs(rad) > M_PI_f)return false;
 
-		float rad_diff = std::fmod(rad - _now_rad, M_2PI_f);
-		if(std::abs(rad_diff) > M_PI_f)//over rad
-			rad_diff = (rad_diff < 0.0f ? M_2PI_f : -M_2PI_f) + rad_diff;
-
-		_target_rad = _now_rad + rad_diff;
+		_target_rad = _now_rad + NormalizeRadian(rad - _now_rad).f();
 		_move_type = MoveType::radSingle;
 		return true;
 	}
@@ -180,9 +177,10 @@ public:
 	 * @details trueなら正,falsなら負です
 	 * @return 角度制御可能かどうか
 	 */
-	virtual bool SetRadSingle(float rad, bool polarity){
+	[[deprecated("This function is not yet in place.")]]
+	virtual bool SetRadSingle(Radian<float> rad, bool polarity){
 		if(_move_type == MoveType::stop) return false;
-		if(std::fabs(rad) > static_cast<float>(M_PI))return false;
+		if(abs(rad) > M_PI_f)return false;
 
 		/* not yet!!!!! */
 /*
@@ -203,9 +201,9 @@ public:
 	 * @param[in] currnet 電流[A]
 	 * @return 電流制御可能かどうか
 	 */
-	virtual bool SetCurrent(float currnet){
+	virtual bool SetCurrent(Ampere<float> currnet){
 		if(_move_type == MoveType::stop) return false;
-		_target_current = currnet;
+		_target_current = currnet.f();
 		_move_type = MoveType::currnet;
 		return true;
 	}
@@ -219,9 +217,9 @@ public:
 	 * @param[in] rad 書き換え角度
 	 * @return 角度原点リセット可能かどうか
 	 */
-	virtual bool ResetRadOrigin(float rad) {
+	virtual bool ResetRadOrigin(Radian<float> rad) {
 		if(_move_type != MoveType::stop)return false;
-		_now_rad = rad;
+		_now_rad = rad.f();
 		return true;
 	}
 
@@ -311,14 +309,14 @@ public:
 	 * @brief 角度取得
 	 * @return Rad
 	 */
-	virtual float GetRad()const{
+	virtual Radian<float> GetRad()const{
 		return _now_rad;
 	}
 	/**
 	 * @brief 現在電流値取得
 	 * @return [A]
 	 */
-	virtual float GetCurrent()const{
+	virtual Ampere<float> GetCurrent()const{
 		return _now_current;
 	}
 	/**
@@ -332,14 +330,14 @@ public:
 	 * @brief 目標角度取得
 	 * @return Rad
 	 */
-	virtual float GetTagRad()const{
+	virtual Radian<float> GetTagRad()const{
 		return _target_rad;
 	}
 	/**
 	 * @brief 目標電流値取得
 	 * @return [A]
 	 */
-	virtual float GetTagCurrent()const{
+	virtual Ampere<float> GetTagCurrent()const{
 		return _target_current;
 	}
 	bool IsStart(){

@@ -156,5 +156,16 @@ public:
 		}
 		return steers;
 	}
+
+	/**
+	 * @brief 制御IDの変更
+	 * @attention Init()の呼び出し前、またはDeinit()の呼び出し後以外は無意味
+	 * @return ID変更したか
+	 */
+	bool ResetUserID(uint8_t id){
+		if(_is_init)return false;
+		const_cast<uint8_t&>(_user_id) = id;
+		return true;
+	}
 };
 }

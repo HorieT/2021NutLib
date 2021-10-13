@@ -23,22 +23,16 @@ private:
 	virtual void ScheduleTask() override{
 		//get radian
 		if(_encoder){
-			float rad = _encoder->GetRad();
-			float rad_div = 0;
-			rad_div *= _encoder_ratio;
+			Radian<float> rad = _encoder->GetRad();
+			Radian<float> rad_div = 0;
 			if(!std::isnan(last_rad)){
-				rad_div = (rad - last_rad > M_PI_f) ?
-						rad - last_rad - M_2PI_f:
-						((rad - last_rad < -M_PI_f) ? rad - last_rad + M_2PI_f : rad - last_rad);
-				rad_div *= _encoder_ratio;
-				_now_radps = rad_div * 1000.0f / static_cast<float>(_scheduler.GetPeriod());
+				rad_div = NormalizeRadian(rad - last_rad) * _encoder_ratio;
+				_now_radps = rad_div.f() / Second<float>(_scheduler.GetPeriod()).f();
 			}else{
-				rad_div = (rad> M_PI_f) ?
-						rad - M_2PI_f:
-						((rad < -M_PI_f) ? rad + M_2PI_f : rad);
+				rad_div = NormalizeRadian(rad) * _encoder_ratio;
 			}
-			last_rad = rad;
-			_now_rad +=  rad_div;
+			last_rad = rad.f();
+			_now_rad +=  rad_div.f();
 		}
 
 		//move control
@@ -177,9 +171,9 @@ public:
 	 * @param[in] currnet 電流[A]
 	 * @return 電流制御可能かどうか
 	 */
-	virtual bool SetCurrent(float currnet) override{
+	virtual bool SetCurrent(Ampere<float> currnet) override{
 		if(_move_type == MoveType::stop) return false;
-		_target_current = currnet;
+		_target_current = currnet.f();
 		_move_type = MoveType::currnet;
 		return true;
 	}
