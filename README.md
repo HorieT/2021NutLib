@@ -57,6 +57,8 @@ nut::callback::UART_RxHalfComplete.AddCallback(0, [](UART_HandleTypeDef *huart){
 それかその他最新ファームウェアを参考にしてください。
 
 また要望があれば堀江がサンプルコードを書きます
+__追記(21/10/31)__
+リファレンスの"使用例"または `NutLib_UseExampleCode` に簡易的なサンプルコードがあります。
 
 ### 注意
 

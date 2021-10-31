@@ -11,6 +11,7 @@ var dir_8b1cfa3accea10fc5ecd39c63013c190 =
     [ "Sensor", "dir_c2c735cbd9a0ae71a2beef0eda132d9d.html", "dir_c2c735cbd9a0ae71a2beef0eda132d9d" ],
     [ "Unit", "dir_7379a48f3a2436e538b5d7fc9965eaba.html", "dir_7379a48f3a2436e538b5d7fc9965eaba" ],
     [ "AllLib.hpp", "db/d03/_all_lib_8hpp.html", null ],
+    [ "BuildTester.hpp", "d1/d98/_build_tester_8hpp.html", "d1/d98/_build_tester_8hpp" ],
     [ "CANBusProtocol.hpp", "d7/dbd/_c_a_n_bus_protocol_8hpp.html", "d7/dbd/_c_a_n_bus_protocol_8hpp" ],
     [ "CANWrapper.hpp", "d6/d16/_c_a_n_wrapper_8hpp.html", "d6/d16/_c_a_n_wrapper_8hpp" ],
     [ "Coordinate.hpp", "df/d40/_coordinate_8hpp.html", "df/d40/_coordinate_8hpp" ],
@@ -20,8 +21,6 @@ var dir_8b1cfa3accea10fc5ecd39c63013c190 =
     [ "Odmetry.hpp", "d5/dff/_odmetry_8hpp.html", [
       [ "Odmetry", "d6/dcf/classnut_1_1_odmetry.html", "d6/dcf/classnut_1_1_odmetry" ]
     ] ],
-    [ "RS485.hpp", "d1/d54/_r_s485_8hpp.html", [
-      [ "RS485", "de/da0/classnut_1_1_r_s485.html", "de/da0/classnut_1_1_r_s485" ]
-    ] ],
+    [ "RS485.hpp", "d1/d54/_r_s485_8hpp.html", null ],
     [ "TimeScheduler.hpp", "dd/d5c/_time_scheduler_8hpp.html", "dd/d5c/_time_scheduler_8hpp" ]
 ];

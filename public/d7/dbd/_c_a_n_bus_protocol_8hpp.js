@@ -22,7 +22,8 @@ var _c_a_n_bus_protocol_8hpp =
       [ "xSpead", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#a7b3bf21093fcec61da0edab255f62a6eab810d3b7e3402b18e6635d73ccbc52ab", null ],
       [ "ySpead", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#a7b3bf21093fcec61da0edab255f62a6eacf935033f8489f5f3152189c63f3cfbb", null ],
       [ "thetaSpead", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#a7b3bf21093fcec61da0edab255f62a6eaa6a45785c347a39a826107dbfca050b8", null ],
-      [ "steering", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#a7b3bf21093fcec61da0edab255f62a6ea2e3f1aeb830bad8b0c3c6729bc773df4", null ]
+      [ "steering", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#a7b3bf21093fcec61da0edab255f62a6ea2e3f1aeb830bad8b0c3c6729bc773df4", null ],
+      [ "uniqe", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#a7b3bf21093fcec61da0edab255f62a6ea156f8302e6df6804b4fc79a1e29359ee", null ]
     ] ],
     [ "DataType", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#ae4491dee7b163e95d69c270b0994f83a", [
       [ "error", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#ae4491dee7b163e95d69c270b0994f83aacb5e100e5a9a3e7f6d1fd97512215282", null ],
@@ -94,7 +95,8 @@ var _c_a_n_bus_protocol_8hpp =
       [ "userStop", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#a3cb6645656a5fe9f5a358f94e3b72124a9ea85d282bef4ba3648e3bf997104c12", null ],
       [ "irregularFetOff", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#a3cb6645656a5fe9f5a358f94e3b72124ae8f33fa9c0e8cd56b7ea7813c7ec8cc0", null ],
       [ "emergencyRelease", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#a3cb6645656a5fe9f5a358f94e3b72124a00cf591f469dd21498a4ac5186cba1a7", null ],
-      [ "fetOn", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#a3cb6645656a5fe9f5a358f94e3b72124a0912d31ac51a33bef9182e7f3bd38414", null ]
+      [ "fetOn", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#a3cb6645656a5fe9f5a358f94e3b72124a0912d31ac51a33bef9182e7f3bd38414", null ],
+      [ "fetOnNow", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#a3cb6645656a5fe9f5a358f94e3b72124ab7216d74d100f35e88c496d22976adaa", null ]
     ] ],
     [ "RemoteType", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#acbaecff492fe6da42fe1575dbd32ccdb", [
       [ "fetState", "d7/dbd/_c_a_n_bus_protocol_8hpp.html#acbaecff492fe6da42fe1575dbd32ccdba80aa0912ea897f671b63927c919c38e4", null ],

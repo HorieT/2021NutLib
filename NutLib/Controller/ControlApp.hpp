@@ -5,7 +5,7 @@
  */
 #pragma once
 
-#define IS_EDIT_CONTROLAPP///編集用マクロ こいつが無いとエディタが仕事しない
+//#define IS_EDIT_CONTROLAPP///編集用マクロ こいつが無いとエディタが仕事しない
 
 #if defined(IS_EDIT_CONTROLAPP) || __has_include("usbd_cdc_if.h")
 #include "../Global.hpp"
@@ -61,6 +61,7 @@ public:
 
 	/**
 	 * @brief USB CDCからの受信関数
+	 * @details CDC_Receive_FS()内で呼び出してください
 	 * @param[in,out] data 受信データ列
 	 * 終端が存在しない未処理データを残して返す
 	 * @return データ文の処理数

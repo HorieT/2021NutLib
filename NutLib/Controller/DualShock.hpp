@@ -17,6 +17,9 @@
 
 namespace nut{
 /**
+ * @example Chassis.cpp
+ */
+/**
  * @brief DualshockをSBDBT5Vを通して受信するクラス
  */
 class DualShock final{

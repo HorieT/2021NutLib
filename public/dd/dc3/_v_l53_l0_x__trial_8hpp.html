@@ -92,9 +92,7 @@ $(document).ready(function(){initNavTree('dd/dc3/_v_l53_l0_x__trial_8hpp.html','
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">クラス</a> &#124;
-<a href="#namespaces">名前空間</a> &#124;
-<a href="#define-members">マクロ定義</a>  </div>
+<a href="#namespaces">名前空間</a>  </div>
   <div class="headertitle">
 <div class="title">VL53L0X_trial.hpp ファイル</div>  </div>
 </div><!--header-->
@@ -105,91 +103,12 @@ $(document).ready(function(){initNavTree('dd/dc3/_v_l53_l0_x__trial_8hpp.html','
 </div>
 <p><a href="../../dd/dc3/_v_l53_l0_x__trial_8hpp_source.html">[ソースコード]</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-クラス</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/df1/classnut_1_1_v_l53_l0_x.html">nut::VL53L0X</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d49/structnut_1_1_v_l53_l0_x_1_1_sequence_step_enables.html">nut::VL53L0X::SequenceStepEnables</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dfc/structnut_1_1_v_l53_l0_x_1_1_sequence_step_timeouts.html">nut::VL53L0X::SequenceStepTimeouts</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 名前空間</h2></td></tr>
 <tr class="memitem:dd/d51/namespacenut"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d51/namespacenut.html">nut</a></td></tr>
 <tr class="memdesc:dd/d51/namespacenut"><td class="mdescLeft">&#160;</td><td class="mdescRight">CANバスの通信仕様 <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-マクロ定義</h2></td></tr>
-<tr class="memitem:a7dcb8458d7b06d003fc1c4786c492efa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dc3/_v_l53_l0_x__trial_8hpp.html#a7dcb8458d7b06d003fc1c4786c492efa">decodeVcselPeriod</a>(reg_val)&#160;&#160;&#160;(((reg_val) + 1) &lt;&lt; 1)</td></tr>
-<tr class="separator:a7dcb8458d7b06d003fc1c4786c492efa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa731eb10dead51651d0d803c530478e0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dc3/_v_l53_l0_x__trial_8hpp.html#aa731eb10dead51651d0d803c530478e0">encodeVcselPeriod</a>(period_pclks)&#160;&#160;&#160;(((period_pclks) &gt;&gt; 1) - 1)</td></tr>
-<tr class="separator:aa731eb10dead51651d0d803c530478e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f0c17e6d23211686e92570b058587f3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dc3/_v_l53_l0_x__trial_8hpp.html#a5f0c17e6d23211686e92570b058587f3">calcMacroPeriod</a>(vcsel_period_pclks)&#160;&#160;&#160;((((uint32_t)2304 * (vcsel_period_pclks) * 1655) + 500) / 1000)</td></tr>
-<tr class="separator:a5f0c17e6d23211686e92570b058587f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">マクロ定義詳解</h2>
-<a id="a5f0c17e6d23211686e92570b058587f3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5f0c17e6d23211686e92570b058587f3">&#9670;&nbsp;</a></span>calcMacroPeriod</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define calcMacroPeriod</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">vcsel_period_pclks</td><td>)</td>
-          <td>&#160;&#160;&#160;((((uint32_t)2304 * (vcsel_period_pclks) * 1655) + 500) / 1000)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition"> <a class="el" href="../../dd/dc3/_v_l53_l0_x__trial_8hpp_source.html">VL53L0X_trial.hpp</a> の <a class="el" href="../../dd/dc3/_v_l53_l0_x__trial_8hpp_source.html#l00175">175</a> 行目に定義があります。</p>
-
-</div>
-</div>
-<a id="a7dcb8458d7b06d003fc1c4786c492efa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7dcb8458d7b06d003fc1c4786c492efa">&#9670;&nbsp;</a></span>decodeVcselPeriod</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define decodeVcselPeriod</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">reg_val</td><td>)</td>
-          <td>&#160;&#160;&#160;(((reg_val) + 1) &lt;&lt; 1)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition"> <a class="el" href="../../dd/dc3/_v_l53_l0_x__trial_8hpp_source.html">VL53L0X_trial.hpp</a> の <a class="el" href="../../dd/dc3/_v_l53_l0_x__trial_8hpp_source.html#l00166">166</a> 行目に定義があります。</p>
-
-</div>
-</div>
-<a id="aa731eb10dead51651d0d803c530478e0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa731eb10dead51651d0d803c530478e0">&#9670;&nbsp;</a></span>encodeVcselPeriod</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define encodeVcselPeriod</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">period_pclks</td><td>)</td>
-          <td>&#160;&#160;&#160;(((period_pclks) &gt;&gt; 1) - 1)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition"> <a class="el" href="../../dd/dc3/_v_l53_l0_x__trial_8hpp_source.html">VL53L0X_trial.hpp</a> の <a class="el" href="../../dd/dc3/_v_l53_l0_x__trial_8hpp_source.html#l00170">170</a> 行目に定義があります。</p>
-
-</div>
-</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

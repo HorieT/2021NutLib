@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>NutLib: NutLib/Etc/PWMch.hpp ソースファイル</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">NutLib
+   </div>
+  </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.svg"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.20 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'検索');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('d8/dd9/_p_w_mch_8hpp_source.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">PWMch.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d8/dd9/_p_w_mch_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;../Global.hpp&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../dd/d51/namespacenut.html">nut</a>{</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="../../d7/d56/classnut_1_1_p_w_mch.html">   12</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d7/d56/classnut_1_1_p_w_mch.html">PWMch</a>{</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    TIM_HandleTypeDef* <span class="keyword">const</span> _htim;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keyword">const</span> uint32_t _channel;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="../../d7/d56/classnut_1_1_p_w_mch.html#a23cacdb44008bcd9861c82f4bb5885b9">   23</a></span>&#160;    <a class="code" href="../../d7/d56/classnut_1_1_p_w_mch.html#a23cacdb44008bcd9861c82f4bb5885b9">PWMch</a>(TIM_HandleTypeDef* htim, uint32_t ch) :</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        _htim(htim), _channel(ch){</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    }</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="../../d7/d56/classnut_1_1_p_w_mch.html#a898bd80ac230240cd139863fd50393dc">   32</a></span>&#160;    TIM_HandleTypeDef* <a class="code" href="../../d7/d56/classnut_1_1_p_w_mch.html#a898bd80ac230240cd139863fd50393dc">GetTimHnadler</a>()<span class="keyword">const</span>{</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordflow">return</span> _htim;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    }</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="../../d7/d56/classnut_1_1_p_w_mch.html#a15c12d9c53c7e559794dfc511c90d5dd">   39</a></span>&#160;    uint32_t <a class="code" href="../../d7/d56/classnut_1_1_p_w_mch.html#a15c12d9c53c7e559794dfc511c90d5dd">GetTimChannel</a>()<span class="keyword"> const</span>{</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">return</span> _channel;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    }</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="../../d7/d56/classnut_1_1_p_w_mch.html#aa216ee6fc36b51ba3d80adada35afa80">   46</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d7/d56/classnut_1_1_p_w_mch.html#aa216ee6fc36b51ba3d80adada35afa80">Start</a>(){</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="comment">//HAL_TIM_Base_Start(_htim);</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        HAL_TIM_PWM_Start(_htim, _channel);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="../../d7/d56/classnut_1_1_p_w_mch.html#a7b286ddf8b1f890d8a3ae0b2e7b6b6c1">   53</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d7/d56/classnut_1_1_p_w_mch.html#a7b286ddf8b1f890d8a3ae0b2e7b6b6c1">Stop</a>(){</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        HAL_TIM_PWM_Stop(_htim, _channel);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    }</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="../../d7/d56/classnut_1_1_p_w_mch.html#a5e63d8754b5073548984fa732c7216d4">   60</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d7/d56/classnut_1_1_p_w_mch.html#a5e63d8754b5073548984fa732c7216d4">WriteCCR</a>(uint32_t value){</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        __HAL_TIM_SET_COMPARE(_htim, _channel, value);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="../../d7/d56/classnut_1_1_p_w_mch.html#ac705962f0a3a68c2751457487082ff62">   67</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d7/d56/classnut_1_1_p_w_mch.html#ac705962f0a3a68c2751457487082ff62">WriteParCCR</a>(<span class="keywordtype">float</span> par_value){</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        __HAL_TIM_SET_COMPARE(_htim, _channel, _htim-&gt;Instance-&gt;ARR * par_value / 100.0f);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    }</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;};</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}</div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="aclassnut_1_1_p_w_mch_html_a23cacdb44008bcd9861c82f4bb5885b9"><div class="ttname"><a href="../../d7/d56/classnut_1_1_p_w_mch.html#a23cacdb44008bcd9861c82f4bb5885b9">nut::PWMch::PWMch</a></div><div class="ttdeci">PWMch(TIM_HandleTypeDef *htim, uint32_t ch)</div><div class="ttdoc">コンストラクタ</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/dd9/_p_w_mch_8hpp_source.html#l00023">PWMch.hpp:23</a></div></div>
+<div class="ttc" id="aclassnut_1_1_p_w_mch_html"><div class="ttname"><a href="../../d7/d56/classnut_1_1_p_w_mch.html">nut::PWMch</a></div><div class="ttdoc">pwmチャンネルクラス</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/dd9/_p_w_mch_8hpp_source.html#l00012">PWMch.hpp:12</a></div></div>
+<div class="ttc" id="aclassnut_1_1_p_w_mch_html_a5e63d8754b5073548984fa732c7216d4"><div class="ttname"><a href="../../d7/d56/classnut_1_1_p_w_mch.html#a5e63d8754b5073548984fa732c7216d4">nut::PWMch::WriteCCR</a></div><div class="ttdeci">void WriteCCR(uint32_t value)</div><div class="ttdoc">CCR書き込み</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/dd9/_p_w_mch_8hpp_source.html#l00060">PWMch.hpp:60</a></div></div>
+<div class="ttc" id="aclassnut_1_1_p_w_mch_html_aa216ee6fc36b51ba3d80adada35afa80"><div class="ttname"><a href="../../d7/d56/classnut_1_1_p_w_mch.html#aa216ee6fc36b51ba3d80adada35afa80">nut::PWMch::Start</a></div><div class="ttdeci">void Start()</div><div class="ttdoc">PWMスタート</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/dd9/_p_w_mch_8hpp_source.html#l00046">PWMch.hpp:46</a></div></div>
+<div class="ttc" id="aclassnut_1_1_p_w_mch_html_ac705962f0a3a68c2751457487082ff62"><div class="ttname"><a href="../../d7/d56/classnut_1_1_p_w_mch.html#ac705962f0a3a68c2751457487082ff62">nut::PWMch::WriteParCCR</a></div><div class="ttdeci">void WriteParCCR(float par_value)</div><div class="ttdoc">CCR書き込み(duty比)</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/dd9/_p_w_mch_8hpp_source.html#l00067">PWMch.hpp:67</a></div></div>
+<div class="ttc" id="anamespacenut_html"><div class="ttname"><a href="../../dd/d51/namespacenut.html">nut</a></div><div class="ttdoc">CANバスの通信仕様</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d98/_build_tester_8hpp_source.html#l00008">BuildTester.hpp:8</a></div></div>
+<div class="ttc" id="aclassnut_1_1_p_w_mch_html_a15c12d9c53c7e559794dfc511c90d5dd"><div class="ttname"><a href="../../d7/d56/classnut_1_1_p_w_mch.html#a15c12d9c53c7e559794dfc511c90d5dd">nut::PWMch::GetTimChannel</a></div><div class="ttdeci">uint32_t GetTimChannel() const</div><div class="ttdoc">チャンネルの取得</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/dd9/_p_w_mch_8hpp_source.html#l00039">PWMch.hpp:39</a></div></div>
+<div class="ttc" id="aclassnut_1_1_p_w_mch_html_a7b286ddf8b1f890d8a3ae0b2e7b6b6c1"><div class="ttname"><a href="../../d7/d56/classnut_1_1_p_w_mch.html#a7b286ddf8b1f890d8a3ae0b2e7b6b6c1">nut::PWMch::Stop</a></div><div class="ttdeci">void Stop()</div><div class="ttdoc">PWMストップ</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/dd9/_p_w_mch_8hpp_source.html#l00053">PWMch.hpp:53</a></div></div>
+<div class="ttc" id="aclassnut_1_1_p_w_mch_html_a898bd80ac230240cd139863fd50393dc"><div class="ttname"><a href="../../d7/d56/classnut_1_1_p_w_mch.html#a898bd80ac230240cd139863fd50393dc">nut::PWMch::GetTimHnadler</a></div><div class="ttdeci">TIM_HandleTypeDef * GetTimHnadler() const</div><div class="ttdoc">タイマの取得</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/dd9/_p_w_mch_8hpp_source.html#l00032">PWMch.hpp:32</a></div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_8b1cfa3accea10fc5ecd39c63013c190.html">NutLib</a></li><li class="navelem"><a class="el" href="../../dir_e8fb95b603c706a6281aaf6aeed4173d.html">Etc</a></li><li class="navelem"><a class="el" href="../../d8/dd9/_p_w_mch_8hpp.html">PWMch.hpp</a></li>
+    <li class="footer">構築: <a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
+  </ul>
+</div>
+</body>
+</html>

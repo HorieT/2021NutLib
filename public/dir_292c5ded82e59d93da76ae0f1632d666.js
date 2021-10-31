@@ -1,5 +1,6 @@
 var dir_292c5ded82e59d93da76ae0f1632d666 =
 [
+    [ "DCMotor", "dir_ed15394e12d3324657d72df23f4c1538.html", "dir_ed15394e12d3324657d72df23f4c1538" ],
     [ "CurrentControlMotor.hpp", "dd/d9f/_current_control_motor_8hpp.html", [
       [ "CurrentControlMotor", "d4/dfa/classnut_1_1_current_control_motor.html", "d4/dfa/classnut_1_1_current_control_motor" ]
     ] ],
@@ -15,11 +16,14 @@ var dir_292c5ded82e59d93da76ae0f1632d666 =
     [ "MD2021Steer.hpp", "d2/d54/_m_d2021_steer_8hpp.html", [
       [ "MD2021Steer", "d9/deb/classnut_1_1_m_d2021_steer.html", "d9/deb/classnut_1_1_m_d2021_steer" ]
     ] ],
-    [ "Motor.hpp", "d4/dcd/_motor_8hpp.html", [
+    [ "Motor.hpp", "d6/d1a/_motor_2_motor_8hpp.html", [
       [ "Motor", "d5/da2/classnut_1_1_motor.html", "d5/da2/classnut_1_1_motor" ]
     ] ],
     [ "ReiwaMD.hpp", "d7/d12/_reiwa_m_d_8hpp.html", [
       [ "ReiwaMD", "df/da1/classnut_1_1_reiwa_m_d.html", "df/da1/classnut_1_1_reiwa_m_d" ]
+    ] ],
+    [ "ServoMotor.hpp", "d3/de4/_servo_motor_8hpp.html", [
+      [ "ServoMotor", "d0/d98/classnut_1_1_servo_motor.html", "d0/d98/classnut_1_1_servo_motor" ]
     ] ],
     [ "SteerDriver.hpp", "d7/dae/_steer_driver_8hpp.html", [
       [ "SteerDriver", "db/d47/classnut_1_1_steer_driver.html", "db/d47/classnut_1_1_steer_driver" ]

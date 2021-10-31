@@ -185,11 +185,11 @@ $(document).ready(function(){initNavTree('dc/d4f/classnut_1_1_c_a_n_wrapper.html
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock"><p>CANのヘルパクラス<br  />
  現時点で最新のHALでのCANにしか対応していない </p>
-<p>HALのCAN機能を包括的に取り扱い、一つのオブジェクトとして提供します。 このクラスはCANの受信に対し内部でコールバックハンドラを持ちます。 FIFOごとに<code><a class="el" href="../../dc/d4f/classnut_1_1_c_a_n_wrapper.html#af238b6dacef1c742af91eaa87aec01a0" title="受信コールバック関数ハンドラ">FIFO0ReceiveCallback()</a></code>と'<a class="el" href="../../dc/d4f/classnut_1_1_c_a_n_wrapper.html#a1cd6126a428beb63ee9371aea586cf61" title="受信コールバック関数ハンドラ">FIFO1ReceiveCallback()</a>'を使用して下ください。 また送信はSTマイコン内部のメールボックスとは別にFIFO queueを用意してあります。 このqueueの排出優先順位はCANの識別子優先順位と同等です。 queueは最大128までのメッセージを保持しますが、それ以上溜まると送信待ち中のメールボックス内データから破棄します。</p>
+<p>HALのCAN機能を包括的に取り扱い、一つのオブジェクトとして提供します。 このクラスはCANの受信に対し内部でコールバックハンドラを持ちます。 FIFOごとに<code><a class="el" href="../../dc/d4f/classnut_1_1_c_a_n_wrapper.html#af238b6dacef1c742af91eaa87aec01a0" title="受信コールバック関数ハンドラ">FIFO0ReceiveCallback()</a></code>と'<a class="el" href="../../dc/d4f/classnut_1_1_c_a_n_wrapper.html#a1cd6126a428beb63ee9371aea586cf61" title="受信コールバック関数ハンドラ">FIFO1ReceiveCallback()</a>'を使用して下ください。 また送信はSTマイコン内部のメールボックスとは別にFIFO queueを用意してあります。 <strike>このqueueの排出優先順位はCANの識別子優先順位と同等です。</strike> 入力された順序を保持するように変更しました queueは最大128までのメッセージを保持しますが、それ以上溜まると送信待ち中のメールボックス内データから破棄します。</p>
 <dl class="section attention"><dt>注意</dt><dd>拡張CANには対応していません</dd></dl>
 <p>CANの要求仕様 ・Tx,Rx0,Rx1,Error割込みの有効化 </p>
 
-<p class="definition"> <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html">CANWrapper.hpp</a> の <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html#l00035">35</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html">CANWrapper.hpp</a> の <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html#l00036">36</a> 行目に定義があります。</p>
 </div><h2 class="groupheader">型定義メンバ詳解</h2>
 <a id="a56fbf8342b12217b1ca4c05853cdc111"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a56fbf8342b12217b1ca4c05853cdc111">&#9670;&nbsp;</a></span>ErrorCallbackIt</h2>
@@ -203,7 +203,7 @@ $(document).ready(function(){initNavTree('dc/d4f/classnut_1_1_c_a_n_wrapper.html
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html">CANWrapper.hpp</a> の <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html#l00049">49</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html">CANWrapper.hpp</a> の <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html#l00050">50</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -219,7 +219,7 @@ $(document).ready(function(){initNavTree('dc/d4f/classnut_1_1_c_a_n_wrapper.html
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html">CANWrapper.hpp</a> の <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html#l00050">50</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html">CANWrapper.hpp</a> の <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html#l00051">51</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -235,7 +235,7 @@ $(document).ready(function(){initNavTree('dc/d4f/classnut_1_1_c_a_n_wrapper.html
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html">CANWrapper.hpp</a> の <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html#l00047">47</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html">CANWrapper.hpp</a> の <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html#l00048">48</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -251,7 +251,7 @@ $(document).ready(function(){initNavTree('dc/d4f/classnut_1_1_c_a_n_wrapper.html
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html">CANWrapper.hpp</a> の <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html#l00048">48</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html">CANWrapper.hpp</a> の <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html#l00049">49</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -280,7 +280,7 @@ $(document).ready(function(){initNavTree('dc/d4f/classnut_1_1_c_a_n_wrapper.html
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html">CANWrapper.hpp</a> の <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html#l00190">190</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html">CANWrapper.hpp</a> の <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html#l00187">187</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -307,7 +307,7 @@ $(document).ready(function(){initNavTree('dc/d4f/classnut_1_1_c_a_n_wrapper.html
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html">CANWrapper.hpp</a> の <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html#l00197">197</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html">CANWrapper.hpp</a> の <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html#l00194">194</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -363,7 +363,7 @@ $(document).ready(function(){initNavTree('dc/d4f/classnut_1_1_c_a_n_wrapper.html
 
 <p>エラーコールバック関数ハンドラ </p>
 
-<p class="definition"> <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html">CANWrapper.hpp</a> の <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html#l00389">389</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html">CANWrapper.hpp</a> の <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html#l00386">386</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -392,7 +392,7 @@ $(document).ready(function(){initNavTree('dc/d4f/classnut_1_1_c_a_n_wrapper.html
 
 <p>受信コールバック関数ハンドラ </p>
 
-<p class="definition"> <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html">CANWrapper.hpp</a> の <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html#l00376">376</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html">CANWrapper.hpp</a> の <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html#l00373">373</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -421,7 +421,7 @@ $(document).ready(function(){initNavTree('dc/d4f/classnut_1_1_c_a_n_wrapper.html
 
 <p>受信コールバック関数ハンドラ </p>
 
-<p class="definition"> <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html">CANWrapper.hpp</a> の <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html#l00382">382</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html">CANWrapper.hpp</a> の <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html#l00379">379</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -451,7 +451,7 @@ $(document).ready(function(){initNavTree('dc/d4f/classnut_1_1_c_a_n_wrapper.html
 <p>保有ハンドルのゲッター </p>
 <dl class="section return"><dt>戻り値</dt><dd>保有しているCANハンドルの生ポインタ </dd></dl>
 
-<p class="definition"> <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html">CANWrapper.hpp</a> の <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html#l00396">396</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html">CANWrapper.hpp</a> の <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html#l00393">393</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -482,7 +482,7 @@ $(document).ready(function(){initNavTree('dc/d4f/classnut_1_1_c_a_n_wrapper.html
 <dl class="section return"><dt>戻り値</dt><dd>送信queueの保持メール数 </dd></dl>
 <dl class="section attention"><dt>注意</dt><dd>mailboxに入っているメールはカウントされません </dd></dl>
 
-<p class="definition"> <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html">CANWrapper.hpp</a> の <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html#l00404">404</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html">CANWrapper.hpp</a> の <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html#l00401">401</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -584,7 +584,7 @@ $(document).ready(function(){initNavTree('dc/d4f/classnut_1_1_c_a_n_wrapper.html
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html">CANWrapper.hpp</a> の <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html#l00223">223</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html">CANWrapper.hpp</a> の <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html#l00220">220</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -614,7 +614,7 @@ $(document).ready(function(){initNavTree('dc/d4f/classnut_1_1_c_a_n_wrapper.html
 <p>CAN開始 </p>
 <dl class="section return"><dt>戻り値</dt><dd>ステート </dd></dl>
 
-<p class="definition"> <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html">CANWrapper.hpp</a> の <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html#l00254">254</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html">CANWrapper.hpp</a> の <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html#l00251">251</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -651,7 +651,7 @@ $(document).ready(function(){initNavTree('dc/d4f/classnut_1_1_c_a_n_wrapper.html
 </dl>
 <dl class="section return"><dt>戻り値</dt><dd>ステート </dd></dl>
 
-<p class="definition"> <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html">CANWrapper.hpp</a> の <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html#l00263">263</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html">CANWrapper.hpp</a> の <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html#l00260">260</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -681,7 +681,7 @@ $(document).ready(function(){initNavTree('dc/d4f/classnut_1_1_c_a_n_wrapper.html
 <p>デバッグモードCAN開始 </p>
 <dl class="section return"><dt>戻り値</dt><dd>ステート </dd></dl>
 
-<p class="definition"> <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html">CANWrapper.hpp</a> の <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html#l00271">271</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html">CANWrapper.hpp</a> の <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html#l00268">268</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -718,7 +718,7 @@ $(document).ready(function(){initNavTree('dc/d4f/classnut_1_1_c_a_n_wrapper.html
 </dl>
 <dl class="section return"><dt>戻り値</dt><dd>ステート </dd></dl>
 
-<p class="definition"> <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html">CANWrapper.hpp</a> の <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html#l00280">280</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html">CANWrapper.hpp</a> の <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html#l00277">277</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -748,7 +748,7 @@ $(document).ready(function(){initNavTree('dc/d4f/classnut_1_1_c_a_n_wrapper.html
 <p>CAN停止 </p>
 <dl class="section return"><dt>戻り値</dt><dd>ステート </dd></dl>
 
-<p class="definition"> <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html">CANWrapper.hpp</a> の <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html#l00289">289</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html">CANWrapper.hpp</a> の <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html#l00286">286</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -784,7 +784,7 @@ $(document).ready(function(){initNavTree('dc/d4f/classnut_1_1_c_a_n_wrapper.html
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html">CANWrapper.hpp</a> の <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html#l00344">344</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html">CANWrapper.hpp</a> の <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html#l00341">341</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -840,7 +840,7 @@ template&lt;uint8_t N&gt; </div>
 </dl>
 <dl class="section attention"><dt>注意</dt><dd>N&gt;8でアサートを吐きます </dd></dl>
 
-<p class="definition"> <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html">CANWrapper.hpp</a> の <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html#l00302">302</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html">CANWrapper.hpp</a> の <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html#l00299">299</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -888,7 +888,7 @@ template&lt;uint8_t N&gt; </div>
 </dl>
 <dl class="section attention"><dt>注意</dt><dd>data.size()&gt;8であれば[8]以降のデータは無視されます </dd></dl>
 
-<p class="definition"> <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html">CANWrapper.hpp</a> の <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html#l00325">325</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html">CANWrapper.hpp</a> の <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html#l00322">322</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -924,7 +924,7 @@ template&lt;uint8_t N&gt; </div>
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html">CANWrapper.hpp</a> の <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html#l00361">361</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html">CANWrapper.hpp</a> の <a class="el" href="../../d6/d16/_c_a_n_wrapper_8hpp_source.html#l00358">358</a> 行目に定義があります。</p>
 
 </div>
 </div>

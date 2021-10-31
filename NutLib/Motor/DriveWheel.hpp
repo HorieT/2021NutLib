@@ -40,6 +40,10 @@ public:
 
 	}
 
+
+	/**
+	 * @brief 位置取得
+	 */
 	const Coordinate<float>& GetPos()const {
 		return _position;
 	}

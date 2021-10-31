@@ -13,6 +13,7 @@
 namespace nut{
 /**
  * @brief 電磁弁(ソレノイド)ドライバ基板クラス
+ * @details 10ポートをそれぞれビット管理します
  */
 class SolenoidDriver final{
 private:
@@ -36,7 +37,7 @@ public:
 	 * @brief コンストラクタ
 	 * @param[in] can CANハンドル
 	 * @param[in] dv_num デバイスナンバー
-	 * @param[in] my_id 自己ID
+	 * @param[in] user_id 自己ID
 	 */
 	SolenoidDriver(const std::shared_ptr<CANWrapper>& can, uint8_t dv_num, uint8_t user_id = can_protocol::MakeDeviceID(can_protocol::Device::microcomputer)) :
 	_can(can), _user_id(user_id), _id(can_protocol::MakeDeviceID(can_protocol::Device::solenoidValve, dv_num)){
@@ -183,7 +184,7 @@ public:
 	/**
 	 * @brief 制御IDの変更
 	 * @attention Init()の呼び出し前、またはDeinit()の呼び出し後以外は無意味
-	 * @return ID変更したか
+	 * @param[in] id 自己ID
 	 */
 	void ResetUserID(uint8_t id){
 		const_cast<uint8_t&>(_user_id) = id;

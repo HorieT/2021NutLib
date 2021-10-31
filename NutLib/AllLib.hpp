@@ -10,7 +10,6 @@
 
 
 /*global*/
-#include "CANWrapper.hpp"
 #include "Global.hpp"
 
 /*General library*/
@@ -19,11 +18,12 @@
 #include "Odmetry.hpp"
 
 /*STM32 Peripheral*/
+#include "CANWrapper.hpp"
 #include "Flash.hpp"
 #include "HALCallbacks/HALCallbacks.hpp"
 
 /*Chassis*/
-//#include "Chassis/Chassis.hpp"
+#include "Chassis/Chassis.hpp"
 #include "Chassis/OmniChassis.hpp"
 #include "Chassis/SteerChassis.hpp"
 #include "Chassis/SteerChassisSp.hpp"
@@ -38,25 +38,26 @@
 #include "ControlSystem/PID/VecPID.hpp"
 
 /*Motor*/
-//#include "Motor/Motor.hpp"
+#include "Motor/Motor.hpp"
 #include "Motor/DirectDutyMotor.hpp"
 #include "Motor/CurrentControlMotor.hpp"
 #include "Motor/ReiwaMD.hpp"
 #include "Motor/MD2021.hpp"
-//#include "Motor/SteerDriver.hpp"
+#include "Motor/SteerDriver.hpp"
 #include "Motor/MD2021Steer.hpp"
 #include "Motor/DriveWheel.hpp"
+#include "Motor/DCMotor/Params.hpp"
 
 /*PowerSupply*/
 #include "PowerSupply/HiguchiBoard.hpp"
 #include "PowerSupply/PowerSupply2021.hpp"
 
 /*Sensor*/
-//#include "Sensor/Encoder/Encoder.hpp"
+#include "Sensor/Encoder/Encoder.hpp"
 #include "Sensor/Encoder/IncEncoder.hpp"
 #include "Sensor/Encoder/AbsEncoder.hpp"
 #include "Sensor/Encoder/EncoderWheel.hpp"
-//#include "Sensor/IMU/IMU.hpp"
+#include "Sensor/IMU/IMU.hpp"
 #include "Sensor/IMU/R13x0.hpp"
 #include "Sensor/Tof/ToFBoard.hpp"
 #include "Sensor/ToF/VL53L0X_trial.hpp"

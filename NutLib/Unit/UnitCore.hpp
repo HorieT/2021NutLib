@@ -39,7 +39,7 @@ template<typename T>
 using Radian = unit::Unit<T, nut::unit::Type::radian>;
 template<typename T>
 using Degree = unit::Unit<T, nut::unit::Type::radian,
-		unit::Prefix<std::numeric_limits<uint32_t>::max(), static_cast<uint32_t>((std::numeric_limits<uint32_t>::max() / 180.0) * M_PI)>>;//なるべく精度を出すために最大化
+		unit::Prefix<static_cast<uint32_t>((std::numeric_limits<uint32_t>::max() / 180.0) * M_PI), std::numeric_limits<uint32_t>::max()>>;//なるべく精度を出すために最大化
 
 template<typename T>
 using Ampere = unit::Unit<T, nut::unit::Type::ampere>;
@@ -73,7 +73,7 @@ using MicroFarad = unit::Unit<T, nut::unit::Type::farad, unit::micro>;
 /* 非メンバ関数 */
 /**
  * @brief +pi~-piに正規化
- * @pram[in] rad 角度
+ * @param[in] rad 角度
  * @return +pi~-piの角度
  */
 template<typename T>

@@ -17,8 +17,8 @@
 namespace nut{
 /**
  * @brief コールバック関数ラッパクラス
- * @tparam Args コールバック関数オブジェクト引数
  * @details copy&move禁止
+ * @tparam Args コールバック関数オブジェクト引数
  */
 template<typename... Args>
 class HALCallback final{

@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['header_1303',['header',['../d9/dd8/structnut_1_1_c_a_n_wrapper_1_1_tx_data_type.html#a2389340b176db4bbd0031684e8de7fb9',1,'nut::CANWrapper::TxDataType::header()'],['../d9/da1/structnut_1_1_c_a_n_wrapper_1_1_rx_data_type.html#a994bf0de8663b672f6e41abcb166ae4d',1,'nut::CANWrapper::RxDataType::header()']]]
+  ['last_5frad_1306',['last_rad',['../db/d01/classnut_1_1_direct_duty_motor.html#a46b93decc586b6b1b2af979ade153489',1,'nut::DirectDutyMotor']]],
+  ['leftx_1307',['leftX',['../df/d3b/structnut_1_1_joycon_r_o_s_1_1_button_data.html#a2e36cd60fa3f91f1caac74da2a317441',1,'nut::JoyconROS::ButtonData']]],
+  ['lefty_1308',['leftY',['../df/d3b/structnut_1_1_joycon_r_o_s_1_1_button_data.html#a507c6592b19d647fe580d1d206d731a9',1,'nut::JoyconROS::ButtonData']]]
 ];

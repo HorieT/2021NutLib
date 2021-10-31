@@ -966,7 +966,7 @@ EXCLUDE_SYMBOLS        =
 # that contain example code fragments that are included (see the \include
 # command).
 
-EXAMPLE_PATH           =
+EXAMPLE_PATH           = NutLib_UseExampleCode
 
 # If the value of the EXAMPLE_PATH tag contains directories, you can use the
 # EXAMPLE_PATTERNS tag to specify one or more wildcard pattern (like *.cpp and
@@ -2241,7 +2241,8 @@ PREDEFINED             = HAL_MODULE_ENABLED \
                          HAL_GPIO_MODULE_ENABLED \
                          HAL_EXTI_MODULE_ENABLED \
                          USE_NUTLIB_CALLBACKS \
-                         HAL_CAN_MODULE_ENABLED
+                         HAL_CAN_MODULE_ENABLED \
+                         IS_EDIT_CONTROLAPP
 
 # If the MACRO_EXPANSION and EXPAND_ONLY_PREDEF tags are set to YES then this
 # tag can be used to specify a list of macro names that should be expanded. The

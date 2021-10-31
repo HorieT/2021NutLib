@@ -15,15 +15,23 @@
 namespace nut{
 
 /**
+ * @example Chassis.cpp
+ */
+/**
  * @brief ステア足回り基底純粋仮想クラス
  */
 class SteerChassisBase : public Chassis{
 public:
+
+	/**
+	 * @brief 動作モード
+	 *
+	 **/
 	enum class MoveMode : uint8_t{
-		nomal = 0,
-		reset,
-		steerOnry,
-		steerBreaking
+		nomal = 0,		//!<ノーマル
+		reset,			//!<角度リセット
+		steerOnry,		//!<操舵のみ
+		steerBreaking	//!<ブレーキ角
 	};
 
 
@@ -71,12 +79,13 @@ public:
 	/**
 	 * @brief 速度入力
 	 * @param[in] velocity 速度[m/s],[rad/s]
-	 * @param[in] origin 速度[m/s],[rad/s]
+	 * @param[in] origin 指示座標原点
+	 * @param[in] mode 動作モード
 	 * @return 速度入力可能か
 	 */
-	virtual bool SetVelocity(Coordinate<float> velocity, Coordinate<float> origen, MoveMode mode = MoveMode::nomal){
+	virtual bool SetVelocity(Coordinate<float> velocity, Coordinate<float> origin, MoveMode mode = MoveMode::nomal){
 		_mode = mode;
-		Chassis::SetVelocity(velocity, origen);
+		Chassis::SetVelocity(velocity, origin);
 		return true;
 	}
 	/**
@@ -95,12 +104,13 @@ public:
 	 * @brief 速度入力
 	 * @param[in] velocity_mps 速度[m/s]
 	 * @param[in] rot_radps [rad/s]
+	 * @param[in] origin 指示座標原点
 	 * @param[in] mode 動作モード
 	 * @return 速度入力可能か
 	 */
-	virtual bool SetVelocity(Eigen::Vector2f velocity_mps, float rot_radps, Coordinate<float> origen, MoveMode mode = MoveMode::nomal){
+	virtual bool SetVelocity(Eigen::Vector2f velocity_mps, float rot_radps, Coordinate<float> origin, MoveMode mode = MoveMode::nomal){
 		_mode = mode;
-		Chassis::SetVelocity(velocity_mps, rot_radps, origen);
+		Chassis::SetVelocity(velocity_mps, rot_radps, origin);
 		return true;
 	}
 };

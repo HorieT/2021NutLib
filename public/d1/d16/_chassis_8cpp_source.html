@@ -1,0 +1,243 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>NutLib: NutLib_UseExampleCode/Chassis.cpp ソースファイル</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">NutLib
+   </div>
+  </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.svg"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.20 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'検索');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('d1/d16/_chassis_8cpp_source.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Chassis.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d1/d16/_chassis_8cpp.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;../NutLib/Chassis/OmniChassis.hpp&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;../NutLib/Chassis/SteerChassis.hpp&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;../NutLib/Chassis/SteerChassisSp.hpp&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;../NutLib/Controller/DualShock.hpp&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">using namespace </span><a class="code" href="../../dd/d51/namespacenut.html">nut</a>;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="../../d5/dc0/namespacesample__code.html">   10</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="../../d5/dc0/namespacesample__code.html">sample_code</a>{</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="comment">/* 最大速度 */</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="../../d5/dc0/namespacesample__code.html#a65a1e852e8377466bce9fdd783feedbc">   13</a></span>&#160;    constexpr <span class="keywordtype">float</span> <a class="code" href="../../d3/ddd/namespacesample__code2.html#abc3fc04dc5cd79757ae5fae280edb19c">TOP_SPEED</a> = 0.5;<span class="comment">//[m/s] </span></div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="../../d5/dc0/namespacesample__code.html#a6ceed34c6950ed601fa2826b10f112e2">   14</a></span>&#160;    constexpr <span class="keywordtype">float</span> <a class="code" href="../../d3/ddd/namespacesample__code2.html#ad0b692d51e1207c68bf3359142c07597">TOP_ROT</a> = <a class="code" href="../../d2/d88/_global_8hpp.html#aeb24420b096a677f3a2dc5a72b36bf22">M_PI_4</a>;<span class="comment">//[rad/s] </span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="../../d5/dc0/namespacesample__code.html#ade65d0e82185afb881511bf02c5d54f2">   17</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d3/ddd/namespacesample__code2.html#ab1932b7fd7c5b33a096f9b04ebfce289">main</a>(){</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="comment">/* 各種足周りインスタンス</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">        * 面倒なのでコンストラクタの記述は省略</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">        */</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <a class="code" href="../../df/dd5/classnut_1_1_omni_chassis.html">OmniChassis&lt;3&gt;</a> omni{...};           <span class="comment">//三輪オムニ</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <a class="code" href="../../d3/d79/classnut_1_1_steer_chassis.html">SteerChassis&lt;3&gt;</a> steer{...};         <span class="comment">//三輪ステア</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <a class="code" href="../../d5/d6b/classnut_1_1_steer_chassis_sp.html">SteerChassisSp&lt;3&gt;</a> steer_sp{...};    <span class="comment">//三輪ステア(ステアドライバ使用)</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="comment">/* 説明用コントローラ */</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <a class="code" href="../../d6/de4/classnut_1_1_dual_shock.html">DualShock</a> dual_shock{...};</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="comment">/* 足周りの一元化 */</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <a class="code" href="../../d9/dc6/classnut_1_1_chassis.html">Chassis</a>* chassis = &amp;omni;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="comment">//Chassis* chassis = &amp;steer;</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="comment">//Chassis* chassis = &amp;steer_sp;</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="comment">/* 各種初期化 */</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        chassis-&gt;<a class="code" href="../../d9/dc6/classnut_1_1_chassis.html#a653aa9e412fc444fc58469e6c149adb8">Init</a>();</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        dual_shock.Init();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="comment">/* 制御ループ的なやつ */</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">while</span>(<span class="keyword">true</span>){</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="comment">/* コントローラ入力取得 */</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <a class="code" href="../../d4/d08/classnut_1_1_coordinate.html">Coordinate&lt;float&gt;</a> vec(</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                dual_shock.GetButtonData(<a class="code" href="../../d6/de4/classnut_1_1_dual_shock.html#a181a727e74157e0f6dbfd4206c1fa31d">DualShock::PS3_ANALOG_LX</a>), </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                dual_shock.GetButtonData(<a class="code" href="../../d6/de4/classnut_1_1_dual_shock.html#a6628220213aed98b837621dce3ff04df">DualShock::PS3_ANALOG_LY</a>), </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                0);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            vec *= <a class="code" href="../../d3/ddd/namespacesample__code2.html#abc3fc04dc5cd79757ae5fae280edb19c">TOP_SPEED</a> / <a class="code" href="../../d6/de4/classnut_1_1_dual_shock.html#a054836043cfb3204b16c6916b4e7ea1d">DualShock::USE_ANAROG_MAX</a>; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="keywordflow">if</span>(dual_shock.GetButtonData(<a class="code" href="../../d6/de4/classnut_1_1_dual_shock.html#a9da196045377fb129f32060c298c9e3e">DualShock::PS3_L1</a>))vec.<a class="code" href="../../d4/d08/classnut_1_1_coordinate.html#a0a89bcf591129ff98019a2b28c0bc8fc">theta</a>() = -<a class="code" href="../../d3/ddd/namespacesample__code2.html#ad0b692d51e1207c68bf3359142c07597">TOP_ROT</a>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span>(dual_shock.GetButtonData(<a class="code" href="../../d6/de4/classnut_1_1_dual_shock.html#a4fd54591b17c3f409485c94d0393fd6e">DualShock::PS3_R1</a>))vec.<a class="code" href="../../d4/d08/classnut_1_1_coordinate.html#a0a89bcf591129ff98019a2b28c0bc8fc">theta</a>() = <a class="code" href="../../d3/ddd/namespacesample__code2.html#ad0b692d51e1207c68bf3359142c07597">TOP_ROT</a>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="comment">/* 速度入力 */</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            chassis-&gt;<a class="code" href="../../d9/dc6/classnut_1_1_chassis.html#adaf5ca6a18f690ce437b352750246326">SetVelocity</a>(vec);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;}</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">/* ステアの特殊入力を使いたい場合 */</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="../../d3/ddd/namespacesample__code2.html">   61</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="../../d3/ddd/namespacesample__code2.html">sample_code2</a>{</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">/* 最大速度 */</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="../../d3/ddd/namespacesample__code2.html#abc3fc04dc5cd79757ae5fae280edb19c">   64</a></span>&#160;    constexpr <span class="keywordtype">float</span> <a class="code" href="../../d3/ddd/namespacesample__code2.html#abc3fc04dc5cd79757ae5fae280edb19c">TOP_SPEED</a> = 0.5;<span class="comment">//[m/s] </span></div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="../../d3/ddd/namespacesample__code2.html#ad0b692d51e1207c68bf3359142c07597">   65</a></span>&#160;    constexpr <span class="keywordtype">float</span> <a class="code" href="../../d3/ddd/namespacesample__code2.html#ad0b692d51e1207c68bf3359142c07597">TOP_ROT</a> = <a class="code" href="../../d2/d88/_global_8hpp.html#aeb24420b096a677f3a2dc5a72b36bf22">M_PI_4</a>;<span class="comment">//[rad/s] </span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="../../d3/ddd/namespacesample__code2.html#ab1932b7fd7c5b33a096f9b04ebfce289">   68</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d3/ddd/namespacesample__code2.html#ab1932b7fd7c5b33a096f9b04ebfce289">main</a>(){</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="comment">/* 各種足周りインスタンス</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">        * 面倒なのでコンストラクタの記述は省略</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">        */</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <a class="code" href="../../d3/d79/classnut_1_1_steer_chassis.html">SteerChassis&lt;3&gt;</a> steer{...};         <span class="comment">//三輪ステア</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <a class="code" href="../../d5/d6b/classnut_1_1_steer_chassis_sp.html">SteerChassisSp&lt;3&gt;</a> steer_sp{...};    <span class="comment">//三輪ステア(ステアドライバ使用)</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="comment">/* 説明用コントローラ */</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <a class="code" href="../../d6/de4/classnut_1_1_dual_shock.html">DualShock</a> dual_shock{...};</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="comment">/* 足周りの一元化 */</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <a class="code" href="../../d9/d6a/classnut_1_1_steer_chassis_base.html">SteerChassisBase</a>* chassis = &amp;steer;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="comment">//SteerChassisBase* chassis = &amp;steer_sp;</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="comment">/* 各種初期化 */</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        chassis-&gt;<a class="code" href="../../d9/dc6/classnut_1_1_chassis.html#a653aa9e412fc444fc58469e6c149adb8">Init</a>();</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        dual_shock.Init();</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="comment">/* 制御ループ的なやつ */</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordflow">while</span>(<span class="keyword">true</span>){</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <span class="comment">/* コントローラ入力取得 */</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            <a class="code" href="../../d4/d08/classnut_1_1_coordinate.html">Coordinate&lt;float&gt;</a> vec(</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                dual_shock.GetButtonData(<a class="code" href="../../d6/de4/classnut_1_1_dual_shock.html#a181a727e74157e0f6dbfd4206c1fa31d">DualShock::PS3_ANALOG_LX</a>), </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                dual_shock.GetButtonData(<a class="code" href="../../d6/de4/classnut_1_1_dual_shock.html#a6628220213aed98b837621dce3ff04df">DualShock::PS3_ANALOG_LY</a>), </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                0);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            vec *= <a class="code" href="../../d3/ddd/namespacesample__code2.html#abc3fc04dc5cd79757ae5fae280edb19c">TOP_SPEED</a> / <a class="code" href="../../d6/de4/classnut_1_1_dual_shock.html#a054836043cfb3204b16c6916b4e7ea1d">DualShock::USE_ANAROG_MAX</a>; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            <span class="keywordflow">if</span>(dual_shock.GetButtonData(<a class="code" href="../../d6/de4/classnut_1_1_dual_shock.html#a9da196045377fb129f32060c298c9e3e">DualShock::PS3_L1</a>))vec.<a class="code" href="../../d4/d08/classnut_1_1_coordinate.html#a0a89bcf591129ff98019a2b28c0bc8fc">theta</a>() = -<a class="code" href="../../d3/ddd/namespacesample__code2.html#ad0b692d51e1207c68bf3359142c07597">TOP_ROT</a>;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span>(dual_shock.GetButtonData(<a class="code" href="../../d6/de4/classnut_1_1_dual_shock.html#a4fd54591b17c3f409485c94d0393fd6e">DualShock::PS3_R1</a>))vec.<a class="code" href="../../d4/d08/classnut_1_1_coordinate.html#a0a89bcf591129ff98019a2b28c0bc8fc">theta</a>() = <a class="code" href="../../d3/ddd/namespacesample__code2.html#ad0b692d51e1207c68bf3359142c07597">TOP_ROT</a>;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            <span class="comment">/* 速度入力 */</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            <span class="keywordflow">if</span>(dual_shock.GetButtonData(<a class="code" href="../../d6/de4/classnut_1_1_dual_shock.html#ae6eaed3c203220be08f063aafd3e9efa">DualShock::PS3_START</a>))chassis-&gt;<a class="code" href="../../d9/d6a/classnut_1_1_steer_chassis_base.html#ade14dfafd0ec6b4860ce437d71c28fa0">SetVelocity</a>({0.0}, <a class="code" href="../../d9/d6a/classnut_1_1_steer_chassis_base.html#a090572b613943d502dc2347835de54d2a86266ee937d97f812a8e57d22b62ee29">SteerChassisBase::MoveMode::reset</a>);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span>(dual_shock.GetButtonData(<a class="code" href="../../d6/de4/classnut_1_1_dual_shock.html#a71759d930378bb46f2131f7021c557e0">DualShock::PS3_SELECT</a>))chassis-&gt;<a class="code" href="../../d9/d6a/classnut_1_1_steer_chassis_base.html#ade14dfafd0ec6b4860ce437d71c28fa0">SetVelocity</a>({1.0}, <a class="code" href="../../d9/d6a/classnut_1_1_steer_chassis_base.html#a090572b613943d502dc2347835de54d2a337ee3989c2c360a16e8f87dd02930cc">SteerChassisBase::MoveMode::steerBreaking</a>);<span class="comment">//速度が0だとブレーキされないバグがある(はよなおせ)</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span>(dual_shock.GetButtonData(<a class="code" href="../../d6/de4/classnut_1_1_dual_shock.html#a166196c8a24c3575001e919262c7cb4e">DualShock::PS3_CIRCLE</a>))chassis-&gt;<a class="code" href="../../d9/d6a/classnut_1_1_steer_chassis_base.html#ade14dfafd0ec6b4860ce437d71c28fa0">SetVelocity</a>(vec, <a class="code" href="../../d9/d6a/classnut_1_1_steer_chassis_base.html#a090572b613943d502dc2347835de54d2ab53cf904cd7efb8f64897d8aa3606a51">SteerChassisBase::MoveMode::steerOnry</a>);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            <span class="keywordflow">else</span> chassis-&gt;<a class="code" href="../../d9/d6a/classnut_1_1_steer_chassis_base.html#ade14dfafd0ec6b4860ce437d71c28fa0">SetVelocity</a>(vec);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        }</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    }</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;}</div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="aclassnut_1_1_steer_chassis_base_html_ade14dfafd0ec6b4860ce437d71c28fa0"><div class="ttname"><a href="../../d9/d6a/classnut_1_1_steer_chassis_base.html#ade14dfafd0ec6b4860ce437d71c28fa0">nut::SteerChassisBase::SetVelocity</a></div><div class="ttdeci">virtual bool SetVelocity(Coordinate&lt; float &gt; velocity, MoveMode mode=MoveMode::nomal)</div><div class="ttdoc">速度入力</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d9f/_steer_chassis_base_8hpp_source.html#l00074">SteerChassisBase.hpp:74</a></div></div>
+<div class="ttc" id="anamespacesample__code2_html_ad0b692d51e1207c68bf3359142c07597"><div class="ttname"><a href="../../d3/ddd/namespacesample__code2.html#ad0b692d51e1207c68bf3359142c07597">sample_code2::TOP_ROT</a></div><div class="ttdeci">constexpr float TOP_ROT</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d16/_chassis_8cpp_source.html#l00065">Chassis.cpp:65</a></div></div>
+<div class="ttc" id="aclassnut_1_1_dual_shock_html_a4fd54591b17c3f409485c94d0393fd6e"><div class="ttname"><a href="../../d6/de4/classnut_1_1_dual_shock.html#a4fd54591b17c3f409485c94d0393fd6e">nut::DualShock::PS3_R1</a></div><div class="ttdeci">static constexpr Button PS3_R1</div><div class="ttdoc">R1ボタン</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d0b/_dual_shock_8hpp_source.html#l00074">DualShock.hpp:74</a></div></div>
+<div class="ttc" id="anamespacesample__code2_html_abc3fc04dc5cd79757ae5fae280edb19c"><div class="ttname"><a href="../../d3/ddd/namespacesample__code2.html#abc3fc04dc5cd79757ae5fae280edb19c">sample_code2::TOP_SPEED</a></div><div class="ttdeci">constexpr float TOP_SPEED</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d16/_chassis_8cpp_source.html#l00064">Chassis.cpp:64</a></div></div>
+<div class="ttc" id="aclassnut_1_1_dual_shock_html_a166196c8a24c3575001e919262c7cb4e"><div class="ttname"><a href="../../d6/de4/classnut_1_1_dual_shock.html#a166196c8a24c3575001e919262c7cb4e">nut::DualShock::PS3_CIRCLE</a></div><div class="ttdeci">static constexpr Button PS3_CIRCLE</div><div class="ttdoc">丸ボタン</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d0b/_dual_shock_8hpp_source.html#l00068">DualShock.hpp:68</a></div></div>
+<div class="ttc" id="aclassnut_1_1_chassis_html_a653aa9e412fc444fc58469e6c149adb8"><div class="ttname"><a href="../../d9/dc6/classnut_1_1_chassis.html#a653aa9e412fc444fc58469e6c149adb8">nut::Chassis::Init</a></div><div class="ttdeci">void Init()</div><div class="ttdoc">初期化関数</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/de2/_chassis_8hpp_source.html#l00066">Chassis.hpp:66</a></div></div>
+<div class="ttc" id="a_global_8hpp_html_aeb24420b096a677f3a2dc5a72b36bf22"><div class="ttname"><a href="../../d2/d88/_global_8hpp.html#aeb24420b096a677f3a2dc5a72b36bf22">M_PI_4</a></div><div class="ttdeci">#define M_PI_4</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d88/_global_8hpp_source.html#l00056">Global.hpp:56</a></div></div>
+<div class="ttc" id="aclassnut_1_1_steer_chassis_base_html_a090572b613943d502dc2347835de54d2a86266ee937d97f812a8e57d22b62ee29"><div class="ttname"><a href="../../d9/d6a/classnut_1_1_steer_chassis_base.html#a090572b613943d502dc2347835de54d2a86266ee937d97f812a8e57d22b62ee29">nut::SteerChassisBase::MoveMode::reset</a></div><div class="ttdeci">@ reset</div><div class="ttdoc">角度リセット</div></div>
+<div class="ttc" id="aclassnut_1_1_steer_chassis_html"><div class="ttname"><a href="../../d3/d79/classnut_1_1_steer_chassis.html">nut::SteerChassis</a></div><div class="ttdoc">操舵と駆動が独立の基本的なステア足回り</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d93/_steer_chassis_8hpp_source.html#l00024">SteerChassis.hpp:24</a></div></div>
+<div class="ttc" id="aclassnut_1_1_steer_chassis_sp_html"><div class="ttname"><a href="../../d5/d6b/classnut_1_1_steer_chassis_sp.html">nut::SteerChassisSp</a></div><div class="ttdoc">操舵と駆動一体型MDによるステア足周りクラス</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/def/_steer_chassis_sp_8hpp_source.html#l00024">SteerChassisSp.hpp:24</a></div></div>
+<div class="ttc" id="aclassnut_1_1_dual_shock_html_a054836043cfb3204b16c6916b4e7ea1d"><div class="ttname"><a href="../../d6/de4/classnut_1_1_dual_shock.html#a054836043cfb3204b16c6916b4e7ea1d">nut::DualShock::USE_ANAROG_MAX</a></div><div class="ttdeci">static constexpr int8_t USE_ANAROG_MAX</div><div class="ttdoc">アナログパッド座標最大値</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d0b/_dual_shock_8hpp_source.html#l00057">DualShock.hpp:57</a></div></div>
+<div class="ttc" id="anamespacenut_html"><div class="ttname"><a href="../../dd/d51/namespacenut.html">nut</a></div><div class="ttdoc">CANバスの通信仕様</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d98/_build_tester_8hpp_source.html#l00008">BuildTester.hpp:8</a></div></div>
+<div class="ttc" id="aclassnut_1_1_dual_shock_html_a181a727e74157e0f6dbfd4206c1fa31d"><div class="ttname"><a href="../../d6/de4/classnut_1_1_dual_shock.html#a181a727e74157e0f6dbfd4206c1fa31d">nut::DualShock::PS3_ANALOG_LX</a></div><div class="ttdeci">static constexpr Button PS3_ANALOG_LX</div><div class="ttdoc">アナログパッド左x座標</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d0b/_dual_shock_8hpp_source.html#l00080">DualShock.hpp:80</a></div></div>
+<div class="ttc" id="aclassnut_1_1_dual_shock_html_ae6eaed3c203220be08f063aafd3e9efa"><div class="ttname"><a href="../../d6/de4/classnut_1_1_dual_shock.html#ae6eaed3c203220be08f063aafd3e9efa">nut::DualShock::PS3_START</a></div><div class="ttdeci">static constexpr Button PS3_START</div><div class="ttdoc">STARTボタン</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d0b/_dual_shock_8hpp_source.html#l00069">DualShock.hpp:69</a></div></div>
+<div class="ttc" id="aclassnut_1_1_coordinate_html"><div class="ttname"><a href="../../d4/d08/classnut_1_1_coordinate.html">nut::Coordinate&lt; float &gt;</a></div></div>
+<div class="ttc" id="aclassnut_1_1_dual_shock_html"><div class="ttname"><a href="../../d6/de4/classnut_1_1_dual_shock.html">nut::DualShock</a></div><div class="ttdoc">DualshockをSBDBT5Vを通して受信するクラス</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d0b/_dual_shock_8hpp_source.html#l00025">DualShock.hpp:25</a></div></div>
+<div class="ttc" id="aclassnut_1_1_coordinate_html_a0a89bcf591129ff98019a2b28c0bc8fc"><div class="ttname"><a href="../../d4/d08/classnut_1_1_coordinate.html#a0a89bcf591129ff98019a2b28c0bc8fc">nut::Coordinate::theta</a></div><div class="ttdeci">constexpr const Radian&lt; T &gt; &amp; theta() const &amp;</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d40/_coordinate_8hpp_source.html#l00036">Coordinate.hpp:36</a></div></div>
+<div class="ttc" id="aclassnut_1_1_steer_chassis_base_html_a090572b613943d502dc2347835de54d2ab53cf904cd7efb8f64897d8aa3606a51"><div class="ttname"><a href="../../d9/d6a/classnut_1_1_steer_chassis_base.html#a090572b613943d502dc2347835de54d2ab53cf904cd7efb8f64897d8aa3606a51">nut::SteerChassisBase::MoveMode::steerOnry</a></div><div class="ttdeci">@ steerOnry</div><div class="ttdoc">操舵のみ</div></div>
+<div class="ttc" id="anamespacesample__code2_html"><div class="ttname"><a href="../../d3/ddd/namespacesample__code2.html">sample_code2</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d16/_chassis_8cpp_source.html#l00061">Chassis.cpp:61</a></div></div>
+<div class="ttc" id="anamespacesample__code2_html_ab1932b7fd7c5b33a096f9b04ebfce289"><div class="ttname"><a href="../../d3/ddd/namespacesample__code2.html#ab1932b7fd7c5b33a096f9b04ebfce289">sample_code2::main</a></div><div class="ttdeci">void main()</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d16/_chassis_8cpp_source.html#l00068">Chassis.cpp:68</a></div></div>
+<div class="ttc" id="aclassnut_1_1_dual_shock_html_a71759d930378bb46f2131f7021c557e0"><div class="ttname"><a href="../../d6/de4/classnut_1_1_dual_shock.html#a71759d930378bb46f2131f7021c557e0">nut::DualShock::PS3_SELECT</a></div><div class="ttdeci">static constexpr Button PS3_SELECT</div><div class="ttdoc">SELECTボタン</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d0b/_dual_shock_8hpp_source.html#l00078">DualShock.hpp:78</a></div></div>
+<div class="ttc" id="anamespacesample__code_html"><div class="ttname"><a href="../../d5/dc0/namespacesample__code.html">sample_code</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d16/_chassis_8cpp_source.html#l00010">Chassis.cpp:10</a></div></div>
+<div class="ttc" id="aclassnut_1_1_steer_chassis_base_html"><div class="ttname"><a href="../../d9/d6a/classnut_1_1_steer_chassis_base.html">nut::SteerChassisBase</a></div><div class="ttdoc">ステア足回り基底純粋仮想クラス</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d9f/_steer_chassis_base_8hpp_source.html#l00023">SteerChassisBase.hpp:23</a></div></div>
+<div class="ttc" id="aclassnut_1_1_chassis_html_adaf5ca6a18f690ce437b352750246326"><div class="ttname"><a href="../../d9/dc6/classnut_1_1_chassis.html#adaf5ca6a18f690ce437b352750246326">nut::Chassis::SetVelocity</a></div><div class="ttdeci">virtual bool SetVelocity(Coordinate&lt; float &gt; velocity)</div><div class="ttdoc">速度入力</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/de2/_chassis_8hpp_source.html#l00075">Chassis.hpp:75</a></div></div>
+<div class="ttc" id="aclassnut_1_1_steer_chassis_base_html_a090572b613943d502dc2347835de54d2a337ee3989c2c360a16e8f87dd02930cc"><div class="ttname"><a href="../../d9/d6a/classnut_1_1_steer_chassis_base.html#a090572b613943d502dc2347835de54d2a337ee3989c2c360a16e8f87dd02930cc">nut::SteerChassisBase::MoveMode::steerBreaking</a></div><div class="ttdeci">@ steerBreaking</div><div class="ttdoc">ブレーキ角</div></div>
+<div class="ttc" id="aclassnut_1_1_omni_chassis_html"><div class="ttname"><a href="../../df/dd5/classnut_1_1_omni_chassis.html">nut::OmniChassis</a></div><div class="ttdoc">オムニ足回りクラス</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d4b/_omni_chassis_8hpp_source.html#l00028">OmniChassis.hpp:28</a></div></div>
+<div class="ttc" id="aclassnut_1_1_dual_shock_html_a9da196045377fb129f32060c298c9e3e"><div class="ttname"><a href="../../d6/de4/classnut_1_1_dual_shock.html#a9da196045377fb129f32060c298c9e3e">nut::DualShock::PS3_L1</a></div><div class="ttdeci">static constexpr Button PS3_L1</div><div class="ttdoc">L1ボタン</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d0b/_dual_shock_8hpp_source.html#l00072">DualShock.hpp:72</a></div></div>
+<div class="ttc" id="aclassnut_1_1_chassis_html"><div class="ttname"><a href="../../d9/dc6/classnut_1_1_chassis.html">nut::Chassis</a></div><div class="ttdoc">機体足回り基底純粋仮想クラス</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/de2/_chassis_8hpp_source.html#l00023">Chassis.hpp:23</a></div></div>
+<div class="ttc" id="aclassnut_1_1_dual_shock_html_a6628220213aed98b837621dce3ff04df"><div class="ttname"><a href="../../d6/de4/classnut_1_1_dual_shock.html#a6628220213aed98b837621dce3ff04df">nut::DualShock::PS3_ANALOG_LY</a></div><div class="ttdeci">static constexpr Button PS3_ANALOG_LY</div><div class="ttdoc">アナログパッド左y座標</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d0b/_dual_shock_8hpp_source.html#l00081">DualShock.hpp:81</a></div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_cefc5fa998b8f7bdb25aad2e64ddff8c.html">NutLib_UseExampleCode</a></li><li class="navelem"><a class="el" href="../../d1/d16/_chassis_8cpp.html">Chassis.cpp</a></li>
+    <li class="footer">構築: <a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
+  </ul>
+</div>
+</body>
+</html>

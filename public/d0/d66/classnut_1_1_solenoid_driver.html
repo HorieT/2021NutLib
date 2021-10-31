@@ -106,9 +106,9 @@ $(document).ready(function(){initNavTree('d0/d66/classnut_1_1_solenoid_driver.ht
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 公開メンバ関数</h2></td></tr>
-<tr class="memitem:a64234cb74f9bc1bdd4df5aa826844643"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d66/classnut_1_1_solenoid_driver.html#a64234cb74f9bc1bdd4df5aa826844643">SolenoidDriver</a> (const std::shared_ptr&lt; <a class="el" href="../../dc/d4f/classnut_1_1_c_a_n_wrapper.html">CANWrapper</a> &gt; &amp;can, uint8_t dv_num, uint8_t my_id)</td></tr>
-<tr class="memdesc:a64234cb74f9bc1bdd4df5aa826844643"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ  <a href="../../d0/d66/classnut_1_1_solenoid_driver.html#a64234cb74f9bc1bdd4df5aa826844643">[詳解]</a><br /></td></tr>
-<tr class="separator:a64234cb74f9bc1bdd4df5aa826844643"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a584cea126f5f25cdd4a4a14b1df4836c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d66/classnut_1_1_solenoid_driver.html#a584cea126f5f25cdd4a4a14b1df4836c">SolenoidDriver</a> (const std::shared_ptr&lt; <a class="el" href="../../dc/d4f/classnut_1_1_c_a_n_wrapper.html">CANWrapper</a> &gt; &amp;can, uint8_t dv_num, uint8_t user_id=<a class="el" href="../../d4/db2/namespacenut_1_1can__protocol.html#ab9d182ae4b58b3259481136dc0bc0d44">can_protocol::MakeDeviceID</a>(can_protocol::Device::microcomputer))</td></tr>
+<tr class="memdesc:a584cea126f5f25cdd4a4a14b1df4836c"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ  <a href="../../d0/d66/classnut_1_1_solenoid_driver.html#a584cea126f5f25cdd4a4a14b1df4836c">[詳解]</a><br /></td></tr>
+<tr class="separator:a584cea126f5f25cdd4a4a14b1df4836c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa1a1272a9c88f2bfe0c45f13eceb776"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d66/classnut_1_1_solenoid_driver.html#afa1a1272a9c88f2bfe0c45f13eceb776">~SolenoidDriver</a> ()</td></tr>
 <tr class="memdesc:afa1a1272a9c88f2bfe0c45f13eceb776"><td class="mdescLeft">&#160;</td><td class="mdescRight">デストラクタ  <a href="../../d0/d66/classnut_1_1_solenoid_driver.html#afa1a1272a9c88f2bfe0c45f13eceb776">[詳解]</a><br /></td></tr>
 <tr class="separator:afa1a1272a9c88f2bfe0c45f13eceb776"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -145,14 +145,18 @@ $(document).ready(function(){initNavTree('d0/d66/classnut_1_1_solenoid_driver.ht
 <tr class="memitem:a0f1c20d66942694c02e0e399197e69fd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d66/classnut_1_1_solenoid_driver.html#a0f1c20d66942694c02e0e399197e69fd">AllOff</a> ()</td></tr>
 <tr class="memdesc:a0f1c20d66942694c02e0e399197e69fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">全ビットOFF  <a href="../../d0/d66/classnut_1_1_solenoid_driver.html#a0f1c20d66942694c02e0e399197e69fd">[詳解]</a><br /></td></tr>
 <tr class="separator:a0f1c20d66942694c02e0e399197e69fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:addc78eb64e80e1f7f0a66535d797523a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d66/classnut_1_1_solenoid_driver.html#addc78eb64e80e1f7f0a66535d797523a">ResetUserID</a> (uint8_t id)</td></tr>
+<tr class="memdesc:addc78eb64e80e1f7f0a66535d797523a"><td class="mdescLeft">&#160;</td><td class="mdescRight">制御IDの変更  <a href="../../d0/d66/classnut_1_1_solenoid_driver.html#addc78eb64e80e1f7f0a66535d797523a">[詳解]</a><br /></td></tr>
+<tr class="separator:addc78eb64e80e1f7f0a66535d797523a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock"><p>電磁弁(ソレノイド)ドライバ基板クラス </p>
+<p>10ポートをそれぞれビット管理します </p>
 
-<p class="definition"> <a class="el" href="../../d0/d9f/_solenoid_driver_8hpp_source.html">SolenoidDriver.hpp</a> の <a class="el" href="../../d0/d9f/_solenoid_driver_8hpp_source.html#l00017">17</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d0/d9f/_solenoid_driver_8hpp_source.html">SolenoidDriver.hpp</a> の <a class="el" href="../../d0/d9f/_solenoid_driver_8hpp_source.html#l00018">18</a> 行目に定義があります。</p>
 </div><h2 class="groupheader">構築子と解体子</h2>
-<a id="a64234cb74f9bc1bdd4df5aa826844643"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a64234cb74f9bc1bdd4df5aa826844643">&#9670;&nbsp;</a></span>SolenoidDriver()</h2>
+<a id="a584cea126f5f25cdd4a4a14b1df4836c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a584cea126f5f25cdd4a4a14b1df4836c">&#9670;&nbsp;</a></span>SolenoidDriver()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -176,7 +180,7 @@ $(document).ready(function(){initNavTree('d0/d66/classnut_1_1_solenoid_driver.ht
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>my_id</em>&#160;</td>
+          <td class="paramname"><em>user_id</em> = <code><a class="el" href="../../d4/db2/namespacenut_1_1can__protocol.html#ab9d182ae4b58b3259481136dc0bc0d44">can_protocol::MakeDeviceID</a>(can_protocol::Device::microcomputer)</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -196,12 +200,12 @@ $(document).ready(function(){initNavTree('d0/d66/classnut_1_1_solenoid_driver.ht
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">can</td><td>CANハンドル </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">dv_num</td><td>デバイスナンバー </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">my_id</td><td>自己ID </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">user_id</td><td>自己ID </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="../../d0/d9f/_solenoid_driver_8hpp_source.html">SolenoidDriver.hpp</a> の <a class="el" href="../../d0/d9f/_solenoid_driver_8hpp_source.html#l00041">41</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d0/d9f/_solenoid_driver_8hpp_source.html">SolenoidDriver.hpp</a> の <a class="el" href="../../d0/d9f/_solenoid_driver_8hpp_source.html#l00042">42</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -230,7 +234,7 @@ $(document).ready(function(){initNavTree('d0/d66/classnut_1_1_solenoid_driver.ht
 
 <p>デストラクタ </p>
 
-<p class="definition"> <a class="el" href="../../d0/d9f/_solenoid_driver_8hpp_source.html">SolenoidDriver.hpp</a> の <a class="el" href="../../d0/d9f/_solenoid_driver_8hpp_source.html#l00048">48</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d0/d9f/_solenoid_driver_8hpp_source.html">SolenoidDriver.hpp</a> の <a class="el" href="../../d0/d9f/_solenoid_driver_8hpp_source.html#l00049">49</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -260,7 +264,7 @@ $(document).ready(function(){initNavTree('d0/d66/classnut_1_1_solenoid_driver.ht
 
 <p>全ビットOFF </p>
 
-<p class="definition"> <a class="el" href="../../d0/d9f/_solenoid_driver_8hpp_source.html">SolenoidDriver.hpp</a> の <a class="el" href="../../d0/d9f/_solenoid_driver_8hpp_source.html#l00175">175</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d0/d9f/_solenoid_driver_8hpp_source.html">SolenoidDriver.hpp</a> の <a class="el" href="../../d0/d9f/_solenoid_driver_8hpp_source.html#l00179">179</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -289,7 +293,7 @@ $(document).ready(function(){initNavTree('d0/d66/classnut_1_1_solenoid_driver.ht
 
 <p>全ビットON </p>
 
-<p class="definition"> <a class="el" href="../../d0/d9f/_solenoid_driver_8hpp_source.html">SolenoidDriver.hpp</a> の <a class="el" href="../../d0/d9f/_solenoid_driver_8hpp_source.html#l00169">169</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d0/d9f/_solenoid_driver_8hpp_source.html">SolenoidDriver.hpp</a> の <a class="el" href="../../d0/d9f/_solenoid_driver_8hpp_source.html#l00173">173</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -325,7 +329,7 @@ $(document).ready(function(){initNavTree('d0/d66/classnut_1_1_solenoid_driver.ht
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="../../d0/d9f/_solenoid_driver_8hpp_source.html">SolenoidDriver.hpp</a> の <a class="el" href="../../d0/d9f/_solenoid_driver_8hpp_source.html#l00139">139</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d0/d9f/_solenoid_driver_8hpp_source.html">SolenoidDriver.hpp</a> の <a class="el" href="../../d0/d9f/_solenoid_driver_8hpp_source.html#l00143">143</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -372,7 +376,7 @@ $(document).ready(function(){initNavTree('d0/d66/classnut_1_1_solenoid_driver.ht
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="../../d0/d9f/_solenoid_driver_8hpp_source.html">SolenoidDriver.hpp</a> の <a class="el" href="../../d0/d9f/_solenoid_driver_8hpp_source.html#l00147">147</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d0/d9f/_solenoid_driver_8hpp_source.html">SolenoidDriver.hpp</a> の <a class="el" href="../../d0/d9f/_solenoid_driver_8hpp_source.html#l00151">151</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -426,7 +430,7 @@ $(document).ready(function(){initNavTree('d0/d66/classnut_1_1_solenoid_driver.ht
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="../../d0/d9f/_solenoid_driver_8hpp_source.html">SolenoidDriver.hpp</a> の <a class="el" href="../../d0/d9f/_solenoid_driver_8hpp_source.html#l00157">157</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d0/d9f/_solenoid_driver_8hpp_source.html">SolenoidDriver.hpp</a> の <a class="el" href="../../d0/d9f/_solenoid_driver_8hpp_source.html#l00161">161</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -462,7 +466,7 @@ $(document).ready(function(){initNavTree('d0/d66/classnut_1_1_solenoid_driver.ht
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="../../d0/d9f/_solenoid_driver_8hpp_source.html">SolenoidDriver.hpp</a> の <a class="el" href="../../d0/d9f/_solenoid_driver_8hpp_source.html#l00109">109</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d0/d9f/_solenoid_driver_8hpp_source.html">SolenoidDriver.hpp</a> の <a class="el" href="../../d0/d9f/_solenoid_driver_8hpp_source.html#l00113">113</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -509,7 +513,7 @@ $(document).ready(function(){initNavTree('d0/d66/classnut_1_1_solenoid_driver.ht
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="../../d0/d9f/_solenoid_driver_8hpp_source.html">SolenoidDriver.hpp</a> の <a class="el" href="../../d0/d9f/_solenoid_driver_8hpp_source.html#l00117">117</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d0/d9f/_solenoid_driver_8hpp_source.html">SolenoidDriver.hpp</a> の <a class="el" href="../../d0/d9f/_solenoid_driver_8hpp_source.html#l00121">121</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -563,7 +567,44 @@ $(document).ready(function(){initNavTree('d0/d66/classnut_1_1_solenoid_driver.ht
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="../../d0/d9f/_solenoid_driver_8hpp_source.html">SolenoidDriver.hpp</a> の <a class="el" href="../../d0/d9f/_solenoid_driver_8hpp_source.html#l00127">127</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d0/d9f/_solenoid_driver_8hpp_source.html">SolenoidDriver.hpp</a> の <a class="el" href="../../d0/d9f/_solenoid_driver_8hpp_source.html#l00131">131</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="addc78eb64e80e1f7f0a66535d797523a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#addc78eb64e80e1f7f0a66535d797523a">&#9670;&nbsp;</a></span>ResetUserID()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void nut::SolenoidDriver::ResetUserID </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>制御IDの変更 </p>
+<dl class="section attention"><dt>注意</dt><dd>Init()の呼び出し前、またはDeinit()の呼び出し後以外は無意味 </dd></dl>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">id</td><td>自己ID </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="../../d0/d9f/_solenoid_driver_8hpp_source.html">SolenoidDriver.hpp</a> の <a class="el" href="../../d0/d9f/_solenoid_driver_8hpp_source.html#l00189">189</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -600,7 +641,7 @@ $(document).ready(function(){initNavTree('d0/d66/classnut_1_1_solenoid_driver.ht
 </dl>
 <dl class="section return"><dt>戻り値</dt><dd>出力セットできたか </dd></dl>
 
-<p class="definition"> <a class="el" href="../../d0/d9f/_solenoid_driver_8hpp_source.html">SolenoidDriver.hpp</a> の <a class="el" href="../../d0/d9f/_solenoid_driver_8hpp_source.html#l00057">57</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d0/d9f/_solenoid_driver_8hpp_source.html">SolenoidDriver.hpp</a> の <a class="el" href="../../d0/d9f/_solenoid_driver_8hpp_source.html#l00058">58</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -637,7 +678,7 @@ $(document).ready(function(){initNavTree('d0/d66/classnut_1_1_solenoid_driver.ht
 </dl>
 <dl class="section return"><dt>戻り値</dt><dd>出力セットできたか </dd></dl>
 
-<p class="definition"> <a class="el" href="../../d0/d9f/_solenoid_driver_8hpp_source.html">SolenoidDriver.hpp</a> の <a class="el" href="../../d0/d9f/_solenoid_driver_8hpp_source.html#l00091">91</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d0/d9f/_solenoid_driver_8hpp_source.html">SolenoidDriver.hpp</a> の <a class="el" href="../../d0/d9f/_solenoid_driver_8hpp_source.html#l00094">94</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -674,7 +715,7 @@ $(document).ready(function(){initNavTree('d0/d66/classnut_1_1_solenoid_driver.ht
 </dl>
 <dl class="section return"><dt>戻り値</dt><dd>出力セットできたか </dd></dl>
 
-<p class="definition"> <a class="el" href="../../d0/d9f/_solenoid_driver_8hpp_source.html">SolenoidDriver.hpp</a> の <a class="el" href="../../d0/d9f/_solenoid_driver_8hpp_source.html#l00074">74</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d0/d9f/_solenoid_driver_8hpp_source.html">SolenoidDriver.hpp</a> の <a class="el" href="../../d0/d9f/_solenoid_driver_8hpp_source.html#l00076">76</a> 行目に定義があります。</p>
 
 </div>
 </div>

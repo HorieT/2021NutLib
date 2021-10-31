@@ -168,7 +168,7 @@ public:
 
 	/**
 	 * @brief 電流制御
-	 * @param[in] currnet 電流[A]
+	 * @param[in] currnet 電流
 	 * @return 電流制御可能かどうか
 	 */
 	virtual bool SetCurrent(Ampere<float> currnet) override{
@@ -183,6 +183,7 @@ public:
 	 * @brief 電流取得割込み呼び出し関数
 	 * @details コンストラクタに入力した周期で呼び出してください
 	 * @param[in] current 現在の電流[A]
+	 * @return 有効であるか
 	 */
 	virtual bool CurrentEXTI(float current){
 		if(!_is_init)return false;

@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['address_1279',['address',['../d7/df1/classnut_1_1_v_l53_l0_x.html#adadd858c0f171b2583d95dadbdcb3577',1,'nut::VL53L0X']]],
-  ['address_5fdefault_1280',['ADDRESS_DEFAULT',['../d7/df1/classnut_1_1_v_l53_l0_x.html#ab02086d754dd0301d449ae5e376ecc57',1,'nut::VL53L0X']]]
+  ['acs711xlctr_5f25ab_1286',['ACS711xLCTR_25AB',['../da/d35/namespacenut_1_1params.html#a4f12ff63ad880da3f62dbf419773751e',1,'nut::params']]],
+  ['acs781xlrtr_5f100b_1287',['ACS781xLRTR_100B',['../da/d35/namespacenut_1_1params.html#a720b6f9a720f3accc37faa24cf797c47',1,'nut::params']]],
+  ['acs781xlrtr_5f150b_1288',['ACS781xLRTR_150B',['../da/d35/namespacenut_1_1params.html#ac57806eb9f1c58510f6b186b550398e5',1,'nut::params']]]
 ];

@@ -154,7 +154,8 @@ $(document).ready(function(){initNavTree('d7/dbd/_c_a_n_bus_protocol_8hpp.html',
 <br />
 &#160;&#160;<a class="el" href="../../d1/db3/namespacenut_1_1can__protocol_1_1all.html#a3cb6645656a5fe9f5a358f94e3b72124ae8f33fa9c0e8cd56b7ea7813c7ec8cc0">nut::can_protocol::all::Power::irregularFetOff</a> = 0x4, 
 <a class="el" href="../../d1/db3/namespacenut_1_1can__protocol_1_1all.html#a3cb6645656a5fe9f5a358f94e3b72124a00cf591f469dd21498a4ac5186cba1a7">nut::can_protocol::all::Power::emergencyRelease</a> = 0x8, 
-<a class="el" href="../../d1/db3/namespacenut_1_1can__protocol_1_1all.html#a3cb6645656a5fe9f5a358f94e3b72124a0912d31ac51a33bef9182e7f3bd38414">nut::can_protocol::all::Power::fetOn</a> = 0xC
+<a class="el" href="../../d1/db3/namespacenut_1_1can__protocol_1_1all.html#a3cb6645656a5fe9f5a358f94e3b72124a0912d31ac51a33bef9182e7f3bd38414">nut::can_protocol::all::Power::fetOn</a> = 0xC, 
+<a class="el" href="../../d1/db3/namespacenut_1_1can__protocol_1_1all.html#a3cb6645656a5fe9f5a358f94e3b72124ab7216d74d100f35e88c496d22976adaa">nut::can_protocol::all::Power::fetOnNow</a> = 0xF
 <br />
  }</td></tr>
 <tr class="separator:a3cb6645656a5fe9f5a358f94e3b72124"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -178,7 +179,8 @@ $(document).ready(function(){initNavTree('d7/dbd/_c_a_n_bus_protocol_8hpp.html',
 <a class="el" href="../../d3/d8d/namespacenut_1_1can__protocol_1_1micom.html#a7b3bf21093fcec61da0edab255f62a6eacf935033f8489f5f3152189c63f3cfbb">nut::can_protocol::micom::DataType::ySpead</a>, 
 <a class="el" href="../../d3/d8d/namespacenut_1_1can__protocol_1_1micom.html#a7b3bf21093fcec61da0edab255f62a6eaa6a45785c347a39a826107dbfca050b8">nut::can_protocol::micom::DataType::thetaSpead</a>, 
 <br />
-&#160;&#160;<a class="el" href="../../d3/d8d/namespacenut_1_1can__protocol_1_1micom.html#a7b3bf21093fcec61da0edab255f62a6ea2e3f1aeb830bad8b0c3c6729bc773df4">nut::can_protocol::micom::DataType::steering</a>
+&#160;&#160;<a class="el" href="../../d3/d8d/namespacenut_1_1can__protocol_1_1micom.html#a7b3bf21093fcec61da0edab255f62a6ea2e3f1aeb830bad8b0c3c6729bc773df4">nut::can_protocol::micom::DataType::steering</a>, 
+<a class="el" href="../../d3/d8d/namespacenut_1_1can__protocol_1_1micom.html#a7b3bf21093fcec61da0edab255f62a6ea156f8302e6df6804b4fc79a1e29359ee">nut::can_protocol::micom::DataType::uniqe</a> = 0x8
 <br />
  }</td></tr>
 <tr class="separator:a7b3bf21093fcec61da0edab255f62a6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -287,27 +289,37 @@ $(document).ready(function(){initNavTree('d7/dbd/_c_a_n_bus_protocol_8hpp.html',
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 関数</h2></td></tr>
 <tr class="memitem:ab9d182ae4b58b3259481136dc0bc0d44"><td class="memItemLeft" align="right" valign="top">static constexpr uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/db2/namespacenut_1_1can__protocol.html#ab9d182ae4b58b3259481136dc0bc0d44">nut::can_protocol::MakeDeviceID</a> (Device device)</td></tr>
+<tr class="memdesc:ab9d182ae4b58b3259481136dc0bc0d44"><td class="mdescLeft">&#160;</td><td class="mdescRight">デバイスID変換  <a href="../../d4/db2/namespacenut_1_1can__protocol.html#ab9d182ae4b58b3259481136dc0bc0d44">[詳解]</a><br /></td></tr>
 <tr class="separator:ab9d182ae4b58b3259481136dc0bc0d44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a88cee8b351f567feebd34e2f9295633d"><td class="memItemLeft" align="right" valign="top">static constexpr uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/db2/namespacenut_1_1can__protocol.html#a88cee8b351f567feebd34e2f9295633d">nut::can_protocol::MakeDeviceID</a> (Device device, uint8_t num)</td></tr>
+<tr class="memdesc:a88cee8b351f567feebd34e2f9295633d"><td class="mdescLeft">&#160;</td><td class="mdescRight">デバイスID変換  <a href="../../d4/db2/namespacenut_1_1can__protocol.html#a88cee8b351f567feebd34e2f9295633d">[詳解]</a><br /></td></tr>
 <tr class="separator:a88cee8b351f567feebd34e2f9295633d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a58cc76324c52ec953d7699f31457baa9"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a58cc76324c52ec953d7699f31457baa9"><td class="memTemplItemLeft" align="right" valign="top">static constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d4/db2/namespacenut_1_1can__protocol.html#a58cc76324c52ec953d7699f31457baa9">nut::can_protocol::MakeCANID</a> (uint8_t device_id, T data_type) -&gt; typename std::enable_if_t&lt; std::is_enum_v&lt; T &gt;, uint16_t &gt;</td></tr>
+<tr class="memdesc:a58cc76324c52ec953d7699f31457baa9"><td class="mdescLeft">&#160;</td><td class="mdescRight">CAN ID変換  <a href="../../d4/db2/namespacenut_1_1can__protocol.html#a58cc76324c52ec953d7699f31457baa9">[詳解]</a><br /></td></tr>
 <tr class="separator:a58cc76324c52ec953d7699f31457baa9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a268c2bc0b64e75615dd5f247233f5d3a"><td class="memItemLeft" align="right" valign="top">static constexpr uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/db2/namespacenut_1_1can__protocol.html#a268c2bc0b64e75615dd5f247233f5d3a">nut::can_protocol::MakeCANID</a> (uint8_t device_id, uint8_t data_type)</td></tr>
+<tr class="memdesc:a268c2bc0b64e75615dd5f247233f5d3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">CAN ID変換  <a href="../../d4/db2/namespacenut_1_1can__protocol.html#a268c2bc0b64e75615dd5f247233f5d3a">[詳解]</a><br /></td></tr>
 <tr class="separator:a268c2bc0b64e75615dd5f247233f5d3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac34b5543a8ba577a1ae13a16085b7168"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:ac34b5543a8ba577a1ae13a16085b7168"><td class="memTemplItemLeft" align="right" valign="top">static constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d4/db2/namespacenut_1_1can__protocol.html#ac34b5543a8ba577a1ae13a16085b7168">nut::can_protocol::MakeCANID</a> (Device device, uint8_t num, T data_type) -&gt; typename std::enable_if_t&lt; std::is_enum_v&lt; T &gt;, uint16_t &gt;</td></tr>
+<tr class="memdesc:ac34b5543a8ba577a1ae13a16085b7168"><td class="mdescLeft">&#160;</td><td class="mdescRight">CAN ID変換  <a href="../../d4/db2/namespacenut_1_1can__protocol.html#ac34b5543a8ba577a1ae13a16085b7168">[詳解]</a><br /></td></tr>
 <tr class="separator:ac34b5543a8ba577a1ae13a16085b7168"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c6252927f1453287b786f5cc0318b27"><td class="memItemLeft" align="right" valign="top">static constexpr uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/db2/namespacenut_1_1can__protocol.html#a6c6252927f1453287b786f5cc0318b27">nut::can_protocol::MakeCANID</a> (Device device, uint8_t num, uint8_t data_type)</td></tr>
+<tr class="memdesc:a6c6252927f1453287b786f5cc0318b27"><td class="mdescLeft">&#160;</td><td class="mdescRight">CAN ID変換  <a href="../../d4/db2/namespacenut_1_1can__protocol.html#a6c6252927f1453287b786f5cc0318b27">[詳解]</a><br /></td></tr>
 <tr class="separator:a6c6252927f1453287b786f5cc0318b27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a37903048835bcd7500cc2a6284728c3f"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a37903048835bcd7500cc2a6284728c3f"><td class="memTemplItemLeft" align="right" valign="top">static constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d4/db2/namespacenut_1_1can__protocol.html#a37903048835bcd7500cc2a6284728c3f">nut::can_protocol::MakeCANID</a> (Device device, can_protocol::all::NotificationType data_type, T data) -&gt; typename std::enable_if_t&lt; std::is_enum_v&lt; T &gt;, uint16_t &gt;</td></tr>
+<tr class="memdesc:a37903048835bcd7500cc2a6284728c3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">CAN ID変換(全体通知)  <a href="../../d4/db2/namespacenut_1_1can__protocol.html#a37903048835bcd7500cc2a6284728c3f">[詳解]</a><br /></td></tr>
 <tr class="separator:a37903048835bcd7500cc2a6284728c3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a794f59320468e755047cb2f3783b6825"><td class="memItemLeft" align="right" valign="top">static constexpr Device&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/db2/namespacenut_1_1can__protocol.html#a794f59320468e755047cb2f3783b6825">nut::can_protocol::GetDeviceType</a> (uint16_t can_id)</td></tr>
+<tr class="memdesc:a794f59320468e755047cb2f3783b6825"><td class="mdescLeft">&#160;</td><td class="mdescRight">デバイス型取得  <a href="../../d4/db2/namespacenut_1_1can__protocol.html#a794f59320468e755047cb2f3783b6825">[詳解]</a><br /></td></tr>
 <tr class="separator:a794f59320468e755047cb2f3783b6825"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8f6d69b0ea52a4d58f360f48bfab1cc2"><td class="memItemLeft" align="right" valign="top">static constexpr uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/db2/namespacenut_1_1can__protocol.html#a8f6d69b0ea52a4d58f360f48bfab1cc2">nut::can_protocol::GetDeviceID</a> (uint16_t can_id)</td></tr>
+<tr class="memdesc:a8f6d69b0ea52a4d58f360f48bfab1cc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">デバイスID取得  <a href="../../d4/db2/namespacenut_1_1can__protocol.html#a8f6d69b0ea52a4d58f360f48bfab1cc2">[詳解]</a><br /></td></tr>
 <tr class="separator:a8f6d69b0ea52a4d58f360f48bfab1cc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af51b8e40c6700abc5489e675dff57f35"><td class="memItemLeft" align="right" valign="top">static constexpr uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/db2/namespacenut_1_1can__protocol.html#af51b8e40c6700abc5489e675dff57f35">nut::can_protocol::GetDataType</a> (uint16_t can_id)</td></tr>
+<tr class="memdesc:af51b8e40c6700abc5489e675dff57f35"><td class="mdescLeft">&#160;</td><td class="mdescRight">データ型取得  <a href="../../d4/db2/namespacenut_1_1can__protocol.html#af51b8e40c6700abc5489e675dff57f35">[詳解]</a><br /></td></tr>
 <tr class="separator:af51b8e40c6700abc5489e675dff57f35"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>

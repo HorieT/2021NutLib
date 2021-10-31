@@ -117,6 +117,7 @@ nut::SteerChassis&lt; N &gt; の継承関係図</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 公開メンバ関数</h2></td></tr>
 <tr class="memitem:ad11f16f4e55ed3d46e7ad560a08742ae"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d79/classnut_1_1_steer_chassis.html#ad11f16f4e55ed3d46e7ad560a08742ae">SteerChassis</a> (uint32_t period, const std::shared_ptr&lt; <a class="el" href="../../d6/dcf/classnut_1_1_odmetry.html">Odmetry</a> &gt; &amp;odmetry, std::array&lt; std::shared_ptr&lt; <a class="el" href="../../dc/d39/classnut_1_1_drive_wheel.html">DriveWheel</a> &gt;, N &gt; wheel, std::array&lt; std::shared_ptr&lt; <a class="el" href="../../d5/da2/classnut_1_1_motor.html">Motor</a> &gt;, N &gt; steering)</td></tr>
+<tr class="memdesc:ad11f16f4e55ed3d46e7ad560a08742ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ  <a href="../../d3/d79/classnut_1_1_steer_chassis.html#ad11f16f4e55ed3d46e7ad560a08742ae">[詳解]</a><br /></td></tr>
 <tr class="separator:ad11f16f4e55ed3d46e7ad560a08742ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac890359d3fece6dface736de04dedf81"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d79/classnut_1_1_steer_chassis.html#ac890359d3fece6dface736de04dedf81">~SteerChassis</a> ()</td></tr>
 <tr class="separator:ac890359d3fece6dface736de04dedf81"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -128,9 +129,15 @@ nut::SteerChassis&lt; N &gt; の継承関係図</div>
 <tr class="memitem:ade14dfafd0ec6b4860ce437d71c28fa0 inherit pub_methods_classnut_1_1_steer_chassis_base"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d6a/classnut_1_1_steer_chassis_base.html#ade14dfafd0ec6b4860ce437d71c28fa0">SetVelocity</a> (<a class="el" href="../../d4/d08/classnut_1_1_coordinate.html">Coordinate</a>&lt; float &gt; velocity, <a class="el" href="../../d9/d6a/classnut_1_1_steer_chassis_base.html#a090572b613943d502dc2347835de54d2">MoveMode</a> mode=<a class="el" href="../../d9/d6a/classnut_1_1_steer_chassis_base.html#a090572b613943d502dc2347835de54d2acfb4b9293cd9ec418900b7b644c30042">MoveMode::nomal</a>)</td></tr>
 <tr class="memdesc:ade14dfafd0ec6b4860ce437d71c28fa0 inherit pub_methods_classnut_1_1_steer_chassis_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">速度入力  <a href="../../d9/d6a/classnut_1_1_steer_chassis_base.html#ade14dfafd0ec6b4860ce437d71c28fa0">[詳解]</a><br /></td></tr>
 <tr class="separator:ade14dfafd0ec6b4860ce437d71c28fa0 inherit pub_methods_classnut_1_1_steer_chassis_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56e191469b342cbe08b2d7d60a4d212a inherit pub_methods_classnut_1_1_steer_chassis_base"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d6a/classnut_1_1_steer_chassis_base.html#a56e191469b342cbe08b2d7d60a4d212a">SetVelocity</a> (<a class="el" href="../../d4/d08/classnut_1_1_coordinate.html">Coordinate</a>&lt; float &gt; velocity, <a class="el" href="../../d4/d08/classnut_1_1_coordinate.html">Coordinate</a>&lt; float &gt; origin, <a class="el" href="../../d9/d6a/classnut_1_1_steer_chassis_base.html#a090572b613943d502dc2347835de54d2">MoveMode</a> mode=<a class="el" href="../../d9/d6a/classnut_1_1_steer_chassis_base.html#a090572b613943d502dc2347835de54d2acfb4b9293cd9ec418900b7b644c30042">MoveMode::nomal</a>)</td></tr>
+<tr class="memdesc:a56e191469b342cbe08b2d7d60a4d212a inherit pub_methods_classnut_1_1_steer_chassis_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">速度入力  <a href="../../d9/d6a/classnut_1_1_steer_chassis_base.html#a56e191469b342cbe08b2d7d60a4d212a">[詳解]</a><br /></td></tr>
+<tr class="separator:a56e191469b342cbe08b2d7d60a4d212a inherit pub_methods_classnut_1_1_steer_chassis_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ce6de08930087397d21564b484f9852 inherit pub_methods_classnut_1_1_steer_chassis_base"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d6a/classnut_1_1_steer_chassis_base.html#a4ce6de08930087397d21564b484f9852">SetVelocity</a> (Eigen::Vector2f velocity_mps, float rot_radps, <a class="el" href="../../d9/d6a/classnut_1_1_steer_chassis_base.html#a090572b613943d502dc2347835de54d2">MoveMode</a> mode=<a class="el" href="../../d9/d6a/classnut_1_1_steer_chassis_base.html#a090572b613943d502dc2347835de54d2acfb4b9293cd9ec418900b7b644c30042">MoveMode::nomal</a>)</td></tr>
 <tr class="memdesc:a4ce6de08930087397d21564b484f9852 inherit pub_methods_classnut_1_1_steer_chassis_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">速度入力  <a href="../../d9/d6a/classnut_1_1_steer_chassis_base.html#a4ce6de08930087397d21564b484f9852">[詳解]</a><br /></td></tr>
 <tr class="separator:a4ce6de08930087397d21564b484f9852 inherit pub_methods_classnut_1_1_steer_chassis_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42163c244d8b21e22ed350f792d605a2 inherit pub_methods_classnut_1_1_steer_chassis_base"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d6a/classnut_1_1_steer_chassis_base.html#a42163c244d8b21e22ed350f792d605a2">SetVelocity</a> (Eigen::Vector2f velocity_mps, float rot_radps, <a class="el" href="../../d4/d08/classnut_1_1_coordinate.html">Coordinate</a>&lt; float &gt; origin, <a class="el" href="../../d9/d6a/classnut_1_1_steer_chassis_base.html#a090572b613943d502dc2347835de54d2">MoveMode</a> mode=<a class="el" href="../../d9/d6a/classnut_1_1_steer_chassis_base.html#a090572b613943d502dc2347835de54d2acfb4b9293cd9ec418900b7b644c30042">MoveMode::nomal</a>)</td></tr>
+<tr class="memdesc:a42163c244d8b21e22ed350f792d605a2 inherit pub_methods_classnut_1_1_steer_chassis_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">速度入力  <a href="../../d9/d6a/classnut_1_1_steer_chassis_base.html#a42163c244d8b21e22ed350f792d605a2">[詳解]</a><br /></td></tr>
+<tr class="separator:a42163c244d8b21e22ed350f792d605a2 inherit pub_methods_classnut_1_1_steer_chassis_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classnut_1_1_chassis"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classnut_1_1_chassis')"><img src="../../closed.png" alt="-"/>&#160;基底クラス <a class="el" href="../../d9/dc6/classnut_1_1_chassis.html">nut::Chassis</a> に属する継承公開メンバ関数</td></tr>
 <tr class="memitem:a825a8e77e3392411e2a04106f71d7969 inherit pub_methods_classnut_1_1_chassis"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dc6/classnut_1_1_chassis.html#a825a8e77e3392411e2a04106f71d7969">Chassis</a> (<a class="el" href="../../dd/d51/namespacenut.html#aabd23ff06314def2ae227f45a4ad9f25">MilliSecond</a>&lt; uint32_t &gt; period, const std::shared_ptr&lt; <a class="el" href="../../d6/dcf/classnut_1_1_odmetry.html">Odmetry</a> &gt; &amp;odmetry)</td></tr>
 <tr class="memdesc:a825a8e77e3392411e2a04106f71d7969 inherit pub_methods_classnut_1_1_chassis"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ  <a href="../../d9/dc6/classnut_1_1_chassis.html#a825a8e77e3392411e2a04106f71d7969">[詳解]</a><br /></td></tr>
@@ -144,9 +151,15 @@ nut::SteerChassis&lt; N &gt; の継承関係図</div>
 <tr class="memitem:adaf5ca6a18f690ce437b352750246326 inherit pub_methods_classnut_1_1_chassis"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dc6/classnut_1_1_chassis.html#adaf5ca6a18f690ce437b352750246326">SetVelocity</a> (<a class="el" href="../../d4/d08/classnut_1_1_coordinate.html">Coordinate</a>&lt; float &gt; velocity)</td></tr>
 <tr class="memdesc:adaf5ca6a18f690ce437b352750246326 inherit pub_methods_classnut_1_1_chassis"><td class="mdescLeft">&#160;</td><td class="mdescRight">速度入力  <a href="../../d9/dc6/classnut_1_1_chassis.html#adaf5ca6a18f690ce437b352750246326">[詳解]</a><br /></td></tr>
 <tr class="separator:adaf5ca6a18f690ce437b352750246326 inherit pub_methods_classnut_1_1_chassis"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4533261bb74f71a3a740aa7ede1267da inherit pub_methods_classnut_1_1_chassis"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dc6/classnut_1_1_chassis.html#a4533261bb74f71a3a740aa7ede1267da">SetVelocity</a> (<a class="el" href="../../d4/d08/classnut_1_1_coordinate.html">Coordinate</a>&lt; float &gt; velocity, <a class="el" href="../../d4/d08/classnut_1_1_coordinate.html">Coordinate</a>&lt; float &gt; origin)</td></tr>
+<tr class="memdesc:a4533261bb74f71a3a740aa7ede1267da inherit pub_methods_classnut_1_1_chassis"><td class="mdescLeft">&#160;</td><td class="mdescRight">速度入力  <a href="../../d9/dc6/classnut_1_1_chassis.html#a4533261bb74f71a3a740aa7ede1267da">[詳解]</a><br /></td></tr>
+<tr class="separator:a4533261bb74f71a3a740aa7ede1267da inherit pub_methods_classnut_1_1_chassis"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad45e2bb2321ce5c968aeb0ebdf70fe38 inherit pub_methods_classnut_1_1_chassis"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dc6/classnut_1_1_chassis.html#ad45e2bb2321ce5c968aeb0ebdf70fe38">SetVelocity</a> (Eigen::Vector2f velocity_mps, float rot_radps)</td></tr>
 <tr class="memdesc:ad45e2bb2321ce5c968aeb0ebdf70fe38 inherit pub_methods_classnut_1_1_chassis"><td class="mdescLeft">&#160;</td><td class="mdescRight">速度入力  <a href="../../d9/dc6/classnut_1_1_chassis.html#ad45e2bb2321ce5c968aeb0ebdf70fe38">[詳解]</a><br /></td></tr>
 <tr class="separator:ad45e2bb2321ce5c968aeb0ebdf70fe38 inherit pub_methods_classnut_1_1_chassis"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73d07a3730eb91596e65e9c5729393f6 inherit pub_methods_classnut_1_1_chassis"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dc6/classnut_1_1_chassis.html#a73d07a3730eb91596e65e9c5729393f6">SetVelocity</a> (Eigen::Vector2f velocity_mps, float rot_radps, <a class="el" href="../../d4/d08/classnut_1_1_coordinate.html">Coordinate</a>&lt; float &gt; origin)</td></tr>
+<tr class="memdesc:a73d07a3730eb91596e65e9c5729393f6 inherit pub_methods_classnut_1_1_chassis"><td class="mdescLeft">&#160;</td><td class="mdescRight">速度入力  <a href="../../d9/dc6/classnut_1_1_chassis.html#a73d07a3730eb91596e65e9c5729393f6">[詳解]</a><br /></td></tr>
+<tr class="separator:a73d07a3730eb91596e65e9c5729393f6 inherit pub_methods_classnut_1_1_chassis"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab32409c809c8f1dfefb7668bb7253f9d inherit pub_methods_classnut_1_1_chassis"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="../../d4/d08/classnut_1_1_coordinate.html">Coordinate</a>&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dc6/classnut_1_1_chassis.html#ab32409c809c8f1dfefb7668bb7253f9d">GetVelocity</a> () const</td></tr>
 <tr class="memdesc:ab32409c809c8f1dfefb7668bb7253f9d inherit pub_methods_classnut_1_1_chassis"><td class="mdescLeft">&#160;</td><td class="mdescRight">入力速度取得  <a href="../../d9/dc6/classnut_1_1_chassis.html#ab32409c809c8f1dfefb7668bb7253f9d">[詳解]</a><br /></td></tr>
 <tr class="separator:ab32409c809c8f1dfefb7668bb7253f9d inherit pub_methods_classnut_1_1_chassis"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -159,6 +172,7 @@ nut::SteerChassis&lt; N &gt; の継承関係図</div>
 <a class="el" href="../../d9/d6a/classnut_1_1_steer_chassis_base.html#a090572b613943d502dc2347835de54d2ab53cf904cd7efb8f64897d8aa3606a51">MoveMode::steerOnry</a>, 
 <a class="el" href="../../d9/d6a/classnut_1_1_steer_chassis_base.html#a090572b613943d502dc2347835de54d2a337ee3989c2c360a16e8f87dd02930cc">MoveMode::steerBreaking</a>
  }</td></tr>
+<tr class="memdesc:a090572b613943d502dc2347835de54d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">動作モード  <a href="../../d9/d6a/classnut_1_1_steer_chassis_base.html#a090572b613943d502dc2347835de54d2">[詳解]</a><br /></td></tr>
 <tr class="separator:a090572b613943d502dc2347835de54d2 inherit pub_types_classnut_1_1_steer_chassis_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_types_classnut_1_1_chassis"><td colspan="2" onclick="javascript:toggleInherit('pro_types_classnut_1_1_chassis')"><img src="../../closed.png" alt="-"/>&#160;基底クラス <a class="el" href="../../d9/dc6/classnut_1_1_chassis.html">nut::Chassis</a> に属する継承限定公開型</td></tr>
 <tr class="memitem:a1fbcb0cadc3136c9fbc8ee619d1a0f98 inherit pro_types_classnut_1_1_chassis"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dc6/classnut_1_1_chassis.html#a1fbcb0cadc3136c9fbc8ee619d1a0f98">MoveType</a> : uint8_t { <a class="el" href="../../d9/dc6/classnut_1_1_chassis.html#a1fbcb0cadc3136c9fbc8ee619d1a0f98aef399b2d446bb37b7c32ad2cc1b6045b">MoveType::stop</a> = 0U, 
@@ -188,8 +202,10 @@ class nut::SteerChassis&lt; N &gt;</h3>
 
 <p>操舵と駆動が独立の基本的なステア足回り </p>
 <p>　 </p>
+<dl class="section examples"><dt>各種例</dt><dd><a class="el" href="../../df/dc3/_chassis_8cpp-example.html#_a5">Chassis.cpp</a>.</dd>
+</dl>
 
-<p class="definition"> <a class="el" href="../../d3/d93/_steer_chassis_8hpp_source.html">SteerChassis.hpp</a> の <a class="el" href="../../d3/d93/_steer_chassis_8hpp_source.html#l00021">21</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d3/d93/_steer_chassis_8hpp_source.html">SteerChassis.hpp</a> の <a class="el" href="../../d3/d93/_steer_chassis_8hpp_source.html#l00024">24</a> 行目に定義があります。</p>
 </div><h2 class="groupheader">構築子と解体子</h2>
 <a id="ad11f16f4e55ed3d46e7ad560a08742ae"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad11f16f4e55ed3d46e7ad560a08742ae">&#9670;&nbsp;</a></span>SteerChassis()</h2>
@@ -239,7 +255,18 @@ template&lt;uint8_t N&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="../../d3/d93/_steer_chassis_8hpp_source.html">SteerChassis.hpp</a> の <a class="el" href="../../d3/d93/_steer_chassis_8hpp_source.html#l00100">100</a> 行目に定義があります。</p>
+<p>コンストラクタ </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">period</td><td>制御周期 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">odmetry</td><td>オドメータインスタンス  オドメータを使わない場合はヌルポを入れてください </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">wheel</td><td>駆動輪 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">steering</td><td>操舵MD </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="../../d3/d93/_steer_chassis_8hpp_source.html">SteerChassis.hpp</a> の <a class="el" href="../../d3/d93/_steer_chassis_8hpp_source.html#l00110">110</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -268,7 +295,7 @@ template&lt;uint8_t N&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="../../d3/d93/_steer_chassis_8hpp_source.html">SteerChassis.hpp</a> の <a class="el" href="../../d3/d93/_steer_chassis_8hpp_source.html#l00126">126</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d3/d93/_steer_chassis_8hpp_source.html">SteerChassis.hpp</a> の <a class="el" href="../../d3/d93/_steer_chassis_8hpp_source.html#l00136">136</a> 行目に定義があります。</p>
 
 </div>
 </div>

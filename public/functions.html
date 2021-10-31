@@ -101,9 +101,6 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <li>_channel
 : <a class="el" href="db/d01/classnut_1_1_direct_duty_motor.html#a6cde526f0009e24529cfbad7075f0402">nut::DirectDutyMotor</a>
 </li>
-<li>_coefficient
-: <a class="el" href="df/dd5/classnut_1_1_omni_chassis.html#af61b092160264da42ebc3366a7329024">nut::OmniChassis&lt; N &gt;</a>
-</li>
 <li>_current_pid
 : <a class="el" href="d5/da2/classnut_1_1_motor.html#a153142a7b3a2c77cb48632a93d46ce4c">nut::Motor</a>
 </li>
@@ -137,12 +134,8 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <li>_gpio_port
 : <a class="el" href="db/d01/classnut_1_1_direct_duty_motor.html#a2894909c1ab2233f402727e1ffb0ec2b">nut::DirectDutyMotor</a>
 </li>
-<li>_hi2c
-: <a class="el" href="d7/df1/classnut_1_1_v_l53_l0_x.html#a3d321376f5b107eca06fe2883ef2853d">nut::VL53L0X</a>
-</li>
 <li>_htim
 : <a class="el" href="db/d01/classnut_1_1_direct_duty_motor.html#a8dd78a0ee4b682dd713e2aa8b28f98cd">nut::DirectDutyMotor</a>
-, <a class="el" href="d7/df1/classnut_1_1_v_l53_l0_x.html#a91516b37e47d15f433bd53f3253dd60e">nut::VL53L0X</a>
 </li>
 <li>_I_gain
 : <a class="el" href="df/ddb/classnut_1_1_p_i_d_base.html#ae3f7c5ea0a97bea0419388283e40a451">nut::PIDBase&lt; T &gt;</a>
@@ -160,6 +153,7 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 : <a class="el" href="df/d9b/classnut_1_1_encoder.html#a4215259d653f25dca6de0845407a3b8a">nut::Encoder</a>
 , <a class="el" href="db/d8d/classnut_1_1_i_m_u.html#a43905a0ee530c7de7d9b51e35e705a37">nut::IMU</a>
 , <a class="el" href="d5/da2/classnut_1_1_motor.html#a097393bddd50dd35481c29af3b038763">nut::Motor</a>
+, <a class="el" href="d0/d98/classnut_1_1_servo_motor.html#a081fbdf26b149f8b304584ee3e13a7d2">nut::ServoMotor</a>
 , <a class="el" href="db/d47/classnut_1_1_steer_driver.html#a622da1a91a1a614fdaba9e212dd6028e">nut::SteerDriver</a>
 </li>
 <li>_is_move
@@ -176,6 +170,9 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 </li>
 <li>_mode
 : <a class="el" href="d9/d6a/classnut_1_1_steer_chassis_base.html#a7d07513b45a9a1ba17a975427021d958">nut::SteerChassisBase</a>
+</li>
+<li>_motion_range
+: <a class="el" href="d0/d98/classnut_1_1_servo_motor.html#a161db7158e70965488b7e68ffc856a81">nut::ServoMotor</a>
 </li>
 <li>_motor
 : <a class="el" href="dc/d39/classnut_1_1_drive_wheel.html#a7f88d939f831edb04ca891be2710817d">nut::DriveWheel</a>
@@ -215,6 +212,9 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <li>_position
 : <a class="el" href="dc/d39/classnut_1_1_drive_wheel.html#a7cd20e22da38246775b99671b239b5ab">nut::DriveWheel</a>
 </li>
+<li>_pwm
+: <a class="el" href="d0/d98/classnut_1_1_servo_motor.html#a4a3bce9b117cb23e3834a12d6f64b535">nut::ServoMotor</a>
+</li>
 <li>_rad_pid
 : <a class="el" href="d5/da2/classnut_1_1_motor.html#a96e15c6af46b58dc17125b4ae4a1270d">nut::Motor</a>
 </li>
@@ -234,7 +234,6 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 : <a class="el" href="d9/dc6/classnut_1_1_chassis.html#affef51990647fae61b8c4e0fe9488de0">nut::Chassis</a>
 , <a class="el" href="d5/da2/classnut_1_1_motor.html#a3e7f0ef80cbc1fde3400dcfb83405de0">nut::Motor</a>
 , <a class="el" href="db/d47/classnut_1_1_steer_driver.html#a25c905d02450270271801704602ed557">nut::SteerDriver</a>
-, <a class="el" href="d7/df1/classnut_1_1_v_l53_l0_x.html#a7d881cafcfd3def4b52758e919fa9dc8">nut::VL53L0X</a>
 </li>
 <li>_sensor_acc
 : <a class="el" href="db/d8d/classnut_1_1_i_m_u.html#a6b91a8f39d12570c1e80f7ddae486b36">nut::IMU</a>
@@ -263,18 +262,6 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 </li>
 <li>_turn_polarity
 : <a class="el" href="d5/da2/classnut_1_1_motor.html#a7221454671abae0f74fa273abe295805">nut::Motor</a>
-</li>
-<li>_wheel
-: <a class="el" href="df/dd5/classnut_1_1_omni_chassis.html#aee96050d0d69a512a0b646d32df059bf">nut::OmniChassis&lt; N &gt;</a>
-</li>
-<li>_wheel_length
-: <a class="el" href="df/dd5/classnut_1_1_omni_chassis.html#a08fea323c663499aae6788d9e923b2aa">nut::OmniChassis&lt; N &gt;</a>
-</li>
-<li>_wheel_polarity
-: <a class="el" href="df/dd5/classnut_1_1_omni_chassis.html#a4dec15581fd8ae8d9d9112ef1fe50194">nut::OmniChassis&lt; N &gt;</a>
-</li>
-<li>_wheel_position
-: <a class="el" href="df/dd5/classnut_1_1_omni_chassis.html#ad179a8ded056a3f1b25de7c242f3ae1d">nut::OmniChassis&lt; N &gt;</a>
 </li>
 </ul>
 </div><!-- contents -->

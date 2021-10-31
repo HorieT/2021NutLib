@@ -17,9 +17,10 @@
 
 namespace nut{
 /**
+ * @example Chassis.cpp
+ */
+/**
  * @brief オムニ足回りクラス
- * オムニは極座標で0°から反時計回りで定義します
- * * @details オムニは同芯円接線上に配置されている前提です<br>
  * @tparam N オムニの数
  * @attention N<2でアサートを吐きます
  */
@@ -96,7 +97,6 @@ public:
 	 * @param[in] odmetry オドメータインスタンス
 	 * @details オドメータを使わない場合はヌルポを入れてください
 	 * @param[in] wheel オムニたち
-	 * @attention オムニの位置情報のthetaはオムニの向き判定にのみ使われます(同心円接線前提のため)
 	 */
 	OmniChassis(
 			MilliSecond<uint32_t> period,
@@ -125,14 +125,12 @@ public:
 
 	/**
 	 * @brief コンストラクタ
-	 * @details オムニは同一円状に等角配置されている前提です<br>
 	 * @param[in] period 制御周期
 	 * @param[in] odmetry オドメータインスタンス
 	 * @details オドメータを使わない場合はヌルポを入れてください
 	 * @param[in] wheel_motor オムニのモータたち
-	 * @param[in] first_wheel_position wheel_motor[0]のオムニの座標
-	 * @details オムニは極座標で0°から反時計回りで定義します
-	 * @attention オムニの位置情報のthetaはオムニの向き判定にのみ使われます(同心円接線前提のため)
+	 * @param[in] wheel_position wheel_motorのオムニの座標
+	 * @param[in] wheel_diameter ホイール径
 	 */
 	OmniChassis(
 			MilliSecond<uint32_t> period,
@@ -153,6 +151,7 @@ public:
 	 * @param[in] wheel_motor オムニのモータたち
 	 * @param[in] first_wheel_position wheel_motor[0]のオムニの座標
 	 * @details オムニは極座標で0°から反時計回りで定義します
+	 * @param[in] wheel_diameter ホイール径
 	 * @attention オムニの位置情報のthetaはオムニの向き判定にのみ使われます(同心円接線前提のため)
 	 */
 	OmniChassis(

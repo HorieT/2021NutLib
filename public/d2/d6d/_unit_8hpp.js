@@ -3,13 +3,14 @@ var _unit_8hpp =
     [ "Unit", "db/dcb/classnut_1_1unit_1_1_unit.html", "db/dcb/classnut_1_1unit_1_1_unit" ],
     [ "Type", "d2/d6d/_unit_8hpp.html#a71c65554a8697cd990496eec57068896", [
       [ "second", "d2/d6d/_unit_8hpp.html#a71c65554a8697cd990496eec57068896aa9f0e61a137d86aa9db53465e0801612", null ],
-      [ "minute", "d2/d6d/_unit_8hpp.html#a71c65554a8697cd990496eec57068896a0a7d55be9d12a369a6a8da0fb517fba4", null ],
       [ "meter", "d2/d6d/_unit_8hpp.html#a71c65554a8697cd990496eec57068896a558ddfdd3620c111fe112b4671b77c6d", null ],
       [ "radian", "d2/d6d/_unit_8hpp.html#a71c65554a8697cd990496eec57068896a2fb79ab9685ea3b8e82385daca76a390", null ],
-      [ "degre", "d2/d6d/_unit_8hpp.html#a71c65554a8697cd990496eec57068896a8cb58278ef95eb98682cdc86e48bf7aa", null ],
       [ "gram", "d2/d6d/_unit_8hpp.html#a71c65554a8697cd990496eec57068896ac5bc23dc24c013b95c88cf3aa7ab4e17", null ],
       [ "ampere", "d2/d6d/_unit_8hpp.html#a71c65554a8697cd990496eec57068896abe5f56592b3d8bea4580c016970b02a3", null ],
-      [ "volt", "d2/d6d/_unit_8hpp.html#a71c65554a8697cd990496eec57068896ab93c7099d83958ce476687373bd385c7", null ]
+      [ "volt", "d2/d6d/_unit_8hpp.html#a71c65554a8697cd990496eec57068896ab93c7099d83958ce476687373bd385c7", null ],
+      [ "ohm", "d2/d6d/_unit_8hpp.html#a71c65554a8697cd990496eec57068896a35464785f1a8901da7d158145ec47417", null ],
+      [ "henry", "d2/d6d/_unit_8hpp.html#a71c65554a8697cd990496eec57068896a027e4180beedb29744413a7ea6b84a42", null ],
+      [ "farad", "d2/d6d/_unit_8hpp.html#a71c65554a8697cd990496eec57068896ae620a8ab69157b19112ba4b4df01e2e0", null ]
     ] ],
     [ "operator!=", "d2/d6d/_unit_8hpp.html#a187ad370316ea482426955895dd4c490", null ],
     [ "operator!=", "d2/d6d/_unit_8hpp.html#a3eb23bfa058aecc9c1f9bf9112ebef9c", null ],

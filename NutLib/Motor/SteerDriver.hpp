@@ -76,7 +76,7 @@ public:
 	/**
 	 *  @brief 制御入力
 	 *  @param[in] norm 平面ベクトルの絶対値[m/s]
-	 *  @param[in] norm 平面ベクトルの角度[rad]
+	 *  @param[in] rad 平面ベクトルの角度[rad]
 	 */
 	virtual bool SetMove(float norm, float rad){
 		_target_norm = norm;

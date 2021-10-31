@@ -1,6 +1,8 @@
 var dir_0cad120789fa44f7b8eed022044aaccf =
 [
-    [ "ControlApp.hpp", "d7/d79/_control_app_8hpp.html", "d7/d79/_control_app_8hpp" ],
+    [ "ControlApp.hpp", "d7/d79/_control_app_8hpp.html", [
+      [ "ControlApp", "d0/d16/classnut_1_1_control_app.html", "d0/d16/classnut_1_1_control_app" ]
+    ] ],
     [ "DualShock.hpp", "d8/d0b/_dual_shock_8hpp.html", [
       [ "DualShock", "d6/de4/classnut_1_1_dual_shock.html", "d6/de4/classnut_1_1_dual_shock" ]
     ] ],

@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>NutLib: NutLib/Sensor/Current/CSParam.hpp ソースファイル</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">NutLib
+   </div>
+  </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.svg"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.20 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'検索');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('d2/d4b/_c_s_param_8hpp_source.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">CSParam.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d2/d4b/_c_s_param_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;../../Global.hpp&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;../../Unit/UnitCore.hpp&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../dd/d51/namespacenut.html">nut</a>{</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="../../df/d06/classnut_1_1_c_s_param.html">   14</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../df/d06/classnut_1_1_c_s_param.html">CSParam</a>{</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">float</span> _current_sensitivity;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="../../df/d06/classnut_1_1_c_s_param.html#aad7ac98bf3042c96a41ed2b5916c30da">   24</a></span>&#160;    constexpr <a class="code" href="../../df/d06/classnut_1_1_c_s_param.html#aad7ac98bf3042c96a41ed2b5916c30da">CSParam</a>(<span class="keywordtype">float</span> <a class="code" href="../../df/d06/classnut_1_1_c_s_param.html#af033735b9158dd25b996253f7d42c4ad">current_sensitivity</a>) : _current_sensitivity(<a class="code" href="../../df/d06/classnut_1_1_c_s_param.html#af033735b9158dd25b996253f7d42c4ad">current_sensitivity</a>){</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    }</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="../../df/d06/classnut_1_1_c_s_param.html#af033735b9158dd25b996253f7d42c4ad">   32</a></span>&#160;    constexpr <span class="keywordtype">float</span> <a class="code" href="../../df/d06/classnut_1_1_c_s_param.html#af033735b9158dd25b996253f7d42c4ad">current_sensitivity</a>()<span class="keyword"> const</span>{<span class="keywordflow">return</span> _current_sensitivity;}</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">template</span>&lt;u<span class="keywordtype">int</span>8_t Bit&gt;</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="../../df/d06/classnut_1_1_c_s_param.html#a396775e348d12a7adb0b0729dc431d3c">   40</a></span>&#160;    constexpr <span class="keywordtype">float</span> <a class="code" href="../../df/d06/classnut_1_1_c_s_param.html#a396775e348d12a7adb0b0729dc431d3c">ampere_par_bit</a>(<a class="code" href="../../db/dcb/classnut_1_1unit_1_1_unit.html">Volt&lt;float&gt;</a> volt)<span class="keyword"> const</span>{</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        static_assert(Bit &lt;= 16 &amp;&amp; Bit &gt;= 1, <span class="stringliteral">&quot;bit size over.&quot;</span>);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        uint16_t bit = 1u;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordflow">for</span>(uint8_t i = 1;i &lt; Bit;++i)bit |= 1 &lt;&lt; i;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordflow">return</span> volt.<a class="code" href="../../db/dcb/classnut_1_1unit_1_1_unit.html#a0aa46cb71709b5c0c0359f8e897ceaac">f</a>() / <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(bit) / _current_sensitivity;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;};</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="aclassnut_1_1_c_s_param_html_af033735b9158dd25b996253f7d42c4ad"><div class="ttname"><a href="../../df/d06/classnut_1_1_c_s_param.html#af033735b9158dd25b996253f7d42c4ad">nut::CSParam::current_sensitivity</a></div><div class="ttdeci">constexpr float current_sensitivity() const</div><div class="ttdoc">電流感度取得</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d4b/_c_s_param_8hpp_source.html#l00032">CSParam.hpp:32</a></div></div>
+<div class="ttc" id="aclassnut_1_1_c_s_param_html_aad7ac98bf3042c96a41ed2b5916c30da"><div class="ttname"><a href="../../df/d06/classnut_1_1_c_s_param.html#aad7ac98bf3042c96a41ed2b5916c30da">nut::CSParam::CSParam</a></div><div class="ttdeci">constexpr CSParam(float current_sensitivity)</div><div class="ttdoc">コンストラクタ</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d4b/_c_s_param_8hpp_source.html#l00024">CSParam.hpp:24</a></div></div>
+<div class="ttc" id="aclassnut_1_1unit_1_1_unit_html"><div class="ttname"><a href="../../db/dcb/classnut_1_1unit_1_1_unit.html">nut::unit::Unit</a></div><div class="ttdoc">単位系クラス</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d6d/_unit_8hpp_source.html#l00045">Unit.hpp:45</a></div></div>
+<div class="ttc" id="anamespacenut_html"><div class="ttname"><a href="../../dd/d51/namespacenut.html">nut</a></div><div class="ttdoc">CANバスの通信仕様</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d98/_build_tester_8hpp_source.html#l00008">BuildTester.hpp:8</a></div></div>
+<div class="ttc" id="aclassnut_1_1_c_s_param_html_a396775e348d12a7adb0b0729dc431d3c"><div class="ttname"><a href="../../df/d06/classnut_1_1_c_s_param.html#a396775e348d12a7adb0b0729dc431d3c">nut::CSParam::ampere_par_bit</a></div><div class="ttdeci">constexpr float ampere_par_bit(Volt&lt; float &gt; volt) const</div><div class="ttdoc">bit単位取得</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d4b/_c_s_param_8hpp_source.html#l00040">CSParam.hpp:40</a></div></div>
+<div class="ttc" id="aclassnut_1_1_c_s_param_html"><div class="ttname"><a href="../../df/d06/classnut_1_1_c_s_param.html">nut::CSParam</a></div><div class="ttdoc">電流センサパラメータクラス</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d4b/_c_s_param_8hpp_source.html#l00014">CSParam.hpp:14</a></div></div>
+<div class="ttc" id="aclassnut_1_1unit_1_1_unit_html_a0aa46cb71709b5c0c0359f8e897ceaac"><div class="ttname"><a href="../../db/dcb/classnut_1_1unit_1_1_unit.html#a0aa46cb71709b5c0c0359f8e897ceaac">nut::unit::Unit::f</a></div><div class="ttdeci">constexpr float f() const</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d6d/_unit_8hpp_source.html#l00053">Unit.hpp:53</a></div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_8b1cfa3accea10fc5ecd39c63013c190.html">NutLib</a></li><li class="navelem"><a class="el" href="../../dir_c2c735cbd9a0ae71a2beef0eda132d9d.html">Sensor</a></li><li class="navelem"><a class="el" href="../../dir_7eca427426f557e62fefd0cc649deb1b.html">Current</a></li><li class="navelem"><a class="el" href="../../d2/d4b/_c_s_param_8hpp.html">CSParam.hpp</a></li>
+    <li class="footer">構築: <a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
+  </ul>
+</div>
+</body>
+</html>

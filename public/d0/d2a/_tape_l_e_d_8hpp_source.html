@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>NutLib: NutLib/Etc/TapeLED.hpp ソースファイル</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">NutLib
+   </div>
+  </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.svg"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.20 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'検索');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('d0/d2a/_tape_l_e_d_8hpp_source.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">TapeLED.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d0/d2a/_tape_l_e_d_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;../Global.hpp&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d8/dd9/_p_w_mch_8hpp.html">PWMch.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../dd/d51/namespacenut.html">nut</a>{</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="../../d7/d3a/classnut_1_1_tape_l_e_d.html">   14</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d7/d3a/classnut_1_1_tape_l_e_d.html">TapeLED</a>{</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="../../d7/d56/classnut_1_1_p_w_mch.html">PWMch</a> _r_ch;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="../../d7/d56/classnut_1_1_p_w_mch.html">PWMch</a> _g_ch;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="../../d7/d56/classnut_1_1_p_w_mch.html">PWMch</a> _b_ch;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="../../d7/d3a/classnut_1_1_tape_l_e_d.html#a8b35992d0b4e76db02dfcc96f4cfc68d">   27</a></span>&#160;    <a class="code" href="../../d7/d3a/classnut_1_1_tape_l_e_d.html#a8b35992d0b4e76db02dfcc96f4cfc68d">TapeLED</a>(<a class="code" href="../../d7/d56/classnut_1_1_p_w_mch.html">PWMch</a> r_ch, <a class="code" href="../../d7/d56/classnut_1_1_p_w_mch.html">PWMch</a> g_ch, <a class="code" href="../../d7/d56/classnut_1_1_p_w_mch.html">PWMch</a> b_ch) : _r_ch(r_ch), _g_ch(g_ch), _b_ch(b_ch){</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    }</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="../../d7/d3a/classnut_1_1_tape_l_e_d.html#add20486abe2bb89d40824116532b9bbb">   35</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d7/d3a/classnut_1_1_tape_l_e_d.html#add20486abe2bb89d40824116532b9bbb">Start</a>(){</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        _r_ch.<a class="code" href="../../d7/d56/classnut_1_1_p_w_mch.html#aa216ee6fc36b51ba3d80adada35afa80">Start</a>();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        _g_ch.<a class="code" href="../../d7/d56/classnut_1_1_p_w_mch.html#aa216ee6fc36b51ba3d80adada35afa80">Start</a>();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        _b_ch.<a class="code" href="../../d7/d56/classnut_1_1_p_w_mch.html#aa216ee6fc36b51ba3d80adada35afa80">Start</a>();</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="../../d7/d3a/classnut_1_1_tape_l_e_d.html#a5ada0daead449d0243e3249a906e9969">   43</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d7/d3a/classnut_1_1_tape_l_e_d.html#a5ada0daead449d0243e3249a906e9969">Stop</a>(){</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        _r_ch.<a class="code" href="../../d7/d56/classnut_1_1_p_w_mch.html#a7b286ddf8b1f890d8a3ae0b2e7b6b6c1">Stop</a>();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        _g_ch.<a class="code" href="../../d7/d56/classnut_1_1_p_w_mch.html#a7b286ddf8b1f890d8a3ae0b2e7b6b6c1">Stop</a>();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        _b_ch.<a class="code" href="../../d7/d56/classnut_1_1_p_w_mch.html#a7b286ddf8b1f890d8a3ae0b2e7b6b6c1">Stop</a>();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="../../d7/d3a/classnut_1_1_tape_l_e_d.html#ad5bb7cafc4c2566b67f87b293cd6b50c">   56</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d7/d3a/classnut_1_1_tape_l_e_d.html#ad5bb7cafc4c2566b67f87b293cd6b50c">SetRGB</a>(<span class="keywordtype">float</span> r, <span class="keywordtype">float</span> g, <span class="keywordtype">float</span> b){</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        _r_ch.<a class="code" href="../../d7/d56/classnut_1_1_p_w_mch.html#ac705962f0a3a68c2751457487082ff62">WriteParCCR</a>(r * 100.0f);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        _g_ch.<a class="code" href="../../d7/d56/classnut_1_1_p_w_mch.html#ac705962f0a3a68c2751457487082ff62">WriteParCCR</a>(g * 100.0f);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        _b_ch.<a class="code" href="../../d7/d56/classnut_1_1_p_w_mch.html#ac705962f0a3a68c2751457487082ff62">WriteParCCR</a>(b * 100.0f);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="../../d7/d3a/classnut_1_1_tape_l_e_d.html#ac151ea9ad4c174d6ee39014068c3de15">   66</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d7/d3a/classnut_1_1_tape_l_e_d.html#ac151ea9ad4c174d6ee39014068c3de15">SetRGB</a>(std::array&lt;float, 3&gt; val){</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <a class="code" href="../../d7/d3a/classnut_1_1_tape_l_e_d.html#ad5bb7cafc4c2566b67f87b293cd6b50c">SetRGB</a>(val[0], val[1], val[2]);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    }</div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="../../d7/d3a/classnut_1_1_tape_l_e_d.html#a602591457f10e1e87505108411b99d8b">   76</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d7/d3a/classnut_1_1_tape_l_e_d.html#a602591457f10e1e87505108411b99d8b">SetRGB</a>(uint8_t r, uint8_t g, uint8_t b){</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <a class="code" href="../../d7/d3a/classnut_1_1_tape_l_e_d.html#ad5bb7cafc4c2566b67f87b293cd6b50c">SetRGB</a>(r / 255.0f, g / 255.0f, b / 255.0f);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="../../d7/d3a/classnut_1_1_tape_l_e_d.html#a5e19f9a13aed4b1b65c89b2270b72c9a">   84</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d7/d3a/classnut_1_1_tape_l_e_d.html#a5e19f9a13aed4b1b65c89b2270b72c9a">SetRGB</a>(std::array&lt;uint8_t, 3&gt; val){</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <a class="code" href="../../d7/d3a/classnut_1_1_tape_l_e_d.html#ad5bb7cafc4c2566b67f87b293cd6b50c">SetRGB</a>(val[0], val[1], val[2]);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="../../d7/d3a/classnut_1_1_tape_l_e_d.html#a0afd2e0b197877f7fb10e71d14383d64">   96</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d7/d3a/classnut_1_1_tape_l_e_d.html#a0afd2e0b197877f7fb10e71d14383d64">SetHSV</a>(<span class="keywordtype">float</span> h, <span class="keywordtype">float</span> s, <span class="keywordtype">float</span> v){</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordtype">float</span> r = v;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keywordtype">float</span> g = v;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordtype">float</span> b = v;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordflow">if</span> (s &gt; 0.0f) {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            h *= 6.0f;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            <span class="keywordtype">float</span> f = h - std::rint(h);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            <span class="keywordflow">switch</span> (<span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(std::rint(h))) {</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                <span class="keywordflow">case</span> 0:</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                    g *= 1 - s * (1 - f);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                    b *= 1 - s;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                <span class="keywordflow">case</span> 1:</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                    r *= 1 - s * f;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                    b *= 1 - s;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                <span class="keywordflow">case</span> 2:</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                    r *= 1 - s;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                    b *= 1 - s * (1 - f);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                <span class="keywordflow">case</span> 3:</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                    r *= 1 - s;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                    g *= 1 - s * f;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                <span class="keywordflow">case</span> 4:</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                    r *= 1 - s * (1 - f);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                    g *= 1 - s;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                <span class="keywordflow">case</span> 5:</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                    g *= 1 - s;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                    b *= 1 - s * f;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            }</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        }</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <a class="code" href="../../d7/d3a/classnut_1_1_tape_l_e_d.html#ad5bb7cafc4c2566b67f87b293cd6b50c">SetRGB</a>(r, g, b);</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    }</div>
+<div class="line"><a name="l00138"></a><span class="lineno"><a class="line" href="../../d7/d3a/classnut_1_1_tape_l_e_d.html#a10c9f685a6f846002b6fd7ae5280e9cf">  138</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d7/d3a/classnut_1_1_tape_l_e_d.html#a10c9f685a6f846002b6fd7ae5280e9cf">SetHSV</a>(std::array&lt;float, 3&gt; val){</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        <a class="code" href="../../d7/d3a/classnut_1_1_tape_l_e_d.html#a0afd2e0b197877f7fb10e71d14383d64">SetHSV</a>(val[0], val[1], val[2]);</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    }</div>
+<div class="line"><a name="l00148"></a><span class="lineno"><a class="line" href="../../d7/d3a/classnut_1_1_tape_l_e_d.html#abc8e8621201440b9537e47b4b98c8024">  148</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d7/d3a/classnut_1_1_tape_l_e_d.html#abc8e8621201440b9537e47b4b98c8024">SetHSV</a>(uint8_t h, uint8_t s, uint8_t v){</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <a class="code" href="../../d7/d3a/classnut_1_1_tape_l_e_d.html#a0afd2e0b197877f7fb10e71d14383d64">SetHSV</a>(h / 255.0f, s / 255.0f, v / 255.0f);</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    }</div>
+<div class="line"><a name="l00156"></a><span class="lineno"><a class="line" href="../../d7/d3a/classnut_1_1_tape_l_e_d.html#a887813327f1aa32a5f41c0fc261c3e35">  156</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d7/d3a/classnut_1_1_tape_l_e_d.html#a887813327f1aa32a5f41c0fc261c3e35">SetHSV</a>(std::array&lt;uint8_t, 3&gt; val){</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        <a class="code" href="../../d7/d3a/classnut_1_1_tape_l_e_d.html#a0afd2e0b197877f7fb10e71d14383d64">SetHSV</a>(val[0], val[1], val[2]);</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    }</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;};</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;}</div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="aclassnut_1_1_tape_l_e_d_html_a10c9f685a6f846002b6fd7ae5280e9cf"><div class="ttname"><a href="../../d7/d3a/classnut_1_1_tape_l_e_d.html#a10c9f685a6f846002b6fd7ae5280e9cf">nut::TapeLED::SetHSV</a></div><div class="ttdeci">void SetHSV(std::array&lt; float, 3 &gt; val)</div><div class="ttdoc">HSVセット</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d2a/_tape_l_e_d_8hpp_source.html#l00138">TapeLED.hpp:138</a></div></div>
+<div class="ttc" id="aclassnut_1_1_p_w_mch_html"><div class="ttname"><a href="../../d7/d56/classnut_1_1_p_w_mch.html">nut::PWMch</a></div><div class="ttdoc">pwmチャンネルクラス</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/dd9/_p_w_mch_8hpp_source.html#l00012">PWMch.hpp:12</a></div></div>
+<div class="ttc" id="aclassnut_1_1_p_w_mch_html_aa216ee6fc36b51ba3d80adada35afa80"><div class="ttname"><a href="../../d7/d56/classnut_1_1_p_w_mch.html#aa216ee6fc36b51ba3d80adada35afa80">nut::PWMch::Start</a></div><div class="ttdeci">void Start()</div><div class="ttdoc">PWMスタート</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/dd9/_p_w_mch_8hpp_source.html#l00046">PWMch.hpp:46</a></div></div>
+<div class="ttc" id="aclassnut_1_1_p_w_mch_html_ac705962f0a3a68c2751457487082ff62"><div class="ttname"><a href="../../d7/d56/classnut_1_1_p_w_mch.html#ac705962f0a3a68c2751457487082ff62">nut::PWMch::WriteParCCR</a></div><div class="ttdeci">void WriteParCCR(float par_value)</div><div class="ttdoc">CCR書き込み(duty比)</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/dd9/_p_w_mch_8hpp_source.html#l00067">PWMch.hpp:67</a></div></div>
+<div class="ttc" id="aclassnut_1_1_tape_l_e_d_html_a602591457f10e1e87505108411b99d8b"><div class="ttname"><a href="../../d7/d3a/classnut_1_1_tape_l_e_d.html#a602591457f10e1e87505108411b99d8b">nut::TapeLED::SetRGB</a></div><div class="ttdeci">void SetRGB(uint8_t r, uint8_t g, uint8_t b)</div><div class="ttdoc">RGBセット</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d2a/_tape_l_e_d_8hpp_source.html#l00076">TapeLED.hpp:76</a></div></div>
+<div class="ttc" id="aclassnut_1_1_tape_l_e_d_html_a5e19f9a13aed4b1b65c89b2270b72c9a"><div class="ttname"><a href="../../d7/d3a/classnut_1_1_tape_l_e_d.html#a5e19f9a13aed4b1b65c89b2270b72c9a">nut::TapeLED::SetRGB</a></div><div class="ttdeci">void SetRGB(std::array&lt; uint8_t, 3 &gt; val)</div><div class="ttdoc">RGBセット</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d2a/_tape_l_e_d_8hpp_source.html#l00084">TapeLED.hpp:84</a></div></div>
+<div class="ttc" id="aclassnut_1_1_tape_l_e_d_html_a887813327f1aa32a5f41c0fc261c3e35"><div class="ttname"><a href="../../d7/d3a/classnut_1_1_tape_l_e_d.html#a887813327f1aa32a5f41c0fc261c3e35">nut::TapeLED::SetHSV</a></div><div class="ttdeci">void SetHSV(std::array&lt; uint8_t, 3 &gt; val)</div><div class="ttdoc">HSVセット</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d2a/_tape_l_e_d_8hpp_source.html#l00156">TapeLED.hpp:156</a></div></div>
+<div class="ttc" id="anamespacenut_html"><div class="ttname"><a href="../../dd/d51/namespacenut.html">nut</a></div><div class="ttdoc">CANバスの通信仕様</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d98/_build_tester_8hpp_source.html#l00008">BuildTester.hpp:8</a></div></div>
+<div class="ttc" id="aclassnut_1_1_tape_l_e_d_html_a5ada0daead449d0243e3249a906e9969"><div class="ttname"><a href="../../d7/d3a/classnut_1_1_tape_l_e_d.html#a5ada0daead449d0243e3249a906e9969">nut::TapeLED::Stop</a></div><div class="ttdeci">void Stop()</div><div class="ttdoc">LED制御停止</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d2a/_tape_l_e_d_8hpp_source.html#l00043">TapeLED.hpp:43</a></div></div>
+<div class="ttc" id="aclassnut_1_1_tape_l_e_d_html_a0afd2e0b197877f7fb10e71d14383d64"><div class="ttname"><a href="../../d7/d3a/classnut_1_1_tape_l_e_d.html#a0afd2e0b197877f7fb10e71d14383d64">nut::TapeLED::SetHSV</a></div><div class="ttdeci">void SetHSV(float h, float s, float v)</div><div class="ttdoc">HSVセット</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d2a/_tape_l_e_d_8hpp_source.html#l00096">TapeLED.hpp:96</a></div></div>
+<div class="ttc" id="aclassnut_1_1_tape_l_e_d_html"><div class="ttname"><a href="../../d7/d3a/classnut_1_1_tape_l_e_d.html">nut::TapeLED</a></div><div class="ttdoc">テープLEDクラス</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d2a/_tape_l_e_d_8hpp_source.html#l00014">TapeLED.hpp:14</a></div></div>
+<div class="ttc" id="aclassnut_1_1_tape_l_e_d_html_add20486abe2bb89d40824116532b9bbb"><div class="ttname"><a href="../../d7/d3a/classnut_1_1_tape_l_e_d.html#add20486abe2bb89d40824116532b9bbb">nut::TapeLED::Start</a></div><div class="ttdeci">void Start()</div><div class="ttdoc">LED制御開始</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d2a/_tape_l_e_d_8hpp_source.html#l00035">TapeLED.hpp:35</a></div></div>
+<div class="ttc" id="aclassnut_1_1_p_w_mch_html_a7b286ddf8b1f890d8a3ae0b2e7b6b6c1"><div class="ttname"><a href="../../d7/d56/classnut_1_1_p_w_mch.html#a7b286ddf8b1f890d8a3ae0b2e7b6b6c1">nut::PWMch::Stop</a></div><div class="ttdeci">void Stop()</div><div class="ttdoc">PWMストップ</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/dd9/_p_w_mch_8hpp_source.html#l00053">PWMch.hpp:53</a></div></div>
+<div class="ttc" id="aclassnut_1_1_tape_l_e_d_html_abc8e8621201440b9537e47b4b98c8024"><div class="ttname"><a href="../../d7/d3a/classnut_1_1_tape_l_e_d.html#abc8e8621201440b9537e47b4b98c8024">nut::TapeLED::SetHSV</a></div><div class="ttdeci">void SetHSV(uint8_t h, uint8_t s, uint8_t v)</div><div class="ttdoc">HSVセット</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d2a/_tape_l_e_d_8hpp_source.html#l00148">TapeLED.hpp:148</a></div></div>
+<div class="ttc" id="aclassnut_1_1_tape_l_e_d_html_a8b35992d0b4e76db02dfcc96f4cfc68d"><div class="ttname"><a href="../../d7/d3a/classnut_1_1_tape_l_e_d.html#a8b35992d0b4e76db02dfcc96f4cfc68d">nut::TapeLED::TapeLED</a></div><div class="ttdeci">TapeLED(PWMch r_ch, PWMch g_ch, PWMch b_ch)</div><div class="ttdoc">コンストラクタ</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d2a/_tape_l_e_d_8hpp_source.html#l00027">TapeLED.hpp:27</a></div></div>
+<div class="ttc" id="aclassnut_1_1_tape_l_e_d_html_ad5bb7cafc4c2566b67f87b293cd6b50c"><div class="ttname"><a href="../../d7/d3a/classnut_1_1_tape_l_e_d.html#ad5bb7cafc4c2566b67f87b293cd6b50c">nut::TapeLED::SetRGB</a></div><div class="ttdeci">void SetRGB(float r, float g, float b)</div><div class="ttdoc">RGBセット</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d2a/_tape_l_e_d_8hpp_source.html#l00056">TapeLED.hpp:56</a></div></div>
+<div class="ttc" id="aclassnut_1_1_tape_l_e_d_html_ac151ea9ad4c174d6ee39014068c3de15"><div class="ttname"><a href="../../d7/d3a/classnut_1_1_tape_l_e_d.html#ac151ea9ad4c174d6ee39014068c3de15">nut::TapeLED::SetRGB</a></div><div class="ttdeci">void SetRGB(std::array&lt; float, 3 &gt; val)</div><div class="ttdoc">RGBセット</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d2a/_tape_l_e_d_8hpp_source.html#l00066">TapeLED.hpp:66</a></div></div>
+<div class="ttc" id="a_p_w_mch_8hpp_html"><div class="ttname"><a href="../../d8/dd9/_p_w_mch_8hpp.html">PWMch.hpp</a></div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_8b1cfa3accea10fc5ecd39c63013c190.html">NutLib</a></li><li class="navelem"><a class="el" href="../../dir_e8fb95b603c706a6281aaf6aeed4173d.html">Etc</a></li><li class="navelem"><a class="el" href="../../d0/d2a/_tape_l_e_d_8hpp.html">TapeLED.hpp</a></li>
+    <li class="footer">構築: <a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
+  </ul>
+</div>
+</body>
+</html>

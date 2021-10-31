@@ -14,6 +14,10 @@
 
 namespace nut{
 /**
+ * @brief 足周りのコードサンプル
+ * @example Chassis.cpp
+ */
+/**
  * @brief 機体足回り基底純粋仮想クラス
  */
 class Chassis{
@@ -75,12 +79,12 @@ public:
 	/**
 	 * @brief 速度入力
 	 * @param[in] velocity 速度[m/s],[rad/s]
-	 * @param[in] origin 速度[m/s],[rad/s]
+	 * @param[in] origin 指示座標原点[m/s],[rad/s]
 	 * @return 速度入力可能か
 	 */
-	virtual bool SetVelocity(Coordinate<float> velocity, Coordinate<float> origen){
-		float norm = origen.Norm().f() * velocity.theta().f();
-		Eigen::Vector2f tmp{norm * std::cos(origen.Angle().f() - M_PI_2_f), -norm * std::sin(origen.Angle().f() - M_PI_2_f)};
+	virtual bool SetVelocity(Coordinate<float> velocity, Coordinate<float> origin){
+		float norm = origin.Norm().f() * velocity.theta().f();
+		Eigen::Vector2f tmp{norm * std::cos(origin.Angle().f() - M_PI_2_f), -norm * std::sin(origin.Angle().f() - M_PI_2_f)};
 		SetVelocity(velocity + tmp);
 		return true;
 	}
@@ -88,7 +92,7 @@ public:
 	/**
 	 * @brief 速度入力
 	 * @param[in] velocity_mps 速度[m/s]
-	 * @param[in] rot_radps [rad/s]
+	 * @param[in] rot_radps 角速度[rad/s]
 	 * @return 速度入力可能か
 	 */
 	virtual bool SetVelocity(Eigen::Vector2f velocity_mps, float rot_radps){
@@ -99,12 +103,13 @@ public:
 	}
 	/**
 	 * @brief 速度入力
-	 * @param[in] velocity 速度[m/s],[rad/s]
-	 * @param[in] origin 速度[m/s],[rad/s]
+	 * @param[in] velocity_mps 速度[m/s]
+	 * @param[in] rot_radps 角速度[rad/s]
+	 * @param[in] origin 指示座標原点[m/s],[rad/s]
 	 * @return 速度入力可能か
 	 */
-	virtual bool SetVelocity(Eigen::Vector2f velocity_mps, float rot_radps, Coordinate<float> origen){
-		float norm = origen.Norm().f() * rot_radps;
+	virtual bool SetVelocity(Eigen::Vector2f velocity_mps, float rot_radps, Coordinate<float> origin){
+		float norm = origin.Norm().f() * rot_radps;
 		float rad = std::atan2(velocity_mps.y(), velocity_mps.x());
 		Eigen::Vector2f tmp{norm * std::cos(rad + M_PI_2_f), -norm * std::sin(rad + M_PI_2_f)};
 		SetVelocity(velocity_mps + tmp, rot_radps);
@@ -113,7 +118,7 @@ public:
 
 	/**
 	 * @brief 入力速度取得
-	 * @return 入力速度[m/s]
+	 * @return 入力速度[m/s],[rad/s]
 	 */
 	virtual const Coordinate<float> GetVelocity() const{
 		return _target_velocity;

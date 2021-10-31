@@ -1,10 +1,15 @@
 /**
- * マブチの性能線図から計算した値なので全然正しくない
+ * @brief DCモータのパラメータまとめ
+ * @details マブチの性能線図から計算した値なので全然正しくない
+ * 正しい値が欲しければ問い合わせ
  */
 #pragma once
 
 #include "DCMotorParam.hpp"
 
+/**
+ * @brief パラメータ類を置いとく名前空間
+ */
 namespace nut::params{
 	inline constexpr DCMotorParam RZ_735VA_9517	{7.975e-1, 7.088e-5, 8.259e-3, 2.318e-2, 5.718e-2};
 	inline constexpr DCMotorParam RZ_735VA_8519	{7.975e-1, 7.088e-5, 8.500e-3, 1.250e-2, 5.950e-2};

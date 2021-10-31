@@ -9,7 +9,7 @@
 #include "../Global.hpp"
 
 namespace nut{
-/*
+/**
  * @brief ROSトピックのjoycon定義のコピークラス
  * @details
  * XboxController使おうと思ったけど、マイコン側でエンコードするのだるいから

@@ -1,11 +1,23 @@
 var searchData=
 [
-  ['m_5f2pi_5ff_1309',['M_2PI_f',['../d2/d88/_global_8hpp.html#a2ee93ef6e1e3b5d1729900b8fa563931',1,'Global.hpp']]],
-  ['m_5fpi_5f2_5ff_1310',['M_PI_2_f',['../d2/d88/_global_8hpp.html#af764d117dca888425c96cf0bb4f5bd19',1,'Global.hpp']]],
-  ['m_5fpi_5ff_1311',['M_PI_f',['../d2/d88/_global_8hpp.html#aec1eaa9c308e28b44ea6f1f930fcc560',1,'Global.hpp']]],
-  ['mailbox_1312',['mailbox',['../d9/dd8/structnut_1_1_c_a_n_wrapper_1_1_tx_data_type.html#a4fe4ce41b81bb21486770ca4d67c4d4d',1,'nut::CANWrapper::TxDataType']]],
-  ['measurement_5ftiming_5fbudget_5fus_1313',['measurement_timing_budget_us',['../d7/df1/classnut_1_1_v_l53_l0_x.html#a53f2a86e9dd7aa9000ac98802f59b7bf',1,'nut::VL53L0X']]],
-  ['msrc_1314',['msrc',['../df/d49/structnut_1_1_v_l53_l0_x_1_1_sequence_step_enables.html#ab43484a5f06c9333b9467f2bd3d43eb0',1,'nut::VL53L0X::SequenceStepEnables']]],
-  ['msrc_5fdss_5ftcc_5fmclks_1315',['msrc_dss_tcc_mclks',['../d7/dfc/structnut_1_1_v_l53_l0_x_1_1_sequence_step_timeouts.html#a1f0968d82d805d17f3f0017cf33e29e3',1,'nut::VL53L0X::SequenceStepTimeouts']]],
-  ['msrc_5fdss_5ftcc_5fus_1316',['msrc_dss_tcc_us',['../d7/dfc/structnut_1_1_v_l53_l0_x_1_1_sequence_step_timeouts.html#adb7bc536220afe5d8d47da0156073ac3',1,'nut::VL53L0X::SequenceStepTimeouts']]]
+  ['ps3_5fanalog_5flx_1314',['PS3_ANALOG_LX',['../d6/de4/classnut_1_1_dual_shock.html#a181a727e74157e0f6dbfd4206c1fa31d',1,'nut::DualShock']]],
+  ['ps3_5fanalog_5fly_1315',['PS3_ANALOG_LY',['../d6/de4/classnut_1_1_dual_shock.html#a6628220213aed98b837621dce3ff04df',1,'nut::DualShock']]],
+  ['ps3_5fanalog_5frx_1316',['PS3_ANALOG_RX',['../d6/de4/classnut_1_1_dual_shock.html#acbc1c8bc8e1f678202afeee6d6d75cdf',1,'nut::DualShock']]],
+  ['ps3_5fanalog_5fry_1317',['PS3_ANALOG_RY',['../d6/de4/classnut_1_1_dual_shock.html#ae7152bed7e2b2e6e41e32512149f6309',1,'nut::DualShock']]],
+  ['ps3_5fcircle_1318',['PS3_CIRCLE',['../d6/de4/classnut_1_1_dual_shock.html#a166196c8a24c3575001e919262c7cb4e',1,'nut::DualShock']]],
+  ['ps3_5fcross_1319',['PS3_CROSS',['../d6/de4/classnut_1_1_dual_shock.html#aa421771f9886f3fed2b2fbe60f06cb7b',1,'nut::DualShock']]],
+  ['ps3_5fdown_1320',['PS3_DOWN',['../d6/de4/classnut_1_1_dual_shock.html#a389a1bb7bdd540ea2a2ebbd57e6935cf',1,'nut::DualShock']]],
+  ['ps3_5fl1_1321',['PS3_L1',['../d6/de4/classnut_1_1_dual_shock.html#a9da196045377fb129f32060c298c9e3e',1,'nut::DualShock']]],
+  ['ps3_5fl2_1322',['PS3_L2',['../d6/de4/classnut_1_1_dual_shock.html#aee5ccb96e2dea379ef33c08a1ead62be',1,'nut::DualShock']]],
+  ['ps3_5fl3_1323',['PS3_L3',['../d6/de4/classnut_1_1_dual_shock.html#ad0966b858c69638dd771d2e006e240ee',1,'nut::DualShock']]],
+  ['ps3_5fleft_1324',['PS3_LEFT',['../d6/de4/classnut_1_1_dual_shock.html#ae4d25b4e096430232389110be8ea1720',1,'nut::DualShock']]],
+  ['ps3_5fr1_1325',['PS3_R1',['../d6/de4/classnut_1_1_dual_shock.html#a4fd54591b17c3f409485c94d0393fd6e',1,'nut::DualShock']]],
+  ['ps3_5fr2_1326',['PS3_R2',['../d6/de4/classnut_1_1_dual_shock.html#acd3cd3574f31cf689772a2da1dfcaed1',1,'nut::DualShock']]],
+  ['ps3_5fr3_1327',['PS3_R3',['../d6/de4/classnut_1_1_dual_shock.html#a7b6332c6b3b892fef3cf0da9a2983763',1,'nut::DualShock']]],
+  ['ps3_5fright_1328',['PS3_RIGHT',['../d6/de4/classnut_1_1_dual_shock.html#a7f1fb45ea2eb3f98824b3b61c0483bdb',1,'nut::DualShock']]],
+  ['ps3_5fselect_1329',['PS3_SELECT',['../d6/de4/classnut_1_1_dual_shock.html#a71759d930378bb46f2131f7021c557e0',1,'nut::DualShock']]],
+  ['ps3_5fsquare_1330',['PS3_SQUARE',['../d6/de4/classnut_1_1_dual_shock.html#a94d7c0a5f164d4bdd370c3827e6f2beb',1,'nut::DualShock']]],
+  ['ps3_5fstart_1331',['PS3_START',['../d6/de4/classnut_1_1_dual_shock.html#ae6eaed3c203220be08f063aafd3e9efa',1,'nut::DualShock']]],
+  ['ps3_5ftriangle_1332',['PS3_TRIANGLE',['../d6/de4/classnut_1_1_dual_shock.html#aa4ff2a17297f65ff2d13923273011f9a',1,'nut::DualShock']]],
+  ['ps3_5fup_1333',['PS3_UP',['../d6/de4/classnut_1_1_dual_shock.html#ae9c71d865a43cc6b41943ef326b2c341',1,'nut::DualShock']]]
 ];

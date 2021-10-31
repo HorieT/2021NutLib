@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['degre_1370',['Degre',['../dd/d51/namespacenut.html#a3a13666eedb8b5d4dfc36ea2b86ccd20',1,'nut']]]
+  ['degree_1364',['Degree',['../dd/d51/namespacenut.html#a169dd2204d1f4a1129cddc1a236a7762',1,'nut']]]
 ];

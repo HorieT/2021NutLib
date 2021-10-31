@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['xboxcontroller_842',['XboxController',['../d0/d9d/classnut_1_1_xbox_controller.html',1,'nut']]]
+  ['vecpid_818',['VecPID',['../d2/d44/classnut_1_1_vec_p_i_d.html',1,'nut']]]
 ];

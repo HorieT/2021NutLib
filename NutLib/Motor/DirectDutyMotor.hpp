@@ -269,7 +269,7 @@ public:
 
 	/* getter */
 
-	/*
+	/**
 	 * @brief PWMタイマ取得
 	 * @return PWMタイマ
 	 */

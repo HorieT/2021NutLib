@@ -101,9 +101,6 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 <li>_channel
 : <a class="el" href="db/d01/classnut_1_1_direct_duty_motor.html#a6cde526f0009e24529cfbad7075f0402">nut::DirectDutyMotor</a>
 </li>
-<li>_coefficient
-: <a class="el" href="df/dd5/classnut_1_1_omni_chassis.html#af61b092160264da42ebc3366a7329024">nut::OmniChassis&lt; N &gt;</a>
-</li>
 <li>_current_pid
 : <a class="el" href="d5/da2/classnut_1_1_motor.html#a153142a7b3a2c77cb48632a93d46ce4c">nut::Motor</a>
 </li>
@@ -137,12 +134,8 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 <li>_gpio_port
 : <a class="el" href="db/d01/classnut_1_1_direct_duty_motor.html#a2894909c1ab2233f402727e1ffb0ec2b">nut::DirectDutyMotor</a>
 </li>
-<li>_hi2c
-: <a class="el" href="d7/df1/classnut_1_1_v_l53_l0_x.html#a3d321376f5b107eca06fe2883ef2853d">nut::VL53L0X</a>
-</li>
 <li>_htim
 : <a class="el" href="db/d01/classnut_1_1_direct_duty_motor.html#a8dd78a0ee4b682dd713e2aa8b28f98cd">nut::DirectDutyMotor</a>
-, <a class="el" href="d7/df1/classnut_1_1_v_l53_l0_x.html#a91516b37e47d15f433bd53f3253dd60e">nut::VL53L0X</a>
 </li>
 <li>_I_gain
 : <a class="el" href="df/ddb/classnut_1_1_p_i_d_base.html#ae3f7c5ea0a97bea0419388283e40a451">nut::PIDBase&lt; T &gt;</a>
@@ -160,6 +153,7 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 : <a class="el" href="df/d9b/classnut_1_1_encoder.html#a4215259d653f25dca6de0845407a3b8a">nut::Encoder</a>
 , <a class="el" href="db/d8d/classnut_1_1_i_m_u.html#a43905a0ee530c7de7d9b51e35e705a37">nut::IMU</a>
 , <a class="el" href="d5/da2/classnut_1_1_motor.html#a097393bddd50dd35481c29af3b038763">nut::Motor</a>
+, <a class="el" href="d0/d98/classnut_1_1_servo_motor.html#a081fbdf26b149f8b304584ee3e13a7d2">nut::ServoMotor</a>
 , <a class="el" href="db/d47/classnut_1_1_steer_driver.html#a622da1a91a1a614fdaba9e212dd6028e">nut::SteerDriver</a>
 </li>
 <li>_is_move
@@ -176,6 +170,9 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 </li>
 <li>_mode
 : <a class="el" href="d9/d6a/classnut_1_1_steer_chassis_base.html#a7d07513b45a9a1ba17a975427021d958">nut::SteerChassisBase</a>
+</li>
+<li>_motion_range
+: <a class="el" href="d0/d98/classnut_1_1_servo_motor.html#a161db7158e70965488b7e68ffc856a81">nut::ServoMotor</a>
 </li>
 <li>_motor
 : <a class="el" href="dc/d39/classnut_1_1_drive_wheel.html#a7f88d939f831edb04ca891be2710817d">nut::DriveWheel</a>
@@ -215,6 +212,9 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 <li>_position
 : <a class="el" href="dc/d39/classnut_1_1_drive_wheel.html#a7cd20e22da38246775b99671b239b5ab">nut::DriveWheel</a>
 </li>
+<li>_pwm
+: <a class="el" href="d0/d98/classnut_1_1_servo_motor.html#a4a3bce9b117cb23e3834a12d6f64b535">nut::ServoMotor</a>
+</li>
 <li>_rad_pid
 : <a class="el" href="d5/da2/classnut_1_1_motor.html#a96e15c6af46b58dc17125b4ae4a1270d">nut::Motor</a>
 </li>
@@ -234,7 +234,6 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 : <a class="el" href="d9/dc6/classnut_1_1_chassis.html#affef51990647fae61b8c4e0fe9488de0">nut::Chassis</a>
 , <a class="el" href="d5/da2/classnut_1_1_motor.html#a3e7f0ef80cbc1fde3400dcfb83405de0">nut::Motor</a>
 , <a class="el" href="db/d47/classnut_1_1_steer_driver.html#a25c905d02450270271801704602ed557">nut::SteerDriver</a>
-, <a class="el" href="d7/df1/classnut_1_1_v_l53_l0_x.html#a7d881cafcfd3def4b52758e919fa9dc8">nut::VL53L0X</a>
 </li>
 <li>_sensor_acc
 : <a class="el" href="db/d8d/classnut_1_1_i_m_u.html#a6b91a8f39d12570c1e80f7ddae486b36">nut::IMU</a>
@@ -264,28 +263,6 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 <li>_turn_polarity
 : <a class="el" href="d5/da2/classnut_1_1_motor.html#a7221454671abae0f74fa273abe295805">nut::Motor</a>
 </li>
-<li>_wheel
-: <a class="el" href="df/dd5/classnut_1_1_omni_chassis.html#aee96050d0d69a512a0b646d32df059bf">nut::OmniChassis&lt; N &gt;</a>
-</li>
-<li>_wheel_length
-: <a class="el" href="df/dd5/classnut_1_1_omni_chassis.html#a08fea323c663499aae6788d9e923b2aa">nut::OmniChassis&lt; N &gt;</a>
-</li>
-<li>_wheel_polarity
-: <a class="el" href="df/dd5/classnut_1_1_omni_chassis.html#a4dec15581fd8ae8d9d9112ef1fe50194">nut::OmniChassis&lt; N &gt;</a>
-</li>
-<li>_wheel_position
-: <a class="el" href="df/dd5/classnut_1_1_omni_chassis.html#ad179a8ded056a3f1b25de7c242f3ae1d">nut::OmniChassis&lt; N &gt;</a>
-</li>
-</ul>
-
-
-<h3><a id="index_a"></a>- a -</h3><ul>
-<li>address
-: <a class="el" href="d7/df1/classnut_1_1_v_l53_l0_x.html#adadd858c0f171b2583d95dadbdcb3577">nut::VL53L0X</a>
-</li>
-<li>ADDRESS_DEFAULT
-: <a class="el" href="d7/df1/classnut_1_1_v_l53_l0_x.html#ab02086d754dd0301d449ae5e376ecc57">nut::VL53L0X</a>
-</li>
 </ul>
 
 
@@ -304,28 +281,6 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 <li>den
 : <a class="el" href="d2/d58/classnut_1_1unit_1_1_prefix.html#ae02bad16659350f5257f2b2be7ac73e4">nut::unit::Prefix&lt; N, D &gt;</a>
 </li>
-<li>did_timeout
-: <a class="el" href="d7/df1/classnut_1_1_v_l53_l0_x.html#a564f256d67b5e3818074ff07dae73aa2">nut::VL53L0X</a>
-</li>
-<li>dss
-: <a class="el" href="df/d49/structnut_1_1_v_l53_l0_x_1_1_sequence_step_enables.html#a0cbe8c65fa7e98901c7b99dfcfc02185">nut::VL53L0X::SequenceStepEnables</a>
-</li>
-</ul>
-
-
-<h3><a id="index_f"></a>- f -</h3><ul>
-<li>final_range
-: <a class="el" href="df/d49/structnut_1_1_v_l53_l0_x_1_1_sequence_step_enables.html#ad002fc6c24460dd3da6570e175afbb4b">nut::VL53L0X::SequenceStepEnables</a>
-</li>
-<li>final_range_mclks
-: <a class="el" href="d7/dfc/structnut_1_1_v_l53_l0_x_1_1_sequence_step_timeouts.html#ad2ce445a340ab82f6fa23b4206b47c3e">nut::VL53L0X::SequenceStepTimeouts</a>
-</li>
-<li>final_range_us
-: <a class="el" href="d7/dfc/structnut_1_1_v_l53_l0_x_1_1_sequence_step_timeouts.html#a56cc269bbea935408803f82d44209419">nut::VL53L0X::SequenceStepTimeouts</a>
-</li>
-<li>final_range_vcsel_period_pclks
-: <a class="el" href="d7/dfc/structnut_1_1_v_l53_l0_x_1_1_sequence_step_timeouts.html#aa8da426de767a150d6f7eb16eddef3db">nut::VL53L0X::SequenceStepTimeouts</a>
-</li>
 </ul>
 
 
@@ -337,19 +292,9 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 </ul>
 
 
-<h3><a id="index_i"></a>- i -</h3><ul>
-<li>io_timeout
-: <a class="el" href="d7/df1/classnut_1_1_v_l53_l0_x.html#a2bd1dfc91a5157e6cf277adfcc638e4b">nut::VL53L0X</a>
-</li>
-</ul>
-
-
 <h3><a id="index_l"></a>- l -</h3><ul>
 <li>last_rad
 : <a class="el" href="db/d01/classnut_1_1_direct_duty_motor.html#a46b93decc586b6b1b2af979ade153489">nut::DirectDutyMotor</a>
-</li>
-<li>last_status
-: <a class="el" href="d7/df1/classnut_1_1_v_l53_l0_x.html#a2406f9a358b65898ea7dd67519724a17">nut::VL53L0X</a>
 </li>
 <li>leftX
 : <a class="el" href="df/d3b/structnut_1_1_joycon_r_o_s_1_1_button_data.html#a2e36cd60fa3f91f1caac74da2a317441">nut::JoyconROS::ButtonData</a>
@@ -364,18 +309,6 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 <li>mailbox
 : <a class="el" href="d9/dd8/structnut_1_1_c_a_n_wrapper_1_1_tx_data_type.html#a4fe4ce41b81bb21486770ca4d67c4d4d">nut::CANWrapper::TxDataType</a>
 </li>
-<li>measurement_timing_budget_us
-: <a class="el" href="d7/df1/classnut_1_1_v_l53_l0_x.html#a53f2a86e9dd7aa9000ac98802f59b7bf">nut::VL53L0X</a>
-</li>
-<li>msrc
-: <a class="el" href="df/d49/structnut_1_1_v_l53_l0_x_1_1_sequence_step_enables.html#ab43484a5f06c9333b9467f2bd3d43eb0">nut::VL53L0X::SequenceStepEnables</a>
-</li>
-<li>msrc_dss_tcc_mclks
-: <a class="el" href="d7/dfc/structnut_1_1_v_l53_l0_x_1_1_sequence_step_timeouts.html#a1f0968d82d805d17f3f0017cf33e29e3">nut::VL53L0X::SequenceStepTimeouts</a>
-</li>
-<li>msrc_dss_tcc_us
-: <a class="el" href="d7/dfc/structnut_1_1_v_l53_l0_x_1_1_sequence_step_timeouts.html#adb7bc536220afe5d8d47da0156073ac3">nut::VL53L0X::SequenceStepTimeouts</a>
-</li>
 </ul>
 
 
@@ -387,18 +320,6 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 
 
 <h3><a id="index_p"></a>- p -</h3><ul>
-<li>pre_range
-: <a class="el" href="df/d49/structnut_1_1_v_l53_l0_x_1_1_sequence_step_enables.html#aa613da7b2b5714f28723a7d669475c36">nut::VL53L0X::SequenceStepEnables</a>
-</li>
-<li>pre_range_mclks
-: <a class="el" href="d7/dfc/structnut_1_1_v_l53_l0_x_1_1_sequence_step_timeouts.html#a24af61152fbd8f2ded38d9f13b2684b6">nut::VL53L0X::SequenceStepTimeouts</a>
-</li>
-<li>pre_range_us
-: <a class="el" href="d7/dfc/structnut_1_1_v_l53_l0_x_1_1_sequence_step_timeouts.html#ab5d25a1b3347ba17d5cfc026a8a9fd1f">nut::VL53L0X::SequenceStepTimeouts</a>
-</li>
-<li>pre_range_vcsel_period_pclks
-: <a class="el" href="d7/dfc/structnut_1_1_v_l53_l0_x_1_1_sequence_step_timeouts.html#a6b09b8515a10340da3a58cb1c2aa2490">nut::VL53L0X::SequenceStepTimeouts</a>
-</li>
 <li>PS3_ANALOG_LX
 : <a class="el" href="d6/de4/classnut_1_1_dual_shock.html#a181a727e74157e0f6dbfd4206c1fa31d">nut::DualShock</a>
 </li>
@@ -469,37 +390,11 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 <li>RATIO
 : <a class="el" href="d2/d58/classnut_1_1unit_1_1_prefix.html#af100776df38b0b76d3eea24293b499a5">nut::unit::Prefix&lt; N, D &gt;</a>
 </li>
-<li>READ_TIMEOUT
-: <a class="el" href="d7/df1/classnut_1_1_v_l53_l0_x.html#a007e52cbbc13ad631b537ed48101941e">nut::VL53L0X</a>
-</li>
 <li>rightX
 : <a class="el" href="df/d3b/structnut_1_1_joycon_r_o_s_1_1_button_data.html#aa1a81c10caa8d80adf3e57c2ab1c2d4a">nut::JoyconROS::ButtonData</a>
 </li>
 <li>rightY
 : <a class="el" href="df/d3b/structnut_1_1_joycon_r_o_s_1_1_button_data.html#a2c141e65ecf659152b78b209b7b768e6">nut::JoyconROS::ButtonData</a>
-</li>
-</ul>
-
-
-<h3><a id="index_s"></a>- s -</h3><ul>
-<li>SETTING_TIMEOUT
-: <a class="el" href="d7/df1/classnut_1_1_v_l53_l0_x.html#a8ef0fdf80cb65e31b65a00a64d44f3b0">nut::VL53L0X</a>
-</li>
-<li>stop_variable
-: <a class="el" href="d7/df1/classnut_1_1_v_l53_l0_x.html#a69c6e3d9b7ae316c71392fa5ef4ead6d">nut::VL53L0X</a>
-</li>
-</ul>
-
-
-<h3><a id="index_t"></a>- t -</h3><ul>
-<li>tcc
-: <a class="el" href="df/d49/structnut_1_1_v_l53_l0_x_1_1_sequence_step_enables.html#a7f68087496c46fc2e0b5a5dbd6740dc1">nut::VL53L0X::SequenceStepEnables</a>
-</li>
-<li>timeout_flag
-: <a class="el" href="d7/df1/classnut_1_1_v_l53_l0_x.html#a46b32f4007020a87afe1b9cd46eba414">nut::VL53L0X</a>
-</li>
-<li>timeout_start_ms
-: <a class="el" href="d7/df1/classnut_1_1_v_l53_l0_x.html#a37431d2a1b14faee591fce6dded27e0b">nut::VL53L0X</a>
 </li>
 </ul>
 

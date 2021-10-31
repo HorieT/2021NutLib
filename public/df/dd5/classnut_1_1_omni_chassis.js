@@ -1,11 +1,7 @@
 var classnut_1_1_omni_chassis =
 [
-    [ "OmniChassis", "df/dd5/classnut_1_1_omni_chassis.html#a19d8fbb3ad6ccddd91e3e5cbda773b59", null ],
-    [ "~OmniChassis", "df/dd5/classnut_1_1_omni_chassis.html#ad8be9a8f11197032b4af8c28d287c0df", null ],
-    [ "ScheduleTask", "df/dd5/classnut_1_1_omni_chassis.html#a909d778161ff44a4905980b35ab8dda4", null ],
-    [ "_coefficient", "df/dd5/classnut_1_1_omni_chassis.html#af61b092160264da42ebc3366a7329024", null ],
-    [ "_wheel", "df/dd5/classnut_1_1_omni_chassis.html#aee96050d0d69a512a0b646d32df059bf", null ],
-    [ "_wheel_length", "df/dd5/classnut_1_1_omni_chassis.html#a08fea323c663499aae6788d9e923b2aa", null ],
-    [ "_wheel_polarity", "df/dd5/classnut_1_1_omni_chassis.html#a4dec15581fd8ae8d9d9112ef1fe50194", null ],
-    [ "_wheel_position", "df/dd5/classnut_1_1_omni_chassis.html#ad179a8ded056a3f1b25de7c242f3ae1d", null ]
+    [ "OmniChassis", "df/dd5/classnut_1_1_omni_chassis.html#affbf317ecdc61b5db573fa463085f015", null ],
+    [ "OmniChassis", "df/dd5/classnut_1_1_omni_chassis.html#ad6c79eb9558e0f9fe0dd77203633cdbb", null ],
+    [ "OmniChassis", "df/dd5/classnut_1_1_omni_chassis.html#ab053ef6b63036dd76552d13418912181", null ],
+    [ "~OmniChassis", "df/dd5/classnut_1_1_omni_chassis.html#ad8be9a8f11197032b4af8c28d287c0df", null ]
 ];

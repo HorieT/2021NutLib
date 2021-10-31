@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['writepage_1177',['WritePage',['../d8/d41/namespacenut_1_1flash.html#a146f53b8f8f1bdd6088724634101487c',1,'nut::flash::WritePage(uint32_t address, void *data, uint32_t size)'],['../d8/d41/namespacenut_1_1flash.html#a32c0c9eca6282db60957384a540251dc',1,'nut::flash::WritePage(uint32_t address, std::array&lt; uint8_t, N &gt; data)'],['../d8/d41/namespacenut_1_1flash.html#adc1d8fdc58cf334ec01c0da6a7cb9e91',1,'nut::flash::WritePage(uint32_t address, T *data)']]],
-  ['writereg_1178',['writeReg',['../d7/df1/classnut_1_1_v_l53_l0_x.html#adf7285bb55efe95d515db9d6d3511680',1,'nut::VL53L0X']]],
-  ['writereg16bit_1179',['writeReg16Bit',['../d7/df1/classnut_1_1_v_l53_l0_x.html#ad605a9ea5ac3dc1d9a3c4936f5e9a969',1,'nut::VL53L0X']]],
-  ['writereg32bit_1180',['writeReg32Bit',['../d7/df1/classnut_1_1_v_l53_l0_x.html#ace4664fedbc633fd9521493ecd307da7',1,'nut::VL53L0X']]],
-  ['writesector_1181',['WriteSector',['../d8/d41/namespacenut_1_1flash.html#aa392b7de3d8a47b5ee110ab6f56f89a0',1,'nut::flash::WriteSector(uint32_t sector, uint32_t address, void *data, uint32_t size)'],['../d8/d41/namespacenut_1_1flash.html#aad465a61c971220d734f864d41068fd2',1,'nut::flash::WriteSector(uint32_t sector, uint32_t address, std::array&lt; uint8_t, N &gt; data)'],['../d8/d41/namespacenut_1_1flash.html#a2b604ef0e18d71eb0e3e38c433fe40e1',1,'nut::flash::WriteSector(uint32_t sector, uint32_t address, T *data)']]]
+  ['value_1179',['value',['../db/dcb/classnut_1_1unit_1_1_unit.html#a09d4602fe2852dc6ebe1ae330d9f0ede',1,'nut::unit::Unit']]],
+  ['vecpid_1180',['VecPID',['../d2/d44/classnut_1_1_vec_p_i_d.html#a1c964663bf9ddb0dc97106655d0b9e0a',1,'nut::VecPID']]]
 ];

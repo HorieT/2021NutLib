@@ -16,7 +16,9 @@ namespace nut{
 /**
  * @brief アブソリュート型エンコーダクラス
  * @attention というのは偽りで現状AMT20系列専用クラス.
- * そのうちちゃんと派生させます(誰かやって)
+ * そのうちちゃんと派生させます(誰かやって)//
+ * それと1つの485バスで複数稼働させることも考慮してないです
+ *
  */
 class AbsEncoder : public Encoder{
 private:
@@ -59,10 +61,21 @@ private:
 
 
 public:
+	/**
+	 * @brief コンストラクタ
+	 * @param[in] resolution 分解能
+	 * @attention 12bit,14bitにしか対応してません
+	 * @param[in] huart RS485用uartハンドル
+	 * @param[in] port RS485用enableGPIO
+	 * @param[in] pin RS485用enableGPIO
+	 */
 	AbsEncoder(uint32_t resolution, UART_HandleTypeDef* huart, GPIO_TypeDef* port, uint16_t pin)
 		: Encoder(resolution), _huart(huart), _port(port), _pin(pin), _scheduler([this]{Reqest();}, 1){
 
 	}
+	/**
+	 * @brief デストラクタ
+	 */
 	virtual ~AbsEncoder(){
 
 	}
@@ -82,11 +95,11 @@ public:
 	/**
 	 * @brief 初期化
 	 */
-	virtual void Deinit() override{/*
+	virtual void Deinit() override{
 		if(!_is_init)return;
 		_is_init = false;
 		callback::UART_RxComplete.EraseExclusiveCallback(_rx_it);
-		_scheduler.Erase();*/
+		_scheduler.Erase();
 	}
 
 	/**
@@ -101,7 +114,7 @@ public:
 
 	/**
 	 * @brief 角度取得
-	 * @return 角度[rad]
+	 * @return 角度
 	 */
 	virtual Radian<float> GetRad() override{
 		return (_bit - static_cast<int32_t>(_last_bit)) * M_2PI_f / static_cast<float>(_resolution);
@@ -110,7 +123,7 @@ public:
 	/**
 	 * @brief 角度取得&カウントリセット
 	 * @details 周期角度取得精度を上げるためのもの
-	 * @return 角度[rad]
+	 * @return 角度
 	 */
 	virtual Radian<float> GetRadAndReset() override{
 		float value = (_bit - static_cast<int32_t>(_last_bit)) * M_2PI_f / static_cast<float>(_resolution);

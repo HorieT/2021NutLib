@@ -11,6 +11,9 @@
 #include <memory>
 
 namespace nut{
+/**
+ * @brief 2021モータドライバ
+ */
 class MD2021 : public Motor{
 public:
 	enum class Mode{
@@ -108,7 +111,7 @@ protected:
 		return false;
 	}
 
-	/*
+	/**
 	 * @brief 変換メンバ関数
 	 */
 	can_protocol::motor::SpecialOperation ConvertOpration(Mode mode, bool debug = false){

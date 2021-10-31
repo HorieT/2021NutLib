@@ -15,6 +15,9 @@
 
 namespace nut{
 /**
+ * @example Chassis.cpp
+ */
+/**
  * @brief 操舵と駆動一体型MDによるステア足周りクラス
  */
 template<uint8_t N>
@@ -78,16 +81,24 @@ private:
 
 
 public:
+	/**
+	 *  @brief コンストラクタ
+	 *  @param[in] period 制御周期
+	 *  @param[in] odmetry オドメータ(なければヌルポ)
+	 *  @param[in] steer ステアドライバー
+	 *  @param[in] steer_pos ステア位置
+	 *  @param[in] diameter タイヤ径
+	 */
 	SteerChassisSp(
 		MilliSecond<uint32_t> period,
 		const std::shared_ptr<Odmetry>& odmetry,
 		const std::array<std::shared_ptr<SteerDriver>, N>& steer,
 		const std::array<Coordinate<float>, N>& steer_pos,
-		MilliMeter<float> diameter_mm)
+		MilliMeter<float> diameter)
 			: SteerChassisBase(period, odmetry),
 			  _steering(steer),
 			  _wheel_position(steer_pos),
-			  _diameter_mm(diameter_mm){
+			  _diameter_mm(diameter){
 
 		uint8_t i = 0;
 		for(auto& w_cos : const_cast<std::array<const float, N>&>(_wheel_cos)){

@@ -7,6 +7,5 @@ var classnut_1_1_control_app =
     [ "GetJoycon", "d0/d16/classnut_1_1_control_app.html#a8f06be5d7ad188ebd972814be5ad0291", null ],
     [ "IsEnableJoycon", "d0/d16/classnut_1_1_control_app.html#a349460459637f81fbb58a1e99773a3c4", null ],
     [ "ReadData", "d0/d16/classnut_1_1_control_app.html#a55f676fdf48a3d214b98683c70b8e0cf", null ],
-    [ "SendData", "d0/d16/classnut_1_1_control_app.html#ab4f84e0cba180f6f7e0ebc2a7bc94eb8", null ],
     [ "SendData", "d0/d16/classnut_1_1_control_app.html#aafa0c386e43adfcc0946f5b3533aaaa9", null ]
 ];

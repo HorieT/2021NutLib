@@ -22,7 +22,7 @@ var classnut_1_1_reiwa_m_d =
     [ "Deinit", "df/da1/classnut_1_1_reiwa_m_d.html#a3c1c2f97ab62afa3c6d412666036098f", null ],
     [ "Init", "df/da1/classnut_1_1_reiwa_m_d.html#a7ac369682056c692a7df5f4825ea95a7", null ],
     [ "ReadCanData", "df/da1/classnut_1_1_reiwa_m_d.html#acdd0993d2234cf66f6e2e5db73196e95", null ],
-    [ "ResetRadOrigin", "df/da1/classnut_1_1_reiwa_m_d.html#a39100c5ad64a7d4a5fdfe13fe78b6594", null ],
+    [ "ResetRadOrigin", "df/da1/classnut_1_1_reiwa_m_d.html#afa9775f631b3c0052322850f337dce88", null ],
     [ "ScheduleTask", "df/da1/classnut_1_1_reiwa_m_d.html#aad29ecc03b1e20118abd83e1b610824b", null ],
     [ "SendControlMode", "df/da1/classnut_1_1_reiwa_m_d.html#a4209d3d2b8dedaa939277d24c447be5a", null ],
     [ "SendData", "df/da1/classnut_1_1_reiwa_m_d.html#a8ebd4e3c997c4511b2e89a36e39015d9", null ],

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['decodevcselperiod_1615',['decodeVcselPeriod',['../dd/dc3/_v_l53_l0_x__trial_8hpp.html#a7dcb8458d7b06d003fc1c4786c492efa',1,'VL53L0X_trial.hpp']]]
+  ['use_5fnutlib_5fcallbacks_1572',['USE_NUTLIB_CALLBACKS',['../d2/d88/_global_8hpp.html#aa932e9dee0bbc904d21e7ec9da816a66',1,'Global.hpp']]]
 ];

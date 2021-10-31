@@ -15,6 +15,9 @@
 namespace nut{
 
 /**
+ * @example Chassis.cpp
+ */
+/**
  *　@brief 操舵と駆動が独立の基本的なステア足回り
  */
 template<uint8_t N>
@@ -96,6 +99,14 @@ private:
 
 
 public:
+	/**
+	 * @brief コンストラクタ
+	 * @param[in] period 制御周期
+	 * @param[in] odmetry オドメータインスタンス
+	 * @details オドメータを使わない場合はヌルポを入れてください
+	 * @param[in] wheel 駆動輪
+	 * @param[in] steering 操舵MD
+	 */
 	SteerChassis(
 		uint32_t period,
 		const std::shared_ptr<Odmetry>& odmetry,

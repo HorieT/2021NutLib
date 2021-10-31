@@ -1,14 +1,16 @@
 var classnut_1_1unit_1_1_unit =
 [
     [ "Unit", "db/dcb/classnut_1_1unit_1_1_unit.html#af4283ee01dee50cf9811bcd13adedc28", null ],
+    [ "Unit", "db/dcb/classnut_1_1unit_1_1_unit.html#ad199f2cde70b6bcf26d765c0ec4090f2", null ],
     [ "Unit", "db/dcb/classnut_1_1unit_1_1_unit.html#af074d28d6da9d12891e4e0b9ce7a8d39", null ],
     [ "Unit", "db/dcb/classnut_1_1unit_1_1_unit.html#a81bb77cf827ff26ae55276cf24a390ac", null ],
-    [ "d", "db/dcb/classnut_1_1unit_1_1_unit.html#ae2394d96b7d23ed78ce8358ce0c3c23c", null ],
+    [ "d", "db/dcb/classnut_1_1unit_1_1_unit.html#a12e447992c41436b4a2e58c9c191a2d6", null ],
     [ "f", "db/dcb/classnut_1_1unit_1_1_unit.html#a0aa46cb71709b5c0c0359f8e897ceaac", null ],
-    [ "i16", "db/dcb/classnut_1_1unit_1_1_unit.html#a2dc97810f20f6b5044b2c959ea686a0b", null ],
-    [ "i32", "db/dcb/classnut_1_1unit_1_1_unit.html#a58b66de4dfcddbd11c5da1c96e3b8efd", null ],
-    [ "i8", "db/dcb/classnut_1_1unit_1_1_unit.html#a60057b56d1008dea1cdd1e67452077e8", null ],
+    [ "i16", "db/dcb/classnut_1_1unit_1_1_unit.html#afedfddecc431672737125f5613fa7638", null ],
+    [ "i32", "db/dcb/classnut_1_1unit_1_1_unit.html#ae3fb639722e6e98e082f9b2be0002b7e", null ],
+    [ "i8", "db/dcb/classnut_1_1unit_1_1_unit.html#ad7a60f5f3541ead4defa1c75ba20a23d", null ],
     [ "operator A", "db/dcb/classnut_1_1unit_1_1_unit.html#ab4e8214c9bde4e6f3b6cb55001d03958", null ],
+    [ "operator Unit< TL, U, PL >", "db/dcb/classnut_1_1unit_1_1_unit.html#a0b5c7b66d948dce8dff1511afcb5f46d", null ],
     [ "operator*=", "db/dcb/classnut_1_1unit_1_1_unit.html#a23e6b457f875490fd226c1410bb49038", null ],
     [ "operator+", "db/dcb/classnut_1_1unit_1_1_unit.html#a5631c1f24828a08fa758cea7f6238e70", null ],
     [ "operator+=", "db/dcb/classnut_1_1unit_1_1_unit.html#a272e8500a05583a7a63e5ca316ecaf52", null ],
@@ -20,7 +22,8 @@ var classnut_1_1unit_1_1_unit =
     [ "operator=", "db/dcb/classnut_1_1unit_1_1_unit.html#a07afe01e46351966c5d1622c96320622", null ],
     [ "operator=", "db/dcb/classnut_1_1unit_1_1_unit.html#a479b7ac426c256225faa67f4e0b50d66", null ],
     [ "operator=", "db/dcb/classnut_1_1unit_1_1_unit.html#aebc932b08f9b74c73df4035eac0c6e63", null ],
-    [ "u16", "db/dcb/classnut_1_1unit_1_1_unit.html#a1dbeec960ffd05f4228bd8b18d70127a", null ],
-    [ "u32", "db/dcb/classnut_1_1unit_1_1_unit.html#aa148680708656aeeabf9af1674900fac", null ],
-    [ "u8", "db/dcb/classnut_1_1unit_1_1_unit.html#a27dbf1cebdbd266d1a1c542b27861319", null ]
+    [ "u16", "db/dcb/classnut_1_1unit_1_1_unit.html#a19e376ead1be90593c41d582cc636b94", null ],
+    [ "u32", "db/dcb/classnut_1_1unit_1_1_unit.html#aebd1b0f7c81e27e0a189ebe4b5c55811", null ],
+    [ "u8", "db/dcb/classnut_1_1unit_1_1_unit.html#a4cf80ac83b64dcebbc1d565d0a38f81a", null ],
+    [ "value", "db/dcb/classnut_1_1unit_1_1_unit.html#a09d4602fe2852dc6ebe1ae330d9f0ede", null ]
 ];

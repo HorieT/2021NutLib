@@ -13,6 +13,10 @@
 #include "../../TimeScheduler.hpp"
 
 namespace nut{
+/**
+ * @brief Tof通信変換基板クラス
+ * @details VL53L0xのI2C-CAN変換基板と通信する
+ */
 class TofBoard final{
 private:
 	static constexpr uint8_t DEFAULT_CAN_PRIORITY = 16;
@@ -29,6 +33,10 @@ private:
 	CANWrapper::RxExCallbackIt _recive_it;
 
 
+	/**
+	 * @brief 受信関数
+	 *
+	 */
 	bool Recive(CANWrapper::RxDataType rx_data){
 		if(rx_data.header.RTR != CAN_RTR_DATA)return false;//not data frame
 		if(rx_data.data[0] != _id)return false;
@@ -48,6 +56,9 @@ private:
 		return true;
 	}
 
+	/**
+	 * @brief 命令送信
+	 */
 	void SendOperation(can_protocol::tof::SpecialOperation operation){
 		if(!_is_init)return;
 		std::array<uint8_t, 2> data{_my_id, static_cast<uint8_t>(operation)};
@@ -55,14 +66,24 @@ private:
 		_can->Transmit<2>(can_protocol::MakeCANID(_id, can_protocol::tof::DataType::specialOperation), data);
 	}
 public:
+	/**
+	 * @brief コンストラクタ
+	 * @param[in] can canラッパ
+	 */
 	TofBoard(const std::shared_ptr<CANWrapper>& can) : _can(can){
 
 	}
+	/**
+	 * @brief デストラクタ
+	 */
 	~TofBoard(){
 		Deinit();
 	}
 
 
+	/**
+	 * @brief 初期化
+	 */
 	void Init(uint8_t my_id, uint8_t device_num, uint8_t can_priority = DEFAULT_CAN_PRIORITY){
 		if(_is_init)return;
 		_is_init = true;
@@ -71,23 +92,36 @@ public:
 		_recive_it = _can->FIFO0ReceiveCallback().AddExclusiveCallback(can_priority, [this](CANWrapper::RxDataType rx_data){return Recive(rx_data);});
 	}
 
+	/**
+	 * @brief 初期化解除
+	 */
 	void Deinit(){
 		if(!_is_init)return;
 		_can->FIFO0ReceiveCallback().EraseExclusiveCallback(_recive_it);
 		_is_init = false;
 	}
 
+	/**
+	 * @brief レギュラモード開始
+	 */
 	void RegularModeStart(){
 		if(!_is_init || _is_regular_request)return;
 		SendOperation(can_protocol::tof::SpecialOperation::regularModeStart);
 		_is_regular_request = true;
 	}
+	/**
+	 * @brief レギュラモード停止
+	 */
 	void RegularModeStop(){
 		if(!_is_init || !_is_regular_request)return;
 		SendOperation(can_protocol::tof::SpecialOperation::regularModeStop);
 		_is_regular_request = false;
 	}
 
+	/**
+	 * @brief 距離取得
+	 * @return 距離
+	 */
 	MilliMeter<uint16_t> Distance()const{
 		return _distance;
 	}

@@ -93,7 +93,8 @@ $(document).ready(function(){initNavTree('da/d92/_unit_core_8hpp.html','../../')
 <div class="header">
   <div class="summary">
 <a href="#namespaces">名前空間</a> &#124;
-<a href="#typedef-members">型定義</a>  </div>
+<a href="#typedef-members">型定義</a> &#124;
+<a href="#func-members">関数</a>  </div>
   <div class="headertitle">
 <div class="title">UnitCore.hpp ファイル</div>  </div>
 </div><!--header-->
@@ -102,6 +103,7 @@ $(document).ready(function(){initNavTree('da/d92/_unit_core_8hpp.html','../../')
 <p>全単位系をインクルードする  
 <a href="#details">[詳解]</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="../../d2/d6d/_unit_8hpp_source.html">Unit.hpp</a>&quot;</code><br />
+<code>#include &lt;cmath&gt;</code><br />
 </div>
 <p><a href="../../da/d92/_unit_core_8hpp_source.html">[ソースコード]</a></p>
 <table class="memberdecls">
@@ -122,12 +124,18 @@ $(document).ready(function(){initNavTree('da/d92/_unit_core_8hpp.html','../../')
 <tr class="memitem:afda717c57a8aa19e9a1b3c0a55e5f306"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:afda717c57a8aa19e9a1b3c0a55e5f306"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d51/namespacenut.html#afda717c57a8aa19e9a1b3c0a55e5f306">nut::MicroSecond</a> = unit::Unit&lt; T, nut::unit::Type::second, unit::micro &gt;</td></tr>
 <tr class="separator:afda717c57a8aa19e9a1b3c0a55e5f306"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae215bbbb89b55b0f9c82906a1f453b23"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ae215bbbb89b55b0f9c82906a1f453b23"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d51/namespacenut.html#ae215bbbb89b55b0f9c82906a1f453b23">nut::Minute</a> = unit::Unit&lt; T, nut::unit::Type::second, unit::Prefix&lt; 60, 1 &gt; &gt;</td></tr>
+<tr class="separator:ae215bbbb89b55b0f9c82906a1f453b23"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a032da99c146499e5b33061513f6532cc"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a032da99c146499e5b33061513f6532cc"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d51/namespacenut.html#a032da99c146499e5b33061513f6532cc">nut::Meter</a> = unit::Unit&lt; T, nut::unit::Type::meter &gt;</td></tr>
 <tr class="separator:a032da99c146499e5b33061513f6532cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7907718d5a9ac08deb982156a81d2116"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a7907718d5a9ac08deb982156a81d2116"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d51/namespacenut.html#a7907718d5a9ac08deb982156a81d2116">nut::MilliMeter</a> = unit::Unit&lt; T, nut::unit::Type::meter, unit::milli &gt;</td></tr>
 <tr class="separator:a7907718d5a9ac08deb982156a81d2116"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9519c6a94dc8fd784d47a6a71fed9236"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a9519c6a94dc8fd784d47a6a71fed9236"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d51/namespacenut.html#a9519c6a94dc8fd784d47a6a71fed9236">nut::Inch</a> = unit::Unit&lt; T, nut::unit::Type::meter, unit::Prefix&lt; 1000, 393701 &gt; &gt;</td></tr>
+<tr class="separator:a9519c6a94dc8fd784d47a6a71fed9236"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0b92da49df4ce1181a607e1661cdb5a8"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a0b92da49df4ce1181a607e1661cdb5a8"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d51/namespacenut.html#a0b92da49df4ce1181a607e1661cdb5a8">nut::Gram</a> = unit::Unit&lt; T, nut::unit::Type::gram &gt;</td></tr>
 <tr class="separator:a0b92da49df4ce1181a607e1661cdb5a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -138,11 +146,11 @@ $(document).ready(function(){initNavTree('da/d92/_unit_core_8hpp.html','../../')
 <tr class="memitem:a9b646c16fbaa9a54cdf2bcc868fe339c"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d51/namespacenut.html#a9b646c16fbaa9a54cdf2bcc868fe339c">nut::KiloGram</a> = unit::Unit&lt; T, nut::unit::Type::gram, unit::kilo &gt;</td></tr>
 <tr class="separator:a9b646c16fbaa9a54cdf2bcc868fe339c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a993126a6f9b8dabe5dd13a4d7df37bb9"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a993126a6f9b8dabe5dd13a4d7df37bb9"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d51/namespacenut.html#a993126a6f9b8dabe5dd13a4d7df37bb9">nut::Radian</a> = unit::Unit&lt; T, <a class="el" href="../../da/dc9/namespacenut_1_1unit.html#a71c65554a8697cd990496eec57068896a2fb79ab9685ea3b8e82385daca76a390">nut::unit::Type::radian</a> &gt;</td></tr>
+<tr class="memitem:a993126a6f9b8dabe5dd13a4d7df37bb9"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d51/namespacenut.html#a993126a6f9b8dabe5dd13a4d7df37bb9">nut::Radian</a> = unit::Unit&lt; T, nut::unit::Type::radian &gt;</td></tr>
 <tr class="separator:a993126a6f9b8dabe5dd13a4d7df37bb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a13666eedb8b5d4dfc36ea2b86ccd20"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a3a13666eedb8b5d4dfc36ea2b86ccd20"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d51/namespacenut.html#a3a13666eedb8b5d4dfc36ea2b86ccd20">nut::Degre</a> = unit::Unit&lt; T, nut::unit::Type::degre &gt;</td></tr>
-<tr class="separator:a3a13666eedb8b5d4dfc36ea2b86ccd20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a169dd2204d1f4a1129cddc1a236a7762"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a169dd2204d1f4a1129cddc1a236a7762"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d51/namespacenut.html#a169dd2204d1f4a1129cddc1a236a7762">nut::Degree</a> = unit::Unit&lt; T, nut::unit::Type::radian, unit::Prefix&lt; static_cast&lt; uint32_t &gt;((std::numeric_limits&lt; uint32_t &gt;::max()/180.0) *<a class="el" href="../../d2/d88/_global_8hpp.html#ae71449b1cc6e6250b91f539153a7a0d3">M_PI</a>), std::numeric_limits&lt; uint32_t &gt;::max()&gt; &gt;</td></tr>
+<tr class="separator:a169dd2204d1f4a1129cddc1a236a7762"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae7099efd6d799638b81d7a8b3c669b90"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:ae7099efd6d799638b81d7a8b3c669b90"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d51/namespacenut.html#ae7099efd6d799638b81d7a8b3c669b90">nut::Ampere</a> = unit::Unit&lt; T, nut::unit::Type::ampere &gt;</td></tr>
 <tr class="separator:ae7099efd6d799638b81d7a8b3c669b90"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -150,11 +158,54 @@ $(document).ready(function(){initNavTree('da/d92/_unit_core_8hpp.html','../../')
 <tr class="memitem:a8a1384045c97157c6b50618cd182015f"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d51/namespacenut.html#a8a1384045c97157c6b50618cd182015f">nut::MilliAmpere</a> = unit::Unit&lt; T, nut::unit::Type::ampere, unit::milli &gt;</td></tr>
 <tr class="separator:a8a1384045c97157c6b50618cd182015f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c6629d69a9f9812f005edb717f02ddc"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a2c6629d69a9f9812f005edb717f02ddc"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d51/namespacenut.html#a2c6629d69a9f9812f005edb717f02ddc">nut::Volt</a> = unit::Unit&lt; T, <a class="el" href="../../da/dc9/namespacenut_1_1unit.html#a71c65554a8697cd990496eec57068896aa9f0e61a137d86aa9db53465e0801612">nut::unit::Type::volt</a> &gt;</td></tr>
+<tr class="memitem:a2c6629d69a9f9812f005edb717f02ddc"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d51/namespacenut.html#a2c6629d69a9f9812f005edb717f02ddc">nut::Volt</a> = unit::Unit&lt; T, nut::unit::Type::volt &gt;</td></tr>
 <tr class="separator:a2c6629d69a9f9812f005edb717f02ddc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af0d71dea8fadb5d6641d989787e0e580"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:af0d71dea8fadb5d6641d989787e0e580"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d51/namespacenut.html#af0d71dea8fadb5d6641d989787e0e580">nut::MilliVolt</a> = unit::Unit&lt; T, <a class="el" href="../../da/dc9/namespacenut_1_1unit.html#a71c65554a8697cd990496eec57068896aa9f0e61a137d86aa9db53465e0801612">nut::unit::Type::volt</a>, unit::milli &gt;</td></tr>
+<tr class="memitem:af0d71dea8fadb5d6641d989787e0e580"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d51/namespacenut.html#af0d71dea8fadb5d6641d989787e0e580">nut::MilliVolt</a> = unit::Unit&lt; T, nut::unit::Type::volt, unit::milli &gt;</td></tr>
 <tr class="separator:af0d71dea8fadb5d6641d989787e0e580"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c7ab97d5ea754818e6f71e1e9206e52"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a2c7ab97d5ea754818e6f71e1e9206e52"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d51/namespacenut.html#a2c7ab97d5ea754818e6f71e1e9206e52">nut::Ohm</a> = unit::Unit&lt; T, nut::unit::Type::ohm &gt;</td></tr>
+<tr class="separator:a2c7ab97d5ea754818e6f71e1e9206e52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac68483f8d7da12c59daf2a66603a9f9f"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ac68483f8d7da12c59daf2a66603a9f9f"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d51/namespacenut.html#ac68483f8d7da12c59daf2a66603a9f9f">nut::MilliOhm</a> = unit::Unit&lt; T, nut::unit::Type::ohm, unit::milli &gt;</td></tr>
+<tr class="separator:ac68483f8d7da12c59daf2a66603a9f9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9f1c86f7073af2eec4fabea9ac98f4e"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:af9f1c86f7073af2eec4fabea9ac98f4e"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d51/namespacenut.html#af9f1c86f7073af2eec4fabea9ac98f4e">nut::KiloOhm</a> = unit::Unit&lt; T, nut::unit::Type::ohm, unit::kilo &gt;</td></tr>
+<tr class="separator:af9f1c86f7073af2eec4fabea9ac98f4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e7559fcf556d7efeffa8d1d30759f85"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a5e7559fcf556d7efeffa8d1d30759f85"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d51/namespacenut.html#a5e7559fcf556d7efeffa8d1d30759f85">nut::MegaOhm</a> = unit::Unit&lt; T, nut::unit::Type::ohm, unit::mega &gt;</td></tr>
+<tr class="separator:a5e7559fcf556d7efeffa8d1d30759f85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af328418e14bf34122e2ec1be9dfc20cc"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:af328418e14bf34122e2ec1be9dfc20cc"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d51/namespacenut.html#af328418e14bf34122e2ec1be9dfc20cc">nut::Henry</a> = unit::Unit&lt; T, nut::unit::Type::henry &gt;</td></tr>
+<tr class="separator:af328418e14bf34122e2ec1be9dfc20cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37c7deb4a2c8cf3fbbc7581b4163feea"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a37c7deb4a2c8cf3fbbc7581b4163feea"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d51/namespacenut.html#a37c7deb4a2c8cf3fbbc7581b4163feea">nut::MicroHenry</a> = unit::Unit&lt; T, nut::unit::Type::henry, unit::micro &gt;</td></tr>
+<tr class="separator:a37c7deb4a2c8cf3fbbc7581b4163feea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f5ed772a2d5fe0ae62309b196698ae4"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a4f5ed772a2d5fe0ae62309b196698ae4"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d51/namespacenut.html#a4f5ed772a2d5fe0ae62309b196698ae4">nut::Farad</a> = unit::Unit&lt; T, <a class="el" href="../../da/dc9/namespacenut_1_1unit.html#a71c65554a8697cd990496eec57068896aa9f0e61a137d86aa9db53465e0801612">nut::unit::Type::farad</a> &gt;</td></tr>
+<tr class="separator:a4f5ed772a2d5fe0ae62309b196698ae4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3767a6d589127e179161a98ee501091e"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a3767a6d589127e179161a98ee501091e"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d51/namespacenut.html#a3767a6d589127e179161a98ee501091e">nut::MicroFarad</a> = unit::Unit&lt; T, <a class="el" href="../../da/dc9/namespacenut_1_1unit.html#a71c65554a8697cd990496eec57068896aa9f0e61a137d86aa9db53465e0801612">nut::unit::Type::farad</a>, unit::micro &gt;</td></tr>
+<tr class="separator:a3767a6d589127e179161a98ee501091e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:ac5e8838a26e387ba136ee88547ea5f95"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ac5e8838a26e387ba136ee88547ea5f95"><td class="memTemplItemLeft" align="right" valign="top">constexpr Radian&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d51/namespacenut.html#ac5e8838a26e387ba136ee88547ea5f95">nut::NormalizeRadian</a> (Radian&lt; T &gt; rad)</td></tr>
+<tr class="memdesc:ac5e8838a26e387ba136ee88547ea5f95"><td class="mdescLeft">&#160;</td><td class="mdescRight">+pi~-piに正規化  <a href="../../dd/d51/namespacenut.html#ac5e8838a26e387ba136ee88547ea5f95">[詳解]</a><br /></td></tr>
+<tr class="separator:ac5e8838a26e387ba136ee88547ea5f95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a533f7c0d5b16af10cdb40d423f401b13"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a533f7c0d5b16af10cdb40d423f401b13"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d51/namespacenut.html#a533f7c0d5b16af10cdb40d423f401b13">nut::sin</a> (Radian&lt; T &gt; rad)</td></tr>
+<tr class="separator:a533f7c0d5b16af10cdb40d423f401b13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba293cdf6cf944147b4d9977abb9bfe2"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:aba293cdf6cf944147b4d9977abb9bfe2"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d51/namespacenut.html#aba293cdf6cf944147b4d9977abb9bfe2">nut::cos</a> (Radian&lt; T &gt; rad)</td></tr>
+<tr class="separator:aba293cdf6cf944147b4d9977abb9bfe2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d7850484fc8067d64f368d24c0be75e"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a3d7850484fc8067d64f368d24c0be75e"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d51/namespacenut.html#a3d7850484fc8067d64f368d24c0be75e">nut::tan</a> (Radian&lt; T &gt; rad)</td></tr>
+<tr class="separator:a3d7850484fc8067d64f368d24c0be75e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2dda59946cff9079e83d9faab2452278"><td class="memTemplParams" colspan="2">template&lt;typename T , unit::Type U, class P &gt; </td></tr>
+<tr class="memitem:a2dda59946cff9079e83d9faab2452278"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d51/namespacenut.html#a2dda59946cff9079e83d9faab2452278">nut::abs</a> (unit::Unit&lt; T, U, P &gt; value)</td></tr>
+<tr class="separator:a2dda59946cff9079e83d9faab2452278"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock"><p>全単位系をインクルードする </p>
