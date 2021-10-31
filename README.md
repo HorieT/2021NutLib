@@ -1,14 +1,17 @@
 # 2021NutLib
 
-2021学ロボ用 STM32ライブラリ
-(執筆：堀江智陽 and more...の予定？？？)
+2021学ロボで使用されたSTM32ライブラリを個人用にブランチ切った物です
+
+自分の趣味等でも使いたかったので...
+このライブラリは自由に参考にしたいただいたり、何ならそのまま使っていただいても構いません
+(ロボコンプロジェクト内部の基板用の機能も多々あるので注意)
+
 
 # 概要
 
 2021学ロボ用に開発しているSTM32マイコン対象のヘッダオンリーライブラリです。
 gcc version 7.2.1(GNU Tools for Arm Embedded Processors 7-2017-q4-major)を使用して開発しています。
 c++17ビルド環境であれば使えます(多分)。
-その他[esa参照](https://nagaokaroboconproject.esa.io/posts/61)
 
 # 依存関係
 
@@ -20,7 +23,7 @@ c++17ビルド環境であれば使えます(多分)。
 まずcubeMXなりcubeIDEなりでプロジェクトを生成してください。
 この時ピンアサインやAFの設定は各ユーザーが行ってください。
 
-生成したらプロジェクトをc++に設定変更してください([esa参照](https://nagaokaroboconproject.esa.io/posts/62))。
+生成したらプロジェクトをc++に設定変更してください
 その後このリポジトリのNutLibをプロジェクトのインクルードファイル下にコピーするか,
 ~~ビルド設定でNutLibまでインクルードパスを通してください。~~
 __仕様変更(20/11/29)__
@@ -51,7 +54,7 @@ nut::callback::UART_RxHalfComplete.AddCallback(0, [](UART_HandleTypeDef *huart){
 この時、`HALCallback`フォルダ下の実装のように`nut::HALCallback::ReadCallbacks()`を記述しないとライブラリは完全に動作しません。
 
 
-コードの詳しいことは ~~[2021NutLib_UseSample](https://gitlab.com/robopro_nut/2021nhkrobocon/2021nutlib_usesample)を参照するか、~~ [リファレンス](https://robopro_nut.gitlab.io/2021nhkrobocon/2021nutlib/index.html)を確認してください。(ローカルではpublic/index.html)
+リファレンスは `public/index.html` を参照してください
 
 新しく使用方法サンプルを書きます(そのうち)
 それかその他最新ファームウェアを参考にしてください。
